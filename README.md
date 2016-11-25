@@ -5,6 +5,7 @@ Welcome to General Assembly's Web Development Immersive - Singapore Edition!
 [This Gitbook](https://jeremiahalex.gitbooks.io/wdi-sg/content/) is the primary resource used throughout the course, save it to your favorites and refer to it often!
 
 ## Important Policies
+![](http://assets.amuniversal.com/4cb86c006cba01301d46001dd8b71c47)
 Please read and adhere to the following, otherwise bad things might happen.
 
 #### Prework
@@ -30,7 +31,6 @@ Projects:  We would like everyone to complete their project as it will significa
 ## Classroom Culture
 
 ![](http://assets.amuniversal.com/eddf14e06d5101301d7a001dd8b71c47)
-
 We run our Classrooms like companies and as such we place a large emphasis on creating an environment and culture that maximize what you learn.
 
 ### Some Proposed Rules
@@ -57,7 +57,7 @@ We encourage pair programming during labs, it's a great way to learn from each o
 ### 1-on-1s
 During project week, each student will have a 1-on-1 session with a member of the instructional team. This is intended for you to reflect on and discuss your overall progress.
 
-### CACTI Problem Solving (5 minutes)
+### CACTI Problem Solving
 ![](http://vignette3.wikia.nocookie.net/finalfantasy/images/0/09/Cactuar_FFX.png/revision/latest?cb=20130928021923)
 
 We're going to speed through a lot of materials, there's lots of you, a couple of TAs and only one instuctor. So follow the CACTI approach to solving your problems.
