@@ -2,13 +2,13 @@
 # WDI Singapore
 
 Welcome to General Assembly's Web Development Immersive - Singapore Edition!
-This Gitbook is the primary resource used throughout the course, save it to your favourites and refer to it often!
+[This Gitbook](https://jeremiahalex.gitbooks.io/wdi-sg/content/) is the primary resource used throughout the course, save it to your favorites and refer to it often!
 
 ## Important Policies
 Please read and adhere to the following, otherwise bad things might happen.
 
 #### Prework
-You should have completed the following in preperation for the course. This is to ensure that you can handle the pace of the class.
+You should have completed the following in preparation for the course. This is to ensure that you can handle the pace of the class.
 
 * [GA Dash](https://dash.generalassemb.ly/)
 * [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
@@ -31,7 +31,7 @@ Projects:  We would like everyone to complete their project as it will significa
 
 ![](http://assets.amuniversal.com/eddf14e06d5101301d7a001dd8b71c47)
 
-We run our Classrooms like companies and as such we place a large emphaise our creating an environment and culture that maximise what you learn.
+We run our Classrooms like companies and as such we place a large emphasis on creating an environment and culture that maximize what you learn.
 
 ### Some Proposed Rules
 We expect that you agree with the following. If you do not, then raise it in class on day 1, culture cannot be created top down.
@@ -42,7 +42,7 @@ We expect that you agree with the following. If you do not, then raise it in cla
 0. __Have Fun__ Have the best 3 months of your life :)
 
 ### Scrum
-We're going to learn about Agile development in the course but it's never to early to start implementing best practices. One such practice we follow is called Scrum or Standups, it's a quick fire meeting format that we conduct in the mornings.
+We're going to learn about Agile development in the course but it's never to early to start implementing best practices. One such practice we follow is called Scrum or Stand-Ups, it's a quick fire meeting format that we conduct in the mornings.
 
 Every morning at exactly 9.00 (__so be here before then__), we'll cluster together into three small groups - _scrums work best with small numbers of people_. A member of the instructional team will chair each group. Each person in a group will have exactly __2 minutes__ to tell the group:
 0. what they achieved yesterday after class
@@ -55,7 +55,7 @@ The point of our scrums, is not to discuss these issues but to simply flag them 
 We encourage pair programming during labs, it's a great way to learn from each other and generally makes tough tasks less daunting. You pair up (ideally with someone you haven't worked with in a while) and on one machine, you take it in turns to write code. The navigator (the person not coding) is then able to focus more on thinking about the problem rather than the code. Swapping roles every 20 minutes is a great addition to this.
 
 ### 1-on-1s
-During project week, each student will have a 1-on-1 session with a member of the instructional team. This is intended for you to reflect on and discuss your overrall progress.
+During project week, each student will have a 1-on-1 session with a member of the instructional team. This is intended for you to reflect on and discuss your overall progress.
 
 ### CACTI Problem Solving (5 minutes)
 ![](http://vignette3.wikia.nocookie.net/finalfantasy/images/0/09/Cactuar_FFX.png/revision/latest?cb=20130928021923)
@@ -69,7 +69,7 @@ We're going to speed through a lot of materials, there's lots of you, a couple o
 0. request a 1-on-1 with the __Instructor__
 
 ### Journalling
-This is optional but recommended. You should keep a Journal! It can be anything: a blog, a Medium series, a Word doc or literally a physical journal. The point is that at the end of each day you should take 15 minutes to write down a reflection on what you've learnt today. What you enjoyed? What you found difficult? And anything else you'd like to put on paper. Later down the course this will be a great tool to help you realise just how far you've progressed and boost your confidence to keep going.
+This is optional but recommended. You should keep a Journal! It can be anything: a blog, a Medium series, a Word doc or literally a physical journal. The point is that at the end of each day you should take 15 minutes to write down a reflection on what you've learnt today. What you enjoyed? What you found difficult? And anything else you'd like to put on paper. Later down the course this will be a great tool to help you realize just how far you've progressed and boost your confidence to keep going.
 
 ---
 ## Licensing
