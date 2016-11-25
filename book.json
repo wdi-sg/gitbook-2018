@@ -1,0 +1,8 @@
+{
+    "structure": {
+        "readme": "readme.md"
+    },
+    "plugins": ["toggle-chapters", "codeblock-disable-glossary"],
+    "pluginsConfig": {
+    }
+}
