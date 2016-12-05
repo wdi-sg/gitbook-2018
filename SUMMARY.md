@@ -8,6 +8,7 @@
     * [The Terminal](01-workflow/command-line/02intro-terminal.md)
     * [Filesystem Navigation](01-workflow/command-line/03navigating.md)
     * [File Manipulation](01-workflow/command-line/04file-manipulation.md)
+    * [Command Line Lab](01-workflow/command-line/command-line-lab.md)
     * [Additional Topics](01-workflow/command-line/05additional-topics.md)
   * [Intro to Git](01-workflow/intro-git/readme.md)
     * [Version Control](01-workflow/intro-git/02vcs.md)
