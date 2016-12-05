@@ -1,4 +1,4 @@
-#WDI Seattle Install Fest
+#WDI Singapore Install Fest
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
@@ -83,18 +83,12 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Sublime Text 3
-We'll be running **Sublime Text 3**, not Sublime Text 2 as our text editor of choice.
+##Atom
+We'll be running **Atom**, as our text editor of choice.
 
-Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
+Download and install the latest version [https://atom.io](https://atom.io)
 
-It is a pretty typical installation for an app, but we need to add a shortcut so we can load sublime from the Terminal.
-
-```
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-```
-
-Restart terminal, and you should be able to open a folder to edit by typing `subl .`
+Restart terminal, and you should be able to open a folder to edit by typing `atom .`
 
 
 ##Install Oh My ZSH
@@ -118,13 +112,13 @@ We will be using a relational database called Postgres for Node and Rails portio
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
-If you have successfully configured zsh and sublime, the following command should work.
+If you have successfully configured zsh and atom, the following command should work.
 
 ```
-subl ~/.zshrc
+atom ~/.zshrc
 ```
 
-Your sublime editor will popup with configuration settings, at the bottom of the file append
+Your atom editor will popup with configuration settings, at the bottom of the file append
 
 ```
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
@@ -133,11 +127,11 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 While we're here, add these two functions and environment variables to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
 
 ```
-export VISUAL=subl
+export VISUAL=atom
 export EDITOR="$VISUAL"
 
 function zedit() {
-  subl ~/.zshrc
+  atom ~/.zshrc
 }
 
 function zrefresh() {
@@ -146,7 +140,7 @@ function zrefresh() {
 }
 ```
 
-Save the file, close Sublime, and restart your terminal.
+Save the file, close Atom, and restart your terminal.
 
 Type `which psql` at which point should display
 
@@ -249,6 +243,6 @@ npm -v
 
 git --version
 psql --version
-subl -v
+atom -v
 
 ```
