@@ -13,6 +13,25 @@ To use Git Bash, you will need to install git first. To know whether you have Gi
 
 Download chocolatey from https://chocolatey.org/, this will cover a lot of the packages that mac users can brew install
 
+##Node
+
+To install Node, go to https://nodejs.org/en/download/ and follow the installation instructions.
+
+Verify the installation afterwards by running
+
+```
+node -v
+npm -v
+```
+
+The above should display without any errors.
+
+To finish up your installation, run this command to allow for global installations of npm tools.
+
+```
+sudo chown -R $USER /usr/local/lib
+```
+
 ####Setting up SSH Key
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
