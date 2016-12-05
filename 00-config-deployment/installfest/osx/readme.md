@@ -88,7 +88,7 @@ We'll be running **Atom**, as our text editor of choice.
 
 Download and install the latest version [https://atom.io](https://atom.io)
 
-Restart terminal, and you should be able to open a folder to edit by typing `atom .`
+Restart terminal, and you should be able to open a folder to edit by typing `atom .` If this doesn't work, open Atom manually from Finder, click on Atom on the top left corner (it's next to the Apple logo), and click on 'Install Shell Commands'. Restart your terminal, and you're good to go.
 
 
 ##Install Oh My ZSH
