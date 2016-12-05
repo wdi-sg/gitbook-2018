@@ -30,7 +30,23 @@ The client is quite different from the mac clients (e.g. psequel), so if you enc
 
 Run the installer from http://railsinstaller.org/en
 
-Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
+### Option 2: c9.io (recommended)
+If you encounter issues with installing / running Rails on Windows, we recommend using [c9.io](https://www.c9.io). It's a cloud IDE that is as good as running an IDE on your local machine. You can git commit, git clone, git push - and collaboration with Mac users will be seamless. Here are some instructions for setting up your c9 development environment:
+
+* Sign up for an account with https://www.c9.io (it’s free, even though they ask you for credit card details)
+* Create a new project and select Ruby when prompted to choose your language
+* To set up your server in postgres (Heroku requires postgres servers), follow this set of instructions: https://github.com/JohnnyBurst/c9_sqlite3_to_pg
+* To link the c9.io repo to a github repo, follow these instructions: http://lepidllama.net/blog/how-to-push-an-existing-cloud9-project-to-github/
+
+## npm packages:
+
+* bcrypt:
+  * Bcrypt doesn't seem to work well in the windows environment. Use bcrypt-nodejs instead (https://www.npmjs.com/package/bcrypt-nodejs)
+
+
+## Verify your installation
+
+Make sure to restart your terminal and then run each of these commands (run only the commands for the programmes that you've installed!). Finally call someone over to validate your installation is correct.
 
 ```
 rails -v
@@ -49,16 +65,3 @@ psql --version
 atom -v
 
 ```
-
-### Option 2: c9.io (recommended)
-If you encounter issues with installing / running Rails on Windows, we recommend using [c9.io](https://www.c9.io). It's a cloud IDE that is as good as running an IDE on your local machine. You can git commit, git clone, git push - and collaboration with Mac users will be seamless. Here are some instructions for setting up your c9 development environment:
-
-* Sign up for an account with https://www.c9.io (it’s free, even though they ask you for credit card details)
-* Create a new project and select Ruby when prompted to choose your language
-* To set up your server in postgres (Heroku requires postgres servers), follow this set of instructions: https://github.com/JohnnyBurst/c9_sqlite3_to_pg
-* To link the c9.io repo to a github repo, follow these instructions: http://lepidllama.net/blog/how-to-push-an-existing-cloud9-project-to-github/
-
-## npm packages:
-
-* bcrypt:
-  * Bcrypt doesn't seem to work well in the windows environment. Use bcrypt-nodejs instead (https://www.npmjs.com/package/bcrypt-nodejs)
