@@ -34,6 +34,7 @@ If we go to this simple example, we see that floats reflow, depending on screen 
 
 <p data-height="400" data-theme-id="0" data-slug-hash="ZOYWQJ" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/ZOYWQJ/">Float demo</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
 Likewise, the paragraphs remain at 50% of screen width, no matter what this screen width is.
 
 This works to an extent, but we'd really like a few more tools for changing layout based on screen size.
@@ -44,7 +45,7 @@ This works to an extent, but we'd really like a few more tools for changing layo
 
 When web developers started creating sites for mobile, they had problems with displaying pages that were initially created for desktops. They were too large! The quick fix was to scale pages to fit the screen, but we ended up getting results like this:
 
-![No Viewport Meta Tag](https://developers.google.com/speed/docs/insights/images/viewport/iphone_no_viewport.jpg)
+![No Viewport Meta Tag](http://developers.google.com/speed/docs/insights/images/viewport/iphone_no_viewport.jpg)
 
 Yikes, that's hard to read on a small device. The solution is that we need to control the width and the zoom level of the page.
 
