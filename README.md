@@ -23,7 +23,7 @@ If you know you'll be late or absent, please let us know and we'll arrange
 to have your tardy or absence excused.
 
 #### Homework and Projects
-Homework: 80% of the homework needs to be submitted for completion.
+Homework: 80% of the homework needs to be submitted for completion. Please submit your homework [here](https://goo.gl/forms/zsSYoGd0c6NMhPrz2) before 9am the next day (Bookmark this link on your browser!)
 
 Projects:  We would like everyone to complete their project as it will significantly affect your chances for graduation if you fail to do so. A Minimum Viable Product (MVP) is a must.
 
