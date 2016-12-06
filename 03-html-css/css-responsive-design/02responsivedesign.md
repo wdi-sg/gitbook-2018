@@ -8,7 +8,7 @@ You can also check out this visual explanation: http://johnpolacek.github.io/scr
 
 ### More devices
 
-Not that long ago building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers. 
+Not that long ago building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers.
 
 Fast forward to today (2015) and the desktop computer is dying, more than 71% of the US population owns a smartphone.
 
@@ -123,5 +123,8 @@ Most of the time, `min-width` and `max-width` will be your bread and butter. You
 
 ### Columns Example
 
-<p data-height="400" data-theme-id="0" data-slug-hash="zBxqda" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/zBxqda/">Media Queries</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<!-- <p data-height="400" data-theme-id="0" data-slug-hash="zBxqda" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/zBxqda/">Media Queries</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script> -->
+
+<p data-height="265" data-theme-id="0" data-slug-hash="VmXqGM" data-default-tab="css,result" data-user="ga-sg" data-embed-version="2" data-pen-title="Media Query Columns Example" class="codepen">See the Pen <a href="http://codepen.io/ga-sg/pen/VmXqGM/">Media Query Columns Example</a> by General Assembly (<a href="http://codepen.io/ga-sg">@ga-sg</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
