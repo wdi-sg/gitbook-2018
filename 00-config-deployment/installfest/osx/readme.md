@@ -55,6 +55,9 @@ git config --global push.default simple
 git config --global credential.helper osxkeychain
 ```
 
+You should probably install the command line prompt and autocompletition plugins:
+https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
+
 #### Caching Github Login
 We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
 
@@ -92,11 +95,13 @@ Download and install the latest version [https://atom.io](https://atom.io)
 Restart terminal, and you should be able to open a folder to edit by typing `atom .` If this doesn't work, open Atom manually from Finder, click on Atom on the top left corner (it's next to the Apple logo), and click on 'Install Shell Commands'. Restart your terminal, and you're good to go.
 
 
-##Install Oh My ZSH
+## (optional) Pimp your Terminal with iTerm & Oh My ZSH
 
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
+A shell is an interface into our computer, and we will be using a lot to run commands. You can 'make it hipper' by installing some packages:
 
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+https://gist.github.com/kevin-smets/8568070
+
+[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 To install, we will run
 
