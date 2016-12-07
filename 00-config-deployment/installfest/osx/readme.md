@@ -52,13 +52,14 @@ Using your email credentials for GIT, run these commands with your user and emai
 git config --global user.name "YOUR-USERNAME"
 git config --global user.email "YOUR-EMAIL-ADDRESS"
 git config --global push.default simple
-git config --global credential.helper cache
+git config --global credential.helper osxkeychain
 ```
 
-####Setting up SSH Key
-You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
+#### Caching Github Login
+We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
 
-* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
+For SSH Keys you can cache them too if needed:
+https://help.github.com/articles/generating-ssh-keys/
 
 ##Node
 
