@@ -101,16 +101,6 @@ A shell is an interface into our computer, and we will be using a lot to run com
 
 https://gist.github.com/kevin-smets/8568070
 
-[Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-To install, we will run
-
-```
-curl -L http://install.ohmyz.sh | sh
-```
-
-Restart Terminal, and you should see a brand new and colorful command prompt.
-
 ## Postgres
 
 ### Postgres.app
