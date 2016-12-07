@@ -32,10 +32,11 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-####Setting up SSH Key
-You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
+#### GitHub
+You might find your self having to re-authenticate GIT every time you work on your command line.
+We'll mainly be using HTTPS, so setup a Keychain helper: https://help.github.com/articles/caching-your-github-password-in-git/#platform-windows
 
-* [Github Generating SSH Keys (for Windows)](https://help.github.com/articles/generating-an-ssh-key/#platform-windows)
+For SSH Keys you can cache them too if needed: https://help.github.com/articles/generating-an-ssh-key/#platform-windows
 
 ## ~~Postgres.app~~ PostgresQL
 
