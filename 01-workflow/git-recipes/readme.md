@@ -117,7 +117,7 @@ get merge (other branch name)
 ```
 
 
-## Cloning another repo
+## <a name="#quick-guide"></a>Cloning another repo
 
 1. On github.com, go to the repo which you'd like to clone (e.g. http://www.github.com/davified/js-functions)
 

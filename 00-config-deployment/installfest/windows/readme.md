@@ -9,6 +9,10 @@ Download and install Git Bash. Follow instructions here: https://git-for-windows
 
 To use Git Bash, you will need to install git first. To know whether you have Git installed on your machine, run ```git --version```. If you get an error, it means you will need to install it by following the instructions here: https://git-scm.com/download/win
 
+## Zsh (an alternative shell to Git Bash)
+
+If your mac-user-classmates are happily trodding along with Oh My Zsh, and you'd like to trod along as well, follow the instructions here: https://gingter.org/2016/08/17/install-and-run-zsh-on-windows/ (Note: You will need to install this from your Ubuntu Bash)
+
 ## ~~Homebrew~~ Chocolatey
 
 Download chocolatey from https://chocolatey.org/, this will cover a lot of the packages that mac users can brew install
