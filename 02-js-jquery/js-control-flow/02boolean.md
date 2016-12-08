@@ -12,7 +12,7 @@ The equality operator aka double equal (`==`) is used to compare two values.
 //false
 ```
 
-The equality operator allows type cohersion which means that if you compare two values of different types you might get unexpected results.
+The equality operator allows type coercion which means that if you compare two values of different types you might get unexpected results.
 
 ```js
 3 == "3"
