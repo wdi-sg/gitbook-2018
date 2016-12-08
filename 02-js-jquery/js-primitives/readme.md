@@ -128,7 +128,7 @@ Javascript can be a little cheap with the number of operations it allows you to 
 ```js
 // 3^2 becomes
 Math.pow(3,2);
-// => 4
+// => 9
 
 // 2^4 becomes
 Math.pow(2,4);
