@@ -151,7 +151,7 @@ Math.random();
 
 /**
   The following will return a
-  random number between 0 and 10
+  random number between 0 (inclusive) and 10 (exclusive)
 */
 Math.random() * 10;
 ```
