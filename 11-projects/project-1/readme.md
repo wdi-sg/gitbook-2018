@@ -45,14 +45,6 @@ Your app must:
 
 ---
 
-### Getting Started with a Git Repo
-
-* Create a new git repository on Github (title can be the name of your project)
-* Clone your project onto your computer.
-* Start making changes!
-
----
-
 ### Potential Project Ideas
 
 ##### Blackjack

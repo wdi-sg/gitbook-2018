@@ -1,4 +1,13 @@
-# Project Presentations
+# Project Guidelines
+
+## Getting Started & Submission
+* To start, follow the invitation link in your course repository. This will automatically create you a submission repository under the wdi-sg organization - DON'T edit this one though.
+* Fork your submission repository to create a development repository on your own github account, work on this one.
+* To submit, make a pull-request from your development repository. The instructional team will then review your submission.
+
+---
+
+## Presentations
 On the final day of each project week, each student will be required to present their work to the group. Guidelines are given below, please follow.
 
 ### Logistics

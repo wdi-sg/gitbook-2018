@@ -52,13 +52,17 @@ Using your email credentials for GIT, run these commands with your user and emai
 git config --global user.name "YOUR-USERNAME"
 git config --global user.email "YOUR-EMAIL-ADDRESS"
 git config --global push.default simple
-git config --global credential.helper cache
+git config --global credential.helper osxkeychain
 ```
 
-####Setting up SSH Key
-You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
+You should probably install the command line prompt and autocompletition plugins:
+https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
 
-* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
+#### Caching Github Login
+We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
+
+For SSH Keys you can cache them too if needed:
+https://help.github.com/articles/generating-ssh-keys/
 
 ##Node
 
@@ -91,19 +95,11 @@ Download and install the latest version [https://atom.io](https://atom.io)
 Restart terminal, and you should be able to open a folder to edit by typing `atom .` If this doesn't work, open Atom manually from Finder, click on Atom on the top left corner (it's next to the Apple logo), and click on 'Install Shell Commands'. Restart your terminal, and you're good to go.
 
 
-##Install Oh My ZSH
+## (optional) Pimp your Terminal with iTerm & Oh My ZSH
 
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
+A shell is an interface into our computer, and we will be using a lot to run commands. You can 'make it hipper' by installing some packages:
 
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-To install, we will run
-
-```
-curl -L http://install.ohmyz.sh | sh
-```
-
-Restart Terminal, and you should see a brand new and colorful command prompt.
+https://gist.github.com/kevin-smets/8568070
 
 ## Postgres
 
