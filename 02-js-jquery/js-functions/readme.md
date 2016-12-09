@@ -53,17 +53,17 @@ greeting(name2);
 Functions can have multiple parameters, separated by commas.
 
 ```js
-function greeting(taco, stuff) {
+function greeting(person, stuff) {
 	// anything inside of here will execute when called
-	console.log("Good morning", stuff, taco);
-	console.log("taco:", taco);
+	console.log("Good morning", person, stuff);
+	console.log("person:", person);
 	console.log("stuff:", stuff);
 }
 
-var name = "Josh"
-var name2 = "Brian"
-greeting(name, name2);
-greeting(name2, name);
+var name = "Josh";
+var thing = "Spoon";
+greeting(name, thing); // "Good morning Josh Spoon"
+greeting(thing, name); // "Good morning Spoon Josh"
 ```
 
 ##Printing and returning are different
@@ -76,20 +76,20 @@ Note that printing something to the screen using `console.log` is not the same a
 function multiply(num1, num2) {
 	console.log("inside the function");
 	// return result = num1 * num2;
-	return num1 * num2
+	return num1 * num2;
 }
 
 var firstNum = 2;
 var secNum = 3;
 var taco = multiply(firstNum,secNum);
 
-console.log(firstNum + " multiplied by " + secNum + " is " + taco )
+console.log(firstNum + " multiplied by " + secNum + " is " + taco );
 ```
 
 ```js
 // With a return value
 function returnHello(name) {
-	return("Hello, " + name)
+	return("Hello, " + name);
 }
 
 console.log("with a return value:", returnHello("jane") );
