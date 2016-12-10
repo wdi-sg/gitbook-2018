@@ -24,10 +24,20 @@ All elements will float next to floated items until they are specifically cleare
 
 If our element sizes are variable or dynamic, we can use floats to allow text/other elements to wrap around the floated element. This can be done by creating containers and having them all float to the left. See the example below.
 
-<p data-height="665" data-theme-id="0" data-slug-hash="vGoajr" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/vGoajr/">Floats and Clears</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<!-- <p data-height="665" data-theme-id="0" data-slug-hash="vGoajr" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/vGoajr/">Floats and Clears</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script> -->
+
+<p data-height="265" data-theme-id="0" data-slug-hash="GqKomb" data-default-tab="html,result" data-user="ga-sg" data-embed-version="2" data-pen-title="Common Page Layout v1 (floats)" class="codepen">See the Pen <a href="http://codepen.io/ga-sg/pen/GqKomb/">Common Page Layout v1 (floats)</a> by General Assembly (<a href="http://codepen.io/ga-sg">@ga-sg</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 Note that our text is aware that our div wants to be as left as possible and kindly wraps it in a nice text hug.
+
+#### Using inline-block to create multicolumn layouts
+
+It is also possible to recreate the same multicolumn layout above using `display: inline-block;` without using floats.
+
+<p data-height="265" data-theme-id="0" data-slug-hash="xOKZjJ" data-default-tab="html,result" data-user="ga-sg" data-embed-version="2" data-pen-title="Common Page Layout v2 (inline-block)" class="codepen">See the Pen <a href="http://codepen.io/ga-sg/pen/xOKZjJ/">Common Page Layout v2 (inline-block)</a> by General Assembly (<a href="http://codepen.io/ga-sg">@ga-sg</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 #### Floats with clears
 
