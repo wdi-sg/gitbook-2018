@@ -11,8 +11,6 @@ and do things like:
 We haven't seen the true power of DOM manipulation. The power to create and
 destroy DOM elements!!
 
-After this lesson, complete this lab: <https://github.com/ga-students/dom-times-table>
-
 ## Creating DOM Elements
 The DOM allows us to create elements (make and add new HTML elements to our page).
 We can create any HTML tag we want. We can make `<a>` tags, `<p>` tags, `<div>`'s.
