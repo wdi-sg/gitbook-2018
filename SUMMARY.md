@@ -55,7 +55,7 @@
     * [Constructors](02-js-jquery/js-prototypes/02constructors.md)
     * [Prototypes](02-js-jquery/js-prototypes/03prototypes.md)
   * [Intro to TDD](02-js-jquery/js-tdd-intro/readme.md)
-  * [Closures & Scoping](02-js-jquery/js-scopes/readme.md)
+  * [Namespaces](02-js-jquery/js-scopes/readme.md)
   * [Inheritance](02-js-jquery/js-inheritance/01readme.md)
     * [Prototypal Inheritance](02-js-jquery/js-inheritance/02prototypalinheritance.md)
     * [Call, Apply, and other Functions](02-js-jquery/js-inheritance/03callapplyfunctions.md)
