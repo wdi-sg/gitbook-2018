@@ -117,10 +117,12 @@ If we want to add a new DIV that provides a nice greeting, our vanilla JavaScrip
 And in jQuery, it looks like this:
 
 ```js
-  $('#container').append("<p>").append("Hello simple insertion using jQuery chaining");
+  var newP = $('<p>');
+  $('#container').append(newP)
+  newP.append("Hello simple insertion using jQuery chaining");
 ```
 
-In the jQuery code example above, we first select the DIV with `id="container"``, then we append a new paragraph element (automatically created using core jQuery selector function), and then we append the text we want to insert to the new paragraph element we just created. In effect, the new HTML looks like this after the jQuery is run:
+In the jQuery code example above, we create a new paragraph element, then select the DIV with `id="container"`` and we append. We then append the text we want to insert to the new paragraph element we just created. In effect, the new HTML looks like this after the jQuery is run:
 
 ```html
   <div id="container">
