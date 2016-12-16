@@ -1,43 +1,10 @@
 # Introduction To SQL and Databases
 
 ## Objectives
-* Understand the purpose of a database
 * Connect to a PostgreSQL database using `psql`
 * Use SQL to create a database and tables
 * Use SQL to insert, select, update, and delete data
 * Understand what Primary Keys are
-
-## What is a database?
-
-- It is a program that enforces structure on your data and allows a computer to quickly retreive data.
-- A database should support CRUD operations.
-  - **CRUD:** Create, Read, Update, Destroy
-- Sometimes called a DBMS (Database Management System)
-
-## Why Use a Database?
-Discuss as a class. Why is it better than just writing to files?
-
-* Data is structured
-* Databases are transactional
-* Data retrevial is fast
-* Has a system for remote access
-* Has a system for backup
-
-## Types of Databases
-
-**RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribut of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
-
-###Brands of Relational Databases
-
-* Postgres
-* MySQL
-* Oracle (Commercial Product with lots of features)
-* Microsoft SQL Server
-* SQLite (Good for mobile development/Small applications)
-
-**Cloud Storage**  This is a very vague term and can be used to mean lots of things. Typically it is a system in which your data is stored and managed by a company so you don't have to worry about losing it. Examples included AWS (Amazon Web Services), Rackspace, MS Azure
-
-**NoSQL** There is also a school of thought called NoSql.  It is often a Key Value storage system and is not relational.  This is typically used in applications where a database does not scale well.  Example technologies include MongoDB, Apache CouchDB, SimpleDB.
 
 
 ## How are databases used in the wild?

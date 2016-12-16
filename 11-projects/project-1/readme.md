@@ -55,14 +55,6 @@ Sometimes just called "Memory", it's a card game in which all of the cards are l
 
 ---
 
-### Plan B: Quiz
-Just in case you're not feeling too confident about your JavaScript, we're provided a test-suite to help guide you through the process of building a multiple choice quiz game. You can access it here <TODO. PROVIDE LINK>
-
-We've provided a test file that expects your quiz program to behave in a
-certain way and it will test your program for errors.
-
-Read more about [Project 1a Specifications](1a-quiz-game.md).
-
 ## Project Feedback + Evaluation
 Both Project 1a and Project 1b will be graded on the same rubric.
 
