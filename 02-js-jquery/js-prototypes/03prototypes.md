@@ -104,3 +104,5 @@ Array.prototype.forEach
 
 Array.prototype.map
 ```
+
+Play around with OOP, constructors and inheritance on [codepen](http://codepen.io/ga-sg/pen/ObamPX?editors=0010).
