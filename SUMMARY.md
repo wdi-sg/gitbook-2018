@@ -220,7 +220,7 @@
   * [Mouse follows Mouse](13-warm-ups/mouse-follows-mouse.md)
   * [English calculator](13-warm-ups/english-calculator.md)
   * [Kopi Order](13-warm-ups/kopi-order.md)
-  <!-- * [Scrabble](13-warm-ups/scrabble.md) -->
+  * [Scrabble](13-warm-ups/scrabble.md)
 * [Post WDI](09-post-wdi/readme.md)
   * [Learning Resources](09-post-wdi/resources.md)
   * [Deliverables -> Portfolio](09-post-wdi/deliverables.md)
