@@ -218,7 +218,7 @@
   * [Power Sum](13-warm-ups/teaser-power-sum.md)
   * [Sum String](13-warm-ups/sum-string.md)
   * [Mouse follows Mouse](13-warm-ups/mouse-follows-mouse.md)
-  * [English Calculator](13-warm-ups/english-calculator.md)
+  * [English calculator](13-warm-ups/english-calculator.md)
   * [Kopi Order](13-warm-ups/kopi-order.md)
   <!-- * [Scrabble](13-warm-ups/scrabble.md) -->
 * [Post WDI](09-post-wdi/readme.md)
