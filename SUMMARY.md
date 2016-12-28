@@ -223,6 +223,7 @@
   * [Scrabble](13-warm-ups/scrabble.md)
   * [Array Practice 1](13-warm-ups/array-practice-1.md)
   * [Array Practice 2](13-warm-ups/array-practice-2.md)
+  * [Random Quote Generator](13-warm-ups/random-quote-generator.md)
 * [Post WDI](09-post-wdi/readme.md)
   * [Learning Resources](09-post-wdi/resources.md)
   * [Deliverables -> Portfolio](09-post-wdi/deliverables.md)
