@@ -4,4 +4,4 @@ A collection of coding challenges designed to boost your computational thinking 
 
 These will be issued during class but can also be completed beyond the scope of the course.
 
-You can view your classmates' solutions [here]!(https://docs.google.com/spreadsheets/d/1X7jloq3rC2WqzfyHEqDZgdOPjTGIglqY6WSGb3vrLzE/edit?usp=sharing)
+You can view your classmates' solutions [here](https://docs.google.com/spreadsheets/d/1X7jloq3rC2WqzfyHEqDZgdOPjTGIglqY6WSGb3vrLzE/edit?usp=sharing)!
