@@ -51,8 +51,7 @@ var quiz = {
 ```
 
 ## Test-driven development
-Using this test library is optional. You may choose to ignore this and build your
-quiz game however you like.
+Using [this test library](https://github.com/wdi-sg/quiz-tester) is optional but recommended. You may choose to ignore this and build your quiz game however you like.
 
 We've built a test library that will check to see if your quiz runs correctly. In order
 for it to work you'll need to format questions in your quiz exactly as described above.
