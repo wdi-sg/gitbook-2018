@@ -14,7 +14,7 @@ MongoDB is a document database for storing data. We can access MongoDB through N
 
 ## Setting up Mongoose in your app
 
-Create a new Express app and install the relevant npm packages:
+Create a new Node app and install the relevant npm packages:
 
 ```bash
 mkdir family-tree
@@ -22,9 +22,6 @@ cd family-tree
 
 # setup npm
 npm init --yes
-
-# install dependencies
-npm install --save express body-parser
 
 # create index file
 touch index.js
@@ -39,21 +36,11 @@ npm install --save mongoose
 With the package installed, lets use it - open index.js and setup your app:
 
 ```js
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
 
 // Mongoose stuff
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/family-tree');
 
-app.get('/', function(req, res) {
-  res.send('Hi!');
-});
-
-app.listen(3000);
 ```
 
 You can now execute all the mongoDB commands over the database `family-tree`, which will be created if it doesn't exist.
@@ -264,87 +251,5 @@ User.remove({ name: 'brian' }, function(err) {
 User.findOneAndRemove({ name: 'brian' }, function(err) {
   if (err) console.log(err);
   console.log('User deleted!');
-});
-```
-
-## Independent Practice
-
-Using the code we just wrote and the [official Mongoose Models docs](http://mongoosejs.com/docs/models.html), add three routes to your Express app.
-
-- `GET users/`, this will return all the documents
-- `POST users/`, given some arguments in the url, this method will create a `user` record.
-- `DELETE users/:id`, will remove the document corresponding to the collection
-
-## Sub-documents (MongoDB embedded documents)
-
-Sub-documents are just what they sound like: documents with their own schemas nested in other documents. They take of the form of objects within an array.  You can think of this as a sort of `has_many` relationship - the context to use embedded documents is data entities need to be used/viewed in context of another.
-
-Let's look at these two schemas below - we can embed `childSchema` into the property `children`:
-
-```javascript
-var childSchema = new mongoose.Schema({ name: 'string' });
-
-var parentSchema = new mongoose.Schema({
-  children: [childSchema]
-});
-
-var Parent = mongoose.model('Parent', parentSchema);
-
-Parent.create({ children: [
-  { name: 'Matt' },
-  { name: 'Sarah' }
-]}, function(err, parent) {
-  if (err) return console.log(err);
-  console.log(parent);
-});
-```
-
-#### Finding a sub-document
-
-All documents in Mongoose have an `_id`, including sub-documents. Using the example above, we can find a specific sub-document from the array by using the `.id` function on the key we want to search.
-
-```js
-// in our first example, this should return one of the sub-documents
-var doc = parent.children.id(idYouAreLookingFor);
-```
-
-#### Adding and Removing sub-documents
-
-Mongoose sub-document collections are arrays, and therefore contain methods like as `.push()`, `.pop()`, and `.unshift()`.
-
-```js
-parent.children.push({ name: 'Ester' }); // pushes Ester
-parent.children.pop(); // pops Ester
-```
-
-**Note that these functions don't save the instance, so you'll need to call `.save()` manually afterwards.**
-
-## Population (MongoDB document references)
-
-Storing references to other documents involves defining a specific model to reference, as well as the type of what's being stored. For example, referring to a User in a Book model would involve referencing the User model, as well as storing the user's `ObjectId`.
-
-```js
-var Schema = mongoose.Schema;
-
-var bookSchema = Schema({
-  author: { type: Schema.Types.ObjectId, ref: 'User' },
-  title: String
-});
-
-var Book = mongoose.model('Book', bookSchema);
-
-// creating a book and storing an author's id
-Book.create({ title: 'Fahrenheit 451', author: author._id }, function(err, book) {
-  // access book here
-});
-```
-
-However, if we query for a book, the author's information won't automatically populate. The query would give back the `ObjectId` only! In order to populate the model's data, we can use the `.populate()` function after the query, as well as use `.exec()` to execute the callback function.
-
-```js
-Book.findOne({ title: 'Fahrenheit 451' })
-.populate('author')
-.exec(function(err, book) {
-  // access book with author data here
 });
 ```

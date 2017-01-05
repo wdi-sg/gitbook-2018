@@ -1,5 +1,13 @@
 #Intro to NoSQL
 
+##Objectives
+
+* Describe how Mongo databases came about & why they're useful
+* Compare and contrast NoSQL with SQL
+* Define what a document is in the context of MongoDB
+* Explain the difference between embedded and referenced documents, and how we use each to model relationships in MongoDB
+* Issue basic CRUD commands to a database from the Mongo Shell
+
 ##What is MongoDB?
 
 MongoDB (short for hu**mongo**us) is one of the new breeds of databases known as NoSQL databases. NoSQL databases are heavily used in realtime, big data and social media applications and generally called NoSQL because they do things a little differently than traditional SQL databases. It is a schemaless document-based datastore. This means it doesn't have `tables`. It instead has `documents`.

@@ -48,7 +48,7 @@ app.listen(3000);
 
 ## Layouts
 
-Yesterday we used partials to create a header and a footer for our website. Adding a header and a footer to every page can be cumbersome. Why should we have to write the same lines at the beginning and end of every page? We shouldn't! There's a better way!
+Previously we used partials to create a header and a footer for our website. Adding a header and a footer to every page can be cumbersome. Why should we have to write the same lines at the beginning and end of every page? We shouldn't! There's a better way!
 
 Instead, we can create a layout that has a special place for our page content. We can define a basic page structure made up of our header and footer and have a place in the middle where all our content will go. In order to do this, another module must be installed.
 

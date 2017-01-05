@@ -9,7 +9,7 @@
 
 The makers of Node.js took javascript (which normally only runs in the browser) and made it available in your computer (on the server side). They took Google's V8 JavaScript Engine and gave it the ability to compile JS programs into machine code.
 
-Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while it's possible to build web applications and APIs in straight JS, we'll actually be using a framework on top of Node called Express. It's actually quite similar to Sinatra - you'll like it!
+Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while it's possible to build web applications and APIs in straight JS, we'll actually be using a framework on top of Node called Express.
 
 #### Why are people excited about Node?
 
@@ -25,7 +25,7 @@ Imagine a paper delivery boy riding on his bike delivering papers every morning.
 
 Now imagine the paperboy throwing the newspaper on your porch but never stopping his bicycle; never stopping, he just keeps throwing papers on porches, so that by the time you pick it up he'll be 3 or 4 houses down. That would be _non-blocking input/output (I/O)_, or _asynchronous_. This is an extremely awesome ability of node since I/O tends to be very "expensive."
 
-#### Ruby/Rails/Sinatra vs. JS/Node/Express
+#### Ruby/Rails vs. JS/Node/Express
 
 While not strictly a competition (one of the skills you have to practice is knowing what frameworks you should use in which situations), let's compare the technologies:
 

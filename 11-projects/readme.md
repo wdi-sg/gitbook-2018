@@ -1,9 +1,9 @@
 # Project Guidelines
 
 ## Getting Started & Submission
-* To start, follow the invitation link in your course repository. This will automatically create you a submission repository under the wdi-sg organization - DON'T edit this one though.
-* Fork your submission repository to create a development repository on your own github account, work on this one.
-* To submit, make a pull-request from your development repository. The instructional team will then review your submission.
+* To start, follow the invitation link in your course repository. This will automatically create you a submission repository under the wdi-sg organization.
+* Commit your code to this repo and insure you have updated the README file - remember to include a link to your hosted application, e.g. Github Pages or Heroku.
+* To submit, complete the submission form provided by your instructional team to notify them that your Repo is upto date.
 
 ---
 

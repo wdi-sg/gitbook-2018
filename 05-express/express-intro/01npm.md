@@ -50,6 +50,18 @@ To quickly summarize, you locally install a package when you its purpose is app 
 
 ***tip:*** You can run `i` as a shorthand for `installation` when using npm to install node packages.
 
+
+###Installing nodemon
+```bash
+npm install -g nodemon
+```
+
+If we just ran `node nameOfFile.js`, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax
+
+```bash
+nodemon nameOfFile.js
+```
+
 ## Package.json
 
 At this point, you may be asking yourself a very important question: how does npm know I have a node app that will accept installed packages?! The answer is package.json.
@@ -121,7 +133,7 @@ Each listed dependency has a specified version associated with it, so that we ma
 | ~4.8.5 | Any version “reasonably close to 4.8.5″. This will call use all versions up to, but less than 4.9.0 |
 | ~4.8 | Any version that starts with 4.8 |
 | ^4.8.5 | Any version “compatible with 4.8.5″. This will call versions up to the next major version like 5.0.0. Could break your application if there are major differences in the next major version. |
-| ~1.2 | Any version compatible with 1.2 |
+| ^1.2 | Any version compatible with 1.2 |
 
 Now when working with a team if you ever encounter a scenario where a package may be behaving differently for different developers, you know to check the dependency versions in the package.json files. Also, when updating a package you should check to see if there are any breaking changes mentioned in the version documentation.
 
