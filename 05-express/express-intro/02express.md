@@ -2,9 +2,7 @@
 
 To create a web application using Node, we're going to import a web app server framework called Express. We can install this as a package using npm, then use it to create applications.
 
-##Our first Express App
-
-###Setting up a project
+## Setting up a project
 Create a new folder for use with the project using `mkdir node_calculator`, and cd into `cd node_calculator`
 
 First we want to start a new project by going `npm init`. Follow the instructions, clicking `enter` through the statements. you many want to specify a version number, but most default options should be fine. It will also specify an initial file to use. The default is `index.js`, and this acts as the "entry point" into our app.
