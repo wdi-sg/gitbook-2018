@@ -7,5 +7,3 @@
 * Relate state machines to Redux, a predictable state container
 * Use Redux for creating stores and actions that manipulating state
 * Create a products page that allows complex filtering via Redux
-
-##Intro

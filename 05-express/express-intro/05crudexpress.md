@@ -1,6 +1,6 @@
 #CRUD in Express
 
-CRUD is an acronym that stands for Create, Read, Update, Destroy. These are the basic operations that you can perform on data. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action: Creatinging a user (create), Listing comments (read) to editing your profile (update), to deleting a video you uploaded on youtube (destroy).
+CRUD is an acronym that stands for Create, Read, Update, Destroy. These are the basic operations that you can perform on data. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action: Creating a user (create), Listing comments (read) to editing your profile (update), to deleting a video you uploaded on youtube (destroy).
 
 [Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
@@ -257,10 +257,29 @@ app.get('/animals', function(req, res){
 });
 ```
 
-## Wrapup
 
-* Node.js/Express
-* Routes
-* Views/templates
-* CRUD/RESTful
-* creating an app with GET and POST
+## Controllers
+
+We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to separate routes into separate files and attach the routes to the Express router.
+
+**index.js**
+
+```js
+var animalsCtrl = require("./controllers/animals")
+app.use("/animals", animalsCtrl);
+```
+
+**controllers/animals.js**
+
+```js
+var express = require("express");
+var router = express.Router();
+
+router.get("/", function(req, res) {
+
+});
+
+module.exports = router;
+```
+
+Note that the routes should be defined *relative* to the definition in `app.use`. For example, the route defined above in `controllers/animals.js` will be `http://localhost:3000/animals`.

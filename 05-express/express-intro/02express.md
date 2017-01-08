@@ -9,6 +9,10 @@ Create a new folder for use with the project using `mkdir node_calculator`, and 
 
 First we want to start a new project by going `npm init`. Follow the instructions, clicking `enter` through the statements. you many want to specify a version number, but most default options should be fine. It will also specify an initial file to use. The default is `index.js`, and this acts as the "entry point" into our app.
 
+## Basic Express Setup
+
+Before we do anything else, let's set up a basic Express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
+
 ```bash
 npm install --save express
 touch index.js

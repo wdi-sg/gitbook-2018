@@ -11,7 +11,7 @@
 - Identify and describe the most common HTTP request/response headers and the information associated with each
 - Create a basic HTML webpage using the most common tags
 
-## Internet Acronym Test
+## Internet Acronyms
 Working as web developers you will be bombarded with acronyms, but don't worry just like the MRT you don't need to know what it stands for in order to use it.
 
 1. WWW (World Wide Web)

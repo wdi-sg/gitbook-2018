@@ -144,3 +144,88 @@ Partials can be used to modularize views and reduce repetition. A common pattern
 
 <% include ../partials/footer.ejs %>
 ```
+
+
+### Layouts
+
+Previously we used partials to create a header and a footer for our website. Adding a header and a footer to every page can be cumbersome. Why should we have to write the same lines at the beginning and end of every page? We shouldn't! There's a better way!
+
+Instead, we can create a layout that has a special place for our page content. We can define a basic page structure made up of our header and footer and have a place in the middle where all our content will go. In order to do this, another module must be installed.
+
+### Example
+
+**Step 1:**
+
+Install `express-ejs-layouts` via npm
+
+```
+npm install --save express-ejs-layouts
+```
+
+**Step 2:**
+
+Require the module and add it to the app.
+
+```js
+var ejsLayouts = require("express-ejs-layouts");
+app.use(ejsLayouts);
+```
+
+**Step 3:**
+
+In the root of the views folder, add a layout called `layout.ejs`
+
+**layout.ejs**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page</title>
+</head>
+<body>
+  <%- body %>
+</body>
+</html>
+```
+
+This layout will be used by all pages, and the content will be filled in where the `<%- body %>` tag is placed. `<%- body %>` is a special tag used by `express-ejs-layouts` that cannot be renamed.
+
+Now we can create another page `animals.ejs` and see that it's content is placed in the page. We can create new pages without having to write the include statements for the header and footer.
+
+First we add a simple route to `app.js`:
+
+```js
+app.get("/animals", function(req, res) {
+  res.render("animals", {title: "Favorite Animals", animals: ["sand crab", "corny joke dog"]})
+});
+```
+
+And we create a new file `views/animals.ejs`:
+
+```html
+<h1><%= title %></h1>
+<ul>
+  <% animals.forEach(function(animal) { %>
+    <li><%= animal %></li>
+  <% }) %>
+</ul>
+```
+
+Add a simple navigation list to the to of the layout page so there's a link to every page from every page:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page</title>
+</head>
+<body>
+  <ul>
+    <li><a href="/">Favorite Foods</a></li>
+    <li><a href="/animals">Favorite Animals</a></li>
+  </ul>
+  <%- body %>
+</body>
+</html>
+
+```
