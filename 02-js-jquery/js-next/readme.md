@@ -21,7 +21,7 @@ We've picked out the following super cool features of ES6. The class will be div
 
 Each team will then get an opportunity to teach this new feature to the class. Do not just copy and paste from MDN, the challenge here is to find a way to make this feature effortlessly easy to understand. Code Examples, Analogies and the avoidance of Jargon help.
 
-__Note:__ It is assumed tht you will write this is beautiful markdown much like this Gitbook, so as part of this you'll have to learn Markdown too.
+__Note:__ It is assumed that you will write this in beautiful markdown much like this Gitbook, so as part of this you'll have to learn Markdown too. Here's a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) that may help.
 
 ## ES6 Features
 * Function extensions (Default, rest, spread, fat arrow)
