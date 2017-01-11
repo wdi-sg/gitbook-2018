@@ -74,7 +74,7 @@ var userSchema = new mongoose.Schema({
 });
 ```
 
-MongoDB is schemaless, meaning: all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, we can still use a schema will cast and validate each type. Also note that we can have nested structures in a Mongoose model.
+MongoDB is schemaless, meaning all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, we can still use a schema to cast and validate each type. Also note that we can have nested structures in a Mongoose model.
 
 At the moment we only have the schema, representing the structure of the data we want to use. To save some data, we will need to make this file a Mongoose model and export it:
 
