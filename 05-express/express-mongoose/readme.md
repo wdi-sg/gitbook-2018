@@ -40,7 +40,7 @@ With the package installed, lets use it - open index.js and setup your app:
 // Mongoose stuff
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/family-tree');
-
+mongoose.Promise = global.Promise;
 ```
 
 You can now execute all the mongoDB commands over the database `family-tree`, which will be created if it doesn't exist.
