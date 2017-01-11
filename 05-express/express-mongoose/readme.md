@@ -163,7 +163,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
 
 ```js
-var newUser = User({
+var newUser = new User({
   name: 'bob',
   email: 'bob@gmail.com'
 });
