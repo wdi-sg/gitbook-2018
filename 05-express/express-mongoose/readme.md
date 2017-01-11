@@ -40,7 +40,7 @@ With the package installed, lets use it - open index.js and setup your app:
 // Mongoose stuff
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/family-tree');
-
+mongoose.Promise = global.Promise;
 ```
 
 You can now execute all the mongoDB commands over the database `family-tree`, which will be created if it doesn't exist.
@@ -150,9 +150,6 @@ var chris = new User({
   }
 });
 
-app.get('/', function(req, res) {
-  res.send(chris.sayHello());
-});
 ```
 
 Now run the app with `nodemon index.js` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
@@ -166,7 +163,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
 
 ```js
-var newUser = User({
+var newUser = new User({
   name: 'bob',
   email: 'bob@gmail.com'
 });
@@ -193,26 +190,26 @@ We can find multiple model instances by using the `.find` function, which accept
 ```js
 // Find All
 User.find({}, function(err, users) {
-  if (err) return res.send(err);
-  res.send(users);
+  if (err) return console.log(err);
+  console.log(users);
 });
 
 // Find only one user
 User.findOne({}, function(err, users) {
-  if (err) return res.send(err);
-  res.send(users);
+  if (err) return console.log(err);
+  console.log(users);
 });
 
 // Find by email
 User.find({ email: req.params.email }, function(err, users) {
-  if (err) return res.send(err);
-  res.send(user);
+  if (err) return console.log(err);
+  console.log(user);
 });
 
 // Find by id
 User.findById(req.params.id, function(err, users) {
-  if (err) return res.send(err);
-  res.send(user);
+  if (err) return console.log(err);
+  console.log(user);
 });
 ```
 
