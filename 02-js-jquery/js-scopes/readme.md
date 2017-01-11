@@ -42,7 +42,7 @@ Create a namespace and call it your first name. Then, add these four properties:
 
 ## Closures
 
-So far, our module has only public properties. This means that someone can access our namespace and it's properties - what if we don't want that? What if we want to protect values? First we decide which should be public and private. Let's look at this example.
+So far, our module has only public properties. This means that someone can access our namespace and its properties - what if we don't want that? What if we want to protect values? First we decide which should be public and private. Let's look at this example.
 
 ```js
 var bankAccount = {

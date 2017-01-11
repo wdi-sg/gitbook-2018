@@ -60,7 +60,7 @@
     * [Prototypal Inheritance](02-js-jquery/js-inheritance/02prototypalinheritance.md)
     * [Call, Apply, and other Functions](02-js-jquery/js-inheritance/03callapplyfunctions.md)
     * [Resources](02-js-jquery/js-inheritance/05resources.md)
-  * [ESNext](02-js-jquery/js-next/readme.md)
+  * [ESNext](02-js-jquery/js-next/01readme.md)
   * [Additional Topics](02-js-jquery/additional-topics/readme.md)
     * [AJAX w/JSON and Localstorage](02-js-jquery/additional-topics/ajax-localstorage/readme.md)
       * [AJAX w/JSON](02-js-jquery/additional-topics/ajax-localstorage/02ajax.md)

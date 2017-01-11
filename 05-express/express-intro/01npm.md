@@ -143,6 +143,21 @@ Did someone mention updating a package? To update a package you simply run the c
 
 ***note:*** Not all dependencies we use are used by the application in production. Whenever we need a dependency that will only be used in our development environment, say a package that helps with js linting, we will add that dependency to a `devDependencies` attribute in our package.json. This type of installation can be done with the command `npm i --save --dev <package name>`.
 
+## Using .gitignore
+Node will install many large files to the node_modules folder. We don't want nor need to push these to our GitHub repo! Whoever takes our project can run `npm install` after cloning our repo and run with it. So what can we do?
+
+We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.
+
+#### 2 ways to do gitignore
+
+The first way is to create a new repo on GitHub and choose from the dropdown menu what you'd like to ignore. This can be found just before the "Create repository" button - just choose "Node".
+
+The second, slightly more troublesome way is to create your own gitignore file on your local machine. In your project directory on Terminal:
+- run `touch .gitignore`
+- open .gitignore on your editor, add "node_modules" in a new line
+- run your standard git add and commit
+- when you push to your remote GitHub repo, node_mdules will not be pushed 
+
 ## Review
 Test your understanding of the lesson:
 
