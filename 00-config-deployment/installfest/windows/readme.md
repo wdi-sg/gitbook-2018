@@ -89,3 +89,14 @@ psql --version
 atom -v
 
 ```
+
+## Installing MongoDB
+
+1. Download and install from [MongoDB](https://www.mongodb.com/download-center#community)
+2. Press Window + S, type 'environment' and select 'edit the system environment variables'
+3. Click 'environment variables' near the bottom the of pop up window
+4. Click 'Path' at the top of window
+5. Depending on how many paths you already have set up, you either:
+  1. click New and write "C:\Program Files\MongoDB\Server\3.4\bin"
+  2. have a list that is seperated by semicolons; so add another semicolon to the end of the list and add the path as abovementioned.
+6. You should now be able to run `mongodb` from git bash CLI
