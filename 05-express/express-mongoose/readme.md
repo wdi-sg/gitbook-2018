@@ -190,26 +190,26 @@ We can find multiple model instances by using the `.find` function, which accept
 ```js
 // Find All
 User.find({}, function(err, users) {
-  if (err) return res.send(err);
-  res.send(users);
+  if (err) return console.log(err);
+  console.log(users);
 });
 
 // Find only one user
 User.findOne({}, function(err, users) {
-  if (err) return res.send(err);
-  res.send(users);
+  if (err) return console.log(err);
+  console.log(users);
 });
 
 // Find by email
 User.find({ email: req.params.email }, function(err, users) {
-  if (err) return res.send(err);
-  res.send(user);
+  if (err) return console.log(err);
+  console.log(user);
 });
 
 // Find by id
 User.findById(req.params.id, function(err, users) {
-  if (err) return res.send(err);
-  res.send(user);
+  if (err) return console.log(err);
+  console.log(user);
 });
 ```
 
