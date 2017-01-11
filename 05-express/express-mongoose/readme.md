@@ -150,9 +150,6 @@ var chris = new User({
   }
 });
 
-app.get('/', function(req, res) {
-  res.send(chris.sayHello());
-});
 ```
 
 Now run the app with `nodemon index.js` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
