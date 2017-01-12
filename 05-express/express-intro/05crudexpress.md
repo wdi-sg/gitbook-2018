@@ -61,11 +61,11 @@ Index is a route (URL) that lists all items of a specific type. It is a GET requ
 
 ```js
 // Include fs (short for filesystem) at the top. No need to install via npm
-var fs = require('fs');
+const fs = require('fs');
 
 // Express index route for animals (lists all animals)
 app.get('/animals', function(req, res) {
-  var animals = fs.readFileSync('./data.json');
+  let animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
   res.render('animals/index', {myAnimals: animals});
 });
@@ -105,11 +105,11 @@ request to (in this example) `/animals/1`
 //express index route for animals (lists all animals)
 app.get('/animals/:idx', function(req, res) {
   // get animals
-  var animals = fs.readFileSync('./data.json');
+  let animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
 
   //get array index from url parameter
-  var animalIndex = parseInt(req.params.idx);
+  let animalIndex = parseInt(req.params.idx);
 
   //render page with data of the specified animal
   res.render('animals/show', {myAnimal: animals[animalIndex]});
@@ -164,9 +164,9 @@ npm install --save body-parser
 
 **index.js**
 ```js
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -208,7 +208,7 @@ going to use the JSON file created above to store our data. This will involve th
 ```js
 app.post('/animals', function(req, res) {
   // read animals file
-  var animals = fs.readFileSync('./data.json');
+  let animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
 
   // add item to animals array
@@ -242,10 +242,10 @@ Note that this form will submit to the same page. We'll need to see if there's a
 
 ```js
 app.get('/animals', function(req, res){
-  var animals = fs.readFileSync('./data.json');
+  let animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
 
-  var nameFilter = req.query.nameFilter;
+  let nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
     animals = animals.filter(function(animal) {
@@ -265,15 +265,15 @@ We have been placing all routes into `index.js` when creating a Node/Express app
 **index.js**
 
 ```js
-var animalsCtrl = require("./controllers/animals")
+const animalsCtrl = require("./controllers/animals")
 app.use("/animals", animalsCtrl);
 ```
 
 **controllers/animals.js**
 
 ```js
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 router.get("/", function(req, res) {
 

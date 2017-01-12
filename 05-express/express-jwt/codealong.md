@@ -19,7 +19,7 @@ One way to do this is to _transform_ your model's schema.
 ```js
 UserSchema.set('toJSON', {
   transform: function(doc, ret, options) {
-    var returnJson = {
+    let returnJson = {
       id: ret._id,
       email: ret.email,
       name: ret.name
@@ -46,7 +46,7 @@ UserSchema.set('toJSON', {
 // Let's encrypt our passwords using only the model!
 // This is a hook, a function that runs just before you save.
 UserSchema.pre('save', function(next) {
-  var user = this;
+  let user = this;
 
   // only hash the name if it has been modified (or is new)
   if (!user.isModified('password')) return next();
@@ -70,16 +70,16 @@ npm install --save jsonwebtoken express-jwt
 Now, of course, we have to require them. Later, you could extract this to a config file if you'd like, but for now let's throw it in `index.js`:
 
 ```js
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var expressJWT = require('express-jwt');
-var jwt = require('jsonwebtoken');
-var User = require('./models/user');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const expressJWT = require('express-jwt');
+const jwt = require('jsonwebtoken');
+const User = require('./models/user');
+const app = express();
 
 // A secret phrase that only your app knows, so encryption can be consistent. We'll use this later.
-var secret = "mysupersecretpassword";
+const secret = "mysupersecretpassword";
 ```
 
 Now there are 3 things we're going to need to write:
@@ -119,7 +119,7 @@ app.post('/api/auth', function(req, res) {
       if (err || !result) return res.send({message: 'User not authenticated'});
 
       // make a token & send it as JSON
-      var token = jwt.sign(user, secret);
+      let token = jwt.sign(user, secret);
       res.send({user: user, token: token});
     });
   });

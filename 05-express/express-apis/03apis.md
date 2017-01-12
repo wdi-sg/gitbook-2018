@@ -11,7 +11,7 @@ npm install --save request
 Here's an example from NPM's homepage for the `request` module. Let's take a look at it.
 
 ```js
-var request = require('request');
+const request = require('request');
 request('http://www.google.com', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     console.log(body) // Show the HTML for the Google homepage.
@@ -43,9 +43,9 @@ This can be done by creating a new directory, running `npm init`, then installin
 **index.js**
 
 ```js
-var express = require('express');
-var request = require('request');
-var app = express();
+const express = require('express');
+const request = require('request');
+const app = express();
 
 app.get('/', function(req, res) {
   request('http://www.google.com', function (error, response, body) {
@@ -73,12 +73,12 @@ Let's modify the example above to make a request to OMDB's API. [OMDB Link](http
 **index.js**
 
 ```js
-var express = require('express');
-var request = require('request');
-var app = express();
+const express = require('express');
+const request = require('request');
+const app = express();
 
 app.get('/', function(req, res) {
-  var qs = {
+  let qs = {
     s: 'star wars'
   };
 
@@ -87,7 +87,7 @@ app.get('/', function(req, res) {
     qs: qs
   }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      var dataObj = JSON.parse(body);
+      let dataObj = JSON.parse(body);
       res.send(dataObj.Search);
     }
   });
@@ -139,7 +139,7 @@ the site in the `partials` directory.
 
 Render the page with the parsed results passed as a paramter:
 ```js
-var dataObj = JSON.parse(body);
+let dataObj = JSON.parse(body);
 res.render("results", {results: dataObj.Search});
 ```
 

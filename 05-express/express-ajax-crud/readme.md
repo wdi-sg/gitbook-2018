@@ -45,14 +45,14 @@ Without JavaScript, this would link to `GET /teams/Edward` which would simply di
 **jQuery / JavaScript**
 
 ```js
-$('.delete-link').on('click', function(e) {
+$('.delete-link').on ('click', function (e) {
   e.preventDefault();
-  var teamElement = $(this);
-  var teamUrl = teamElement.attr('href');
+  let teamElement = $(this);
+  let teamUrl = teamElement.attr('href');
   $.ajax({
     method: 'DELETE',
     url: teamUrl
-  }).done(function(data) {
+  }).done(function (data) {
     // get data returned from the DELETE route
     console.log(data);
 
@@ -68,8 +68,8 @@ $('.delete-link').on('click', function(e) {
 **Server**
 
 ```js
-app.delete('/teams/:name', function(req, res) {
-  var teamToDelete = req.params.name;
+app.delete('/teams/:name', function (req, res) {
+  let teamToDelete = req.params.name;
 
   // delete team here
 
@@ -77,7 +77,7 @@ app.delete('/teams/:name', function(req, res) {
    * instead of rendering a page, send back JSON or text, which can be read
    * in the .done() promise of the AJAX call
    */
-  res.send({message: 'success'});
+  res.send({ message: 'success' });
 });
 ```
 
@@ -105,16 +105,16 @@ Without JavaScript this form would submit as a `GET` request which means it woul
 **jQuery / JavaScript**
 
 ```js
-$('.put-form').on('submit', function(e) {
+$('.put-form').on ('submit', function (e) {
   e.preventDefault();
-  var teamElement = $(this);
-  var teamUrl = teamElement.attr('action');
-  var teamData = teamElement.serialize();
+  let teamElement = $(this);
+  let teamUrl = teamElement.attr('action');
+  let teamData = teamElement.serialize();
   $.ajax({
     method: 'PUT',
     url: teamUrl,
     data: teamData
-  }).done(function(data) {
+  }).done(function (data) {
     // get data returned from the PUT route
     console.log(data);
 
@@ -130,8 +130,8 @@ $('.put-form').on('submit', function(e) {
 **Server**
 
 ```js
-app.put('/teams/:name', function(req, res) {
-  var teamToEdit = req.params.name;
+app.put('/teams/:name', function (req, res) {
+  let teamToEdit = req.params.name;
 
   // Edit team here
 

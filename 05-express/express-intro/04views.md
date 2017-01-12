@@ -20,9 +20,9 @@ Let's modify the `index.js` to send this file via `.sendFile`. In order to use t
 
 **index.js**
 ```js
-var express = require('express');
-var path = require('path');
-var app = express();
+const express = require('express');
+const path = require('path');
+const app = express();
 
 // this sets a static directory for the views
 app.use(express.static(path.join(__dirname, 'views')));
@@ -58,8 +58,8 @@ Templating with variables means we can pass in an object to the `.render` functi
 
 **index.js**
 ```js
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.set('view engine', 'ejs');
 
@@ -167,7 +167,7 @@ npm install --save express-ejs-layouts
 Require the module and add it to the app.
 
 ```js
-var ejsLayouts = require("express-ejs-layouts");
+const ejsLayouts = require("express-ejs-layouts");
 app.use(ejsLayouts);
 ```
 

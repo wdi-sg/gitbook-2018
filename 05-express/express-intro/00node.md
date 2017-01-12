@@ -75,7 +75,7 @@ node
 > 10 + 5
 // 15
 
-> var a = [ 1, 2, 3];
+> const a = [ 1, 2, 3];
 // undefined
 
 > a.forEach(function(v) {
@@ -85,7 +85,7 @@ node
 // 2
 // 3
 
-> var http = require('http');
+> const http = require('http');
 // undefined
 
 > http
@@ -115,7 +115,7 @@ For example, let's make two files: `touch my-module.js main.js`
 
 ```js
 // my-module.js
-var number = 7
+const number = 7
 module.exports.name = "Kenaniah"
 module.exports.arr = [1, 2, 3]
 module.exports.getNumber = function(){
@@ -131,7 +131,7 @@ console.log("End of my-module.js file")
 // main.js
 
 // here we're grabbing everything that's "exported" in our other file, and storing it a variable called 'my'
-var my = require('./my-module')
+const my = require('./my-module')
 
 // Variables and such that were not exported aren't in scope
 console.log("number is " + typeof number) // undefined
