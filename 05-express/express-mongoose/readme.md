@@ -160,7 +160,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 
 #### Create
 
-We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
+We can first create a User and save it to the database using the `.save` method in Mongoose. 
 
 ```js
 const newUser = new User({
@@ -173,7 +173,11 @@ newUser.save(function(err) {
   if (err) return console.log(err);
   console.log('User created!');
 });
+```
 
+You can also call `.create` to *combine* creating and saving the instance.
+
+```js
 // create and save a user
 User.create({ name: 'Emily', email: 'em@i.ly' }, function(err, user) {
   if (err) return console.log(err);
@@ -209,7 +213,7 @@ User.find({ email: req.params.email }, function(err, users) {
 // Find by id
 User.findById(req.params.id, function(err, users) {
   if (err) return console.log(err);
-  console.log(user);
+  console.log(users);
 });
 ```
 
