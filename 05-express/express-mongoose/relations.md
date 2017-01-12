@@ -10,19 +10,22 @@ Sub-documents are just what they sound like: documents with their own schemas ne
 Let's look at these two schemas below - we can embed `childSchema` into the property `children`:
 
 ```javascript
-var childSchema = new mongoose.Schema({ name: 'string' });
+const childSchema = new mongoose.Schema({ name: 'string' });
 
-var parentSchema = new mongoose.Schema({
+const parentSchema = new mongoose.Schema({
   children: [childSchema]
 });
 
-var Parent = mongoose.model('Parent', parentSchema);
+const Parent = mongoose.model('Parent', parentSchema);
 
 Parent.create({ children: [
   { name: 'Matt' },
   { name: 'Sarah' }
 ]}, function(err, parent) {
-  if (err) return console.log(err);
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(parent);
 });
 ```
@@ -33,7 +36,7 @@ All documents in Mongoose have an `_id`, including sub-documents. Using the exam
 
 ```js
 // in our first example, this should return one of the sub-documents
-var doc = parent.children.id(idYouAreLookingFor);
+const doc = parent.children.id(idYouAreLookingFor);
 ```
 
 #### Adding and Removing sub-documents
@@ -52,14 +55,14 @@ parent.children.pop(); // pops Ester
 Storing references to other documents involves defining a specific model to reference, as well as the type of what's being stored. For example, referring to a User in a Book model would involve referencing the User model, as well as storing the user's `ObjectId`.
 
 ```js
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var bookSchema = Schema({
+const bookSchema = Schema({
   author: { type: Schema.Types.ObjectId, ref: 'User' },
   title: String
 });
 
-var Book = mongoose.model('Book', bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
 // creating a book and storing an author's id
 Book.create({ title: 'Fahrenheit 451', author: author._id }, function(err, book) {

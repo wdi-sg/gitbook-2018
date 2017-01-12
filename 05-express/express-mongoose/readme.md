@@ -126,7 +126,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.methods.sayHello = function() {
+userSchema.methods.sayHello = function () {
   return "Hi " + this.name;
 };
 
@@ -160,7 +160,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 
 #### Create
 
-We can first create a User and save it to the database using the `.save` method in Mongoose. 
+We can first create a User and save it to the database using the `.save` method in Mongoose.
 
 ```js
 const newUser = new User({
@@ -169,8 +169,11 @@ const newUser = new User({
 });
 
 // save the user
-newUser.save(function(err) {
-  if (err) return console.log(err);
+newUser.save(function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log('User created!');
 });
 ```
@@ -179,8 +182,11 @@ You can also call `.create` to *combine* creating and saving the instance.
 
 ```js
 // create and save a user
-User.create({ name: 'Emily', email: 'em@i.ly' }, function(err, user) {
-  if (err) return console.log(err);
+User.create({ name: 'Emily', email: 'em@i.ly' }, function (err, user) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(user);
 });
 ```
@@ -193,26 +199,38 @@ We can find multiple model instances by using the `.find` function, which accept
 
 ```js
 // Find All
-User.find({}, function(err, users) {
-  if (err) return console.log(err);
+User.find({}, function (err, users) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(users);
 });
 
 // Find only one user
-User.findOne({}, function(err, users) {
-  if (err) return console.log(err);
+User.findOne({}, function (err, users) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(users);
 });
 
 // Find by email
-User.find({ email: req.params.email }, function(err, users) {
-  if (err) return console.log(err);
-  console.log(user);
+User.find({ email: req.params.email }, function (err, users) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log(users);
 });
 
 // Find by id
-User.findById(req.params.id, function(err, users) {
-  if (err) return console.log(err);
+User.findById(req.params.id, function (err, users) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(users);
 });
 ```
@@ -225,14 +243,20 @@ Models can be updated in a few different ways - using `.update()`, `.findByIdAnd
 
 ```js
 // updates all matching documents
-User.update({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
-  if (err) console.log(err);
+User.update({ name: 'brian' }, { meta: { age: 26 } }, function (err, user) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(user);
 });
 
 // updates one match only
-User.findOneAndUpdate({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
-  if (err) console.log(err);
+User.findOneAndUpdate({ name: 'brian' }, { meta: { age: 26 } }, function (err, user) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log(user);
 });
 ```
@@ -243,14 +267,20 @@ Models can be removed in a few different ways - using `.remove()`, `findByIdAndR
 
 ```javascript
 // find all users with the name Brian and remove them
-User.remove({ name: 'brian' }, function(err) {
-  if (err) console.log(err);
+User.remove({ name: 'brian' }, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log('Users deleted!');
 });
 
 // find the user with id 4 and remove it
-User.findOneAndRemove({ name: 'brian' }, function(err) {
-  if (err) console.log(err);
+User.findOneAndRemove({ name: 'brian' }, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
   console.log('User deleted!');
 });
 ```
