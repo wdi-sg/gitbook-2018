@@ -63,7 +63,7 @@ In order to run our tests by simply typing `npm test`, let's add a test script t
 },
 ```
 
-The script above will set the Node environment to `test`, which is very useful for handling test databases, as we'll see shortly. The next command runs Mocha from the project's `node_modules` folder. Super!
+The script above will set the Node environment to `test`, which can be useful for handling test databases.
 
 #### Files and Folders
 
@@ -137,7 +137,7 @@ The callback represents a function that Mocha will pass to the code so that the 
 
 ## Verifying Tacos
 
-Next, let's test the `tacos.js` controller. This presents a challenge due to Sequelize. However, as long as we have a test database, setting the `NODE_ENV` to `test` will use the test database instead of the development database.
+Next, let's test the `tacos.js` controller.
 
 #### before(), after(), beforeEach(), afterEach()
 
@@ -156,8 +156,6 @@ before(function(done) {
 
 ```
 
-We're importing Chai, Supertest, our application, as well as the models. Before all the tests, we want to run a function attached to `db.sequelize` called `sync`, and set the `force` property. This will take care of database setup and migrations for our tests.
-
 #### GET /tacos
 
 Testing `GET /tacos` will be similar as before.
@@ -166,30 +164,54 @@ Testing `GET /tacos` will be similar as before.
 describe('GET /tacos', function() {
   it('should return a 200 response', function(done) {
     request(app).get('/tacos')
+    .set("Accept", "application/json")
     .expect(200, done);
   });
 });
+
+```
+
+We can write a test that verifies the response is an array:
+
+```javascript
+  // inside describe('GET /tacos', function() { ...
+  it("should return an array", function(done){
+    request(app).get('/tacos')
+      .set("Accept", "application/json")
+      .end(function(error, response){
+        expect(response.body).to.be.an('array');
+        done()
+      })
+    })
+```
+
+We can write another test that verifies the presence of a field in the response:
+
+```javascript
+  // inside describe('GET /tacos', function() { ...
+  it("should return an object that has a field called 'name' ", function(done){
+    request(app).get('/tacos')
+      .set("Accept", "application/json")
+      .end(function(error, response){
+        expect(response.body[0]).to.have.property('name');
+        done()
+    })
+  })
 ```
 
 #### POST /tacos
 
-Testing `POST /tacos` will require sending form data, as well as verifying that a redirect occurred after the data was saved. We'll use the following functions to check these behaviors:
-
-* `.type()` - sets the type of data we can send to the app
-* `.send()` - accepts the data to send to the app
-
-Additionally, we can check if `Location` in the response is set to `/tacos`, which is the route that the redirect should take us to.
+Testing `POST /tacos` will require sending data.
 
 ```js
 describe('POST /tacos', function() {
-  it('should create and redirect to /tacos after posting a valid taco', function(done) {
+  it('should create a taco and return it', function(done) {
     request(app).post('/tacos')
-    .type('form')
+    .set("Accept", "application/json")
     .send({
       name: 'Cheesy Gordita Crunch',
       amount: 6000
     })
-    .expect('Location', '/tacos')
     .expect(302, done);
   });
 });
