@@ -67,7 +67,7 @@ const fs = require('fs');
 app.get('/animals', function(req, res) {
   let animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
-  res.render('animals/index', {myAnimals: animals});
+  res.send('animals/index', {myAnimals: animals});
 });
 ```
 

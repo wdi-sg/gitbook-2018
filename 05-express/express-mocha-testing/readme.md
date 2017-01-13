@@ -9,17 +9,23 @@
 
 These concepts can be applied to any Express app. We'll be using our Taco app in this example, but feel free to use another.
 
-https://github.com/WDI-SEA/tacoapp
+https://github.com/wdi-sg/tacoapp
 
 ## Mocha, Chai And Javascript Testing
 
-We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But with most apps, the codebase will become bigger and more complex every time you add some features. At some point, adding code in `file A` will break features in `file B`, and to avoid these "side-effects", we need to test our app.
+We've now created several Express applications.  All these apps cover a single topic, so most of the time, they are quite small.  But when you create a larger application, the codebase will become bigger and more complex every time you add some features.  At some point, adding code in file A will break features in file B, and to avoid these "side-effects", we need to test our app.
 
-To do so in Node, we will use two libraries: one to run the tests and a second one to run the assertions. Previously, we used the `assert` module to compare expected vs. actual results. However, we can use a different module called `chai` in order to create more readable assertions.
+To do so in Node, we will use two libraries: one to run the tests and a second one to run the assertions.
 
-In addition to Chai, Mocha will be our testing framework. From the Mocha Website:
+Mocha will be our testing framework. From the mocha Website:
 
 _"Mocha is a feature-rich JavaScript test framework running on Node.js and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases."_
+
+
+For assertions, we will use Chai. From the Chai website:
+
+_"Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework."_
+
 
 To be able to make HTTP requests inside tests, we will use a framework called `supertest`.
 
@@ -67,15 +73,15 @@ Now that we're configured, let's set up our file and folder structure. All the t
 mkdir test
 ```
 
-Then we will write the tests inside a file called `index.tests.js`:
+Then we will write the tests inside a file called `index_tests.js`:
 
 ```bash
-touch test/index.tests.js
+touch test/index_tests.js
 ```
 
 #### Let's write some tests
 
-Open the file `index.tests.js`. We now need to require some dependencies at the top of this file:
+Open the file `index_tests.js`. We now need to require some dependencies at the top of this file:
 
 ```js
 var expect = require('chai').expect;
@@ -131,35 +137,23 @@ The callback represents a function that Mocha will pass to the code so that the 
 
 ## Verifying Tacos
 
-Next, let's test the `tacos.js` controller. This presents a challenge due to Sequelize. However, as long as we have a test database, setting the `NODE_ENV` to `test` will use the test databse instead of the development database.
+Next, let's test the `tacos.js` controller. This presents a challenge due to Sequelize. However, as long as we have a test database, setting the `NODE_ENV` to `test` will use the test database instead of the development database.
 
-#### Setting up the database
+#### before(), after(), beforeEach(), afterEach()
 
-The taco app should have a test database defined in `config/config.json`. Double-check that this is the case.
+Mocha allows us to add hooks that will run before or after our test suites or each individual test. We can use these to avoid code duplication and also to ensure our test environment is consistent every time, by dropping the database as illustrated using Mongoose in the example below.
 
-The test database is used when the `NODE_ENV` environment variable is set to `test`. This is done in our test script, now all we need is a test database. Let's create it (disregard migrations for now).
-
-```bash
-createdb tacos_test
-```
-
-#### before() and Sequelize
-
-In order to ensure our test environment is consistent every time, we need to recreate and remigrate the database every time our tests are run. Mocha provides a couple handy functions that allow code to be executed before all or each-and-every test. These functions are `before()` and `beforeEach()`. We'll use `beforeEach()` to "sync" the test database before running all the tests.
-
-Let's create these tests in a separate file called **tacos.tests.js**
+Let's create these tests in a separate file called **tacos_tests.js**
 
 ```js
 var expect = require('chai').expect;
 var request = require('supertest');
 var app = require('../index');
-var db = require('../models');
 
 before(function(done) {
-  db.sequelize.sync({ force: true }).then(function() {
-    done();
-  });
+    mongoose.connection.db.dropDatabase(done);
 });
+
 ```
 
 We're importing Chai, Supertest, our application, as well as the models. Before all the tests, we want to run a function attached to `db.sequelize` called `sync`, and set the `force` property. This will take care of database setup and migrations for our tests.
@@ -220,17 +214,6 @@ describe('DELETE /tacos/:id', function() {
 ```
 
 Note how the `expect` assertions have additional functions that can be called, which make the lines read as if written in plain English. These types of tests fall under **Behavior-Driven Development**. BDD is an extension of TDD, and it's a testing process that revolves around testing and debugging specific behaviors. Many frameworks can be used to implement BDD. [Here's a great post with more information about TDD vs. BDD](https://www.toptal.com/freelance/your-boss-won-t-appreciate-tdd-try-bdd)
-
-## Independent Practice
-
-Add tests to the suite:
-
-1. Write an additional test for `DELETE /tacos/:id` to test deleting a taco that does not exist. Remember to think about the results you should *expect*, then write the tests to reflect those behaviors.
-2. Write a set of tests for `PUT /tacos/:id`
-3. Write tests for the remaining routes:
-  * `GET /tacos/new`
-  * `GET /tacos/:id/edit`
-  * `GET /tacos/:id`
 
 ## Conclusion
 
