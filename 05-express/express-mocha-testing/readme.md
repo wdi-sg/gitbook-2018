@@ -141,7 +141,7 @@ Next, let's test the `tacos.js` controller.
 
 #### before(), after(), beforeEach(), afterEach()
 
-Mocha allows us to add hooks that will run before or after our test suites or each individual test. We can use these to avoid code duplication and also to ensure our test environment is consistent every time, by dropping the database as illustrated using Mongoose in the example below.
+Mocha allows us to add hooks that will run before or after our test suites or each individual test. We can use these to avoid code duplication and also to ensure our test environment is consistent every time, for example, by dropping the database once connected, as illustrated using Mongoose below.
 
 Let's create these tests in a separate file called **tacos_tests.js**
 
@@ -151,7 +151,9 @@ var request = require('supertest');
 var app = require('../index');
 
 before(function(done) {
-    mongoose.connection.db.dropDatabase(done);
+  mongoose.connection.on('connected', function () {
+    mongoose.connection.db.dropDatabase(done)
+  })
 });
 
 ```
