@@ -8,17 +8,17 @@ We'll be breaking up into groups. Each group will be assigned a component to res
 * How does bcrypt work?
 * How do we use bcrypt in node?
 
-##Sequelize Validations
+##Validations
 
 * What are different types of validations?
 * Which ones could be useful?
-* How do we use validations in sequelize?
-  
-##Sequelize Hooks
+* How do we use validations?
 
-* What is a Sequelize hook?
-* What are different types of Sequelize hooks? 
-* How are hooks implemented in Sequelize?
+##Hooks
+
+* What is a hook?
+* What are different types of hooks?
+* How are hooks implemented?
 
 ##Sessions
 

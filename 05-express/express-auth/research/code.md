@@ -8,23 +8,17 @@ Implement code to use bcrypt to encrypt a plain text string AND then use `.compa
 
 This can be done in a **stand alone .js file**. Be aware that bcrypt takes time so it uses a callback.
 
-##Sequelize validations
+##Validations
 
-Implement a validation on ArticlePulse to require submitted comments to be between `20` and `200` characters.
+Create a Model with LOTS of validations, to demonstrate the possibilities. Test that it works by sending a POST request in postman/curl and return the errors.
 
-Test that it works. Use .catch() to send a message to the user. It can just use res.send() for now if you want. If you have extra time, try to make the message render on the page.
+##Hooks
 
-##Sequelize hooks
-
-Use Sequelize hooks to convert all comments posted to your BlogPulse app to lowercase before they are created. The hook should be created in your model.
-
-If you have more time, try coming up with another use for a hook in the same project.
+Create a Model and try out the various Hooks to change stuff at the various stages of the Lifecycle e.g. before and after create, update, destroy.
 
 ##Sessions
 
-Use sessions to implement a back button on your BlogPulse app. 
-
-The link should be on the post page and link back to the home page OR author page depending on which page they came from.
+Use sessions to implement a back button for a simple App. The link should be on every page and and should navigate back to the page the user was previously on.
 
 ##Middleware
 
@@ -46,5 +40,3 @@ app.get('/articles/:id', function(req, res) {
 //output...
 //4/8/2015, 10:18:32 AM   /articles/4   loading an article
 ```
-
- 
