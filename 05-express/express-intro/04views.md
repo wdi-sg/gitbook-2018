@@ -72,7 +72,7 @@ app.listen(3000);
 
 then we need to update our `index.ejs` to use a templating variable.
 
-**index.ejs**
+**views/index.ejs**
 ```html
 <!DOCTYPE html>
 <html>
@@ -120,7 +120,7 @@ Partials can be used to modularize views and reduce repetition. A common pattern
 
 #### Example
 
-**partials/header.ejs**
+**views/partials/header.ejs**
 ```html
 <!DOCTYPE html>
 <html>
@@ -130,19 +130,19 @@ Partials can be used to modularize views and reduce repetition. A common pattern
 <body>
 ```
 
-**partials/footer.ejs**
+**views/partials/footer.ejs**
 ```html
 </body>
 </html>
 ```
 
-**index.ejs**
+**views/index.ejs**
 ```html
-<% include ../partials/header.ejs %>
+<% include ./partials/header.ejs %>
 
 <h1>Welcome to my site!</h1>
 
-<% include ../partials/footer.ejs %>
+<% include ./partials/footer.ejs %>
 ```
 
 
@@ -175,7 +175,7 @@ app.use(ejsLayouts);
 
 In the root of the views folder, add a layout called `layout.ejs`
 
-**layout.ejs**
+**views/layout.ejs**
 ```html
 <!DOCTYPE html>
 <html>
