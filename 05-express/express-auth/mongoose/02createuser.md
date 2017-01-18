@@ -32,7 +32,7 @@ var UserSchema = new mongoose.Schema({
   password: { type: String }
 });
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', UserSchema);
 
 ```
 
