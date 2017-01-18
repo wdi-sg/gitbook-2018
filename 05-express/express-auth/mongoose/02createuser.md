@@ -48,7 +48,7 @@ Now that we have a user, we want to limit the values we can assign to a user's n
 * User's name should be between 3-99 characters
 * User's password should be required and between 8-99 characters
 
-In order to do this, we can use Validations. __???Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails.__ This will be handled in our routes later.
+In order to do this, we can use Validations. __Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails.__ This will be handled in our routes later.
 
 [Mongoose Validation Documentation](http://mongoosejs.com/docs/validation.html)
 
