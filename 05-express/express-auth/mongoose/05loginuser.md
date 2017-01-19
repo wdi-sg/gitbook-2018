@@ -153,25 +153,35 @@ Ideally, we want to already be logged in after signup. We can modify the signup 
 
 ```js
 router.post('/signup', function(req, res) {
-  db.user.findOrCreate({
-    where: { email: req.body.email },
-    defaults: {
-      name: req.body.name,
-      password: req.body.password
-    }
-  }).spread(function(user, created) {
-    if (created) {
-      // replace the contents of this if statement with the code below
-      passport.authenticate('local', {
-        successRedirect: '/'
-      })(req, res);
-    } else {
-      console.log('Email already exists');
+  User.findOne({
+    email: req.body.email
+  }, function (err, user) {
+    if (err) {
+      console.log('An error occurred: ' + err);
       res.redirect('/auth/signup');
     }
-  }).catch(function(error) {
-    console.log('An error occurred: ', error.message);
-    res.redirect('/auth/signup');
+
+    if (!user) {
+      User.create({
+        email: req.body.email,
+        name: req.body.name,
+        password: req.body.password
+      }, function(err, createdUser) {
+        if(err){
+          console.log('Could not create user', err);
+          res.redirect('/auth/signup');
+        } else {
+          // FLASH
+          passport.authenticate('local', {
+            successRedirect: '/',
+            successFlash: 'Account created and logged in'
+          })(req, res);
+        }
+      });
+    } else {
+      console.log('Email already exists');
+      res.redirect('/auth/login');
+    }
   });
 });
 ```
