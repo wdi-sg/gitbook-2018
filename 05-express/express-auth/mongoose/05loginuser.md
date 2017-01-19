@@ -160,7 +160,6 @@ router.post('/signup', function(req, res) {
       console.log('An error occurred: ' + err);
       res.redirect('/auth/signup');
     }
-
     if (!user) {
       User.create({
         email: req.body.email,
@@ -171,7 +170,7 @@ router.post('/signup', function(req, res) {
           console.log('Could not create user', err);
           res.redirect('/auth/signup');
         } else {
-          // FLASH
+          // Authenticate with passport
           passport.authenticate('local', {
             successRedirect: '/',
             successFlash: 'Account created and logged in'
