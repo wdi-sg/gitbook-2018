@@ -9,7 +9,7 @@
 
 These concepts can be applied to any Express app. We'll be using our Taco app in this example, but feel free to use another.
 
-https://github.com/wdi-sg/tacoapp
+https://github.com/wdi-sg/mocha-api-starter
 
 ## Mocha, Chai And Javascript Testing
 

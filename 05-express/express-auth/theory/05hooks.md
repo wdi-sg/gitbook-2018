@@ -1,4 +1,4 @@
-# Hooks
+# Database Hooks (Mongoose or Sequelize)
 
 Hooks allow us to perform actions at different points throughout the life cycle of a model. For example, we could do something before an item is updated or after an item is created.
 

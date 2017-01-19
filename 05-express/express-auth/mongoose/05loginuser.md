@@ -86,7 +86,7 @@ passport.use(new LocalStrategy({
   User.findOne({ email: email }, function(err, user) {
     if (err) return done(err);
 
-    // If no user is found 
+    // If no user is found
     if (!user) return done(null, false);
 
     // Check if the password is correct
@@ -147,31 +147,27 @@ router.post('/login', passport.authenticate('local', {
 
 #### Login after Signup
 
-Ideally, we want to already be logged in after signup. We can modify the signup route to call the `passport.authenticate` function again. Note that we'll need to call it as an IIFE, passing the request and response.
+Ideally, we want to already be logged in after signup. We can modify the signup route to call the `passport.authenticate` function again.
 
 **controllers/auth.js**
 
 ```js
 router.post('/signup', function(req, res) {
-  db.user.findOrCreate({
-    where: { email: req.body.email },
-    defaults: {
-      name: req.body.name,
-      password: req.body.password
-    }
-  }).spread(function(user, created) {
-    if (created) {
-      // replace the contents of this if statement with the code below
+  User.create({
+    email: req.body.email,
+    name: req.body.name,
+    password: req.body.password
+  }, function(err, createdUser) {
+    if(err){
+      // FLASH
+      console.log('An error occurred: ' + err);
+      res.redirect('/auth/signup');
+    } else {
+      // FLASH
       passport.authenticate('local', {
         successRedirect: '/'
       })(req, res);
-    } else {
-      console.log('Email already exists');
-      res.redirect('/auth/signup');
     }
-  }).catch(function(error) {
-    console.log('An error occurred: ', error.message);
-    res.redirect('/auth/signup');
   });
 });
 ```

@@ -14,7 +14,7 @@ We'll be breaking up into groups. Each group will be assigned a component to res
 * Which ones could be useful?
 * How do we use validations?
 
-##Hooks
+##Database Hooks (Mongoose or Sequelize)
 
 * What is a hook?
 * What are different types of hooks?

@@ -8,17 +8,21 @@ Implement code to use bcrypt to encrypt a plain text string AND then use `.compa
 
 This can be done in a **stand alone .js file**. Be aware that bcrypt takes time so it uses a callback.
 
-##Validations
+You may want to checkout the `bcrypt` package.
+
+##Database Validations (Mongoose or Sequelize)
 
 Create a Model with LOTS of validations, to demonstrate the possibilities. Test that it works by sending a POST request in postman/curl and return the errors.
 
-##Hooks
+##Database Hooks (Mongoose or Sequelize)
 
 Create a Model and try out the various Hooks to change stuff at the various stages of the Lifecycle e.g. before and after create, update, destroy.
 
 ##Sessions
 
 Use sessions to implement a back button for a simple App. The link should be on every page and and should navigate back to the page the user was previously on.
+
+You may want to checkout the `express-session` package.
 
 ##Middleware
 
