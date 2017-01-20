@@ -18,19 +18,21 @@ npm install --save bcrypt
 
 ## Creating the user model
 
-Let's create a user with a name, email, and password. You can add more attributes later if you'd like. In `models/user.js`:
+Let's create a user with a name, email, and password. You can add more attributes later if you'd like.
+
+**models/user.js**
 
 ```js
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt');
 
-var User = new mongoose.Schema({
+var UserSchema = new mongoose.Schema({
   name:  { type: String },
   email: { type: String },
   password: { type: String }
 });
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', UserSchema);
 
 ```
 
@@ -46,7 +48,7 @@ Now that we have a user, we want to limit the values we can assign to a user's n
 * User's name should be between 3-99 characters
 * User's password should be required and between 8-99 characters
 
-In order to do this, we can use Validations. __???Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails.__ This will be handled in our routes later.
+In order to do this, we can use Validations. __Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails.__ This will be handled in our routes later.
 
 [Mongoose Validation Documentation](http://mongoosejs.com/docs/validation.html)
 
@@ -136,7 +138,7 @@ In order to perform these actions, we'll create two methods that can be called o
   ```js
   user.validPassword('password'); // return true or false
   ```
-* To hide the hash from the user object, we'll *override* an instance method called `toJSON`, which will leave the hash out of the user's JSON object.
+* To hide the hash from the user object, we'll *override* the option of an instance method called `toJSON`, which will leave the hash out of the user's JSON object.
   * **Example**
   ```js
   user.toJSON(); // returns { name: 'Brian', email: 'bh@ga.co' }

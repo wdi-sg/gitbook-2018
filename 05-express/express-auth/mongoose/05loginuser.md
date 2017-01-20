@@ -19,7 +19,7 @@ _In modern web applications, authentication can take a variety of forms. Traditi
 
 The main concept when using passport is to register _Strategies_.  A strategy is a passport Middleware that will create some action in the background and execute a callback; the callback should be called with different arguments depending on whether the action that has been performed in the strategy was successful or not. Based on this and on some config params, passport will redirect the request to different paths.
 
-Because strategies are packaged as individual modules, we can pick and choose what modules we need for our application. This logic allows the developer to keep the code simple - without unnecessary dependencies - in the controller and delegate the proper authentication job to some specific passport code. On a high-level, you can think of the passport module as authentication middleware the app uses and any passport strategy module (`passpor-*`) as detailed authentication middleware that passport itself uses.
+Because strategies are packaged as individual modules, we can pick and choose what modules we need for our application. This logic allows the developer to keep the code simple - without unnecessary dependencies - in the controller and delegate the proper authentication job to some specific passport code. On a high-level, you can think of the passport module as authentication middleware the app uses and any passport strategy module (`passport-*`) as detailed authentication middleware that passport itself uses.
 
 
 ## Install passport and passport-local

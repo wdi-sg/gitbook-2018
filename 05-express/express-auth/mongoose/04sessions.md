@@ -48,9 +48,9 @@ TEST=testvalue
 echo $TEST
 ```
 
-But they'll disappear as soon as the Terminal Session Ends. You could save them in your .bash_profile or .zshrc but then you'd have clashes across different Apps. The best solution is to add them to a .env file that we can load when we start our node app.
+But they'll disappear as soon as the Terminal Session Ends. You could save them in your .bash_profile or .zshrc but then you'd have clashes across different Apps. The best solution is **add them to a .env file** in the project directory root that we can load when we start our node app.
 
-Remember to make sure that .env is in your .gitignore file. We use Environment Variables for hiding secrets, so you don't want to accidently share them on Github.
+Remember to make sure that .env is included in your .gitignore file. We use Environment Variables for hiding secrets, so you don't want to accidentally share them on Github.
 
 **.env**
 
