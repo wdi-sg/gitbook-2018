@@ -11,7 +11,7 @@
 
 When we have finished developing a version of our app, we likely want to put it on the internet for other people to see.
 
-You can use our Taco CRUD app for deployment. https://github.com/WDI-SEA/tacoapp
+You can use our Taco CRUD app for deployment. https://github.com/wdi-sg/tacoapp
 
 ### Localhost
 
@@ -59,9 +59,7 @@ Authentication successful.
 
 We'll have the ability to create free applications using Heroku, but with limitations. Most of those limitations are related to the size of the databases, as well as uptime for the dynos. For free applications, dynos will "go to sleep" when unused for a period of time. This will lead to slow start times when restarting the dynos.
 
-##DEPLOY!
-
-![deploy](snail_deploy.gif)
+##Deploy
 
 ### package.json
 Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use `--save`. You can always check your package.json by deleting your node_modules folder and running npm install, this will only install the dependencies listed in the file, so if you application no longer runs, then you know you're missing something.
@@ -94,8 +92,9 @@ app.listen(process.env.PORT || 3000)
 Variables should also be used to avoid committing values that are sensitive, for example API keys or database URLs, these are cases where we DO NOT WANT TO COMMIT THE VALUES. These values can vary, but if a malicious user gets ahold of them, they can cause disastrous results, especially if the values access an account that costs money or resources.
 
 ### Git Based Deploy
-* Before you create your app in Heroku, be sure your project is being tracked via a git repository
-* Next create a Heroku app via the command line
+Before you create your app in Heroku, be sure your project is being tracked via a git repository
+
+Next create a Heroku app via the command line
 
 ```
 heroku apps:create sitename
@@ -103,21 +102,21 @@ heroku apps:create sitename
 
 Where `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com`
 
-* Add, and Commit all your data (you may want to push to Github too).
+__Add, and Commit all your data to git__ (you may want to push to Github too).
 
-* To push to Heroku (it's just another git remote), enter the following command
+Then push it to Heroku (it's just another git remote afterall), enter the following command
 
 ```
 git push heroku master
 ```
 
-* In terminal after you deploy your app, type in `heroku ps:scale web=1`
-  * this will ensure you have at least one dyno(process) running
+In terminal after you deploy your app, type in `heroku ps:scale web=1`. This will ensure you have at least one dyno(process) running
 
 
 ### Heroku Environment variables
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
-In order to add environment variables to github. We will run a heroku command to set it per item in our .env file
+
+In order to add environment variables to Heroku, you run a command to set it per item in our .env file. For example...
 
 ```
 heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
@@ -126,7 +125,9 @@ heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
 You can also do this via the Heroku Dashboard for you App.
 
 ### Heroku Add-ons
-Heroku Add-ons are an easy way to install and link applications to setup. For instance, if you're using MongoDB, then you'll want to provision an Mlab add-on. Using Cloudinary for image-uploads, then there is an add-on for that. Since you'll be doing lots of debugging, you should definitely install Papertrail so that you can easily view and search logs and errors on your App (remember once your code is deployed your error messages won't just popup in your terminal).
+Heroku Add-ons are an easy way to install and link applications to setup. For instance, if you're using MongoDB, then you'll want to provision an Mlab add-on. Using Cloudinary for image-uploads, then there is an add-on for that.
+
+Since you'll be doing lots of debugging, you should definitely install Papertrail so that you can easily view and search logs and errors on your App (remember once your code is deployed your error messages won't just popup in your terminal).
 
 ```
 heroku addons:create papertrail:choklad
@@ -154,6 +155,8 @@ After creating the mLab addon, you'll be able to access an environment variable 
 ```js
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydbname');
 ```
+### Don't forget to commit & push
+Anytime you make changes you need to remember to git add, git commit and git push to heroku.
 
 ### Connecting to a mLab instance using Robomongo/Mongohub (or similar)
 
