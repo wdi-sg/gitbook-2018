@@ -58,14 +58,6 @@ Sometimes just called "Memory", it's a card game in which all of the cards are l
 ## Project Feedback + Evaluation
 Both Project 1a and Project 1b will be graded on the same rubric.
 
-#### Scoring
-| Score | Expectations |
-| ----- | ------------ |
-| **0** | _Incomplete._ |
-| **1** | _Does not meet expectations._ |
-| **2** | _Meets expectations, good job!_ |
-| **3** | _Exceeds expectations, you wonderful creature, you!_ |
-
 ---
 
 ### Useful Resources
@@ -87,3 +79,10 @@ Both Project 1a and Project 1b will be graded on the same rubric.
 * __Deployment__: Did you deploy your application to a public url using GitHub Pages?
 
 * __Total__: Your instructors will give you a total score on your project between:
+
+| Score | Expectations |
+| ----- | ------------ |
+| **0** | _Incomplete._ |
+| **1** | _Does not meet expectations._ |
+| **2** | _Meets expectations, good job!_ |
+| **3** | _Exceeds expectations, you wonderful creature, you!_ |
