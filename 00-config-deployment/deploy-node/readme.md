@@ -1,4 +1,4 @@
-# Heroku Deployment with Node + Sequelize 
+# Heroku Deployment with Node
 
 ## Objectives
 * Understand the purpose of Heroku as a Platform as a Service (PaaS)
@@ -63,27 +63,39 @@ We'll have the ability to create free applications using Heroku, but with limita
 
 ![deploy](snail_deploy.gif)
 
-### To start:
+### package.json
+Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use `--save`. You can always check your package.json by deleting your node_modules folder and running npm install, this will only install the dependencies listed in the file, so if you application no longer runs, then you know you're missing something.
 
-* Create a `Procfile` in the root of your Node application
-  * In terminal, run `touch Procfile`. Must be called with a capitol P
-  * make sure it is named "Procfile" (no extention) 
-  * make sure your Procfile is in the same folder as your index.js file) 
-  * in terminal type `echo "web: node index.js" >> Procfile`
+Once we deploy our application to Heroku, it will automatically install our dependencies by running npm install. It will then start our application, but how does it know what script to start? The easiest option, is to ensure that we have a _start script_ in our `package.json`. Heroku can then simply run `npm start` to start our application.
 
-* In your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
+```json
+  "scripts": {
+    "start": "node index.js"
+  },
+```
+
+It is also best practice to include the version on node you are using. You can do this in a section called engines, for example:
+```json
+  "engines" : {
+    "node" : "^6.6.0"
+    }
+  },
+```
+
+### Environment Variables
+Environment variables are values that exist in a computer's current environment. They can affect how a computer runs, or how certain commands are executed. Frequently, we'll have variables that are unique to a particular computer. An example is the PORT variable. When we deploy to Heroku, it will automatically allocate us a PORT and our application must listen on that port.
+
+So in your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
 
 ```js
 app.listen(process.env.PORT || 3000)
 ```
 
-This ensures that when we set the PORT config variable, Heroku will run on it instead of the 3000 port (Heroku automatically includes a port that's public-facing).
+Variables should also be used to avoid committing values that are sensitive, for example API keys or database URLs, these are cases where we DO NOT WANT TO COMMIT THE VALUES. These values can vary, but if a malicious user gets ahold of them, they can cause disastrous results, especially if the values access an account that costs money or resources.
 
-* Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use `--save`. You can always check your package.json to see if you are missing anything.
-
-* Before you create your app in Heroku, be sure your project is being tracked via a git repository.
-
-* Create a Heroku app via the command line
+### Git Based Deploy
+* Before you create your app in Heroku, be sure your project is being tracked via a git repository
+* Next create a Heroku app via the command line
 
 ```
 heroku apps:create sitename
@@ -91,21 +103,66 @@ heroku apps:create sitename
 
 Where `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com`
 
-* Commit and push all your data at this point (`git push`).
+* Add, and Commit all your data (you may want to push to Github too).
 
-* To push to Heroku, enter the following command
+* To push to Heroku (it's just another git remote), enter the following command
 
 ```
 git push heroku master
 ```
 
 * In terminal after you deploy your app, type in `heroku ps:scale web=1`
-  * this will scale a dyno up
+  * this will ensure you have at least one dyno(process) running
+
+
+### Heroku Environment variables
+In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
+In order to add environment variables to github. We will run a heroku command to set it per item in our .env file
+
+```
+heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
+```
+
+You can also do this via the Heroku Dashboard for you App.
+
+### Heroku Add-ons
+Heroku Add-ons are an easy way to install and link applications to setup. For instance, if you're using MongoDB, then you'll want to provision an Mlab add-on. Using Cloudinary for image-uploads, then there is an add-on for that. Since you'll be doing lots of debugging, you should definitely install Papertrail so that you can easily view and search logs and errors on your App (remember once your code is deployed your error messages won't just popup in your terminal).
+
+```
+heroku addons:create papertrail:choklad
+```
+
+You can also do this via the Heroku Dashboard for you App.
+
+
+## Connecting to a MongoDB Database
+
+Before connecting the Node app to a MongoDB database, we'll need to install an addon called [mLab](https://elements.heroku.com/addons/mongolab). mLab is a cloud-hosted MongoDB database service that we can connect to.
+
+In order to add the instance, you can use the Heroku toolbelt by typing this command:
+
+```
+heroku addons:create mongolab:sandbox
+```
+
+This will create a free database instance, limited to 496 MB in storage. Keep this in mind.
+
+### Configuring Mongoose
+
+After creating the mLab addon, you'll be able to access an environment variable called `MONGODB_URI`. You'll want to connect to this URI on production. Alter your Mongoose connection to read this environment variable (you can use the localhost string if the variable doesn't exist), below is an example.
+
+```js
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydbname');
+```
+
+### Connecting to a mLab instance using Robomongo/Mongohub (or similar)
+
+In order to view the contents of your MongoDB database using a GUI client like Robomongo, you can use the `MONGODB_URI`. This URI contains the connection information and credentials needed to connect.
 
 ## Connect a DB with Sequelize
 
 * In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
-* Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'` 
+* Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'`
 * Make sure your production variables in `config/config.json` are set like this (pay attention to the production setting).
 
 **config/config.json**
@@ -135,15 +192,6 @@ git push heroku master
 * Now run your migrations by typing in terminal `heroku run node_modules/.bin/sequelize db:migrate` and you should have all your tables set up in a heroku hosted database
 
 * Try opening your app now, `heroku open`
-
-##Heroku Envionment variables
-
-In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
-In order to add environment variables to github. We will run a heroku command to set it per item in our .env file
-
-```
-heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
-```
 
 ##Review
 * App deployment

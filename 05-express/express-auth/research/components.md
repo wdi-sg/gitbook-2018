@@ -8,7 +8,7 @@ We'll be breaking up into groups. Each group will be assigned a component to res
 * How does bcrypt work?
 * How do we use bcrypt in node?
 
-##Validations
+##Database Validations (Mongoose or Sequelize)
 
 * What are different types of validations?
 * Which ones could be useful?
