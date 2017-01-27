@@ -1,62 +1,51 @@
 #Git Workflows
 
-So far, we've been using git to save versions of our work, which is one of git's main purposes. The other main purpose has been ignored until now, and that is team collaboration. There are a few different ways to collaborate with a group of people using git/Github.
+So far, we've been using git to save versions of our work, which is one of git's main purposes. The other main purpose has been ignored until now, and that is team collaboration. There are a number of different ways to collaborate with a group of people using git/Github, some of the most popular are outline below.
+
+## Popular Workflows
+#### Centralized Workflow
+**How It Works**: The remote repo has one single branch on it, `master`. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run `git fetch`/`git pull` (with the `--rebase` flag) to make sure that their master branch isn't out of date.
+
+(+) Very simple
+
+(-) Collaboration is kind of clunky.
+
+#### Feature Branch Workflow
+
+**How It Works**: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's `master` branch.
+
+(+) Better isolation than Centralized model, but sharing is still easy. Very flexible.
+
+(-) Sometimes it's too flexible - it doesn't distinguish in any meaningful way between different branches, and that lack of structure can be problematic for larger projects.
+
+#### 'Gitflow' Workflow
+**How It Works**: Similar to the Feature Branch workflows, but with more rigidly-defined branches. For example:
+- Historical Branches : `master` stores official releases, while `develop` serves as a living 'integration branch' that ties together all the standalone features.
+- Release Branches : 'release' branches might exist for any given release, to keep all of those materials together.
+- Feature Branches : pretty much the same as in the prior model.
+- Maintenance/'Hotfix' Branches : branches used to quickly patch issues with production code.
+
+(+) Highly structured - works well for large projects.
+
+(-) Sometimes overkill for something small.
+
+#### Forked Workflow
+**How It Works**: This approach uses multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible. One collaborator plays the role of 'Integration Manager'. This means that they are responsible for managing the official repository and either accepting or rejecting pull requests as they come in.
+
+(+) One student integrates all changes, so there's consistency.
+
+(-) Could get overwhelming for large projects.
+
+## Group Project
+Let's practice this, working in groups of 3-5 people. Each group will adopt one of the workflows introduced above.
+
+###Research
+The first step is to study, spend 10 minutes reading up on your allocated workflow and discussing it in your group.
 
 [Different Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
-We'll be focusing our time on the Forking Workflow. We've actually been using this workflow all along to a lesser degree, when submitting assignments.
 
-![Forking](http://i.stack.imgur.com/iYdhN.png)
-
-[Forking Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
-
-A forking workflow looks something like this. The idea is that...
-
-1. One person acts as the **git master** and creates the main repo. He/she also manages the code that's merged into the repo.
-2. Everyone else **forks** the main repo so that they have a copy of it. This copy is **isolated** from the main repo.
-3. In the fork, work is done in branches known as **feature branches** until the feature is finished.
-4. Once the feature is finished, you'll want to do what's called an **upstream pull.** This will allow any changes from the main repo to be reflect in your fork. Assuming everyone works in separate branches, this should not create any merge conflicts.
-5. Once the upstream pull is finished, you can push your changes to the Github fork, and then create a pull request. This will allow the git master to merge the changes.
-6. Finally, once the pull requests have finished, pull from the upstream so the latest changes are in the fork.
-
-Let's practice this.
-
-##Forking Workflow Practice
-
-Practice the forking workflow in groups of 3-4.
-
-###Setting up the Repo
-
-* Choose one person to be the **git master**
-  * This person should create a new repository. Let's call it `forking-test`
-  * Once the repository is created, clone it to your computer
-* Once the repo is created by the git master, the other group members should get a link to the new repo and **fork it.**
-  * Each group member should clone their forked repo to your computer
-
-###Setting up Upstreams
-
-Try running `git remote -v`. This will be a list of **remote** repositories. By default, `origin` is the remote of your fork on Github. We're going to add another remote to reference the main repo, so if there are any changes, they can be pulled from the main repo into the fork.
-
-* Group members other than the git master should follow these steps
-  * Go back to the main repo (not the fork) and copy the SSH link
-  * `cd` into your cloned fork
-  * Add the remote by running in the terminal (pasting the SSH link in lieu of the one provided):
-
-```
-git remote add upstream git@github.com:gitmasterusername/forking-test.git
-```
-
-* Testing the upstreams
-  * Have the git master create a change in the main repo on the `master` branch. Add the change, commit it, and push it to Github
-  * Once the git master has pushed changes, group members should try running `git pull upstream master`
-
-If successful, group members should receive the change in their forks.
-
-###Working on Changes
-
-Practice making changes by creating new branches, switching to them, and making commits. Note that the git master should also be working in a separate branch, as not to pollute the `master` branch. Keep it sacred!
-
-### Sample Practice App
+###Practice App
 
 Work in your project groups to create a group home page. The homepage should have a main page
 showing a picture for each person in the team with their name. Additionally, the practice app
@@ -66,17 +55,12 @@ lead to a page with a short bio for the team member.
 Work as a team to decide how the project will be set up. Will you create a simple static HTML page,
 or will you create a node app, or will you use Ruby on Rails? Everyone will work on their own
 bio pages individually. Each team member should add their own link to their bio page on the home
-page. Practice branching, merging and resolving merge conflicts.
+page. Practice working with your prescribed git workflow to complete the website.
 
-###Merging Changes
+###Presentation
+Each group will have 20 minutes to share their workflow with the class. Explain/Demonstrating how it works and highlighting the Strengths & Weaknesses.
 
-Once group members have made some changes in separate branches, push those changes to Github, then try making pull requests on Github.
-
-Once pull requests have been made, the git master should go to Github, view the pull requests, and merge them! Or, you can have a conversation about why the changes shouldn't be merged.
-
-###Conclusion
-
-The forking repo is one of the widely used git workflows available. It's used to contribute to open source projects, as well as internally by some companies.
+## Conclusion
 
 You may come across problems when working with git, such as merge conflicts and changes not appearing where you think they should be. Keep in mind that while you have the tools available to solve these problems, the biggest challenge is to figure out how!
 

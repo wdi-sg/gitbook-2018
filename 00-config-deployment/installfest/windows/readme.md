@@ -54,7 +54,22 @@ The client is quite different from the mac clients (e.g. psequel), so if you enc
 
 Run the installer from http://railsinstaller.org/en
 
-### Option 2: c9.io (recommended)
+#### PG Gem
+If you have issues with the pg gem, you can set it to only be used on production and just use the default SQLite option when you generate your app i.e. no `-d postgres` option.
+
+**Anywhere in Gemfile**
+
+```rb
+gem 'pg', group: :production
+```
+
+and when you bundle install, skip production
+```rb
+bundle install --without production
+```
+
+
+### Option 2: c9.io
 If you encounter issues with installing / running Rails on Windows, we recommend using [c9.io](https://www.c9.io). It's a cloud IDE that is as good as running an IDE on your local machine. You can git commit, git clone, git push - and collaboration with Mac users will be seamless. Here are some instructions for setting up your c9 development environment:
 
 * Sign up for an account with https://www.c9.io (it’s free, even though they ask you for credit card details)

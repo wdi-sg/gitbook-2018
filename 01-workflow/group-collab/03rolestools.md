@@ -1,6 +1,8 @@
 #Project Roles and Tools
 
-###Common
+## Group Responsibilities
+
+On your projects at GA, you will all be Full-Stack developers and forced to work on both front-end and back-end code. In the outside world this may still be the case or you might be end up specializing on what particular side.
 
 ####Project Manager (PM)
 
@@ -9,14 +11,6 @@ The project manager, or PM, is responsible for planning and seeing a project fro
 ####Git Master (Maintainer)
 
 Commonly known as the repository maintainer, but known in WDI as the "git master", the git master's job is to handle incoming pull requests and merge them appropriately. Their job is to handle the **state of the repo** and make sure that everything goes smoothly. Be prepared for merge conflicts if necessary.
-
-###Others you may want to assign
-
-####Front end developer
-
-####Back end developer
-
-####"Full stack" developer
 
 ####Database Administrator (DBA)
 

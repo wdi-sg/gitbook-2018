@@ -11,7 +11,7 @@ We can work with JavaScript, CSS, and images in Rails just like we did in our fr
 
 ##JavaScript
 
-To load JavaScript files in Rails we simply create `.js` files in the `app/assets/javascripts` directory and Rails will automatically load them in the head of the page using `<script>` tags. 
+To load JavaScript files in Rails we simply create `.js` files in the `app/assets/javascripts` directory and Rails will automatically load them in the head of the page using `<script>` tags.
 
 To adjust the load order, we can add the scripts along with the `//=` lines at the bottom of `application.js`
 
@@ -28,6 +28,17 @@ For example, if we had a file called `importantScript.js` in our `javascripts` d
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+```
+
+#### Blame Turbolinks
+Rails includes a package called Turbolinks, which provides some optimization for our sites by minimising the amount of the page that is redrawn between requests. It's clever but can cause issues if we are expecting js/jquery page ready events to fire. One solution is to [remove Turbolinks](http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4), the other is use the `ready page:load` event in-place of the standard jQuery ready event.
+
+```js
+$(document).on('ready page:load', function() {
+  $.get('/names').done(function(data) {
+    console.log(data);
+  });
+});
 ```
 
 ##Stylesheets
@@ -138,43 +149,6 @@ if (typeof gon !== 'undefined') {
 } else {
   console.log('there is no gon (or taco)');
 }
-```
-
-##AJAX in Rails
-
-As an alternative to using `gon`, AJAX calls in Rails can be done if you have a controller action that returns JSON data. Here's an example. Let's assume this controller action can be accessed via the route `GET /names`.
-
-```ruby
-class NamesController < ApplicationController
-  def names
-    names = Name.all
-    render json: names
-  end
-end
-```
-
-When accessing `GET /names`, the response will contain JSON data.
-
-In order to access this route via AJAX, we can create a JavaScript file that accesses this route. We'll need to account for Turbolinks on the page by encapsulating the AJAX call inside an event called `ready page:load`.
-
-```js
-$(document).on('ready page:load', function() {
-  $.get('/names').done(function(data) {
-    console.log(data);
-  });
-});
-```
-
-This AJAX call can be triggered on form submission or button click by encapsulating the call within an event listener function. Example:
-
-```js
-$(document).on('ready page:load', function() {
-  $('#button').click(function() {
-    $.get('/names').done(function(data) {
-      console.log(data);
-    });
-  });
-});
 ```
 
 ##Additional Reading

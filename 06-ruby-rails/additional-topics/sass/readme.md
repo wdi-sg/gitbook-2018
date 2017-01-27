@@ -222,8 +222,17 @@ And the CSS that comes from that:
   border-radius: 10px;
 }
 ```
+---
+## Bootstrap
+You know what is written in SASS? Bootstrap! That means that install the original source files for bootstrap we can easily override the default styles options by changing the values of the SASS variables used.
 
-Fin
------------
+In Rails this is even easier because we can install it using the [Bootstrap-SASS Gem](https://github.com/twbs/bootstrap-sass#a-ruby-on-rails)
 
-As we can see SASS gives us many tools that make writing styles for our apps easier and more robust. Basically anything that can improve on CSS we should be all for!
+Once installed you can simply change values like so
+```sass
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+@import "bootstrap";
+```

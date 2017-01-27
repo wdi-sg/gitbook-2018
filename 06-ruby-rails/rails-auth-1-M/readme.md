@@ -19,7 +19,7 @@ We need to first start creating a user model that has a username/email field and
 
 ```
 rails g model user email password_digest
-rake db:migrate
+rails db:migrate
 ```
 
 ##Add some validations
@@ -201,7 +201,7 @@ With a partial at **app/views/partials/_flash.html.erb**
 Let's first add another model to relate to the user. In order for the user to have many pets, we can create the model by including the model name and `references` as the type.
 
 ```
-rails g model pet name user:references
+rails g model pet name user:belongs_to
 ```
 
 This will make the following migration, which will include a userId in the pet model.
@@ -222,14 +222,14 @@ end
 Then, make sure to migrate and include the associations in each model.
 
 ```
-rake db:migrate
+rails db:migrate
 ```
 
 **models/user.rb**
 ```ruby
 class User < ActiveRecord::Base
   has_many :pets
-  
+
   # ...
 end
 ```
@@ -253,4 +253,25 @@ Pet.all
 Pet.first
 
 Pet.first.user
+```
+
+## Relationship Constraints
+Rails enables us to add additional properties to our associaitions. For instance we can tell rails to automatically delete all pets, if we delete their owner.
+
+**models/user.rb**
+```ruby
+class User < ActiveRecord::Base
+  has_many :pets, dependent: :destroy
+
+  # ...
+end
+```
+
+In addition, Rails 5, will also stop us from creating an record with a belongs_to if we don't assign it. For example, we cannot create a Pet without an owner. We can disable this behavior if we want using the optional flag.
+
+**models/pet.rb**
+```ruby
+class Pet < ActiveRecord::Base
+  belongs_to :user, optional: true
+end
 ```

@@ -6,9 +6,22 @@
 
 Deploying a Rails app (like all things in Rails) is simple and magical.
 
+## Postgres
+Heroku uses Postgres, so you should too. Or if you don't you should set it to be the DB for use in production.
+
+**Anywhere in Gemfile**
+
+```rb
+gem 'pg', group: :production
+```
+
+```rb
+bundle install --without production
+```
+
 ##Prepare for deployment
 
-If your app is **already using postgres** all you have to do is add the `12factor` gem to your Gemfile in the production group.
+If you are using Rails 4 then you have to add the `12factor` gem to your Gemfile in the production group.
 
 **Anywhere in Gemfile**
 
@@ -57,6 +70,9 @@ heroku run rake db:migrate
 ```
 
 You can also run `db:reset` or `db:seed` if you need to reset your database.
+
+**WARNING**
+Once you've deployed, don't edit with your migration files. You'll end up with different DBs on your local and production servers and it'll be very difficult to debug. Instead, you should be a well behaved developer and add new migrations for any DB changes.
 
 ##Configure environment variables
 

@@ -373,6 +373,7 @@ puts "Go #{team}!"
 ## Control flow
 
 * Conditionals
+
 ```ruby
 if
 elsif

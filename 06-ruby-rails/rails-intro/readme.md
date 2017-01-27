@@ -95,7 +95,7 @@ password: YOUR DATABASE PASSWORD HERE
 After all this, type the following to create your database.
 
 ```bash
-rake db:create
+rails db:create
 ```
 
 ##Start a server
@@ -116,15 +116,15 @@ This will start a server on port 3000.
 
 Since we're using PostgreSQL, we'll need a database for our application. By default, the development database Rails looks for is called `name_of_the_app_development`. You can verify the name by looking in **(your project name)/config/database.yml**. Include the username and password as well, if your local database has a username and password.
 
-You'll want to create this database using the command `rake db:create` so that Rails can find the database. This automatically creates your databases.
+You'll want to create this database using the command `rails db:create` so that Rails can find the database. This automatically creates your databases.
 
 Here are some other `rake` commands you'll want to know about for database management.
 
 ```bash
-rake db:drop # drop database
-rake db:migrate # run migrations
-rake db:rollback # rollback one migration
-rake db:rollback STEP=n # rollback 'n' migrations
+rails db:drop # drop database
+rails db:migrate # run migrations
+rails db:rollback # rollback one migration
+rails db:rollback STEP=n # rollback 'n' migrations
 ```
 
 ##Generators
@@ -350,7 +350,7 @@ more info: [Rails Guide - Active Record](http://guides.rubyonrails.org/active_re
 
 Migrations are used to create the schema of our database. When we generate a model it creates a migration file that will automatically create the correct database table.
 
-To run all pending migrations just type `rake db:migrate` and the new table will be created.
+To run all pending migrations just type `rails db:migrate` and the new table will be created.
 
 Migrations can also be used to make other database modifications. (eg adding, removing, renaming columns)
 
@@ -531,4 +531,3 @@ Note that this is made possible by a piece of JavaScript called `rails.js` runni
 * [Rails Routing](http://guides.rubyonrails.org/routing.html)
 * [Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
 * [Rails API guide](http://api.rubyonrails.org/)
-

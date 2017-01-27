@@ -69,7 +69,7 @@ t.references :votable, polymorphic:true, index: true
 **run migration**
 
 ```
-rake db:migrate
+rails db:migrate
 ```
 
 Now that we're migrated, we'll be adding the associations to posts and users. First thing's first, let's double-check that the vote model has a polymorphic association:

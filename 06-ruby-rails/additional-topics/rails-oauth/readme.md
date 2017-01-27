@@ -9,7 +9,7 @@
 
 ##Starter Code
 
-This lesson uses starter code, provided here: https://github.com/WDI-SEA/oh-auth-example
+This lesson uses starter code, provided here: https://github.com/wdi-sg/oh-auth-example
 
 ##Review
 
@@ -37,8 +37,8 @@ Note that in this example, we're only providing OAuth for one provider. If we wa
 ###Create the database and table
 
 ```
-rake db:create
-rake db:migrate
+rails db:create
+rails db:migrate
 ```
 
 ###Quickly test your model
