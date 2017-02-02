@@ -65,7 +65,7 @@ Note from the example above...
 You can use pry to halt the execution of your program and start an interactive console. This is a great debugging tool.
 
 Create a few rectangles and a square at the end of your file. Write `pry.binding` to stop the program after the shapes
-are created. 
+are created.
 
 ```ruby
 r1 = Rectangle.new(3, 4)
@@ -78,7 +78,7 @@ pry.binding
 
 Now you can type expressions into the console and have them evaluated. Your console will look like this. Typing `r1` and `r2`
 shows the type of objects that exist in those variables. Typing `r1.get_area` executes the function and prints the
-result. 
+result.
 
 ```ruby
 [1] pry(main)> r1
@@ -142,7 +142,7 @@ class Animal
   def eat(food)
     if @state == "awake"
       puts "NOM-nom!!"
-      puts "(#{kind} has eaten #{food})"
+      puts "(#{@kind} has eaten #{food})"
     else
       puts "SLEEPING"
     end
@@ -177,4 +177,4 @@ end
 ####Exercise
 Create a Mammal class, Cat class, and Dog class. Have Cat and Dog inherit from Mammal. Include some attributes for each class and a method for mammal.
 
-Make cats fall asleep when they're fed tuna. Make dogs fall asleep when they're fed a bone. 
+Make cats fall asleep when they're fed tuna. Make dogs fall asleep when they're fed a bone.
