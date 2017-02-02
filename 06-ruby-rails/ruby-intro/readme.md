@@ -281,6 +281,18 @@ another_range === 3
 #=> true
 ```
 
+=== can also be used to check whether something is part of a type or in encapsulated in a regular expression.
+```ruby
+Integer === 5          
+# => true
+Integer === 'hello'
+# => false
+
+/air/ === 'Hair'
+# => true
+/air/ === 'Bald'
+# => false
+
 ###Symbols
 An immutable sequence of characters that represents data stored in a specific memory location. Symbols optimize memory and can help programs run faster when performing comparisons or lookups.
 

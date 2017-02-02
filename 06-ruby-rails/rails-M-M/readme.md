@@ -135,7 +135,7 @@ Park.first.rangers.first.parks
 
 * Add checkboxes to the form
 ```erb
-<%= c.collection_check_boxes :ranger_ids, @rangers, :id, :name %>
+<%= f.collection_check_boxes :ranger_ids, @rangers, :id, :name %>
 ```
 
 1. `:ranger_ids` refers to the model's rangers
@@ -148,15 +148,6 @@ That's it! As far as assigning the rangers in the controller, we can modify the 
 ```ruby
 def park_params
   params.require(:park).permit(:name, :description, :ranger_ids => [])
-end
-```
-
-In order for the rangers to be assigned automatically, we can add the `accepts_nested_attributes_for` method to the `Park` model. You'll also want to add `inverse_of:` to the park's ranger association, in order to run any validations that may be on the `Ranger` model.
-
-```ruby
-class Park < ActiveRecord::Base
-  has_and_belongs_to_many :rangers, inverse_of: :park
-  accepts_nested_attributes_for :rangers
 end
 ```
 
