@@ -87,12 +87,10 @@ Connect to a database
 
 Once we connect, our command prompt should look similar to this: ```testdb=#```
 
-List our tables:
+List our tables in a database:
 ```
-\list
+\dt
 ```
-to list all tables in a database `\dt`a
-
 
 ### CREATE-ing a Table
 
