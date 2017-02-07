@@ -22,7 +22,7 @@ rails g model user email password_digest
 rails db:migrate
 ```
 
-##Add some validations
+###Add some validations
 [http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
 
 **app/models/user.rb**
@@ -33,34 +33,107 @@ presence: true,
 uniqueness: {case_sensitive: false}
 ```
 
-Note that we're only checking for presence and uniqueness of the email. Use [this gem](https://github.com/balexand/email_validator) if you'd like to actually validate the email address contents.
+Note that we're only checking for presence and uniqueness of the email. If we want to validate the format of the email, we can use an Regex like so
 
-##Add password hashing
+```ruby
+validates :email,
+presence: true,
+uniqueness: {case_sensitive: false},
+format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  ```
+
+or we can use [this gem](https://github.com/balexand/email_validator) for a more comprehensive comparrison.
+
+###Add password hashing
 
 * Add `has_secure_password` to the user model
 * uncomment `gem 'bcrypt'` on your Gemfile and run the bundler
 
-###Test out a user
-Now that we have `has_secure_password`, Rails gives out a password setter.
-
-###Add Validations for User
+Now that we have `has_secure_password`, Rails gives out a password setter that we can use in validations even though we don't have a password field in our database.
 
 ```ruby
 validates :password, length: { in: 8..72 }, on: :create
 ```
 
-###Let's test a real user
+## Register
+We now have everything we need to create a user, and we can do so using Rails Console.
+
+```rb
+User.create!(email: 'paul@gmail.com', password: '12345678')
+```
+
+But that's no use to our users, so let's add a registration page.
+
+###Add the register page
+Let's create a users controller to handle registering.
+
+```
+rails g controller users new
+```
+
+Manually add a controller action to `create` - as it won't have a view.
+
+###Add the routes
+
+```ruby
+get "register" => "users#new"
+post "register" => "users#create"
+```
+
+### Create a Registration Form
+
+```erb
+<h1>Register</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.email_field :email, placeholder: "Enter your email" %>
+  <%= f.password_field :password, placeholder: "Enter your password" %>
+  <%= f.password_field :password_confirmation, placeholder: "Please confirm it" %>
+  <%= f.submit "Register" %>
+<% end %>
+```
+
+### Controller Actions
+We need to fill up our controller to serve these requests.
+```ruby
+def new
+  @user = User.new
+end
+
+def create
+  @user = User.new(user_params)
+  if @user.save
+    flash[:success] = "Account Created. Please Login"
+    redirect_to root_path
+  else
+    render :new
+  end
+  user = User.authenticate(user_params)
+end
+
+private
+
+def user_params
+  params.require(:user).permit(:email, :password, :password_confirmation)
+end
+```
+We should now be able to register a new user, next we want to be able to log them in.
+
+## Logging In & Out (Sessions)
+Using had_secure_password, we gain an authenticate method that we can call on any instance of a user and compare a password. It will return true if the password is valid else false, for example...
 
 ```ruby
 User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 ```
 
-This is nifty, but long. We can add a class method that will return true or false, based on the params from the controller.
+We can add a class method to our User model to wrap this up and tell us if a user exists based on the passed in params from the controller.
 
 ###Add a helper method to the class
 
+**app/models/user.rb**
+
 ```ruby
-def self.authenticate(params)
+def self.authenticated_user?(params)
   User.find_by_email(params[:email]).try(:authenticate, params[:password])
 end
 ```
@@ -79,20 +152,20 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def self.authenticate(params)
+  def self.authenticated_user?(params)
     User.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
 end
 ```
 
-##Add the login pages
+### Add the login pages
 Let's create a session controller to handle logging in/out. We'll organize this by calling the controller `sessions`, because in reality, we're creating and destroying sessions on login and logout.
 
 ```
 rails g controller sessions new
 ```
 
-add actions `create` and `destroy`
+manually add actions `create` and `destroy` - they won't have views.
 
 ###Lets create some routes
 
@@ -164,8 +237,12 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end
+
+  helper_method :current_user
 end
 ```
+
+The final line tells rails that we want the current_user method to be available inside of our views not just our controllers.
 
 ###Adding Flash Messages
 
@@ -190,11 +267,34 @@ With a partial at **app/views/partials/_flash.html.erb**
 <% end %>
 ```
 
-###Protect a controller
+###Protect a controller or action
 
-`before_action :is_authenticated` on the controller you want to protect
+To protect a controller or action we can simply add a `before_action :is_authenticated` at the top. For example, let's add a profile page that you can only see when logged in.
 
-`@current_user` is now visible to all pages because the `current_user` function is invoked
+```ruby
+class UsersController < ApplicationController
+  before_action :is_authenticated, only: [:profile]
+
+  ...
+
+  def profile
+  end
+```
+
+Let's add a view.
+
+**users/profile.html.erb**
+
+```erb
+<h1>Hello <%= current_user.email %></h1>
+```
+
+finally add a route to get there. We can also make it the default (root) route of our site.
+
+```ruby
+  root 'users#show'
+  get "profile" => "users#show"
+```
 
 ##Adding 1:M relationships with another model
 
@@ -254,6 +354,18 @@ Pet.first
 
 Pet.first.user
 ```
+
+Once we create the CRUD controller for our pets, we can easily associate models with the logged in user, through the current_user method.
+
+```ruby
+current_user.pets
+
+current_user.pets.create(name: 'Fido')
+
+current_user.pets.find_by(id: params[:id])
+```
+
+The last example is useful for stopping a user accessing a pet they didn't create. The query is effectively looking for a Pet with a particular id and also a particular user_id.
 
 ## Relationship Constraints
 Rails enables us to add additional properties to our associaitions. For instance we can tell rails to automatically delete all pets, if we delete their owner.
