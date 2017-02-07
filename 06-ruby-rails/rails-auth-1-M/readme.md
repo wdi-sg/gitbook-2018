@@ -85,7 +85,7 @@ post "register" => "users#create"
 ```erb
 <h1>Register</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: register_path do |f| %>
   <%= f.email_field :email, placeholder: "Enter your email" %>
   <%= f.password_field :password, placeholder: "Enter your password" %>
   <%= f.password_field :password_confirmation, placeholder: "Please confirm it" %>
@@ -108,7 +108,6 @@ def create
   else
     render :new
   end
-  user = User.authenticate(user_params)
 end
 
 private
