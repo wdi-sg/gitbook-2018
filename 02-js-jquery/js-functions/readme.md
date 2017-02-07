@@ -119,8 +119,8 @@ The difference between these two is that the first one is defined at run-time, m
 ```js
 multiply(2, 2); // ERROR
 
-function multiply(a, b) {
-	return a * b;
+var multiply = function(a, b) {
+    return a * b;
 }
 ```
 

@@ -331,7 +331,7 @@ cat[:fav_food]
 ```
 
 ###Mutator methods !
-Mutator methods will not just return a value, but change the object they are called on to that value. Adding ! to certain ruby methods will turn them into their mutator method counterparts.
+Mutator methods will not just return a value, but change the object they are called on to that value. Adding ! to certain ruby methods will turn them into their mutator method counterparts. Some people call these "methods with a bang" for self-explanatory reasons!
 
 *How to mutate an array*
 
