@@ -119,20 +119,20 @@ end
 We should now be able to register a new user, next we want to be able to log them in.
 
 ## Logging In & Out (Sessions)
-Using had_secure_password, we gain an authenticate method that we can call on any instance of a user and compare a password. It will return true if the password is valid else false, for example...
+Using had_secure_password, we gain an authenticate method that we can call on any instance of a user and compare a password. It will return the user if the password is valid else false, for example...
 
 ```ruby
 User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 ```
 
-We can add a class method to our User model to wrap this up and tell us if a user exists based on the passed in params from the controller.
+We can add a class method to our User model to wrap this up and find and return a user only if it exists and the password is valid - based on the passed in params from the controller.
 
 ###Add a helper method to the class
 
 **app/models/user.rb**
 
 ```ruby
-def self.authenticated_user?(params)
+def self.find_and_authenticate_user(params)
   User.find_by_email(params[:email]).try(:authenticate, params[:password])
 end
 ```
@@ -151,7 +151,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def self.authenticated_user?(params)
+  def self.find_and_authenticate_user(params)
     User.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
 end
@@ -193,7 +193,7 @@ Authenticate the user on `sessions#create`
 
 ```ruby
 def create
-  user = User.authenticate(user_params)
+  user = User.find_and_authenticate_user(user_params)
 
   if user
     session[:user_id] = user.id
