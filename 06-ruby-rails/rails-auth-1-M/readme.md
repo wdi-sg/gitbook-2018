@@ -367,7 +367,7 @@ current_user.pets.find_by(id: params[:id])
 The last example is useful for stopping a user accessing a pet they didn't create. The query is effectively looking for a Pet with a particular id and also a particular user_id.
 
 ## Relationship Constraints
-Rails enables us to add additional properties to our associaitions. For instance we can tell rails to automatically delete all pets, if we delete their owner.
+Rails enables us to add additional properties to our associations. For instance we can tell rails to automatically delete all pets, if we delete their owner.
 
 **models/user.rb**
 ```ruby
@@ -378,7 +378,30 @@ class User < ActiveRecord::Base
 end
 ```
 
-In addition, Rails 5, will also stop us from creating an record with a belongs_to if we don't assign it. For example, we cannot create a Pet without an owner. We can disable this behavior if we want using the optional flag.
+If you don't want to delete the associated method but you want it to always have an owner then you can use a before_destroy action to reassign it, for example...
+
+**models/user.rb**
+
+```ruby
+  has_many :pets
+  before_destroy :re_home
+
+  private
+
+  def re_home
+    # you can be more specific but here we just randomly pick another user, whose is not this one. If no user is found only then do we destroy the pets
+    new_owner = User.where.not(id: id).sample(1).first
+    if new_owner
+      pets.update_all(user_id: new_owner.id)
+    else
+      pets.destroy_all
+    end
+  end
+```
+### Optional Ownership
+Rails 5, will also stop us from creating a record that has a belongs_to association, unless that association exists. For example, we cannot create a Pet without an owner.
+
+We can disable this behavior if we want using the optional flag.
 
 **models/pet.rb**
 ```ruby
