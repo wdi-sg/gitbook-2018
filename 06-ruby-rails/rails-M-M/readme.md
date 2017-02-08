@@ -143,7 +143,7 @@ Park.first.rangers.first.parks
 3. `:id` refers to the value of the checkbox
 4. `:name` refers to the label of the checkbox
 
-That's it! As far as assigning the rangers in the controller, we can modify the `Park` model to accept the `ranger_ids` array like so:
+That's it! As far as assigning the rangers in the controller, we can modify the `Park` controller to accept the `ranger_ids` array like so:
 
 ```ruby
 def park_params
