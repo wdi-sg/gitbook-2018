@@ -76,28 +76,28 @@ When creating the M:M associations, the name of the model is pluralized when add
 
 ```ruby
 # assume the following:
-park = Park.first
-ranger = Ranger.first
+some_park = Park.first
+some_ranger = Ranger.first
 
 # adding a ranger
-park.rangers << ranger
+some_park.rangers << some_ranger
 ```
 
 ##Removing rangers
 
 ```ruby
 # assume the following:
-park = Park.first
-ranger = Ranger.first
+some_park = Park.first
+some_ranger = Ranger.first
 
 # clear all of the park's rangers (leaves the rangers in the table)
-park.rangers.clear
+some_park.rangers.clear
 
 # removes a specific ranger from a park (leaves the ranger in the table)
-park.rangers.delete(ranger)
+some_park.rangers.delete(some_ranger)
 
 # removes a specific ranger from a park (and deletes the ranger)
-park.rangers.first.destroy
+some_park.rangers.first.destroy
 ```
 
 
