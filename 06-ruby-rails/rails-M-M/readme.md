@@ -94,10 +94,10 @@ ranger = Ranger.first
 park.rangers.clear
 
 # removes a specific ranger from a park (leaves the ranger in the table)
-c.rangers.delete(ranger)
+park.rangers.delete(ranger)
 
 # removes a specific ranger from a park (and deletes the ranger)
-c.rangers.first.destroy
+park.rangers.first.destroy
 ```
 
 
