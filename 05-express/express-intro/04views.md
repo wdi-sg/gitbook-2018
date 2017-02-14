@@ -25,7 +25,7 @@ const path = require('path');
 const app = express();
 
 // this sets a static directory for the views
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
   // use sendFile to render the index page
