@@ -76,28 +76,28 @@ When creating the M:M associations, the name of the model is pluralized when add
 
 ```ruby
 # assume the following:
-park = Park.first
-ranger = Ranger.first
+some_park = Park.first
+some_ranger = Ranger.first
 
 # adding a ranger
-park.rangers << ranger
+some_park.rangers << some_ranger
 ```
 
 ##Removing rangers
 
 ```ruby
 # assume the following:
-park = Park.first
-ranger = Ranger.first
+some_park = Park.first
+some_ranger = Ranger.first
 
 # clear all of the park's rangers (leaves the rangers in the table)
-park.rangers.clear
+some_park.rangers.clear
 
 # removes a specific ranger from a park (leaves the ranger in the table)
-park.rangers.delete(ranger)
+some_park.rangers.delete(some_ranger)
 
 # removes a specific ranger from a park (and deletes the ranger)
-park.rangers.first.destroy
+some_park.rangers.first.destroy
 ```
 
 
@@ -143,7 +143,7 @@ Park.first.rangers.first.parks
 3. `:id` refers to the value of the checkbox
 4. `:name` refers to the label of the checkbox
 
-That's it! As far as assigning the rangers in the controller, we can modify the `Park` model to accept the `ranger_ids` array like so:
+That's it! As far as assigning the rangers in the controller, we can modify the `Park` controller to accept the `ranger_ids` array like so:
 
 ```ruby
 def park_params

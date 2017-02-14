@@ -4,7 +4,7 @@ So far, we've been using git to save versions of our work, which is one of git's
 
 ## Popular Workflows
 #### Centralized Workflow
-**How It Works**: The remote repo has one single branch on it, `master`. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run `git fetch`/`git pull` (with the `--rebase` flag) to make sure that their master branch isn't out of date.
+**How It Works**: The remote repo has one single branch on it, `master`. All collaborators have separate clones of this repo, and you can each work independently on separate things. However, before you push, you need to run `git fetch`/`git pull` (with the `--rebase` flag) to make sure that your master branch isn't out of date.
 
 (+) Very simple
 
@@ -32,9 +32,9 @@ So far, we've been using git to save versions of our work, which is one of git's
 #### Forked Workflow
 **How It Works**: This approach uses multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible. One collaborator plays the role of 'Integration Manager'. This means that they are responsible for managing the official repository and either accepting or rejecting pull requests as they come in.
 
-(+) One student integrates all changes, so there's consistency.
+(+) One person (the "git master") integrates all changes, so there's consistency.
 
-(-) Could get overwhelming for large projects.
+(-) Can get overwhelming for large projects.
 
 ## Group Project
 Let's practice this, working in groups of 3-5 people. Each group will adopt one of the workflows introduced above.
