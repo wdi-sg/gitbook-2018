@@ -1,4 +1,5 @@
-#RESTful CRUD
+#RESTful CRUD - DEPRECATED
+**refer to [jQuery AJAX guide](/02-js-jquery/jquery-ajax/ajax_crud.md) instead**
 
 ##Objectives
 

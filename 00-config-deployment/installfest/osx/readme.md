@@ -221,7 +221,7 @@ sudo gem install rails
 ```
 You may need to press "yes" for various entries
 
-##Verify your installation
+###Verify your installation
 
 Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
 
@@ -242,3 +242,36 @@ psql --version
 atom -v
 
 ```
+
+
+##Setting up a server
+
+Occasionally you'll encounter permission errors when running websites using the file protocol, for example accessing loading local JSON files to our page. To solve this you'll need to run a HTTP server. If you're using BrowserSync, you won't need to worry about this, alternatively you could build a quick Node static server. An easier option however, is to use the local python server.
+
+We'll be setting up a command line alias to start a Python server.
+
+1.) edit your `zshrc` or .bash_profile depending on your shell.
+
+```
+atom ~/.zshrc
+```
+
+2.) Insert this code near the bottom of the file:
+
+###OSX
+
+```
+alias srv="_srv(){open \"http://localhost:\${1-8000}\" && python -m SimpleHTTPServer \$1}; _srv"
+```
+
+
+3.) Close and restart your terminal, or run `atom ~/.zshrc` to reload the file.
+
+Now you should be able to navigate to the folder of your project (the folder containing index.html), type `srv`, and hit enter. This will start a HTTP server and open your browser to that URL.
+
+You can go back to the site at anytime by going to `http://localhost:8000`. You can quit the server by typing `CTRL + C`
+
+
+#### Aside: Wildcard Protocols and HTTP
+
+You'll notice that Bootstrap and other CDN URLs may start with `//`. This is a wildcard protocol, which means it will use whatever protocol your site is using (`http://` or `https://`). When we're loading a file locally, our protocol is `file:///`, meaning we're accessing a file on our harddrive. Therefore, the default CDN will look for the file on our computer (instead of on the CDN) and won't find it. To fix this, we need to run a HTTP server.

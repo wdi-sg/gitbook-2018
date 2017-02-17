@@ -4,7 +4,7 @@
 
 Now, before we talk specifically about JWTs, we've built a really basic starter Express app to hack on for a few minutes. Take 5 minutes to look through it and see what you notice. There are one or two things you might see that are different, but get familiar with what we're working with.
 
-https://github.com/WDI-SEA/express-jwt-users
+https://github.com/WDI-SG/express-jwt-users
 
 ## What's different? - Demo
 
