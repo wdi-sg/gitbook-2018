@@ -11,7 +11,8 @@ Once complete add the link to your project README.md and also share it on Slack 
 ## Suggested Structure
 Try to answer some of the following questions, but feel free to dive deeper with your own reflections.
 - What is the project about and how does it work?
-- What process/workflow did you follow?
+- What was your development workflow?
+- What was the UX design process?
 - What went well on the project?
 - What didn't go so well on the project?
 - What was your biggest challenge and how did you overcome it?
