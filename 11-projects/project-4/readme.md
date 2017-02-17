@@ -2,9 +2,11 @@
 
 ### Overview
 
-**The time has come for the final project.** Ideally, this project should incorporate AngularJS or another framework/technology we haven't covered, but feel free to use anything we have learned in the course.
+**The time has come for the final project.** Ideally, this project should incorporate a Modern Frontend JavaScript framework, like Angular, React or Vue.
 
 Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**, and make sure it's **something that'll showcase your skills both visually and functionally**. Sometimes people do judge a book by its cover – or an app by its design.
+
+This can be an individual or a group project (maximum of 3). In addition feel free to consult with UXDI students, if they are available.
 
 ---
 
@@ -13,7 +15,7 @@ Make sure you review your project proposal with your instructor so you can make 
 Your app must:
 
 * **Build a full-stack application** by making your own backend and your own front-end
-  * Note that if you build an app using Ionic, a backend is optional. However, look into services such as Firebase if you'd like a service for storing data.
+  * If you're using a Modern Frontend Framework and building a suitably complex App, then Firebase may be an acceptable alternative to building your own backend - check with your instructional team.
 * **Have an interactive front-end**, preferably using a modern front-end framework
 * **Be a complete product**, which most likely means multiple relationships and CRUD functionality for at least a couple models. However, this is ultimately up to your discretion.
 * **Use a database**, whether that's one we've covered in class or one you want to learn
@@ -28,7 +30,7 @@ Your app must:
 * A **working app**, hosted somewhere on the internet
 * A **link to your hosted working app** in the URL section of your Github repo
 * A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the very beginning of the project
-* **A ``readme.md`` file** with:
+* **A ``README.md`` file** with:
     * An embedded screenshot of the app
     * Explanations of the **technologies** used
     * A couple paragraphs about the **general approach you took**

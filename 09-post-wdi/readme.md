@@ -6,7 +6,7 @@ Class is over... what now?
 
 Given the pace of this class, it's impossible to retain 100% of what we covered. Therefore, it's a great idea to review the notes repo. Start at the beginning and you'll notice that concepts that were scary and difficult at first aren't so scary anymore. There are also materials in the Gitbook which we didn't cover but which are useful nonetheless:
 
-- [Frequently asked interview questions](https://github.com/WDI-SEA/interview-questions)
+- [Frequently asked interview questions](https://github.com/WDI-SG/interview-questions)
 
 
 --------------------------------------------------------------------------------

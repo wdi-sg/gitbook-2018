@@ -156,6 +156,8 @@
     * [Rails Mailers](06-ruby-rails/additional-topics/rails-mailers/readme.md)
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
+* [JS Frontend Frameworks](07-frontend-frameworks/readme.md)
+<!--
 * [AngularJS](07-angular/readme.md)
   * [Intro to AngularJS](07-angular/angular-intro/readme.md)
     * [Components and SPA](07-angular/angular-intro/components-spa.md)
@@ -188,6 +190,7 @@
     * [Additional Resources](10-react/react-router/additional-resources.md)
   * [React Animations](10-react/react-animations/readme.md)
     * [CSS Animations](10-react/react-animations/css-animations.md)
+-->
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
@@ -238,7 +241,7 @@
   * [Custom Iterators](13-warm-ups/custom-iterators.md)
 * [Post WDI](09-post-wdi/readme.md)
   * [Learning Resources](09-post-wdi/resources.md)
-  * [Deliverables -> Portfolio](09-post-wdi/deliverables.md)
+  * [Deliverables -> Portfolio](09-post-wdi/job-tips.md)
   * [Job tips](09-post-wdi/job-tips.md)
 * [Resources](12-resources/readme.md)
   * [General](12-resources/external-resources.md)

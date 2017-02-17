@@ -145,5 +145,7 @@ $('.update-peanut').on ('submit', function (e) {
 
 ## Additional Resources
 
+Check out the example [Peanuts-client repository on Github](https://github.com/wdi-sg/peanuts-client) for a complete example.
+
 * [jQuery AJAX Docs](http://api.jquery.com/jquery.ajax/)
 * [Some useful jQuery DOM Manipulation Docs](http://api.jquery.com/prepend/)
