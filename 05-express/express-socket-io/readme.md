@@ -8,11 +8,6 @@
 
 ### Getting Started
 
-**NOTE: There are two options for this lesson**
-
-1. Access the starter code for the codealong here: <https://github.com/WDI-SEA/socket-io-starter>
-2. Follow the Socket.io chat example, which illustrates sending and receiving messages on both the client and server: <http://socket.io/get-started/chat/>
-
 ## Web basics recap
 
 Let's take it back and talk about how the web works. In very simple terms: you have a client - a program that can make requests to the web - and a server - a computer somewhere that holds information/code. When you want some information, your browser sends a request to get some data and then the server responds. This can be with a GET request or an AJAX request, but in essence, the client is always saying "give me some data".
