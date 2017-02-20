@@ -19,6 +19,14 @@
 
 ##Misc Articles
 
+* [Pokemon API](http://pokeapi.co/)
+
+* [Star Wars API](https://swapi.co/)
+
+* [Open Movie Database API](http://www.omdbapi.com/)
+
+* [Acromine acronym API](http://www.nactem.ac.uk/software/acromine/rest.html)
+
 * [http://blog.mashape.com/list-of-fun-and-interesting-apis-to-try-out/](http://blog.mashape.com/list-of-fun-and-interesting-apis-to-try-out/)
 * [http://webresourcesdepot.com/15-free-apis-you-didnt-hear-about-but-will-make-use-of/](http://webresourcesdepot.com/15-free-apis-you-didnt-hear-about-but-will-make-use-of/)
 * [http://blogs.mulesoft.com/biz/api/top-10-weird-apis/](http://blogs.mulesoft.com/biz/api/top-10-weird-apis/)
