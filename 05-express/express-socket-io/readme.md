@@ -2,11 +2,13 @@
 
 ## Objectives
 
-- Describe what realtime means, and how channels & open sockets push data to clients
+- Describe what real time means, and how channels & open sockets push data to clients
 - Set up websockets on the server side
 - Use jQuery to update the client side
 
 ### Getting Started
+
+Grab the starter code from here: https://github.com/wdi-sg/socket-io-twitter-stream
 
 ## Web basics recap
 
@@ -17,6 +19,30 @@ Let's take it back and talk about how the web works. In very simple terms: you h
 Well, the client is in 'control' - the server might have updates, but the client doesn't know about them - and the client has to request information it may not be familiar with.
 
 Alas! In comes polling! The client can keep 'polling' the server to see if it has any more data.
+
+Short polling (AJAX based timer):
+
+```javascript
+function doShortPoll(){
+    $.post('ajax/test.html', function(data) {
+        alert(data);  // process results here
+        setTimeout(doPoll,5000);
+    });
+}
+```
+
+...Or, long polling.  This method opens connection with the server, and the server notifies client-side when data is updated:
+
+```javascript
+function doLongPoll(){
+    $.ajax({ url: "server", success: function(data){
+        //Update your dashboard gauge
+        salesGauge.setValue(data.value);
+    }, dataType: "json", complete: poll, timeout: 30000 });
+}
+```
+
+Many different types of applications could use these polling techniques. For example, a chat room in an app that helps you attain highly desirable concert tickets by polling a ticket distributor so you can be notified first when tickets are available.
 
 ## What are the issues with polling?
 
@@ -38,14 +64,12 @@ We're going to add functionality to our application that will pull a constant st
 npm install --save socket.io
 ```
 
-Then, require it in our app with a few changes. First let's add a new require for the _http_ module which gives us the server that socket.io needs to listen to. In `index.js`
+Then, require it in our app with a few changes. First let's add a new require for the _http_ module which gives us the server that socket.io needs to listen to. In `app.js`
 
 ```javascript
 var express = require('express');
 var app = express();
-
-// add this
-var http = require('http').Server(app);
+var http  = require('http').createServer(app);
 ```
 
 ### What's the difference between app & require('http')
@@ -58,7 +82,7 @@ We need change at the bottom from `app` to `http`:
 http.listen(port);
 ```
 
-Also, add to `index.js` below the `http` variable:
+Also, add to `app.js` below the `http` variable:
 
 ```javascript
 var io = require('socket.io')(http);
@@ -72,7 +96,7 @@ Great! We're also going to using another module called [twit](https://github.com
 npm install --save twit
 ```
 
-And add to your `index.js` at the top:
+And add to your `app.js` at the top:
 
 ```javascript
 var Twit = require('twit');
@@ -105,7 +129,7 @@ In JS, we can access environment variables using the following syntax:
 process.env.VARIABLE_NAME
 ```
 
-Create new Twit client in `index.js`:
+Create new Twit client in `app.js`:
 
 ```javascript
 var twitter = new Twit({
@@ -116,7 +140,7 @@ var twitter = new Twit({
 });
 ```
 
-You can console log this to see if it has worked. Don't forget to run `foreman`!:
+You can console log this to see if it has worked. Don't forget to run `foreman` or install dotenv in order to load our environment variables.
 
 ```javascript
 console.log(twitter);
@@ -185,7 +209,7 @@ This is great! We now have own tweets streaming but only to the console. Let's g
 
 ### Back to the server-side
 
-Go back to our `index.js` and tidy up the tweet data we're sending through:
+Go back to our `app.js` and tidy up the tweet data we're sending through:
 
 ```javascript
 io.on('connect', function(socket) {
