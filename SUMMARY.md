@@ -191,6 +191,8 @@
     * [React Animations](10-react/react-animations/readme.md)
       * [CSS Animations](10-react/react-animations/css-animations.md)
   -->
+  * [VueJS](14-vuejs/readme.md)
+    * [Intro to VueJS](14-vuejs/vue-intro/readme.md)
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
