@@ -213,6 +213,8 @@ Go back to our `app.js` and tidy up the tweet data we're sending through:
 
 ```javascript
 io.on('connect', function(socket) {
+  var stream = twitter.stream('statuses/filter', { track: 'javascript' });
+
   stream.on('tweet', function(tweet) {
     var data = {};
     data.name = tweet.user.name;
