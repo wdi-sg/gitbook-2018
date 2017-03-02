@@ -157,6 +157,7 @@
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
 * [JS Frontend Frameworks](07-frontend-frameworks/readme.md)
+  * [Static Typing with TypeScript](07-frontend-frameworks/typescript.md)
   <!--
   * [AngularJS](07-angular/readme.md)
     * [Intro to AngularJS](07-angular/angular-intro/readme.md)
