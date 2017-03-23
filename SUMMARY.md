@@ -203,6 +203,7 @@
     * [Vue Router](14-vuejs/vue-router/readme.md)
     * [Vue Cheatsheet](14-vuejs/vue-cheatsheet/readme.md)
     * [Vue ES6](14-vuejs/vue-es6/readme.md)
+    * [Vue vs jQuery](14-vuejs/vue-jQuery-comparison/readme.md)
     * [Reading Materials](14-vuejs/vue-reading-materials/readme.md)
     * [Tools plugin](14-vuejs/vue-tools-plugins/readme.md)
 * [Deployment](00-config-deployment/readme.md)
