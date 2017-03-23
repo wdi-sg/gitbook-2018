@@ -194,6 +194,7 @@
   -->
   * [VueJS](14-vuejs/readme.md)
     * [Intro to VueJS](14-vuejs/vue-intro/readme.md)
+    * [Vue Instance](14-vuejs/vue-instance/readme.md)
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
