@@ -1,4 +1,4 @@
-# jQuery vs. Vue
+# jQuery vs. Vue  
 
 We took a simple chat app starter kit written with HTML and jQuery, and replaced all jQuery methods with Vue.js. This section will show you a side-by-side comparison of some parts of the code. It will help you understand more clearly how Vue works.
 
