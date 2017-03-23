@@ -1,4 +1,4 @@
-## Creating a basic Vue application
+# Creating a basic Vue application
 
 To create a basic vue application we have to create a DOM element to act as the root element for the Vue App.
 
