@@ -158,7 +158,6 @@
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
 * [JS Frontend Frameworks](07-frontend-frameworks/readme.md)
   * [Static Typing with TypeScript](07-frontend-frameworks/typescript.md)
-  <!--
   * [AngularJS](07-angular/readme.md)
     * [Intro to AngularJS](07-angular/angular-intro/readme.md)
       * [Components and SPA](07-angular/angular-intro/components-spa.md)
@@ -191,9 +190,10 @@
       * [Additional Resources](10-react/react-router/additional-resources.md)
     * [React Animations](10-react/react-animations/readme.md)
       * [CSS Animations](10-react/react-animations/css-animations.md)
-  -->
   * [VueJS](14-vuejs/readme.md)
     * [Intro to VueJS](14-vuejs/vue-intro/readme.md)
+    * [Vue Installations](14-vuejs/vue-installations/readme.md)
+    * [Vue Getting Started](14-vuejs/vue-getting-started/readme.md)
     * [Vue Instance](14-vuejs/vue-instance/readme.md)
     * [Vue Directives](14-vuejs/vue-directives/readme.md)
     * [Vue Components](14-vuejs/vue-components/readme.md)
