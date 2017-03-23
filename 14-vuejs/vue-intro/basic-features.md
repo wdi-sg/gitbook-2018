@@ -1,38 +1,3 @@
-# Getting Started
-
-All contents on this page can be found on the official Vue.js guide [here](https://vuejs.org/v2/guide/index.html)!  
-
-The easiest way to set up a VueJS application is to use a direct `<script>` include in the `<head>` of your html file. By including this script, all Vue.js features can be accessed in your html page.  
-```
-<head>
-  ...
-  <script src="https://unpkg.com/vue"></script>
-  ...
-</head>
-```
-
-## Creating a basic Vue application
-
-To create a basic vue application we have to create a DOM element to act as the root element for the Vue App.
-
-```
-<body>
-  ...
-  <div id="myVueApp"></div>
-  ...
-</body>
-```
-
-Then we create a new Vue instance and attach the Vue instance to the DOM element we have created using the `el` (element) option.
-
-```
-var vm = new Vue({
-  el: '#myVueApp'
-})
-```
-
-Now `#myVueApp` is a Vue Application and it possess all capabilities that Vue.js provides.
-
 ## Basic Features
 
 In this section, we will go through some of the basic cool features that Vue provides. In order to understand how does the different features come together or their inner workings, you can check out the official [Vue Guide](https://vuejs.org/v2/guide/) and [documentation](https://vuejs.org/v2/api/).
