@@ -1,11 +1,5 @@
-##References
-* code-pen - [Dev-coffee](http://codepen.io/AndrewThian/pen/QdeOVa) for the full code
-* youtube - [Dev-coffee](https://www.youtube.com/watch?v=VPUdtEf3oXI) for the search filter code along
-* youtube - [Traversy tutorial](https://www.youtube.com/watch?v=z6hQqgvGI4Y) for 60 mins crash course on vue
-* Chengkoon's starter code - [jsFiddle](https://jsfiddle.net/chengkoon/g4ed1hkq/) 
----
-##In-bult directives or attributes
-##`v-if` / `v-else`
+## In-bult directives or attributes
+## `v-if` / `v-else`
 `v-if` and `v-else` have to be in close proximity with each other.
 
 ```html
@@ -24,7 +18,7 @@ const app = new Vue({
     onOff: true
   },
   methods: {
-  // the method called on the button tag would 
+  // the method called on the button tag would
   // affect the data in the other two divs.
   // Vue syntax !es6
   toggleOnOff() {
@@ -34,7 +28,7 @@ const app = new Vue({
 })
 ```
 ---
-##`v-show`
+## `v-show`
 works similar to `v-if` and `v-else`
 ```html
 <!--show if "show" is true-->
@@ -46,20 +40,24 @@ data: {
 }
 ```
 ---
-##`v-model`
+## `v-model`
 ```html
-<div class="search-wrapper">
-  <input type="text" v-model="search" placeholder="Search title.."/>
+<div id="app">
+  <div class="search-wrapper">
     <label>Search title:</label>
+    <input type="text" v-model="search" placeholder="Search title.."/>
   </div>
+</div>
 ```
-the above code is EXACTLY like the one below. 
+the above code is EXACTLY like the one below.
 $event.target.value - accesses the DOM
 ```html
-<div class="search-wrapper">
-  <input v-bind:value="search" v-on:input="search = $event.target.value" placeholder="Search title">
+<div id="app>"
+  <div class="search-wrapper">
     <label>Search title:</label>
+    <input v-bind:value="search" v-on:input="search = $event.target.value" placeholder="Search title">
   </div>
+</div>
 ```
 what it's doing is accessing the `const app = new Vue()` instance and going into the `data` object to find the `search` key for it's value.
 
@@ -73,7 +71,7 @@ const app = new Vue ({
 })
 ```
 ---
-##`v-for`
+## `v-for`
 ```html
 <div id="app">
   <div class="wrapper">
@@ -91,7 +89,7 @@ postList.map(function (post, ind) {
 })
 ```
 ---
-##`v-bind`
+## `v-bind`
 __*binding urls*__
 ```html
 <a v-bind:href="link">Google</a>
@@ -162,8 +160,8 @@ refer to `v-for` for better understanding of `post in postList`
 </div>
 ```
 ---
-##`v-on`
-####Event handling
+## `v-on`
+#### Event handling
 listening for a click on the submit button and running the `onSubmit` function after. `.prevent` is equal to `event.preventDefault()` in javascript/jQuery
 ```html
 <button type="submit" v-on:click.prevent="onSubmit" class="btn btn-primary">Save product</button>
@@ -184,9 +182,16 @@ new Vue ({
     counter = 0
   },
   methods: {
-    updateCounter: function() { 
+    updateCounter: function() {
       this.counter++
     }
   }
 })
 ```
+
+## References
+* code-pen - [Dev-coffee](http://codepen.io/AndrewThian/pen/QdeOVa) for the full code
+* youtube - [Dev-coffee](https://www.youtube.com/watch?v=VPUdtEf3oXI) for the search filter code along
+* youtube - [Traversy tutorial](https://www.youtube.com/watch?v=z6hQqgvGI4Y) for 60 mins crash course on vue
+* Chengkoon's starter code - [jsFiddle](https://jsfiddle.net/chengkoon/g4ed1hkq/)
+---
