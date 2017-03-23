@@ -1,4 +1,4 @@
-## In-bult directives or attributes
+## In-built directives or attributes
 ## `v-if` / `v-else`
 `v-if` and `v-else` have to be in close proximity with each other.
 
