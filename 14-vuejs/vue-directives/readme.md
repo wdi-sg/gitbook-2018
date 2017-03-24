@@ -167,7 +167,7 @@ listening for a click on the submit button and running the `onSubmit` function a
 <button type="submit" v-on:click.prevent="onSubmit" class="btn btn-primary">Save product</button>
 ```
 ```html
-<div id="#app">
+<div id="app">
   <button v-on:click="updateCounter()">Click me</button>
   {{ counter }}
   <!--or you could do in-line expressions-->
@@ -188,6 +188,26 @@ new Vue ({
   }
 })
 ```
+---
+## `v-text`
+#### Update element text content
+```html
+<div id="app">
+  <p v-text="message"></p>
+  <!--> same as <-->
+  <p>{{message}}</p>
+</div>
+```
+
+```js
+new Vue ({
+  el: '#app',
+  data: {
+    message: 'hello world'
+  }
+})
+```
+---
 
 ## References
 * code-pen - [Dev-coffee](http://codepen.io/AndrewThian/pen/QdeOVa) for the full code
