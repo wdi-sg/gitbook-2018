@@ -110,7 +110,7 @@ function multiply(a, b) {
 	return a * b;
 }
 
-function multiply(a, b) {
+var multiply = function(a, b) {
 	return a * b;
 }
 ```
