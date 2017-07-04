@@ -1,9 +1,9 @@
-# Package Management with NPM
+# Package Management with ~~NPM~~ [YARN](https://yarnpkg.com/en/docs/cli/add)
 
 ### Objectives
 - Manage package versions
 - Explain dependency versioning
-- Explain npm and its purpose
+- Explain npm, yarn, and its purpose
 - Update packages and change node version based on work environment
 
 ## The Problem At Hand
@@ -27,33 +27,46 @@ npm is functions as two things, primarily:
 
 ***tip:*** To find out which version of npm you have, run the command `npm -v`. To find out which version of node you're using, run the command `node --version`.
 
-## NPM as a Repository - Demo (10 mins)
+## [Yarn](https://yarnpkg.com/en/) Intro
 
-Let's cover the first point. npm can be thought of as a GitHub, of sort, as in it is an online repository containing thousands of node libraries and applications. If you know the name of the node package you'd like to use, a good way to find its docs would be to search for it at [https://www.npmjs.com/](https://www.npmjs.com/).
+As the global tech community used npm extensively, many found npm to be unreliable in terms of installation and download. Enter `yarn`; this open source project is a collaboration between Facebook, Exponent, Google, and Tilde that tries to address this problems.
 
-![npm search](https://s3.amazonaws.com/f.cl.ly/items/27330j3O3R2N1T0i1K0S/Image%202015-11-09%20at%208.04.37%20PM.png)
+It promised reliability, security, usability and most importantly speed. To install `yarn`, run this command:
 
-However, if you're not sure of the module name your application needs help from, the best way to find what you're looking for is with a simple Google search with the keywords "npm" followed by a short query describing what you're trying to do.
+```
+npm install --global yarn
 
-![google npm](https://s3.amazonaws.com/f.cl.ly/items/1M3Z1a1d2T1M3q2I2X3m/Image%202015-11-09%20at%208.06.54%20PM.png)
+// followed by (MacOS & Ubuntu)
+export PATH="$PATH:`yarn global bin`"
+```
+
+***tip:*** make sure yarn is installed by running `yarn --version`.
+
+## ~~NPM~~ YARN as a Repository - Demo (10 mins)
+
+Let's cover the first point. `yarn` can be thought of as a GitHub, of sort, as in it is an online repository containing thousands of node libraries and applications. If you know the name of the node package you'd like to use, a good way to find its docs would be to search for it at [https://yarnpkg.com/](https://yarnpkg.com/en/).
+
+![yarn search](../_assets/yarn-install.png)
+
+However, if you're not sure of the module name your application needs help from, the best way to find what you're looking for is with a simple Google search with the keywords `yarn `followed by a short query describing what you're trying to do.
+
+![google yarn](../_assets/yarn-search.png)
 
 More often than not, the package you need will pop up in the first page of results, if not the very first result.
 
 ## Package Installation
 
-As mentioned, npm is also an extremely powerful command-line tool that allows us to communicate with the npm repository. For example, if you wanted to download the `react` package into your application, you would run the command `npm install react`. `npm install <package name>` is the command format for _local_ installation. When a local installation occurs, npm installs the specified package into a `node_modules` folder located in the root of your node application's folder. If no `node_modules` folder is present - like when you're installing the app's first third-party package - one will be automatically generated. By default, npm will perform local installations.
+As mentioned, `yarn` is also an extremely powerful command-line tool that allows us to communicate with the npm repository. For example, if you wanted to download the `react` package into your application, you would run the command `yarn add react`. `yarn add <package name>` is the command format for _local_ installation. When a local installation occurs, npm installs the specified package into a `node_modules` folder located in the root of your node application's folder. If no `node_modules` folder is present - like when you're installing the app's first third-party package - one will be automatically generated. By default, npm will perform local installations.
 
-However, there are times when you need to install a package globally. Perhaps the package you want to use offers a task runner or a background daemon that is not meant to be used solely for a specific app but instead as a tool to help with the development of all your apps. These types of packages often come with a command line interface (CLI) which means they must be installed in your system directory, a.k.a. globally. In order to install a package globally, you must specify the global option, `-g`, in your installation command. For example, if you were to install nodemon, a background daemon, you would run the command `npm install -g nodemon`.
+However, there are times when you need to install a package globally. Perhaps the package you want to use offers a task runner or a background [daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) that is not meant to be used solely for a specific app but instead as a tool to help with the development of all your apps. These types of packages often come with a command line interface (CLI) which means they must be installed in your system directory, a.k.a. globally. In order to install a package globally, you just need to add `global`, in your installation command. For example, if you were to install nodemon, a background daemon, you would run the command `yarn add *global* nodemon`.
 
 
 To quickly summarize, you locally install a package when you its purpose is app specific, and you globally install a package when its purpose is app-agnostic.
 
-***tip:*** You can run `i` as a shorthand for `installation` when using npm to install node packages.
 
-
-###Installing nodemon
+### Installing nodemon
 ```bash
-npm install -g nodemon
+yarn add global nodemon
 ```
 
 If we just ran `node nameOfFile.js`, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax
@@ -64,11 +77,11 @@ nodemon nameOfFile.js
 
 ## Package.json
 
-At this point, you may be asking yourself a very important question: how does npm know I have a node app that will accept installed packages?! The answer is package.json.
+At this point, you may be asking yourself a very important question: how does `yarn` know I have a node app that will accept installed packages?! The answer is `package.json`.
 
-The package.json file contains various metadata relevant to your application and most importantly, it gives npm information that allows it to identify your app.
+The `package.json` file contains various metadata relevant to your application and most importantly, it gives `yarn` information that allows it to identify your app.
 
-Here's an example of a package.json:
+Here's an example of a `package.json`:
 
 ```
 {
@@ -97,13 +110,13 @@ Note all the metadata attributes of the file (these are just *some* attributes):
 - repository: repository type and url of the package
 - main: entry point of the package
 
-Out of all these pieces of data, only two are required for npm to recognize your app: name and version. As long as you have those two pieces of information, npm will be able to locate your app when installing packages into your app's `node_modules` folder.
+Out of all these pieces of data, only two are required for `yarn` to recognize your app: name and version. As long as you have those two pieces of information, `yarn` will be able to locate your app when installing packages into your app's `node_modules` folder.
 
 This file also serves as a documentation of your application for other developers to use. Your description can give anyone a quick idea on the purpose of your package and just by skimming your listed dependencies, a fellow developer can quickly see what your app depends on.
 
-In terms of your application dependencies, when working with a team of developers, it is common practice to put `node_modules/*` in your `.gitignore` file. As long as your dependencies are listed in the package.json, a teammate can run `npm i` after cloning your app and have all the listed dependencies installed locally!
+In terms of your application dependencies, when working with a team of developers, it is common practice to put `node_modules/*` in your `.gitignore` file. As long as your dependencies are listed in the package.json, a teammate can run `yarn install` after cloning your app and have all the listed dependencies installed locally!
 
-***tip:*** Running `npm i <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`).
+<!-- ***tip:*** Running `yarn add <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`). -->
 
 ## Version Management
 
@@ -135,16 +148,16 @@ Each listed dependency has a specified version associated with it, so that we ma
 | ^4.8.5 | Any version “compatible with 4.8.5″. This will call versions up to the next major version like 5.0.0. Could break your application if there are major differences in the next major version. |
 | ^1.2 | Any version compatible with 1.2 |
 
-Now when working with a team if you ever encounter a scenario where a package may be behaving differently for different developers, you know to check the dependency versions in the package.json files. Also, when updating a package you should check to see if there are any breaking changes mentioned in the version documentation.
+Now when working with a team if you ever encounter a scenario where a package may be behaving differently for different developers, you know to check the dependency versions in the `package.json` files. Also, when updating a package you should check to see if there are any breaking changes mentioned in the version documentation.
 
 #### Updating a package
 
-Did someone mention updating a package? To update a package you simply run the command `npm update <package name>`. Pretty intuitive, eh?
+Did someone mention updating a package? To update a package you simply run the command `yarn update <package name>`. Pretty intuitive, eh?
 
-***note:*** Not all dependencies we use are used by the application in production. Whenever we need a dependency that will only be used in our development environment, say a package that helps with js linting, we will add that dependency to a `devDependencies` attribute in our package.json. This type of installation can be done with the command `npm i --save --dev <package name>`.
+***note:*** Not all dependencies we use are used by the application in production. Whenever we need a dependency that will only be used in our development environment, say a package that helps with js linting, we will add that dependency to a `devDependencies` attribute in our package.json. This type of installation can be done with the command `yarn add <package name> --dev`.
 
 ## Using .gitignore
-Node will install many large files to the node_modules folder. We don't want nor need to push these to our GitHub repo! Whoever takes our project can run `npm install` after cloning our repo and run with it. So what can we do?
+Node will install many large files to the `node_modules` folder. We don't want nor need to push these to our GitHub repo! Whoever takes our project can run `yarn install` after cloning our repo and run with it. So what can we do?
 
 We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.
 
@@ -154,13 +167,13 @@ The first way is to create a new repo on GitHub and choose from the dropdown men
 
 The second, slightly more troublesome way is to create your own gitignore file on your local machine. In your project directory on Terminal:
 - run `touch .gitignore`
-- open .gitignore on your editor, add "node_modules" in a new line
+- open .gitignore on your editor, add `node_modules` in a new line
 - run your standard git add and commit
-- when you push to your remote GitHub repo, node_mdules will not be pushed 
+- when you push to your remote GitHub repo, `node_modules` will not be pushed
 
 ## Review
 Test your understanding of the lesson:
 
 - Explain the term "breaking changes" and its cause.
-- What is npm and its purpose?
+- What is npm, yarn and its purpose?
 - What is the purpose of the package.json file?
