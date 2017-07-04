@@ -25,6 +25,10 @@ Imagine a paper delivery boy riding on his bike delivering papers every morning.
 
 Now imagine the paperboy throwing the newspaper on your porch but never stopping his bicycle; never stopping, he just keeps throwing papers on porches, so that by the time you pick it up he'll be 3 or 4 houses down. That would be _non-blocking input/output (I/O)_, or _asynchronous_. This is an extremely awesome ability of node since I/O tends to be very "expensive."
 
+More details on JS callback queue and call stack here.
+
+{% youtube src="https://www.youtube.com/watch?v=9bZkp7q19f0" %}{% endyoutube %}
+
 #### Ruby/Rails vs. JS/Node/Express
 
 While not strictly a competition (one of the skills you have to practice is knowing what frameworks you should use in which situations), let's compare the technologies:
@@ -90,6 +94,9 @@ node
 
 > http
 // [ a massive 'http' object returned from the 'http' module ]
+
+> process
+// [an object with a long list of properties that comes together with node]
 ```
 
 Press control-c twice to exit REPL.
@@ -153,6 +160,58 @@ Then try running:
 ```
 node my-module.js
 node main.js
+```
+
+## [Process](https://nodejs.org/api/process.html#process_process)
+The `process` object is a `global` that provides information about, and control over, the current Node.js process. As a global, it is always available to Node.js applications without using `require()`. Two most commonly used `process` property are `process.argv` and `process.env`.
+
+### process.argv
+The `process.argv` property returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be [process.execPath](https://nodejs.org/api/process.html#process_process_execpath).
+
+The second element will be the path to the JavaScript file being executed. The remaining elements will be any additional command line arguments.
+
+For example, assuming we're launching this node project:
+```
+$ node process-args.js one two=three four
+```  
+the output will be:
+```
+0: /usr/local/bin/node
+1: /Users/mjr/work/node/process-args.js
+2: one
+3: two=three
+4: four
+```
+
+### process.env
+The process.env property returns an object containing the user environment. Typically, the object looks like this.
+```
+{
+  TERM: 'xterm-256color',
+  SHELL: '/usr/local/bin/bash',
+  USER: 'maciej',
+  PATH: '~/.bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin',
+  PWD: '/Users/maciej',
+  EDITOR: 'vim',
+  SHLVL: '1',
+  HOME: '/Users/maciej',
+  LOGNAME: 'maciej',
+  _: '/usr/local/bin/node'
+}
+```
+Practically, updating the `env` property will allow programs to run different coding flow depending on different development environment.
+
+For example
+```
+// given the process.env.NODE_ENV === 'development'
+
+// setting two different database url for different environment
+
+if(process.env.NODE_ENV === 'development') {
+  mongoose.connect(<local db uri>)
+} else {
+  mongoose.connect(<production db uri>)
+}
 ```
 
 #### Things to Note
