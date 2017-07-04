@@ -46,11 +46,11 @@ export PATH="$PATH:`yarn global bin`"
 
 Let's cover the first point. `yarn` can be thought of as a GitHub, of sort, as in it is an online repository containing thousands of node libraries and applications. If you know the name of the node package you'd like to use, a good way to find its docs would be to search for it at [https://yarnpkg.com/](https://yarnpkg.com/en/).
 
-![yarn search](../_assets/yarn-install.png)
+![yarn search](../../_assets/yarn-install.png)
 
 However, if you're not sure of the module name your application needs help from, the best way to find what you're looking for is with a simple Google search with the keywords `yarn `followed by a short query describing what you're trying to do.
 
-![google yarn](../_assets/yarn-search.png)
+![google yarn](../../_assets/yarn-search.png)
 
 More often than not, the package you need will pop up in the first page of results, if not the very first result.
 
