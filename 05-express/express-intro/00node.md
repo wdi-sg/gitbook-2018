@@ -27,7 +27,7 @@ Now imagine the paperboy throwing the newspaper on your porch but never stopping
 
 More details on JS callback queue and call stack here.
 
-{% youtube src="https://www.youtube.com/watch?v=9bZkp7q19f0" %}{% endyoutube %}
+{% youtube src="https://www.youtube.com/watch?v=8aGhZQkoFbQ" %}{% endyoutube %}
 
 #### Ruby/Rails vs. JS/Node/Express
 
