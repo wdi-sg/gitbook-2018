@@ -66,7 +66,7 @@ To quickly summarize, you locally install a package when you its purpose is app 
 
 ### Installing nodemon
 ```bash
-yarn add global nodemon
+yarn global add nodemon
 ```
 
 If we just ran `node nameOfFile.js`, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax
@@ -177,3 +177,9 @@ Test your understanding of the lesson:
 - Explain the term "breaking changes" and its cause.
 - What is npm, yarn and its purpose?
 - What is the purpose of the package.json file?
+
+## Useful links
+
+- [npm vs yarn cheat sheet](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc)
+- [yarn installation guide](https://yarnpkg.com/en/docs/install)
+- [yarn cli cheat sheet](https://yarnpkg.com/en/docs/cli/)
