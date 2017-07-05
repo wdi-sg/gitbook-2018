@@ -2,7 +2,12 @@
     "structure": {
         "readme": "readme.md"
     },
-    "plugins": ["toggle-chapters", "codeblock-disable-glossary", "youtube"],
+    "plugins": [
+      "toggle-chapters",
+      "codeblock-disable-glossary",
+      "youtube",
+      "image-captions"
+    ],
     "pluginsConfig": {
     }
 }

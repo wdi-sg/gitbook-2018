@@ -118,6 +118,29 @@ In terms of your application dependencies, when working with a team of developer
 
 <!-- ***tip:*** Running `yarn add <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`). -->
 
+## Start a node project
+
+There are two main ways you can start a node project, by setting it up yourself, or by using other developers' setting. By running `yarn install`, we are essentially running a project with other developer' setting, like stealing a recipe from a cookbook.
+
+<img src="http://www.chicagonow.com/intellectual-chicago-suburbs/files/2016/02/julia_turkey_tx800.jpg" alt="Even Julia Child copied someone else's recipe" align="center" />
+
+So how do we start our own node project? To do so you need a blank directory and create your own `package.json` file. Thankfully you don't have to write it from scratch.
+
+```
+// first thing first, create the blank directory
+mkdir my_first_node
+
+// cd into the node, and run the init command
+cd my_first_node
+yarn init
+```
+
+You will then be asked by `yarn` a couple of questions related to your project. Answer those questions accordingly _(no answers are usually okay at this stage)_.
+
+![yarn search](../../_assets/yarn-init.png)
+
+and **voila!** You have created your first node project.
+
 ## Version Management
 
 But how do we know what version of a package we are using? We do want to avoid those "breaking changes" mentioned earlier after all. Let's take a look at a dependencies attribute in a package.json file that has been given a value.
