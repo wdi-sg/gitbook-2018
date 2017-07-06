@@ -13,6 +13,6 @@
 
 We've been encountering examples of object-oriented programming in JavaScript, but there's ways to make objects easier and more efficient to construct. Specifically, we'll be looking at **class** and **extend** in order to achieve these goals.
 
-Bear in mind, if you google `OOP Javascript`, you'll probably come across **[constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)** and **[prototypes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)**. Those are valid javascript methods to create object before, but it's complicated to understand and the global webdev community is moving towards the new version of javascript now, ES2015. 
+Bear in mind, if you google `OOP Javascript`, you'll probably come across **[constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)** and **[prototypes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)**. Those are valid javascript methods to create object before, but it's complicated to understand and the global webdev community is moving towards the new version of javascript now, [ES2015](../js-next/01readme.md). 
 
 <!-- We've been encountering examples of object-oriented programming in JavaScript, but there's ways to make objects easier and more efficient to construct. Specifically, we'll be looking at **constructors** and **prototypes** in order to achieve these goals. -->
