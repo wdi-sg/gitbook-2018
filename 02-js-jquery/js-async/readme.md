@@ -1,19 +1,19 @@
-#Async
+# Async
 
-##Objectives
+## Objectives
 
 * Identify situations where the `async` module would be needed
 * Utilize `async` control flow functions for asynchronous function calls
 
-##What is Async?
+## What is Async?
 
 Async is a JavaScript module available for Node.js and the browser. It provides a set of utilities for working with functions asynchronously. We'll be focusing our attention to Async's control flow functions, mainly `series`, `parallel`, `concat`, and `waterfall`.
 
-##Why Use Async?
+## Why Use Async?
 
 There are situations where functions will need to be run without conflicting with each other. This is one of the benefits/drawbacks of asynchronous behavior in JavaScript. A great example is data scraping multiple pages. If you were to data scrape pages using a loop, the requests would all run at the same time.
 
-```js
+```
 var request = require('request');
 
 var urls = ['http://www.google.com', 'http://www.yelp.com', 'http://www.twitter.com'];
@@ -32,7 +32,7 @@ console.log(allData);
 
 Using the `async` module will allow us to control the flow of how these functions are run, and when we can access all of the data.
 
-##Using Async
+## Using Async
 
 First, let's install the `async` module.
 
@@ -40,11 +40,11 @@ First, let's install the `async` module.
 npm install --save async
 ```
 
-###Series
+### Series
 
 The `.series` function can pass in an array of functions, along with a callback function to execute once the array of functions is completed. Each function in the array takes in a callback function as a parameter, then executes the callback when the function is finished (passing an error and results). Functions will be executed in order until completed, then the final callback is executed.
 
-```js
+```
 var async = require('async');
 
 //functions
@@ -70,11 +70,11 @@ async.series([fn1, fn2, fn3], function(err, results) {
 });
 ```
 
-###Parallel
+### Parallel
 
 The `.parallel` function also accepts an array of functions, along with a callback function. However, the functions aren't executed one after another. They started in parallel, and the final callback is executed once the array of functions is done executing. Note that the functions are started, but not executed, in parallel. So if the functions don't take any time to complete, they'll execute in series (just as before).
 
-```js
+```
 var async = require('async');
 
 //functions
@@ -106,11 +106,11 @@ async.parallel([fn1, fn2, fn3], function(err, results) {
 });
 ```
 
-###Waterfall
+### Waterfall
 
 The `.waterfall` function is similar to `.series`, but allows arguments to be passed from one function to the next. This is ideal if multiple API calls are being made, and the results of one call are required for the next call.
 
-```js
+```
 var async = require('async');
 
 //functions
@@ -136,11 +136,11 @@ async.waterfall([fn1, fn2, fn3], function(err, results) {
 });
 ```
 
-###Concat
+### Concat
 
 Lastly, `.concat` allows you to pass in an array of values and an iterator (instead of passing in an array of functions). This allows functions to be more reusable, as in the instance of making requests. These functions occur in parallel.
 
-```js
+```
 var async = require('async');
 var request = require('request');
 
@@ -167,7 +167,7 @@ async.concat(urlsToGet, getFirstTitle, function(err, results) {
 
 For those who created the Seattle neighborhoods scraper, we didn't forget about you! Here's an example that takes the neighborhood data we scraped and retrieves the description for each Seattle neighborhood. Comments are provided, so take a moment and decipher the code.
 
-```js
+```
 // importing modules
 var request = require('request');
 var cheerio = require('cheerio');
@@ -216,7 +216,7 @@ function getNeighborhoodDescription(neighborhood, cb) {
 }
 ```
 
-##Wrapup
+## Wrapup
 
 This is just a sampling of the various utilities included in the `async` module. Some other useful functions include `.forever`, `.until`, `.queue`, and `.times`. For usage samples, see the documentation:
 
