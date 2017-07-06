@@ -26,7 +26,7 @@
     * [Chrome Dev Tools](01-workflow/chrome-dev-tools/readme.md)
 * [Internet Fundamentals](03-internet/how-the-internet-works.md)
     * [Internet Lab](03-internet/internet-lab.md)
-* [HTML\/CSS](03-html-css/readme.md)
+* [HTML & CSS](03-html-css/readme.md)
     * [HTML](03-html-css/html-review/readme.md)
     * [CSS Selectors](03-html-css/css-selectors/readme.md)
     * [CSS Box Model and Positioning](03-html-css/css-box-model/readme.md)
