@@ -55,6 +55,7 @@
     * [DOM Manipulation](02-js-jquery/js-dom-manipulation/README.md)
     * [Callbacks and Iterators](02-js-jquery/js-callbacks-iterators/readme.md)
     * [OOP](02-js-jquery/js-prototypes/01readme.md)
+        * [Class](02-js-jquery/js-prototypes/class.md)
         * [Constructors](02-js-jquery/js-prototypes/02constructors.md)
         * [Prototypes](02-js-jquery/js-prototypes/03prototypes.md)
     * [Intro to TDD](02-js-jquery/js-tdd-intro/readme.md)
