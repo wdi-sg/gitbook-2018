@@ -77,7 +77,7 @@ var house4 = new House(13000, 3.5, 7)
 
 ### Class Method
 
-As what we've learnt before, the main difference between `class object` and any other `object` is on its ability to own not only property, but also `method`. The term `method` here is a technical terms for functions that the `object` _owned_. This `class object` is also called `instance`.
+So now we know that the main difference between `class object` and any other `object` is on its ability to own not only property, but also `method`. The term `method` here is a technical terms for functions that the `object` _owned_. This `class object` is also called `instance`.
 
 ```
 
@@ -104,30 +104,59 @@ class House {
 
 ```
 
-So attaching `method` is practically attaching a function into the object _template_. So whenever we create a new `instance` of that template  very simple now thanks to `class` notation. No more confusing terms to remember (**prototype** and **constructor**), we just need to remember `class`.
+So attaching `method` is practically attaching a function into the object _template_. So whenever we create a new `instance` of that template, all the `instance` will have the methods prepared. It's now very simple to create this template structure thank to `class` notation. No more confusing terms to remember (**prototype** and **constructor**), we just need to remember how to create a `class`.
 
-Now that we've attached a function into the `class`, now the function becomes a `method`. The only way for us to call function is through the object `instance`.
+Now that we've attached a function into the `class`, now the function is owned by the instance. The only way for us to call function is through the object `instance`.
 
-```// this is incorrect way to call class method// * assumption: class House has been created *House.expansion() // TypeError: House.expansion is not a functionHouse.reduction() // TypeError: House.reduction is not a function
+```
+// this is incorrect way to call class method
+// * assumption: class House has been created *
+
+House.expansion() // TypeError: House.expansion is not a function
+House.reduction() // TypeError: House.reduction is not a function
 
 // the line above is wrong, because both methods are owned by House INSTANCE
 
-var h1 = new House(200, 2, 2)h1.expansion()
+var h1 = new House(200, 2, 2)
+h1.expansion()
 
 console.log(h1.bedrooms) // returns 4 because h1 is expanding
 
 ```
 
-**Points to note:** `instance` !== `class`**Try it:** Run the following code in the browser console, and expand each object. Look at the contents. Note that each object has its own version of the `volume` function, even though each copy does the same thing.
+**Points to note:** `instance` !== `class`
 
-```class Box { constructor(length, width, height) { this.length = length; this.width = width; this.height = height; }
+**Try it:** Run the following code in the browser console, and expand each object. Look at the contents. Note that each object has its own version of the `volume` function, even though each copy does the same thing.
 
- volume() { console.log(this.length * this.width * this.height); }}
+```
+class Box {
+    constructor(length, width, height) {
+        this.length = length
+        this.width = width
+        this.height = height 
+    }
 
-var boxes = [];for (var i = 1; i <= 100; i++) { boxes.push(new Box(i, i, i))}
+    volume() { 
+        console.log(this.length * this.width * this.height)
+    }
+}
 
-console.log(boxes) // array of BOX instancesconsole.log(boxes[5].volume()) // returns 216 (length: 6, width: 6, height: 6)```
+var boxes = []
+
+for (var i = 1; i <= 100; i++) { 
+    boxes.push(new Box(i, i, i))
+}
+
+console.log(boxes) // array of BOX instances
+console.log(boxes[5].volume()) // returns 216 (length: 6, width: 6, height: 6)
+```
 
 ### Things to watch for
 
-* Using the `new` keyword, Javascript does a few things: * Creates a new object * Attached the `method` property to the `Class`* When using the class `method`, don't try to call it without the `new` keyword. * Otherwise, you'll get the output of the constructor function, which is `undefined`. The `new` keyword will use the constructor to return a new object.* Always make sure the keyword `this` is on the left hand side: `this.taco = taco`. Remember, you're assigning parameters to properties of the new object being created.* `return` statements are usually unnecessary in constructors
+* Using the `new` keyword, Javascript does a few things: 
+    * Creates a new object 
+    * Attached the `method` property to the `Class`
+* When using the class `method`, don't try to call it without the `new` keyword. 
+    * Otherwise, you'll get the output of the constructor function, which is `undefined`. The `new` keyword will use the constructor to return a new object.
+* Always make sure the keyword `this` is on the left hand side: `this.taco = taco`. Remember, you're assigning parameters to properties of the new object being created.
+* `return` statements are usually unnecessary in constructors
