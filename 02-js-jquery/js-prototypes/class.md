@@ -47,6 +47,8 @@ var house4 = {
 
 Unfortunately, this is not very efficient. We've created 4 houses and already it's taken almost 20 lines of code. Fortunately we can create a `class` as our "blueprint" and then create objects based off of that.
 
+![Cookie Cutter Javascript](http://sausagelife.com/wp-content/uploads/2016/12/2-1.jpg)
+
 ## Class Literal Notation
 
 We can use a constructor function inside the `class` body to create multiple objects that share the same properties.
@@ -63,7 +65,7 @@ class House {
 }
 ```
 
-Notice our use of the keyword `this`. Since we don't know what the value for the parameters will be, we use `this` as a placeholder. When we call the `House` function, we add in our values. To create an object instance using a constructor function, we use the `new` keyword. Here is an example of how we would create our four houses using a constructor function and the `new` keyword:
+Notice that the word `House` is capitalized. This is to differ a `class` with any other normal `variable`. Also notice our use of the keyword `this`. Since we don't know what the value for the parameters will be, we use `this` as a placeholder. When we call the `House` function, we add in our values. To create an object instance using a constructor function, we use the `new` keyword. Here is an example of how we would create our four houses using a constructor function and the `new` keyword:
 
 ```
 var house1 = new House(3000, 3, 2)
@@ -73,23 +75,36 @@ var house4 = new House(13000, 3.5, 7)
 
 ```
 
-## Class Method
+### Class Method
 
-As what we've learnt before, the main difference between `class object` and any other `object` is on its ability to own not only property, but also `method`. The term `method` here is a technical terms for functions that the `object` _owned_. This object is also called `instance`.
-
-```// back to our previous house class
-
-class House { constructor(sqFeet, bathrooms, bedrooms) { this.sqFeet = sqFeet; this.bathrooms = bathrooms; this.bedrooms = bedrooms; }
-
- // we can also attach a method to this class like so
-
- expansion() { // since it's still inside the class body, 'this' here refers to the House 'instance' this.bathrooms++ this.bedrooms += 2 }
-
- reduction() { this.bathrooms-- this.bedrooms -= 2 }}
+As what we've learnt before, the main difference between `class object` and any other `object` is on its ability to own not only property, but also `method`. The term `method` here is a technical terms for functions that the `object` _owned_. This `class object` is also called `instance`.
 
 ```
 
-So attaching `method` is very simple now thanks to `class` notation. No more confusing terms to remember (**prototype** and **constructor**), we just need to remember `class`.
+class House {
+
+ constructor(sqFeet, bathrooms, bedrooms) {
+     this.sqFeet = sqFeet;
+     this.bathrooms = bathrooms;
+     this.bedrooms = bedrooms;
+ }
+
+ // we can also attach a method to this class like so
+ expansion() { 
+    // since it's still inside the class body, 'this' here refers to the House 'instance' 
+    this.bathrooms++ 
+    this.bedrooms += 2 
+ }
+
+ reduction() { 
+    this.bathrooms-- 
+    this.bedrooms -= 2 
+ }
+}
+
+```
+
+So attaching `method` is practically attaching a function into the object _template_. So whenever we create a new `instance` of that template  very simple now thanks to `class` notation. No more confusing terms to remember (**prototype** and **constructor**), we just need to remember `class`.
 
 Now that we've attached a function into the `class`, now the function becomes a `method`. The only way for us to call function is through the object `instance`.
 
