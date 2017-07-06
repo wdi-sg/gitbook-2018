@@ -63,12 +63,12 @@
     * [Resources](02-js-jquery/js-inheritance/05resources.md)
   * [ESNext](02-js-jquery/js-next/01readme.md)
     * [Let & Const](02-js-jquery/js-next/07const-let.md)
-    * [Template Strings](02-js-jquery/js-next/04template-string.md)
+    * [Template Strings](02-js-jquery/js-next/04template-strings.md)
     * [Classes](02-js-jquery/js-next/08classes.md)
     * [Object Literals](02-js-jquery/js-next/03objects.md)
-  * [Additional Topics](02-js-jquery/additional-topics/readme.md)
+  <!-- * [Additional Topics](02-js-jquery/additional-topics/readme.md)
     * [Async module](02-js-jquery/js-async/readme.md)
-    * [Data Scraping](02-js-jquery/js-data-scraping/readme.md)
+    * [Data Scraping](02-js-jquery/js-data-scraping/readme.md) -->
 * [jQuery](02-js-jquery/jquery.md)
   * [Intro](02-js-jquery/jquery-intro/readme.md)
     * [DOM Manipulation](02-js-jquery/jquery-intro/02dom-manipulation.md)
@@ -118,7 +118,7 @@
       * [Sessions](05-express/express-auth/practice/04sessions.md)
       * [User Login](05-express/express-auth/practice/05loginuser.md)
       * [Authorization and Flash messages](05-express/express-auth/practice/06authorization-flash.md)
-    * [Sequelize Cheat Sheet](05-express/express-sequelize/sequelizecheatsheet.md)
+    <!-- * [Sequelize Cheat Sheet](05-express/express-sequelize/sequelizecheatsheet.md) -->
     * [Resources](05-express/express-sequelize/06resources.md)
   * [Express Authentication](05-express/express-auth/readme.md)
     * [Research Components](05-express/express-auth/research/components.md)
@@ -151,7 +151,7 @@
   * [Asset Pipeline](06-ruby-rails/rails-assets-frontend/readme.md)
   * [AJAX](06-ruby-rails/rails-assets-frontend/ajax.md)
   * [Rails Auth and 1-M](06-ruby-rails/rails-auth-1-M/readme.md)
-    * [Auth Components](06-ruby-rails/rails-auth-1-M/components.md)
+    <!-- * [Auth Components](06-ruby-rails/rails-auth-1-M/components.md) -->
   * [Rails M:M](06-ruby-rails/rails-M-M/readme.md)
   * [ActiveRecord Polymorphism](06-ruby-rails/rails-polymorphism/readme.md)
   * [Additional Topics](06-ruby-rails/additional-topics/readme.md)
@@ -228,7 +228,7 @@
   * [Trees and Other Topics](08-cs/cs-trees-data-structures/readme.md)
   * [Hashmaps](08-cs/cs-hashmaps/readme.md)
   * [Recursion](08-cs/cs-recursion/readme.md)
-  * [Binary Search](08-cs/teaser-ruby-binary-search/readme.md)
+  <!-- * [Binary Search](08-cs/teaser-ruby-binary-search/readme.md) -->
   * [Algorithm Complexity](08-cs/cs-algorithm-complexity/readme.md)
   * [Bucket Sort](08-cs/cs-ruby-bucket-sort/readme.md)
   * [Bubble Sort](08-cs/cs-ruby-bubble-sort/readme.md)
