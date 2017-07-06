@@ -118,7 +118,7 @@ In terms of your application dependencies, when working with a team of developer
 
 <!-- ***tip:*** Running `yarn add <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`). -->
 
-## Start a node project
+## Start a fresh node project
 
 There are two main ways you can start a node project, by setting it up yourself, or by using other developers' setting. By running `yarn install`, we are essentially running a project with other developer' setting, like stealing a recipe from a cookbook.
 
