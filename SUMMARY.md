@@ -94,7 +94,7 @@
     * [Database Administration](04-databases/dbadmin.md)
 * [Node & Express](05-express/readme.md)
     * [Intro to Node](05-express/express-intro/00node.md)
-    * [Package Management with NPM](05-express/express-intro/01npm.md)
+    * [Package Management with YARN](05-express/express-intro/01npm.md)
     * [Intro to Express](05-express/express-intro/02express.md)
         * [CRUD in Express](05-express/express-intro/05crudexpress.md)
         * [Views](05-express/express-intro/04views.md)
