@@ -21,7 +21,7 @@ mkdir family-tree
 cd family-tree
 
 # setup npm
-npm init --yes
+yarn init --yes
 
 # create index file
 touch index.js
