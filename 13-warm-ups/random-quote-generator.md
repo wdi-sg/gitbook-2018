@@ -1,9 +1,13 @@
 # Random Quote Generator
-Build a random quote generator that randomly displays a quote on the page. 
 
-Use a variable of any data type you like to store 5-10 quotes. When user clicks a button, use DOM manipulation to randomly cycle through the quotes to display one on the page. 
+Build a random quote generator that randomly displays a quote on the page. Use this [random quote generator `api`](https://market.mashape.com/andruxnet/random-famous-quotes). Make sure that you've *signed up and created an application* before you try to use the `api`.
 
-Feel free to do this in vanilla JavaScript or jQuery, whichever you feel you need to practice. 
+User stories:
+* When user clicks a button, use `jQuery` to call `random-famous-quotes` api
+* The output of that `ajax` call, update it into your html
 
 ### Bonus
-Add a 'click to Tweet' button that takes the current quote and opens it in a separate tab, letting the user tweet the quote (if user is logged in to Twitter). 
+
+* Randomize between different category the `api` (either `movies` or `famous`)
+* Feel free to adjust the styling as you wish, try to apply your `jQuery` methods into it.
+* Add a [`click to Tweet`](https://dev.twitter.com/web/overview) button that takes the current quote and opens it in a separate tab, letting the user tweet the quote (if user is logged in to Twitter).
