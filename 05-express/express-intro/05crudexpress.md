@@ -1,10 +1,10 @@
-#CRUD in Express
+# CRUD in Express
 
 CRUD is an acronym that stands for Create, Read, Update, Destroy. These are the basic operations that you can perform on data. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action: Creating a user (create), Listing comments (read) to editing your profile (update), to deleting a video you uploaded on youtube (destroy).
 
 [Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
-####RESTful Routing
+#### RESTful Routing
 
 On the web the best practice for CRUD actions uses something called RESTful routing. The basic idea is your route (URL) should relate to the type of item you are interacting with, as well as the action you'll be performing to change/view the state of the item(s).
 
@@ -20,7 +20,7 @@ So if you were CRUDing Animals the route would be `/animals` and the following r
 
 [Read more on wiki](http://en.wikipedia.org/wiki/Representational_state_transfer)
 
-##CRUD in action
+## CRUD in action
 
 For now we're just going to focus on POST and GET (Create and Read)
 
@@ -53,7 +53,7 @@ For this example, we'll be using a JSON object as our data store. In the root of
 ]
 ```
 
-###Index / Read (GET)
+### Index / Read (GET)
 
 Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `/animals`.
 
@@ -61,25 +61,25 @@ Index is a route (URL) that lists all items of a specific type. It is a GET requ
 
 ```js
 // Include fs (short for filesystem) at the top. No need to install via npm
-const fs = require('fs');
+const fs = require('fs')
 
 // Express index route for animals (lists all animals)
 app.get('/animals', function(req, res) {
-  let animals = fs.readFileSync('./data.json');
-  animals = JSON.parse(animals);
-  res.send('animals/index', {myAnimals: animals});
-});
+  let animals = fs.readFileSync('./data.json')
+  animals = JSON.parse(animals)
+  res.send('animals/index', {myAnimals: animals})
+})
 ```
 
 In the above example we load the `animals/index.ejs` view and pass it `animals` as `myAnimals`. This means in the index.ejs file we can access myAnimals directly.
 
-**Index view -- in /views/animals/index.ejs**
+**Index view -- in /views/animals/index.handlebars**
 
-```html
+```handlebars
 <ul>
-  <% myAnimals.forEach(function(animal) { %>
-  <li><%= animal.name %> is a <%= animal.type %></li>
-  <% }); %>
+  {{#each myAnimals}}
+  <li>{{this.name}} is a {{this.type}}</li>
+  {{/each}}
 </ul>
 ```
 
@@ -94,7 +94,7 @@ displaying a list of all of the items.
 * Tony is a tiger
 * Kuma is a bear
 
-###Show / Read (GET)
+### Show / Read (GET)
 
 Show is a route that displays a single item of a specific type. It is GET
 request to (in this example) `/animals/1`
@@ -109,21 +109,21 @@ app.get('/animals/:idx', function(req, res) {
   animals = JSON.parse(animals);
 
   //get array index from url parameter
-  let animalIndex = parseInt(req.params.idx);
+  let animalIndex = parseInt(req.params.idx)
 
   //render page with data of the specified animal
-  res.render('animals/show', {myAnimal: animals[animalIndex]});
+  res.render('animals/show', {myAnimal: animals[animalIndex]})
 });
 ```
 
-In the above example we load the `animals/show.ejs` view and pass it a specific
+In the above example we load the `animals/show.handlebars` view and pass it a specific
 item from the `animals` array as `myAnimal`. We use the :idx url parameter to
 specify which animal to display. Again, this means in the show.ejs file we can
 access myAnimal directly.
 
 
-```html
-<%= myAnimal.name %> is a <%= myAnimal.type %>.
+```handlebars
+{{ myAnimal.name }} is a {{ myAnimal.type }}.
 ```
 
 Display the animal based on the url. With the example `/animals/1` we would be
@@ -132,7 +132,7 @@ this...
 
 Fido is a dog.
 
-###Create (POST)
+### Create (POST)
 
 To create an item (animal in this example) we need to make a POST to the url `/animals` with the data about that animal. We do this using a form with the method attribute set to `post` and the action set to the create url.
 
@@ -159,19 +159,20 @@ To receive this data we need to create a `POST` route in express and use the `bo
 Parsing parameters from a form needs an external module called `body-parser`.
 
 ```bash
-npm install --save body-parser
+yarn add body-parser
 ```
 
 **index.js**
 ```js
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-
-app.set('view engine', 'ejs');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 
 // tell your app to use the module
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 ```
 
 Note that we set an attribute `extended` to `false` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
