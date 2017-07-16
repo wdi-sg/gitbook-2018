@@ -121,20 +121,23 @@ Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we ca
 When defining a schema, you can add custom methods and call these methods on the models. These are instance methods. Let's write a `sayHello` function under our schema:
 
 ```
-const userSchema = new mongoose.Schema({
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const userSchema = new Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
     website: String
   }
-});
+})
 
 userSchema.methods.sayHello = function () {
   return "Hi " + this.name
-};
+}
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema)
 
 module.exports = User
 ```
@@ -166,7 +169,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 
 We can first create a User and save it to the database using the `.save` method in Mongoose.
 
-```js
+```
 const newUser = new User({
   name: 'bob',
   email: 'bob@gmail.com'
@@ -188,10 +191,10 @@ You can also call `.create` to *combine* creating and saving the instance.
 // create and save a user
 User.create({ name: 'Emily', email: 'em@i.ly' }, function (err, user) {
   if (err) {
-    console.log(err);
-    return;
+    console.log(err)
+    return
   }
-  console.log(user);
+  console.log(user)
 })
 ```
 
@@ -205,37 +208,37 @@ We can find multiple model instances by using the `.find` function, which accept
 // Find All
 User.find({}, function (err, users) {
   if (err) {
-    console.log(err);
+    console.log(err)
     return;
   }
-  console.log(users);
+  console.log(users)
 })
 
 // Find only one user
 User.findOne({}, function (err, users) {
   if (err) {
-    console.log(err);
-    return;
+    console.log(err)
+    return
   }
-  console.log(users);
+  console.log(users)
 })
 
 // Find by email
 User.find({ email: req.params.email }, function (err, users) {
   if (err) {
-    console.log(err);
-    return;
+    console.log(err)
+    return
   }
-  console.log(users);
+  console.log(users)
 })
 
 // Find by id
 User.findById(req.params.id, function (err, users) {
   if (err) {
-    console.log(err);
+    console.log(err)
     return;
   }
-  console.log(users);
+  console.log(users)
 })
 ```
 
@@ -285,6 +288,6 @@ User.findOneAndRemove({ name: 'brian' }, function (err) {
     console.log(err)
     return
   }
-  console.log('User deleted!');
+  console.log('User deleted!')
 })
 ```
