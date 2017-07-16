@@ -175,7 +175,7 @@ app.use(bodyParser.urlencoded({
 }))
 ```
 
-Note that we set an attribute `extended` to `false` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
+Note that we set an attribute `extended` to `true` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
 
 Now, if we try to add this backend route, calling `req.body` should contain the form input.
 
@@ -188,7 +188,7 @@ app.post('/animals', function(req, res) {
 });
 ```
 
-Form data is passed as payload of the request. Every field that has a name will
+Form data is passed as *payload* of the request. Every field that has a name will
 be included in that payload and it is sent as form encoded text. When
 `body-parser` is installed it automatically **parses** the form body into a
 javascript object that we can use and it stores it in `req.body` so we can use it. All of this is done as middleware, which we just configured.
@@ -198,7 +198,7 @@ In the above example we could access the animal type form field by using
 directly to the names given to the form fields in the **form html** above.
 
 Generally, the code in the **express route** would contain code that would
-CREATE an item in a database and redirect the user to a route with a confirmation
+**CREATE** an item in a database and redirect the user to a route with a confirmation
 message of some sort or just back to the index route. For this example we're
 going to use the JSON file created above to store our data. This will involve three steps:
 
@@ -223,7 +223,7 @@ app.post('/animals', function(req, res) {
 });
 ```
 
-####Additional: Show / Read (GET) with a Form
+#### Additional: Show / Read (GET) with a Form
 
 There may be instances where you need to GET animals, but you don't want them all. A good example is filtering animals with a specific name via a search bar.
 
