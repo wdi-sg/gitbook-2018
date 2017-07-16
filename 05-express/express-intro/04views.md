@@ -185,13 +185,56 @@ Block expressions allow you to define helpers that will invoke a section of your
 
 Handlebars offers a variety of built-in helpers such as the `if` conditional and `each` iterator.
 
-
+##### #each 
 Say we have the following `context` given to our `handlebars` template.
+```
+var context = {
+  people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley"
+  ]
+}
+```
+you can iterate through each of the people's name with the `#each` helper:
 
 ```
-var context = ['spying', 'sarcasm', 'Kenny Loggins']
+<ul class="people_list">
+  {{#each people}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+```
+will result in:
+```
+<ul class="people_list">
+  <li>Yehuda Katz</li>
+  <li>Alan Johnson</li>
+  <li>Charles Jolley</li>
+</ul>
 ```
 
+##### #if & #unless
+`Handlebar` can also conditionally render a block with `#if` and `#unless`. 
+
+Say the context are like so:
+```
+var context = {
+  maybeYesMaybeNo: Math.floor(Math.random()) // 50/50 chance of truth or false
+}
+
+// handlebars
+<div>
+  {{#if maybeYesMaybeNo }} 
+  <h1>YES</h1>
+  {{/if}}
+  
+  {{#unless maybeYesMaybeNo }} 
+  <h1>It's a no</h1>
+  {{/if}}
+</div>
+```
+with the template above, each `h1` will only be displayed **YES** if `maybeYesMaybeNo` is truthy, and show **NO** if otherwise.
 
 
 ### Partials
