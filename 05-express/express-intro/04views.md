@@ -44,6 +44,7 @@ We need to do a couple steps to get the template engine working.
 First, install [`express-handlebars`](https://github.com/ericf/express-handlebars) by running `yarn add express-handlebars` in the command line.
 
 Then, prepare this directory structure on your `node` project.
+
 ```
 .
 ├── app.js
@@ -54,15 +55,26 @@ Then, prepare this directory structure on your `node` project.
 
 2 directories, 3 files
 ```
- 
-the `app.use` statement with the following statement (`handlebar` assumed we'll be placing all template files into the `/views` folder, so it's **optional** if adhering to that syntax).
 
-```js
-app.set('view engine', 'ejs');
-```
+Once structure is setup, you can setup the `express` view engine to `handlebar` in this manner.
 
-Also, rename the .html file to a .ejs file. We'll see that the `.ejs` extension is optional in the route, but necessary in the file's actual name.
+```javascript
+const express = require('express')
+const exphbs  = require('express-handlebars')
 
+var app = express();
+
+// this line below, creates a layout look to your express project
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+// this line sets handlebars to be the default view engine
+app.set('view engine', 'handlebars')
+
+app.get('/', function (req, res) {
+  // running this will let express to run home.handlebars file in your views folder
+  res.render('home')
+})
+
+Notice that all `.html` file is now a `.handlebars` file.
 
 ### Templating with Variables
 
