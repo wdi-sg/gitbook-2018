@@ -2,7 +2,7 @@
 
 ### Views
 
-First, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/views`, and create an `index.html` page inside.
+First, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/public`, and create an `index.html` page inside.
 
 ```html
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// this sets a static directory for the views
+// this sets a static directory for 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
@@ -35,13 +35,13 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
-### Templating with ejs
+### Templating with Handlebar
 
-The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **ejs** (embedded JavaScript) and use that instead.
+The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **(Handlebar)[http://handlebarsjs.com/]** and use that instead.
 
 We need to do a couple steps to get the template engine working.
 
-First, install `ejs` by running `npm install --save ejs` in the command line.
+First, install `handlebar` by running `npm install --save ejs` in the command line.
 
 Then, replace the `app.use` statement with the following statement (ejs assumed we'll be placing all template files into the `/views` folder, so it's optional if adhering to that syntax).
 
