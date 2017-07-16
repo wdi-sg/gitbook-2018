@@ -64,7 +64,7 @@ const exphbs  = require('express-handlebars')
 
 var app = express();
 
-// this line below, creates a layout look to your express project
+// this line below, sets a layout look to your express project
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 // this line sets handlebars to be the default view engine
 app.set('view engine', 'handlebars')
@@ -268,6 +268,22 @@ Partials can be used to modularize views and reduce repetition. A common pattern
 <% include ./partials/footer.ejs %>
 ```
 
+
+### Layouts
+
+A layout is simply a Handlebars template with a `{{{body}}}` placeholder. Usually it will be an HTML page wrapper into which views will be rendered. 
+
+, `handlebars` sets the layout file to be at `"views/layouts/main.handlebars"`.
+
+There are two ways to set a default layout: configuring the view engine's `defaultLayout` property, or setting [Express locals][] `app.locals.layout`.
+
+The layout into which a view should be rendered can be overridden per-request by assigning a different value to the `layout` request local. The following will render the "home" view with no layout:
+
+```javascript
+app.get('/', function (req, res, next) {
+    res.render('home', {layout: false});
+});
+```
 
 ### Layouts
 
