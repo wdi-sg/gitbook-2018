@@ -236,85 +236,30 @@ var context = {
 ```
 with the template above, each `h1` will only be displayed **YES** if `maybeYesMaybeNo` is truthy, and show **NO** if otherwise.
 
-
-### Partials
-
-Partials can be used to modularize views and reduce repetition. A common pattern is to move the header and footer of a page into separate views, or partials, then render them on each page.
-
-#### Example
-
-**views/partials/header.ejs**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
-```
-
-**views/partials/footer.ejs**
-```html
-</body>
-</html>
-```
-
-**views/index.ejs**
-```html
-<% include ./partials/header.ejs %>
-
-<h1>Welcome to my site!</h1>
-
-<% include ./partials/footer.ejs %>
-```
-
-
 ### Layouts
 
 A layout is simply a Handlebars template with a `{{{body}}}` placeholder. Usually it will be an HTML page wrapper into which views will be rendered. 
 
-, `handlebars` sets the layout file to be at `"views/layouts/main.handlebars"`.
+```
+// this line below, creates a layout look to your express project
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+```
 
-There are two ways to set a default layout: configuring the view engine's `defaultLayout` property, or setting [Express locals][] `app.locals.layout`.
+With the given code above, `handlebars` sets the layout file to be at `"views/layouts/main.handlebars"`.
 
 The layout into which a view should be rendered can be overridden per-request by assigning a different value to the `layout` request local. The following will render the "home" view with no layout:
 
 ```javascript
-app.get('/', function (req, res, next) {
-    res.render('home', {layout: false});
+app.get('/diff', function (req, res, next) {
+    res.render('diff', {layout: false});
 });
 ```
 
-### Layouts
+#### Example
 
-Previously we used partials to create a header and a footer for our website. Adding a header and a footer to every page can be cumbersome. Why should we have to write the same lines at the beginning and end of every page? We shouldn't! There's a better way!
+In the root of the views folder, create a folder called `layouts.handlebars` and add a layout called `main.handlebars`
 
-Instead, we can create a layout that has a special place for our page content. We can define a basic page structure made up of our header and footer and have a place in the middle where all our content will go. In order to do this, another module must be installed.
-
-### Example
-
-**Step 1:**
-
-Install `express-ejs-layouts` via npm
-
-```
-npm install --save express-ejs-layouts
-```
-
-**Step 2:**
-
-Require the module and add it to the app.
-
-```js
-const ejsLayouts = require("express-ejs-layouts");
-app.use(ejsLayouts);
-```
-
-**Step 3:**
-
-In the root of the views folder, add a layout called `layout.ejs`
-
-**views/layout.ejs**
+**views/layouts/main.handlebars**
 ```html
 <!DOCTYPE html>
 <html>
@@ -322,14 +267,14 @@ In the root of the views folder, add a layout called `layout.ejs`
   <title>Page</title>
 </head>
 <body>
-  <%- body %>
+  {{{ body }}}
 </body>
 </html>
 ```
 
-This layout will be used by all pages, and the content will be filled in where the `<%- body %>` tag is placed. `<%- body %>` is a special tag used by `express-ejs-layouts` that cannot be renamed.
+This layout will be used by all pages, and the content will be filled in where the `{{{ body }}}` tag is placed. `{{{ body }}}` is a special tag used by `express-handlebars` that cannot be renamed.
 
-Now we can create another page `animals.ejs` and see that it's content is placed in the page. We can create new pages without having to write the include statements for the header and footer.
+Now we can create another page `animals.handlebars` and see that it's content is placed in the page. We can create new pages without having to write the include statements for the header and footer.
 
 First we add a simple route to `app.js`:
 
@@ -339,14 +284,14 @@ app.get("/animals", function(req, res) {
 });
 ```
 
-And we create a new file `views/animals.ejs`:
+And we create a new file `views/animals.handlebars`:
 
 ```html
 <h1><%= title %></h1>
 <ul>
-  <% animals.forEach(function(animal) { %>
-    <li><%= animal %></li>
-  <% }) %>
+  {{#each animals}}
+    <li>{{this}}</li>
+  {{/each}}
 </ul>
 ```
 
@@ -363,10 +308,41 @@ Add a simple navigation list to the to of the layout page so there's a link to e
     <li><a href="/">Favorite Foods</a></li>
     <li><a href="/animals">Favorite Animals</a></li>
   </ul>
-  <%- body %>
+  {{{ body }}}
 </body>
 </html>
 
+```
+
+### Partials
+
+Partials can be used to modularize views and reduce repetition. A common pattern is to move the header and footer of a page into separate views, or partials, then render them on each page.
+
+#### Example
+
+**views/partials/header.handlebars**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Site</title>
+</head>
+<body>
+```
+
+**views/partials/footer.handlebars**
+```html
+</body>
+</html>
+```
+
+**views/index.ejs**
+```html
+{{ > header }}
+
+<h1>Welcome to my site!</h1>
+
+{{ > footer }}
 ```
 
 ### Forms
