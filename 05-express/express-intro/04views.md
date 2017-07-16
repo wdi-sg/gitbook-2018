@@ -120,7 +120,7 @@ The JavaScript being embedded is enclosed by the `{{ }}` tags, this in `handleba
 #### HTML Escaping
 By default, `handlebars` will automatically escape the given `context`. We can also use `{{{ }}}` to tell `handlebars` to **NOT** escape the context given:
 
-```
+```js
 // context given are these 
 var context = {
   name: "<p>Sterling Archer</p>",
@@ -141,7 +141,7 @@ app.get('/', function(req, res) {
 
 Results in:
 
-```
+```html
 <body>
   <h1>&lt;p&gt; Sterling Archer &lt;p&gt;</h1>
   <p>This is a post about &lt;p&gt; tags</p>
@@ -187,7 +187,7 @@ Handlebars offers a variety of built-in helpers such as the `if` conditional and
 
 ##### #each 
 Say we have the following `context` given to our `handlebars` template.
-```
+```js
 var context = {
   people: [
     "Yehuda Katz",
@@ -198,7 +198,7 @@ var context = {
 ```
 you can iterate through each of the people's name with the `#each` helper:
 
-```
+```handlebars
 <ul class="people_list">
   {{#each people}}
     <li>{{this}}</li>
@@ -218,7 +218,8 @@ will result in:
 `Handlebar` can also conditionally render a block with `#if` and `#unless`. 
 
 Say the context are like so:
-```
+
+```handlebars
 var context = {
   maybeYesMaybeNo: Math.floor(Math.random()) // 50/50 chance of truth or false
 }
@@ -240,7 +241,7 @@ with the template above, each `h1` will only be displayed **YES** if `maybeYesMa
 
 A layout is simply a Handlebars template with a `{{{body}}}` placeholder. Usually it will be an HTML page wrapper into which views will be rendered. 
 
-```
+```js
 // this line below, creates a layout look to your express project
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 ```
