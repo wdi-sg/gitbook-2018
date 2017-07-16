@@ -73,28 +73,34 @@ app.get('/', function (req, res) {
   // running this will let express to run home.handlebars file in your views folder
   res.render('home')
 })
+```
 
 Notice that all `.html` file is now a `.handlebars` file.
 
-### Templating with Variables
+### Expression
 
-Templating with variables means we can pass in an object to the `.render` function and access those variables inside the ejs template.
+Templating with variables means we can pass in an object to the `.render` function and access those variables inside the `handlebars` template. These variables are also called `context`
 
 **index.js**
+
 ```js
 const express = require('express');
+const exphbs  = require('express-handlebars')
+
 const app = express();
 
-app.set('view engine', 'ejs');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
 
 app.get('/', function(req, res) {
-  res.render('index', {name: "Sterling Archer"});
+  // giving home.handlebars file an object/context with `name` as a property
+  res.render('home', {name: "Sterling Archer"});
 });
 
 app.listen(3000);
 ```
 
-then we need to update our `index.ejs` to use a templating variable.
+then we need to update our `home.handlebars` to use a templating variable.
 
 **views/index.ejs**
 ```html
@@ -104,15 +110,50 @@ then we need to update our `index.ejs` to use a templating variable.
     <title>Testing a View</title>
   </head>
   <body>
-    <h1>Hello, <%= name %>!</h1>
+    <h1>Hello, {{ name }}!</h1>
   </body>
 </html>
 ```
 
-The JavaScript being embedded is enclosed by the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be printed to the screen. We can also use the following signs to tell EJS to parse code in different ways:
+The JavaScript being embedded is enclosed by the `{{ }}` tags, this in `handlebars` is also called as an `expression`. 
 
-* `<%- name %>` will print out the expression without escaping HTML
-  * If the name was `"<span>Sterling Archer</span>"`, then the `<span>` elements won't be escaped.
+#### HTML Escaping
+By default, `handlebars` will automatically escape the given `context`. We can also use `{{{ }}}` to tell `handlebars` to **NOT** escape the context given:
+
+```
+// context given are these 
+var context = {
+  name: "<p>Sterling Archer</p>",
+  body: "<p>This is a post about &lt;p&gt; tags</p>"
+}
+
+app.get('/', function(req, res) {
+  res.render('home', context);
+});
+
+
+// in home.handlebars
+<body>
+  <h1>{{name}}</h1>
+  {{{body}}}
+</body>
+```
+
+Results in:
+
+```
+<body>
+  <h1>&lt;p&gt; Sterling Archer &lt;p&gt;</h1>
+  <p>This is a post about &lt;p&gt; tags</p>
+</body>
+```
+
+so:
+
+* `{{ }}` will escape the `expression` (e.g. convert `<>` to `&lt;&gt;`
+* `{{{ }}}` will **NOT** escape the `expression`
+
+
 * `<% name %>` will not print out the expression, but it will execute it
   * Handy for `if` statements and loops
 
@@ -127,7 +168,7 @@ This doesn't only apply to primitive variables. We can even include variable dec
   <body>
     <h1>Hello, <%= name %>!</h1>
 
-    <% var obsessions = ['spying', 'sarcasm', 'Kenny Loggins']; %>
+    <% var obsessions = var obsessions = ['spying', 'sarcasm', 'Kenny Loggins']; %>
 
     <ul>
     <% obsessions.forEach(function(item) { %>
@@ -137,6 +178,21 @@ This doesn't only apply to primitive variables. We can even include variable dec
   </body>
 </html>
 ```
+
+#### Block Expressions
+
+Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a `#` preceeding the helper name (e.g. `{{#each}}` or `{{#if}}`) and require a matching pair with a `/` sign (e.g. `{{/each}}` or ``{{/if}}``.
+
+Handlebars offers a variety of built-in helpers such as the `if` conditional and `each` iterator.
+
+
+Say we have the following `context` given to our `handlebars` template.
+
+```
+var context = ['spying', 'sarcasm', 'Kenny Loggins']
+```
+
+
 
 ### Partials
 
