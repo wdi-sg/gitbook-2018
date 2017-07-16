@@ -37,13 +37,25 @@ app.listen(3000);
 
 ### Templating with Handlebar
 
-The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **(Handlebar)[http://handlebarsjs.com/]** and use that instead.
+The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **[Handlebar](http://handlebarsjs.com/)** and use that instead.
 
 We need to do a couple steps to get the template engine working.
 
-First, install `handlebar` by running `npm install --save ejs` in the command line.
+First, install [`express-handlebars`](https://github.com/ericf/express-handlebars) by running `yarn add express-handlebars` in the command line.
 
-Then, replace the `app.use` statement with the following statement (ejs assumed we'll be placing all template files into the `/views` folder, so it's optional if adhering to that syntax).
+Then, prepare this directory structure on your `node` project.
+```
+.
+├── app.js
+└── views
+    ├── home.handlebars
+    └── layouts
+        └── main.handlebars
+
+2 directories, 3 files
+```
+ 
+the `app.use` statement with the following statement (`handlebar` assumed we'll be placing all template files into the `/views` folder, so it's **optional** if adhering to that syntax).
 
 ```js
 app.set('view engine', 'ejs');
