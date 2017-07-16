@@ -257,6 +257,25 @@ app.get('/animals', function(req, res){
 });
 ```
 
+### Forms
+
+So far we've learnt to send actions using HTTP Methods, PUT for an update and DELETE for a destroy action. There is a problem however. Browsers currently only support GET and POST, so whenever we send a form it will actually be sent using POST. To overcome this we need to use the [Method Override](https://www.npmjs.com/package/method-override) Package. This will allow us to hide some information in the form that when received and processed in Express will change the method to the correct one. Here's an example
+
+```js
+var express = require('express')
+var methodOverride = require('method-override')
+var app = express()
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
+```
+Example call with query override using HTML <form>:
+```html
+<form method="POST" action="/resource?_method=DELETE">
+  <button type="submit">Delete resource</button>
+</form>
+```
+
 
 ## Controllers
 
