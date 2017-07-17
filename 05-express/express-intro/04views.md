@@ -150,8 +150,8 @@ Results in:
 
 so:
 
-* `{{ }}` will escape the `expression` (e.g. convert `<>` to `&lt;&gt;`
-* `{{{ }}}` will **NOT** escape the `expression`
+* `double curly braces` will escape the `expression` (e.g. convert `<>` to `&lt;&gt;`
+* `triple curly braces` will **NOT** escape the `expression`
 
 
 * `<% name %>` will not print out the expression, but it will execute it
