@@ -102,7 +102,7 @@ app.listen(3000);
 
 then we need to update our `home.handlebars` to use a templating variable.
 
-**views/index.ejs**
+**views/home.handlebars**
 ```html
 <!DOCTYPE html>
 <html>
@@ -206,7 +206,7 @@ you can iterate through each of the people's name with the `#each` helper:
 </ul>
 ```
 will result in:
-```
+```js
 <ul class="people_list">
   <li>Yehuda Katz</li>
   <li>Alan Johnson</li>
