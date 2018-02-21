@@ -87,13 +87,10 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Atom
-We'll be running **Atom**, as our text editor of choice.
+##Sublime
+We'll be running **Sublime**, as our text editor of choice.
 
-Download and install the latest version [https://atom.io](https://atom.io)
-
-Restart terminal, and you should be able to open a folder to edit by typing `atom .` If this doesn't work, open Atom manually from Finder, click on Atom on the top left corner (it's next to the Apple logo), and click on 'Install Shell Commands'. Restart your terminal, and you're good to go.
-
+Download and install the latest version [https://www.sublimetext.com/](https://www.sublimetext.com/)
 
 ## (optional) Pimp your Terminal with iTerm & Oh My ZSH
 
@@ -108,35 +105,10 @@ We will be using a relational database called Postgres for Node and Rails portio
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
-If you have successfully configured zsh and atom, the following command should work.
-
-```
-atom ~/.zshrc
-```
-
-Your atom editor will popup with configuration settings, at the bottom of the file append
 
 ```
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```
-
-While we're here, add these two functions and environment variables to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
-
-```
-export VISUAL=atom
-export EDITOR="$VISUAL"
-
-function zedit() {
-  atom ~/.zshrc
-}
-
-function zrefresh() {
-  echo "Refreshing your ZSH configuration."
-  source ~/.zshrc
-}
-```
-
-Save the file, close Atom, and restart your terminal.
 
 Type `which psql` at which point should display
 
@@ -149,38 +121,6 @@ Type `which psql` at which point should display
 We'll be using **Postico**. Install here:
 
 https://eggerapps.at/postico/
-
-## Installing MongoDB
-
-```
-#Install MongoDB
-brew install mongodb
-
-#make data directory
-sudo mkdir -p /data/db
-
-#get your user name
-whoami
-
-#set data directory permissions (replacing USERNAME with the result from whoami above)
-sudo chown -R USERNAME:wheel /data
-```
-
-###Testing the MongoDB server
-
-```
-#Start the MongoDB server
-mongod
-```
-
-Press `control-c` to stop the server.
-
-###Install MongoDB GUI
-
-We'll be using **RoboMongo**. Install here:
-
-https://robomongo.org/
-
 
 ##Installing Ruby on Rails
 
@@ -239,24 +179,8 @@ npm -v
 
 git --version
 psql --version
-atom -v
 
 ```
-
-
-##Setting up a server
-
-Occasionally you'll encounter permission errors when running websites using the file protocol, for example accessing loading local JSON files to our page. To solve this you'll need to run a HTTP server. If you're using BrowserSync, you won't need to worry about this, alternatively you could build a quick Node static server. An easier option however, is to use the local python server.
-
-We'll be setting up a command line alias to start a Python server.
-
-1.) edit your `zshrc` or .bash_profile depending on your shell.
-
-```
-atom ~/.zshrc
-```
-
-2.) Insert this code near the bottom of the file:
 
 ###OSX
 
@@ -265,7 +189,7 @@ alias srv="_srv(){open \"http://localhost:\${1-8000}\" && python -m SimpleHTTPSe
 ```
 
 
-3.) Close and restart your terminal, or run `atom ~/.zshrc` to reload the file.
+3.) Close and restart your terminal, or run `sublime ~/.zshrc` to reload the file.
 
 Now you should be able to navigate to the folder of your project (the folder containing index.html), type `srv`, and hit enter. This will start a HTTP server and open your browser to that URL.
 
