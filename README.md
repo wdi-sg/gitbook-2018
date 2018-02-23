@@ -2,12 +2,29 @@
 
 # WDI Singapore
 
-Welcome to General Assembly's Web Development Immersive - Singapore Edition!  
-[This Gitbook](https://jeremiahalex.gitbooks.io/wdi-sg/content/) is the primary resource used throughout the course, save it to your favorites and refer to it often!
+Welcome to General Assembly's Web Development Immersive - Singapore Edition!
+[This Gitbook](https://wdi-sg.github.io/gitbook-2018/) is the primary resource used throughout the course, save it to your favorites and refer to it often!
+
+### What is WDI
+- learn web development concepts
+- aquire the skills of web development
+- principals of computer programming / system design
+- experiential learning:
+  - no grades / levels
+  - learn skills not facts
+  - constantly reference real-world tasks
+  - instructors facilitate your learning experience
+  - self-guided
+  - learn how to learn
+  - bring your skills up to the highest potential
+
+### What WDI isn't
+- competition
+- ranked class
+- fact based learning / memorization
 
 ## Important Policies
 
-![](http://assets.amuniversal.com/4cb86c006cba01301d46001dd8b71c47)  
 Please read and adhere to the following, otherwise bad things might happen.
 
 #### Prework
@@ -20,64 +37,120 @@ You should have completed the following in preparation for the course. This is t
 
 #### Attendance
 
-Our attendance policy for graduation is no more than 4 absences during the  
+Our attendance policy for graduation is no more than 4 absences during the
 course. 15 minutes late = 1 tardy. 3 tardies = 1 absence.
 
-If you know you'll be late or absent, please let us know and we'll arrange  
+If you know you'll be late or absent, please let us know and we'll arrange
 to have your tardy or absence excused.
 
-#### Homework and Projects
+#### Practice Work and Projects
 
-Homework: 80% of the homework needs to be submitted for completion. Please submit your homework [here](https://goo.gl/forms/zsSYoGd0c6NMhPrz2) before 9am the next day \(Bookmark this link on your browser!\)
+Practice Work: 80% of the homework needs to be submitted for completion. Please submit your homework [here](https://goo.gl/forms/zsSYoGd0c6NMhPrz2) before 9am the next day \(Bookmark this link on your browser!\)
 
-Projects:  We would like everyone to complete their project as it will significantly affect your chances for graduation if you fail to do so. A Minimum Viable Product \(MVP\) is a must.
+Projects: Everyone should complete the minimum requirements for each project in order for this course to be considered completed.
 
 ---
 
-## Classroom Culture
+#### Course Schedule
 
-![](http://assets.amuniversal.com/eddf14e06d5101301d7a001dd8b71c47)  
-We run our Classrooms like companies and as such we place a large emphasis on creating an environment and culture that maximize what you learn.
+Feb 26 - May 18
 
-### Some Proposed Rules
+Holidays:
+- Friday March 30 - Good Friday
+- Tuesday May 1 - Labor Day
 
-We expect that you agree with the following. If you do not, then raise it in class on day 1, culture cannot be created top down.  
-0. **We encourage questions.** We do not consider any question to be stupid, it is better to ask than never to know.  
-0. **We focus on what is happening in class.** We avoid distractions during lectures \(social media, gossip, work etc\) as this will cause us to fall behind and drag others with us.  
-0. **We like a clean work environment.** So we avoid smelly food in a classroom and clean up after ourselves at breaks and the end of the day. We also keep our facilities like toilets and communal spaces clean.  
-0. **We seek to know each other.** We have a lot to learn from our peers, and they will understand better than anyone else what we're going through. Grab lunch/kopi/beer together, change seats often, chat on Slack, be friendly and be genuine.  
-0. **Have Fun** Have the best 3 months of your life :\)
+#### Course Weekly Schedule
+| section   | topic                               |
+| ---       | ---                                 |
+| unit 1    | front end                           |
+| project 1 | game                                |
+| unit 2    | back-end                            |
+| project 2 | server-side app                     |
+| unit 3    | back-end frameworks (Ruby-on-Rails) |
+| project 3 | group project                       |
+| unit 4    | front-end frameworks                |
+| project 4 | capstone project                    |
 
-### Scrum
 
-We're going to learn about Agile development in the course but it's never to early to start implementing best practices. One such practice we follow is called Scrum or Stand-Ups, it's a quick fire meeting format that we conduct in the mornings.
+#### Course Daily Schedule
 
-Every morning at exactly 9.00 \(**so be here before then**\), we'll cluster together into three small groups - _scrums work best with small numbers of people_. A member of the instructional team will chair each group. Each person in a group will have exactly **2 minutes** to tell the group:  
-0. what they achieved yesterday after class  
-0. anything they found particularly challenging  
-0. and anything useful they discovered which might help others
+| Time          | Activity
+| ---           | ---
+| 09:00 - 9:20  | Scrum
+| 09:30 - 10:30 | Warmup
+| 10:30 - lunch | Main Topic
+| Lunch         |
+| Lunch - 02:30 | Lab / Other Topic
+| 03:00 onwards | Lab + Homework
+
+
+## Culture
+
+![](https://designbyben.files.wordpress.com/2013/03/culture-01-01.jpg)
+
+### Ask Questions
+####*there are no such things as stupid questions*
+####It's OK to say "I don't know" & "I don't understand"
+**ASK: ** (in this order)
+- yourself
+- each other
+- your instructors
+
+### Make Mistakes
+![](http://www.motivationblog.org/wp-content/uploads/2013/08/Without-mistakes-how-would-you-lern.jpg)
+
+### Be Kind To Yourself
+- mentally
+- physically
+![](http://78.media.tumblr.com/c92d34b42ee77f67bfbf588ab485016b/tumblr_omvr6rXPcZ1qc4uvwo1_500.png)
+
+#### Growth Mindset
+![](http://trainugly.com/the-growth-mindset-matrix/)
+
+#### Everyone is on their own journey
+
+### Social Rules
+[Recurse Center Social Rules](https://www.recurse.com/manual#sec-environment)
+
+
+These rules are intended to be lightweight, and to make more explicit certain social norms that are normally implicit. Most of our social rules really boil down to "don't be a jerk" or "don't be annoying." Of course, almost nobody sets out to be a jerk or annoying, so telling people not to be jerks isn't a very productive strategy. That's why our social rules are designed to curtail specific behavior we've found to be destructive to a supportive, productive, and fun learning environment.
+
+#### 1. No feigning surprise
+The first rule means you shouldn't act surprised when people say they don't know something. This applies to both technical things ("What?! I can't believe you don't know what the stack is!") and non-technical things ("You don't know who RMS is?!"). Feigning surprise has absolutely no social or educational benefit: When people feign surprise, it's usually to make them feel better about themselves and others feel worse. And even when that's not the intention, it's almost always the effect. As you've probably already guessed, this rule is tightly coupled to our belief in the importance of people feeling comfortable saying "I don't know" and "I don't understand."
+
+#### 2. No well-actually's
+A well-actually happens when someone says something that's almost - but not entirely - correct, and you say, "well, actually…" and then give a minor correction. This is especially annoying when the correction has no bearing on the actual conversation. This doesn't mean this isn't about truth-seeking or that we don't care about being precise. Almost all well-actually's in our experience are about grandstanding, not truth-seeking. (Thanks to Miguel de Icaza for originally coining the term "well-actually.")
+
+#### 3. No back-seat driving
+If you overhear people working through a problem, you shouldn't intermittently lob advice across the room. This can lead to the "too many cooks" problem, but more important, it can be rude and disruptive to half-participate in a conversation. This isn't to say you shouldn't help, offer advice, or join conversations. On the contrary, we encourage all those things. Rather, it just means that when you want to help out or work with others, you should fully engage and not just butt in sporadically.
+
+#### 4. No subtle -isms
+Our last social rule bans subtle racism, sexism, homophobia, transphobia, and other kinds of bias. This one is different from the rest, because it covers a class of behaviors instead of one very specific pattern.
+
+Subtle -isms are small things that make others feel unwelcome, things that we all sometimes do by mistake. For example, saying "It's so easy my grandmother could do it" is a subtle -ism. Like the other three social rules, this one is often accidentally broken. Like the other three, it's not a big deal to mess up – you just apologize and move on.
+
+If you see a subtle -ism, you can point it out to the relevant person, either publicly or privately, or you can ask one of the faculty to say something. After this, we ask that all further discussion move off of public channels. If you are a third party, and you don't see what could be biased about the comment that was made, feel free to talk to faculty. Please don't say, "Comment X wasn't homophobic!" Similarly, please don't pile on to someone who made a mistake. The "subtle" in "subtle -isms" means that it's probably not obvious to everyone right away what was wrong with the comment.
+
+We want this to be a space with as little bigotry as possible in it. Therefore, if you see sexism, racism, etc. outside, please don't bring it in. So, for example, please don't start a discussion of the latest offensive comment from Random Tech Person Y. For many people, especially those who may have spent time in unpleasant environments, these conversations can be very distracting. We want to remove as many distractions as possible so everyone can focus on programming. There are many places in the world to discuss and debate these issues, but there are precious few where people can avoid them.
+
+#### 5. Why have social rules?
+The goal isn't to burden everyone with a bunch of annoying rules, or to give us a stick to bludgeon people with for "being bad." Rather, these rules are designed to help all of us build a pleasant, productive, and fearless community.
+
+If someone says, "hey, you just feigned surprise," or "that's subtly sexist," don't worry. Just apologize, reflect for a second, and move on. It doesn't mean you're a "bad" person. As we said above, these rules are meant to be lightweight. We've all done these things before.
+
+Sometimes pointing out that someone broke a social rule can be challenging or feel awkward. If you don't feel comfortable pointing out to someone that they are consistently breaking a social rule, ask a facilitator for help.
+
+### Scrum / Standup
+
+Every morning at exactly 9.00 \(**so be here before then**\), we'll cluster together into small groups of four or five - _scrums work best with small numbers of people_. Each person in a group will use a marker to put on the wall:
+0. what they achieved yesterday after class
+0. anything they found particularly challenging
+0. (optional) anything useful they discovered which might help others
+0. draw how they are feeling this morning
 
 The point of our scrums, is not to discuss these issues but to simply flag them and create prompts for conversations later during the labs and breaks.
 
-### Pair Programming
-
-We encourage pair programming during labs, it's a great way to learn from each other and generally makes tough tasks less daunting. You pair up \(ideally with someone you haven't worked with in a while\) and on one machine, you take it in turns to write code. The navigator \(the person not coding\) is then able to focus more on thinking about the problem rather than the code. Swapping roles every 20 minutes is a great addition to this.
-
-### 1-on-1s
-
-During project week, each student will have a 1-on-1 session with a member of the instructional team. This is intended for you to reflect on and discuss your overall progress.
-
-### CACTI Problem Solving
-
-![](http://vignette3.wikia.nocookie.net/finalfantasy/images/0/09/Cactuar_FFX.png/revision/latest?cb=20130928021923)
-
-We're going to speed through a lot of materials, there's lots of you, a couple of TAs and only one instuctor. So follow the CACTI approach to solving your problems.
-
-1. **Check** the materials, yours and online.
-2. **Ask** a peer during breakout or in Labs, NOT during lecture
-3. share with the **Class** on Slack
-4. consult a **Teaching assistant**
-5. request a 1-on-1 with the **Instructor**
+![](https://docs.google.com/spreadsheets/d/e/2PACX-1vRAfF5Uoe2KP_e9icSW9Brhf1-MqAxvJ7k9y0Y8GDhbU1wKyEM-LpHcXcRarWz-JtLUWnkabs1n-qH8/pubhtml?gid=0&single=true)
 
 ### Journalling
 
@@ -89,6 +162,3 @@ This is optional but recommended. You should keep a Journal! It can be anything:
 
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
-
-
-
