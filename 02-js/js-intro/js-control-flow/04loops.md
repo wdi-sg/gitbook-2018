@@ -1,4 +1,10 @@
 #Loops
+## Learning Objectives
+- learn the syntax of the three kinds of loops
+
+## Framing
+- after conditionals loops are the other piece of control flow in any basic program. Every language you will write in the future will have some kind of loop in it.
+
 
 #### `while`
 
@@ -23,6 +29,24 @@ while (i < 5) {
 
 ```
 while (CONDITION) {
+  //CODE
+}
+```
+
+```
+var i=0;
+
+while (i < 5) {
+
+  console.log("i is " + i);
+
+  i++;
+}
+```
+
+Loop that runs forever
+```
+while(true){
   //CODE
 }
 ```
@@ -88,6 +112,16 @@ for (var thing in car) {
 // > my car has 2 doors
 // > my car has 5 seats
 ```
+
+### Pseudocode FizzBuzz( Instructor Does )
+
+### Run some loops in your browser
+
+- Setup Your Files (html / script)
+- Copy the above code examples
+- Change the value of i to something bigger
+
+### Chrome Dev Tools
 
 ###Exercises
 

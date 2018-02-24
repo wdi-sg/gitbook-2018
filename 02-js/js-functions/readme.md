@@ -4,7 +4,6 @@
 * Define a function
 * Define a function with a parameter
 * Define a function that operates on two parameters
-* Understand the difference between printing and returning
 * Create functions with and without return values
 * Recognize the scope of variables inside and outside functions
 
@@ -15,6 +14,16 @@ code, we can isolate code into **functions** in order to reduce repetition. For
 example, if we needed to say "Hello World" to the screen multiple times, we can
 create a function like so.
 
+Function is synomymous with method.
+
+We've been using functions already without knowing it:
+```
+alert('hello');
+```
+
+Those are predefined.
+But we can define our own:
+
 ```js
 function greeting() {
 	console.log("Hello World");
@@ -23,7 +32,7 @@ function greeting() {
 greeting();
 ```
 
-Note that a function is assigned to a variable, and we can **call** the function by taking the variable name and appending parentheses to the end of the function variable.
+We can **call** the function by taking the variable name and appending parentheses to the end of the function variable.
 
 **Parts of a function**
 
@@ -66,7 +75,7 @@ greeting(name, thing); // "Good morning Josh Spoon"
 greeting(thing, name); // "Good morning Spoon Josh"
 ```
 
-##Printing and returning are different
+##Return Values
 
 Note that functions can have **input** via parameters. They can also have **output** as return values. Returning values from a function is denoted by the keyword `return`. Also, return values are optional.
 
@@ -165,3 +174,20 @@ lightsabers(myLightsaberCollection);
 // I have 1 blue lightsaber
 // I have 3 green lightsabers
 ```
+
+3. paste this code into your script.js file
+```
+function doMaths(a,b){
+  var result = 0
+
+  result = a + b;
+  result = result + b + b + 3;
+
+}
+
+for( var i=0; i<5; i++ ){
+  doMaths(i, 2);
+}
+```
+Question:
+Using the chrome debugger, what is the value of the result inside the function when `i` is equal to 3?

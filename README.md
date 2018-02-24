@@ -1,4 +1,4 @@
-![GA Logo](./_assets/ga_made_in_singapore.png)
+![](https://i.imgur.com/XeoQXuW.png)
 
 # WDI Singapore
 
@@ -6,6 +6,7 @@ Welcome to General Assembly's Web Development Immersive - Singapore Edition!
 [This Gitbook](https://wdi-sg.github.io/gitbook-2018/) is the primary resource used throughout the course, save it to your favorites and refer to it often!
 
 ### What is WDI
+[](5 mins)
 - learn web development concepts
 - aquire the skills of web development
 - principals of computer programming / system design
@@ -24,6 +25,7 @@ Welcome to General Assembly's Web Development Immersive - Singapore Edition!
 - fact based learning / memorization
 
 ## Important Policies
+[](10 mins)
 
 Please read and adhere to the following, otherwise bad things might happen.
 
@@ -45,11 +47,9 @@ to have your tardy or absence excused.
 
 #### Practice Work and Projects
 
-Practice Work: 80% of the homework needs to be submitted for completion. Please submit your homework [here](https://goo.gl/forms/zsSYoGd0c6NMhPrz2) before 9am the next day \(Bookmark this link on your browser!\)
+Practice Work: 80% needs to be submitted for completion. Please submit [here](https://goo.gl/forms/zsSYoGd0c6NMhPrz2) before 9am the next day \(Bookmark this link on your browser!\)
 
 Projects: Everyone should complete the minimum requirements for each project in order for this course to be considered completed.
-
----
 
 #### Course Schedule
 
@@ -84,13 +84,14 @@ Holidays:
 | 03:00 onwards | Lab + Homework
 
 
+[](15 mins)
 ## Culture
 
 ![](https://designbyben.files.wordpress.com/2013/03/culture-01-01.jpg)
 
 ### Ask Questions
-####*there are no such things as stupid questions*
-####It's OK to say "I don't know" & "I don't understand"
+####**there are no such things as stupid questions**
+####It is VERY IMPORTANT to say "I don't know" & "I don't understand"
 **ASK: ** (in this order)
 - yourself
 - each other
@@ -105,7 +106,7 @@ Holidays:
 ![](http://78.media.tumblr.com/c92d34b42ee77f67bfbf588ab485016b/tumblr_omvr6rXPcZ1qc4uvwo1_500.png)
 
 #### Growth Mindset
-![](http://trainugly.com/the-growth-mindset-matrix/)
+![](https://i2.wp.com/trainugly.com/wp-content/uploads/2015/11/Growth-Mindset-Characteristics-Table.png?w=1920)
 
 #### Everyone is on their own journey
 

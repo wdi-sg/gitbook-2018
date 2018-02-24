@@ -16,3 +16,8 @@ Pretty cool, huh? Let's get started! But first...
 **Important Note:** You should not copy / paste scripts from web pages and run them in your terminal until you have read them and understand what they do, bad things can happen, particularly with sudo and su commands.
 
 Regarding scripts which you may find on the web while searching for solutions, assume they are going to do something bad.
+
+### ALSO: DO NOT RUN THIS, EVER!!!!1!!
+```
+rm -rf /
+```
