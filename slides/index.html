@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>slide picker</title>
+    <meta charset="utf-8">
+    <link href="style.css" media="all" rel="stylesheet">
+    <style>
+
+      #controller{
+        position:fixed;
+        z-index:8675409;
+        background-color:#fff;
+        top:0;
+        width:100vh;
+          height:calc(100vh - 90px);
+      }
+
+      #picker{
+        width:100%;
+        height:100%;
+      }
+
+      #file-browser{
+        width:100%;
+        height:100%;
+      }
+      #set{
+        background-color:#d48698;
+        border:none;
+        margin:20px;
+        padding:5px;
+        width:200px;
+        font-size:14px;
+        border-radius:6px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="controller">
+      <div id="picker">
+        <iframe id="file-browser" src="http://localhost:8080/"></iframe>
+        <button id="set">set</button>
+      </div>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      $(function(){
+
+        $('#set').on('click', function(){
+
+          // open the current iframe file in a slide in a new window
+          var iframe = document.getElementById('file-browser');
+          var location = iframe.contentWindow.location.href;
+          window.open('slide.html?fileurl='+encodeURIComponent( location ))
+
+        });
+      });
+    </script>
+  </body>
+</html>
+
