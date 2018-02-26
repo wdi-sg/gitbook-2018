@@ -6,7 +6,10 @@
 - if one person is left in the middle, they share something.
 
 
-### Find a Partners (20 mins)
+---
+
+
+### Find Partners (20 mins)
 - print out cards
 - 1 side has a question
 - The other side has a form to fill out
@@ -15,5 +18,15 @@
 - See how many of the forms can be filled out.
 - Share your cards
 
+
+---
+
 ### Self Learning (15 mins)
 - write on the board some skill you gained from studying yourself, or where the work to aquire the skill was done on your own.
+
+
+---
+
+
+### About You(20 mins)
+- Share around the room about what brought you here and what you hope to accomplish
