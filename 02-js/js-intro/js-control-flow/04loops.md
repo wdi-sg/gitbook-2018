@@ -1,10 +1,15 @@
 #Loops
+
+---
+
 ## Learning Objectives
 - learn the syntax of the three kinds of loops
 
 ## Framing
 - after conditionals loops are the other piece of control flow in any basic program. Every language you will write in the future will have some kind of loop in it.
 
+
+---
 
 #### `while`
 
@@ -25,6 +30,8 @@ while (i < 5) {
 // >i is 4
 ```
 
+---
+
 **The parts of a while loop**
 
 ```
@@ -44,12 +51,16 @@ while (i < 5) {
 }
 ```
 
+---
+
 Loop that runs forever
 ```
 while(true){
   //CODE
 }
 ```
+
+---
 
 #### `for`
 
@@ -68,6 +79,8 @@ for (var i = 0; i < 5; i++) {
 // >i is 4
 ```
 
+---
+
 **The parts of a for loop**
 
 ```
@@ -75,6 +88,8 @@ for (VARIABLE DECLARATION; CONDITION; UPDATE) {
   //CODE
 }
 ```
+
+---
 
 In other words, you declare a variable and test to see if that variable passes a condition in order to run the code block. The update statement runs after the code block is executed.
 
@@ -91,6 +106,8 @@ for (var i = 0; i < foods.length; i++) {
 // >i like tacos
 // >i like ice cream
 ```
+
+---
 
 #### `for...in`
 
@@ -113,26 +130,44 @@ for (var thing in car) {
 // > my car has 5 seats
 ```
 
+---
+
 ### Pseudocode FizzBuzz( Instructor Does )
 
-### Run some loops in your browser
+---
+
+### Run some loops in your browser (10 mins)
 
 - Setup Your Files (html / script)
 - Copy the above code examples
 - Change the value of i to something bigger
 
+---
+
 ### Chrome Dev Tools
+
+---
 
 ###Exercises
 
-1. Implement [Fizz Buzz](http://en.wikipedia.org/wiki/Fizz_buzz). Loop
-   from 1 to 100.  If the number is divible by both 3 and 5, print
-   "fizzbuzz". Otherwise, if the number if divisible by 3, print
-   "fizz", or, if the number is divisible by 5, print "buzz". If none
-   of the above are true, print the number. This is a very common
-   interview question!
+1. Implement a for loop that counts down instead of up. Use `i=10` `i>0` and `i--`
 
-2. Use a `for...in` loop to examine the `phoneBook` Object below and print
+1. Loop over this array and `console.log` each element
+```
+var fruits = [
+  'banana',
+  'apple',
+  'strawberry',
+  'mango',
+  'papaya',
+  'coconut',
+  'orange'
+];
+```
+
+1. Loop over the same array, but if the string `mango` is found for that iteration of the array, console log `HOORAY` instead of the fruit.
+
+1. Use a `for...in` loop to examine the `phoneBook` Object below and print
    out the names of all the people who share the phone number "333-333-3333".
 
 ```js
@@ -165,3 +200,10 @@ var phoneBook = {
   "Zed": "111-111-1111"
 };
 ```
+
+1. Implement [Fizz Buzz](http://en.wikipedia.org/wiki/Fizz_buzz). Loop
+   from 1 to 100.  If the number is divible by both 3 and 5, print
+   "fizzbuzz". Otherwise, if the number if divisible by 3, print
+   "fizz", or, if the number is divisible by 5, print "buzz". If none
+   of the above are true, print the number. This is a very common
+   interview question!

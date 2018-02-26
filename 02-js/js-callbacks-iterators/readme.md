@@ -2,12 +2,13 @@
 
 Programming with functions! Weren't we already doing that? Well yes, but we can use functions more heavily, especially in place of loops.
 
+---
+
 ##Objectives
 
 * Use callbacks with setInterval and setTimeout
 * Understand how functions can be passed in and out of other functions
 * Compare and contrast the four main JavaScript iterators: forEach, map, reduce, filter
-* Utilize callbacks with JavaScript iterators
 
 Previously, we saw that functions can be assigned to variables. For example:
 
@@ -21,6 +22,9 @@ add(1, 2);
 ```
 
 Functions are **first-class citizens** in JavaScript. This means that we can create functions, store them into variables, and pass functions into other functions. Functions are only executed when called. Try this to illustrate:
+
+
+---
 
 ###Exercise
 
@@ -36,6 +40,8 @@ console.log(bag);
 
 We can take advantage of this behavior by defining **callback functions**. Callback functions are passed via variable name (reference), and are *called* at a specific time.
 
+---
+
 ## Do something later: Callbacks
 
 The `setTimeout()` function takes a function and a delay in
@@ -50,6 +56,8 @@ var announce = function() {
 var threeSecondTimeout = setTimeout(announce, 3000);
 ```
 
+---
+
 This can be done via **anonymous functions** as well. Anonymous functions are functions that are not stored to a variable. They are great for functions you only need to define once. Here's an example.
 
 ```js
@@ -57,6 +65,8 @@ var fiveSecondTimeout = setTimeout(function() {
   console.log('Ding!');
 }, 5000);
 ```
+
+---
 
 The `setInterval()` function takes a function and a delay in
 milliseconds, and executes that function as closely as possible each
@@ -70,6 +80,8 @@ function annoy() {
 var oneSecondInterval = setInterval(annoy, 1000);
 ```
 
+---
+
 Things to be careful of: you need to know what the function expects as parameters. Javascript is forgiving, but not a mind-reader.
 
 Oh, and if you want to disable the timers before they fire, you can use the `clearTimeout(timeoutHandle)` or `clearInterval(intervalHandle)` functions:
@@ -82,6 +94,7 @@ clearInterval(threeSecondInterval);
 clearInterval(fiveSecondInterval);
 ```
 
+---
 ## Returning functions from functions
 
 You can probably guess by now how to return a function from a
@@ -107,6 +120,8 @@ smoothieMaker('16oz');
 We'll see that if we print the contents of `cocktailMaker` and `smoothieMaker`, we get functions that were returned from the function `drinkMaker`. Now, we can call these functions and pass in additional arguments. Neat!
 
 Functional programming is a popular topic in the context of Node, so we'll be seeing more examples like these in the future. Like with iterators!
+
+---
 
 ## Iterators
 

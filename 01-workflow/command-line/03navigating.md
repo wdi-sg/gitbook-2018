@@ -2,12 +2,16 @@
 
 The file structure you see in the Terminal is the same as the one you see in the `Finder` application. Finder tends to hide some of the folders from you to keep things simple for most users, but everywhere that you go in Finder is accessible through the Terminal.
 
+---
+
 ##Common Navigation Commands
 
 * `pwd` - print working directory
 * `open` - open a file/directory
 * `ls` - list directory contents
 * `cd` - change directory
+
+---
 
 ## `pwd` - Where am I?
 
@@ -20,6 +24,8 @@ pwd
 ```
 
 Typically the terminal will start in your `HOME` directory, each user has their own `HOME` directory, but on your computer it is common for you to be the only real user. At any given time a terminal shell process has one **current working directory**
+
+---
 
 ## `open` - Open a file/directory
 
@@ -35,6 +41,8 @@ Additionally, we can open a file using the default application for the file.
 open index.html
 ```
 
+---
+
 ## `ls` - Listing directory contents
 
 We can also list the files and directories in the current working directory. Your list may vary from the files/directories below.
@@ -47,6 +55,8 @@ ls
   Documents Movies    bin   helloroom work
   Downloads Music   git_profile.sh  phpshell.sh
 ```
+
+---
 
 ### Listing in the long format
 
@@ -68,6 +78,8 @@ drwxr-xr-x+   5 brian  staff   170 Nov  4 10:49 Public
 -rwxr-xr-x    1 brian  staff   184 Nov  8 16:41 git_profile.sh
 ```
 
+---
+
 Now we can clearly see what files are in the current working directory. Some of these items are files, some are directories.
 
 The `ls` command can take a directory as an argument
@@ -80,6 +92,8 @@ drwxr-xr-x   4 brian  staff      136 Feb 22 20:01 Rails
 -rw-r--r--@  1 brian  staff  8154896 Feb 27 10:57 Profile.png
 -rw-r--r--@  1 brian  staff  6258658 Feb 27 10:57 Profile2.png
 ```
+
+---
 
 ### Listing hidden files
 
@@ -112,7 +126,12 @@ total 17
   -rwxr-xr-x    1 brian  staff    184 Nov  8 16:41 git_profile.sh
 ```
 
+---
+
 Hidden Files are typically used by applications to store configurations and there will be many of them in your home directory. Most users don't want to be editing these files so they don't show up in `Finder`, but you as a software developer will be editing some these for yourself.
+
+
+---
 
 **Extra:** The columns from the output of `ls -la` represent (from left to right)
 
@@ -137,11 +156,15 @@ cd /
 
 We can verify that we are in the root directory by using `pwd`. Zsh also shows us the working directory.
 
+---
+
 ### Root Directory
 
 The files and directories on your computer are structured in a tree. The 'top' of the file system is know as the `root` directory (That may sound upside down, but in our case the root is at the top :)
 
 ![Filesystem image](http://www.qnx.com/developers/docs/qnx_4.25_docs/qnx4/user_guide/images/files.gif)
+
+---
 
 ### Home Directory
 
@@ -155,6 +178,8 @@ cd ~
 
 ## Absolute and Relative Paths
 
+---
+
 ### Absolute Path
 
 An **absolute path** is the *full path written out from the root*. For example, the full path of a file may look like this:
@@ -165,6 +190,9 @@ An **absolute path** is the *full path written out from the root*. For example, 
 
 Navigating to this file would involve quite a lot of typing. Luckily, we can also use relative paths.
 
+---
+
+
 ### Relative Path
 
 A **relative path** is a *partial path relative to the current directory*. For example, if Brian was already in `/Users/brian`, a relative path for the file above would look like this:
@@ -174,6 +202,8 @@ Documents/profile.png
 ```
 
 Note that `/Users/brian` was left off, because `Documents/profile.png` is relative to `/Users/brian`.
+
+---
 
 We can also use relative paths to go back one or more directories.
 

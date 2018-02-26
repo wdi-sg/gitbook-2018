@@ -1,8 +1,14 @@
 # Additional Topics
 
+---
+
 ## Tab Completion
 
 Hitting `<TAB>` autocompletes what you're typing, based on the names of the files and directories in your current directory.  Hit `<TAB>` constantly to make yourself more productive.
+
+
+
+---
 
 ## Filename Wildcards
 
@@ -13,6 +19,8 @@ ls -la *.txt
 ```
 
 The above command lists all files that end in `.txt`, but begin with anything.
+
+---
 
 ## History
 
@@ -29,6 +37,9 @@ Lastly, there are a few different commands for checking your terminal's history.
 
 history
 ```
+
+
+---
 
 ## Environment Variables
 
@@ -48,11 +59,15 @@ To access the variable:
 $MY_SETTING
 ```
 
+
+---
+
 ## Getting Help
 For any command we discuss here, the command `man`, short for **manual**, will give a (hopefully) detailed explanation of that command. Sometimes that explanation will be too detailed for you. When you get lost in a man page and you want to understand it, start again from the beginning of of the **man page** and keep repeating.  Hopefully you will get further into the page each time you read it.
 
 Many third party commands also accept the --help option, but not all, but if you get stuck it can be worth a try. Most of the commands covered in this lesson overview do not support this feature. However, commands like `git` do!
 
+---
 
 ## Useful Links
 

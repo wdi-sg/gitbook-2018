@@ -1,5 +1,7 @@
 # Data Types and Structures
 
+---
+
 ## Learning Objectives
 
 - List and describe the primitive data types and common complex data types
@@ -12,6 +14,9 @@
 
 
 Primitive data types are the building blocks of Javascript. Whenever you do anything in Javascript, you are creating and changing these basic pieces of information.
+
+
+---
 
 
 ### Comments
@@ -36,6 +41,8 @@ Comments come in two forms
 
 ```
 
+---
+
 ## Primitive Data Types
 
 There are five primitive data types that are used most commonly used in Javascript.
@@ -45,6 +52,8 @@ There are five primitive data types that are used most commonly used in Javascri
   3. Booleans
   4. Undefined
   5. Null
+
+---
 
 ## Variables
 
@@ -63,6 +72,9 @@ After declaration you can then reference variables by just their name, without "
 myClass
 // => "WDI16"
 ```
+
+---
+
 ## Operations
 
 Math in Javascript follows the same rules you've known since elementary school math.
@@ -86,6 +98,8 @@ Math in Javascript follows the same rules you've known since elementary school m
 // => 5
 ```
 
+---
+
 Like normal math, Javascript follows the traditional order of operations: P.E.M.D.A.S. or "Please Excuse My Dear Aunt Sally." Mathematical operations are executed in the following order...
   1. Parenthetical expressions
   2. Exponentiation
@@ -103,6 +117,8 @@ Like normal math, Javascript follows the traditional order of operations: P.E.M.
 // => (2 * 2) + 1
 // => 5
 ```
+
+---
 
 ### % (Modulus)
 
@@ -123,6 +139,9 @@ Modulus has a pretty handy use case: to check if a number is even. We can do thi
 // => , because 5 is odd. When 5 is divided by 2, the remainder is 1.
 ```
 
+
+---
+
 ### NaN ("Not a number")
 
 A special number...that's not a number?
@@ -139,11 +158,15 @@ You usually get `NaN` when the result of a math operation is not real (e.g., div
 // => NaN
 ```
 
+---
+
 ## Undefined & Null
 
 `undefined` and `null` are values that indicate the lack of a meaningful value.
 - Anybody else find that weird? How is there more than one data type for nothing?
 - Q: What's the difference?
+
+---
 
 ### Undefined
 
@@ -160,14 +183,20 @@ var nothing
 
 ```
 
+
+---
+
 ### Null
 
 `null` is an explicitly-assigned non-value.
 (undefined is an implicity assigned non-value)
 - Javascript will never set anything to `null` by itself. `null` only appears when you tell it to.
 - It is useful as a placeholder for a variable that you know will be replaced with an actual value later on
+---
 
 > So the main difference between `undefined` and `null` is intention. Other than that, they're both...nothing.
+
+---
 
 ## Type Coercion
 
@@ -191,6 +220,8 @@ You might encounter this when dealing with numerical values but for whatever rea
 // => NaN
 ```
 
+---
+
 When in doubt, convert data types that should be numbers using `parseInt()`.
 
 ```js
@@ -204,6 +235,9 @@ parseInt("burrito")
 
 There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will fire weird results back at you with no explanation. Sometimes, type coercion might be the culprit.
 
+
+---
+
 ## Strings
 
 Strings are words in javascript! We instantiate strings using the "string literal" form.
@@ -215,6 +249,8 @@ var greeting = 'Hello!'
 /// ...or double quotes.
 var greeting = "Hi there!"
 ```
+
+---
 
 ### Concatenation
 
@@ -238,12 +274,18 @@ You can't, however, use other math operators on strings...
 // => NaN
 ```
 
+---
+
 ## Data Structures
+
+---
 
 ### Arrays
 
 Arrays are ordered collection of related data types and are organized by index.
 - Indexing begins at 0 (e.g., first element in an array has an index of 0, the second has an index of 1, and so on).
+
+---
 
 We instantiate an array like this...
 
@@ -278,6 +320,8 @@ letters[1][2]
 // => "f"
 ```
 
+---
+
 ### Array Methods
 
 There are a lot of useful methods that come with Javascript we can use to inspect and modify arrays. To learn what some of them are...
@@ -287,17 +331,24 @@ There are a lot of useful methods that come with Javascript we can use to inspec
 
 > There are many more, but these are the most widely-used.
 
+---
+
 
 ### Objects
 Objects use "keys" instead of indexes to store data.
 
 Why use objects to store `key` and `value` pairs? They are like arrays except that data is not stored in any sorted order and keys do not have to numbered indexes.
 
+---
+
 #### Creating
 
 ```js
 var friend = {firstName: "Jane", lastName: "Doe"}
 ```
+
+
+---
 
 #### Accessing
 
@@ -308,6 +359,8 @@ friend.lastName
 friend['firstName']
 friend['lastName']
 ```
+
+---
 
 ### Documentation
 

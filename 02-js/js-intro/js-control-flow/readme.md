@@ -21,3 +21,13 @@ A program can be read from top to bottom, but eventually we'll need ways to **sk
 But before that, let's create the expressions needed for these statements.
 
 ### Notes: We'll be intruducing the debugging properties of the [chrome console today:]()
+
+---
+
+[https://github.com/wdi-sg/google-shopping-conditionals-loops](https://github.com/wdi-sg/google-shopping-conditionals-loops)
+
+[https://github.com/wdi-sg/js-functions](https://github.com/wdi-sg/js-functions)
+
+
+
+

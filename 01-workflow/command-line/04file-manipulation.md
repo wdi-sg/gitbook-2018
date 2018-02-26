@@ -1,5 +1,7 @@
 # File Manipulation
 
+---
+
 ## Common File Manipulation Commands
 
 * `mkdir` - make a directory
@@ -15,6 +17,9 @@
 * `>>` - redirect and append output to a file
 * `|` - pipe output to another command
 
+
+---
+
 ## `mkdir` - Make a directory
 
 Make a directory using `mkdir`, which accepts the name of the new directory as an argument. Note that when naming directories, using hyphens or underscores is recommended when separating words (don't use spaces).
@@ -24,6 +29,9 @@ mkdir living_room
 ```
 
 Let's `cd` into our new `living_room`  Look around with `ls`, and `ls -la`.  What do you see?
+
+
+---
 
 ## `touch` - Create a file
 
@@ -54,6 +62,8 @@ Bunyan, John:Saved by Grace
 
 Now try `ls -la` again.  Do you see the `books.txt` file?
 
+---
+
 ## `cat` - Reading and concatenating files
 
 A quick way to read files without opening Sublime is by using `cat`.
@@ -68,6 +78,8 @@ If we had another file, we could provide additional filenames as arguments in or
 cat books.txt schedule.txt
 ```
 
+---
+
 ## `echo` - Writing text to standard output
 
 `echo` is a command that echoes (outputs) what we give to it as arguments.
@@ -77,6 +89,8 @@ echo "This bookshelf flexes under the weight of the books it holds."
 ```
 
 At first glance, it seems too simple. Why would we need this command? Well every command that we run in the terminal has an input, an output, an error output, and arguments/options. Since `echo` produces output, we can *change* where this output will go!
+
+---
 
 ## `>` and `>>` - File Redirection
 
@@ -101,6 +115,8 @@ echo "It does not break, it does its job admirably" >> bookshelf.txt
 
 Try `cat bookshelf.txt` to see the result
 
+---
+
 ## `|` - Piping
 
 Let's look back at `books.txt`. Look at the file contents. Notice that the list of books is unsorted. We need to organize this using the `sort` command.
@@ -119,6 +135,9 @@ cat books.txt | sort > sorted_books.txt
 
 Look around again to see how the room has changed.
 
+
+---
+
 ## `grep` - Searching files
 
 There are dozens of powerful tools we can leverage using pipes. One of the ones you'll be using the most is `grep`.
@@ -131,6 +150,8 @@ See how we filtered out just the lines that contain Mil? Try grepping for someth
 
 > Adapted from [http://en.flossmanuals.net/command-line/piping/](http://en.flossmanuals.net/command-line/piping/)
 
+---
+
 ## `mv` - Moving files
 
 Now that we have our books sorted, we really don't need our unsorted list of books. `mv` stands for move, and that's how we move files and folders from place to place.
@@ -138,6 +159,8 @@ Now that we have our books sorted, we really don't need our unsorted list of boo
 ```
 mv sorted_books.txt books.txt
 ```
+
+---
 
 ## `cp` - Copying files
 
@@ -148,6 +171,8 @@ cp bookshelf.txt second_bookshelf.txt
 ```
 
 Note that if we copy a folder, we'll need to use an additional option, `-r`.
+
+---
 
 ## Removing
 

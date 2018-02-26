@@ -1,16 +1,24 @@
 # Booleans & Conditionals
 
+---
+
 ## Learning Objectives
 - Differentiate between `true` & `false` && "truthy" & "falsey"
 - Write an `if`-`else if`-`else` statement in JS and describe how control flow is used in programming
+
+---
 
 ## Framing
 - booleans and conditionals are what separates "procedural" languages from "turing complete" languages like javascript. All programming languages you will encounter have some kind of conditional statement.
 
 
+---
+
 ## Booleans
 
 A boolean can have one of two values: `true` or `false`. These are not strings -- they are a unique data type that represent the concepts of true and false.
+
+---
 
 ## Comparison Operators
 
@@ -23,6 +31,8 @@ We encounter booleans most often when comparing two values using comparison oper
 * `>` - greater than
 * `<=` - less than or equal to
 * `>=` - greater than or equal to
+
+---
 
 What is the difference between `==` and `===`?
 * `===` checks for both the data type and value.
@@ -53,6 +63,8 @@ The assignment operator `=` is not the same as `==` or `===`!
 
 > Make sure never to use `=` inside of a conditional statement!
 
+---
+
 ## Truthy vs. Falsey
 
 There is also a concept of "truthy" and "falsey," meaning that when certain things are evaluated in a conditional (more on those later in this document) they will be evaluted as either `true` or `false`.
@@ -68,6 +80,8 @@ The following things are falsey...
 Everything else is "truthy".
 
 > We will revisit this concept below in the "Conditionals" section.
+
+---
 
 ## Logical Operators
 
@@ -99,6 +113,8 @@ true || false
 // True. `5 > 12` is, of course, false. The opposite of that is true!
 ```
 
+---
+
 ## Conditionals
 
 A core feature of almost all programming languages is conditional blocks. With these blocks, we can execute different pieces of code depending on whether a condition(s) is met.
@@ -121,6 +137,8 @@ else{
 ```
 
 Conditionals will always follow this pattern. There is a key word (`if`, `else if`, `else`), followed by an expression that will evaluate to true or false in parentheses, followed by code to execute when the condition is met.
+
+---
 
 ####Exercise
 
