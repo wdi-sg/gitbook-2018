@@ -314,3 +314,5 @@ friend['lastName']
 Navigating documentation is a great skill to have. Some sets of documentation are harder to navigate than others, but if you have a sense of how to dig through a massive trove of information like MDN or RubyDocs, you'll become a much more efficient programmer.
 
 > [MDN Array Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+> [https://github.com/wdi-sg/js-primitives](https://github.com/wdi-sg/js-primitives)
