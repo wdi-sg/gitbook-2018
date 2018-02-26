@@ -1,5 +1,6 @@
+#Low Level Pseudocode
 
-##Low Level Pseudocode
+---
 
 ###Objectives
 - learn what low level pseudocode is
@@ -10,6 +11,9 @@ Our process for writing code begins with a user problem statement. After we unde
 
 Low-level pseudocode will help us map out what each logical step will require.
 
+
+---
+
 #### Approaching a Coding Problem (15 minutes / 0:35)
 
 Computers are not smart. We need to give them step by step instructions to account for conditions. They can not adapt to make changes without being explicitly told. Programing is a series of tasks, which can be completed only if a certain number of conditions are met.
@@ -17,6 +21,9 @@ Computers are not smart. We need to give them step by step instructions to accou
 Computers can not adapt, but we can.  Your first pass at pseudocode will probably not cover everything.  Once you know more, you may come back to update and refactor your pseudocode.
 
 Pseudocode isn't just about writing down the steps that you already know. It's a tool to help you work through the problem. Before we can write pseudocode to solve the problem, we need to know the problem.
+
+
+---
 
 #### Review: Steps to get to low level pseudocode:
 1.Identify the Problem
@@ -39,6 +46,8 @@ Pseudocode isn't just about writing down the steps that you already know. It's a
 
 - write out a logical step for each item you came up with
 
+---
+
 #### Start Small, Stay Small
 
 Write code using those small steps
@@ -46,8 +55,12 @@ Write code using those small steps
 - If we do too much at once and things break, which they always do, we won't know what is causing the problem
 - Humans thrive on easy wins and forward progress. Use this to your advantage.
 
+---
+
 
 ### Where Does Pseudocode Fit In?
+
+---
 
 #### "Break It Down"
 
@@ -56,6 +69,9 @@ This process is iterative.  We keep circling around and repeating the earlier st
 When we first approach a problem, we see the big picture. "Break it down" first into big steps. Then we take one of those steps and "Break it down" again into smaller steps. We write pseudocode to help illustrate the problem.
 
 Pseudocoding proves that we have *identified* the problem, understand it *conceptually*, and have *broken it down* into *small steps* that we can follow.
+
+
+---
 
 #### Example 1
 We want to know if a number is even or odd:
@@ -80,6 +96,8 @@ PROGRAM IsEvenOrOdd:
 
 </details>
 
+---
+
 
 ## You Do: Pseudocode Concentration (15 minutes / 0:50)
 
@@ -92,6 +110,7 @@ minute or all cards have been matched.
 
 Afterwards, we'll spend 5 minutes sharing approaches as a class.
 
+---
 
 
 ## Conclusion
@@ -99,6 +118,8 @@ Afterwards, we'll spend 5 minutes sharing approaches as a class.
 1. What are some helpful steps for solving problems?
 2. What does pseudocode help us do?
 3. Do we only pseudocode at the start of a project?
+
+---
 
 ## Resources
 
