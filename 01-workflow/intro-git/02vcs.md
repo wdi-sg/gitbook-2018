@@ -1,5 +1,7 @@
 # Version Control Systems
 
+---
+
 ## What is version control, and why should you care?
 
 Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. It also makes working in teams easier, because each person's changes are stored in a separate version.
@@ -15,13 +17,20 @@ Plus it functions as a backup system, a safe place for all your work. Using a VC
 
 There are many VCS. Git and GitHub have become the VCS of choice for most software teams. Do you know other VCS?
 
+---
+
 ##Git vs. Github
 
 We'll be using a version control system called **git**. It was created in 2005 to help with developing Linux kernels, and it's now the most popular version control system today.
 
+---
+
 ### Github
 
 Github is not the same as git. **Github** is a social network built around git. It has completely changed the way we, as programmers, share and work on code. GitHub is now the largest online storage space of collaborative works, and it works with git in order to keep track of versions, issues, and requests for changes.
+
+
+---
 
 ### Github and Git
 
@@ -32,6 +41,8 @@ Together, git on your *local machine* and git on *Github* form a **distributed v
 In this diagram, we have a project on three different computers, all kept track of under git. Computers A and B are local (client) machines that have a copy of the project. The server computer is another machine that allows the clients to pull down any changes that are made to the project.
 
 Throughout WDI, each developer will be pulling down from a server, and that server is **Github!** Once we pull down a copy of the project, we can make changes locally, and eventually push our changes to the server.
+
+---
 
 ## Folder Management
 
