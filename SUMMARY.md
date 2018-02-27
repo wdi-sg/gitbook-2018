@@ -26,6 +26,7 @@
     * [Project Roles and Tools](01-workflow/group-collab/03rolestools.md)
   * [User Stories and Wireframing](01-workflow/user-stories-wireframing/readme.md)
   * [Chrome Dev Tools](01-workflow/chrome-dev-tools/readme.md)
+  * [Practice Work How To](01-workflow/how-to-practice.md)
 * [Internet Fundamentals](03-internet/how-the-internet-works.md)
   * [Internet Lab](03-internet/internet-lab.md)
 * [HTML & CSS](03-html-css/readme.md)
