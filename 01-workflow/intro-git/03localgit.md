@@ -123,7 +123,8 @@ If a file has been added to git and it needs to be deleted, we can run `git rm` 
 
 ```
 git rm <file>
-git commit -am 'deleted file'
+git add -u
+git commit -m 'deleted file'
 ```
 
 ---
