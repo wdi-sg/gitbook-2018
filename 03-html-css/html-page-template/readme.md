@@ -1,6 +1,6 @@
 # Basic HTML Template
 
-Between custom CSS, custom JavaScript, including jQuery and including Bootstrap
+Between custom CSS, custom JavaScript, including Bootstrap
 there's now a lot we need to write to get a basic web page going. Here's a
 reference for you that you can copy and paste into your `index.html` file
 whenever you start a new project.
@@ -8,7 +8,6 @@ whenever you start a new project.
 Features:
 - a reference to `main.js` for custom JavaScript!
 - a reference to `style.css` for custom CSS styles!
-- jQuery already all hooked up!
 - Bootstrap already all hooked up!
 - A simple HTML page already styled up with Bootstrap classes!
 
@@ -26,9 +25,6 @@ Copy and paste! Merry Christmas!!
     <!-- Links to your custom JavaScript and CSS -->
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-
-    <!-- jQuery -->
-    <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
 
     <!-- Bootstrap libraries -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">

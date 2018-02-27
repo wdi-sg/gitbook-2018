@@ -93,8 +93,6 @@ selector {
 
 Do not forget the curly brackets or the semi-colon after the value!
 
-The last semi-colon can be omitted but it's optional.
-
 
 #### Internal Style Sheets
 

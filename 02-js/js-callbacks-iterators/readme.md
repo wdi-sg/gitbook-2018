@@ -26,9 +26,7 @@ Functions are **first-class citizens** in JavaScript. This means that we can cre
 
 ---
 
-###Exercise
-
-Try running the following in Node. What is printed to the screen?
+Try running the following. What is printed to the screen?
 
 ```js
 var bag = function() {
@@ -44,6 +42,50 @@ We can take advantage of this behavior by defining **callback functions**. Callb
 
 ## Do something later: Callbacks
 
+---
+
+We can write a function that does something we can specify outside the function.
+
+```
+var add = function(a,b){
+  return a + b;
+};
+
+var listOfNumbers = [91,52,53,54,5,6,7,8];
+var listOfNumbers = [1,1,1,1];
+
+var repeatOperation = function(numbers, callback){
+
+  var currentResult = 0;
+
+  for( var i=0; i<numbers.length; i++){
+    console.log(currentResult);
+    currentResult = callback(currentResult, numbers[i]);
+  }
+
+  return currentResult;
+};
+
+var total = repeatOperation(listOfNumbers, add);
+```
+
+---
+
+This makes the function we wrote flexible, because it can accomplish more than one kind of task
+
+```
+var subtract = function(a,b){
+  return a - b;
+};
+
+var listOfNumbers = [100,10,10,10];
+
+var total = repeatOperation(listOfNumbers, add);
+
+```
+
+---
+
 The `setTimeout()` function takes a function and a delay in
 milliseconds, and executes the function as soon as possible after that
 delay has passed.
@@ -55,6 +97,8 @@ var announce = function() {
 
 var threeSecondTimeout = setTimeout(announce, 3000);
 ```
+
+Under the hood the function is being executed just like the one we wrote.
 
 ---
 
@@ -73,9 +117,9 @@ milliseconds, and executes that function as closely as possible each
 time that interval of milliseconds has passed.
 
 ```js
-function annoy() {
+var annoy = function(){
   console.log('Are we there yet?');
-}
+};
 
 var oneSecondInterval = setInterval(annoy, 1000);
 ```
@@ -95,6 +139,25 @@ clearInterval(fiveSecondInterval);
 ```
 
 ---
+
+### Pairing Exercises
+1. Write code that uses setTimeout
+
+1.Write a function that uses a loop and this function:
+
+```
+var add = function(a,b){
+  return a + b;
+};
+```
+to do multiplication.
+
+1. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+
+1. write code that clears the interval after 20 seconds
+
+---
+
 ## Returning functions from functions
 
 You can probably guess by now how to return a function from a
