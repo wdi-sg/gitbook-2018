@@ -143,7 +143,9 @@ clearInterval(fiveSecondInterval);
 ### Pairing Exercises
 1. Write code that uses setTimeout
 
-1.Write a function that uses a loop and this function:
+2. Write code that uses setInterval
+
+1. Write a function that uses a loop and this function:
 
 ```
 var add = function(a,b){

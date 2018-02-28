@@ -6,13 +6,23 @@ As you saw, the outermost box of each element went all the way across the page. 
 
 We can change all this with the first positioning property we'll learn, the `display` property and the four values we can use: inline, block, inline-block, and none.
 
+---
+
 * An **inline** element has no line break before or after it. This makes the element sit on the same line as another element, but without formatting it like a block. It only takes up as much width as it needs (not the whole line). Inline places all your elements on a single line. The bad news is that it doesn't maintain their "box"ness. So much for that padding...
+
+---
 
 * A **block** element has some whitespace above and below it and does not tolerate any HTML elements next to it. This makes the element a block box. It won't let anything sit next to it on the page and takes up the full width.
 
+---
+
 * An **inline-block** element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element. This makes the element a block box but will allow other elements to sit next to it on the same line.
 
+---
+
 * If you assign **none** as the value of the display, this will make the element and its content disappear from the page entirely!
+
+---
 
 Here are a few examples in CSS, written as classes:
 
@@ -34,6 +44,8 @@ We would end up with something like this:
 
 ![display](https://i.imgur.com/zeD1f2m.png)
 
+---
+
 
 ## Positioning
 
@@ -41,8 +53,9 @@ Another CSS property, "position", can take `relative` or `absolute` values, amon
 
 A page element with "relative positioning" gives you the control to "absolutely position" children elements inside of it. This might not be obvious to everyone - that's probably because this isn't intuitive, at all. Let's look at an example.
 
-
 ![css position relative](https://i.imgur.com/LRd7lBy.png)
+
+---
 
 The relative positioning on the parent is what matters here. This what would happen if we forgot that:
 
@@ -51,6 +64,8 @@ The relative positioning on the parent is what matters here. This what would hap
 In this small example, it doesn't seem to matter much, but it really is a significant change.
 
 ⇒ The "absolutely positioned" elements are positioning themselves in relation to the body element, instead of their direct parent. So if the browser window grows, that element in the bottom left is going to stick with the browser window, not hang back inside, like it was the case in the previous example.
+
+---
 
 #### Relative Positioning
 
@@ -63,6 +78,8 @@ Declaring `position:relative` allows you to position the element top, bottom, le
   left: 40px;
 }
 ```
+
+---
 
 #### Static Positioning
 
@@ -78,6 +95,8 @@ Again, the default positioning for all elements is static. This means that no po
 
 You rarely explicitly declare `position:static` like this because it is the default.
 
+---
+
 #### Fixed Positioning
 
 An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled, so a fixed positioned element will stay right where it is.
@@ -90,6 +109,8 @@ An element with fixed position is positioned relative to the browser window.  It
 }
 ```
 
+---
+
 #### Absolute Positioning
 
 Specifying `position: absolute` _removes the element from the document flow_ and places it exactly where you tell it to be.
@@ -101,6 +122,8 @@ Specifying `position: absolute` _removes the element from the document flow_ and
   right: 0;
 }
 ```
+
+---
 
 #### Using Absolute + Relative Together
 
