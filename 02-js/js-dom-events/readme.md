@@ -294,10 +294,29 @@ Set this function as a callback to some events.
 
 ---
 
-
+# Connecting events to the DOM
 ## How do we refer to an element that was clicked on?
+#### What program flow would we use to recreate the tictactoe game?
 
 ---
+### Example 1: User Text Input
+
+```
+<input id="user-input"/>
+```
+
+```
+document.getElementById("user-input");
+        .addEventListener('change',function(event){
+          // capture the current input
+
+          // this is inefficient
+          var input = document.getElementById('user-input');
+        });
+```
+
+---
+### Example 2: generic method for dealing with an element
 
 What if we have this HTML:
 ```
