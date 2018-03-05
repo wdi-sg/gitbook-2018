@@ -52,9 +52,9 @@ Also, try `textContent` too! (you may also see this as `innerText`, but this is 
 Change styling:
 
 ```js
-greeting_div.style.backgroundColor = "yellow";
-greeting_div.style.color = "red";
-greeting_div.style.height = "100px";
+searchForm.style.backgroundColor = "yellow";
+searchForm.style.color = "red";
+searchForm.style.height = "100px";
 ```
 
 ---
@@ -92,19 +92,17 @@ There are 2 ways to get and set attributes of a DOM element. You can access the 
 
 ```js
 //set using property
-document.querySelector("img").src = './images/beer.jpeg';
+document.querySelector("a").href = ' http://www.google.com';
 
 //get using property
-var imgSrc = document.querySelector("img").src;
+var href = document.querySelector("a").href;
 
 //get using getAttribute method
-var imgSrc = document.querySelector("img").getAttribute("src");
+var href = document.querySelector("a").getAttribute("href");
 
 //set using setAttribute method
-document.querySelector("img").setAttribute("src","./images/beer.jpeg")
+document.querySelector("a").setAttribute("href","http://www.google.com")
 ```
-__find an image url on google__
-
 ---
 
 ##CSS Classes
@@ -148,6 +146,18 @@ item.classList.contains('my-new-class');
 ```
 ---
 
+## Compare and Contrast
+
+Compare and contrast the following selectors. Why can't we use querySelector/querySelectorAll for everything?
+
+* getElementById
+* getElementsByClassName
+* getElementsByTagName
+* querySelector
+* querySelectorAll
+
+---
+
 ### Pairing Exercise (15 minutes)
 
 * Open up your browser and go to the MDN Website.
@@ -155,11 +165,13 @@ item.classList.contains('my-new-class');
 
 ---
 
-##Events
+##[Events](#events)
 
 * Events are a fundamentally different way to think about the design of our programs.
 
 * Order of execution is now non-linear- It depends upon the actions of the user.
+
+[async programming can be hard](https://twitter.com/julia_asterisk/status/829045121933000708)
 
 Now that we know how to select DOM elements, we can **attach** events to them:
 
@@ -266,18 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## Compare and Contrast
-
-Compare and contrast the following selectors. Why can't we use querySelector/querySelectorAll for everything?
-
-* getElementById
-* getElementsByClassName
-* getElementsByTagName
-* querySelector
-* querySelectorAll
-
----
-
 ### Pairing Exercise: (15 minutes)
 Paste this function into your console:
 ```
@@ -299,21 +299,50 @@ Set this function as a callback to some events.
 #### What program flow would we use to recreate the tictactoe game?
 
 ---
+With the tools we have now we can do this:
+
+```
+document.getElementById("user-input");
+        .addEventListener('change',function(){
+          // we have a click event
+
+          // re-get the element that was clicked on
+          var input = document.getElementById('user-input');
+        });
+```
+
+But we can do better and not repeat ourselves.
+
+---
+### Method 1: `event` parameter
+- the browser, when executing your callback function, will pass in the event object parameter.
+- A dom event object. Contains everything about the event that occured:
+- where it occured from
+- pixel coordinates for the event
+- etc., depending on the type of event
+- the DOM element that originated the event will be set to `event.target`
+
+
+
+---
 ### Example 1: User Text Input
 
+If you have this HTML:
 ```
 <input id="user-input"/>
 ```
 
+You can write this in your javascript:
 ```
 document.getElementById("user-input");
         .addEventListener('change',function(event){
-          // capture the current input
 
-          // this is inefficient
-          var input = document.getElementById('user-input');
+          // event is the DOM context for the event
+          console.log(event.target);
         });
 ```
+
+`event.target` parameter to the callback contains the element
 
 ---
 ### Example 2: generic method for dealing with an element
@@ -347,14 +376,18 @@ var dealWithProduce = function(){
 
 
 ```js
+// select a set of elements
 var listItems = document.querySelectorAll(".li");
+
+// set an event listener on each element
 for(var i = 0; i < listItems.length; i++){
     listItems[i].addEventListener("click", function() {
-    	console.log(this);
+      console.log("hello!");
     }
 }
 ```
 
+We can use `event.target` to reference our **specific** context of the element that was clicked on.
 ---
 
 # this
@@ -366,16 +399,6 @@ var dealWithProduce = function(){
   console.log( this );
 };
 ```
-
----
-## Parameters that are passed into your callback functions:
-
-`event`
-
-A dom event object. Contains everything about the event that occured:
-- where it occured from
-- pixel coordinates for the event
-- etc., depending on the type of event
 
 ---
 

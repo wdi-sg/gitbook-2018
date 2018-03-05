@@ -19,12 +19,6 @@ We've dabbled with HTML and CSS. There's a bit of interactivity we can program t
 
 ---
 
-### HTML, CSS and Javascript
-
-HTML, CSS and Javascript are technologies, which serve as the basic components of front-end development. Front-end frameworks and libraries that add layers of abstraction (i.e., the ability to do more with less code) make use of these three technologies.
-
----
-
 #### If a web application or website were a building...
 
 ##### HTML: Structure and Content
@@ -70,23 +64,6 @@ Javascript allows us to write code that is executed in response to user interact
 Cookie Clicker updates the page without requiring a full refresh, making for a smoother user experience
 * When I click a cookie, Cookie Clicker is able to update the counter without a hard refresh
 * When I comment on a post, Facebook is able to process the new comment and render it without refreshing the entire page
-
----
-
-#### Communication with Servers
-
-While this isn't the case with Cookie Clicker, Javascript has the ability to communicate with an external server. This means we could...
-* Store data associated with some user interaction into a database (e.g., cookie quantity, form data, contents of a post)
-* Retrieve information that needs to be displayed on a webpage (e.g., latest cookie quantity, user achievements)
-
-> Cookie Clicker uses the browser's [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) you save information
-
-This is not an exhaustive list of Javascript properties, but we'll go over these and more in greater detail later on in the course.
-
-So, to sum up the main three components of front-end web development up in one word each...
-* HTML: Structure
-* CSS: Styling
-* Javascript: Behavior
 
 ---
 
