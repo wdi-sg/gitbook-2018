@@ -240,3 +240,27 @@ if there's nothing left in the breakfast list.
   <li>Sandwich</li>
 </ul>
 ```
+
+---
+
+### Optimization to `DOMContentLoaded` : `window.onload`
+
+```
+document.addEventListener('DOMContentLoaded',function(){
+  // all yur code goes here
+});
+```
+
+```
+window.onload = function(){
+  // all yur code goes here
+};
+```
+
+---
+## [DOM Manipulation Reference](#reference):
+- document.createElement("a");
+- document.body.appendChild(a);
+- element.appendChild(newElement);
+- var insertedNode = parentNode.insertBefore(newNode, referenceNode);
+- parent.removeChild(child);

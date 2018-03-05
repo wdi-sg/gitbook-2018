@@ -12,3 +12,7 @@ for (var i=0, link; i<5; i++) {
 }
 
 morning exercise: https://github.com/wdi-sg/event-dom-practice
+
+lecture: dom manip
+
+afternoon: tictactoe run through
