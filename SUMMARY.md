@@ -55,7 +55,6 @@
   * [Functions](02-js/js-functions/readme.md)
   * [Browser Side Javascript](02-js/js-dom/readme.md)
     * [DOM and Events](02-js/js-dom-events/readme.md)
-    * [Javascript and DOM](02-js/js-dom/README.md)
     * [DOM Manipulation](02-js/js-dom-manipulation/README.md)
   * [Callbacks and Iterators](02-js/js-callbacks-iterators/readme.md)
   * [OOP](02-js/js-prototypes/01readme.md)
