@@ -11,6 +11,8 @@ and do things like:
 We haven't seen the true power of DOM manipulation. The power to create and
 destroy DOM elements!!
 
+---
+
 ## Creating DOM Elements
 The DOM allows us to create elements (make and add new HTML elements to our page).
 We can create any HTML tag we want. We can make `<a>` tags, `<p>` tags, `<div>`'s.
@@ -22,8 +24,9 @@ To create any new element we follow three basic steps:
 2. **modify** any properties of the element
 3. **attach** the element to an existing element on the page
 
-Let's look at an example of how to create a new element in JavaScript and add it
-to a page.
+Let's look at an example of how to create a new element in JavaScript and add it to a page.
+
+---
 
 ### Adding A New Link to the Bottom of a Page
 
@@ -34,6 +37,9 @@ a.textContent = "thefair.com";
 
 document.body.appendChild(a);
 ```
+
+---
+
 
 First, we use `document.createElement` and pass a string representing the tag we
 want to create. In this case we pass `"a"` to say we want to make a new link anchor
@@ -47,10 +53,14 @@ set the link and display text.
 Finally, we add the new anchor tag to the `<body>` with `document.body.appendChild`.
 This adds the anchor to the bottom of the page.
 
+---
+
 #### .appendChild()
 The `appendChild()` function exists for all HTML elements. It's easy to show how to
 add things to the end of the body of the page because body is a property on the
 global document variable.
+
+---
 
 In order to append a new element to any other element, simply obtain a reference
 to it first. Here's an example showing how to add a new list item to an unordered
@@ -78,13 +88,15 @@ newMovie.textContent = "Pirates of Silicon Valley";
 list.appendChild(newMovie);
 ```
 
-And there you have it!
+---
 
 #### .insertBefore()
 
 It's easy to add things to the end of the body, at the bottom of a div, or at the
 end of a list. We have to do slightly more work if we want to add a new element
 at the beginning or in the middle of an existing element.
+
+---
 
 Use the following syntax:
 
@@ -98,6 +110,8 @@ var insertedNode = parentNode.insertBefore(newNode, referenceNode);
 
 We can obtain a reference to all of the elements attached to a `parentNode`
 by accessing the `children` property.
+
+---
 
 Here's what it looks like all together:
 
@@ -114,9 +128,13 @@ var first = list.children[0];
 list.insertBefore(newMovie, first);
 ```
 
+---
+
 Of course, you can choose any of the children of an element as a `referenceNode`
 for `insertBefore`. The new element will simply be added in the spot just before
 whatever you choose.
+
+---
 
 ## Creating Complex DOM Elements
 It's possible to build up complex arrangements of HTML elements in JavaScript
@@ -132,6 +150,8 @@ and add them to the page.
   <div class="message">I'm hacking into the mainframe now. You better be ready.</div>
 </div>
 ```
+
+---
 
 ```js
 // create a new div for each container div
@@ -173,61 +193,7 @@ var parent = document.getElementById("some-container");
 parent.appendChild(chat);
 ```
 
-And there you go! It requires lots of writing, but the ability to create truly
-new and complex DOM elements on-the-fly within JavaScript is awesome!
-
-## The Case Against `.innerHTML`
-It's true that instead of doing any of those fancy DOM manipulation we could
-just use set `.innerHTML` equal to strings.
-
-- Using `innerHTML` may be a security concern. Someone can sneak malicious
-  content on your page. Using `.textContent` guarantees strings will only
-  appear as text.
-
-  Imagine if someone posted this as their status on Facebook and Facebook
-  rendered it with `.innerHTML`. If status appeared in your page you
-  would be redirected to an evil website!
-
-  ```html
-  <script>
-  window.location = "http://evil.com";
-  </script>
-  ```
-- Using `innerHTML` requires of string manipulation when it's mixed with
-  functions and parameters. These lines get long, and it's easy to confuse
-  when to use necessary single-quotes or double-quotes to make attributes
-  in HTML tags render correctly.
-
-  As elements become more complex innerHTML becomes hairier to use and you'll
-  find that creating elements as described here offers more modularity and
-  fine-grain control over how things are added to the page.
-
-  It totally works, but I'm telling you, I promise, it gets nasty!
-
-  ```js
-  var username = "netizen42";
-  var now = new Date();
-  var timestamp = now.getHour() + ":" + now.getMinutes();
-
-  var message = "I'm hacking into the mainframe now. You better be ready."
-
-  var container = document.getElementById("some-container");
-  container.innerHTML = "<div class='chat-message'>" +
-      "<div class='info'>" +
-        "<img class='profile-pic' src='" + username + ".png' />" +
-        "<div class='username'>" + username + "</div>" +
-        "<div class='timestamp'>" + timestamp + " </div>" +
-      "</div>" +
-      "<div class='message'>" + message + "</div>" +
-    "</div>";
-  ```
-
-- A final reason to prefer manual DOM manipulation over `.innerHTML` is
-  that it's much faster. The browser is optimized to make changes to
-  the DOM via the `.appendChild`, `insertBefore` methods described here.
-
-  The browser spends more time manually computing how to interpret string
-  content added via `.innerHTML`.
+---
 
 ## Destroying DOM Elements
 
@@ -246,6 +212,8 @@ to. Notice that it returns a reference to the node you removed. You
 may choose to save this to a variable or not. If you save a removed
 element to a variable then you have access to it and can add it to
 somewhere else on the page.
+
+---
 
 ## Moving Elements
 

@@ -1,14 +1,22 @@
 # Agile Development, Wireframes, and User Stories
 
+---
+
 ### Objectives
 
 * Explain the basics of Agile methods and why it's used
 * Describe user stories and how they are different than to-dos
 * Practice creating user stories for an example app
 
+---
+
 # Agile Development, Wireframes, and User Stories
 
+---
+
 ## Agile and Waterfall
+
+---
 
 #### Waterfall
 
@@ -25,9 +33,13 @@ Waterfall is a good example of a linear methodology. It has it's own benefits:
 
 However, other methodologies have evolved as the need for greater flexibility has arisen.
 
+---
+
 #### Agile
 
 _Agile software development is a group of software development methods in which requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development, early delivery, continuous improvement, and encourages rapid and flexible response to change_- [Wikipedia](http://en.wikipedia.org/wiki/Agile_software_development)
+
+---
 
 #### The Agile Manifesto
 
@@ -50,33 +62,63 @@ The core principles of agile development remain the same:
 * Iterative over waterfall
 * Code over documentation
 
+---
 
 #### Agile practices
 
 _Agile development is supported by a bundle of concrete practices suggested by the agile methods, covering areas like requirements, design, modeling, coding, testing, project management, process, quality, etc. Some notable agile practices include_ - Wiki
 
+---
+
 
 ## Agile practices
 
+---
+
 * **Test-driven development** (TDD) is a software development process that relies on the repetition of a very short development cycle: first the developer writes an (initially failing) automated test case that defines a desired improvement or new function, then produces the minimum amount of code to pass that test, and finally refactors the new code to acceptable standards.
+
+
+---
 
 * **Continuous integration** (CI) is the practice of merging all developer working copies with a shared mainline several times a day. It was adopted as part of extreme programming (XP), which did advocate integrating more than once per day, perhaps as many as tens of times per day. The main aim of CI is to prevent integration problems, referred to as "integration hell" in early descriptions of XP. CI isn't universally accepted as an improvement over frequent integration, so it is important to distinguish between the two as there is disagreement about the virtues of each. During WDI we will look at [Travis CI](https://travis-ci.com/) as an example of Continuous Integration.
 
+---
+
 * **Information radiators** is a generic term for any handwritten, drawn, printed or electronic displays that a team places in a highly visible location to track progress or metrics.  Examples include scrum board, task board, or a burndown chart.
+
+---
 
 * **Pair programming** (sometimes referred to as peer programming) is an agile software development technique in which two programmers work as a pair together on one workstation. One, the driver, writes code while the other, the observer, pointer or navigator, reviews each line of code as it is typed in. The two programmers switch roles frequently.
 
+
+---
+
 * **Refactoring** is the process of restructuring existing computer code -- changing the factoring -- without changing its external behavior. Refactoring improves nonfunctional attributes of the software.
+
+
+---
 
 * **Scrum meetings** are short meetings used to plan, review, and increase accountability and clarity across a team. Examples include sprint planning, daily scrum, sprint review and retrospective, and **STAND UPS**.
 
+---
+
 * **User personas** are used in user-centered design and marketing. They can be described as fictional characters created to represent the different user types that might use a site, brand, or product in a similar way. Marketers may use personas together with market segmentation, where the qualitative personas are constructed to be representative of specific segments.
+
+
+---
 
 * **User story** is a description consisting of one or more sentences in the everyday or business language of the end user or user of a system that captures what a user does or needs to do as part of his or her job function. User stories are used with agile software development methodologies as the basis for defining the functions a business system must provide, and to facilitate requirements management. It captures the 'who', 'what' and 'why' of a requirement in a simple, concise way, often limited in detail by what can be hand-written on a small paper notecard.
 
+
+---
+
 * **Wireframes** A website wireframe, also known as a **page schematic** or **screen blueprint**, is a visual guide that represents the **skeletal framework** of a **website**.
 
+---
+
 ## Wireframes
+
+---
 
 _A website wireframe, also known as a **page schematic** or **screen blueprint**, is a visual guide that represents the **skeletal framework** of a **website**._ - Wikipedia
 
@@ -87,6 +129,8 @@ The key points to get across when creating a wireframe are:
 * Information design
 * Navigation design
 * Interface design
+
+---
 
 #### An example of a wireframe
 
@@ -103,6 +147,8 @@ Wireframes focus on:
 * The rules for displaying certain kinds of information
 * The effect of different scenarios on the display
 
+---
+
 #### Useful wireframing tools
 
 * [draw.io](http://www.draw.io)
@@ -110,6 +156,8 @@ Wireframes focus on:
 * [InvisionApp](http://www.invisionapp.com/)
 * [MarvelApp](https://marvelapp.com/)
 * Writing utensils (markers, pens, pencils)
+
+---
 
 ## User Stories
 
@@ -123,6 +171,8 @@ For example:
 
 - _As a user, I want to read reviews of a selected book to help me decide whether to buy **_
 - _As an admin, I want to update the inventory of a selected book so my users know what is available.**_
+
+---
 
 ## Conclusion
 

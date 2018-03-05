@@ -1,17 +1,24 @@
 #Intro to DOM and Events
 
+---
+
 ## Objectives
 * Select elements from the DOM using selectors
 * Add events to elements in the DOM
-* Manage scope and control logic on a page
+
+---
 
 ##DOM Manipulation with JavaScript
 
 **Review:** What is the DOM?
 
+Open up the [MDN Website](https://developer.mozilla.org/en-US/)
+
 Go to Developer Console. Look at DOM in *Elements*, then look at the DOM in *Console*. The object 'document' represents the DOM in JavaScript. We can change the DOM, i.e. the page, by changing the **document object**.
 
 Review [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+---
 
 Now, inspect a few properties, for example:
 
@@ -21,27 +28,26 @@ document.head
 document.links (what does it return?)
 ```
 
+---
+
 How to change the DOM? Select elements and manipulate them.
 
 **Select by tag id:**
 
 ```js
-var greeting_div = document.getElementById("greeting");
+var searchForm = document.getElementById("home-search-form");
+
 ```
 
-What's the greeting?
+What's inside?
 
 ```js
-greeting_div.innerHTML;
-```
-
-Change it:
-
-```js
-greeting_div.innerHTML = "Wow, something changed.";
+searchForm.innerHTML;
 ```
 
 Also, try `textContent` too! (you may also see this as `innerText`, but this is not supported by all browsers)
+
+---
 
 Change styling:
 
@@ -51,17 +57,14 @@ greeting_div.style.color = "red";
 greeting_div.style.height = "100px";
 ```
 
+---
+
 Properties can be a getter and setter. What does this mean?
 
 **Select by class**
 
 ```js
-var content_div = document.getElementsByClassName("content");
-```
-
-Change it:
-```js
-content_div.innerHTML = "I can change , too";
+var content_div = document.getElementsByClassName("center");
 ```
 
 **Select by tag name**
@@ -69,15 +72,19 @@ content_div.innerHTML = "I can change , too";
 var allListElements = document.getElementsByTagName("li")
 ```
 
+---
+
 **Preferred: select using CSS selectors**
 
 Get elements by tag name or class is very unspecific. You can go after specific CSS selectors, just like you would in stylesheets:
 
 ```js
 document.querySelectorAll("li");
-document.querySelectorAll("li.selected");
-document.querySelectorAll("div#essentials > ul > li");
+document.querySelectorAll("li.nav-main-item");
+document.querySelectorAll(".center > h1");
 ```
+
+---
 
 **Accessing and changing element attributes**
 
@@ -96,14 +103,21 @@ var imgSrc = document.querySelector("img").getAttribute("src");
 //set using setAttribute method
 document.querySelector("img").setAttribute("src","./images/beer.jpeg")
 ```
+__find an image url on google__
+
+---
 
 ##CSS Classes
 
 Acessing, getting, setting CSS classes is slightly different than other properties.
 
+---
+
 ##className
 
 First you can directly access the class attribute by using the `className` property of a DOM element. This works fine, but since elements can have multiple classes (separated by spaces) this often leads to needing to do some string parsing.
+
+---
 
 ##classList
 
@@ -114,6 +128,8 @@ Additionally, the classList attribute has some special methods attached to it.
 * add - add a class
 * remove - removes a class
 * contains - checks if an item has a class
+
+---
 
 **Usage**
 
@@ -130,10 +146,22 @@ item.classList.remove('my-new-class');
 //check if an item has a class (returns true or false)
 item.classList.contains('my-new-class');
 ```
+---
+
+### Pairing Exercise (15 minutes)
+
+* Open up your browser and go to the MDN Website.
+* Repeat all of the exercies up to this point in the console.
+
+---
 
 ##Events
 
-Now that we know how to select DOM elements, we can attach events to them:
+* Events are a fundamentally different way to think about the design of our programs.
+
+* Order of execution is now non-linear- It depends upon the actions of the user.
+
+Now that we know how to select DOM elements, we can **attach** events to them:
 
 - Common Events:
 	- change
@@ -144,6 +172,16 @@ Now that we know how to select DOM elements, we can attach events to them:
 	- keyup
 
 * [List of Event Types](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+---
+
+## How Events Work
+
+* User does some action ( or something happens in the browser that a listener is set to )
+* Browser runs the function associated with that event
+* Just like `setTimeout` and `setInterval`, we specify something to be run at a later time.
+
+---
 
 #####addEventListener
 
@@ -157,6 +195,8 @@ document.getElementById("myDiv").addEventListener("click", function() {
 }
 ```
 
+---
+
 Events can only be attached to specific elements. Therefore, when you return a collection such as the result of `document.querySelectorAll` you **CANNOT** simply do this:
 
 ```js
@@ -164,6 +204,8 @@ document.querySelectorAll(".li").addEventListener("click", function() {
 	console.log("Click worked");
 }
 ```
+
+---
 
 Instead you must loop through all of the elements and attach an event to each item individually.
 
@@ -175,6 +217,38 @@ for(var i = 0; i < listItems.length; i++){
     }
 }
 ```
+
+---
+
+## Note: Method Chaining
+
+* For DOM methods and events we can use the method chaining syntax so that we don't have to capture return values and call methods on those assigned values.
+
+Without method chaining:
+```
+var element = document.getElementById("myDiv");
+
+element.addEventListener("click", function() {
+	//Your code here
+});
+```
+
+With method chaining
+```
+document.getElementById("myDiv").addEventListener("click", function() {
+	//Your code here
+});
+```
+
+Another syntax
+```
+document.getElementById("myDiv")
+        .addEventListener("click", function() {
+          //Your code here
+        });
+        // be sure to indent the dot method to the previous one
+```
+---
 
 ### DOMContentLoaded
 
@@ -190,7 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-### Compare and Contrast
+---
+
+## Compare and Contrast
 
 Compare and contrast the following selectors. Why can't we use querySelector/querySelectorAll for everything?
 
@@ -199,3 +275,95 @@ Compare and contrast the following selectors. Why can't we use querySelector/que
 * getElementsByTagName
 * querySelector
 * querySelectorAll
+
+---
+
+### Pairing Exercise: (15 minutes)
+Paste this function into your console:
+```
+var saySomething = function(){
+  alert("YES!");
+};
+```
+
+Set this function as a callback to some events.
+
+* set the click event to the main h1 text `.hightlight-span`
+* set mouseover to that element
+* set keyup or keydown to the search box
+
+---
+
+
+## How do we refer to an element that was clicked on?
+
+---
+
+What if we have this HTML:
+```
+<div id="motorbike">honda</div>
+<ul>
+  <li id="tomatoes">tomatoes</li>
+  <li id="lettuce">lettuce</li>
+  <li id="bananas">bananas</li>
+  <li id="pinapples">pineapple</li>
+  <li id="durian">durian</li>
+</ul>
+```
+
+---
+
+Inside our callback functions, we want a way to access each individual element **value** but in a generic way.
+
+Obviously we would treat our motorbike div differently, but what if we have the generic **produce** element, but they each have a different value inside?
+
+---
+
+```
+var dealWithProduce = function(){
+  // How do we complete the string?
+  // alert(' are yummy!!!');
+};
+```
+
+
+```js
+var listItems = document.querySelectorAll(".li");
+for(var i = 0; i < listItems.length; i++){
+    listItems[i].addEventListener("click", function() {
+    	console.log(this);
+    }
+}
+```
+
+---
+
+# this
+
+### `this` keyword is the current context of the function being executed
+
+```
+var dealWithProduce = function(){
+  console.log( this );
+};
+```
+
+---
+## Parameters that are passed into your callback functions:
+
+`event`
+
+A dom event object. Contains everything about the event that occured:
+- where it occured from
+- pixel coordinates for the event
+- etc., depending on the type of event
+
+---
+
+## Pairing Exercise: (15 minutes)
+- Start a new `index.html` and `script.js` file
+- Copy the HTML and javscript code into their respective files.
+- Run it and see the value of `this` and `event` for each time you click.
+- Add new elements
+- Add a class to the li elements, change selector to class name, run it again
+- Add a non-li element with the same class name, run it again
