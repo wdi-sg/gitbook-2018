@@ -129,3 +129,12 @@ Most of the time, `min-width` and `max-width` will be your bread and butter. You
 
 <p data-height="265" data-theme-id="0" data-slug-hash="VmXqGM" data-default-tab="css,result" data-user="ga-sg" data-embed-version="2" data-pen-title="Media Query Columns Example" class="codepen">See the Pen <a href="http://codepen.io/ga-sg/pen/VmXqGM/">Media Query Columns Example</a> by General Assembly (<a href="http://codepen.io/ga-sg">@ga-sg</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+### Exercise
+Redo the instagram exercise from earlier.
+Make it more friendly to see on a phone.
+1. Don't display the phone when the screen is narrow
+1. Center the main div or make it 100% of the width if the screen is narrow.
+1. stack some of the footer links on a narrower screen
+1. Move the instagram logo above the login button, and center the login button

@@ -125,8 +125,7 @@ Pass the parameter you want to "hold onto" into the `function expression`
 
 ---
 
-### Exercises
+### Pairing Exercise
 - After each line write a console.log("what is happening at this line", variable-to-console.log )
 - Callbacks and scope become more clear when you understand the values of each thing at each place in the program.
-
 - Try each example out.
