@@ -215,6 +215,14 @@ somewhere else on the page.
 
 ---
 
+From the examples above:
+
+```
+info.removeChild(time);
+```
+
+---
+
 ## Moving Elements
 
 Practice saving the return value of `.removeChild()` and passing it to
@@ -264,3 +272,7 @@ window.onload = function(){
 - element.appendChild(newElement);
 - var insertedNode = parentNode.insertBefore(newNode, referenceNode);
 - parent.removeChild(child);
+
+## Exercise:
+- Begin with an HTML file with an empty `body` tag. Create and include a `script.js` file.
+- Repeat all of the DOM manipulation examples shown.

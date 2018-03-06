@@ -49,3 +49,7 @@ for( var i=0; i<spaces.length; i++ ){
 ## Exercise:
 Implement the code we just went through in class.
 Use the above as starter code to make a tictactoe game that is playable.
+
+#### Further:
+- Use some nicer html than buttons to style your game. (`<div>` ?)
+- Use images to style your game. Find and use images of x's and o's
