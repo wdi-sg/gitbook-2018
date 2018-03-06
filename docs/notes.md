@@ -16,3 +16,5 @@ morning exercise: https://github.com/wdi-sg/event-dom-practice
 lecture: dom manip
 
 afternoon: tictactoe run through
+
+afternoon exercise: https://github.com/wdi-sg/fellowship-of-the-dom/blob/master/starter-code/app/scripts/fellowship.js
