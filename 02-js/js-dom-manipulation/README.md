@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 ```
 window.onload = function(){
-  // all yur code goes here
+  // all your code goes here
 };
 ```
 
@@ -273,6 +273,6 @@ window.onload = function(){
 - var insertedNode = parentNode.insertBefore(newNode, referenceNode);
 - parent.removeChild(child);
 
-## Exercise:
+## Pairing Exercise:
 - Begin with an HTML file with an empty `body` tag. Create and include a `script.js` file.
 - Repeat all of the DOM manipulation examples shown.
