@@ -69,7 +69,7 @@ links.forEach(function(link, i){
 
   link.innerHTML = "Link " + i;
 
-  link.addEventListener = function () {
+  link.addEventListener('click', function () {
     alert(i);
   };
 
