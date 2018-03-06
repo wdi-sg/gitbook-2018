@@ -222,7 +222,7 @@ The point of our scrums, is not to discuss these issues but to simply flag them 
 
 This is optional but recommended. You should keep a Journal! It can be anything: a blog, a Medium series, a Word doc or literally a physical journal. The point is that at the end of each day you should take 15 minutes to write down a reflection on what you've learnt today. What you enjoyed? What you found difficult? And anything else you'd like to put on paper. Later down the course this will be a great tool to help you realize just how far you've progressed and boost your confidence to keep going.
 
-## ![](http://assets.amuniversal.com/22a5ace06d6501301d80001dd8b71c47)
+## ![placeholder](http://assets.amuniversal.com/22a5ace06d6501301d80001dd8b71c47)
 
 ---
 
