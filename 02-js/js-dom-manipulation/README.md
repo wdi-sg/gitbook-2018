@@ -119,7 +119,7 @@ Here's what it looks like all together:
 var list = document.getElementById("my-favorite-movies");
 
 var newMovie = document.createElement("li");
-newMovie = "Dr. Strangelove";
+newMovie.textContent = "Dr. Strangelove";
 
 // get a reference to the first element inside the list
 var first = list.children[0];
