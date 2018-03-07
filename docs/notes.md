@@ -1,20 +1,17 @@
-for (var i=0, link; i<5; i++) {
+morning ex: https://github.com/wdi-sg/command-line-murder-mystery/tree/master/mystery
 
-  link = document.createElement("a");
+lecture: internet
+mention: comments
+lunch
+outcomes
+lecture: css media queries
+afternoon: instagram responsive
+exercise: instagram responsive: https://github.com/wdi-sg/css-positioning/pull/26
+homework: https://github.com/wdi-sg/tv-browser
 
-  link.innerHTML = "Link " + i;
+morning ex: airbnb responsive
+lecture: bootstrap
+lecture: user stories & wireframing
+exercise: student game user stories and wire framing
+consultations
 
-  link.addEventListener = function () {
-    alert(i);
-  };
-
-  document.body.appendChild(link);
-}
-
-morning exercise: https://github.com/wdi-sg/event-dom-practice
-
-lecture: dom manip
-
-afternoon: tictactoe run through
-
-afternoon exercise: https://github.com/wdi-sg/fellowship-of-the-dom/blob/master/starter-code/app/scripts/fellowship.js
