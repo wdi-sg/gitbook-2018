@@ -11,10 +11,16 @@ for (var i=0, link; i<5; i++) {
   document.body.appendChild(link);
 }
 
-morning exercise: https://github.com/wdi-sg/event-dom-practice
+morning ex: https://github.com/wdi-sg/command-line-murder-mystery/tree/master/mystery
 
-lecture: dom manip
+lecture: internet
+lunch
+mention: comments
+lecture: css media queries
+afternoon: instagram responsive
+exercise: instagram responsive: https://github.com/wdi-sg/css-positioning/pull/26
 
-afternoon: tictactoe run through
 
-afternoon exercise: https://github.com/wdi-sg/fellowship-of-the-dom/blob/master/starter-code/app/scripts/fellowship.js
+morning ex: airbnb responsive
+lecture: bootstrap
+
