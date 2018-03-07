@@ -151,6 +151,3 @@ document.querySelector('#submit').addEventListener('click', doSubmit);
 - put in a url string that doesn't make any sense.
 - use an `error` event handler callback to alert the user when an error occurs.
 
-#### Further 3:
-- make a request to `https://www.google.com/teapot`
-- what is the status code and status text?
