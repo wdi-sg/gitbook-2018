@@ -76,6 +76,13 @@
     * [Async module](02-js/js-async/readme.md)
     * [Data Scraping](02-js/js-data-scraping/readme.md)
   * [APIs and Data Sources](12-resources/apis.md)
+  * [jQuery](02-js/js-jquery/01readme.md)
+    * [Intro](02-js/js-jquery/02intro.md)
+      * [DOM Manipulation](02-js/js-jquery/03dom-manipulation.md)
+      * [Reddit Practice](02-js/js-jquery/04reddit.md)
+      * [Styling](02-js/js-jquery/05styling.md)
+      * [Events](02-js/js-jquery/06events.md)
+    * [Plugins](02-js/js-jquery/07plugins.md)
 * [Databases](04-databases/readme.md)
   * [MongoDB](04-databases/mongo-intro/intro-nosql.md)
     * [CRUD in MongoDB](04-databases/mongo-intro/crud.md)
@@ -201,4 +208,3 @@
   * [APIs and Data Sources](12-resources/apis.md)
   * [Visual Design](12-resources/visualdesign.md)
   * [Tech Websites](12-resources/techsites.md)
-
