@@ -64,17 +64,17 @@ Real-life recreation with paper. (One person pretends to be the backend)
 
 ```
 // what to do when we recieve the request
-var requestHandler = function() {
+var responseHandler = function() {
   console.log("response text", this.responseText);
   console.log("status text", this.statusText);
   console.log("status code", this.status);
-}
+};
 
 // make a new request
 var request = new XMLHttpRequest();
 
 // listen for the request response
-request.addEventListener("load", requestHandler);
+request.addEventListener("load", responseHandler);
 
 // ready the system by calling open, and specifying the url
 request.open("GET", "https://swapi.co/api/people/1");
@@ -82,10 +82,23 @@ request.open("GET", "https://swapi.co/api/people/1");
 // send the request
 request.send();
 ```
+---
 
-Note: `new` keyword creates a new `XMLHttpRequest`
-Note: `JSON` is built-in functionality that deals with JSON.
-Note: I can also visit https://swapi.co/api/people/1 in the browser.
+Change it from a string type into a javascript object
+
+```
+var responseHandler = function() {
+  console.log("response text", this.responseText);
+  var response = JSON.parse( this.responseText );
+  console.log( response );
+};
+```
+
+---
+
+- Note: `new` keyword creates a new `XMLHttpRequest`
+- Note: `JSON` is built-in functionality that deals with JSON.
+- Note: I can also visit https://swapi.co/api/people/1 in the browser.
 
 From: [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
 From: [Moar MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests)
