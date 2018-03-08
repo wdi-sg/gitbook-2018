@@ -1,6 +1,8 @@
 ### How To Use This Gitbook
 
+#### Install gitbook-cli
 
+https://github.com/GitbookIO/gitbook-cli
 
 #### Build and deploy:
 Deploy on gibhub pages:
