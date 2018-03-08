@@ -10,9 +10,9 @@ Everyone will get a chance to **be creative**, and work through some really **to
 
 ---
 
-### Technical Requirements
+### Technical Considerations
 
-Your app must:
+Your app should:
 
 * **Display a game in the browser**
 * **Switch turns** between two players, or switch turns between a player and the computer (AI)*
@@ -25,7 +25,7 @@ Your app must:
 
 ---
 
-### Necessary Deliverables
+### Required Deliverables
 
 * A **working game, built by you**, hosted somewhere on the internet
 * A **link to your hosted working game** in the URL section of your Github repo
@@ -56,7 +56,7 @@ Sometimes just called "Memory", it's a card game in which all of the cards are l
 ---
 
 ## Project Feedback + Evaluation
-Both Project 1a and Project 1b will be graded on the same rubric.
+Both Project 1a and Project 1b will have the same basic requirements
 
 ---
 
@@ -65,24 +65,3 @@ Both Project 1a and Project 1b will be graded on the same rubric.
 * **[MDN Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** _(a great reference for all things Vanilla Javascript)_
 * **[jQuery Docs](http://api.jquery.com)** _(if you're using jQuery)_
 * **[Github Pages](https://pages.github.com)** _(for hosting your game)_
-
----
-#### Evaluation
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
-
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
-
-* __Creativity__: Did you add a personal spin or creative element into your project submission? Did you deliver something of value to the end user (not just a login button and an index page)?
-
-* __Code Quality__: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors have in class?
-
-* __Deployment__: Did you deploy your application to a public url using GitHub Pages?
-
-* __Total__: Your instructors will give you a total score on your project between:
-
-| Score | Expectations |
-| ----- | ------------ |
-| **0** | _Incomplete._ |
-| **1** | _Does not meet expectations._ |
-| **2** | _Meets expectations, good job!_ |
-| **3** | _Exceeds expectations, you wonderful creature, you!_ |

@@ -8,6 +8,8 @@ Even in the examples below, where tens of millions of dollars could be lost, the
 Large mistakes are almost never the fault of the developer, but of the sytems and processes in place to prevent errors and problems.
 
 [https://github.com/danluu/post-mortems](https://github.com/danluu/post-mortems)
+https://blog.codinghorror.com/the-project-postmortem/
+
 
 
 ### What to Bring

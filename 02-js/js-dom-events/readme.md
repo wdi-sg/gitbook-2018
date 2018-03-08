@@ -400,6 +400,8 @@ var dealWithProduce = function(){
 };
 ```
 
+**Only the this keyword can be used to set attributes of the element context.**
+
 ---
 
 ## Pairing Exercise: (15 minutes)

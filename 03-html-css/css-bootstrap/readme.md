@@ -1,36 +1,47 @@
 # Intro to Bootstrap
 
+---
+
 ##Objectives
 
 * Understand what front-end CSS frameworks are
 * Utilize a front-end grid system for mobile and desktop layout
 * Comprehend documentation and implement an unfamiliar framework
 
+---
+
 
 ##Bootstrap
 
 A little while back, a couple wonderful folks at Twitter created a front end framework called Bootstrap to make responsive web development much easier. Bootstrap is extremely popular and knowledge of at least one CSS framework is a very valuable skill to have. Bootstrap comes with a ton of features including a responsive grid system, buttons, icons and some very nifty JavaScript plugins.
 
+---
+
 ### How to include it
 
-You can include Bootstrap multiple ways, the easiest to start is a CDN. As we continue to use Rails and more robust tooling, we can also use package managers like `npm`. Our current setup won't support this, but we'll use it in time!
+You can include Bootstrap multiple ways, the easiest to start is a CDN. As we get to use Rails and more robust tooling, we can also use package managers. Our current setup won't support this, but we'll use it in time!
 
-1. CDN (content delivery network - someone else hosts the library/framework and you access it via a URL)
+1. CDN (content delivery network - someone else hosts the library/framework and you access it via a URL) https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 2. Include the actual CSS and JS files - great for offline development
-3. Package manager (`npm`, Ruby gem)
+
+---
 
 ### Start with a container
 
-To make sure that all your bootstrap styles behave properly, it's always best to put your content inside an element with a class "container" (usually a div). This will create a width of 1170px, and center all your content. If you would like to use the full width of the screen use `class = "container-fluid"`
+To make sure that all your bootstrap styles behave properly, it's always best to put your content inside an element with a class "container" (usually a div). If you would like to use the full width of the screen use `class = "container-fluid"`
+
+---
 
 ### Layout/Grid (row class, spans, offset, nesting)
 
-The bootstrap grid is based on 12 columns that can are accessible using by placing the columns in ```<div class = "row">``` (you must place your columns in a row) and then you use the following classes for these screen sizes.
+The bootstrap grid is based on 12 columns that can are accessible using by placing the columns in `<div class = "row">` (you must place your columns in a row) and then you use the following classes for these screen sizes.
 
 * col-xs = <768px
 * col-sm = <992px
 * col-md <1200px
 * col-lg >1200px
+
+---
 
 Here is an example of an two column layout.
 
@@ -43,6 +54,8 @@ Here is an example of an two column layout.
 
 You can see some more good examples [here](http://getbootstrap.com/css/#grid)
 
+---
+
 You can also offset and nest your columns. When you offset a column, you add a column of whitespace and push the column to the right. Here is a example
 
 ```html
@@ -52,6 +65,8 @@ You can also offset and nest your columns. When you offset a column, you add a c
   </div>
 </div>
 ```
+
+---
 
 Here is an example of nesting columns (putting one row inside another)
 
@@ -71,6 +86,8 @@ Here is an example of nesting columns (putting one row inside another)
 </div>
 ```
 
+---
+
 ### Buttons/positioning
 
 To align text, use these classes.
@@ -83,9 +100,7 @@ To align text, use these classes.
 <p class="text-nowrap">No wrap text.</p>
 ```
 
-### Icons
-
-Bootstrap comes with a set of icons which can be accessed using the `<i></i>` tag. You can access these icons (here)[include bootstrap link]
+---
 
 ### Typography (lead, muted, warning/error/success/info, small>cite attr -> cite title = "test")
 
@@ -100,6 +115,8 @@ Bootstrap also comes with some nice styles to improve the quality of your typogr
 <p class="text-uppercase">Uppercased text.</p>
 <p class="text-capitalize">Capitalized text.</p>
 ```
+
+---
 
 ### lists (unstyled class removed padding and bullets class inline to display on the same line")
 
@@ -122,9 +139,13 @@ You can also style them to be inline (good for navigation)
 </ul>
 ```
 
+---
+
 ### Tables
 
 Bootstrap is really awesome at formatting tables for you and with only a couple classes you can have some spiffy looking tables. Add `class="table"` to your table tag to include this and if you would like a striped design include the class `table-striped` to your table tag. The table-striped will only add stripes to whatever is in your `tbody` tag. If you would like borders as well include `table-bordered` in your table tag.
+
+---
 
 ### Buttons (link, xs, sm, lg, block, disabled)
 
@@ -155,22 +176,20 @@ Bootstrap comes with quite a few button default sizes and colors, to add these m
 
 You can also add .btn-lg, .btn-sm, or .btn-xs for additional sizes.
 
+---
+
 ### Images (img-rounded, img-responsive, img-circle)
 
 Bootstrap helps you format images using img-rounded (rounds the corners), img-circle (makes the image a circle) and img-thumbnail (adds a border). You can also add a class of img-responsive to your image to make it scale well when the screen size changes (this sets its max-width to 100% and the height to auto)
+
+---
 
 ### Forms
 
 Bootstrap is also very helpful when you need to style your forms. All textual `<input>, <textarea>, and <select>` elements with `.form-control `are set to width: 100%; by default. Wrap labels and controls in .form-group for optimum spacing. You can create horizontal and inline forms and style each of your inputs and validations as well. Read more about form styling [here](http://getbootstrap.com/css/#forms)
 
+---
+
 ### JavaScript + Bootstrap
 
 Bootstrap can also do some nifty things for you with it's JavaScript plugins. This includes carousels, modals, popovers, dropdowns and other nice pieces of functionality that will really spruce up your app. Always make sure you understand what the code is doing before copying and pasting it. Fortunately, this is not too challenging and Bootstrap has excellent documentation. As always, if you're confused or things are breaking - google around. Bootstrap is pretty much ubiquitous and it is likely that the problems you have, other people have had (and hopefully solved) as well.
-
-##Bootstrap Snippets
-
-Your Code Editor has a feature called "snippets" it allows you to use shortcuts to type frequently used commands. There are some built in and there are packages that contain collections of them that you can install.
-
-There are bootstrap snippet packages that you can also install, that allow you to quickly add correctly classed bootstrap components.
-
-[Bootstrap 3 Sublime Snippets](https://github.com/JasonMortonNZ/bs3-sublime-plugin)

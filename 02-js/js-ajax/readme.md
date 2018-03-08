@@ -43,6 +43,20 @@ Real-life recreation with paper. (One person pretends to be the backend)
 
 ---
 
+## Naming of Resources and Categorization of Data
+
+- Each thing we request is a resource
+- URLs are a specficication for the location of a resource
+- We format the request for the resources in a particular syntax
+- We can request web pages through the browser
+- We can request JSON through javascript
+- (We can request either through either)
+- URLs are formatted similarly to file paths
+- There is a root path, ans then a set of resources
+- Each web dev chooses a way to format the order of a URL
+
+---
+
 ## HTTP
 - a **structured** protocol for sending and recieving HTML (or other data)
 - protocol, as in the military, a set of conventions for behavior given a set of circumstances

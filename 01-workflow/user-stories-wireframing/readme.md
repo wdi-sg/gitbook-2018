@@ -22,6 +22,8 @@
 
 _The waterfall model is a sequential design process, used in software development processes, in which progress is seen as flowing steadily downwards (like a waterfall) through the phases of Conception, Initiation, Analysis, Design, Construction, Testing, Production/Implementation and Maintenance._- [Wikipedia](http://en.wikipedia.org/wiki/Waterfall_model)
 
+---
+
 ![Waterfall model](https://i.imgur.com/yJMVO91.png)
 
 Waterfall is a good example of a linear methodology. It has it's own benefits:
@@ -50,7 +52,11 @@ This was a formal "proclamation" of key values and principles for approaching so
 * **Customer collaboration over contract negotiation:** requirements cannot be fully collected at the beginning of the software development cycle, therefore continuous customer or stakeholder involvement is very important
 * **Responding to change over following a plan:** agile methods are focused on quick responses to change and continuous development
 
+---
+
 However, keep in mind that *not all of these values are beneficial for all projects*. For example, freelancers will usually want a set plan and contract in place in order to prevent **scope creep**.
+
+---
 
 The core principles of agile development remain the same:
 
@@ -116,13 +122,48 @@ _Agile development is supported by a bundle of concrete practices suggested by t
 
 ---
 
-## Wireframes
+## Agile Process at the Beginning of a Project / Beginning of a Feature
 
 ---
 
+#### Begin with the problem statement
+- What problem are you trying to solve?
+- What is your proposed solution?
+- Does your spec solve the problem in a reasonable way?
+
+---
+
+#### Create a user persona
+- What are that person's motivations for using the product?
+- What do they want to accomplish or get out of the product?
+- Why or why wouldn't they find that the product solves their problem?
+
+---
+
+#### Break down product into "features" by thinking about user actions within the overall product
+
+#### What is the "Minimun Viable Product" needed to solve the user's problem?
+
+---
+
+#### Use the user personas to create user stories for each feature
+- Each story should describe which persona, the action being done, and the motivation for an action
+- Once you have constructed User Personas, to better understand your Users, you must construct User stories to identify each pathway they may want to take through your app or website.
+_As a **[role]**, I want to **[goal]** so I can **[benefit/purpose]**_
+
+User stories exist in different formats, but this is one that works quite well:
+For example:
+
+- _As a user, I want to read reviews of a selected book to help me decide whether to buy **_
+- _As an admin, I want to update the inventory of a selected book so my users know what is available.**_
+
+---
+
+#### Wireframe the interface needed to complete the user actions.
+
 _A website wireframe, also known as a **page schematic** or **screen blueprint**, is a visual guide that represents the **skeletal framework** of a **website**._ - Wikipedia
 
-[...continued...] **Wireframes** are created for the purpose of arranging elements to best accomplish a particular purpose. The purpose is usually being informed by a business objective and a creative idea. The wireframe depicts the **page layout** or **arrangement** of the website's **content**, including **interface elements** and **navigational systems**, and how they work together. The wireframe usually lacks typographic style, color, or graphics, since the main focus lies in **functionality**, behavior, and priority of content.
+**Wireframes** are created for the purpose of arranging elements to best accomplish a particular purpose. The purpose is usually being informed by a business objective and a creative idea. The wireframe depicts the **page layout** or **arrangement** of the website's **content**, including **interface elements** and **navigational systems**, and how they work together. The wireframe usually lacks typographic style, color, or graphics, since the main focus lies in **functionality**, behavior, and priority of content.
 
 The key points to get across when creating a wireframe are:
 
@@ -149,6 +190,56 @@ Wireframes focus on:
 
 ---
 
+#### Wireframe and User Story to low-level pseudocode
+
+
+- _As a user, I want to read reviews of a selected book to help me decide whether to buy **_
+- Create wireframe that represents this functionality
+- Think of the actual first user action that you will need to write code for
+- Write some pseudocode that represents the action
+
+
+
+---
+
+#### Code Design Review
+
+---
+
+#### Sidebar: How to design:
+
+Let's talk about the components of a web page design:
+
+![https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg)
+
+---
+
+![https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png](https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png)
+
+---
+
+But you can read up!
+
+- [http://www.vikingcodeschool.com/web-design-basics/components-of-good-ux](http://www.vikingcodeschool.com/web-design-basics/components-of-good-ux)
+- [https://www.smashingmagazine.com/2016/12/mistakes-developers-make-when-learning-design/](https://www.smashingmagazine.com/2016/12/mistakes-developers-make-when-learning-design/)
+- [https://uxplanet.org/information-architecture-basics-for-designers-b5d43df62e20](https://uxplanet.org/information-architecture-basics-for-designers-b5d43df62e20)
+
+---
+
+Design principals developers generally do have control over:
+
+Application flow:
+[https://www.useronboard.com/user-onboarding-teardowns/](https://www.useronboard.com/user-onboarding-teardowns/)
+
+UX Information Architecture
+- Single Page layout:
+- Important text is important looking
+- Similar information is grouped together
+- Standard UI conventions are followed
+- The main user stories are represented in a clear way (Bank homepage has login button)
+
+---
+
 #### Useful wireframing tools
 
 * [draw.io](http://www.draw.io)
@@ -156,27 +247,3 @@ Wireframes focus on:
 * [InvisionApp](http://www.invisionapp.com/)
 * [MarvelApp](https://marvelapp.com/)
 * Writing utensils (markers, pens, pencils)
-
----
-
-## User Stories
-
-Once you have constructed User Personas, to better understand your Users, you must construct User stories to identify each pathway they may want to take through your app or website.
-
-User stories exist in different formats, but this is one that works quite well:
-
-_As a **[role]**, I want to **[goal]** so I can **[benefit/purpose]**_
-
-For example:
-
-- _As a user, I want to read reviews of a selected book to help me decide whether to buy **_
-- _As an admin, I want to update the inventory of a selected book so my users know what is available.**_
-
----
-
-## Conclusion
-
-* Describe agile development.
-* Compare agile development to waterfall development.
-* What are users stories and why are they used?
-* What are wireframes and why are they used?
