@@ -43,11 +43,12 @@ example();
 ### 1.2 Callback functions
 
 1.2.1
-  - create a function that takes in an array and a callback as parameters
+
   given an array:
   
   ```
   var arr = [2,3]
   ```
   
-  - call the function with callback to the multiply function in 1.1.3
+  - create a function that takes in an array and a callback as parameters
+  - call the function with a callback to the multiply function from 1.1.3 and return the result
