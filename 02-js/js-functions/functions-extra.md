@@ -33,19 +33,18 @@ example();
   
 1.1.4
   - create a function that takes in and array of numbers as a parameter and prints the odd numbers
-  
-1.1.5
-  - create a function that converts an array into string
 
-1.1.6
+1.1.5
   - create a function that converts a string into an array
+  - sort the letters in alphabetical order
+  - convert the string back into an array
   
-1.1.7
+1.1.6
 
   given an array:
   
   ```
- var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   ```
   - create a function that takes in an array of numbers as a parameter:
       - interates through all the elements in the array
