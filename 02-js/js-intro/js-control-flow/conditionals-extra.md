@@ -1,4 +1,4 @@
-1. conditionals:
+## 1. conditionals:
   - create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
   - for each conditional you write, also console.log the word `chocolate` after the conditional statement (closing curly brace).
 Example:
@@ -27,9 +27,9 @@ console.log("chocolate");
 
   - write a conditional that will `console.log` `danube` if `monkey` is less than 6 or `johnathan` is less than 3, but, if `monkey` is more than 7 and `johnathan` is equal to 9, `console.log` `trumpet`. Otherwise `console.log` `brains`
 
-#### 2. loops
+## 2. loops
 
-# 2.1.0 while loop
+### 2.1.0 while loop
 
 2.1.1
   - initialize a variable `i`
@@ -211,10 +211,10 @@ console.log("chocolate");
       - if `i` is divisible to `5`, print "oh no!"
 
 
-2.2.0 for loop
+### 2.2.0 for loop
   - recreate each of these problems using a `for` loop and not a while loop
 
-# 2.3.0 for...in loop
+### 2.3.0 for...in loop
 
 2.3.1
 
