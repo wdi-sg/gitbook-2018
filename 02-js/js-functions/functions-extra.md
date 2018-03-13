@@ -39,6 +39,20 @@ example();
 
 1.1.6
   - create a function that converts a string into an array
+  
+1.1.7
+  given an array:
+  
+  ```
+ var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  ```
+  - create a function that takes in an array of numbers as a parameter:
+      - interates through all the elements in the array
+      - prints 'fizz' if a number is divisible by 3
+      - prints 'buzz' if a number is divisible by 5
+      - prints 'fizzbuzz' if a number is divisible by 3 and 5
+      - prints the number if the above conditions are not met
+  - instead of printing each individual result, return a new array of all the results
 
 ### 1.2 Callback functions
 
