@@ -7,8 +7,8 @@
 Example:
 ```
 function example() {
-  \\your code goes here
-}
+  \\ your code goes here
+};
 
 example();
 ```
@@ -16,8 +16,8 @@ or:
 
 ```
 var example = function() {
-  \\your code goes here
-}
+  \\ your code goes here
+};
 
 example();
 ```
