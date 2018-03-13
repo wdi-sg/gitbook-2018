@@ -37,7 +37,7 @@ example();
 1.1.5
   - create a function that converts a string into an array
   - sort the letters in alphabetical order
-  - convert the string back into an array
+  - convert the array back into a string
   
 1.1.6
 
