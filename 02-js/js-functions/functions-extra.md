@@ -34,4 +34,20 @@ example();
 1.1.4
   - create a function that takes in and array of numbers as a parameter and prints the odd numbers
   
+1.1.5
+  - create a function that converts an array into string
 
+1.1.6
+  - create a function that converts a string into an array
+
+### 1.2 Callback functions
+
+1.2.1
+  - create a function that takes in an array and a callback as parameters
+  given an array:
+  
+  ```
+  var arr = [2,3]
+  ```
+  
+  - call the function with callback to the multiply function in 1.1.3
