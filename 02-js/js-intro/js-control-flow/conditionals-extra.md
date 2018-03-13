@@ -29,7 +29,7 @@ console.log("chocolate");
 
 #### 2. loops
 
-2.1.0 while loop
+2.1.0 ###while loop
 
 2.1.1
   - initialize a variable `i`
@@ -214,7 +214,7 @@ console.log("chocolate");
 2.2.0 for loop
   - recreate each of these problems using a `for` loop and not a while loop
 
-2.3.0 #for...in loop
+2.3.0 ###for...in loop
 
 2.3.1
 
