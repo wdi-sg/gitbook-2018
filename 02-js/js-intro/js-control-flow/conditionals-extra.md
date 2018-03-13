@@ -217,4 +217,19 @@ console.log("chocolate");
 ### 2.3.0 for...in loop
 
 2.3.1
-
+  - given this object:
+  ```
+  var vegetables = {
+    'carrots': 2,
+    'celery': 4,
+    'potatoes: 5',
+    'onions': 8,
+    'garlic': 7,
+    'daikon': 3
+  };
+  ```
+  - write a for...in loop that:
+    - `console.log` all the property keys (i.e. the vegetable names) of the object
+    - `console.log` all the property values (i.e. the number of each vegetable) of the object
+    
+    
