@@ -41,6 +41,7 @@ example();
   - create a function that converts a string into an array
   
 1.1.7
+
   given an array:
   
   ```
