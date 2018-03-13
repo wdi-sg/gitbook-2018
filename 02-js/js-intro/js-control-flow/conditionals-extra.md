@@ -29,13 +29,15 @@ console.log("chocolate");
 
 #### 2. loops
 
-1. a
+2.1.0 while loop
+
+2.1.1
   - initialize a variable `i`
   - write a while loop that:
     - the condition is: i is less than 12
     - every iteration of the loop `i` increases by `1`
     - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
-1. a
+2.1.2
 
   - initialize a variable `i`
   - write a while loop that:
@@ -43,7 +45,7 @@ console.log("chocolate");
     - every iteration of the loop `i` increases by `3`
     - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
 
-1. a
+2.1.3
 
   - initialize a variable `i`
   - write a while loop that:
@@ -51,7 +53,7 @@ console.log("chocolate");
     - every iteration of the loop `i` decreases by `8`
     - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
 
-1. a
+2.1.4
 
   - initialize a variable `i`
   - write a while loop that:
@@ -62,13 +64,13 @@ console.log("chocolate");
     - every iteration of the loop `console.log` `monkey` with a string: `console.log("value of monkey", monkey);`
 
 
-1. a
+2.1.5
   - create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
   - write a while loop that:
     - stops if `monkey` is 9 or more
     - every iteration of the loop `monkey` increases by 1
 
-1. a
+2.1.6
 
   - initialize a variable `i`
   - given this array:
@@ -92,7 +94,7 @@ console.log("chocolate");
     - every iteration of the loop `console.log` the value at an index of the array- with a string: `console.log("value of vegetables at the index i", i, vegetables[i]);`
 
 
-1. a
+2.1.7
   - initialize a variable `i`
   - given this array:
   ```
@@ -115,7 +117,7 @@ console.log("chocolate");
     - every iteration of the loop `console.log` the value at an index of the array- with a string: `console.log("value of vegetables at the index i", i, vegetables[i]);`
 
 
-1. a
+2.1.8
   - initialize a variable `i`
   - given this array:
   ```
@@ -133,7 +135,7 @@ console.log("chocolate");
     - stops after each element of the array has been console logged
 
 
-1. a
+2.1.9
   - initialize a variable `i`
   - given this array:
   ```
@@ -151,7 +153,7 @@ console.log("chocolate");
     - every iteration of the loop `i` increases by `2`
     - stops after each element of the array has been console logged
 
-1. a
+2.1.10
 
   - initialize a variable `i`
   - given this array:
@@ -170,7 +172,7 @@ console.log("chocolate");
     - every iteration of the loop `i` increases by `3`
     - stops after each element of the array has been console logged
 
-1. a
+2.1.11
   - initialize a variable `i`
   - given this array:
   ```
@@ -190,7 +192,7 @@ console.log("chocolate");
       - if `i` is equal to `3`, print "hooray"
 
 
-1. a
+2.1.12
   - create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
   - write a while loop that:
     - stops if `monkey` is 9 or more
@@ -198,7 +200,7 @@ console.log("chocolate");
     - write a conditional that runs for each iteration of the loop:
       - if `i` is divisible to `3`, print "hooray"
 
-1. a
+2.1.13
 
   - create a variable `monkey` that creates a random number from 1 to 100 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(100));`
   - write a while loop that:
@@ -209,5 +211,10 @@ console.log("chocolate");
       - if `i` is divisible to `5`, print "oh no!"
 
 
-1. a
+2.2.0 for loop
   - recreate each of these problems using a `for` loop and not a while loop
+
+2.3.0 #for...in loop
+
+2.3.1
+
