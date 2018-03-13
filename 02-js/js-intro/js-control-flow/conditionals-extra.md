@@ -241,7 +241,7 @@ console.log("chocolate");
   2.3.3
     - with the same object above in 2.3.1
     - write a for...in loop that:
-      - prints the number of types of vegetables
-      - prints the total quantity of vegetables across all types
+     - prints the number of types of vegetables
+     - prints the total quantity of vegetables across all types
 
     
