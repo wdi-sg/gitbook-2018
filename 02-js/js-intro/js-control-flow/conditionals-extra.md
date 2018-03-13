@@ -27,3 +27,187 @@ console.log("chocolate");
 
   - write a conditional that will `console.log` `danube` if `monkey` is less than 6 or `johnathan` is less than 3, but, if `monkey` is more than 7 and `johnathan` is equal to 9, `console.log` `trumpet`. Otherwise `console.log` `brains`
 
+#### 2. loops
+
+1. a
+  - initialize a variable `i`
+  - write a while loop that:
+    - the condition is: i is less than 12
+    - every iteration of the loop `i` increases by `1`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+1. a
+
+  - initialize a variable `i`
+  - write a while loop that:
+    - the condition is: i is less than 40
+    - every iteration of the loop `i` increases by `3`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+
+1. a
+
+  - initialize a variable `i`
+  - write a while loop that:
+    - the condition is: i is more than 400
+    - every iteration of the loop `i` decreases by `8`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+
+1. a
+
+  - initialize a variable `i`
+  - write a while loop that:
+    - for every iteration of the loop, create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
+    - the condition is: i is more than 400
+    - every iteration of the loop `i` decreases by `monkey`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+    - every iteration of the loop `console.log` `monkey` with a string: `console.log("value of monkey", monkey);`
+
+
+1. a
+  - create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
+  - write a while loop that:
+    - stops if `monkey` is 9 or more
+    - every iteration of the loop `monkey` increases by 1
+
+1. a
+
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+
+    - `console.log` the value of each element of the array
+    - stops after each element of the array has been console logged
+    - the condition is: `i` is less than `6`
+    - every iteration of the loop `i` increases by `1`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+    - every iteration of the loop `console.log` the value at an index of the array- with a string: `console.log("value of vegetables at the index i", i, vegetables[i]);`
+
+
+1. a
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+
+    - `console.log` the value of each element of the array
+    - stops after each element of the array has been console logged
+    - the condition is: `i` is less than the length of the array: `vegetables.length`
+    - every iteration of the loop `i` increases by `1`
+    - every iteration of the loop `console.log` `i` with a string: `console.log("value of i", i);`
+    - every iteration of the loop `console.log` the value at an index of the array- with a string: `console.log("value of vegetables at the index i", i, vegetables[i]);`
+
+
+1. a
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+    - `console.log` the value of each element of the array
+    - stops after each element of the array has been console logged
+
+
+1. a
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+    - `console.log` the value of an element of the array at `i`
+    - every iteration of the loop `i` increases by `2`
+    - stops after each element of the array has been console logged
+
+1. a
+
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+    - `console.log` the value of an element of the array at `i`
+    - every iteration of the loop `i` increases by `3`
+    - stops after each element of the array has been console logged
+
+1. a
+  - initialize a variable `i`
+  - given this array:
+  ```
+  var vegetables = [
+    'carrots',
+    'celery',
+    'potatoes',
+    'onions',
+    'garlic',
+    'daikon'
+  ];
+  ```
+  - write a while loop that:
+    - `console.log` the value of each element of the array
+    - stops after each element of the array has been console logged
+    - write a conditional that runs for each iteration of the loop:
+      - if `i` is equal to `3`, print "hooray"
+
+
+1. a
+  - create a variable `monkey` that creates a random number from 1 to 10 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(10));`
+  - write a while loop that:
+    - stops if `monkey` is 9 or more
+    - every iteration of the loop `monkey` increases by 1
+    - write a conditional that runs for each iteration of the loop:
+      - if `i` is divisible to `3`, print "hooray"
+
+1. a
+
+  - create a variable `monkey` that creates a random number from 1 to 100 (just copy and paste this code): `var monkey = Math.floor(Math.random() * Math.floor(100));`
+  - write a while loop that:
+    - stops if `monkey` is 9 or more
+    - every iteration of the loop `monkey` increases by 1
+    - write a conditional that runs for each iteration of the loop:
+      - if `i` is divisible to `3`, print "hooray"
+      - if `i` is divisible to `5`, print "oh no!"
+
+
+1. a
+  - recreate each of these problems using a `for` loop and not a while loop
