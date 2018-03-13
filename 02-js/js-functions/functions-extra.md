@@ -1,12 +1,13 @@
-## 1. Functions:
+## Functions:
 
 ### 1.1
-  - create a function
+  - create a function that prints out 'Hello World'
   - call that function
+  
 Example:
 ```
 function example() {
-console.log('hello')
+  \\your code goes here
 }
 
 example();
