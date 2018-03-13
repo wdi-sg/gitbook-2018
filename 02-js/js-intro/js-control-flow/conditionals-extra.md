@@ -231,14 +231,19 @@ console.log("chocolate");
   - write a for...in loop that:
     - `console.log` all the property keys (i.e. the vegetable types) of the object
     - `console.log` all the property values (i.e. the quantity of each type of vegetable) of the object
-  
+
 2.3.2
+   - with the same object above in 2.3.1
+   - write a for...in loop that:
+     - using a conditional, print 'carrots found' if 'carrots' exists in the object
+
+2.3.3
    - with the same object above in 2.3.1
    - write a for...in loop that:
      - using a conditional, prints all vegetable types with even number quantities
      - using a conditional, prints all vegetable types with quantity less than or equal to 5
   
-2.3.3
+2.3.4
    - with the same object above in 2.3.1
    - write a for...in loop that:
      - prints the number of types of vegetables
