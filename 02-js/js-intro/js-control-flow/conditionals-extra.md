@@ -222,14 +222,26 @@ console.log("chocolate");
   var vegetables = {
     'carrots': 2,
     'celery': 4,
-    'potatoes: 5',
-    'onions': 8,
+    'potatoes': 5,
+    'onions': 1,
     'garlic': 7,
     'daikon': 3
   };
   ```
   - write a for...in loop that:
-    - `console.log` all the property keys (i.e. the vegetable names) of the object
-    - `console.log` all the property values (i.e. the number of each vegetable) of the object
-    
+    - `console.log` all the property keys (i.e. the vegetable types) of the object
+    - `console.log` all the property values (i.e. the quantity of each type of vegetable) of the object
+  
+  2.3.2
+    - with the same object above in 2.3.1
+    - write a for...in loop that:
+      - using a conditional, prints all vegetable types with even number quantities
+      - using a conditional, prints all vegetable types with quantity less than or equal to 5
+  
+  2.3.3
+    - with the same object above in 2.3.1
+    - write a for...in loop that:
+      - prints the number of types of vegetables
+      - prints the total quantity of vegetables across all types
+
     
