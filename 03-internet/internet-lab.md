@@ -92,7 +92,7 @@ ping 127.0.0.1
 ```
 
 #### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
-
+http://en.dnstools.ch/visual-traceroute.html
 ```
 # the traceroute command will show which servers routed the traffic
 traceroute washington.edu
