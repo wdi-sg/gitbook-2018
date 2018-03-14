@@ -2,7 +2,7 @@
 
 ### 1.1 Functions basics
 1.1.1
-  - create a function that prints out 'Hello World'
+  - create a function named hello that prints out 'Hello World'
   - call that function
   
 Example:
@@ -32,7 +32,7 @@ example();
   - add a conditional statement such that if the multiply does not happen, print 'Criteria not met'
   
 1.1.4
-  - create a function that takes in and array of numbers as a parameter and prints the odd numbers
+  - create a function that takes in an array of numbers as a parameter and prints the odd numbers
 
 1.1.5
   - create a function that converts a string into an array
@@ -44,7 +44,7 @@ example();
   given an array:
   
   ```
- var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   ```
   - create a function that takes in an array of numbers as a parameter:
       - interates through all the elements in the array
@@ -57,6 +57,26 @@ example();
 ### 1.2 Callback functions
 
 1.2.1
+  
+  - create a function which has a callback as a parameter
+  - call the hello function (from 1.1.1) with this function
+  
+  example:
+  
+  ```
+  function example (callback) {
+    callback()
+  };
+  
+  example(hello);
+  ```
+
+1.2.2
+
+  - setInterval
+  - clearInterval
+
+1.2.3
   
   - create a function that takes in an array and a callback as parameters
   
