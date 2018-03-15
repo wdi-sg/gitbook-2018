@@ -98,11 +98,11 @@ function timer () {
 timer();
 ```
   - write a function counter which will:
-    - add to count and print it
+    - increment count by 1 and print it
     - clearInterval after the count hits 5 
   
 
-1.2.4
+1.2.5
   
   - create a function that takes in an array and a callback as parameters
   
