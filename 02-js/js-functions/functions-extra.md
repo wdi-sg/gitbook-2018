@@ -89,6 +89,7 @@ example();
 
 function counter () {
 // your code here
+timer()
 };
 
 function timer () {
