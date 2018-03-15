@@ -100,9 +100,13 @@ timer();
   - write a function counter which will:
     - increment count by 1 and print it
     - clearInterval after the count hits 5 
-  
 
 1.2.5
+
+  - Write a program with the same functionality as above 1.2.4 using setTimeout instead of setInterval
+  - hint: you will need to call the timer function within the counter function to continue the count
+  
+1.2.6
   
   - create a function that takes in an array and a callback as parameters
   
