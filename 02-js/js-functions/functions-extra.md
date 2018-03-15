@@ -84,18 +84,18 @@ example();
   - Given the following:
   
   ```
-  var count = 0
-  var start
+  var count = 0;
+  var start;
 
 function counter () {
 // your code here
-}
+};
 
 function timer () {
   start = setInterval (counter, 1000)
-}
+};
 
-timer()
+timer();
 ```
   - write a function counter which will:
     - add to count and print it
