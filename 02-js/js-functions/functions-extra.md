@@ -99,7 +99,7 @@ timer()
 ```
   - write a function counter which will:
     - add to count and print it
-    - stop after the count hits 5 
+    - clearInterval after the count hits 5 
   
 
 1.2.4
