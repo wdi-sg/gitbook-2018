@@ -1,5 +1,8 @@
 # Package Management with ~~NPM~~ [YARN](https://yarnpkg.com/en/docs/cli/add)
 
+### Context
+We breifly touched on the fact that we can use outside libraries just like we can in our webpages, but we no longer have `<script>` includes and such. Now we will have "packages", or dependencies. NPM is the tool we use to get those libraries or packages from over the internet.
+
 ### Objectives
 - Manage package versions
 - Explain dependency versioning
@@ -10,13 +13,18 @@
 
 As we develop our own node apps we will find ourselves implementing third-party modules to help us with a wide range of tasks. These modules, which are commonly referred to as node packages or dependencies, are maintained by various developers and can be viewed as living and breathing mini-applications.
 
-The reason we view node packages as living entities is because the code that they consist of often changes. Sometimes bugs are found so fixes must be made to code or extra features are added to a package also creating new code. Changes like these can cause shifts in the way a package must be implemented. These changes are often referred to as "breaking changes"; meaning, if we don't change how our own application integrates the third-party package, our app will break. This lesson will focus on how to best manage your node packages and overall node applications so that you can avoid issues related to your packages.
+These applications also have their own dependencies. Do we want each of these libraries to come with all of their own library dependencies packages already? What about the libraries that that library depends upon? That would be inefficent. Better to just __specify__ a set of dependencies for each piece and then get all of those things when we set up our apps. This is what npm does.
+
+What if the version of the library gets an upgrade? Can we use that new, shiny, bug free code? npm allows us to do that.
+
+What if the code in the new version is incompatible with how we are currently using the library? What if we know the latest version has bugs and we want to wait to upgrade? npm allows us to control that.
+
 
 ## NPM Intro - (5 mins)
 
 When you first went nodejs.org to download node, you may or may not have known that you were also downloading npm. npm is node's package manager that that comes bundled with the installation of node.js.
 
-npm is functions as two things, primarily:
+npm functions as two things, primarily:
 
 - an online repository containing published open-source, and as of somewhat recently private, node packages
 - a command-line utility for interacting with the npm repository aiding in:
@@ -29,7 +37,7 @@ npm is functions as two things, primarily:
 
 ## [Yarn](https://yarnpkg.com/en/) Intro
 
-As the global tech community used npm extensively, many found npm to be unreliable in terms of installation and download. Enter `yarn`; this open source project is a collaboration between Facebook, Exponent, Google, and Tilde that tries to address this problems.
+Package dependencies are actually quite complex. (Packages that depend on packages that depend on packages, all with their own package version requirements.) Yarn is the new tool designed to deal with that level of complexity.
 
 It promised reliability, security, usability and most importantly speed. To install `yarn`, run this command:
 

@@ -6,3 +6,11 @@ CSS Frameworks, like Bootstrap, will also be mentioned as a quick way to layout 
 
 #### Resources:
 - http://www.w3schools.com/html/
+
+
+- pseudo selector: hover, last child
+
+- layout: document flow: 
+  - position non-static: opt,left,bottom,right
+  - absolute / fixed -> out of document flow
+  - z-index: fix order of elements on top of eachother

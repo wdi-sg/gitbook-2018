@@ -13,6 +13,9 @@
 # Agile Development, Wireframes, and User Stories
 
 ---
+![https://i.imgur.com/NUNBEwW.png](https://i.imgur.com/NUNBEwW.png)
+
+---
 
 ## Agile and Waterfall
 

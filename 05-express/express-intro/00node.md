@@ -11,25 +11,16 @@ The makers of Node.js took javascript (which normally only runs in the browser) 
 
 Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while it's possible to build web applications and APIs in straight JS, we'll actually be using a framework on top of Node called Express.
 
-#### Why are people excited about Node?
-
-It's new and hot in the industry but why does it matter?
-
-A lot of developers and companies are excited because it allows you to build fast, scalable APIs and sites in JavaScript. We're _familiar_ with JS and being able to use it on the backend gives us the option to use a single programming language throughout an entire full-stack application.
-
 #### Asynchronous
 
 On top of that, one of the big differences is that Node.js is designed to be _event-driven_ and _asynchronous_. While earlier frameworks can only do one thing at a time, Node purposefully sends nearly everything to the background and keeps going.
 
-Imagine a paper delivery boy riding on his bike delivering papers every morning. Imagine he stops at each house, throws the paper on your doorstep, and waits to make sure you come out & pick it up before moving on to the next house. That would be what we'd call _blocking_ – each line of code finishes before moving on to the next line of code.
+Just like a click event is something that is designated to happen at another time, we will see that server side processing of a request follows a similar pattern- one where we actaully have no idea when or any control over when we can successfully send a response to the request.
 
-Now imagine the paperboy throwing the newspaper on your porch but never stopping his bicycle; never stopping, he just keeps throwing papers on porches, so that by the time you pick it up he'll be 3 or 4 houses down. That would be _non-blocking input/output (I/O)_, or _asynchronous_. This is an extremely awesome ability of node since I/O tends to be very "expensive."
+Relative "distances" are actually quite far when in the context of executing a program. (In other words, this metaphor is to scale in the mathematical sense)
+![https://blog.codinghorror.com/content/images/2014/May/storage-latency-how-far-away-is-the-data.png](https://blog.codinghorror.com/content/images/2014/May/storage-latency-how-far-away-is-the-data.png)
 
-More details on JS callback queue and call stack here.
-
-{% youtube %}
-https://www.youtube.com/watch?v=8aGhZQkoFbQ
-{% endyoutube %}
+[https://blog.codinghorror.com/the-infinite-space-between-words/](https://blog.codinghorror.com/the-infinite-space-between-words/)
 
 #### Ruby/Rails vs. JS/Node/Express
 
@@ -73,7 +64,7 @@ Before we go further, you should try test it out.  There are two ways to do this
 
 #### Interactive Node
 
-If you simply type node in terminal, you will launch Node's REPL (Read-Eval-Print-Loop) interactive utility. Think of REPL as Node's version of Ruby's IRB. Let's test it:
+If you simply type node in terminal, you will launch Node's REPL (Read-Eval-Print-Loop) interactive utility. It works similar to the chrome dev tools console. Let's test it:
 
 ```js
 node
@@ -91,12 +82,6 @@ node
 // 2
 // 3
 
-> const http = require('http');
-// undefined
-
-> http
-// [ a massive 'http' object returned from the 'http' module ]
-
 > process
 // [an object with a long list of properties that comes together with node]
 ```
@@ -107,18 +92,43 @@ Press control-c twice to exit REPL.
 
 Write and execute some code in a file! In your working directory:
 
-```bash
-mkdir first-node
-cd first-node
-touch main.js
-echo "console.log('hello world!');" >> main.js
-node main.js
-# hello world!
+`mkdir first-node`
+`cd first-node`
+`touch main.js`
+`sublime main.js`
+
+Paste into the file:
 ```
+console.log("hello");
+```
+
+`node main.js`
 
 ## Node Modules
 
-Like most other modern languages, Node is modular. In essence, if a file puts something inside of module.exports, it can be made available for use in any other file using `require()`.
+How do we include external libraries into our node.js programs? We are used to `script` and `link`:
+
+JQuery script include:
+```
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+```
+Bootstrtap CSS include:
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+```
+**But** our javascript in no longer being executed in the context of a web page.
+
+Luckily node provides a way to use external libraries.
+
+```
+// the jquery library is actually all contained in the variable $
+const $ = require('jquery');
+```
+Note: jquery doesn't come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM
+
+### Make your own modules
+
+In essence, if a file puts something inside of module.exports, it can be made available for use in any other file using `require()`.
 
 For example, let's make two files: `touch my-module.js main.js`
 
@@ -135,6 +145,7 @@ module.exports.getNumber = function(){
 console.log("End of my-module.js file")
 ```
 
+#### Use the module you created
 
 ```js
 // main.js
@@ -167,6 +178,8 @@ node main.js
 ## [Process](https://nodejs.org/api/process.html#process_process)
 The `process` object is a `global` that provides information about, and control over, the current Node.js process. As a global, it is always available to Node.js applications without using `require()`. Two most commonly used `process` property are `process.argv` and `process.env`.
 
+"Process" refers to one CPU execution environment. Similar to how one chrome tab exists within the browser.
+
 ### process.argv
 The `process.argv` property returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be [process.execPath](https://nodejs.org/api/process.html#process_process_execpath).
 
@@ -184,6 +197,15 @@ the output will be:
 3: two=three
 4: four
 ```
+
+### Unix environment variables: A Refresher
+When we write apps, we have certain global "environment" variables that are different for each context or **installed environment**. -The enviroment that you are running the app in.
+
+Examples:
+
+- a variable for whether or not the app is running on your mac computer, or on a server, or on a "cloud" virtual server.
+- a variable that holds the API credentials for accessing a Google API - (one for testing and one for "production")
+- a variable that hold the location of a certain configuration file or any disk location: `/Application/Google\ Chrome` etc.
 
 ### process.env
 The process.env property returns an object containing the user environment. Typically, the object looks like this.
@@ -222,7 +244,5 @@ A `module` isn't actually a global object, but rather, it is local to each modul
 
 > Note: The module's source file is only executed the first time that file is required.
 
-## Review
-- What are some of the important distinguishing features of Node?
-- Demonstrate how to run JS on your computer, both interactively and in a file
-- Demonstrate how `module.exports` & `require` work
+#### Review:
+

@@ -30,7 +30,7 @@ Each route is called on our Express app, and takes a URL pattern and a callback 
 const express = require('express')
 const app = express()
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('hello brian')
 });
 
