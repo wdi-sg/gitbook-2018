@@ -1,6 +1,6 @@
 # Pinging Around the World
 
-#### Answer and discuss the following questions with a partner:
+#### Answer and discuss the following questions with your pair:
 
 - What does HTTP stand for?
 - Which protocol is used to resolve a domain name to an IP address?
@@ -10,6 +10,11 @@
 - T/F: HTTP headers can be changed by a user before executing a request.
 - T/F: Every HTTP request has a domain and a path.
 - T/F: Email uses the HTTP Protocol.
+
+#### Use the `host` command to see what the IP address of a host
+```
+host google.com
+```
 
 #### Use the `ping` command to see how long it takes for servers to respond to your computer:
 
@@ -39,18 +44,6 @@ PING www.nus.edu.sg (137.132.21.27): 56 data bytes
 --- www.nus.edu.sg ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 5.114/5.560/6.124/0.421 ms
-```
-
-##### University of Washington in Seattle
-```
-PING washington.edu (128.95.155.135): 56 data bytes
-64 bytes from 128.95.155.135: icmp_seq=0 ttl=45 time=306.515 ms
-64 bytes from 128.95.155.135: icmp_seq=1 ttl=45 time=224.400 ms
-64 bytes from 128.95.155.135: icmp_seq=2 ttl=45 time=207.356 ms
-^C
---- washington.edu ping statistics ---
-3 packets transmitted, 3 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 207.356/246.090/306.515/43.290 ms
 ```
 
 ##### Stanford University in California
@@ -93,6 +86,10 @@ ping 127.0.0.1
 
 #### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
 
+
+Use visual traceroute to see on a map where your packets are going.
+[http://en.dnstools.ch/visual-traceroute.html](http://en.dnstools.ch/visual-traceroute.html)
+
 ```
 # the traceroute command will show which servers routed the traffic
 traceroute washington.edu
@@ -120,22 +117,6 @@ traceroute to www.nus.edu.sg (137.132.21.27), 64 hops max, 52 byte packets
 13  nus-gw1.gigapop.nus.edu.sg (202.51.241.14)  5.183 ms  4.567 ms  4.835 ms
 14  * * *
 15  *^C
-```
-
-```
-traceroute: Warning: washington.edu has multiple addresses; using 128.95.155.135
-traceroute to washington.edu (128.95.155.135), 64 hops max, 52 byte packets
- 1  10.1.4.1 (10.1.4.1)  2.372 ms  2.008 ms  1.976 ms
- 2  209.63.143.50 (209.63.143.50)  4.526 ms  4.797 ms  4.356 ms
- 3  209.63.101.2 (209.63.101.2)  6.384 ms  5.994 ms
-    209.63.101.6 (209.63.101.6)  6.123 ms
- 4  six.tr-cps.internet2.edu (206.81.80.77)  11.866 ms  5.300 ms  5.357 ms
- 5  ae-1.80.rtr.seat.net.internet2.edu (64.57.20.212)  4.118 ms  6.208 ms  4.382 ms
- 6  198.71.47.6 (198.71.47.6)  4.226 ms  6.278 ms  6.259 ms
- 7  ae0--4000.icar-sttl1-1.infra.pnw-gigapop.net (209.124.188.132)  6.270 ms  9.782 ms  9.148 ms
- 8  ae0--4000.uwbr-ads-1.infra.washington.edu (209.124.188.133)  8.508 ms  5.471 ms  5.914 ms
- 9  * * *
-10  * * * (ignore asterisks and press CTRL+C to quit)
 ```
 
 #### Experiment with cURL and send requests to various web pages. Here are some
