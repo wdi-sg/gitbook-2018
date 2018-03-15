@@ -73,10 +73,36 @@ example();
 
 1.2.2
 
-  - setInterval
-  - clearInterval
-
+  - Use setInterval to call the hello function (from 1.1.1) every 2 seconds
+  
 1.2.3
+  
+  - Use setTimeout to call the hello function (from 1.1.1) after 3 seconds
+  
+1.2.4
+  
+  - Given the following:
+  
+  ```
+  var count = 0
+  var start
+
+function counter () {
+// your code here
+}
+
+function timer () {
+  start = setInterval (counter, 1000)
+}
+
+timer()
+```
+  - write a function counter which will:
+    - add to count and print it
+    - stop after the count hits 5 
+  
+
+1.2.4
   
   - create a function that takes in an array and a callback as parameters
   
