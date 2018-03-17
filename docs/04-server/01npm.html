@@ -1,0 +1,3585 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Package Management with YARN · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02flatfile.html" />
+    
+    
+    <link rel="prev" href="00node.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-workflow/readme.html">
+            
+                <a href="../01-workflow/readme.html">
+            
+                    
+                    Development Workflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-config-deployment/installfest/readme.html">
+            
+                <a href="../00-config-deployment/installfest/readme.html">
+            
+                    
+                    Installfest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../00-config-deployment/installfest/osx/readme.html">
+            
+                <a href="../00-config-deployment/installfest/osx/readme.html">
+            
+                    
+                    Mac OSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../00-config-deployment/installfest/windows/readme.html">
+            
+                <a href="../00-config-deployment/installfest/windows/readme.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../00-config-deployment/installfest/linux/readme.html">
+            
+                <a href="../00-config-deployment/installfest/linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../01-workflow/text-editor-packages/readme.html">
+            
+                <a href="../01-workflow/text-editor-packages/readme.html">
+            
+                    
+                    Code Editor Packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-workflow/command-line/01readme.html">
+            
+                <a href="../01-workflow/command-line/01readme.html">
+            
+                    
+                    Command Line
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../01-workflow/command-line/02intro-terminal.html">
+            
+                <a href="../01-workflow/command-line/02intro-terminal.html">
+            
+                    
+                    The Terminal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../01-workflow/command-line/03navigating.html">
+            
+                <a href="../01-workflow/command-line/03navigating.html">
+            
+                    
+                    Filesystem Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../01-workflow/command-line/04file-manipulation.html">
+            
+                <a href="../01-workflow/command-line/04file-manipulation.html">
+            
+                    
+                    File Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../01-workflow/command-line/command-line-lab.html">
+            
+                <a href="../01-workflow/command-line/command-line-lab.html">
+            
+                    
+                    Command Line Lab
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01-workflow/pairing.html">
+            
+                <a href="../01-workflow/pairing.html">
+            
+                    
+                    Pairing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01-workflow/pseudocode-highlevel.html">
+            
+                <a href="../01-workflow/pseudocode-highlevel.html">
+            
+                    
+                    High Level Pseudocode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../01-workflow/pseudocode-lowlevel.html">
+            
+                <a href="../01-workflow/pseudocode-lowlevel.html">
+            
+                    
+                    Low Level Pseudocode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../01-workflow/intro-git/readme.html">
+            
+                <a href="../01-workflow/intro-git/readme.html">
+            
+                    
+                    Intro to Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../01-workflow/intro-git/02vcs.html">
+            
+                <a href="../01-workflow/intro-git/02vcs.html">
+            
+                    
+                    Version Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../01-workflow/intro-git/03localgit.html">
+            
+                <a href="../01-workflow/intro-git/03localgit.html">
+            
+                    
+                    Local Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../01-workflow/intro-git/04remotegit.html">
+            
+                <a href="../01-workflow/intro-git/04remotegit.html">
+            
+                    
+                    Remote Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../01-workflow/git-recipes/readme.html">
+            
+                <a href="../01-workflow/git-recipes/readme.html">
+            
+                    
+                    Git Recipes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../01-workflow/group-collab/01readme.html">
+            
+                <a href="../01-workflow/group-collab/01readme.html">
+            
+                    
+                    Group Collaboration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../01-workflow/group-collab/02gitworkflows.html">
+            
+                <a href="../01-workflow/group-collab/02gitworkflows.html">
+            
+                    
+                    Git Workflows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1.1" data-path="../01-workflow/group-collab/04gitforkedflow.html">
+            
+                <a href="../01-workflow/group-collab/04gitforkedflow.html">
+            
+                    
+                    Git Forked Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../01-workflow/group-collab/03rolestools.html">
+            
+                <a href="../01-workflow/group-collab/03rolestools.html">
+            
+                    
+                    Project Roles and Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../01-workflow/user-stories-wireframing/readme.html">
+            
+                <a href="../01-workflow/user-stories-wireframing/readme.html">
+            
+                    
+                    User Stories and Wireframing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../01-workflow/user-stories-wireframing/exercise.html">
+            
+                <a href="../01-workflow/user-stories-wireframing/exercise.html">
+            
+                    
+                    Agile Exercise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../01-workflow/user-stories-wireframing/game-exercise.html">
+            
+                <a href="../01-workflow/user-stories-wireframing/game-exercise.html">
+            
+                    
+                    User Stories for Games
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../01-workflow/chrome-dev-tools/readme.html">
+            
+                <a href="../01-workflow/chrome-dev-tools/readme.html">
+            
+                    
+                    Chrome Dev Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../01-workflow/how-to-practice.html">
+            
+                <a href="../01-workflow/how-to-practice.html">
+            
+                    
+                    Practice Work How To
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../01-workflow/review.html">
+            
+                <a href="../01-workflow/review.html">
+            
+                    
+                    Code Practices Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../03-html-css/readme.html">
+            
+                <a href="../03-html-css/readme.html">
+            
+                    
+                    HTML & CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../03-html-css/html-review/readme.html">
+            
+                <a href="../03-html-css/html-review/readme.html">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../03-html-css/css-selectors/readme.html">
+            
+                <a href="../03-html-css/css-selectors/readme.html">
+            
+                    
+                    CSS Selectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../03-html-css/css-box-model/readme.html">
+            
+                <a href="../03-html-css/css-box-model/readme.html">
+            
+                    
+                    CSS Box Model and Positioning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../03-html-css/css-box-model/02box-model.html">
+            
+                <a href="../03-html-css/css-box-model/02box-model.html">
+            
+                    
+                    Box Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../03-html-css/css-box-model/03display-positioning.html">
+            
+                <a href="../03-html-css/css-box-model/03display-positioning.html">
+            
+                    
+                    Display and Positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../03-html-css/css-box-model/04floats-clears.html">
+            
+                <a href="../03-html-css/css-box-model/04floats-clears.html">
+            
+                    
+                    Floats and Clears
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../03-html-css/css-box-model/05additional.html">
+            
+                <a href="../03-html-css/css-box-model/05additional.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../03-html-css/css-responsive-design/readme.html">
+            
+                <a href="../03-html-css/css-responsive-design/readme.html">
+            
+                    
+                    Advanced CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../03-html-css/css-responsive-design/02responsivedesign.html">
+            
+                <a href="../03-html-css/css-responsive-design/02responsivedesign.html">
+            
+                    
+                    Responsive Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../03-html-css/css-box-model/06flexbox.html">
+            
+                <a href="../03-html-css/css-box-model/06flexbox.html">
+            
+                    
+                    Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../03-html-css/css-responsive-design/03pseudo.html">
+            
+                <a href="../03-html-css/css-responsive-design/03pseudo.html">
+            
+                    
+                    Pseudo-Classes\/Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../03-html-css/css-responsive-design/04vendorprefixes.html">
+            
+                <a href="../03-html-css/css-responsive-design/04vendorprefixes.html">
+            
+                    
+                    Vendor Prefixes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../03-html-css/css-responsive-design/05additional.html">
+            
+                <a href="../03-html-css/css-responsive-design/05additional.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../03-html-css/css-bootstrap/readme.html">
+            
+                <a href="../03-html-css/css-bootstrap/readme.html">
+            
+                    
+                    Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../03-html-css/html-page-template/readme.html">
+            
+                <a href="../03-html-css/html-page-template/readme.html">
+            
+                    
+                    Page Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-js/javascript.html">
+            
+                <a href="../02-js/javascript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-js/js-intro/readme.html">
+            
+                <a href="../02-js/js-intro/readme.html">
+            
+                    
+                    Primitives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../02-js/js-intro/js-control-flow/readme.html">
+            
+                <a href="../02-js/js-intro/js-control-flow/readme.html">
+            
+                    
+                    Conditionals and Loops
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../02-js/js-intro/js-control-flow/03booleans-and-conditionals.html">
+            
+                <a href="../02-js/js-intro/js-control-flow/03booleans-and-conditionals.html">
+            
+                    
+                    Boolean Expressions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../02-js/js-intro/js-control-flow/04loops.html">
+            
+                <a href="../02-js/js-intro/js-control-flow/04loops.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../02-js/js-intro/js-control-flow/06-iterating-over-arrays.html">
+            
+                <a href="../02-js/js-intro/js-control-flow/06-iterating-over-arrays.html">
+            
+                    
+                    Iterating Over Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../02-js/js-intro/js-control-flow/05chrome-dev-tools.html">
+            
+                <a href="../02-js/js-intro/js-control-flow/05chrome-dev-tools.html">
+            
+                    
+                    Dev Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../02-js/js-functions/readme.html">
+            
+                <a href="../02-js/js-functions/readme.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../02-js/js-dom/readme.html">
+            
+                <a href="../02-js/js-dom/readme.html">
+            
+                    
+                    Browser Side Javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../02-js/js-dom-events/readme.html">
+            
+                <a href="../02-js/js-dom-events/readme.html">
+            
+                    
+                    DOM and Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../02-js/js-dom-manipulation/">
+            
+                <a href="../02-js/js-dom-manipulation/">
+            
+                    
+                    DOM Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../02-js/js-dom-events/scope.html">
+            
+                <a href="../02-js/js-dom-events/scope.html">
+            
+                    
+                    Fixing Scope Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../02-js/js-dom-manipulation/tictactoe.html">
+            
+                <a href="../02-js/js-dom-manipulation/tictactoe.html">
+            
+                    
+                    tictactoe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="../02-js/js-ajax/readme.html">
+            
+                <a href="../02-js/js-ajax/readme.html">
+            
+                    
+                    AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../02-js/js-callbacks-iterators/readme.html">
+            
+                <a href="../02-js/js-callbacks-iterators/readme.html">
+            
+                    
+                    Callbacks and Iterators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../02-js/js-prototypes/01readme.html">
+            
+                <a href="../02-js/js-prototypes/01readme.html">
+            
+                    
+                    OOP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../02-js/js-prototypes/class.html">
+            
+                <a href="../02-js/js-prototypes/class.html">
+            
+                    
+                    Class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../02-js/js-prototypes/02constructors.html">
+            
+                <a href="../02-js/js-prototypes/02constructors.html">
+            
+                    
+                    Constructors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../02-js/js-prototypes/03prototypes.html">
+            
+                <a href="../02-js/js-prototypes/03prototypes.html">
+            
+                    
+                    Prototypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../02-js/js-tdd-intro/readme.html">
+            
+                <a href="../02-js/js-tdd-intro/readme.html">
+            
+                    
+                    Intro to TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../02-js/js-scopes/readme.html">
+            
+                <a href="../02-js/js-scopes/readme.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../02-js/js-inheritance/01readme.html">
+            
+                <a href="../02-js/js-inheritance/01readme.html">
+            
+                    
+                    Inheritance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../02-js/js-inheritance/02prototypalinheritance.html">
+            
+                <a href="../02-js/js-inheritance/02prototypalinheritance.html">
+            
+                    
+                    Prototypal Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../02-js/js-inheritance/03callapplyfunctions.html">
+            
+                <a href="../02-js/js-inheritance/03callapplyfunctions.html">
+            
+                    
+                    Call, Apply, and other Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../02-js/js-inheritance/05resources.html">
+            
+                <a href="../02-js/js-inheritance/05resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../02-js/js-next/01readme.html">
+            
+                <a href="../02-js/js-next/01readme.html">
+            
+                    
+                    ESNext
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../02-js/js-next/07const-let.html">
+            
+                <a href="../02-js/js-next/07const-let.html">
+            
+                    
+                    Let & Const
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../02-js/js-next/04template-strings.html">
+            
+                <a href="../02-js/js-next/04template-strings.html">
+            
+                    
+                    Template Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.3" data-path="../02-js/js-next/08classes.html">
+            
+                <a href="../02-js/js-next/08classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.4" data-path="../02-js/js-next/03objects.html">
+            
+                <a href="../02-js/js-next/03objects.html">
+            
+                    
+                    Object Literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.5" data-path="../02-js/js-async/readme.html">
+            
+                <a href="../02-js/js-async/readme.html">
+            
+                    
+                    Async module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.6" data-path="../02-js/js-data-scraping/readme.html">
+            
+                <a href="../02-js/js-data-scraping/readme.html">
+            
+                    
+                    Data Scraping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../12-resources/apis.html">
+            
+                <a href="../12-resources/apis.html">
+            
+                    
+                    APIs and Data Sources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../02-js/js-jquery/01readme.html">
+            
+                <a href="../02-js/js-jquery/01readme.html">
+            
+                    
+                    jQuery
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../02-js/js-jquery/02intro.html">
+            
+                <a href="../02-js/js-jquery/02intro.html">
+            
+                    
+                    Intro
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1.1" data-path="../02-js/js-jquery/03dom-manipulation.html">
+            
+                <a href="../02-js/js-jquery/03dom-manipulation.html">
+            
+                    
+                    DOM Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.2" data-path="../02-js/js-jquery/04reddit.html">
+            
+                <a href="../02-js/js-jquery/04reddit.html">
+            
+                    
+                    Reddit Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.3" data-path="../02-js/js-jquery/05styling.html">
+            
+                <a href="../02-js/js-jquery/05styling.html">
+            
+                    
+                    Styling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.4" data-path="../02-js/js-jquery/06events.html">
+            
+                <a href="../02-js/js-jquery/06events.html">
+            
+                    
+                    Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.2" data-path="../02-js/js-jquery/07plugins.html">
+            
+                <a href="../02-js/js-jquery/07plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="how-the-internet-works.html">
+            
+                <a href="how-the-internet-works.html">
+            
+                    
+                    Internet Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="internet-lab.html">
+            
+                <a href="internet-lab.html">
+            
+                    
+                    Internet Lab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="00node.html">
+            
+                <a href="00node.html">
+            
+                    
+                    Intro to Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="01npm.html">
+            
+                <a href="01npm.html">
+            
+                    
+                    Package Management with YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="02flatfile.html">
+            
+                <a href="02flatfile.html">
+            
+                    
+                    Disk Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-express/readme.html">
+            
+                <a href="../05-express/readme.html">
+            
+                    
+                    Node & Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05-express/express-intro/01express.html">
+            
+                <a href="../05-express/express-intro/01express.html">
+            
+                    
+                    Intro to Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../05-express/express-intro/02internet.html">
+            
+                <a href="../05-express/express-intro/02internet.html">
+            
+                    
+                    Express Internet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../05-express/express-intro/03expressurls.html">
+            
+                <a href="../05-express/express-intro/03expressurls.html">
+            
+                    
+                    Express URLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../05-express/express-intro/04views.html">
+            
+                <a href="../05-express/express-intro/04views.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../05-express/express-intro/06views-advanced.html">
+            
+                <a href="../05-express/express-intro/06views-advanced.html">
+            
+                    
+                    Advanced Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05-express/express-ajax-crud/readme.html">
+            
+                <a href="../05-express/express-ajax-crud/readme.html">
+            
+                    
+                    Full RESTful Routing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../05-express/express-intro/05crudexpress.html">
+            
+                <a href="../05-express/express-intro/05crudexpress.html">
+            
+                    
+                    CRUD in Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05-express/express-auth/readme.html">
+            
+                <a href="../05-express/express-auth/readme.html">
+            
+                    
+                    Express Authentication
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../05-express/express-auth/research/components.html">
+            
+                <a href="../05-express/express-auth/research/components.html">
+            
+                    
+                    Research Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../05-express/express-auth/research/code.html">
+            
+                <a href="../05-express/express-auth/research/code.html">
+            
+                    
+                    Code Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../05-express/express-auth/theory/readme.html">
+            
+                <a href="../05-express/express-auth/theory/readme.html">
+            
+                    
+                    Auth in Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.3.1" data-path="../05-express/express-auth/theory/02sessions.html">
+            
+                <a href="../05-express/express-auth/theory/02sessions.html">
+            
+                    
+                    Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3.2" data-path="../05-express/express-auth/theory/03passwords.html">
+            
+                <a href="../05-express/express-auth/theory/03passwords.html">
+            
+                    
+                    Passwords
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3.3" data-path="../05-express/express-auth/theory/04middleware.html">
+            
+                <a href="../05-express/express-auth/theory/04middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3.4" data-path="../05-express/express-auth/theory/05hooks.html">
+            
+                <a href="../05-express/express-auth/theory/05hooks.html">
+            
+                    
+                    Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05-express/express-mocha-testing/readme.html">
+            
+                <a href="../05-express/express-mocha-testing/readme.html">
+            
+                    
+                    Testing with Mocha and Chai
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05-express/express-jwt/readme.html">
+            
+                <a href="../05-express/express-jwt/readme.html">
+            
+                    
+                    JSON Web Tokens
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../05-express/express-jwt/codealong.html">
+            
+                <a href="../05-express/express-jwt/codealong.html">
+            
+                    
+                    Codealong
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05-express/additional-topics/readme.html">
+            
+                <a href="../05-express/additional-topics/readme.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../05-express/express-apis/03apis.html">
+            
+                <a href="../05-express/express-apis/03apis.html">
+            
+                    
+                    APIs with Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../05-express/additional-topics/express-oauth/readme.html">
+            
+                <a href="../05-express/additional-topics/express-oauth/readme.html">
+            
+                    
+                    oAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../05-express/additional-topics/express-geocode/readme.html">
+            
+                <a href="../05-express/additional-topics/express-geocode/readme.html">
+            
+                    
+                    Geocoding and Google Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../05-express/additional-topics/express-cloudinary/readme.html">
+            
+                <a href="../05-express/additional-topics/express-cloudinary/readme.html">
+            
+                    
+                    Cloudinary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../05-express/express-socket-io/readme.html">
+            
+                <a href="../05-express/express-socket-io/readme.html">
+            
+                    
+                    Websockets with Socket.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../04-databases/readme.html">
+            
+                <a href="../04-databases/readme.html">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../04-databases/mongo-intro/intro-nosql.html">
+            
+                <a href="../04-databases/mongo-intro/intro-nosql.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../04-databases/mongo-intro/crud.html">
+            
+                <a href="../04-databases/mongo-intro/crud.html">
+            
+                    
+                    CRUD in MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../04-databases/mongo-intro/data-modeling.html">
+            
+                <a href="../04-databases/mongo-intro/data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../04-databases/sql-intro/readme.html">
+            
+                <a href="../04-databases/sql-intro/readme.html">
+            
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../04-databases/sql-advanced/readme.html">
+            
+                <a href="../04-databases/sql-advanced/readme.html">
+            
+                    
+                    Advanced SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../04-databases/lazy_db_normalization.html">
+            
+                <a href="../04-databases/lazy_db_normalization.html">
+            
+                    
+                    Lazy Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../04-databases/sqlcheatsheet.html">
+            
+                <a href="../04-databases/sqlcheatsheet.html">
+            
+                    
+                    PostgreSQL Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../04-databases/dbadmin.html">
+            
+                <a href="../04-databases/dbadmin.html">
+            
+                    
+                    Database Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../06-ruby-rails/ruby.html">
+            
+                <a href="../06-ruby-rails/ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../06-ruby-rails/ruby-intro/readme.html">
+            
+                <a href="../06-ruby-rails/ruby-intro/readme.html">
+            
+                    
+                    Intro to Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../06-ruby-rails/ruby-classes/readme.html">
+            
+                <a href="../06-ruby-rails/ruby-classes/readme.html">
+            
+                    
+                    Ruby Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../06-ruby-rails/ruby-rspec/readme.html">
+            
+                <a href="../06-ruby-rails/ruby-rspec/readme.html">
+            
+                    
+                    Ruby Testing with Rspec
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../06-ruby-rails/ruby-inheritance/readme.html">
+            
+                <a href="../06-ruby-rails/ruby-inheritance/readme.html">
+            
+                    
+                    Ruby Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../06-ruby-rails/ruby-data-scraping/readme.html">
+            
+                <a href="../06-ruby-rails/ruby-data-scraping/readme.html">
+            
+                    
+                    Ruby Data Scraping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../06-ruby-rails/rails.html">
+            
+                <a href="../06-ruby-rails/rails.html">
+            
+                    
+                    Ruby on Rails
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../06-ruby-rails/rails-intro/readme.html">
+            
+                <a href="../06-ruby-rails/rails-intro/readme.html">
+            
+                    
+                    Intro to Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../06-ruby-rails/rails-intro/views.html">
+            
+                <a href="../06-ruby-rails/rails-intro/views.html">
+            
+                    
+                    Views, Layouts & Partials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../06-ruby-rails/rails-apis/consuming-an-api.html">
+            
+                <a href="../06-ruby-rails/rails-apis/consuming-an-api.html">
+            
+                    
+                    Consuming APIs with Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../06-ruby-rails/rails-apis/building-an-api.html">
+            
+                <a href="../06-ruby-rails/rails-apis/building-an-api.html">
+            
+                    
+                    Building APIs with Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../06-ruby-rails/rails-assets-frontend/readme.html">
+            
+                <a href="../06-ruby-rails/rails-assets-frontend/readme.html">
+            
+                    
+                    Asset Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../06-ruby-rails/rails-assets-frontend/ajax.html">
+            
+                <a href="../06-ruby-rails/rails-assets-frontend/ajax.html">
+            
+                    
+                    AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../06-ruby-rails/rails-auth-1-M/readme.html">
+            
+                <a href="../06-ruby-rails/rails-auth-1-M/readme.html">
+            
+                    
+                    Rails Auth and 1-M
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../06-ruby-rails/rails-M-M/readme.html">
+            
+                <a href="../06-ruby-rails/rails-M-M/readme.html">
+            
+                    
+                    Rails M:M
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../06-ruby-rails/rails-polymorphism/readme.html">
+            
+                <a href="../06-ruby-rails/rails-polymorphism/readme.html">
+            
+                    
+                    ActiveRecord Polymorphism
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../06-ruby-rails/additional-topics/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/readme.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.10.1" data-path="../06-ruby-rails/additional-topics/rails-oauth/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/rails-oauth/readme.html">
+            
+                    
+                    oAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.2" data-path="../06-ruby-rails/additional-topics/sass/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/sass/readme.html">
+            
+                    
+                    SASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.3" data-path="../06-ruby-rails/additional-topics/rails-mailers/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/rails-mailers/readme.html">
+            
+                    
+                    Rails Mailers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.4" data-path="../06-ruby-rails/additional-topics/rails-cloudinary/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/rails-cloudinary/readme.html">
+            
+                    
+                    Cloudinary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.5" data-path="../06-ruby-rails/additional-topics/ruby-jekyll/readme.html">
+            
+                <a href="../06-ruby-rails/additional-topics/ruby-jekyll/readme.html">
+            
+                    
+                    Jekyll
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../07-frontend-frameworks/readme.html">
+            
+                <a href="../07-frontend-frameworks/readme.html">
+            
+                    
+                    JS Frontend Frameworks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../07-frontend-frameworks/typescript.html">
+            
+                <a href="../07-frontend-frameworks/typescript.html">
+            
+                    
+                    Static Typing with TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../10-react/readme.html">
+            
+                <a href="../10-react/readme.html">
+            
+                    
+                    ReactJS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../10-react/react-intro/readme.html">
+            
+                <a href="../10-react/react-intro/readme.html">
+            
+                    
+                    Intro to React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1.1" data-path="../10-react/react-intro/todo-codealong.html">
+            
+                <a href="../10-react/react-intro/todo-codealong.html">
+            
+                    
+                    Todo List Codealong
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.2" data-path="../10-react/react-intro/additional-topics.html">
+            
+                <a href="../10-react/react-intro/additional-topics.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../10-react/react-gulp-browserify/readme.html">
+            
+                <a href="../10-react/react-gulp-browserify/readme.html">
+            
+                    
+                    React with Gulp and Browserify
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.2.1" data-path="../10-react/react-gulp-browserify/gulp.html">
+            
+                <a href="../10-react/react-gulp-browserify/gulp.html">
+            
+                    
+                    Setting up Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2.2" data-path="../10-react/react-gulp-browserify/additional-gulp-tasks.html">
+            
+                <a href="../10-react/react-gulp-browserify/additional-gulp-tasks.html">
+            
+                    
+                    Additional Gulp Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../10-react/react-router/readme.html">
+            
+                <a href="../10-react/react-router/readme.html">
+            
+                    
+                    React Router
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.3.1" data-path="../10-react/react-router/omdb-router.html">
+            
+                <a href="../10-react/react-router/omdb-router.html">
+            
+                    
+                    OMDB Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3.2" data-path="../10-react/react-router/omdb-search.html">
+            
+                <a href="../10-react/react-router/omdb-search.html">
+            
+                    
+                    OMDB Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3.3" data-path="../10-react/react-router/additional-resources.html">
+            
+                <a href="../10-react/react-router/additional-resources.html">
+            
+                    
+                    Additional Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../10-react/react-animations/readme.html">
+            
+                <a href="../10-react/react-animations/readme.html">
+            
+                    
+                    React Animations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.4.1" data-path="../10-react/react-animations/css-animations.html">
+            
+                <a href="../10-react/react-animations/css-animations.html">
+            
+                    
+                    CSS Animations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../00-config-deployment/readme.html">
+            
+                <a href="../00-config-deployment/readme.html">
+            
+                    
+                    Deployment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../00-config-deployment/deploy-github-pages/readme.html">
+            
+                <a href="../00-config-deployment/deploy-github-pages/readme.html">
+            
+                    
+                    Deploy - Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../00-config-deployment/deploy-node/readme.html">
+            
+                <a href="../00-config-deployment/deploy-node/readme.html">
+            
+                    
+                    Deploy - Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../00-config-deployment/ci-codeship/node.html">
+            
+                <a href="../00-config-deployment/ci-codeship/node.html">
+            
+                    
+                    CI with Codeship
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../00-config-deployment/deploy-rails/readme.html">
+            
+                <a href="../00-config-deployment/deploy-rails/readme.html">
+            
+                    
+                    Deploy - Rails
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../00-config-deployment/foreman/readme.html">
+            
+                <a href="../00-config-deployment/foreman/readme.html">
+            
+                    
+                    Foreman (Environment Variables)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../00-config-deployment/aws-elastic-beanstalk/">
+            
+                <a href="../00-config-deployment/aws-elastic-beanstalk/">
+            
+                    
+                    Deploy - AWS Elastic Beanstalk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../00-config-deployment/aws-s3-static-site/">
+            
+                <a href="../00-config-deployment/aws-s3-static-site/">
+            
+                    
+                    Deploy - S3 Static Sites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../08-cs/readme.html">
+            
+                <a href="../08-cs/readme.html">
+            
+                    
+                    Computer Science
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../08-cs/cs-stacks-queues/readme.html">
+            
+                <a href="../08-cs/cs-stacks-queues/readme.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../08-cs/cs-ruby-linked-list/readme.html">
+            
+                <a href="../08-cs/cs-ruby-linked-list/readme.html">
+            
+                    
+                    Linked Lists
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../08-cs/cs-ruby-linked-list/01-sample-code.html">
+            
+                <a href="../08-cs/cs-ruby-linked-list/01-sample-code.html">
+            
+                    
+                    Sample Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../08-cs/cs-ruby-linked-list/02-beginner-exercises.html">
+            
+                <a href="../08-cs/cs-ruby-linked-list/02-beginner-exercises.html">
+            
+                    
+                    Beginner Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.3" data-path="../08-cs/cs-ruby-linked-list/03-advanced-exercises.html">
+            
+                <a href="../08-cs/cs-ruby-linked-list/03-advanced-exercises.html">
+            
+                    
+                    Advanced Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../08-cs/cs-trees-data-structures/readme.html">
+            
+                <a href="../08-cs/cs-trees-data-structures/readme.html">
+            
+                    
+                    Trees and Other Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../08-cs/cs-hashmaps/readme.html">
+            
+                <a href="../08-cs/cs-hashmaps/readme.html">
+            
+                    
+                    Hashmaps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../08-cs/cs-recursion/readme.html">
+            
+                <a href="../08-cs/cs-recursion/readme.html">
+            
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../08-cs/cs-algorithm-complexity/readme.html">
+            
+                <a href="../08-cs/cs-algorithm-complexity/readme.html">
+            
+                    
+                    Algorithm Complexity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../08-cs/cs-ruby-bucket-sort/readme.html">
+            
+                <a href="../08-cs/cs-ruby-bucket-sort/readme.html">
+            
+                    
+                    Bucket Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../08-cs/cs-ruby-bubble-sort/readme.html">
+            
+                <a href="../08-cs/cs-ruby-bubble-sort/readme.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../08-cs/cs-ruby-mergesort/readme.html">
+            
+                <a href="../08-cs/cs-ruby-mergesort/readme.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../08-cs/cs-ruby-quicksort/readme.html">
+            
+                <a href="../08-cs/cs-ruby-quicksort/readme.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="../08-cs/cs-sorting/readme.html">
+            
+                <a href="../08-cs/cs-sorting/readme.html">
+            
+                    
+                    Sorting Wrapup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.12" data-path="../08-cs/additional/memory.html">
+            
+                <a href="../08-cs/additional/memory.html">
+            
+                    
+                    Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../11-projects/readme.html">
+            
+                <a href="../11-projects/readme.html">
+            
+                    
+                    Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../11-projects/project-1/readme.html">
+            
+                <a href="../11-projects/project-1/readme.html">
+            
+                    
+                    Project 1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1.1" data-path="../11-projects/project-1/quiz-game.html">
+            
+                <a href="../11-projects/project-1/quiz-game.html">
+            
+                    
+                    Plan B - Quiz Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../11-projects/project-2/readme.html">
+            
+                <a href="../11-projects/project-2/readme.html">
+            
+                    
+                    Project 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../11-projects/project-3/readme.html">
+            
+                <a href="../11-projects/project-3/readme.html">
+            
+                    
+                    Project 3
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.3.1" data-path="../11-projects/project-3/post-mortem.html">
+            
+                <a href="../11-projects/project-3/post-mortem.html">
+            
+                    
+                    Post-Mortem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../11-projects/project-4/readme.html">
+            
+                <a href="../11-projects/project-4/readme.html">
+            
+                    
+                    Project 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../13-warm-ups/">
+            
+                <a href="../13-warm-ups/">
+            
+                    
+                    Warmups
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../13-warm-ups/url-encode.html">
+            
+                <a href="../13-warm-ups/url-encode.html">
+            
+                    
+                    URL Encoder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../13-warm-ups/bracket-matching.html">
+            
+                <a href="../13-warm-ups/bracket-matching.html">
+            
+                    
+                    Bracket Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../13-warm-ups/teaser-array-flatten.html">
+            
+                <a href="../13-warm-ups/teaser-array-flatten.html">
+            
+                    
+                    Array Flatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../13-warm-ups/teaser-binary-search.html">
+            
+                <a href="../13-warm-ups/teaser-binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../13-warm-ups/teaser-power-sum.html">
+            
+                <a href="../13-warm-ups/teaser-power-sum.html">
+            
+                    
+                    Power Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../13-warm-ups/sum-string.html">
+            
+                <a href="../13-warm-ups/sum-string.html">
+            
+                    
+                    Sum String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../13-warm-ups/mouse-follows-mouse.html">
+            
+                <a href="../13-warm-ups/mouse-follows-mouse.html">
+            
+                    
+                    Mouse follows Mouse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../13-warm-ups/english-calculator.html">
+            
+                <a href="../13-warm-ups/english-calculator.html">
+            
+                    
+                    English calculator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" data-path="../13-warm-ups/kopi-order.html">
+            
+                <a href="../13-warm-ups/kopi-order.html">
+            
+                    
+                    Kopi Order
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" data-path="../13-warm-ups/scrabble.html">
+            
+                <a href="../13-warm-ups/scrabble.html">
+            
+                    
+                    Scrabble
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" data-path="../13-warm-ups/array-practice-1.html">
+            
+                <a href="../13-warm-ups/array-practice-1.html">
+            
+                    
+                    Array Practice 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" data-path="../13-warm-ups/array-practice-2.html">
+            
+                <a href="../13-warm-ups/array-practice-2.html">
+            
+                    
+                    Array Practice 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.13" data-path="../13-warm-ups/random-quote-generator.html">
+            
+                <a href="../13-warm-ups/random-quote-generator.html">
+            
+                    
+                    Random Quote Generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.14" data-path="../13-warm-ups/kitchen-sink.html">
+            
+                <a href="../13-warm-ups/kitchen-sink.html">
+            
+                    
+                    Kitchen Sink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.15" data-path="../13-warm-ups/custom-iterators.html">
+            
+                <a href="../13-warm-ups/custom-iterators.html">
+            
+                    
+                    Custom Iterators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../09-post-wdi/readme.html">
+            
+                <a href="../09-post-wdi/readme.html">
+            
+                    
+                    Post WDI \/ Resources
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../09-post-wdi/resources.html">
+            
+                <a href="../09-post-wdi/resources.html">
+            
+                    
+                    Keep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../09-post-wdi/job-tips.html">
+            
+                <a href="../09-post-wdi/job-tips.html">
+            
+                    
+                    Job tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../12-resources/external-resources.html">
+            
+                <a href="../12-resources/external-resources.html">
+            
+                    
+                    More Coding Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../12-resources/apis.html">
+            
+                <a href="../12-resources/apis.html">
+            
+                    
+                    APIs and Data Sources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../12-resources/visualdesign.html">
+            
+                <a href="../12-resources/visualdesign.html">
+            
+                    
+                    Visual Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../12-resources/techsites.html">
+            
+                <a href="../12-resources/techsites.html">
+            
+                    
+                    Tech Websites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Package Management with YARN</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="modules-npm-and-package-management-with-npm-yarn">Modules, NPM and Package Management with <del>NPM</del> <a href="https://yarnpkg.com/en/docs/cli/add" target="_blank">YARN</a></h1>
+<h3 id="context">Context</h3>
+<p>We can use outside libraries just like we can in our webpages, but we no longer have <code>&lt;script&gt;</code> includes and such. Now we will have &quot;packages&quot;, or dependencies. NPM is the tool we use to get those libraries or packages from over the internet.</p>
+<h3 id="objectives">Objectives</h3>
+<ul>
+<li>Explain the use of modules, packages, <code>require</code></li>
+<li>Manage package versions</li>
+<li>Explain dependency versioning</li>
+<li>Explain npm, yarn, and its purpose</li>
+<li>Update packages and change node version based on work environment</li>
+</ul>
+<h2 id="node-modules">Node Modules</h2>
+<p>How do we include external libraries into our node.js programs? We are used to <code>script</code> and <code>link</code>:</p>
+<p>JQuery script include:</p>
+<pre><code>&lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>Bootstrtap CSS include:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&quot;&gt;
+</code></pre><p><strong>But</strong> our javascript in no longer being executed in the context of a web page.</p>
+<p>Luckily node provides a way to use external libraries.</p>
+<pre><code>// the jquery library is actually all contained in the variable $
+const $ = require(&apos;jquery&apos;);
+</code></pre><p>Note: jquery doesn&apos;t come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM</p>
+<h3 id="make-your-own-modules">Make your own modules</h3>
+<p>In essence, if a file puts something inside of module.exports, it can be made available for use in any other file using <code>require()</code>.</p>
+<p>For example, let&apos;s make two files: <code>touch my-module.js main.js</code></p>
+<pre><code class="lang-js"><span class="hljs-comment">// my-module.js</span>
+<span class="hljs-keyword">const</span> number = <span class="hljs-number">7</span>
+<span class="hljs-built_in">module</span>.exports.name = <span class="hljs-string">&quot;Kenaniah&quot;</span>
+<span class="hljs-built_in">module</span>.exports.arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-built_in">module</span>.exports.getNumber = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Get number called. Returning: &quot;</span>, number)
+    <span class="hljs-keyword">return</span> number
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;End of my-module.js file&quot;</span>)
+</code></pre>
+<h4 id="use-the-module-you-created">Use the module you created</h4>
+<pre><code class="lang-js"><span class="hljs-comment">// main.js</span>
+
+<span class="hljs-comment">// here we&apos;re grabbing everything that&apos;s &quot;exported&quot; in our other file, and storing it a variable called &apos;my&apos;</span>
+<span class="hljs-keyword">const</span> my = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./my-module&apos;</span>)
+
+<span class="hljs-comment">// Variables and such that were not exported aren&apos;t in scope</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;number is &quot;</span> + <span class="hljs-keyword">typeof</span> number) <span class="hljs-comment">// undefined</span>
+
+<span class="hljs-comment">// Anything exported can be accessed on the object</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Name is: &quot;</span>, my.name)
+
+<span class="hljs-comment">// Closures are still closures</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The number is: &quot;</span> + my.getNumber())
+
+<span class="hljs-comment">// JavaScript is still JavaScript</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The array contains &quot;</span> + my.arr.length + <span class="hljs-string">&quot; elements&quot;</span>)
+
+<span class="hljs-comment">// Let&apos;s see the module we imported</span>
+<span class="hljs-built_in">console</span>.log(my)
+</code></pre>
+<p>Then try running:</p>
+<pre><code>node my-module.js
+node main.js
+</code></pre><h2 id="packages-on-the-internet">Packages on the Internet</h2>
+<h3 id="the-problem-at-hand">The Problem At Hand</h3>
+<p>As we develop our own node apps we will find ourselves implementing third-party modules to help us with a wide range of tasks. These modules, which are commonly referred to as node packages or dependencies, are maintained by various developers and can be viewed as living and breathing mini-applications.</p>
+<p>These applications also have their own dependencies. Do we want each of these libraries to come with all of their own library dependencies packages already? What about the libraries that that library depends upon? That would be inefficent. Better to just <strong>specify</strong> a set of dependencies for each piece and then get all of those things when we set up our apps. This is what npm does.</p>
+<p>What if the version of the library gets an upgrade? Can we use that new, shiny, bug free code? npm allows us to do that.</p>
+<p>What if the code in the new version is incompatible with how we are currently using the library? What if we know the latest version has bugs and we want to wait to upgrade? npm allows us to control that.</p>
+<h2 id="npm-intro---5-mins">NPM Intro - (5 mins)</h2>
+<p>When you first went nodejs.org to download node, you may or may not have known that you were also downloading npm. npm is node&apos;s package manager that that comes bundled with the installation of node.js.</p>
+<p>npm functions as two things, primarily:</p>
+<ul>
+<li>an online repository containing published open-source, and as of somewhat recently private, node packages</li>
+<li>a command-line utility for interacting with the npm repository aiding in:<ul>
+<li>package installation</li>
+<li>version management</li>
+<li>dependency management</li>
+<li>built-in as well as custom scripts</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>tip:</em></strong> To find out which version of npm you have, run the command <code>npm -v</code>. To find out which version of node you&apos;re using, run the command <code>node --version</code>.</p>
+<h2 id="yarn-intro"><a href="https://yarnpkg.com/en/" target="_blank">Yarn</a> Intro</h2>
+<p>Package dependencies are actually quite complex. (Packages that depend on packages that depend on packages, all with their own package version requirements.) Yarn is the new tool designed to deal with that level of complexity.</p>
+<p>It promised reliability, security, usability and most importantly speed. To install <code>yarn</code>, run this command:</p>
+<pre><code>npm install --global yarn
+
+// followed by (MacOS &amp; Ubuntu)
+export PATH=&quot;$PATH:`yarn global bin`&quot;
+</code></pre><p><strong><em>tip:</em></strong> make sure yarn is installed by running <code>yarn --version</code>.</p>
+<h2 id="npm-yarn-as-a-repository---demo-10-mins"><del>NPM</del> YARN as a Repository - Demo (10 mins)</h2>
+<p>Let&apos;s cover the first point. <code>yarn</code> can be thought of as a GitHub, of sort, as in it is an online repository containing thousands of node libraries and applications. If you know the name of the node package you&apos;d like to use, a good way to find its docs would be to search for it at <a href="https://yarnpkg.com/en/" target="_blank">https://yarnpkg.com/</a>.</p>
+<figure id="fig1.5.4.1"><img src="../../_assets/yarn-install.png" alt="yarn search"><figcaption>Figure: yarn search</figcaption></figure>
+<p>However, if you&apos;re not sure of the module name your application needs help from, the best way to find what you&apos;re looking for is with a simple Google search with the keywords <code>yarn</code>followed by a short query describing what you&apos;re trying to do.</p>
+<figure id="fig1.5.4.2"><img src="../../_assets/yarn-search.png" alt="google yarn"><figcaption>Figure: google yarn</figcaption></figure>
+<p>More often than not, the package you need will pop up in the first page of results, if not the very first result.</p>
+<h2 id="package-installation">Package Installation</h2>
+<p>As mentioned, <code>yarn</code> is also an extremely powerful command-line tool that allows us to communicate with the npm repository. For example, if you wanted to download the <code>react</code> package into your application, you would run the command <code>yarn add react</code>. <code>yarn add &lt;package name&gt;</code> is the command format for <em>local</em> installation. When a local installation occurs, <code>yarn</code> installs the specified package into a <code>node_modules</code> folder located in the root of your node application&apos;s folder. If no <code>node_modules</code> folder is present - like when you&apos;re installing the app&apos;s first third-party package - one will be automatically generated. By default, <code>yarn</code> will perform local installations.</p>
+<p>However, there are times when you need to install a package globally. Perhaps the package you want to use offers a task runner or a background <a href="https://en.wikipedia.org/wiki/Daemon_(computing" target="_blank">daemon</a>) that is not meant to be used solely for a specific app but instead as a tool to help with the development of all your apps. These types of packages often come with a command line interface (CLI) which means they must be installed in your system directory, a.k.a. globally. In order to install a package globally, you just need to add <code>global</code>, in your installation command. For example, if you were to install nodemon, a background daemon, you would run the command <code>yarn add *global* nodemon</code>.</p>
+<p>To quickly summarize, you locally install a package when you its purpose is app specific, and you globally install a package when its purpose is app-agnostic.</p>
+<h3 id="installing-nodemon">Installing nodemon</h3>
+<pre><code class="lang-bash">yarn global add nodemon
+</code></pre>
+<p>If we just ran <code>node nameOfFile.js</code>, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax</p>
+<pre><code class="lang-bash">nodemon nameOfFile.js
+</code></pre>
+<h2 id="packagejson">Package.json</h2>
+<p>At this point, you may be asking yourself a very important question: how does <code>yarn</code> know I have a node app that will accept installed packages?! The answer is <code>package.json</code>.</p>
+<p>The <code>package.json</code> file contains various metadata relevant to your application and most importantly, it gives <code>yarn</code> information that allows it to identify your app.</p>
+<p>Here&apos;s an example of a <code>package.json</code>:</p>
+<pre><code>{
+  &quot;name&quot; : &quot;underscore&quot;,
+  &quot;description&quot; : &quot;JavaScript&apos;s functional programming helper library.&quot;,
+  &quot;homepage&quot; : &quot;http://documentcloud.github.com/underscore/&quot;,
+  &quot;keywords&quot; : [&quot;util&quot;, &quot;functional&quot;, &quot;server&quot;, &quot;client&quot;, &quot;browser&quot;],
+  &quot;author&quot; : &quot;Jeremy Ashkenas &lt;jeremy@documentcloud.org&gt;&quot;,
+  &quot;contributors&quot; : [],
+  &quot;dependencies&quot; : [],
+  &quot;repository&quot; : {&quot;type&quot;: &quot;git&quot;, &quot;url&quot;: &quot;git://github.com/documentcloud/underscore.git&quot;},
+  &quot;main&quot; : &quot;underscore.js&quot;,
+  &quot;version&quot; : &quot;1.1.6&quot;
+}
+</code></pre><p>Note all the metadata attributes of the file (these are just <em>some</em> attributes):</p>
+<ul>
+<li>name: name of the package</li>
+<li>version: version of the package</li>
+<li>description: description of the package</li>
+<li>homepage: homepage of the package</li>
+<li>author: author of the package</li>
+<li>contributors: name of the contributors of the package</li>
+<li>dependencies: list of all the third-party packages (dependencies) the package has installed</li>
+<li>repository: repository type and url of the package</li>
+<li>main: entry point of the package</li>
+</ul>
+<p>Out of all these pieces of data, only two are required for <code>yarn</code> to recognize your app: name and version. As long as you have those two pieces of information, <code>yarn</code> will be able to locate your app when installing packages into your app&apos;s <code>node_modules</code> folder.</p>
+<p>This file also serves as a documentation of your application for other developers to use. Your description can give anyone a quick idea on the purpose of your package and just by skimming your listed dependencies, a fellow developer can quickly see what your app depends on.</p>
+<p>In terms of your application dependencies, when working with a team of developers, it is common practice to put <code>node_modules/*</code> in your <code>.gitignore</code> file. As long as your dependencies are listed in the package.json, a teammate can run <code>yarn install</code> after cloning your app and have all the listed dependencies installed locally!</p>
+<!-- ***tip:*** Running `yarn add <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`). -->
+<h2 id="start-a-fresh-node-project">Start a fresh node project</h2>
+<p>There are two main ways you can start a node project, by setting it up yourself, or by using other developers&apos; setting. By running <code>yarn install</code>, we are essentially running a project with other developer&apos; setting, like stealing a recipe from a cookbook.</p>
+<figure id="fig1.5.4.3"><img src="http://www.chicagonow.com/intellectual-chicago-suburbs/files/2016/02/julia_turkey_tx800.jpg" alt="Even Julia Child copied someone else&apos;s recipe" align="center"><figcaption>Figure: Even Julia Child copied someone else&apos;s recipe</figcaption></figure>
+<p>So how do we start our own node project? To do so you need a blank directory and create your own <code>package.json</code> file. Thankfully you don&apos;t have to write it from scratch.</p>
+<pre><code>// first thing first, create the blank directory
+mkdir my_first_node
+
+// cd into the node, and run the init command
+cd my_first_node
+yarn init
+</code></pre><p>You will then be asked by <code>yarn</code> a couple of questions related to your project. Answer those questions accordingly <em>(no answers are usually okay at this stage)</em>.</p>
+<figure id="fig1.5.4.4"><img src="../../_assets/yarn-init.png" alt="yarn search"><figcaption>Figure: yarn search</figcaption></figure>
+<p>and <strong>voila!</strong> You have created your first node project.</p>
+<h2 id="version-management">Version Management</h2>
+<p>But how do we know what version of a package we are using? We do want to avoid those &quot;breaking changes&quot; mentioned earlier after all. Let&apos;s take a look at a dependencies attribute in a package.json file that has been given a value.</p>
+<pre><code class="lang-json">...
+  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+    <span class="hljs-string">&quot;accepts&quot;</span>: <span class="hljs-string">&quot;~1.2.3&quot;</span>,
+    <span class="hljs-string">&quot;content-disposition&quot;</span>: <span class="hljs-string">&quot;0.5.0&quot;</span>,
+    <span class="hljs-string">&quot;cookie-signature&quot;</span>: <span class="hljs-string">&quot;1.0.5&quot;</span>
+  }
+...
+</code></pre>
+<p>Each listed dependency has a specified version associated with it, so that we may know what exactly we&apos;re working with. There are various ways a dependency version can be declared, and these version values often come with some interesting characters (<code>~</code>, <code>^</code>, etc.). Here&apos;s a chart to help break things down:</p>
+<table>
+<thead>
+<tr>
+<th>Version Number</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latest</td>
+<td>Takes the latest version possible. Not the safest thing to use.</td>
+</tr>
+<tr>
+<td>4, 4.*, 4.x, ~4, ^4</td>
+<td>Any version that starts with 4. Takes the latest.</td>
+</tr>
+<tr>
+<td>&gt;4.8.5</td>
+<td>Choose any version greater than a specific version. Could break your application.</td>
+</tr>
+<tr>
+<td>&lt;4.8.5</td>
+<td>Choose any version lower than a specific version.</td>
+</tr>
+<tr>
+<td>&gt;=4.8.5</td>
+<td>Anything greater than or equal to a specific version.</td>
+</tr>
+<tr>
+<td>&lt;=4.8.5</td>
+<td>Anything less than or equal to.</td>
+</tr>
+<tr>
+<td>4.8.3 - 4.8.5</td>
+<td>Anything within a range of versions. The equivalent of &gt;=4.8.3 and &lt;=4.8.5</td>
+</tr>
+<tr>
+<td>~4.8.5</td>
+<td>Any version &#x201C;reasonably close to 4.8.5&#x2033;. This will call use all versions up to, but less than 4.9.0</td>
+</tr>
+<tr>
+<td>~4.8</td>
+<td>Any version that starts with 4.8</td>
+</tr>
+<tr>
+<td>^4.8.5</td>
+<td>Any version &#x201C;compatible with 4.8.5&#x2033;. This will call versions up to the next major version like 5.0.0. Could break your application if there are major differences in the next major version.</td>
+</tr>
+<tr>
+<td>^1.2</td>
+<td>Any version compatible with 1.2</td>
+</tr>
+</tbody>
+</table>
+<p>Now when working with a team if you ever encounter a scenario where a package may be behaving differently for different developers, you know to check the dependency versions in the <code>package.json</code> files. Also, when updating a package you should check to see if there are any breaking changes mentioned in the version documentation.</p>
+<h4 id="updating-a-package">Updating a package</h4>
+<p>Did someone mention updating a package? To update a package you simply run the command <code>yarn update &lt;package name&gt;</code>. Pretty intuitive, eh?</p>
+<p><strong><em>note:</em></strong> Not all dependencies we use are used by the application in production. Whenever we need a dependency that will only be used in our development environment, say a package that helps with js linting, we will add that dependency to a <code>devDependencies</code> attribute in our package.json. This type of installation can be done with the command <code>yarn add &lt;package name&gt; --dev</code>.</p>
+<h2 id="using-gitignore">Using .gitignore</h2>
+<p>Node will install many large files to the <code>node_modules</code> folder. We don&apos;t want nor need to push these to our GitHub repo! Whoever takes our project can run <code>yarn install</code> after cloning our repo and run with it. So what can we do?</p>
+<p>We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.</p>
+<p>Here is a <a href="https://github.com/wdi-sg/wdi-better-underdog/blob/master/.gitignore" target="_blank">link</a> to our official class <code>.gitignore</code> file. Just copy it and put it in each of your repos with a node_modules file.</p>
+<h4 id="2-ways-to-do-gitignore">2 ways to do gitignore</h4>
+<p>The first way is to create a new repo on GitHub and choose from the dropdown menu what you&apos;d like to ignore. This can be found just before the &quot;Create repository&quot; button - just choose &quot;Node&quot;.</p>
+<p>The second, slightly more troublesome way is to create your own gitignore file on your local machine. In your project directory on Terminal:</p>
+<ul>
+<li>run <code>touch .gitignore</code></li>
+<li>open .gitignore on your editor, add <code>node_modules</code> in a new line</li>
+<li>run your standard git add and commit</li>
+<li>when you push to your remote GitHub repo, <code>node_modules</code> will not be pushed</li>
+</ul>
+<h2 id="review">Review</h2>
+<p>Test your understanding of the lesson:</p>
+<ul>
+<li>Explain the term &quot;breaking changes&quot; and its cause.</li>
+<li>What is npm, yarn and its purpose?</li>
+<li>What is the purpose of the package.json file?</li>
+</ul>
+<h2 id="useful-links">Useful links</h2>
+<ul>
+<li><a href="https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc" target="_blank">npm vs yarn cheat sheet</a></li>
+<li><a href="https://yarnpkg.com/en/docs/install" target="_blank">yarn installation guide</a></li>
+<li><a href="https://yarnpkg.com/en/docs/cli/" target="_blank">yarn cli cheat sheet</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="00node.html" class="navigation navigation-prev " aria-label="Previous page: Intro to Node">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02flatfile.html" class="navigation navigation-next " aria-label="Next page: Disk Storage">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Package Management with YARN","level":"1.5.4","depth":2,"next":{"title":"Disk Storage","level":"1.5.5","depth":2,"path":"04-server/02flatfile.md","ref":"04-server/02flatfile.md","articles":[]},"previous":{"title":"Intro to Node","level":"1.5.3","depth":2,"path":"04-server/00node.md","ref":"04-server/00node.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: placeholder","alt":"placeholder","nro":1,"url":"http://assets.amuniversal.com/22a5ace06d6501301d80001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"placeholder","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"01-workflow/index.html#fig1.2.1","level":"1.2","list_caption":"Figure: programming language geneology","alt":"programming language geneology","nro":2,"url":"/docs/_assets/ge.png","index":1,"caption_template":"Figure: _CAPTION_","label":"programming language geneology","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"01-workflow/command-line/02intro-terminal.html#fig1.2.2.1.1","level":"1.2.2.1","list_caption":"Figure: Terminal Window","alt":"Terminal Window","nro":3,"url":"http://i.stack.imgur.com/DjFOZ.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Terminal Window","attributes":{},"skip":false,"key":"1.2.2.1.1"},{"backlink":"01-workflow/command-line/03navigating.html#fig1.2.2.2.1","level":"1.2.2.2","list_caption":"Figure: Filesystem image","alt":"Filesystem image","nro":4,"url":"http://www.qnx.com/developers/docs/qnx_4.25_docs/qnx4/user_guide/images/files.gif","index":1,"caption_template":"Figure: _CAPTION_","label":"Filesystem image","attributes":{},"skip":false,"key":"1.2.2.2.1"},{"backlink":"01-workflow/intro-git/02vcs.html#fig1.2.6.1.1","level":"1.2.6.1","list_caption":"Figure: DVCS diagram","alt":"DVCS diagram","nro":5,"url":"http://git-scm.com/figures/18333fig0103-tn.png","index":1,"caption_template":"Figure: _CAPTION_","label":"DVCS diagram","attributes":{},"skip":false,"key":"1.2.6.1.1"},{"backlink":"01-workflow/group-collab/02gitworkflows.html#fig1.2.7.1.1","level":"1.2.7.1","list_caption":"Figure: XKCD Git","alt":"XKCD Git","nro":6,"url":"http://imgs.xkcd.com/comics/git.png","index":1,"caption_template":"Figure: _CAPTION_","label":"XKCD Git","attributes":{},"skip":false,"key":"1.2.7.1.1"},{"backlink":"01-workflow/group-collab/04gitforkedflow.html#fig1.2.7.1.1.1","level":"1.2.7.1.1","list_caption":"Figure: Forking","alt":"Forking","nro":7,"url":"http://i.stack.imgur.com/iYdhN.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Forking","attributes":{},"skip":false,"key":"1.2.7.1.1.1"},{"backlink":"01-workflow/group-collab/03rolestools.html#fig1.2.7.2.1","level":"1.2.7.2","list_caption":"Figure: Kanban","alt":"Kanban","nro":8,"url":"https://olemortenamundsen.files.wordpress.com/2010/03/kanban_illustration.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Kanban","attributes":{},"skip":false,"key":"1.2.7.2.1"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.1","level":"1.2.8","list_caption":"Figure: https://i.imgur.com/NUNBEwW.png","alt":"https://i.imgur.com/NUNBEwW.png","nro":9,"url":"https://i.imgur.com/NUNBEwW.png","index":1,"caption_template":"Figure: _CAPTION_","label":"https://i.imgur.com/NUNBEwW.png","attributes":{},"skip":false,"key":"1.2.8.1"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.2","level":"1.2.8","list_caption":"Figure: Waterfall model","alt":"Waterfall model","nro":10,"url":"https://i.imgur.com/yJMVO91.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Waterfall model","attributes":{},"skip":false,"key":"1.2.8.2"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.3","level":"1.2.8","list_caption":"Figure: Youtube Balsamiq","alt":"Youtube Balsamiq","nro":11,"url":"http://3.bp.blogspot.com/-8e_J8hkX_kM/TbSz0jywljI/AAAAAAAAAY4/Nei-hnfPGaI/s1600/Balsamiq+myTube+example.jpg","index":3,"caption_template":"Figure: _CAPTION_","label":"Youtube Balsamiq","attributes":{},"skip":false,"key":"1.2.8.3"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.4","level":"1.2.8","list_caption":"Figure: Youtube actual","alt":"Youtube actual","nro":12,"url":"https://make.wordpress.org/support/wp-content/blogs.dir/21/files/2012/10/embed-youtube-page.jpg","index":4,"caption_template":"Figure: _CAPTION_","label":"Youtube actual","attributes":{},"skip":false,"key":"1.2.8.4"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.5","level":"1.2.8","list_caption":"Figure: https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","alt":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","nro":13,"url":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","index":5,"caption_template":"Figure: _CAPTION_","label":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","attributes":{},"skip":false,"key":"1.2.8.5"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.6","level":"1.2.8","list_caption":"Figure: https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","alt":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","nro":14,"url":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","index":6,"caption_template":"Figure: _CAPTION_","label":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","attributes":{},"skip":false,"key":"1.2.8.6"},{"backlink":"01-workflow/user-stories-wireframing/game-exercise.html#fig1.2.8.2.1","level":"1.2.8.2","list_caption":"Figure: https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","alt":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","nro":15,"url":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","index":1,"caption_template":"Figure: _CAPTION_","label":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","attributes":{},"skip":false,"key":"1.2.8.2.1"},{"backlink":"01-workflow/user-stories-wireframing/game-exercise.html#fig1.2.8.2.2","level":"1.2.8.2","list_caption":"Figure: https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","alt":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","nro":16,"url":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","index":2,"caption_template":"Figure: _CAPTION_","label":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","attributes":{},"skip":false,"key":"1.2.8.2.2"},{"backlink":"01-workflow/chrome-dev-tools/index.html#fig1.2.9.1","level":"1.2.9","list_caption":"Figure: screenshot","alt":"screenshot","nro":17,"url":"https://i.imgur.com/5ruzGhc.png","index":1,"caption_template":"Figure: _CAPTION_","label":"screenshot","attributes":{},"skip":false,"key":"1.2.9.1"},{"backlink":"01-workflow/review.html#fig1.2.11.1","level":"1.2.11","list_caption":"Figure: https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","alt":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","nro":18,"url":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","attributes":{},"skip":false,"key":"1.2.11.1"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: calculationbase","alt":"calculationbase","nro":19,"url":"https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png","index":1,"caption_template":"Figure: _CAPTION_","label":"calculationbase","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.2","level":"1.3.2","list_caption":"Figure: calc 1","alt":"calc 1","nro":20,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-1.png","index":2,"caption_template":"Figure: _CAPTION_","label":"calc 1","attributes":{},"skip":false,"key":"1.3.2.2"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.3","level":"1.3.2","list_caption":"Figure: calc 2","alt":"calc 2","nro":21,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-2.png","index":3,"caption_template":"Figure: _CAPTION_","label":"calc 2","attributes":{},"skip":false,"key":"1.3.2.3"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.4","level":"1.3.2","list_caption":"Figure: calc 4]","alt":"calc 4]","nro":22,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-4.png","index":4,"caption_template":"Figure: _CAPTION_","label":"calc 4]","attributes":{},"skip":false,"key":"1.3.2.4"},{"backlink":"03-html-css/css-box-model/02box-model.html#fig1.3.3.1.1","level":"1.3.3.1","list_caption":"Figure: box-model","alt":"box-model","nro":23,"url":"http://s6.postimg.org/gi8r6c341/css_box_model.png","index":1,"caption_template":"Figure: _CAPTION_","label":"box-model","attributes":{},"skip":false,"key":"1.3.3.1.1"},{"backlink":"03-html-css/css-box-model/03display-positioning.html#fig1.3.3.2.1","level":"1.3.3.2","list_caption":"Figure: display","alt":"display","nro":24,"url":"https://i.imgur.com/zeD1f2m.png","index":1,"caption_template":"Figure: _CAPTION_","label":"display","attributes":{},"skip":false,"key":"1.3.3.2.1"},{"backlink":"03-html-css/css-box-model/03display-positioning.html#fig1.3.3.2.2","level":"1.3.3.2","list_caption":"Figure: css position relative","alt":"css position relative","nro":25,"url":"https://i.imgur.com/LRd7lBy.png","index":2,"caption_template":"Figure: _CAPTION_","label":"css position relative","attributes":{},"skip":false,"key":"1.3.3.2.2"},{"backlink":"03-html-css/css-responsive-design/02responsivedesign.html#fig1.3.4.1.1","level":"1.3.4.1","list_caption":"Figure: No Viewport Meta Tag","alt":"No Viewport Meta Tag","nro":26,"url":"http://developers.google.com/speed/docs/insights/images/viewport/iphone_no_viewport.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"No Viewport Meta Tag","attributes":{},"skip":false,"key":"1.3.4.1.1"},{"backlink":"03-html-css/css-responsive-design/02responsivedesign.html#fig1.3.4.1.2","level":"1.3.4.1","list_caption":"Figure: Viewport Meta Tag","alt":"Viewport Meta Tag","nro":27,"url":"https://developers.google.com/speed/docs/insights/images/viewport/iphone_viewport.jpg","index":2,"caption_template":"Figure: _CAPTION_","label":"Viewport Meta Tag","attributes":{},"skip":false,"key":"1.3.4.1.2"},{"backlink":"02-js/js-intro/index.html#fig1.4.1.1","level":"1.4.1","list_caption":"Figure: Chrome Console image","alt":"Chrome Console image","nro":28,"url":"images/chrome-console.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Chrome Console image","attributes":{},"skip":false,"key":"1.4.1.1"},{"backlink":"02-js/js-prototypes/class.html#fig1.4.6.1.1","level":"1.4.6.1","list_caption":"Figure: Cookie Cutter Javascript","alt":"Cookie Cutter Javascript","nro":29,"url":"http://sausagelife.com/wp-content/uploads/2016/12/2-1.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Cookie Cutter Javascript","attributes":{},"skip":false,"key":"1.4.6.1.1"},{"backlink":"02-js/js-inheritance/02prototypalinheritance.html#fig1.4.9.1.1","level":"1.4.9.1","list_caption":"Figure: Prototype Chain","alt":"Prototype Chain","nro":30,"url":"images/prototype-chain.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Prototype Chain","attributes":{},"skip":false,"key":"1.4.9.1.1"},{"backlink":"02-js/js-next/01index.html#fig1.4.10.1","level":"1.4.10","list_caption":"Figure: Dilbert Comment","alt":"Dilbert Comment","nro":31,"url":"http://assets.amuniversal.com/e9a8f5506cc101301d46001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"Dilbert Comment","attributes":{},"skip":false,"key":"1.4.10.1"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.1","level":"1.5.1","list_caption":"Figure: https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","alt":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","nro":32,"url":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","attributes":{},"skip":false,"key":"1.5.1.1"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.2","level":"1.5.1","list_caption":"Figure: http://www.escotal.com/Images/Network%20parts/osi.gif","alt":"http://www.escotal.com/Images/Network%20parts/osi.gif","nro":33,"url":"http://www.escotal.com/Images/Network%20parts/osi.gif","index":2,"caption_template":"Figure: _CAPTION_","label":"http://www.escotal.com/Images/Network%20parts/osi.gif","attributes":{},"skip":false,"key":"1.5.1.2"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.3","level":"1.5.1","list_caption":"Figure: http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","alt":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","nro":34,"url":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","index":3,"caption_template":"Figure: _CAPTION_","label":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","attributes":{},"skip":false,"key":"1.5.1.3"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.4","level":"1.5.1","list_caption":"Figure: http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","alt":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","nro":35,"url":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","index":4,"caption_template":"Figure: _CAPTION_","label":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","attributes":{},"skip":false,"key":"1.5.1.4"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.5","level":"1.5.1","list_caption":"Figure: http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","alt":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","nro":36,"url":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","index":5,"caption_template":"Figure: _CAPTION_","label":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","attributes":{},"skip":false,"key":"1.5.1.5"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.6","level":"1.5.1","list_caption":"Figure: http://en.dnstools.ch/visual-traceroute.html","alt":"http://en.dnstools.ch/visual-traceroute.html","nro":37,"url":"http://en.dnstools.ch/visual-traceroute.html","index":6,"caption_template":"Figure: _CAPTION_","label":"http://en.dnstools.ch/visual-traceroute.html","attributes":{},"skip":false,"key":"1.5.1.6"},{"backlink":"04-server/01npm.html#fig1.5.4.1","level":"1.5.4","list_caption":"Figure: yarn search","alt":"yarn search","nro":38,"url":"../../_assets/yarn-install.png","index":1,"caption_template":"Figure: _CAPTION_","label":"yarn search","attributes":{},"skip":false,"key":"1.5.4.1"},{"backlink":"04-server/01npm.html#fig1.5.4.2","level":"1.5.4","list_caption":"Figure: google yarn","alt":"google yarn","nro":39,"url":"../../_assets/yarn-search.png","index":2,"caption_template":"Figure: _CAPTION_","label":"google yarn","attributes":{},"skip":false,"key":"1.5.4.2"},{"backlink":"04-server/01npm.html#fig1.5.4.3","level":"1.5.4","list_caption":"Figure: Even Julia Child copied someone else's recipe","alt":"Even Julia Child copied someone else's recipe","nro":40,"url":"http://www.chicagonow.com/intellectual-chicago-suburbs/files/2016/02/julia_turkey_tx800.jpg","index":3,"caption_template":"Figure: _CAPTION_","label":"Even Julia Child copied someone else's recipe","attributes":{},"skip":false,"key":"1.5.4.3"},{"backlink":"04-server/01npm.html#fig1.5.4.4","level":"1.5.4","list_caption":"Figure: yarn search","alt":"yarn search","nro":41,"url":"../../_assets/yarn-init.png","index":4,"caption_template":"Figure: _CAPTION_","label":"yarn search","attributes":{},"skip":false,"key":"1.5.4.4"},{"backlink":"05-express/index.html#fig1.6.1","level":"1.6","list_caption":"Figure: 3-Tier Express Application","alt":"3-Tier Express Application","nro":42,"url":"images/3-tier-application.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"3-Tier Express Application","attributes":{},"skip":false,"key":"1.6.1"},{"backlink":"05-express/express-intro/02internet.html#fig1.6.1.1.1","level":"1.6.1.1","list_caption":"Figure: http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","alt":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","nro":43,"url":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","index":1,"caption_template":"Figure: _CAPTION_","label":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","attributes":{},"skip":false,"key":"1.6.1.1.1"},{"backlink":"05-express/express-jwt/index.html#fig1.6.5.1","level":"1.6.5","list_caption":"Figure: JWTs","alt":"JWTs","nro":44,"url":"https://cloud.githubusercontent.com/assets/25366/9151601/2e3baf1a-3dbc-11e5-90f6-b22cda07a077.png","index":1,"caption_template":"Figure: _CAPTION_","label":"JWTs","attributes":{},"skip":false,"key":"1.6.5.1"},{"backlink":"05-express/additional-topics/express-oauth/index.html#fig1.6.6.2.1","level":"1.6.6.2","list_caption":"Figure: facebook-login","alt":"facebook-login","nro":45,"url":"https://cloud.githubusercontent.com/assets/40461/9360397/e49b15be-468d-11e5-8b88-3757ca6cbcac.png","index":1,"caption_template":"Figure: _CAPTION_","label":"facebook-login","attributes":{},"skip":false,"key":"1.6.6.2.1"},{"backlink":"05-express/express-socket-io/index.html#fig1.6.6.5.1","level":"1.6.6.5","list_caption":"Figure: Websockets","alt":"Websockets","nro":46,"url":"./sockets.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Websockets","attributes":{},"skip":false,"key":"1.6.6.5.1"},{"backlink":"04-databases/mongo-intro/intro-nosql.html#fig1.7.1.1","level":"1.7.1","list_caption":"Figure: MongoDB vs Relational Databases","alt":"MongoDB vs Relational Databases","nro":47,"url":"http://4.bp.blogspot.com/-edz2_QrFvCE/UnzBhKZE3FI/AAAAAAAAAEs/bTEsqnZFTXw/s1600/SQL-MongoDB+Correspondence.PNG","index":1,"caption_template":"Figure: _CAPTION_","label":"MongoDB vs Relational Databases","attributes":{},"skip":false,"key":"1.7.1.1"},{"backlink":"04-databases/sql-intro/index.html#fig1.7.2.1","level":"1.7.2","list_caption":"Figure: image","alt":"image","nro":48,"url":"Postgres.png","index":1,"caption_template":"Figure: _CAPTION_","label":"image","attributes":{},"skip":false,"key":"1.7.2.1"},{"backlink":"04-databases/sql-advanced/index.html#fig1.7.2.1.1","level":"1.7.2.1","list_caption":"Figure: SQL Joins","alt":"SQL Joins","nro":49,"url":"http://www.dofactory.com/Images/sql-joins.png","index":1,"caption_template":"Figure: _CAPTION_","label":"SQL Joins","attributes":{},"skip":false,"key":"1.7.2.1.1"},{"backlink":"04-databases/sqlcheatsheet.html#fig1.7.2.3.1","level":"1.7.2.3","list_caption":"Figure: SQL Joins","alt":"SQL Joins","nro":50,"url":"http://www.dofactory.com/Images/sql-joins.png","index":1,"caption_template":"Figure: _CAPTION_","label":"SQL Joins","attributes":{},"skip":false,"key":"1.7.2.3.1"},{"backlink":"06-ruby-rails/ruby-intro/index.html#fig1.8.1.1","level":"1.8.1","list_caption":"Figure: Yukihiro Matsumoto","alt":"Matz-san","nro":51,"url":"http://image.gihyo.co.jp/assets/images/dev/serial/01/software_designers/0034/0034-01.JPG","index":1,"caption_template":"Figure: _CAPTION_","label":"Yukihiro Matsumoto","attributes":{},"title":"Yukihiro Matsumoto","skip":false,"key":"1.8.1.1"},{"backlink":"06-ruby-rails/rails-intro/index.html#fig1.9.1.1","level":"1.9.1","list_caption":"Figure: MVC Diagram","alt":"MVC Diagram","nro":52,"url":"http://elibildner.files.wordpress.com/2012/06/screen-shot-2012-06-05-at-2-12-18-am.png","index":1,"caption_template":"Figure: _CAPTION_","label":"MVC Diagram","attributes":{},"skip":false,"key":"1.9.1.1"},{"backlink":"06-ruby-rails/rails-intro/index.html#fig1.9.1.2","level":"1.9.1","list_caption":"Figure: Rails File Structure","alt":"Rails File Structure","nro":53,"url":"http://i.imgur.com/whOL4DQ.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Rails File Structure","attributes":{},"skip":false,"key":"1.9.1.2"},{"backlink":"06-ruby-rails/rails-apis/consuming-an-api.html#fig1.9.3.1","level":"1.9.3","list_caption":"Figure: API Graphic","alt":"API Graphic","nro":54,"url":"http://www.programmableweb.com/wp-content/smart-file-small.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"API Graphic","attributes":{},"skip":false,"key":"1.9.3.1"},{"backlink":"06-ruby-rails/rails-apis/consuming-an-api.html#fig1.9.3.2","level":"1.9.3","list_caption":"Figure: Archer Danger Zone","alt":"Archer Danger Zone","nro":55,"url":"http://www.eonline.com/eol_images/Entire_Site/2014013/rs_500x282-140113151420-92081-archer-danger-zone-gif-pnbv.gif","index":2,"caption_template":"Figure: _CAPTION_","label":"Archer Danger Zone","attributes":{},"skip":false,"key":"1.9.3.2"},{"backlink":"06-ruby-rails/rails-M-M/index.html#fig1.9.8.1","level":"1.9.8","list_caption":"Figure: Database relationships","alt":"Database relationships","nro":56,"url":"http://fms-itskills.ncl.ac.uk/db/ER.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Database relationships","attributes":{},"skip":false,"key":"1.9.8.1"},{"backlink":"06-ruby-rails/additional-topics/rails-oauth/index.html#fig1.9.10.1.1","level":"1.9.10.1","list_caption":"Figure: OAuth from Oracle","alt":"OAuth from Oracle","nro":57,"url":"https://docs.oracle.com/cd/E50612_01/doc.11122/oauth_guide/content/images/oauth/oauth_overview.png","index":1,"caption_template":"Figure: _CAPTION_","label":"OAuth from Oracle","attributes":{},"skip":false,"key":"1.9.10.1.1"},{"backlink":"07-frontend-frameworks/index.html#fig1.10.1","level":"1.10","list_caption":"Figure: spa_architecture","alt":"spa_architecture","nro":58,"url":"https://cloud.githubusercontent.com/assets/25366/8970635/896c4cce-35ff-11e5-96b2-ef7e62784764.png","index":1,"caption_template":"Figure: _CAPTION_","label":"spa_architecture","attributes":{},"skip":false,"key":"1.10.1"},{"backlink":"10-react/index.html#fig1.10.2.1","level":"1.10.2","list_caption":"Figure: ReactJS","alt":"ReactJS","nro":59,"url":"https://facebook.github.io/react/img/logo_og.png","index":1,"caption_template":"Figure: _CAPTION_","label":"ReactJS","attributes":{},"skip":false,"key":"1.10.2.1"},{"backlink":"10-react/react-intro/index.html#fig1.10.2.1.1","level":"1.10.2.1","list_caption":"Figure: React components","alt":"React components","nro":60,"url":"http://maketea.co.uk/images/2014-03-05-robust-web-apps-with-react-part-1/wireframe_deconstructed.png","index":1,"caption_template":"Figure: _CAPTION_","label":"React components","attributes":{},"skip":false,"key":"1.10.2.1.1"},{"backlink":"10-react/react-intro/additional-topics.html#fig1.10.2.1.2.1","level":"1.10.2.1.2","list_caption":"Figure: Flux Architecture","alt":"Flux Architecture","nro":61,"url":"https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Flux Architecture","attributes":{},"skip":false,"key":"1.10.2.1.2.1"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.1","level":"1.11.5","list_caption":"Figure: S3 Buckets","alt":"S3 Buckets","nro":62,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/AWS_Simple_Icons_Storage_Amazon_S3_Bucket_with_Objects.svg/1024px-AWS_Simple_Icons_Storage_Amazon_S3_Bucket_with_Objects.svg.png","index":1,"caption_template":"Figure: _CAPTION_","label":"S3 Buckets","attributes":{},"skip":false,"key":"1.11.5.1"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.2","level":"1.11.5","list_caption":"Figure: S3 Static Website","alt":"S3 Static Website","nro":63,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_Architecture_4b.png","index":2,"caption_template":"Figure: _CAPTION_","label":"S3 Static Website","attributes":{},"skip":false,"key":"1.11.5.2"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.3","level":"1.11.5","list_caption":"Figure: Static Site Buckets","alt":"Static Site Buckets","nro":64,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_Architecture_1.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Static Site Buckets","attributes":{},"skip":false,"key":"1.11.5.3"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.4","level":"1.11.5","list_caption":"Figure: Bucket Properties","alt":"Bucket Properties","nro":65,"url":"https://dl.dropboxusercontent.com/u/111919248/Screenshots/Screen%20Shot%202016-03-07%20at%206.52.59%20AM.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Bucket Properties","attributes":{},"skip":false,"key":"1.11.5.4"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.5","level":"1.11.5","list_caption":"Figure: Bucket Policy","alt":"Bucket Policy","nro":66,"url":"https://dl.dropboxusercontent.com/u/111919248/Screenshots/Screen%20Shot%202016-03-07%20at%206.57.34%20AM.png","index":5,"caption_template":"Figure: _CAPTION_","label":"Bucket Policy","attributes":{},"skip":false,"key":"1.11.5.5"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.6","level":"1.11.5","list_caption":"Figure: Logging","alt":"Logging","nro":67,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_ConfigureLogging.png","index":6,"caption_template":"Figure: _CAPTION_","label":"Logging","attributes":{},"skip":false,"key":"1.11.5.6"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.7","level":"1.11.5","list_caption":"Figure: Uploading files","alt":"Uploading files","nro":68,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_HostingStaticWebsite_1.png","index":7,"caption_template":"Figure: _CAPTION_","label":"Uploading files","attributes":{},"skip":false,"key":"1.11.5.7"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.8","level":"1.11.5","list_caption":"Figure: Upload complete","alt":"Upload complete","nro":69,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_HostingStaticWebsite_2.png","index":8,"caption_template":"Figure: _CAPTION_","label":"Upload complete","attributes":{},"skip":false,"key":"1.11.5.8"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.9","level":"1.11.5","list_caption":"Figure: Static site settings","alt":"Static site settings","nro":70,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_ConfigureAmazonS3Website_1.png","index":9,"caption_template":"Figure: _CAPTION_","label":"Static site settings","attributes":{},"skip":false,"key":"1.11.5.9"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.1","level":"1.12.1","list_caption":"Figure: Memory","alt":"Memory","nro":71,"url":"http://www.bernstein-plus-sons.com/.dowling/Prog_Lang_Module/images/lots.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Memory","attributes":{},"skip":false,"key":"1.12.1.1"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.2","level":"1.12.1","list_caption":"Figure: Stack","alt":"Stack","nro":72,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/2000px-Data_stack.svg.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Stack","attributes":{},"skip":false,"key":"1.12.1.2"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.3","level":"1.12.1","list_caption":"Figure: Queue","alt":"Queue","nro":73,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Queue","attributes":{},"skip":false,"key":"1.12.1.3"},{"backlink":"08-cs/cs-ruby-linked-list/index.html#fig1.12.2.1","level":"1.12.2","list_caption":"Figure: http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","alt":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","nro":74,"url":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","index":1,"caption_template":"Figure: _CAPTION_","label":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","attributes":{},"skip":false,"key":"1.12.2.1"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.1","level":"1.12.3","list_caption":"Figure: A tree","alt":"A tree","nro":75,"url":"http://poj.org/images/1330_1.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"A tree","attributes":{},"skip":false,"key":"1.12.3.1"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.2","level":"1.12.3","list_caption":"Figure: BST","alt":"BST","nro":76,"url":"http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png","index":2,"caption_template":"Figure: _CAPTION_","label":"BST","attributes":{},"skip":false,"key":"1.12.3.2"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.3","level":"1.12.3","list_caption":"Figure: BST worst case","alt":"BST worst case","nro":77,"url":"http://interactivepython.org/runestone/static/pythonds/_images/skewedTree.png","index":3,"caption_template":"Figure: _CAPTION_","label":"BST worst case","attributes":{},"skip":false,"key":"1.12.3.3"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.4","level":"1.12.3","list_caption":"Figure: Trie","alt":"Trie","nro":78,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/400px-Trie_example.svg.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Trie","attributes":{},"skip":false,"key":"1.12.3.4"},{"backlink":"08-cs/cs-algorithm-complexity/index.html#fig1.12.6.1","level":"1.12.6","list_caption":"Figure: Complexity Curves","alt":"Complexity Curves","nro":79,"url":"big-o-complexity-curves.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Complexity Curves","attributes":{},"skip":false,"key":"1.12.6.1"},{"backlink":"08-cs/cs-ruby-mergesort/index.html#fig1.12.9.1","level":"1.12.9","list_caption":"Figure: Merge Sort Diagram","alt":"Merge Sort Diagram","nro":80,"url":"http://shawnjanas.com/wp-content/uploads/2011/06/mergesort.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Merge Sort Diagram","attributes":{},"skip":false,"key":"1.12.9.1"},{"backlink":"08-cs/additional/memory.html#fig1.12.12.1","level":"1.12.12","list_caption":"Figure: Memory","alt":"Memory","nro":81,"url":"http://www.cs.cornell.edu/courses/cs312/2004fa/lectures/memory%20layout.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Memory","attributes":{},"skip":false,"key":"1.12.12.1"},{"backlink":"08-cs/additional/memory.html#fig1.12.12.2","level":"1.12.12","list_caption":"Figure: Memory Hierarchy","alt":"Memory Hierarchy","nro":82,"url":"http://tjliu.myweb.hinet.net/COA_CH_6.files/image007.jpg","index":2,"caption_template":"Figure: _CAPTION_","label":"Memory Hierarchy","attributes":{},"skip":false,"key":"1.12.12.2"},{"backlink":"11-projects/project-3/post-mortem.html#fig1.13.3.1.1","level":"1.13.3.1","list_caption":"Figure: DilbertComic","alt":"DilbertComic","nro":83,"url":"http://assets.amuniversal.com/da319cc06d5001301d7a001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"DilbertComic","attributes":{},"skip":false,"key":"1.13.3.1.1"},{"backlink":"13-warm-ups/teaser-binary-search.html#fig1.14.4.1","level":"1.14.4","list_caption":"Figure: Binary Search","alt":"Binary Search","nro":84,"url":"./binary-search.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Binary Search","attributes":{},"skip":false,"key":"1.14.4.1"}]},"plugins":["toggle-chapters","codeblock-disable-glossary","youtube","image-captions"],"pluginsConfig":{"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"image-captions":{"variable_name":"_pictures"}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"04-server/01npm.md","mtime":"2018-03-17T07:45:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-17T08:51:56.048Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -97,7 +97,7 @@
     * [Express Internet](05-express/express-intro/02internet.md)
     * [Express URLs](05-express/express-intro/03expressurls.md)
     * [Views](05-express/express-intro/04views.md)
-    * [Advanced Views](05-express/express-intro/04views-advanced.md)
+    * [Advanced Views](05-express/express-intro/06views-advanced.md)
   * [Full RESTful Routing](05-express/express-ajax-crud/readme.md)
     * [CRUD in Express](05-express/express-intro/05crudexpress.md)
   * [Express Authentication](05-express/express-auth/readme.md)
