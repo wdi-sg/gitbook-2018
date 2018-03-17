@@ -1,16 +1,5 @@
 # Pinging Around the World
 
-#### Answer and discuss the following questions with your pair:
-
-- What does HTTP stand for?
-- Which protocol is used to resolve a domain name to an IP address?
-- How do clients compare to hosts?
-- Compare different HTTP status codes.
-- Draw your own diagram of a request/response cycle and label where the following would come into play: client, host/server, URL, client-side languages, server-side languages, data
-- T/F: HTTP headers can be changed by a user before executing a request.
-- T/F: Every HTTP request has a domain and a path.
-- T/F: Email uses the HTTP Protocol.
-
 #### Use the `host` command to see what the IP address of a host
 ```
 host google.com

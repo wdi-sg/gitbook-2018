@@ -1,15 +1,89 @@
-# Package Management with ~~NPM~~ [YARN](https://yarnpkg.com/en/docs/cli/add)
+# Modules, NPM and Package Management with ~~NPM~~ [YARN](https://yarnpkg.com/en/docs/cli/add)
 
 ### Context
-We breifly touched on the fact that we can use outside libraries just like we can in our webpages, but we no longer have `<script>` includes and such. Now we will have "packages", or dependencies. NPM is the tool we use to get those libraries or packages from over the internet.
+We can use outside libraries just like we can in our webpages, but we no longer have `<script>` includes and such. Now we will have "packages", or dependencies. NPM is the tool we use to get those libraries or packages from over the internet.
 
 ### Objectives
+- Explain the use of modules, packages, `require`
 - Manage package versions
 - Explain dependency versioning
 - Explain npm, yarn, and its purpose
 - Update packages and change node version based on work environment
 
-## The Problem At Hand
+## Node Modules
+
+How do we include external libraries into our node.js programs? We are used to `script` and `link`:
+
+JQuery script include:
+```
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+```
+Bootstrtap CSS include:
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+```
+**But** our javascript in no longer being executed in the context of a web page.
+
+Luckily node provides a way to use external libraries.
+
+```
+// the jquery library is actually all contained in the variable $
+const $ = require('jquery');
+```
+Note: jquery doesn't come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM
+
+### Make your own modules
+
+In essence, if a file puts something inside of module.exports, it can be made available for use in any other file using `require()`.
+
+For example, let's make two files: `touch my-module.js main.js`
+
+```js
+// my-module.js
+const number = 7
+module.exports.name = "Kenaniah"
+module.exports.arr = [1, 2, 3]
+module.exports.getNumber = function(){
+    console.log("Get number called. Returning: ", number)
+    return number
+}
+
+console.log("End of my-module.js file")
+```
+
+#### Use the module you created
+
+```js
+// main.js
+
+// here we're grabbing everything that's "exported" in our other file, and storing it a variable called 'my'
+const my = require('./my-module')
+
+// Variables and such that were not exported aren't in scope
+console.log("number is " + typeof number) // undefined
+
+// Anything exported can be accessed on the object
+console.log("Name is: ", my.name)
+
+// Closures are still closures
+console.log("The number is: " + my.getNumber())
+
+// JavaScript is still JavaScript
+console.log("The array contains " + my.arr.length + " elements")
+
+// Let's see the module we imported
+console.log(my)
+```
+
+Then try running:
+```
+node my-module.js
+node main.js
+```
+
+## Packages on the Internet
+
+### The Problem At Hand
 
 As we develop our own node apps we will find ourselves implementing third-party modules to help us with a wide range of tasks. These modules, which are commonly referred to as node packages or dependencies, are maintained by various developers and can be viewed as living and breathing mini-applications.
 
@@ -191,6 +265,8 @@ Did someone mention updating a package? To update a package you simply run the c
 Node will install many large files to the `node_modules` folder. We don't want nor need to push these to our GitHub repo! Whoever takes our project can run `yarn install` after cloning our repo and run with it. So what can we do?
 
 We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.
+
+Here is a [link](https://github.com/wdi-sg/wdi-better-underdog/blob/master/.gitignore) to our official class `.gitignore` file. Just copy it and put it in each of your repos with a node_modules file.
 
 #### 2 ways to do gitignore
 

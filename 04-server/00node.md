@@ -1,15 +1,27 @@
 # Intro to Node.js
 
+---
+
 ### Objectives
 - Explain what Node.js is & why it exists
 - Compare and contrast Node/Express vs. Ruby/Rails
-- Use module.exports and require to organize code
+
+---
 
 ## What is Node.js?
+
+![](http://jce-il.github.io/ASOSMA/firefox-ios/general.jpg)
+
+---
+![](https://i.imgur.com/Qgz5eFD.png)
+
+<span class="non-slide"></span>
 
 The makers of Node.js took javascript (which normally only runs in the browser) and made it available in your computer (on the server side). They took Google's V8 JavaScript Engine and gave it the ability to compile JS programs into machine code.
 
 Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while it's possible to build web applications and APIs in straight JS, we'll actually be using a framework on top of Node called Express.
+
+---
 
 #### Asynchronous
 
@@ -104,77 +116,6 @@ console.log("hello");
 
 `node main.js`
 
-## Node Modules
-
-How do we include external libraries into our node.js programs? We are used to `script` and `link`:
-
-JQuery script include:
-```
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-```
-Bootstrtap CSS include:
-```
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-```
-**But** our javascript in no longer being executed in the context of a web page.
-
-Luckily node provides a way to use external libraries.
-
-```
-// the jquery library is actually all contained in the variable $
-const $ = require('jquery');
-```
-Note: jquery doesn't come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM
-
-### Make your own modules
-
-In essence, if a file puts something inside of module.exports, it can be made available for use in any other file using `require()`.
-
-For example, let's make two files: `touch my-module.js main.js`
-
-```js
-// my-module.js
-const number = 7
-module.exports.name = "Kenaniah"
-module.exports.arr = [1, 2, 3]
-module.exports.getNumber = function(){
-    console.log("Get number called. Returning: ", number)
-    return number
-}
-
-console.log("End of my-module.js file")
-```
-
-#### Use the module you created
-
-```js
-// main.js
-
-// here we're grabbing everything that's "exported" in our other file, and storing it a variable called 'my'
-const my = require('./my-module')
-
-// Variables and such that were not exported aren't in scope
-console.log("number is " + typeof number) // undefined
-
-// Anything exported can be accessed on the object
-console.log("Name is: ", my.name)
-
-// Closures are still closures
-console.log("The number is: " + my.getNumber())
-
-// JavaScript is still JavaScript
-console.log("The array contains " + my.arr.length + " elements")
-
-// Let's see the module we imported
-console.log(my)
-```
-
-Then try running:
-```
-node my-module.js
-node main.js
-```
-
 ## [Process](https://nodejs.org/api/process.html#process_process)
 The `process` object is a `global` that provides information about, and control over, the current Node.js process. As a global, it is always available to Node.js applications without using `require()`. Two most commonly used `process` property are `process.argv` and `process.env`.
 
@@ -244,5 +185,51 @@ A `module` isn't actually a global object, but rather, it is local to each modul
 
 > Note: The module's source file is only executed the first time that file is required.
 
-#### Review:
+---
 
+### Pairing Exercises:
+
+1. Use the `node` command to open the REPL and do some basic math.
+
+1. Write a basic node program that console.logs something
+```
+touch index.js
+```
+Write something like:
+```
+console.log("hello");
+```
+Run it:
+```
+node index.js
+```
+
+1. `console.log` the value of `process.argv` in your program
+
+1. Write a basic node program that takes user input and `console.log`s it back out to the user:
+
+So writing this on the command line:
+```
+node index.js yourArgumentHere
+```
+
+Should result in:
+```
+yourArgumentHere
+```
+
+In your `index.js` file, in order to get your first argument, you will need:
+```
+process.argv[2]
+```
+
+Extra Question:
+What is the value of `process.argv[0]` and `process.argv[1]`?
+
+1. Add the ability to put a second argument for your command line program. `console.log` that as well.
+
+1. Add the ability to add an unlimited amount of extra arguments to your program. `console.log` each one
+
+1. Create a nodejs command line program that takes 2 arguments and adds them together.
+
+1. Create a nodejs command line program that takes arguments and adds them all together.
