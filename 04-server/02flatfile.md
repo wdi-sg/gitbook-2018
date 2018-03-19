@@ -52,8 +52,11 @@ sublime index.js
 
 ```
 const jsonfile = require('jsonfile');
+
 const file = 'data.json'
-jsonfile.readFile(file, function(err, obj) {
+
+jsonfile.readFile(file, (err, obj) => {
+
   console.dir(obj)
 })
 ```
@@ -95,6 +98,43 @@ Run the file.
 node index.js
 ```
 
+---
+
+### Writing to the file:
+
+```
+const jsonfile = require('jsonfile');
+
+const file = 'data.json'
+
+const obj = {
+  "hello" : "banana",
+  "goodbye" : "banana"
+};
+
+jsonfile.writeFile(file, obj, (err) => {
+  console.error(err)
+});
+```
+---
+
+### Reading *and* Writing to the file:
+
+```
+const jsonfile = require('jsonfile');
+
+const file = 'data.json'
+
+jsonfile.readFile(file, (err, obj) => {
+
+  console.dir(obj);
+  obj["helloworld"] = "monkey";
+
+  jsonfile.writeFile(file, obj, (err) => {
+    console.error(err)
+  });
+});
+```
 ---
 
 ### Pairing Exercise:
