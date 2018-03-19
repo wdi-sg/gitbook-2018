@@ -2,42 +2,13 @@
 
 ### Views
 
-First, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/public`, and create an `index.html` page inside.
+We cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing a View</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-  </body>
-</html>
-```
-
-Let's modify the `index.js` to send this file via `.sendFile`. In order to use this function, we also need to add where `.sendFile` can find the views.
-
-**index.js**
-```js
-const express = require('express');
-const path = require('path');
-const app = express();
-
-// this sets a static directory for 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', function(req, res) {
-  // use sendFile to render the index page
-  res.sendFile('index.html');
-});
-
-app.listen(3000);
-```
+We want to have this page's HTML be different for each request. How do we do this??
 
 ### Templating with Handlebar
 
-The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **[Handlebar](http://handlebarsjs.com/)** and use that instead.
+If we want to customize what's on the page? We're going to set up a template engine called **[Handlebar](http://handlebarsjs.com/)** and use that instead.
 
 We need to do a couple steps to get the template engine working.
 
@@ -92,7 +63,7 @@ const app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   // giving home.handlebars file an object/context with `name` as a property
   res.render('home', {name: "Sterling Archer"});
 });
@@ -127,7 +98,7 @@ var context = {
   body: "<p>This is a post about &lt;p&gt; tags</p>"
 }
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.render('home', context);
 });
 
@@ -213,3 +184,6 @@ will result in:
   <li>Charles Jolley</li>
 </ul>
 ```
+
+### Pairing Exercise:
+Implement one template on your express app

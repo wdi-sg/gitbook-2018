@@ -1,6 +1,11 @@
 ## Your Disk
 
+---
+![](https://i1.wp.com/techmits.com/wp-content/uploads/2017/11/Basic-Computer-Architecture.jpg?resize=852%2C465&ssl=1)
+
 We won't have to deal with most of the physical components of the computer when writing our programs, but we should understand about what the disk is and does.
+
+---
 
 ### We haven't learned to store anything yet
 
@@ -10,9 +15,13 @@ The result of our programs isn't capable of storing any data yet- one of the mos
 
 The only official way that we've seen to store data is when you press Command-S on your script and HTML files. Your programs don't have the ability to save anything that the user does.
 
+---
+
 ### We can write node.js programs that store data to our disk.
 
 We will be using the `jsonfile` node package to write plain JSON text to our disk. This will come in handy later when we need to store info in our web applications.
+
+---
 
 Begin in a new directory
 
@@ -21,18 +30,22 @@ mkdir jsonfile
 cd jsonfile
 ```
 
+Make a node project
 ```
 yarn init
 ```
 
+Add the library
 ```
 yarn add jsonfile
 ```
 
+Add your js file
 ```
 touch index.js
 ```
 
+Edit your file with this text:
 ```
 sublime index.js
 ```
@@ -45,6 +58,8 @@ jsonfile.readFile(file, function(err, obj) {
 })
 ```
 
+---
+
 Run the file.
 ```
 node index.js
@@ -56,6 +71,8 @@ Create the file.
 ```
 touch data.json
 ```
+
+---
 
 Run the file.
 ```
@@ -77,3 +94,8 @@ Run the file.
 ```
 node index.js
 ```
+
+---
+
+### Pairing Exercise:
+Run the above code

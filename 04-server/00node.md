@@ -27,12 +27,18 @@ Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while
 
 On top of that, one of the big differences is that Node.js is designed to be _event-driven_ and _asynchronous_. While earlier frameworks can only do one thing at a time, Node purposefully sends nearly everything to the background and keeps going.
 
+---
+
 Just like a click event is something that is designated to happen at another time, we will see that server side processing of a request follows a similar pattern- one where we actaully have no idea when or any control over when we can successfully send a response to the request.
+
+---
 
 Relative "distances" are actually quite far when in the context of executing a program. (In other words, this metaphor is to scale in the mathematical sense)
 ![https://blog.codinghorror.com/content/images/2014/May/storage-latency-how-far-away-is-the-data.png](https://blog.codinghorror.com/content/images/2014/May/storage-latency-how-far-away-is-the-data.png)
 
 [https://blog.codinghorror.com/the-infinite-space-between-words/](https://blog.codinghorror.com/the-infinite-space-between-words/)
+
+---
 
 #### Ruby/Rails vs. JS/Node/Express
 
@@ -49,35 +55,35 @@ __Why Choose Node/Express?__
 
 - JavaScript is everywhere; one language to rule them all
 - Asynchronous means generally faster performance
-- Better _concurrency_ – it can serve data to more users with fewer computer resources
 - Designed to make real time applications
+
+---
 
 #### Installing Node.js
 
-To check if we already have Node installed, type: ``node -v`` in terminal. You will see the Node version if it's installed.
+To check if we already have Node installed, type: `node -v` in terminal. You will see the Node version if it's installed.
 
 If it's not installed, you can install from the Node.js website, or better yet, use Homebrew like this:
 
-```bash
+```
 brew install node
 ```
 
 One of the advantages of using Homebrew is that you can update your versions easily like this:
 
-```bash
+```
 brew upgrade node
 ```
 
-This will install both Node.js and npm.
+This will install both Node.js and npm
 
-## Getting reacquainted with JS
-
-Before we go further, you should try test it out.  There are two ways to do this – try them both.
+---
 
 #### Interactive Node
 
 If you simply type node in terminal, you will launch Node's REPL (Read-Eval-Print-Loop) interactive utility. It works similar to the chrome dev tools console. Let's test it:
 
+---
 ```js
 node
 
@@ -100,6 +106,8 @@ node
 
 Press control-c twice to exit REPL.
 
+---
+
 #### Executing a JS program
 
 Write and execute some code in a file! In your working directory:
@@ -116,10 +124,14 @@ console.log("hello");
 
 `node main.js`
 
+---
+
 ## [Process](https://nodejs.org/api/process.html#process_process)
 The `process` object is a `global` that provides information about, and control over, the current Node.js process. As a global, it is always available to Node.js applications without using `require()`. Two most commonly used `process` property are `process.argv` and `process.env`.
 
 "Process" refers to one CPU execution environment. Similar to how one chrome tab exists within the browser.
+
+---
 
 ### process.argv
 The `process.argv` property returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be [process.execPath](https://nodejs.org/api/process.html#process_process_execpath).
@@ -139,6 +151,8 @@ the output will be:
 4: four
 ```
 
+---
+
 ### Unix environment variables: A Refresher
 When we write apps, we have certain global "environment" variables that are different for each context or **installed environment**. -The enviroment that you are running the app in.
 
@@ -147,6 +161,8 @@ Examples:
 - a variable for whether or not the app is running on your mac computer, or on a server, or on a "cloud" virtual server.
 - a variable that holds the API credentials for accessing a Google API - (one for testing and one for "production")
 - a variable that hold the location of a certain configuration file or any disk location: `/Application/Google\ Chrome` etc.
+
+---
 
 ### process.env
 The process.env property returns an object containing the user environment. Typically, the object looks like this.
@@ -165,6 +181,7 @@ The process.env property returns an object containing the user environment. Typi
 }
 ```
 Practically, updating the `env` property will allow programs to run different coding flow depending on different development environment.
+---
 
 For example
 ```
@@ -178,6 +195,8 @@ if(process.env.NODE_ENV === 'development') {
   mongoose.connect(<production db uri>)
 }
 ```
+
+---
 
 #### Things to Note
 

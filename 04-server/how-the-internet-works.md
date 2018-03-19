@@ -217,4 +217,3 @@ Real-life recreation with paper. (One person pretends to be the backend)
 - Deal with the server response
 - If it's good, display the output to the user
 - If it's bad, do nothing, or display an error to the user
-

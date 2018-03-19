@@ -1,7 +1,10 @@
 # Modules, NPM and Package Management with ~~NPM~~ [YARN](https://yarnpkg.com/en/docs/cli/add)
+---
 
 ### Context
 We can use outside libraries just like we can in our webpages, but we no longer have `<script>` includes and such. Now we will have "packages", or dependencies. NPM is the tool we use to get those libraries or packages from over the internet.
+
+---
 
 ### Objectives
 - Explain the use of modules, packages, `require`
@@ -9,6 +12,8 @@ We can use outside libraries just like we can in our webpages, but we no longer 
 - Explain dependency versioning
 - Explain npm, yarn, and its purpose
 - Update packages and change node version based on work environment
+
+---
 
 ## Node Modules
 
@@ -22,6 +27,7 @@ Bootstrtap CSS include:
 ```
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 ```
+---
 **But** our javascript in no longer being executed in the context of a web page.
 
 Luckily node provides a way to use external libraries.
@@ -31,6 +37,8 @@ Luckily node provides a way to use external libraries.
 const $ = require('jquery');
 ```
 Note: jquery doesn't come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM
+
+---
 
 ### Make your own modules
 
@@ -50,6 +58,7 @@ module.exports.getNumber = function(){
 
 console.log("End of my-module.js file")
 ```
+---
 
 #### Use the module you created
 
@@ -65,25 +74,30 @@ console.log("number is " + typeof number) // undefined
 // Anything exported can be accessed on the object
 console.log("Name is: ", my.name)
 
-// Closures are still closures
-console.log("The number is: " + my.getNumber())
-
 // JavaScript is still JavaScript
 console.log("The array contains " + my.arr.length + " elements")
 
 // Let's see the module we imported
 console.log(my)
 ```
-
 Then try running:
 ```
 node my-module.js
 node main.js
 ```
 
+---
+
 ## Packages on the Internet
 
 ### The Problem At Hand
+Dealing with dependencies and versions.
+![https://cdn-images-1.medium.com/max/2000/1*xVArhwHrhwXoBPWlJTGM4g.png](https://cdn-images-1.medium.com/max/2000/1*xVArhwHrhwXoBPWlJTGM4g.png)
+
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
 
 As we develop our own node apps we will find ourselves implementing third-party modules to help us with a wide range of tasks. These modules, which are commonly referred to as node packages or dependencies, are maintained by various developers and can be viewed as living and breathing mini-applications.
 
@@ -92,6 +106,18 @@ These applications also have their own dependencies. Do we want each of these li
 What if the version of the library gets an upgrade? Can we use that new, shiny, bug free code? npm allows us to do that.
 
 What if the code in the new version is incompatible with how we are currently using the library? What if we know the latest version has bugs and we want to wait to upgrade? npm allows us to control that.
+
+
+---
+### Yarn and NPM
+
+We will be managing our packages through yarn. Global packages can still be installed through npm.
+
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+
 
 
 ## NPM Intro - (5 mins)
@@ -109,6 +135,7 @@ npm functions as two things, primarily:
 
 ***tip:*** To find out which version of npm you have, run the command `npm -v`. To find out which version of node you're using, run the command `node --version`.
 
+
 ## [Yarn](https://yarnpkg.com/en/) Intro
 
 Package dependencies are actually quite complex. (Packages that depend on packages that depend on packages, all with their own package version requirements.) Yarn is the new tool designed to deal with that level of complexity.
@@ -124,6 +151,7 @@ export PATH="$PATH:`yarn global bin`"
 
 ***tip:*** make sure yarn is installed by running `yarn --version`.
 
+
 ## ~~NPM~~ YARN as a Repository - Demo (10 mins)
 
 Let's cover the first point. `yarn` can be thought of as a GitHub, of sort, as in it is an online repository containing thousands of node libraries and applications. If you know the name of the node package you'd like to use, a good way to find its docs would be to search for it at [https://yarnpkg.com/](https://yarnpkg.com/en/).
@@ -136,6 +164,7 @@ However, if you're not sure of the module name your application needs help from,
 
 More often than not, the package you need will pop up in the first page of results, if not the very first result.
 
+
 ## Package Installation
 
 As mentioned, `yarn` is also an extremely powerful command-line tool that allows us to communicate with the npm repository. For example, if you wanted to download the `react` package into your application, you would run the command `yarn add react`. `yarn add <package name>` is the command format for _local_ installation. When a local installation occurs, `yarn` installs the specified package into a `node_modules` folder located in the root of your node application's folder. If no `node_modules` folder is present - like when you're installing the app's first third-party package - one will be automatically generated. By default, `yarn` will perform local installations.
@@ -145,21 +174,13 @@ However, there are times when you need to install a package globally. Perhaps th
 
 To quickly summarize, you locally install a package when you its purpose is app specific, and you globally install a package when its purpose is app-agnostic.
 
-
-### Installing nodemon
-```bash
-yarn global add nodemon
-```
-
-If we just ran `node nameOfFile.js`, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax
-
-```bash
-nodemon nameOfFile.js
-```
+---
 
 ## Package.json
 
 At this point, you may be asking yourself a very important question: how does `yarn` know I have a node app that will accept installed packages?! The answer is `package.json`.
+
+---
 
 The `package.json` file contains various metadata relevant to your application and most importantly, it gives `yarn` information that allows it to identify your app.
 
@@ -180,6 +201,9 @@ Here's an example of a `package.json`:
 }
 ```
 
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+
 Note all the metadata attributes of the file (these are just *some* attributes):
 
 - name: name of the package
@@ -192,7 +216,9 @@ Note all the metadata attributes of the file (these are just *some* attributes):
 - repository: repository type and url of the package
 - main: entry point of the package
 
-Out of all these pieces of data, only two are required for `yarn` to recognize your app: name and version. As long as you have those two pieces of information, `yarn` will be able to locate your app when installing packages into your app's `node_modules` folder.
+Only two things are actually required for `yarn` to recognize your app: name and version.
+
+As long as you have those two pieces of information, `yarn` will be able to locate your app when installing packages into your app's `node_modules` folder.
 
 This file also serves as a documentation of your application for other developers to use. Your description can give anyone a quick idea on the purpose of your package and just by skimming your listed dependencies, a fellow developer can quickly see what your app depends on.
 
@@ -200,13 +226,11 @@ In terms of your application dependencies, when working with a team of developer
 
 <!-- ***tip:*** Running `yarn add <package name>` will install the package into your `node_modules` folder but will not automatically add the package as a dependency in your package.json. In order to do so, add the `--save` option to the command (i.e. `npm i --save express`). -->
 
+---
+
 ## Start a fresh node project
 
-There are two main ways you can start a node project, by setting it up yourself, or by using other developers' setting. By running `yarn install`, we are essentially running a project with other developer' setting, like stealing a recipe from a cookbook.
-
-<img src="http://www.chicagonow.com/intellectual-chicago-suburbs/files/2016/02/julia_turkey_tx800.jpg" alt="Even Julia Child copied someone else's recipe" align="center" />
-
-So how do we start our own node project? To do so you need a blank directory and create your own `package.json` file. Thankfully you don't have to write it from scratch.
+You need a blank directory and create your own `package.json` file. Thankfully you don't have to write it from scratch.
 
 ```
 // first thing first, create the blank directory
@@ -219,9 +243,9 @@ yarn init
 
 You will then be asked by `yarn` a couple of questions related to your project. Answer those questions accordingly _(no answers are usually okay at this stage)_.
 
-![yarn search](../../_assets/yarn-init.png)
-
 and **voila!** You have created your first node project.
+
+---
 
 ## Version Management
 
@@ -236,6 +260,10 @@ But how do we know what version of a package we are using? We do want to avoid t
   }
 ...
 ```
+
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
 
 Each listed dependency has a specified version associated with it, so that we may know what exactly we're working with. There are various ways a dependency version can be declared, and these version values often come with some interesting characters (`~`, `^`, etc.). Here's a chart to help break things down:
 
@@ -255,11 +283,19 @@ Each listed dependency has a specified version associated with it, so that we ma
 
 Now when working with a team if you ever encounter a scenario where a package may be behaving differently for different developers, you know to check the dependency versions in the `package.json` files. Also, when updating a package you should check to see if there are any breaking changes mentioned in the version documentation.
 
+---
+
 #### Updating a package
 
 Did someone mention updating a package? To update a package you simply run the command `yarn update <package name>`. Pretty intuitive, eh?
 
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+
 ***note:*** Not all dependencies we use are used by the application in production. Whenever we need a dependency that will only be used in our development environment, say a package that helps with js linting, we will add that dependency to a `devDependencies` attribute in our package.json. This type of installation can be done with the command `yarn add <package name> --dev`.
+
+---
 
 ## Using .gitignore
 Node will install many large files to the `node_modules` folder. We don't want nor need to push these to our GitHub repo! Whoever takes our project can run `yarn install` after cloning our repo and run with it. So what can we do?
@@ -267,6 +303,12 @@ Node will install many large files to the `node_modules` folder. We don't want n
 We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.
 
 Here is a [link](https://github.com/wdi-sg/wdi-better-underdog/blob/master/.gitignore) to our official class `.gitignore` file. Just copy it and put it in each of your repos with a node_modules file.
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+<span class="non-slide"></span>
+
+
 
 #### 2 ways to do gitignore
 

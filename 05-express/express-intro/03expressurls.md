@@ -37,3 +37,6 @@ app.get("/add/*", function(req, res) {
 ```
 
 This will give you a URL like `http://localhost:3000/add/5/3/3/2/3` and give you an answer.
+
+### Pairing Exercise:
+- Add each of the routes above into your app. Copy each one separately!
