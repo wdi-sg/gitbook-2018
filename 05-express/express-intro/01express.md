@@ -2,10 +2,14 @@
 
 To create a web application using Node, we're going to import a web app server framework called Express. We can install this as a package using npm, then use it to create applications.
 
+---
+
 ## Setting up a project
 Create a new folder for use with the project using `mkdir node_calculator`, and cd into `cd node_calculator`
 
 First we want to start a new project by going `yarn init`. Follow the instructions, clicking `enter` through the statements. you many want to specify a version number, but most default options should be fine. It will also specify an initial file to use. The default is `index.js`, and this acts as the "entry point" into our app.
+
+---
 
 ## Basic Express Setup
 
@@ -19,6 +23,8 @@ touch index.js
 **Note:** 
 
 We've been running `yarn global add <package name>`to install the package globally. You'll want to reserve `global add` for packages that will be run in the command line.
+
+---
 
 ### index.js
 
@@ -36,6 +42,8 @@ app.get('/', (req, res) => {
 
 app.listen(3000)
 ```
+
+---
 
 ### Installing nodemon
 ```bash
