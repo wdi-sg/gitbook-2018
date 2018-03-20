@@ -148,31 +148,6 @@ so:
 * `triple curly braces` will **NOT** escape the `expression`
 
 
-* `<% name %>` will not print out the expression, but it will execute it
-  * Handy for `if` statements and loops
-
-This doesn't only apply to primitive variables. We can even include variable declarations and iterators using ejs.
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing a View</title>
-  </head>
-  <body>
-    <h1>Hello, <%= name %>!</h1>
-
-    <% var obsessions = var obsessions = ['spying', 'sarcasm', 'Kenny Loggins']; %>
-
-    <ul>
-    <% obsessions.forEach(function(item) { %>
-      <li><%= item %></li>
-    <% }); %>
-    </ul>
-  </body>
-</html>
-```
-
 ---
 
 #### Block Expressions

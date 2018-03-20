@@ -198,7 +198,7 @@ When you go to the URL they give, it's your computer!
 - text message one of your friends the link and have them open it
 - find an html file that you have, copy it into your server directory, and try that in your browser
 
-- try to install `serve` package and run that
+- try to install `serve` package and run it
 - if you get done with that, try to implement features of the full server as specified in the MDN link above:
 
 - Detect and write a nice 404 message to the user who tries to get something that doesn't exist.
