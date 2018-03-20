@@ -40,17 +40,30 @@ protocol|host/domain name|port|      path         | querystring   | hash/fragmen
 ---
 
 
-Element           | About
-------------------|--------
-protocol          | the most popular application protocol used on the world wide web is HTTP. Other familiar types of application protocols include FTP, SSH, GIT, FILE, HTTPS
-                  |
-host/domain name  | the host or domain name is looked up in DNS to find the IP address of the host - the server that's providing the resource. This may include a subdomain, which in it's simplest sense is like a folder on the server. www is actually a subdomain and is often used by default on servers, allowing you to omit it in the URL sometimes.
-                  |
-path              | web servers can organise resources into what is effectively files in directories; the path indicates to the server which file from which directory the client wants
-                  |
-querystring       | the client can pass parameters to the server through the querystring (in a GET request method); the server can then use these to customise the response - such as values to filter a search result
-                  |
-hash/fragment     | the URI fragment is generally used by the client to identify some portion of the content in the response; interestingly, a broken hash will not break the whole link - it isn't the case for the previous elements
+#### protocol
+the most popular application protocol used on the world wide web is HTTP. Other familiar types of application protocols include FTP, SSH, GIT, FILE, HTTPS
+
+---
+
+#### host/domain name
+the host or domain name is looked up in DNS to find the IP address of the host - the server that's providing the resource. This may include a subdomain, which in it's simplest sense is like a folder on the server. www is actually a subdomain and is often used by default on servers, allowing you to omit it in the URL sometimes.
+
+---
+
+#### path
+web servers can organise resources into what is effectively mimicking files in directories; the path indicates to the server which file from which directory the client wants
+
+---
+
+#### querystring
+the client can pass parameters to the server through the querystring (in a GET request method); the server can then use these to customise the response - such as values to filter a search result
+
+---
+
+#### hash/fragment
+the URI fragment is generally used by the client to identify some portion of the content in the response; interestingly, a broken hash will not break the whole link - it isn't the case for the previous elements
+
+---
 
 <br>
 _The Schema above is from [Tuts +](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)_
