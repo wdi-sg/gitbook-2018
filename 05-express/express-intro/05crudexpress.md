@@ -187,7 +187,7 @@ app.post('/animals', function(request, response) {
     console.error(err)
 
     // now look inside your json file
-    response.send(response.body);
+    response.send(request.body);
   });
 });
 
@@ -204,4 +204,26 @@ use a CURL command to make a POST request to your server
 curl -d "monkey=banana&koala=eucalyptus" -X POST http://localhost:3000/animals
 ```
 
-write the html form in a handlebars template to make the post request
+#### write the html form in a handlebars template to make the post request
+
+add handlebars to your app
+```
+yarn add handelbars-express
+```
+
+add a views directory
+```
+mkdir views
+```
+
+add the handlebars config into your express app
+```
+app.engine('handlebars', handlebars.create().engine);
+app.set('view engine', 'handlebars');
+```
+- create your form in a handlebars file in the views directory
+- set the action of the form to the path of the POST route
+
+- create a GET route request handler in your express app
+
+- try out your form
