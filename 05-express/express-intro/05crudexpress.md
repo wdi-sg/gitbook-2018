@@ -8,6 +8,8 @@ This is part of CRUD (Create, Read, Update, Destroy).
 
 [Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
+---
+
 We will need several pieces to do this:
 1. an HTML form
 1. a route and response callback that takes that data
@@ -15,6 +17,7 @@ We will need several pieces to do this:
 1. and, an HTML page to show the user
 
 First, let's talk about how to send data from the browser to the server.
+---
 
 ### HTTP Post
 
@@ -33,9 +36,13 @@ Real-life recreation with paper. (One person pretends to be the backend)
 - If it's good, display the output to the user
 - If it's bad, do nothing, or display an error to the user
 
+---
+
 Important Points:
 - the parameters for the request are in the headers, the data itself is in the body of the request (inside the envelope)
-- the point a post request isn't always to save something, but a request where something is saved is almost always a post request
+- the point of a post request isn't always to save something, but a request where something is saved is almost always a post request
+
+---
 
 ### How to make a POST request in the browser
 - one of the main default behaviors of HTML in the browser is that `<a>` tags create `GET` requests and `form` tags create POST requests.
@@ -81,6 +88,8 @@ We don't need to rename the route animals, because express will separate things 
 
 To receive this data we need to create a `POST` route in express and the `body-parser` npm module.
 
+---
+
 
 ### BodyParser
 
@@ -89,6 +98,8 @@ Parsing parameters from a form needs an external module called `body-parser`.
 ```bash
 yarn add body-parser
 ```
+
+---
 
 **index.js**
 ```js
@@ -102,10 +113,13 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 ```
+---
 
 Note that we set an attribute `extended` to `true` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
 
 Now, if we try to add this backend route, calling `req.body` should contain the form input.
+
+---
 
 **backend - express route**
 ```js
@@ -116,21 +130,78 @@ app.post('/animals', function(req, res) {
 });
 ```
 
-### Forms
+---
 
-So far we've learnt to send actions using HTTP Methods, PUT for an update and DELETE for a destroy action. There is a problem however. Browsers currently only support GET and POST, so whenever we send a form it will actually be sent using POST. To overcome this we need to use the [Method Override](https://www.npmjs.com/package/method-override) Package. This will allow us to hide some information in the form that when received and processed in Express will change the method to the correct one. Here's an example
+### Pairing Exercise
 
-```js
-var express = require('express')
-var methodOverride = require('method-override')
-var app = express()
-
-// override with POST having ?_method=DELETE
-app.use(methodOverride('_method'))
+create a new dir
 ```
-Example call with query override using HTML <form>:
-```html
-<form method="POST" action="/resource?_method=DELETE">
-  <button type="submit">Delete resource</button>
-</form>
+mkdir post-exercise
 ```
+cd into it
+```
+cd post-exercise
+```
+init yarn
+```
+yarn init
+```
+add express
+```
+yarn add express
+```
+add jsonfile
+```
+yarn add jsonfile
+```
+create an empty data.json file
+```
+echo {} >> data.json
+```
+start your app
+```
+nodemon index.js
+```
+
+use this express starter code:
+```
+const jsonfile = require('jsonfile');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+// tell your app to use the module
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.post('/animals', function(request, response) {
+
+  //debug code (output request body)
+  console.log(request.body);
+
+
+  // save the request body
+  jsonfile.writeFile('data.json', request.body, (err) => {
+    console.error(err)
+
+    // now look inside your json file
+    response.send(response.body);
+  });
+});
+
+app.get('/', (request, response) => {
+  // render a handlebars template form here
+  response.send("hello world");
+});
+
+app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
+```
+
+use a CURL command to make a POST request to your server
+```
+curl -d "monkey=banana&koala=eucalyptus" -X POST http://localhost:3000/animals
+```
+
+write the html form in a handlebars template to make the post request
