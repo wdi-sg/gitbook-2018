@@ -211,7 +211,7 @@ CREATE TABLE students (
 
 ## Data Types
 
-Similar to how Ruby has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
+Similar to how javascript has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
 
 * Serial
 * Integer
@@ -227,7 +227,7 @@ Design a table for a movie database. Discuss a few things that a movie table may
 
 ## Selecting
 
-A select statement allows you to get data from the database. Here are the [docs on select](http://www.postgresql.org/docs/9.0/static/sql-select.html). Also, postgres a good [tutorial on select](http://www.postgresql.org/docs/7.3/static/tutorial-select.html). I'd recommend looking at the tutorial sometime after the lesson.
+A select statement allows you to get data from the database. Postgres has a good [tutorial on select](http://www.postgresql.org/docs/7.3/static/tutorial-select.html). I'd recommend looking at the tutorial sometime after the lesson.
 
 Create a new database to hold a movies table:
 
