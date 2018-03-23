@@ -121,6 +121,37 @@ Now, if we try to add this backend route, calling `req.body` should contain the 
 
 ---
 
+### MethodOverride
+
+HTML `<form>`s do no yet support PUT and DELETE requests, so we need a way to circumvent the problem.
+
+The `method-override` npm library is designed to get over this limitation.
+
+You will need to install the method-override package using `yarn add method-override` and make sure Express uses it.
+
+**index.js**
+
+```js
+// Set up method-override for PUT and DELETE forms
+app.use(methodOverride('_method'));
+```
+
+Then, in your handlebars HTML page, you will have to specify `_method=<VERB>`, where VERB can be either PUT or DELETE. Here is an example of PUT.
+
+**edit.handlebars**
+
+```html
+<form method="POST" action="/{{pokemon.id}}?_method=PUT">
+  <div class="pokemon-attribute">
+    id: <input name="id" type="text" value="{{pokemon.id}}"/>
+  </div>
+</form>
+```
+
+For more examples and details, as usual, read the [method-override documentation](https://www.npmjs.com/package/method-override).
+
+---
+
 **backend - express route**
 ```js
 app.post('/animals', function(req, res) {
@@ -164,7 +195,8 @@ nodemon index.js
 ```
 
 use this express starter code:
-```
+
+```js
 const jsonfile = require('jsonfile');
 const express = require('express');
 const bodyParser = require('body-parser');
