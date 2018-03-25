@@ -1,27 +1,25 @@
-# Introduction To SQL and Databases
-
-## Objectives
-* Connect to a PostgreSQL database using `psql`
-* Use SQL to create a database and tables
-* Use SQL to insert, select, update, and delete data
-* Understand what Primary Keys are
-
-
-## How are databases used in the wild?
-
-For learning and testing purposes, we will be using Postgres on the same machine that our web server is running. In the real world, your database will be on a separate machine, called a **database server**.
-
-A database server is a computer or group of computers that is dedicated to storing your data and handling remote requests to retreive that data. Even in a very simple configuration, the database server will have at least 1 backup machine that keeps an exact copy of the database just in case the main database server goes down.
-
-
-# psql
-
-Today we're using PostgreSQL, often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from. We're using a "post-Ingres" database.
+#PostgreSQL
+Postgres is the DB system we will be working with.
 
 If you installed Postgres.app you have access to psql from the elephant icon at the top of the screen:
 
 * ![image](Postgres.png)
 
+[Postgres Installation: OSX](/00-config-deployment/installfest/osx/readme.html#postgres)
+
+---
+
+#### Postgres.app default settings
+|               |                               |
+| ------------- |:-------------:                |
+| host          | localhost                     |
+| port          | 5432                          |
+| user          | __your default system user__  |
+| Database      | __same as username        __  |
+| password      | none                          |
+| connection URL| postgresql://localhost        |
+
+## PSQL
 If you are using the command line:
 
 * In your terminal, type ```psql```.
@@ -42,12 +40,11 @@ List all of the available tables in the current database:
 \dt
 ```
 
-Check you connection information:
+Check your connection information:
 
 ```
 \conninfo
 ```
-
 
 There are lots of other commands which you can see with:
 
@@ -58,18 +55,7 @@ Use `\q` to exit the help screen
 
 Note that all psql commands start with `\`
 
-
-At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
-
 ## SQL: Structured Query Language
-
-**A Brief History of Databases**
-
-Before the notion of an RDBMS and a standard language for querying that data was created, there were many database venders. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly.  Luckly in the 1970s SQL was created and later turned into a standard.  Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
-
-**CRUD**
-
-Stands for Create, Read, Update and Destroy. This is the lifecycle of data in an applicatoin. In SQL, CRUD can be mapped to the following **INSERT, SELECT, UPDATE, DELETE**. We will walk through examples of in this section.
 
 ## Creating a Database
 
@@ -162,6 +148,19 @@ DELETE from students WHERE email = 'bobby@example.com';
 
 ```sql
 DROP TABLE students;
+```
+
+### Create a database - easy way
+
+Use postgres' createdb command- the `-U` flag is the username
+
+```
+createdb DATABASE_NAME -U USERNAME
+```
+
+Create a DB called pokemons
+```
+createdb pokemons -U akira
 ```
 
 ##Database Schema Design
@@ -338,9 +337,59 @@ We could also use compond statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
-## ER Diagrams
+### Note: Create a database - easy way
 
-Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
+Use postgres' createdb command- the `-U` flag is the username
 
-* [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
-* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
+```
+createdb DATABASE_NAME -U USERNAME
+```
+
+Create a DB called pokemons
+```
+createdb pokemons -U akira
+```
+
+## Development workflow with postgres: seed.sql & drop.sql
+
+Create a sql file that sets an empty set of tables.
+Create another sql file that creates some dummy data for us to work with.
+
+### Save your DB tables:
+When you want to add a table (including the first table in your DB we will be writing that sql in a file: **tables.sql**
+
+We will be using one new piece of syntax to do that: `CREATE TABLE IF NOT EXISTS`
+```
+CREATE TABLE IF NOT EXISTS students (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    phone VARCHAR(15),
+    email TEXT
+);
+```
+
+So you can simply run the file each time you add a table, and only the uncreated tables will get created.
+
+```
+psql -d DATABASE_NAME -U USERNAME -f tables.sql
+```
+
+### Clear away your changes:
+In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
+
+Save this snippet in a cleardb.sql file. **Warning: BE VERY CAREFUL ABOUT RUNNING IT**
+The schemaname is usually the same name as your dbname.
+
+#### drop.sql
+```
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    -- if the schema you operate on is not "current", you will want to
+    -- replace current_schema() in query with 'schematodeletetablesfrom'
+    -- *and* update the generate 'DROP...' accordingly.
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+```
