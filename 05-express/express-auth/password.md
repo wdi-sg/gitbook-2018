@@ -2,7 +2,7 @@
 
 Hashing is one of the cornerstones of all cryptography.
 
-We can create a number/string that represents the contents of something, without nowing what that thing is- we are translating the contents of something else into a standardized 12 digit number (for example) that has a very, very low chance of representing something else.
+We can create a number/string that represents the contents of something, without knowing what that thing is- we are translating the contents of something else into a fixed length number.
 
 ---
 
@@ -12,10 +12,12 @@ one letter forwards ==> "hello" == "ifmmp"
 
 Hashing is just a mathematically irreversable cipher. We can't get the actual contents of the hash back out. Because prime numbers.
 
+---
+
 
 [From wikipedia:](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
 
----
+
 The ideal cryptographic hash function has five main properties:
 
 - it is deterministic so the same message always results in the same hash
@@ -28,6 +30,8 @@ The ideal cryptographic hash function has five main properties:
 
 ![https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png)
 
+---
+
 
 Hashing turns out to be the best way to store a string that you need to know is legitimate, but don't actually care what the string is. (Or you specifially don't want to know what the string is)
 
@@ -39,6 +43,8 @@ Passwords work by storing a hash of the password, then throwing the actual passw
 
 For password protection we'll use bcrypt. Bcrypt creates highly secure salted passswords. Learn more about bcrypt: [bcrypt wiki](http://en.wikipedia.org/wiki/Bcrypt). Note that bcrypt hashes passwords in an extremely secure way. It differs from other hashing methods like MD5 by putting a roadblock in the way between the hash and a hacker (specifically, time). Let's see how this works.
 
+---
+
 To use bcrypt in node we need to install / use the bcrypt npm module.
 
 **Install bcrypt**
@@ -46,6 +52,7 @@ To use bcrypt in node we need to install / use the bcrypt npm module.
 ```
 yarn add bcrypt
 ```
+
 
 **Hash password**
 
@@ -58,6 +65,8 @@ bcrypt.hash('myPassword', 1, (err, hash) => {
   //hash = hashed password (using salt)
 });
 ```
+
+---
 
 **bcrypt.hash() takes 3 parameters**
 

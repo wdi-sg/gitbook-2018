@@ -98,14 +98,21 @@ A shell is an interface into our computer, and we will be using a lot to run com
 
 https://gist.github.com/kevin-smets/8568070
 
-## Postgres
+## [Postgres](#postgres)
 
 ### Postgres.app
 We will be using a relational database called Postgres for Node and Rails portion our class.
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
+Get the version of Postgres being installed on your system:
+```
+ls -la /Applications/Postgres.app/Contents/Versions
+```
 
+There should be only one version in this directory, or take the highest version.
+
+Create the export path command with that version number/directory name
 ```
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```

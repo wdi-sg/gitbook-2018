@@ -78,6 +78,52 @@ List our tables in a database:
 \dt
 ```
 
+##Database Schema Design
+
+For this lesson, how to design a complete database system is out of scope. We will discuss a few things here though.
+
+The **schema** of the database is the set of create table commands that specify what the tables are and how they relate to each other. For our very simple database example, here is the schema:
+
+```
+testdb=# \d+ students
+                                                    Table "public.students"
+ Column |         Type          |                       Modifiers
+--------+-----------------------+-------------------------------------------------------
+ id     | integer               | not null default nextval('students_id_seq'::regclass)
+ name   | text                  |
+ phone  | character varying(15) |
+ email  | text                  |
+
+```
+
+## What is a Primary Key?
+
+It denotes an attribute on a table that can uniquely identify the row.
+
+### What does SERIAL Do?
+
+SERIAL tells the database to automatically assign the next unused integer value to id whenever we insert into the database and do not specify id. In general, if you have a column that is set to SERIAL, it is a good idea to let the database assign the value for you.
+
+## Data Types
+
+Similar to how javascript has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
+
+* Serial
+* Integer
+* Numeric // Numbers are exact, no rounding error
+* Float // Rounding error is possible, but operations are faster than Numeric
+* Text, Varchar
+* Timestamp
+* Boolean (True or False)
+
+You can set the storage size of some of these fields, but it could sometimes be premature optimization. -You can't change the type while the DB is running.
+
+### Data Types in Practice
+- integer (sometimes numeric for non-integers)
+- boolean
+- timestamp
+- text for everything else
+
 ### CREATE-ing a Table
 
 This is an example of a students table.  (We will talk about the primary key soon.)
@@ -143,6 +189,7 @@ DELETE from students WHERE name = 'Mary';
 DELETE from students WHERE email = 'bobby@example.com';
 ->DELETE 1
 ```
+Note: in pratice you will hardly ever delete anything, but mostly set a boolean 'valid' or something similar.
 
 ### DROP-ing a Table
 
@@ -150,77 +197,12 @@ DELETE from students WHERE email = 'bobby@example.com';
 DROP TABLE students;
 ```
 
-### Create a database - easy way
+### The WHERE clause
+- can contain basically any conditional statement
+- comparison ... > < <= >=
+- and logical operators- AND OR NOT etc
 
-Use postgres' createdb command- the `-U` flag is the username
-
-```
-createdb DATABASE_NAME -U USERNAME
-```
-
-Create a DB called pokemons
-```
-createdb pokemons -U akira
-```
-
-##Database Schema Design
-
-For this lesson, how to design a complete database system is out of scope. We will discuss a few things here though.
-
-The **schema** of the database is the set of create table commands that specify what the tables are and how they relate to each other. For our very simple database example, here is the schema:
-
-```
-testdb=# \d+ students
-                                                    Table "public.students"
- Column |         Type          |                       Modifiers
---------+-----------------------+-------------------------------------------------------
- id     | integer               | not null default nextval('students_id_seq'::regclass)
- name   | text                  |
- phone  | character varying(15) |
- email  | text                  |
-
-```
-
-## What is a Primary Key?
-
-It denotes an attribute on a table that can uniquely identify the row.
-
-### What does SERIAL Do?
-
-SERIAL tells the database to automatically assign the next unused integer value to id whenever we insert into the database and do not specify id. In general, if you have a column that is set to SERIAL, it is a good idea to let the database assign the value for you.
-
-## What is a foreign key?
-
-It provides a reference to a primary key in another table.
-
-```sql
-CREATE TABLE courses (
-    id SERIAL PRIMARY KEY,
-    course TEXT
-);
-
-CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    phone VARCHAR(15),
-    email TEXT,
-    course_id INTEGER REFERENCES courses
-);
-```
-
-## Data Types
-
-Similar to how javascript has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
-
-* Serial
-* Integer
-* Numeric // Numbers are exact, no rounding error
-* Float // Rounding error is possible, but operations are faster than Numeric
-* Text, Varchar
-* Timestamp
-* Boolean (True or False)
-
-## Exercise Time
+### Pairing Exercise
 
 Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the CREATE TABLE command and execute it in psql. Use \dt to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use \dt again to make sure that the table has been dropped.
 
@@ -307,7 +289,7 @@ We've gotten a list of movies back, but it's way too long for our uses.  Let's i
 SELECT title, rating FROM movies ORDER BY rating DESC LIMIT 5;
 ```
 
-### Exercise
+### Pairing Exercise
 
 Write a query on the movie table to return the worst movie of all time.  There should be only 1 result returned. The result should include the title, description and rating of the movie.
 
@@ -335,61 +317,4 @@ We could also use compond statements here:
 
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
-```
-
-### Note: Create a database - easy way
-
-Use postgres' createdb command- the `-U` flag is the username
-
-```
-createdb DATABASE_NAME -U USERNAME
-```
-
-Create a DB called pokemons
-```
-createdb pokemons -U akira
-```
-
-## Development workflow with postgres: seed.sql & drop.sql
-
-Create a sql file that sets an empty set of tables.
-Create another sql file that creates some dummy data for us to work with.
-
-### Save your DB tables:
-When you want to add a table (including the first table in your DB we will be writing that sql in a file: **tables.sql**
-
-We will be using one new piece of syntax to do that: `CREATE TABLE IF NOT EXISTS`
-```
-CREATE TABLE IF NOT EXISTS students (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    phone VARCHAR(15),
-    email TEXT
-);
-```
-
-So you can simply run the file each time you add a table, and only the uncreated tables will get created.
-
-```
-psql -d DATABASE_NAME -U USERNAME -f tables.sql
-```
-
-### Clear away your changes:
-In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
-
-Save this snippet in a cleardb.sql file. **Warning: BE VERY CAREFUL ABOUT RUNNING IT**
-The schemaname is usually the same name as your dbname.
-
-#### drop.sql
-```
-DO $$ DECLARE
-    r RECORD;
-BEGIN
-    -- if the schema you operate on is not "current", you will want to
-    -- replace current_schema() in query with 'schematodeletetablesfrom'
-    -- *and* update the generate 'DROP...' accordingly.
-    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
-        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
-    END LOOP;
-END $$;
 ```
