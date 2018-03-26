@@ -59,6 +59,10 @@ client.connect((err) => {
   if( err ){
     console.log( "error", err.message );
   }
+  
+  // the text variable holds the SQL query you want to execute
+  let text = 'SELECT * from students';
+  let values = [];
 
   client.query(text, values, (err, res) => {
     if (err) {
@@ -66,6 +70,54 @@ client.connect((err) => {
     } else {
       console.log("result", res.rows[0]);
     }
+    
+    // if this is the last query, close the connection
+    client.end();
+  });
+
+});
+```
+
+### string interpolation with values array
+You can create a query with dynamic values in the string using the values array.
+
+Each element in the array turns into a `$x` in the SQL query string.
+
+1. Create a query that we will interpolate some values into:
+```
+let text = "INSERT INTO students (name, email, phone) VALUES( $1, $2, $3 )";
+```
+
+2. Create an array with the values we want to put into the string:
+```
+let values = ['akira', 'akira@foo.com', '(415)586-0370'];
+```
+
+3. Postgres will eventually (under the hood) create a string that looks like this:
+```
+INSERT INTO students (name, email, phone) VALUES( 'akira', 'akira@foo.com', '(415)586-0370')";
+```
+
+4. Completed code snippet looks like: 
+```
+client.connect((err) => {
+
+  if( err ){
+    console.log( "error", err.message );
+  }
+ 
+  let text = "INSERT INTO students (name, email, phone) VALUES( $1, $2, $3 )";
+  let values = ['akira', 'akira@foo.com', '(415)586-0370'];
+  
+  client.query(text, values, (err, res) => {
+    if (err) {
+      console.log("query error", err.message);
+    } else {
+      console.log("result", res.rows[0]);
+    }
+    
+    // if this is the last query, close the connection
+    client.end();
   });
 
 });
@@ -111,7 +163,25 @@ So you can simply run the file each time you add a table, and only the uncreated
 psql -d DATABASE_NAME -U USERNAME -f tables.sql
 ```
 
+<<<<<<< HEAD
 ---
+=======
+Example contents of a tables.sql file:
+```
+CREATE TABLE IF NOT EXISTS movies (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  description TEXT,
+  rating INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS actors (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  age INTEGER
+);
+```
+>>>>>>> f39f5693953e44963438ce32bdca7a5a2aa1df68
 
 ### Start the db with some dummy data
 Write some lines of SQL that will populate the db with some small data.
@@ -120,7 +190,20 @@ This is normally things such as a first default user and other things you need t
 
 It works the same way as `tables.sql` above, but it's only for data.
 
+<<<<<<< HEAD
 ---
+=======
+Example contents of `seed.sql`:
+```
+INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9);
+INSERT INTO movies (title, description, rating) VALUES('Back to the Future', 'another movie', 9);
+```
+
+You would run it like:
+```
+psql -d DATABASE_NAME -U USERNAME -f seed.sql
+```
+>>>>>>> f39f5693953e44963438ce32bdca7a5a2aa1df68
 
 ### Clear away your changes:
 In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
@@ -142,10 +225,17 @@ BEGIN
 END $$;
 ```
 
+<<<<<<< HEAD
 ---
+=======
+You would run it like:
+```
+psql -d DATABASE_NAME -U USERNAME -f drop.sql
+```
+>>>>>>> f39f5693953e44963438ce32bdca7a5a2aa1df68
 
 ### Pairing Exercise:
-Create a command line app that runs the previous exercise, but inside of node.js. After each sql satement, output the result in a console.log, with a string that identifies that output.
+Create a command line app that runs the table manipulation SQL commands from the previous exercise, but inside of node.js. (That means we are still creating our databases and tables outside of node.js) After each sql satement, output the result in a console.log, with a string that identifies that line of output.
 
 Use tables.sql to record the tables you need.
 
