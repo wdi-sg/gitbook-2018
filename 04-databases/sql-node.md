@@ -101,6 +101,22 @@ So you can simply run the file each time you add a table, and only the uncreated
 psql -d DATABASE_NAME -U USERNAME -f tables.sql
 ```
 
+Example contents of a tables.sql file:
+```
+CREATE TABLE IF NOT EXISTS movies (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  description TEXT,
+  rating INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS actors (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  age INTEGER
+);
+```
+
 ### Start the db with some dummy data
 Write some lines of SQL that will populate the db with some small data.
 
