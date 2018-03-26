@@ -88,6 +88,31 @@ let values = ['akira', 'akira@foo.com', '(415)586-0370'];
 INSERT INTO students (name, email, phone) VALUES( 'akira', 'akira@foo.com', '(415)586-0370')";
 ```
 
+4. Completed code snippet looks like: 
+```
+client.connect((err) => {
+
+  if( err ){
+    console.log( "error", err.message );
+  }
+ 
+  let text = "INSERT INTO students (name, email, phone) VALUES( $1, $2, $3 )";
+  let values = ['akira', 'akira@foo.com', '(415)586-0370'];
+  
+  client.query(text, values, (err, res) => {
+    if (err) {
+      console.log("query error", err.message);
+    } else {
+      console.log("result", res.rows[0]);
+    }
+    
+    // if this is the last query, close the connection
+    client.end();
+  });
+
+});
+```
+
 ## Development workflow with postgres: tables.sql, seed.sql & drop.sql
 
 ### Note: Create a database - easy way
