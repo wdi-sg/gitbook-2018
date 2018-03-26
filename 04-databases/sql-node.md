@@ -49,6 +49,9 @@ client.connect((err) => {
   if( err ){
     console.log( "error", err.message );
   }
+  
+  let text = '';
+  let values = [];
 
   client.query(text, values, (err, res) => {
     if (err) {
@@ -56,6 +59,9 @@ client.connect((err) => {
     } else {
       console.log("result", res.rows[0]);
     }
+    
+    // if this is the last query, close the connection
+    client.end();
   });
 
 });
@@ -102,6 +108,17 @@ This is normally things such as a first default user and other things you need t
 
 It works the same way as `tables.sql` above, but it's only for data.
 
+Example contents of `seed.sql`:
+```
+INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9);
+INSERT INTO movies (title, description, rating) VALUES('Back to the Future', 'another movie', 9);
+```
+
+You would run it like:
+```
+psql -d DATABASE_NAME -U USERNAME -f seed.sql
+```
+
 ### Clear away your changes:
 In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
 
@@ -118,6 +135,11 @@ BEGIN
         EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
     END LOOP;
 END $$;
+```
+
+You would run it like:
+```
+psql -d DATABASE_NAME -U USERNAME -f drop.sql
 ```
 
 ### Pairing Exercise:
