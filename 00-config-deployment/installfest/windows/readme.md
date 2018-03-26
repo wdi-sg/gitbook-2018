@@ -17,7 +17,7 @@ If your mac-user-classmates are happily trodding along with Oh My Zsh, and you'd
 
 Download chocolatey from https://chocolatey.org/, this will cover a lot of the packages that mac users can brew install
 
-##Node
+## Node
 
 To install Node, go to https://nodejs.org/en/download/ and follow the installation instructions.
 
@@ -47,6 +47,16 @@ For SSH Keys you can cache them too if needed: https://help.github.com/articles/
 For Windows users, please use this [Postgres client](https://www.postgresql.org/download/windows/) instead of Postgres.app.
 
 The client is quite different from the mac clients (e.g. psequel), so if you encounter issues, please refer to the [postgresql community guide](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools)
+
+__Troubleshoot tip__: If you're prompted for a password when you attempt to run `psql` in git bash command line, try the following on git bash:
+
+```
+psql
+# => psql: FATAL: password authentication failed for user ...
+
+# use this default username and host
+psql -U postgres -h localhost
+```
 
 ##Installing Ruby on Rails
 
