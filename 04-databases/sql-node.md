@@ -50,7 +50,8 @@ client.connect((err) => {
     console.log( "error", err.message );
   }
   
-  let text = '';
+  // the text variable holds the SQL query you want to execute
+  let text = 'SELECT * from students';
   let values = [];
 
   client.query(text, values, (err, res) => {
@@ -65,6 +66,26 @@ client.connect((err) => {
   });
 
 });
+```
+
+### string interpolation with values array
+You can create a query with dynamic values in the string using the values array.
+
+Each element in the array turns into a `$x` in the SQL query string.
+
+1. Create a query that we will interpolate some values into:
+```
+let text = "INSERT INTO students (name, email, phone) VALUES( $1, $2, $3 )";
+```
+
+2. Create an array with the values we want to put into the string:
+```
+let values = ['akira', 'akira@foo.com', '(415)586-0370'];
+```
+
+3. Postgres will eventually (under the hood) create a string that looks like this:
+```
+INSERT INTO students (name, email, phone) VALUES( 'akira', 'akira@foo.com', '(415)586-0370')";
 ```
 
 ## Development workflow with postgres: tables.sql, seed.sql & drop.sql
