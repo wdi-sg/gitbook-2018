@@ -15,13 +15,19 @@ Differences:
   - what if two users both post the same thing
   - what if the name of the file changes
 
+---
+
 ### How to connect to the DB:
 Configure the client to connect to the DB server
+
+---
 
 1. require the library
 ```
 const pg = require('pg');
 ```
+
+---
 
 2. set all of the configuration in an object
 ```
@@ -33,11 +39,15 @@ const configs = {
 };
 ```
 
+---
+
 3. create a new instance of the client
 ```
 const client = new pg.Client(configs);
 ```
 (this is the client you will be using for this single web server instance)
+
+---
 
 ### Using the client in your app
 1. setup the query text and the values you want to work with
@@ -61,7 +71,11 @@ client.connect((err) => {
 });
 ```
 
+---
+
 ## Development workflow with postgres: tables.sql, seed.sql & drop.sql
+
+---
 
 ### Note: Create a database - easy way
 
@@ -75,6 +89,8 @@ Create a DB called pokemons
 ```
 createdb pokemons -U akira
 ```
+
+---
 
 ### Save your DB tables:
 When you want to add a table (including the first table in your DB we will be writing that sql in a file: **tables.sql**
@@ -95,6 +111,8 @@ So you can simply run the file each time you add a table, and only the uncreated
 psql -d DATABASE_NAME -U USERNAME -f tables.sql
 ```
 
+---
+
 ### Start the db with some dummy data
 Write some lines of SQL that will populate the db with some small data.
 
@@ -102,11 +120,15 @@ This is normally things such as a first default user and other things you need t
 
 It works the same way as `tables.sql` above, but it's only for data.
 
+---
+
 ### Clear away your changes:
 In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
 
 Save this snippet in a cleardb.sql file. **Warning: BE VERY CAREFUL ABOUT RUNNING IT**
 The schemaname is usually the same name as your dbname.
+
+---
 
 #### drop.sql
 From: [https://stackoverflow.com/a/36023359/271932](https://stackoverflow.com/a/36023359/271932)
@@ -119,6 +141,8 @@ BEGIN
     END LOOP;
 END $$;
 ```
+
+---
 
 ### Pairing Exercise:
 Create a command line app that runs the previous exercise, but inside of node.js. After each sql satement, output the result in a console.log, with a string that identifies that output.
