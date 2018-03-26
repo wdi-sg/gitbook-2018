@@ -10,19 +10,22 @@ If you installed Postgres.app you have access to psql from the elephant icon at 
 ---
 
 #### Postgres.app default settings
+
 |               |                               |
 | ------------- |:-------------:                |
 | host          | localhost                     |
 | port          | 5432                          |
 | user          | __your default system user__  |
-| Database      | __same as username        __  |
+| Database      | __same as username__          |
 | password      | none                          |
 | connection URL| postgresql://localhost        |
+
+---
 
 ## PSQL
 If you are using the command line:
 
-* In your terminal, type ```psql```.
+* In your terminal, type `psql`.
 
 **psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user
 
@@ -33,6 +36,8 @@ List all of the available databases:
 ```
 \list
 ```
+
+---
 
 List all of the available tables in the current database:
 
@@ -55,6 +60,8 @@ Use `\q` to exit the help screen
 
 Note that all psql commands start with `\`
 
+---
+
 ## SQL: Structured Query Language
 
 ## Creating a Database
@@ -71,12 +78,14 @@ Connect to a database
 \connect testdb
 ```
 
-Once we connect, our command prompt should look similar to this: ```testdb=#```
+Once we connect, our command prompt should look similar to this: `testdb=#`
 
 List our tables in a database:
 ```
 \dt
 ```
+
+---
 
 ##Database Schema Design
 
@@ -96,6 +105,8 @@ testdb=# \d+ students
 
 ```
 
+---
+
 ## What is a Primary Key?
 
 It denotes an attribute on a table that can uniquely identify the row.
@@ -103,6 +114,8 @@ It denotes an attribute on a table that can uniquely identify the row.
 ### What does SERIAL Do?
 
 SERIAL tells the database to automatically assign the next unused integer value to id whenever we insert into the database and do not specify id. In general, if you have a column that is set to SERIAL, it is a good idea to let the database assign the value for you.
+
+---
 
 ## Data Types
 
@@ -116,13 +129,17 @@ Similar to how javascript has types of data, SQL defines types that can be store
 * Timestamp
 * Boolean (True or False)
 
-You can set the storage size of some of these fields, but it could sometimes be premature optimization. -You can't change the type while the DB is running.
+You can set the storage size of some of these fields, but it could be a premature optimization that can cause problems later- you can't change the type while the DB is running.
+
+---
 
 ### Data Types in Practice
 - integer (sometimes numeric for non-integers)
 - boolean
 - timestamp
 - text for everything else
+
+---
 
 ### CREATE-ing a Table
 
@@ -147,6 +164,8 @@ Look at the table structure
  \d+ students
 ```
 
+---
+
 ### INSERT-ing Data
 
 ```sql
@@ -162,6 +181,8 @@ VALUES
 
 ```
 
+---
+
 ### SELECT-ing Data
 
 ```sql
@@ -172,11 +193,15 @@ SELECT * FROM students WHERE name = 'Bob Jones';
 SELECT id, name FROM students;
 ```
 
+---
+
 ## UPDATE-ing Data
 
 ```sql
 UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ```
+
+---
 
 ##DELETE-ing Data
 
@@ -191,16 +216,33 @@ DELETE from students WHERE email = 'bobby@example.com';
 ```
 Note: in pratice you will hardly ever delete anything, but mostly set a boolean 'valid' or something similar.
 
+---
+
 ### DROP-ing a Table
 
 ```sql
 DROP TABLE students;
 ```
 
+---
+
 ### The WHERE clause
 - can contain basically any conditional statement
 - comparison ... > < <= >=
 - and logical operators- AND OR NOT etc
+
+---
+
+### The ORDER BY clause
+```
+ORDER BY column_name, column_name ASC
+```
+
+ASC (ascending)
+DESC (descending)
+
+---
+
 
 ### Pairing Exercise
 
