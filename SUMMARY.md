@@ -118,6 +118,7 @@
     * [Data Modeling](04-databases/mongo-intro/data-modeling.md)
   * [SQL](04-databases/sql-intro/readme.md)
     * [SQL and Node](04-databases/sql-node.md)
+    * [Relational SQL Tables](04-databases/sql-intro/relational.md)
     * [Advanced SQL](04-databases/sql-advanced/readme.md)
     * [Lazy Normalization](04-databases/lazy_db_normalization.md)
     * [PostgreSQL Cheat Sheet](04-databases/sqlcheatsheet.md)
