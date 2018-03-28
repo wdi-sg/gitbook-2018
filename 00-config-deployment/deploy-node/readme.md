@@ -11,8 +11,6 @@
 
 When we have finished developing a version of our app, we likely want to put it on the internet for other people to see.
 
-You can use our Taco CRUD app for deployment. https://github.com/wdi-sg/tacoapp
-
 ### Localhost
 
 Most of what we've developed so far has just run on our own computers. Both our database and our web server have been on our computer. We've done this because it's much easier to develop locally because we don't actually need an internet connection. However, people can't access it easily unless they are also on our local network.
@@ -97,7 +95,7 @@ Before you create your app in Heroku, be sure your project is being tracked via 
 Next create a Heroku app via the command line
 
 ```
-heroku apps:create sitename
+heroku create
 ```
 
 Where `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com`
@@ -123,6 +121,54 @@ heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
 ```
 
 You can also do this via the Heroku Dashboard for you App.
+
+### Heroku Postgresql
+The database you are running is just another server running on computer. We are connecting to it from your nodejs server through the network. (That's why it has an address and port.)
+
+On Heroku, each of these servers has its own address, contained in an enviroment variable.
+
+To properly set the configs, we need to follow the instructions set out in the node postgres connection pool library page:
+[https://github.com/brianc/node-pg-pool](https://github.com/brianc/node-pg-pool)
+```
+// inside of db.js
+
+//require the url library
+//this comes with node, so no need to yarn add
+const url = require('url');
+
+//check to see if we have this heroku environment variable
+if( process.env.DATABASE_URL ){
+
+  //we need to take apart the url so we can set the appropriate configs
+  
+  const params = url.parse(process.env.DATABASE_URL);
+  const auth = params.auth.split(':');
+
+  //make the configs object
+  var configs = {
+    user: auth[0],
+    password: auth[1],
+    host: params.hostname,
+    port: params.port,
+    database: params.pathname.split('/')[1],
+    ssl: true
+  };
+
+}else{
+
+  //otherwise we are on the local network
+  var configs = {
+      user: 'akira',
+      host: '127.0.0.1',
+      database: 'pokemons',
+      port: 5432
+  };
+}
+
+//this is the same
+const pool = new pg.Pool(configs);
+
+```
 
 ### Heroku Add-ons
 Heroku Add-ons are an easy way to install and link applications to setup. For instance, if you're using MongoDB, then you'll want to provision an Mlab add-on. Using Cloudinary for image-uploads, then there is an add-on for that.
