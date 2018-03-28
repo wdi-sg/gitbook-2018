@@ -216,6 +216,10 @@ Anytime you make changes you need to remember to git add, git commit and git pus
   * Push application to Heroku
   * Run migrations on Heroku
 
+#### Practice Deployment
+You can start with this copy of the sql model express app to convert it to a Heroku-ready app: [https://github.com/wdi-sg/express-reference/tree/sql-models](https://github.com/wdi-sg/express-reference/tree/sql-models)
+
+You can see the changes made to that version in [order to make it ready:](https://github.com/wdi-sg/express-reference/compare/sql-models...mvc-heroku?expand=1)
 
 ## Resources
 
