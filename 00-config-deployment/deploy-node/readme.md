@@ -136,65 +136,9 @@ heroku addons:create papertrail:choklad
 You can also do this via the Heroku Dashboard for you App.
 
 
-## Connecting to a MongoDB Database
-
-Before connecting the Node app to a MongoDB database, we'll need to install an addon called [mLab](https://elements.heroku.com/addons/mongolab). mLab is a cloud-hosted MongoDB database service that we can connect to.
-
-In order to add the instance, you can use the Heroku toolbelt by typing this command:
-
-```
-heroku addons:create mongolab:sandbox
-```
-
-This will create a free database instance, limited to 496 MB in storage. Keep this in mind.
-
-### Configuring Mongoose
-
-After creating the mLab addon, you'll be able to access an environment variable called `MONGODB_URI`. You'll want to connect to this URI on production. Alter your Mongoose connection to read this environment variable (you can use the localhost string if the variable doesn't exist), below is an example.
-
-```js
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydbname');
-```
 ### Don't forget to commit & push
 Anytime you make changes you need to remember to git add, git commit and git push to heroku.
 
-### Connecting to a mLab instance using Robomongo/Mongohub (or similar)
-
-In order to view the contents of your MongoDB database using a GUI client like Robomongo, you can use the `MONGODB_URI`. This URI contains the connection information and credentials needed to connect.
-
-## Connect a DB with Sequelize
-
-* In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
-* Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'`
-* Make sure your production variables in `config/config.json` are set like this (pay attention to the production setting).
-
-**config/config.json**
-```js
-{
-  "development": {
-    "database": "projectdb",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "database": "projectdb",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "production": {
-    "use_env_variable": "DATABASE_URL"
-  }
-}
-
-```
-
-* To migrate our live database we need a local version of `sequelize-cli` module in our package json. Add it by running `npm install sequelize-cli --save`
-
-* Add and commit your changes to git, then push your changes to heroku using `git push heroku master`
-
-* Now run your migrations by typing in terminal `heroku run node_modules/.bin/sequelize db:migrate` and you should have all your tables set up in a heroku hosted database
-
-* Try opening your app now, `heroku open`
 
 ## Review
 * App deployment
