@@ -3,7 +3,7 @@
 ## Objectives
 * Understand the purpose of Heroku as a Platform as a Service (PaaS)
 * Identify other methods of deployment, and their benefits and drawbacks
-* Take a working Node/Sequelize app and deploy it to a server
+* Take a working Node app and deploy it to a server
 * Make changes to an existing deployment
 * Utilize methods for debugging server errors
 
@@ -208,13 +208,9 @@ Anytime you make changes you need to remember to git add, git commit and git pus
   * Create a Procfile and fetch your port in your app
   * Create a Heroku app
   * Push application to Heroku
-* Sequelize setup
+* Postgres setup
   * Install Heroku's postgres addon
-  * Set the NODE_ENV variable on Heroku
-  * Set the production database variables in `config/config.json`
-  * Save a local version of `sequelize-cli` to the `package.json` file
-  * Push application to Heroku
-  * Run migrations on Heroku
+  * Change the config variables and add a conditional for localhost
 
 #### Practice Deployment
 You can start with this copy of the sql model express app to convert it to a Heroku-ready app: [https://github.com/wdi-sg/express-reference/tree/sql-models](https://github.com/wdi-sg/express-reference/tree/sql-models)
