@@ -57,7 +57,7 @@ Authentication successful.
 
 We'll have the ability to create free applications using Heroku, but with limitations. Most of those limitations are related to the size of the databases, as well as uptime for the dynos. For free applications, dynos will "go to sleep" when unused for a period of time. This will lead to slow start times when restarting the dynos.
 
-##Deploy
+## Deploy
 
 ### package.json
 Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use `--save`. You can always check your package.json by deleting your node_modules folder and running npm install, this will only install the dependencies listed in the file, so if you application no longer runs, then you know you're missing something.
@@ -84,7 +84,9 @@ Environment variables are values that exist in a computer's current environment.
 So in your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
 
 ```js
-app.listen(process.env.PORT || 3000)
+const PORT = process.env.PORT || 3000;
+
+const server = app.listen(PORT, () => console.log('~~~ Tuning in to the waves of port '+PORT+' ~~~'));
 ```
 
 Variables should also be used to avoid committing values that are sensitive, for example API keys or database URLs, these are cases where we DO NOT WANT TO COMMIT THE VALUES. These values can vary, but if a malicious user gets ahold of them, they can cause disastrous results, especially if the values access an account that costs money or resources.
