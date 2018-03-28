@@ -129,6 +129,10 @@ The database you are running is just another server running on computer. We are 
 
 On Heroku, each of these servers has its own address, contained in an enviroment variable.
 
+First, we need to add it to our app in the heroku dashboard. Heroku calls these add-ons: [https://elements.heroku.com/addons/heroku-postgresql](https://elements.heroku.com/addons/heroku-postgresql)
+
+Now we need to tell our app where the db server is.
+
 To properly set the configs, we need to follow the instructions set out in the node postgres connection pool library page:
 [https://github.com/brianc/node-pg-pool](https://github.com/brianc/node-pg-pool)
 ```
@@ -171,6 +175,16 @@ if( process.env.DATABASE_URL ){
 const pool = new pg.Pool(configs);
 
 ```
+#### Working with your cloud Postgres DB
+**To play with psql for your running db:**
+```
+heroku pg:psql
+```
+Checkout heroku's postgres documentation: [https://devcenter.heroku.com/articles/heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql)
+
+**Download a copy of your db in the cloud and put it into your local DB:**
+[https://devcenter.heroku.com/articles/heroku-postgres-import-export](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
+
 
 ### Heroku Add-ons
 Heroku Add-ons are an easy way to install and link applications to setup. For instance, if you're using MongoDB, then you'll want to provision an Mlab add-on. Using Cloudinary for image-uploads, then there is an add-on for that.
