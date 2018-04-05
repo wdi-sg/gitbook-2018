@@ -7,6 +7,8 @@ There are two ways to modeling related data in MongoDB:
 
 Both approaches can be used simultaneously in the same document.
 
+---
+
 ### Embedded Documents
 
 In MongoDB, by design, it is common to __embed__ data in a parent document.
@@ -15,9 +17,9 @@ Modeling data with the __embedded__ approach is different than what we've seen i
 
 To demonstrate __embedding__, we will add another person to our _people_ collection, but this time we want to include contact info. A person may have several ways to contact them, so we will be modeling a typical one-to-many relationship.
 
-## Modeling Data
+---
 
-Let's walk through this command by entering it together:
+## Modeling Data
 
 ```js
 > db.people.insert({
@@ -35,6 +37,13 @@ Let's walk through this command by entering it together:
     ]})
 ```
 
+
+```
+db.people.find({name:'Manny', 'contacts.type': 'email' })
+```
+
+---
+
 __What do you imagine could be a downside of embedding data?__
 
 If the embedded data's growth is unbound, MongoDB's maximum document size of 16 megabytes could be exceeded.
@@ -43,13 +52,15 @@ The above approach of embedding _contact_ documents provides a great deal of fle
 
 However, what if our app only wanted to work with a person's multiple _emails_ and _phoneNumbers_?
 
-__Knowing this, pair up and discuss how you might alter the above structure.__
+---
 
 #### Referencing Documents
 
 We can model data relationships using a __references__ approach where data is stored in separate documents. These documents, due to the fact that they hold different types of data, are likely be stored in separate collections.
 
 It may help to think of this approach as _linking_ documents together by including a reference to the related document's *_id* field.
+
+---
 
 Let's create a  _bankAccounts_ collection to demonstrate the __references__ approach.
 
@@ -65,7 +76,8 @@ For the sake of _data consistency_, keeping the account data in its own document
 
 In our app, we have decided that all bank accounts will be retrieved through a person. This decision allows us to include a reference on the person document only.
 
-Implementing the above scenario is as simple as assigning a _bankAccount_ document's *_id* to a new field in our person document:
+---
+
 
 ```js
 > db.people.insert({
@@ -75,8 +87,26 @@ Implementing the above scenario is as simple as assigning a _bankAccount_ docume
 })
 ```
 
-Again, because there are no "joins" in MongoDB, retrieving a person's bank account information would require a separate query on the _bankAccounts_ collection.
+Implementing the above scenario is as simple as assigning a _bankAccount_ document's *_id* to a new field in our person document:
+---
 
+```
+db.people.find({name: 'Miguel', bankAccount.amount : 4403});
+```
+
+```
+db.people.aggregate({
+   $lookup:
+     {
+       from: "bankAccounts",
+       localField: "bankAccount",
+       foreignField: "amount",
+       as: "account_amount"
+     }
+});
+```
+
+---
 
 ## Data Modeling Best Practices - Discussion
 
@@ -91,6 +121,9 @@ Here are a few things to keep in mind:
 - In the _references_ approach, depending upon your application's needs, you may choose to maintain links to the related document's *_id* in either document, or both.
 
 For more details regarding data modeling in MongoDB, start with [this section of mongoDB's documentation ](http://docs.mongodb.org/manual/core/data-modeling-introduction/) or this [hour long YouTube video](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
+
+
+---
 
 
 ## Conclusion
