@@ -112,6 +112,8 @@ db.people.aggregate({
 
 MongoDB was designed from the ground up with application development in mind. More specifically, what can and can't be done in regards to data is enforced in your application, not the database itself (like in a SQL database).
 
+---
+
 Here are a few things to keep in mind:
 
 - For performance and simplicity reasons, lean toward _embedding_ over _referencing_.

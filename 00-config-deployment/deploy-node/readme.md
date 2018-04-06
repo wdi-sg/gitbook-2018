@@ -180,6 +180,11 @@ const pool = new pg.Pool(configs);
 ```
 heroku pg:psql
 ```
+
+**To run a tables.sql file on the heroku db**
+```
+heroku pg:psql < tables.sql
+```
 Checkout heroku's postgres documentation: [https://devcenter.heroku.com/articles/heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql)
 
 **Download a copy of your db in the cloud and put it into your local DB:**
