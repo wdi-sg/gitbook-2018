@@ -64,10 +64,10 @@ https://help.github.com/articles/generating-ssh-keys/
 
 ### Setting up the bash shell
 ```
-touch ~/.bashrc
+touch ~/.profile
 ```
 
-##Node
+## Node
 
 To install Node
 ```
@@ -90,7 +90,7 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Sublime
+## Sublime
 We'll be running **Sublime**, as our text editor of choice.
 
 Download and install the latest version [https://www.sublimetext.com/](https://www.sublimetext.com/)
@@ -112,11 +112,11 @@ Make sure you installed sublime into the right place.
 
 When you do this `ls` it should tell you that the `subl` file does exist. Check in finder if you are unsure.
 ```
-ls -la /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+ls -la /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
 ```
 Then run the command to link:
 ```
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 ```
 
 **Testing**
@@ -135,12 +135,12 @@ export VISUAL=sublime
 export EDITOR="$VISUAL"
 
 function subledit() {
-  sublime ~/.bashrc
+  sublime ~/.profile
 }
 
-function bashrcrefresh() {
+function profilerefresh() {
   echo "Refreshing your configuration."
-  source ~/.bashrc
+  source ~/.profile
 }
 ```
 
@@ -166,7 +166,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 If you have successfully configured bash and sublime, the following command should work.
 
 ```
-sublime ~/.bashrc
+sublime ~/.profile
 ```
 
 Your sublime editor will popup with configuration settings, at the bottom of the file append the same line:
@@ -180,22 +180,22 @@ Type `which psql` at which point should display
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
 
-##Installing Ruby on Rails
+## Installing Ruby on Rails
 
-###Install rbenv
+### Install rbenv
 rbenv lets us change ruby verions on the fly, useful for working with diffrent versions.
 
 ```
 brew update
 brew install rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
+echo 'eval "$(rbenv init -)"' >> ~/.profile
+source ~/.profile
 
 sudo chown -R $USER ~/.rbenv
 ```
 
-###Configuring rbenv
+### Configuring rbenv
 ```
 brew update
 
@@ -205,7 +205,7 @@ rbenv install 2.2.2
 rbenv global 2.2.2
 ```
 
-###Install Rails
+### Install Rails
 
 ```
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
@@ -219,7 +219,7 @@ sudo gem install rails
 ```
 You may need to press "yes" for various entries
 
-###Verify your installation
+### Verify your installation
 
 Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
 
