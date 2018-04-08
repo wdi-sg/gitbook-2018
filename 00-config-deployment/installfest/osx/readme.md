@@ -1,4 +1,4 @@
-#WDI Singapore Install Fest
+# WDI Singapore Install Fest
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
@@ -6,19 +6,17 @@ For the first portion of the class, we'll be working exclusively inside of the b
 * Homebrew
 * Git
 * Node
-* Oh my ZSH
-* iTerm
 * Postgres.app
 * Ruby
 * Rails
 
-##Slack
+## Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
 
-##Homebrew
+## Homebrew
 
 Homebrew is a package manager that we will use to install various command line tools in our class.
 
@@ -32,11 +30,11 @@ You may be prompted to installed XCode command line tools. When prompted, click 
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
-##Xcode
+## Xcode
 
 Speaking of Xcode, install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
-##GIT
+## GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
 To install GIT
@@ -44,7 +42,7 @@ To install GIT
 brew install git
 ```
 
-####Configuring GIT
+#### Configuring GIT
 
 Using your email credentials for GIT, run these commands with your user and email configured.
 
@@ -63,6 +61,11 @@ We'll mainly be using HTTPS, so use a credential helper to cache our keys. You s
 
 For SSH Keys you can cache them too if needed:
 https://help.github.com/articles/generating-ssh-keys/
+
+### Setting up the bash shell
+```
+touch ~/.bashrc
+```
 
 ##Node
 
@@ -92,11 +95,54 @@ We'll be running **Sublime**, as our text editor of choice.
 
 Download and install the latest version [https://www.sublimetext.com/](https://www.sublimetext.com/)
 
-## (optional) Pimp your Terminal with iTerm & Oh My ZSH
+#### Run sublime from your command line
 
-A shell is an interface into our computer, and we will be using a lot to run commands. You can 'make it hipper' by installing some packages:
+Check your own $PATH by running:
+```
+echo $PATH
+```
 
-https://gist.github.com/kevin-smets/8568070
+This is what your should see:
+```
+/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+```
+
+**Installation**
+Make sure you installed sublime into the right place.
+
+When you do this `ls` it should tell you that the `subl` file does exist. Check in finder if you are unsure.
+```
+ls -la /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+```
+Then run the command to link:
+```
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+```
+
+**Testing**
+Open a Terminal window and run:
+```
+sublime ~/Documents
+```
+**to open the entire current directory**
+sublime .
+
+
+#### set sublime as your command line default editor
+**this also allows you to refresh changes to your shell config**
+```
+export VISUAL=sublime
+export EDITOR="$VISUAL"
+
+function subledit() {
+  sublime ~/.bashrc
+}
+
+function bashrcrefresh() {
+  echo "Refreshing your configuration."
+  source ~/.bashrc
+}
+```
 
 ## [Postgres](#postgres)
 
@@ -117,17 +163,22 @@ Create the export path command with that version number/directory name
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```
 
+If you have successfully configured bash and sublime, the following command should work.
+
+```
+sublime ~/.bashrc
+```
+
+Your sublime editor will popup with configuration settings, at the bottom of the file append the same line:
+```
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
+```
+
 Type `which psql` at which point should display
 
 ```
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
-
-###Install Postgres GUI
-
-We'll be using **Postico**. Install here:
-
-https://eggerapps.at/postico/
 
 ##Installing Ruby on Rails
 
@@ -137,9 +188,9 @@ rbenv lets us change ruby verions on the fly, useful for working with diffrent v
 ```
 brew update
 brew install rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-source ~/.zshrc
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+source ~/.bashrc
 
 sudo chown -R $USER ~/.rbenv
 ```
@@ -186,23 +237,4 @@ npm -v
 
 git --version
 psql --version
-
 ```
-
-###OSX
-
-```
-alias srv="_srv(){open \"http://localhost:\${1-8000}\" && python -m SimpleHTTPServer \$1}; _srv"
-```
-
-
-3.) Close and restart your terminal, or run `sublime ~/.zshrc` to reload the file.
-
-Now you should be able to navigate to the folder of your project (the folder containing index.html), type `srv`, and hit enter. This will start a HTTP server and open your browser to that URL.
-
-You can go back to the site at anytime by going to `http://localhost:8000`. You can quit the server by typing `CTRL + C`
-
-
-#### Aside: Wildcard Protocols and HTTP
-
-You'll notice that Bootstrap and other CDN URLs may start with `//`. This is a wildcard protocol, which means it will use whatever protocol your site is using (`http://` or `https://`). When we're loading a file locally, our protocol is `file:///`, meaning we're accessing a file on our harddrive. Therefore, the default CDN will look for the file on our computer (instead of on the CDN) and won't find it. To fix this, we need to run a HTTP server.
