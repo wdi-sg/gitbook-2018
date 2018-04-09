@@ -2,7 +2,6 @@
 
 ##Objectives
 * Understand difference between objects and classes
-* Understand how objects are referenced
 * Understand getters and setters
 * Understand `attr_writer`, `attr_reader`, `attr_accessor`
 * Understand instance variables and instance methods
@@ -10,6 +9,8 @@
 * Utilize the `self` keyword
 * Understand `Private`, and `Public` methods
 * Understand method chaining in a class
+* Understand how objects are referenced
+
 
 ## Class Definition of a person
 
@@ -31,36 +32,13 @@ To create a new *instance* of our *class* we write the following:
 Person.new
 ```
 
+A class is an imprint of a thing we want to create.
+[](https://media.giphy.com/media/cfph3o9Wx0KKk/giphy.gif)
+
 A particular instance of a *class* is a called an **object**. In general, languages that use *objects* as a primary means of *data abstraction* are said to be **Object Oriented Programming** (OOP) languages.
 
 
 ### Objects
-
-What is an **object** in ruby? Basically everything that isn't a keyword.
-
-However, this can cause you some headaches if you're not careful.
-
-Imagine we had the following
-
-```ruby
-arr1 = [1,2,3]
-arr2 = arr1
-arr1 << 4
-#=> [1,2,3,4]
-arr2
-#=> [1,2,3,4]
-```
-
-Wow, the second array completely changed. That's because `arr2` was a reference to `arr1`. Both variables represented the same **object**. The way around this is to copy the object.
-
-```ruby
-arr1 = [1,2,3]
-arr2 = Array.new(arr1)
-arr1 << 4
-#=> [1,2,3,4]
-arr2
-#=> [1,2,3]
-```
 
 ### Initialize and instance variables
 
@@ -202,93 +180,6 @@ class Person
   end
 end
 ```
-
-
-### Class and self
-
-We just created instance variables, which have different values depending on the object instance. Class variables share the same value across the entire class. Also, we don't need to create an instance in order to access class variables.
-
-Let's first create a variable associated with our class. Using the syntax `@@var_name` designates a class variable.
-
-```ruby
-class Person
-  attr_accessor :name
-  @@population = 0
-  @@zip_code = 98101 # downtown Seattle
-
-  def initialize(name)
-    @name = name
-    @@population += 1
-  end
-  
-  def self.population
-    @@population
-  end
-  
-  def self.zip_code
-    @@zip_code
-  end
-  
-  def self.zip_code=(new_zip)
-    @@zip_code = new_zip
-  end
-end
-```
-
-We have to create a method on the class to make the class variable accessible. Now we can access the value without creating any people.
-
-```ruby
-puts "Population: #{Person.population}"
-
-batman = Person.new("Bruce Wayne")
-superman = Person.new("Clark Kent")
-Person.print_population
-
-# we can access the population and zip code directly
-puts "Population: #{Person.population}"
-puts "Zip Code: #{Person.zip_code}"
-
-# no one should be allowed to redefine the population
-# there is no setter defined for population. this will crash.
-# Person.population = 8
-
-# however, the zip code can totally be updated!
-Person.zip_code = 98122 # capitol hill
-
-puts Person.print_population
-```
-
-
-If we create a few people, we see the following
-
-```ruby
-Person.new("John")
-Person.new("Jane")
-Person.population
-#=> 2
-```
-
-What about class methods? We can also create a method that belongs to a class.
-```ruby
-class Person
-  attr_accessor :name
-  @@population = 0
-
-  def initialize(name)
-    @name = name
-    @@population += 1
-  end
-
-  def self.print_population
-    puts "There are #{self.population} people"
-  end
-end
-```
-
-In most cases, inside an instance method, self refers to the object, but when used in the context of a method name, self refers to the *class* itself`.
-
-Also, note that `self` can be used in instance methods to refer to particular *object* in use, i.e. `self.var_name` instead of `@var_name`.
-
 
 ### Private Methods
 
@@ -433,3 +324,52 @@ class Person
   end
 end
 ```
+
+#### Reference vs. Value
+What is an **object** in ruby? Basically everything that isn't a keyword.
+
+However, this can cause you some headaches if you're not careful.
+
+Imagine we had the following
+
+```ruby
+arr1 = Array.new
+arr1.push 1
+arr1.push 2
+arr2 = arr1
+arr1 << 4
+#=> [1,2]
+arr2
+#=> [1,2]
+```
+
+Wow, the second array completely changed. That's because `arr2` was a reference to `arr1`. Both variables represented the same **object**. The way around this is to copy the object.
+
+```ruby
+arr1 = Array.new
+arr1.push 1
+arr1.push 2
+
+arr2 = Array.new(arr1)
+arr1 << 3
+#=> [1,2,3]
+arr2
+#=> [1,2]
+```
+
+This doesn't happen with single value variables:
+```
+my_num = 1
+
+my_other_num = my_num
+
+puts my_other_num
+
+my_other_num += 2
+
+puts my_other_num
+
+puts my_num
+```
+
+Ruby and javscript need to be careful about the **size** fo things- how much memory things take up. If they are not sure of the size of an array or object, the value they need to store the variable is a pointer/reference to a thing, rather than the thing itself ( a pointer to `arr1` vs. the value `1` itself)
