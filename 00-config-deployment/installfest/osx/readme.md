@@ -201,17 +201,11 @@ brew update
 
 brew install ruby-build
 
-rbenv install 2.2.2
-rbenv global 2.2.2
+rbenv install 2.3.5
+rbenv global 2.3.5
 ```
 
 ### Install Rails
-
-```
-echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-```
-
-Restart your terminal. The command above will install gems without documentation (which can take up time when installing Rails)
 
 ```
 sudo gem update

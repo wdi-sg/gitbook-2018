@@ -1,12 +1,12 @@
-#Ruby Crash Course
+# Ruby Crash Course
 
-##Objectives
+## Objectives
 
 * Describe the history of the Ruby language
 * Identify fundamentals and concepts of the Ruby langauge
 * Utilize different primitive types, control structures, and methods in Ruby
 
-##Humble Origins
+## Humble Origins
 Ruby is an object-oriented language suitable for writing day to day scripts as well as full-scale applications. Yukihiro Matsumoto, or "Matz", began work on Ruby back in 1993, because he wanted a language that made him productive while being fun to use. Initially popular in Japan, Ruby has been finding its way into the hearts of programmers all over the world.
 
 * Ruby stylistically conforms to the **snake_case** convention
@@ -14,7 +14,7 @@ Ruby is an object-oriented language suitable for writing day to day scripts as w
 
 Further reading: [The Philosophy of Ruby](http://www.artima.com/intv/ruby.html)
 
-###Yukihiro Matsumoto
+### Yukihiro Matsumoto
 ![Matz-san](http://image.gihyo.co.jp/assets/images/dev/serial/01/software_designers/0034/0034-01.JPG "Yukihiro Matsumoto")
 
 ## Why JavaScript, then Ruby?
@@ -53,7 +53,7 @@ puts my_variable
 #=> 5
 ```
 
-##Constants
+## Constants
 
 Mostly, we're able to change what a variable's holding if we so choose – constants are designed for the opposite. Constants are meant to be placeholders that never change.
 
@@ -161,7 +161,7 @@ person.length
 &&
 ```
 
-Note that Ruby has a `===` operator, but no `!==` operator. In fact, the operator means something different in Ruby. We'll touch on this when we get to ranges. You can use the `.equal?` function as an identity operator.
+Note that Ruby has a `===` operator, **BUT** the operator means something different in Ruby. We'll touch on this when we get to ranges. You can use the `.equal?` function as an identity operator.
 
 ### Arrays
 An indexed arrangement of objects
@@ -261,6 +261,7 @@ numbers
 
 ### Ranges
 A set of values with a beginning and an end
+Specfiically this uses `..`to set a range between two values A and B `A..B`
 
 ```ruby
 a_range = (1..10) # includes 10
@@ -283,7 +284,7 @@ another_range === 3
 
 === can also be used to check whether something is part of a type or in encapsulated in a regular expression.
 ```ruby
-Integer === 5          
+Integer === 5
 # => true
 Integer === 'hello'
 # => false
@@ -310,7 +311,7 @@ country.object_id == food.object_id
 => false
 ```
 
-###Hashes
+### Hashes
 A hash consists of unindexed key-value pairs. You may construct a hash in either of the following ways. Each will use symbols.
 
 ```ruby
@@ -330,7 +331,7 @@ cat[:fav_food]
 => 'Prosciutto'
 ```
 
-###Mutator methods !
+### Mutator methods !
 Mutator methods will not just return a value, but change the object they are called on to that value. Adding ! to certain ruby methods will turn them into their mutator method counterparts. Some people call these "methods with a bang" for self-explanatory reasons!
 
 *How to mutate an array*
@@ -349,7 +350,7 @@ arr
 # => [4,5,7]
 ```
 
-###Typecasting
+### Typecasting
 Typecasting is the act of altering an object's datatype
 
 ```ruby
@@ -359,8 +360,8 @@ Typecasting is the act of altering an object's datatype
 .to_f
 ```
 
-##Code blocks
-Sometimes called closures in other languages is a chunk of contained code. Use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
+## Code blocks
+Use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
 
 ```ruby
 # count to 10
@@ -373,7 +374,7 @@ until x > 10 do
 end
 ```
 
-##String Interpolation
+## String Interpolation
 Allows one to inlcude a dynamic variable in a string. String interpolation can only be done on double-quoted strings.
 
 ```ruby
@@ -584,7 +585,7 @@ end
 say_hello
 ```
 
-In Ruby, leaving the `()` off of a function call is acceptable. Since functions can't be passed as values (i.e., aren't first-class), Ruby knows that we mean to call the function, so it calls it.
+In Ruby, leaving the `()` off of a function call is possible. Since functions can't be passed as values (i.e., aren't first-class), Ruby knows that we mean to call the function, so it calls it.
 
 #### Parameters (Arguments)
 ```ruby
@@ -601,9 +602,11 @@ end
 
 # note the lack of parentheses
 say_hello "Tim"
+```
 
-# is the same as
-def say_hello(friend='Tim')
+#### Keyword Arguments
+```
+def say_hello(friend: 'Tim')
   puts "Hello, #{friend}!"
 end
 
@@ -675,3 +678,50 @@ puts "Hello, #{friend}. #{you} says hi."
 ```
 
 Much better. Now the unnecessary newlines are removed, thanks to `chomp`.
+
+#### ARGV
+If we want to run a ruby script from the command line, we can get command line arguments with `ARGV`
+
+It works much like `process.argv`
+
+Try it:
+```
+touch banana.rb
+```
+
+Edit the file and put this inside:
+```
+puts "helloe world"
+```
+
+Run it.
+```
+ruby banana.rb
+```
+
+Edit the file to `puts` the command line arguments:
+```
+puts "helloe world #{ARGV[0]}"
+```
+
+Run it
+```
+ruby banana.rb monkey
+```
+
+#### JSON
+In ruby, if you want to work with a file, it's very simple.
+
+Use the built-in `File` library to read in the data. It's sychronous.
+
+```
+file = File.read('products.json')
+```
+
+The thing you get is one big string, so you need to parse it:
+```
+data = JSON.parse(file)
+```
+
+### Pairing Exercise
+Run each ruby example above.

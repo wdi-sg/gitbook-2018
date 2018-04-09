@@ -144,6 +144,14 @@ END $$;
 
 ---
 
+#### Return the thing you created `RETURNING`
+
+---
+
+#### Date Type with `pg` npm package / created_at
+
+---
+
 ### Pairing Exercise:
 Create a command line app that runs the previous exercise, but inside of node.js. After each sql satement, output the result in a console.log, with a string that identifies that output.
 
