@@ -1,0 +1,316 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="asset-pipeline-and-front-end-in-rails">Asset Pipeline and Front-end in Rails</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Incorporate JavaScript, CSS, SCSS, images, and other static files into a Rails application</li>
+<li>Understand the Asset Pipeline</li>
+<li>Utilize helper methods/tags for including static resources</li>
+<li>Use <code>gon</code> to pass data to the front-end</li>
+</ul>
+<p>We can work with JavaScript, CSS, and images in Rails just like we did in our front-end only projects. Rails uses the concept of an Asset Pipeline to handle pre-processing and loading of static assets. The &quot;Rails way&quot; is to put all of your assets (JavaScript, CSS/SASS, images) in the <code>assets</code> folder. Just do it!</p>
+<h2 id="javascript">JavaScript</h2>
+<p>To load JavaScript files in Rails we simply create <code>.js</code> files in the <code>app/assets/javascripts</code> directory and Rails will automatically load them in the head of the page using <code>&lt;script&gt;</code> tags.</p>
+<p>To adjust the load order, we can add the scripts along with the <code>//=</code> lines at the bottom of <code>application.js</code></p>
+<h4 id="applicationjs">application.js</h4>
+<p>application.js is used to load other JavaScript files and allows us to change the load order of the files. You <em>CAN</em> put JavaScript code directly in this file. But it&apos;s best practice to avoid this and use separate files as before.</p>
+<p>At the bottom of <code>application.js</code> there are a few lines that look like comments and start with <code>//=</code> these are used to specify which files to load and in what order. The last line (<code>//= require_tree .</code>) loads all of the files in the <code>javascripts</code> directory that aren&apos;t loaded explicitly above.</p>
+<p>For example, if we had a file called <code>importantScript.js</code> in our <code>javascripts</code> directory and we needed it to be loaded first we could simply do something like this...</p>
+<pre><code class="lang-js"><span class="hljs-comment">//= require &apos;importantScript.js&apos;</span>
+<span class="hljs-comment">//= require jquery_ujs</span>
+<span class="hljs-comment">//= require turbolinks</span>
+<span class="hljs-comment">//= require_tree .</span>
+</code></pre>
+<h4 id="blame-turbolinks">Blame Turbolinks</h4>
+<p>Rails includes a package called Turbolinks, which provides some optimization for our sites by minimising the amount of the page that is redrawn between requests. It&apos;s clever but can cause issues if we are expecting js/jquery page ready events to fire. One solution is to <a href="http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4" target="_blank">remove Turbolinks</a>, the other is use the <code>ready page:load</code> event in-place of the standard jQuery ready event.</p>
+<pre><code class="lang-js">$(<span class="hljs-built_in">document</span>).on(<span class="hljs-string">&apos;ready page:load&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  $.get(<span class="hljs-string">&apos;/names&apos;</span>).done(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(data);
+  });
+});
+</code></pre>
+<h2 id="stylesheets">Stylesheets</h2>
+<p>Rails uses SASS, which is a preprocessor for CSS that allows us to use some additional features that standard CSS doesn&apos;t support. These files end with the <code>.scss</code> file extension and are processed on the server (back-end) before they are sent to the user/browser as plain CSS.</p>
+<p>Learn SASS here: <a href="../additional-topics/sass/readme.md">SASS</a></p>
+<p>Just like with JavaScript, Rails will auto-load any CSS or SCSS file that are in <code>app/assets/stylesheets</code>.</p>
+<p>Also, similar to JavaScript we can adjust the load order by editing the bottom of <code>application.css</code>, and again we should avoid putting CSS directly in this file.</p>
+<h2 id="images">Images</h2>
+<p>We can load images by placing them in <code>app/assets/images</code> and using the rails <code>image_tag</code> helper to load them for us.</p>
+<h4 id="images-in-views-erb">Images in views (erb)</h4>
+<p>If we have a file <code>app/assets/images/pic.jpg</code> we can display it in an erb file like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">image_tag</span> &apos;<span class="hljs-attr">pic.jpg</span>&apos; %&gt;</span>
+</code></pre>
+<p>We can also get a string of the image URL/path by calling <code>image_url</code> or <code>image_path</code>.</p>
+<h4 id="images-in-css-using-scss">Images in CSS (using SCSS)</h4>
+<p>We also have access to a <code>image_url</code> helper method in <code>scss</code> files. It will be used in place of the standard css <code>url(&apos;/path/to/image.jpg&apos;)</code> format.</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.some-class</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">image_url</span>(<span class="hljs-string">&apos;pic.jpg&apos;</span>);
+}
+</code></pre>
+<p><strong>NOTE:</strong> make sure the file is named <code>scss</code> and not just <code>css</code>. The <code>css</code> files are served to the browser as-is (no pre-processing), but <code>scss</code> are run through the sass pre-proccessor first which will run the <code>image_url</code> method and insert the correct image path.</p>
+<h2 id="passing-data-to-the-front-end-gon">Passing data to the front-end (gon)</h2>
+<p>We can pass data from a controller to front-end JavaScript using a gem called &quot;gon&quot; which allows us to easily pass any data from the back-end to the front-end.</p>
+<h4 id="gon-setup">gon setup</h4>
+<p>To use gon (just like any other gem) we need to add it to our <code>GemFile</code>. After adding it remember to run <code>bundle install</code> and then restart your server with <code>rails s</code></p>
+<p><strong>in GemFile</strong></p>
+<pre><code class="lang-ruby">gem <span class="hljs-string">&apos;gon&apos;</span>
+</code></pre>
+<p>Then we need to add a tag inside of our <code>&lt;head&gt;</code> tag that will load the backend values as javascript so we can use them in our frontend.</p>
+<p><strong>in layouts/application.html.erb</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">include_gon</span> %&gt;</span>
+</code></pre>
+<p>Be sure to add this line BEFORE  <code>javascript_include_tag</code> that way the variables it defines will be available in your <code>.js</code> files.</p>
+<h4 id="using-gon">Using gon</h4>
+<p>gon is very simple to use. It exposes a variable called <code>gon</code> the controller. <code>gon</code> is a hash that we can add any values to and they will be available on the front-end automatically.</p>
+<p><strong>In controller</strong></p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span></span>
+  gon.something = <span class="hljs-string">&quot;hello&quot;</span>
+  gon.people = [<span class="hljs-string">&apos;Lenny&apos;</span>, <span class="hljs-string">&apos;Brian&apos;</span>, <span class="hljs-string">&apos;Daniel&apos;</span>]
+  gon.tasks = Task.all
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>In JS</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(gon.something);
+<span class="hljs-comment">//outputs: &quot;hello&quot;</span>
+
+<span class="hljs-built_in">console</span>.log(gon.people);
+<span class="hljs-comment">//output: [&apos;Lenny&apos;, &apos;Brian&apos;, &apos;Daniel&apos;]</span>
+
+<span class="hljs-built_in">console</span>.log(gon.tasks);
+<span class="hljs-comment">//outputs: an array of objects for all tasks in the database</span>
+</code></pre>
+<h4 id="pitfalls">Pitfalls</h4>
+<p>There is only one major &quot;gotcha&quot; with <code>gon</code> and that is that <code>gon</code> won&apos;t be defined in JavaScript unless you assign something to it in the controller.</p>
+<p>Assume we didn&apos;t assign any values to <code>gon</code> in the controller...</p>
+<p><strong>in JS</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(gon.taco);
+</code></pre>
+<p>This would throw an error because <code>gon</code> is undefined. To avoid this problem we just need to check it using <code>typeof</code>.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> gon !== <span class="hljs-string">&apos;undefined&apos;</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;taco is&apos;</span>, gon.taco);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;there is no gon (or taco)&apos;</span>);
+}
+</code></pre>
+<h2 id="additional-reading">Additional Reading</h2>
+<ul>
+<li><a href="http://guides.rubyonrails.org/asset_pipeline.html" target="_blank">Rails Guides - Assets Pipeline</a></li>
+<li><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html" target="_blank">Rails API - Asset Tag Helpers</a></li>
+<li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank">SASS documentation</a></li>
+<li><a href="https://github.com/gazay/gon" target="_blank">gon gem</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"readme.md","mtime":"2018-04-09T14:03:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-09T14:03:35.576Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
