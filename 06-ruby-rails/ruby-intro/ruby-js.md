@@ -1,3 +1,5 @@
+## Ruby vs. Javascript
+
 
 ### No Falsy / Truthy
 Ruby won't compare two things that are different types. You can cast them if you want to compare.
