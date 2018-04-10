@@ -6,6 +6,7 @@ ruby
 hw: google shopping loops / functions in ruby
 
 day 2
+morning exercise: https://github.com/wdi-sg/piglatin
 ruby oop
 ruby classes
 ruby inheritance
@@ -18,13 +19,13 @@ day 3
 
 active record cli: https://git.generalassemb.ly/ga-wdi-lessons/activerecord-intro
 
-rails active record
 
 hw: ruby commandline game w/ objects / active record
 
 day 4
 
 rails intro
+rails active record
 
 week 2:
 

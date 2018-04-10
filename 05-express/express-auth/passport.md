@@ -222,7 +222,7 @@ response.render('home', context);
 
 Make some changes to the root route template to display some stuff conditionally.
 [https://github.com/wdi-sg/express-reference/blob/16522da0372f5125fe8508346792d4c217d620a6/views/home.handlebars](https://github.com/wdi-sg/express-reference/blob/16522da0372f5125fe8508346792d4c217d620a6/views/home.handlebars)
-```
+<div>
 {{#if isAuthenticated}}
   <form action="/users/logout" method="POST">
     <input type="submit" value="logout, {{user.name}}"/>
@@ -231,7 +231,7 @@ Make some changes to the root route template to display some stuff conditionally
   <a href="/users/login">login</a>
   <a href="/users/new">signup</a>
 {{/if}}
-```
+</div>
 
 ### User Login
 
