@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>slide</title>
+    <meta charset="utf-8">
+    <link href="style.css" media="all" rel="stylesheet">
+    <style>
+      img{
+        max-width:90%;
+        margin:0 auto;
+      }
+      p{
+        font-size:23px;
+        letter-spacing:0.1px;
+        line-height:31px;
+      }
+      .remark-slide-content{
+
+        font-size:23px;
+        letter-spacing:0.1px;
+        line-height:31px;
+
+      }
+      .remark-code-line{
+
+        font-size:22px;
+        letter-spacing:0.1px;
+        line-height:29px;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      $(function(){
+          var location = getParameterByName('fileurl');
+
+          var slideshow = remark.create({
+            navigation: {
+              click: false
+            },
+
+
+            sourceUrl: location
+          });
+
+      });
+
+      //from: https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+      function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+    </script>
+  </body>
+</html>
+

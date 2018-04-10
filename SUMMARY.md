@@ -103,6 +103,7 @@
   * [Express Authentication](05-express/express-auth/readme.md)
     * [Cookies](05-express/express-auth/cookies.md)
     * [Auth / Password](05-express/express-auth/password.md)
+    * [passport.js](05-express/express-auth/passport.md)
   * [Testing with Mocha and Chai](05-express/express-mocha-testing/readme.md)
   * [JSON Web Tokens](05-express/express-jwt/readme.md)
     * [Codealong](05-express/express-jwt/codealong.md)
