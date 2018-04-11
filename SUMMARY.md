@@ -130,6 +130,8 @@
   * [Ruby Classes](06-ruby-rails/ruby-classes/readme.md)
   * [Ruby Inheritance](06-ruby-rails/ruby-inheritance/readme.md)
 * [Ruby on Rails](06-ruby-rails/rails.md)
+  * [Intro to ActiveRecord](06-ruby-rails/rails-intro/active_record/readme.md)
+  * [ActiveRecord Associations](06-ruby-rails/rails-intro/active_record/activerecord-assoc.md)
   * [Intro to Rails](06-ruby-rails/rails-intro/readme.md)
   * [Views, Layouts & Partials](06-ruby-rails/rails-intro/views.md)
   * [Asset Pipeline](06-ruby-rails/rails-assets-frontend/readme.md)

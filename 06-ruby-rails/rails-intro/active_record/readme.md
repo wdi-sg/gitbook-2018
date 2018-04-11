@@ -119,22 +119,6 @@ Obeying the naming conventions in Active Record saves you a good deal of headach
 
 #### Alright! Let's get started with some code!
 
-### We Do: Setup SQL - Tunr (10 min / 0:40)
-
-> [Tunr Deployed link](https://wdi-dc-tunr.herokuapp.com/artists)
-
-Make sure to review our domain model for tunr.
-
-![Tunr ERD](tunr-erd.png)
-
-We want to be able to do CRUD for these models with Active Record. We'll be going into greater detail about how we are going to use Active Record as an interface between our server and our database, but to start, the first thing that we want to do is create/setup a database.
-
-```bash
-$ git clone https://github.com/ga-wdi-exercises/tunr-active-record.git
-$ cd tunr-active-record
-$ bundle install
-```
-
 ### Gemfiles
 To install ruby library packages, we use `gem`. The `gem` command is equivalent to `npm install` or `yarn add` in node.
 
@@ -151,7 +135,16 @@ gem "activerecord"  # this gem provides a connection between your ruby classes t
 gem "byebug"  # this gem allows access to REPL
 ```
 
+Install all the gems specified in the gem file with the command:
+```
+bundle install
+```
+
 ### app.rb
+Let's setup the main file.
+
+We need to use require a bunch of times to gather together all the libs.
+
 ```
 require "bundler/setup" # require all the gems we'll be using for this app from the Gemfile. Obviates the need for `bundle exec`
 require "pg" # postgres db library
@@ -165,7 +158,7 @@ ActiveRecord::Base.establish_connection(
   :database => "tunr_db"
 )
 
-require_relative "models/artist" # require the Artist class definition that we defined in the models/artist.rb file
+require_relative "artist" # require the Artist class definition that we defined in the artist.rb file
 
 
 # This will put us into a state of the byebug REPL, in which we've established a connection
@@ -187,6 +180,28 @@ Make sure that `gem install json -v '1.8.3'` succeeds before bundling.
 
 Then run this command: `$ bundle update`
 </details>
+
+#### Defining our Models
+
+In the `artist.rb` file, we define our `artist` model:
+
+```ruby
+class Artist < ActiveRecord::Base
+  # AR classes are singular and capitalized by convention
+end
+```
+
+> In this Ruby file, we create a class of Artist that inherits from `ActiveRecord::Base`. Essentially, when we inherit from `ActiveRecord::Base`, it gives this class a whole bunch of functionality that maps the Ruby `Artist` class to the `artists` table in Postgres.
+
+## Inheritance
+We are using this stntax for ruby inheritance:
+```
+class Artist < ActiveRecord::Base
+```
+
+This means we can use Artist class in much the same way we would use an ActiveRecord class. Except that we can add in all our Artist class stuff. The code looks clean and isn't cluttered by active record code, and we don't care how the active record methods we get for free *actually* work.
+
+If you want a bit more detail on inheritance in ruby check the [gitbook.](../../ruby-inheritance/readme.html)
 
 ### Setting up the db
 
@@ -217,7 +232,7 @@ CREATE TABLE songs(
 
 ### seeds.sql
 Is the same as it was before. It contains sql for each row.
-(we will be getting rid of this format od seed file tomorrow)
+(we will be getting rid of this format for seed soon)
 
 ### running the db configs:
 
@@ -230,6 +245,8 @@ psql -d tunr_db < seeds.sql
 ```
 
 Check you did everything correctly.
+
+## Using Active Record
 
 - Run your program(`$ ruby app.rb`)
 - When you see the `byebug` REPL, run this ruby code: `Artist.first`
@@ -250,7 +267,7 @@ Great! We've got everything done that we need to get setup with single model CRU
 $ ruby app.rb
 ```
 
-When we run this app, we can see that it drops us into pry. Let's write some code in byebug to update our database... **IN REALTIME!!!**
+When we run this app, we can see that it drops us into byebug. Let's write some code in byebug to update our database... **IN REALTIME!!!**
 
 We'll create an instance of the `Artist` object on the Ruby side:
 
@@ -359,219 +376,7 @@ We will use `byebug` in your ruby app to test out ActiveRecord class and instanc
 
 > Don't forget to require 'byebug' when you want to use `byebug` in your program.
 
-[Part 1.1 - Use Your Artist Model](https://github.com/ga-wdi-exercises/tunr-active-record#part-11---use-your-artist-model)
-
-## Associations
-
-### Reframing (10 / 1:40)
-
-<details>
-<summary><strong>Q</strong>. We have a lot of choice when it comes to databases, why are we using SQL?</summary>
-
-<br>
-
-
-> We use SQL because it is a <strong>relational</strong> database. But what does that really mean? Basically we want the ability to associate models in our domain. That can come in a variety of ways in a relational database, but at the heart of it is essentially this: One model has many other instances of another model. And that other model belongs to the original.
-
-
-</details>
-
-<br>
-Let's take a look at an example in the wild.
-
-With the application Facebook, there are many users. Each of these users have several models associated with them. Let's look at one more closely. We'll be looking at posts(status updates)
-
-The first model we'll be looking at is Users. The second is Posts.
-
-A User has many Posts
-And every Post belongs to a certain user.
-
-> Note the plurality of the nouns used in these two sentences
-
-When we start organizing our objects in this manner and program these associations, it becomes much easier to query our database for what we need. If we were on a user's Facebook page, we'd see all of their posts. These are coming from some database. For that database, it wouldn't make sense for it to query EVERY post in Facebook and then check if going through every Facebook post ever and seeing if each post's user was the user whose page you have open.
-
-The fact that a bunch of posts were associated with Adrian's account, means that the entire database doesn't have to be queried. The database only has to pull information **related** to one account. **Relating** the 'categories' of things that go in the database is just a way of **structuring** or **organizing** the data in such a way that it is very useful to a program.
-
-Let's see what some of this stuff looks like in code. We're going to be adding an artist model to our program.
-
-### Associations in Schema (5 / 1:35)
-
-**NOTE:** In this section, we are reviewing our schema and how it reflects associations for our domain. We are NOT updating the schema file.
-
-Looking back at our schema, in `schema.sql`:
-
-```sql
-DROP TABLE IF EXISTS songs;
-DROP TABLE IF EXISTS artists;
-
-CREATE TABLE artists(
-  id SERIAL PRIMARY KEY,
-  name TEXT,
-  photo_url TEXT,
-  nationality TEXT
-);
-
-CREATE TABLE songs(
-  id SERIAL PRIMARY KEY,
-  title TEXT,
-  album TEXT,
-  preview_url TEXT,
-  artist_id INT
-);
-```
-
-Make note of the foreign key in `songs`
-
-A good explanation for why we need to relate these things in ActiveRecord: 
-http://guides.rubyonrails.org/association_basics.html
-
-### Updating Class Definitions (5 min / 1:40)
-
-Next we need to update the models to reflect the relationships in our application.
-
-```ruby
-# models/artist.rb
-class Artist < ActiveRecord::Base
-  has_many :songs
-end
-```
-
-Now In our `song.rb` we have to reflect the association:
-
-```ruby
-class Song < ActiveRecord::Base
-  belongs_to :artist
-end
-```
-> note the plurality of `songs` and singularity of `artist`.  
-
-We also need to include the `song.rb` file into our `app.rb` so in `app.rb` we need to add
-
-```ruby
-require_relative "song"
-```
-
-### You Do: Updating Class Definitions (5 min / 1:45)
-
-[Part 1.2 - Create Your Song Model / Setup Associations](https://github.com/ga-wdi-exercises/tunr-active-record#part-12---create-your-song-model--setup-associations)
-
-### Association Helper Methods (10 min / 1:55)
-
-So we added some code, but we can't yet see the functionality it gives us.
-
-Basically when we added those two lines of code `has_many :songs` `belongs_to :artist` we created some helper methods that allow us to query the database more effectively.
-
-Lets create some objects in our `app.rb` so we can see what were talking about:
-
-```ruby
-Song.destroy_all
-Artist.destroy_all
-
-ratatat = Artist.create(name: "Ratatat", nationality: "American")
-beatles = Artist.create(name: "The Beatles", nationality: "British")
-
-# NOTE: you can pass an array to create for bulk creation
-Song.create([
-    {title: "Wildcat", album: "Classics", artist: ratatat },
-    {title: "Loud Pipes", album: "Classics", artist: ratatat },
-    {title: "Neckbrace", album: "LP4", artist: ratatat },
-    {title: "Twist and Shout", album: "Please Please Me", artist: beatles},
-    {title: "Hello, Goodbye", album: "Magical Mystery Tour", artist: beatles},
-    {title: "Revolution", album: "The Beatles", artist: beatles}
-  ])
-```
-
-> **Question:** Why do we need to use `.destroy_all`?
-
-Now that we have this association, we can now easily query the database for the relevant records.
-
-If we want to get all of The Beatles' songs or set The Beatles' songs, we can now write this code:
-
-```ruby
-beatles = Artist.find_by(name: "The Beatles")
-beatles.songs
-# will return all songs that belong to The Beatles, this is .songs being used as a getter method
-
-beatles.songs = [Song.first, Song.last]
-# this is .songs being used as a setter method
-```
-> note that when songs is being used as a setter method above, it actually changes the artist_id column for those songs to match The Beatles' primary ID. Any song that previously was assigned to The Beatles and not reassigned in the setter will now have an artist_id of nil
-
-Alternatively if we wanted to get a song's artist we could write this code:
-
-```ruby
-loud_pipes = Song.find_by(title: "Loud Pipes")
-loud_pipes.artist
-# will return loud_pipes' artist, this is .artist being used as a getter method
-
-beatles = Artist.last
-loud_pipes.artist = beatles
-loud_pipes.save
-# this .artist being used as a setter method, and now loud_pipes's artist is the beatles.
-```
-
-We can also create new songs under a certain artist by doing the following:
-
-```ruby
-beatles.songs.create(title: "Hey Jude", album: "Beatles Chillout (Vol. 1)")
-# this will create a new song that belongs to the Artist object named beatles.
-```
-> **Note** that we did not pass in an artist id above. Active Record is smart and does that for us.
-
-### You Do: Association Helper Methods (10 min / 2:05)
-
-[Part 1.3 - Use Your Model Assocations](https://github.com/ga-wdi-exercises/tunr-active-record#part-13---use-your-model-associations)
-
-### Seeding a Database with ActiveRecord (10 min / 2:15)
-Seeding a database is not all that different from the things we've been doing today. 
-
-> What's the purpose of seed data?
-
-We want some sort of data in our database so that we can test our applications. Let's create a seed file in the terminal: `$ touch seeds.rb`
-
-In our `seeds.rb` file, let's put the following code:
-
-```ruby
-require "bundler/setup" # require all the gems we'll be using for this app from the Gemfile. Obviates the need for `bundle exec`
-
-require "pg"
-require "active_record"
-require "byebug"
-
-require_relative "./song"
-require_relative "./artist"
-
-Artist.destroy_all
-Song.destroy_all
-# destroys existing data in database
-
-chili_peppers = Artist.create(name: "Red Hot Chili Peppers", nationality: "American")
-led = Artist.create(name: "Led Zeppelin", nationality: "British")
-
-chili_peppers.songs.create([
-    {title: "Can't Stop", album: "By The Way" },
-    {title: "Scar Tissue", album: "Californication" },
-    {title: "Californication", album: "Californication" },
-    {title: "Dani California", album: "Stadium Arcadium" },
-    {title: "Dark Necessities", album: "The Getaway"}
-  ])
-
-led.songs.create([
-    {title: "Whola Lotta Love", album: "Led Zeppelin II" },
-    {title: "Stairway to Heaven", album: "Led Zeppelin IV" },
-    {title: "Kashmir", album: "Physical Graffiti" },
-    {title: "Black Dog", album: "Led Zeppelin IV" },
-    {title: "All My Love", album: "In Through the Out Door"}
-    ])
-```
-
-Once we get rid of this duplicate CRUD code in `app.rb` we can just run this seed file once and know our data is good.
-
-Now when we run our application with `ruby app.rb`, we enter into byebug with all our data loaded.
-
-## Closing Review (15 min / 2:30)
-
-Active Record is extremely powerful and helpful, and allows us to easily interface with the business models for our applications.
+[Part 1.1 - Use Your Artist Model](https://github.com/wdi-sg/activerecord-intro-exercise#part-11---use-your-artist-model)
 
 ### Resources
 - [Active Record Basics](http://guides.rubyonrails.org/active_record_basics.html)

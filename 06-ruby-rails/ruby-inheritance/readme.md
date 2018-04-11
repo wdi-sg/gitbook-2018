@@ -170,10 +170,6 @@ class Person < Animal
 end
 ```
 
-####Single Inheritance vs Multiple Inheritance
-* In Ruby, a class can only inherit from a single other class. It **cannot** inherit from multiple classes.
-  * Think about it. What are some benefits and disadvantages to single & multiple inheritance?
-
 ####Exercise
 Create a Mammal class, Cat class, and Dog class. Have Cat and Dog inherit from Mammal. Include some attributes for each class and a method for mammal.
 
