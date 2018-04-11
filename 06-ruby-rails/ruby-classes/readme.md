@@ -47,6 +47,27 @@ A particular instance of a *class* is a called an **object**. In general, langua
 
 ---
 
+### Interfaces
+
+With classes we are also creating interfaces (or methods / functions) that anyone using the class can call in order to do certain things.
+
+Much like a library, when you create a set of methods within your class **you** are defining the way the person using that class will interact with it.
+
+It doesn't matter __how__ the code in your class works, just that the interface gives methods to call and gives access to the relevant data.
+
+---
+
+We understand what this code would mean, even though we don't know how it would work:
+```
+person = Person.new("john")
+
+person.birthday= "1/2/33"
+
+puts person.calculate_age
+```
+
+---
+
 
 ### Objects
 

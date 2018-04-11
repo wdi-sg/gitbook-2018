@@ -106,7 +106,7 @@ john.set_name("john")
 
 ```
 
-Both values we created are instances of the same class, but containt different data.
+Both values we created are instances of the same class, but contain different data.
 
 ---
 
