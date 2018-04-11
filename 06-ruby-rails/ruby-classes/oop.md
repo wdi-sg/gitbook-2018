@@ -54,6 +54,13 @@ Person.new
 
 ---
 
+A class is an imprint of a thing we want to create.
+![](https://media.giphy.com/media/6djJPJeaWwTrW/giphy.gif)
+
+
+
+---
+
 ## Storing data in a class instance
 
 1. Specify the attributes we want to store.

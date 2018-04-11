@@ -2,7 +2,7 @@
 
 ---
 
-##Objectives
+## Objectives
 * Understand difference between objects and classes
 * Understand getters and setters
 * Understand `attr_writer`, `attr_reader`, `attr_accessor`
@@ -38,7 +38,7 @@ Person.new
 ---
 
 A class is an imprint of a thing we want to create.
-[](https://media.giphy.com/media/cfph3o9Wx0KKk/giphy.gif)
+![](https://media.giphy.com/media/6djJPJeaWwTrW/giphy.gif)
 
 
 ---
