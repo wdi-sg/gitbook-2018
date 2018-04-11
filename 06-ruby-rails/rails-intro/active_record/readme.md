@@ -24,22 +24,6 @@ So far, we've learned principles of object-oriented programming and how to get d
 
 It'd be **really** nice if a bunch of genius programmers had already worked out some kind of way to interface between the database and our servers/applications in order to streamline the process of reading and writing data to and from a database. Enter **ORMs** and [The Active Record pattern](https://en.wikipedia.org/wiki/Active_record_pattern).
 
-### Information Dive (5 min / 0:10)
-
-For the next 5 minutes, pair up and research what ORM's are.
-
-[ORM - Wikipedia](https://en.wikipedia.org/wiki/Object-relational_mapping)
-> Only read through the summary
-
-[Active Record Basics - Rails Guides](http://guides.rubyonrails.org/active_record_basics.html)
-> Read through sections 1.1 to 1.3
-
-As you read, think about your answer to the following:
-
-1. At a high level, what are ORMs and how might they be useful?
-1. What is the Active Record pattern in a nutshell?
-1. What is the importance of interfacing the server with the database?
-
 ## ORM's & Active Record (10 min / 0:20)
 
 - Object Relational Mapping: A programming technique for converting data between incompatible type systems in object-oriented programming languages - from [Wikipedia](https://en.wikipedia.org/wiki/Object-relational_mapping)
