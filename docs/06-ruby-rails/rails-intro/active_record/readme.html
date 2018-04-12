@@ -1,0 +1,3648 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Intro to ActiveRecord · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="activerecord-assoc.html" />
+    
+    
+    <link rel="prev" href="../../rails.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../01-workflow/readme.html">
+            
+                <a href="../../../01-workflow/readme.html">
+            
+                    
+                    Development Workflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../00-config-deployment/installfest/readme.html">
+            
+                <a href="../../../00-config-deployment/installfest/readme.html">
+            
+                    
+                    Installfest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../00-config-deployment/installfest/osx/readme.html">
+            
+                <a href="../../../00-config-deployment/installfest/osx/readme.html">
+            
+                    
+                    Mac OSX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../00-config-deployment/installfest/windows/readme.html">
+            
+                <a href="../../../00-config-deployment/installfest/windows/readme.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../00-config-deployment/installfest/linux/readme.html">
+            
+                <a href="../../../00-config-deployment/installfest/linux/readme.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../01-workflow/text-editor-packages/readme.html">
+            
+                <a href="../../../01-workflow/text-editor-packages/readme.html">
+            
+                    
+                    Code Editor Packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../01-workflow/command-line/01readme.html">
+            
+                <a href="../../../01-workflow/command-line/01readme.html">
+            
+                    
+                    Command Line
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../01-workflow/command-line/02intro-terminal.html">
+            
+                <a href="../../../01-workflow/command-line/02intro-terminal.html">
+            
+                    
+                    The Terminal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../01-workflow/command-line/03navigating.html">
+            
+                <a href="../../../01-workflow/command-line/03navigating.html">
+            
+                    
+                    Filesystem Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../../01-workflow/command-line/04file-manipulation.html">
+            
+                <a href="../../../01-workflow/command-line/04file-manipulation.html">
+            
+                    
+                    File Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../01-workflow/command-line/command-line-lab.html">
+            
+                <a href="../../../01-workflow/command-line/command-line-lab.html">
+            
+                    
+                    Command Line Lab
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../01-workflow/pairing.html">
+            
+                <a href="../../../01-workflow/pairing.html">
+            
+                    
+                    Pairing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../01-workflow/pseudocode-highlevel.html">
+            
+                <a href="../../../01-workflow/pseudocode-highlevel.html">
+            
+                    
+                    High Level Pseudocode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../01-workflow/pseudocode-lowlevel.html">
+            
+                <a href="../../../01-workflow/pseudocode-lowlevel.html">
+            
+                    
+                    Low Level Pseudocode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../01-workflow/intro-git/readme.html">
+            
+                <a href="../../../01-workflow/intro-git/readme.html">
+            
+                    
+                    Intro to Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../01-workflow/intro-git/02vcs.html">
+            
+                <a href="../../../01-workflow/intro-git/02vcs.html">
+            
+                    
+                    Version Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../01-workflow/intro-git/03localgit.html">
+            
+                <a href="../../../01-workflow/intro-git/03localgit.html">
+            
+                    
+                    Local Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../01-workflow/intro-git/04remotegit.html">
+            
+                <a href="../../../01-workflow/intro-git/04remotegit.html">
+            
+                    
+                    Remote Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../../../01-workflow/git-recipes/readme.html">
+            
+                <a href="../../../01-workflow/git-recipes/readme.html">
+            
+                    
+                    Git Recipes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../01-workflow/group-collab/01readme.html">
+            
+                <a href="../../../01-workflow/group-collab/01readme.html">
+            
+                    
+                    Group Collaboration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../../../01-workflow/group-collab/02gitworkflows.html">
+            
+                <a href="../../../01-workflow/group-collab/02gitworkflows.html">
+            
+                    
+                    Git Workflows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1.1" data-path="../../../01-workflow/group-collab/04gitforkedflow.html">
+            
+                <a href="../../../01-workflow/group-collab/04gitforkedflow.html">
+            
+                    
+                    Git Forked Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../../../01-workflow/group-collab/03rolestools.html">
+            
+                <a href="../../../01-workflow/group-collab/03rolestools.html">
+            
+                    
+                    Project Roles and Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../01-workflow/user-stories-wireframing/readme.html">
+            
+                <a href="../../../01-workflow/user-stories-wireframing/readme.html">
+            
+                    
+                    User Stories and Wireframing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../../../01-workflow/user-stories-wireframing/exercise.html">
+            
+                <a href="../../../01-workflow/user-stories-wireframing/exercise.html">
+            
+                    
+                    Agile Exercise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../../../01-workflow/user-stories-wireframing/game-exercise.html">
+            
+                <a href="../../../01-workflow/user-stories-wireframing/game-exercise.html">
+            
+                    
+                    User Stories for Games
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../../01-workflow/chrome-dev-tools/readme.html">
+            
+                <a href="../../../01-workflow/chrome-dev-tools/readme.html">
+            
+                    
+                    Chrome Dev Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../../01-workflow/how-to-practice.html">
+            
+                <a href="../../../01-workflow/how-to-practice.html">
+            
+                    
+                    Practice Work How To
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../../01-workflow/review.html">
+            
+                <a href="../../../01-workflow/review.html">
+            
+                    
+                    Code Practices Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../03-html-css/readme.html">
+            
+                <a href="../../../03-html-css/readme.html">
+            
+                    
+                    HTML & CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../03-html-css/html-review/readme.html">
+            
+                <a href="../../../03-html-css/html-review/readme.html">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../03-html-css/css-selectors/readme.html">
+            
+                <a href="../../../03-html-css/css-selectors/readme.html">
+            
+                    
+                    CSS Selectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../03-html-css/css-box-model/readme.html">
+            
+                <a href="../../../03-html-css/css-box-model/readme.html">
+            
+                    
+                    CSS Box Model and Positioning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../../03-html-css/css-box-model/02box-model.html">
+            
+                <a href="../../../03-html-css/css-box-model/02box-model.html">
+            
+                    
+                    Box Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../../03-html-css/css-box-model/03display-positioning.html">
+            
+                <a href="../../../03-html-css/css-box-model/03display-positioning.html">
+            
+                    
+                    Display and Positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../../03-html-css/css-box-model/04floats-clears.html">
+            
+                <a href="../../../03-html-css/css-box-model/04floats-clears.html">
+            
+                    
+                    Floats and Clears
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../../03-html-css/css-box-model/05additional.html">
+            
+                <a href="../../../03-html-css/css-box-model/05additional.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../03-html-css/css-responsive-design/readme.html">
+            
+                <a href="../../../03-html-css/css-responsive-design/readme.html">
+            
+                    
+                    Advanced CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../../03-html-css/css-responsive-design/02responsivedesign.html">
+            
+                <a href="../../../03-html-css/css-responsive-design/02responsivedesign.html">
+            
+                    
+                    Responsive Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../../03-html-css/css-box-model/06flexbox.html">
+            
+                <a href="../../../03-html-css/css-box-model/06flexbox.html">
+            
+                    
+                    Flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../../03-html-css/css-responsive-design/03pseudo.html">
+            
+                <a href="../../../03-html-css/css-responsive-design/03pseudo.html">
+            
+                    
+                    Pseudo-Classes\/Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../../../03-html-css/css-responsive-design/04vendorprefixes.html">
+            
+                <a href="../../../03-html-css/css-responsive-design/04vendorprefixes.html">
+            
+                    
+                    Vendor Prefixes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../../../03-html-css/css-responsive-design/05additional.html">
+            
+                <a href="../../../03-html-css/css-responsive-design/05additional.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../03-html-css/css-bootstrap/readme.html">
+            
+                <a href="../../../03-html-css/css-bootstrap/readme.html">
+            
+                    
+                    Bootstrap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../03-html-css/html-page-template/readme.html">
+            
+                <a href="../../../03-html-css/html-page-template/readme.html">
+            
+                    
+                    Page Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../02-js/javascript.html">
+            
+                <a href="../../../02-js/javascript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../02-js/js-intro/readme.html">
+            
+                <a href="../../../02-js/js-intro/readme.html">
+            
+                    
+                    Primitives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../02-js/js-intro/js-control-flow/readme.html">
+            
+                <a href="../../../02-js/js-intro/js-control-flow/readme.html">
+            
+                    
+                    Conditionals and Loops
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../02-js/js-intro/js-control-flow/03booleans-and-conditionals.html">
+            
+                <a href="../../../02-js/js-intro/js-control-flow/03booleans-and-conditionals.html">
+            
+                    
+                    Boolean Expressions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../02-js/js-intro/js-control-flow/04loops.html">
+            
+                <a href="../../../02-js/js-intro/js-control-flow/04loops.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../../02-js/js-intro/js-control-flow/06-iterating-over-arrays.html">
+            
+                <a href="../../../02-js/js-intro/js-control-flow/06-iterating-over-arrays.html">
+            
+                    
+                    Iterating Over Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../../../02-js/js-intro/js-control-flow/05chrome-dev-tools.html">
+            
+                <a href="../../../02-js/js-intro/js-control-flow/05chrome-dev-tools.html">
+            
+                    
+                    Dev Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../02-js/js-functions/readme.html">
+            
+                <a href="../../../02-js/js-functions/readme.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../02-js/js-dom/readme.html">
+            
+                <a href="../../../02-js/js-dom/readme.html">
+            
+                    
+                    Browser Side Javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../02-js/js-dom-events/readme.html">
+            
+                <a href="../../../02-js/js-dom-events/readme.html">
+            
+                    
+                    DOM and Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../02-js/js-dom-manipulation/">
+            
+                <a href="../../../02-js/js-dom-manipulation/">
+            
+                    
+                    DOM Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../02-js/js-dom-events/scope.html">
+            
+                <a href="../../../02-js/js-dom-events/scope.html">
+            
+                    
+                    Fixing Scope Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../../02-js/js-dom-manipulation/tictactoe.html">
+            
+                <a href="../../../02-js/js-dom-manipulation/tictactoe.html">
+            
+                    
+                    tictactoe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="../../../02-js/js-ajax/readme.html">
+            
+                <a href="../../../02-js/js-ajax/readme.html">
+            
+                    
+                    AJAX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../02-js/js-callbacks-iterators/readme.html">
+            
+                <a href="../../../02-js/js-callbacks-iterators/readme.html">
+            
+                    
+                    Callbacks and Iterators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../02-js/js-prototypes/01readme.html">
+            
+                <a href="../../../02-js/js-prototypes/01readme.html">
+            
+                    
+                    OOP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../../../02-js/js-prototypes/class.html">
+            
+                <a href="../../../02-js/js-prototypes/class.html">
+            
+                    
+                    Class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../../../02-js/js-prototypes/02constructors.html">
+            
+                <a href="../../../02-js/js-prototypes/02constructors.html">
+            
+                    
+                    Constructors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../../../02-js/js-prototypes/03prototypes.html">
+            
+                <a href="../../../02-js/js-prototypes/03prototypes.html">
+            
+                    
+                    Prototypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../02-js/js-tdd-intro/readme.html">
+            
+                <a href="../../../02-js/js-tdd-intro/readme.html">
+            
+                    
+                    Intro to TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../../02-js/js-scopes/readme.html">
+            
+                <a href="../../../02-js/js-scopes/readme.html">
+            
+                    
+                    Namespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../../02-js/js-inheritance/01readme.html">
+            
+                <a href="../../../02-js/js-inheritance/01readme.html">
+            
+                    
+                    Inheritance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../../../02-js/js-inheritance/02prototypalinheritance.html">
+            
+                <a href="../../../02-js/js-inheritance/02prototypalinheritance.html">
+            
+                    
+                    Prototypal Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../../../02-js/js-inheritance/03callapplyfunctions.html">
+            
+                <a href="../../../02-js/js-inheritance/03callapplyfunctions.html">
+            
+                    
+                    Call, Apply, and other Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../../../02-js/js-inheritance/05resources.html">
+            
+                <a href="../../../02-js/js-inheritance/05resources.html">
+            
+                    
+                    Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../../02-js/js-next/01readme.html">
+            
+                <a href="../../../02-js/js-next/01readme.html">
+            
+                    
+                    ESNext
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../../../02-js/js-next/07const-let.html">
+            
+                <a href="../../../02-js/js-next/07const-let.html">
+            
+                    
+                    Let & Const
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../../../02-js/js-next/04template-strings.html">
+            
+                <a href="../../../02-js/js-next/04template-strings.html">
+            
+                    
+                    Template Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.3" data-path="../../../02-js/js-next/08classes.html">
+            
+                <a href="../../../02-js/js-next/08classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.4" data-path="../../../02-js/js-next/03objects.html">
+            
+                <a href="../../../02-js/js-next/03objects.html">
+            
+                    
+                    Object Literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.5" data-path="../../../02-js/js-async/readme.html">
+            
+                <a href="../../../02-js/js-async/readme.html">
+            
+                    
+                    Async module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.6" data-path="../../../02-js/js-data-scraping/readme.html">
+            
+                <a href="../../../02-js/js-data-scraping/readme.html">
+            
+                    
+                    Data Scraping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../../12-resources/apis.html">
+            
+                <a href="../../../12-resources/apis.html">
+            
+                    
+                    APIs and Data Sources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../../02-js/js-jquery/01readme.html">
+            
+                <a href="../../../02-js/js-jquery/01readme.html">
+            
+                    
+                    jQuery
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../../../02-js/js-jquery/02intro.html">
+            
+                <a href="../../../02-js/js-jquery/02intro.html">
+            
+                    
+                    Intro
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1.1" data-path="../../../02-js/js-jquery/03dom-manipulation.html">
+            
+                <a href="../../../02-js/js-jquery/03dom-manipulation.html">
+            
+                    
+                    DOM Manipulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.2" data-path="../../../02-js/js-jquery/04reddit.html">
+            
+                <a href="../../../02-js/js-jquery/04reddit.html">
+            
+                    
+                    Reddit Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.3" data-path="../../../02-js/js-jquery/05styling.html">
+            
+                <a href="../../../02-js/js-jquery/05styling.html">
+            
+                    
+                    Styling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.1.4" data-path="../../../02-js/js-jquery/06events.html">
+            
+                <a href="../../../02-js/js-jquery/06events.html">
+            
+                    
+                    Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.2" data-path="../../../02-js/js-jquery/07plugins.html">
+            
+                <a href="../../../02-js/js-jquery/07plugins.html">
+            
+                    
+                    Plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../04-server/readme.html">
+            
+                <a href="../../../04-server/readme.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../04-server/how-the-internet-works.html">
+            
+                <a href="../../../04-server/how-the-internet-works.html">
+            
+                    
+                    Internet Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../04-server/internet-lab.html">
+            
+                <a href="../../../04-server/internet-lab.html">
+            
+                    
+                    Internet Lab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../04-server/00es6.html">
+            
+                <a href="../../../04-server/00es6.html">
+            
+                    
+                    New ES6 Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../04-server/00node.html">
+            
+                <a href="../../../04-server/00node.html">
+            
+                    
+                    Intro to Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../../04-server/01npm.html">
+            
+                <a href="../../../04-server/01npm.html">
+            
+                    
+                    Package Management with YARN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../../04-server/02flatfile.html">
+            
+                <a href="../../../04-server/02flatfile.html">
+            
+                    
+                    Disk Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../05-express/readme.html">
+            
+                <a href="../../../05-express/readme.html">
+            
+                    
+                    Node & Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../05-express/express-intro/01express.html">
+            
+                <a href="../../../05-express/express-intro/01express.html">
+            
+                    
+                    Intro to Express
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../05-express/express-intro/02internet.html">
+            
+                <a href="../../../05-express/express-intro/02internet.html">
+            
+                    
+                    Express Internet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../../05-express/express-intro/03expressurls.html">
+            
+                <a href="../../../05-express/express-intro/03expressurls.html">
+            
+                    
+                    Express URLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../../05-express/express-intro/04views.html">
+            
+                <a href="../../../05-express/express-intro/04views.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../../05-express/express-intro/06views-advanced.html">
+            
+                <a href="../../../05-express/express-intro/06views-advanced.html">
+            
+                    
+                    Advanced Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../05-express/express-intro/05crudexpress.html">
+            
+                <a href="../../../05-express/express-intro/05crudexpress.html">
+            
+                    
+                    CRUD in Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../../05-express/express-auth/readme.html">
+            
+                <a href="../../../05-express/express-auth/readme.html">
+            
+                    
+                    Express Authentication
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../../../05-express/express-auth/cookies.html">
+            
+                <a href="../../../05-express/express-auth/cookies.html">
+            
+                    
+                    Cookies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../../../05-express/express-auth/password.html">
+            
+                <a href="../../../05-express/express-auth/password.html">
+            
+                    
+                    Auth / Password
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../../../05-express/express-auth/passport.html">
+            
+                <a href="../../../05-express/express-auth/passport.html">
+            
+                    
+                    passport.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../../05-express/express-mocha-testing/readme.html">
+            
+                <a href="../../../05-express/express-mocha-testing/readme.html">
+            
+                    
+                    Testing with Mocha and Chai
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../../05-express/express-jwt/readme.html">
+            
+                <a href="../../../05-express/express-jwt/readme.html">
+            
+                    
+                    JSON Web Tokens
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../../../05-express/express-jwt/codealong.html">
+            
+                <a href="../../../05-express/express-jwt/codealong.html">
+            
+                    
+                    Codealong
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../../05-express/additional-topics/readme.html">
+            
+                <a href="../../../05-express/additional-topics/readme.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../../../05-express/express-apis/03apis.html">
+            
+                <a href="../../../05-express/express-apis/03apis.html">
+            
+                    
+                    APIs with Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../../../05-express/additional-topics/express-oauth/readme.html">
+            
+                <a href="../../../05-express/additional-topics/express-oauth/readme.html">
+            
+                    
+                    oAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../../../05-express/additional-topics/express-geocode/readme.html">
+            
+                <a href="../../../05-express/additional-topics/express-geocode/readme.html">
+            
+                    
+                    Geocoding and Google Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../../../05-express/additional-topics/express-cloudinary/readme.html">
+            
+                <a href="../../../05-express/additional-topics/express-cloudinary/readme.html">
+            
+                    
+                    Cloudinary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.5" data-path="../../../05-express/express-socket-io/readme.html">
+            
+                <a href="../../../05-express/express-socket-io/readme.html">
+            
+                    
+                    Websockets with Socket.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../04-databases/readme.html">
+            
+                <a href="../../../04-databases/readme.html">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../04-databases/mongo-intro/intro-nosql.html">
+            
+                <a href="../../../04-databases/mongo-intro/intro-nosql.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../../04-databases/mongo-intro/crud.html">
+            
+                <a href="../../../04-databases/mongo-intro/crud.html">
+            
+                    
+                    CRUD in MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../../../04-databases/mongo-intro/data-modeling.html">
+            
+                <a href="../../../04-databases/mongo-intro/data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../04-databases/sql-intro/readme.html">
+            
+                <a href="../../../04-databases/sql-intro/readme.html">
+            
+                    
+                    SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../../../04-databases/sql-node.html">
+            
+                <a href="../../../04-databases/sql-node.html">
+            
+                    
+                    SQL and Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../../../04-databases/sql-intro/relational.html">
+            
+                <a href="../../../04-databases/sql-intro/relational.html">
+            
+                    
+                    Relational SQL Tables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../../../04-databases/sql-advanced/readme.html">
+            
+                <a href="../../../04-databases/sql-advanced/readme.html">
+            
+                    
+                    Advanced SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../../../04-databases/lazy_db_normalization.html">
+            
+                <a href="../../../04-databases/lazy_db_normalization.html">
+            
+                    
+                    Lazy Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="../../../04-databases/sqlcheatsheet.html">
+            
+                <a href="../../../04-databases/sqlcheatsheet.html">
+            
+                    
+                    PostgreSQL Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../../04-databases/dbadmin.html">
+            
+                <a href="../../../04-databases/dbadmin.html">
+            
+                    
+                    Database Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../ruby.html">
+            
+                <a href="../../ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../ruby-intro/readme.html">
+            
+                <a href="../../ruby-intro/readme.html">
+            
+                    
+                    Intro to Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../ruby-classes/oop.html">
+            
+                <a href="../../ruby-classes/oop.html">
+            
+                    
+                    Object Oriented Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../ruby-classes/readme.html">
+            
+                <a href="../../ruby-classes/readme.html">
+            
+                    
+                    Ruby Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../../ruby-inheritance/readme.html">
+            
+                <a href="../../ruby-inheritance/readme.html">
+            
+                    
+                    Ruby Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../rails.html">
+            
+                <a href="../../rails.html">
+            
+                    
+                    Ruby on Rails
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Intro to ActiveRecord
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="activerecord-assoc.html">
+            
+                <a href="activerecord-assoc.html">
+            
+                    
+                    ActiveRecord Associations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    Intro to Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../views.html">
+            
+                <a href="../views.html">
+            
+                    
+                    Views, Layouts & Partials
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../rails-assets-frontend/readme.html">
+            
+                <a href="../../rails-assets-frontend/readme.html">
+            
+                    
+                    Asset Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../rails-auth-1-M/readme.html">
+            
+                <a href="../../rails-auth-1-M/readme.html">
+            
+                    
+                    Rails Auth and 1-M
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../../rails-M-M/readme.html">
+            
+                <a href="../../rails-M-M/readme.html">
+            
+                    
+                    Rails M:M
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../../additional-topics/readme.html">
+            
+                <a href="../../additional-topics/readme.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.8.1" data-path="../../additional-topics/rails-oauth/readme.html">
+            
+                <a href="../../additional-topics/rails-oauth/readme.html">
+            
+                    
+                    oAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8.2" data-path="../../additional-topics/sass/readme.html">
+            
+                <a href="../../additional-topics/sass/readme.html">
+            
+                    
+                    SASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8.3" data-path="../../additional-topics/rails-mailers/readme.html">
+            
+                <a href="../../additional-topics/rails-mailers/readme.html">
+            
+                    
+                    Rails Mailers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8.4" data-path="../../additional-topics/rails-cloudinary/readme.html">
+            
+                <a href="../../additional-topics/rails-cloudinary/readme.html">
+            
+                    
+                    Cloudinary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../07-frontend-frameworks/readme.html">
+            
+                <a href="../../../07-frontend-frameworks/readme.html">
+            
+                    
+                    JS Frontend Frameworks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../07-frontend-frameworks/typescript.html">
+            
+                <a href="../../../07-frontend-frameworks/typescript.html">
+            
+                    
+                    Static Typing with TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../10-react/readme.html">
+            
+                <a href="../../../10-react/readme.html">
+            
+                    
+                    ReactJS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../../../10-react/react-intro/readme.html">
+            
+                <a href="../../../10-react/react-intro/readme.html">
+            
+                    
+                    Intro to React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1.1" data-path="../../../10-react/react-intro/todo-codealong.html">
+            
+                <a href="../../../10-react/react-intro/todo-codealong.html">
+            
+                    
+                    Todo List Codealong
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.1.2" data-path="../../../10-react/react-intro/additional-topics.html">
+            
+                <a href="../../../10-react/react-intro/additional-topics.html">
+            
+                    
+                    Additional Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../../../10-react/react-gulp-browserify/readme.html">
+            
+                <a href="../../../10-react/react-gulp-browserify/readme.html">
+            
+                    
+                    React with Gulp and Browserify
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.2.1" data-path="../../../10-react/react-gulp-browserify/gulp.html">
+            
+                <a href="../../../10-react/react-gulp-browserify/gulp.html">
+            
+                    
+                    Setting up Gulp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2.2" data-path="../../../10-react/react-gulp-browserify/additional-gulp-tasks.html">
+            
+                <a href="../../../10-react/react-gulp-browserify/additional-gulp-tasks.html">
+            
+                    
+                    Additional Gulp Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../../../10-react/react-router/readme.html">
+            
+                <a href="../../../10-react/react-router/readme.html">
+            
+                    
+                    React Router
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.3.1" data-path="../../../10-react/react-router/omdb-router.html">
+            
+                <a href="../../../10-react/react-router/omdb-router.html">
+            
+                    
+                    OMDB Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3.2" data-path="../../../10-react/react-router/omdb-search.html">
+            
+                <a href="../../../10-react/react-router/omdb-search.html">
+            
+                    
+                    OMDB Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3.3" data-path="../../../10-react/react-router/additional-resources.html">
+            
+                <a href="../../../10-react/react-router/additional-resources.html">
+            
+                    
+                    Additional Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../../../10-react/react-animations/readme.html">
+            
+                <a href="../../../10-react/react-animations/readme.html">
+            
+                    
+                    React Animations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.4.1" data-path="../../../10-react/react-animations/css-animations.html">
+            
+                <a href="../../../10-react/react-animations/css-animations.html">
+            
+                    
+                    CSS Animations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../00-config-deployment/readme.html">
+            
+                <a href="../../../00-config-deployment/readme.html">
+            
+                    
+                    Deployment
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../../00-config-deployment/deploy-github-pages/readme.html">
+            
+                <a href="../../../00-config-deployment/deploy-github-pages/readme.html">
+            
+                    
+                    Deploy - Github Pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../../00-config-deployment/deploy-node/readme.html">
+            
+                <a href="../../../00-config-deployment/deploy-node/readme.html">
+            
+                    
+                    Deploy - Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../../../00-config-deployment/ci-codeship/node.html">
+            
+                <a href="../../../00-config-deployment/ci-codeship/node.html">
+            
+                    
+                    CI with Codeship
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../../00-config-deployment/deploy-rails/readme.html">
+            
+                <a href="../../../00-config-deployment/deploy-rails/readme.html">
+            
+                    
+                    Deploy - Rails
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../../../00-config-deployment/foreman/readme.html">
+            
+                <a href="../../../00-config-deployment/foreman/readme.html">
+            
+                    
+                    Foreman (Environment Variables)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../../00-config-deployment/aws-elastic-beanstalk/">
+            
+                <a href="../../../00-config-deployment/aws-elastic-beanstalk/">
+            
+                    
+                    Deploy - AWS Elastic Beanstalk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../../00-config-deployment/aws-s3-static-site/">
+            
+                <a href="../../../00-config-deployment/aws-s3-static-site/">
+            
+                    
+                    Deploy - S3 Static Sites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../../08-cs/readme.html">
+            
+                <a href="../../../08-cs/readme.html">
+            
+                    
+                    Computer Science
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../../08-cs/cs-stacks-queues/readme.html">
+            
+                <a href="../../../08-cs/cs-stacks-queues/readme.html">
+            
+                    
+                    Stacks and Queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../../08-cs/cs-ruby-linked-list/readme.html">
+            
+                <a href="../../../08-cs/cs-ruby-linked-list/readme.html">
+            
+                    
+                    Linked Lists
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../../08-cs/cs-ruby-linked-list/01-sample-code.html">
+            
+                <a href="../../../08-cs/cs-ruby-linked-list/01-sample-code.html">
+            
+                    
+                    Sample Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../../../08-cs/cs-ruby-linked-list/02-beginner-exercises.html">
+            
+                <a href="../../../08-cs/cs-ruby-linked-list/02-beginner-exercises.html">
+            
+                    
+                    Beginner Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.3" data-path="../../../08-cs/cs-ruby-linked-list/03-advanced-exercises.html">
+            
+                <a href="../../../08-cs/cs-ruby-linked-list/03-advanced-exercises.html">
+            
+                    
+                    Advanced Exercises
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../../08-cs/cs-trees-data-structures/readme.html">
+            
+                <a href="../../../08-cs/cs-trees-data-structures/readme.html">
+            
+                    
+                    Trees and Other Topics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../../08-cs/cs-hashmaps/readme.html">
+            
+                <a href="../../../08-cs/cs-hashmaps/readme.html">
+            
+                    
+                    Hashmaps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../../08-cs/cs-recursion/readme.html">
+            
+                <a href="../../../08-cs/cs-recursion/readme.html">
+            
+                    
+                    Recursion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../../../08-cs/cs-algorithm-complexity/readme.html">
+            
+                <a href="../../../08-cs/cs-algorithm-complexity/readme.html">
+            
+                    
+                    Algorithm Complexity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="../../../08-cs/cs-ruby-bucket-sort/readme.html">
+            
+                <a href="../../../08-cs/cs-ruby-bucket-sort/readme.html">
+            
+                    
+                    Bucket Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="../../../08-cs/cs-ruby-bubble-sort/readme.html">
+            
+                <a href="../../../08-cs/cs-ruby-bubble-sort/readme.html">
+            
+                    
+                    Bubble Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="../../../08-cs/cs-ruby-mergesort/readme.html">
+            
+                <a href="../../../08-cs/cs-ruby-mergesort/readme.html">
+            
+                    
+                    Merge Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="../../../08-cs/cs-ruby-quicksort/readme.html">
+            
+                <a href="../../../08-cs/cs-ruby-quicksort/readme.html">
+            
+                    
+                    Quick Sort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="../../../08-cs/cs-sorting/readme.html">
+            
+                <a href="../../../08-cs/cs-sorting/readme.html">
+            
+                    
+                    Sorting Wrapup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.12" data-path="../../../08-cs/additional/memory.html">
+            
+                <a href="../../../08-cs/additional/memory.html">
+            
+                    
+                    Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../11-projects/readme.html">
+            
+                <a href="../../../11-projects/readme.html">
+            
+                    
+                    Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../../../11-projects/project-1/readme.html">
+            
+                <a href="../../../11-projects/project-1/readme.html">
+            
+                    
+                    Project 1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1.1" data-path="../../../11-projects/project-1/quiz-game.html">
+            
+                <a href="../../../11-projects/project-1/quiz-game.html">
+            
+                    
+                    Plan B - Quiz Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../../../11-projects/project-2/readme.html">
+            
+                <a href="../../../11-projects/project-2/readme.html">
+            
+                    
+                    Project 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../../../11-projects/project-3/readme.html">
+            
+                <a href="../../../11-projects/project-3/readme.html">
+            
+                    
+                    Project 3
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.3.1" data-path="../../../11-projects/project-3/post-mortem.html">
+            
+                <a href="../../../11-projects/project-3/post-mortem.html">
+            
+                    
+                    Post-Mortem
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../../../11-projects/project-4/readme.html">
+            
+                <a href="../../../11-projects/project-4/readme.html">
+            
+                    
+                    Project 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../../13-warm-ups/">
+            
+                <a href="../../../13-warm-ups/">
+            
+                    
+                    Warmups
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../../../13-warm-ups/url-encode.html">
+            
+                <a href="../../../13-warm-ups/url-encode.html">
+            
+                    
+                    URL Encoder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../../../13-warm-ups/bracket-matching.html">
+            
+                <a href="../../../13-warm-ups/bracket-matching.html">
+            
+                    
+                    Bracket Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../../../13-warm-ups/teaser-array-flatten.html">
+            
+                <a href="../../../13-warm-ups/teaser-array-flatten.html">
+            
+                    
+                    Array Flatten
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../../../13-warm-ups/teaser-binary-search.html">
+            
+                <a href="../../../13-warm-ups/teaser-binary-search.html">
+            
+                    
+                    Binary Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../../../13-warm-ups/teaser-power-sum.html">
+            
+                <a href="../../../13-warm-ups/teaser-power-sum.html">
+            
+                    
+                    Power Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../../../13-warm-ups/sum-string.html">
+            
+                <a href="../../../13-warm-ups/sum-string.html">
+            
+                    
+                    Sum String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../../../13-warm-ups/mouse-follows-mouse.html">
+            
+                <a href="../../../13-warm-ups/mouse-follows-mouse.html">
+            
+                    
+                    Mouse follows Mouse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../../../13-warm-ups/english-calculator.html">
+            
+                <a href="../../../13-warm-ups/english-calculator.html">
+            
+                    
+                    English calculator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" data-path="../../../13-warm-ups/kopi-order.html">
+            
+                <a href="../../../13-warm-ups/kopi-order.html">
+            
+                    
+                    Kopi Order
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" data-path="../../../13-warm-ups/scrabble.html">
+            
+                <a href="../../../13-warm-ups/scrabble.html">
+            
+                    
+                    Scrabble
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" data-path="../../../13-warm-ups/array-practice-1.html">
+            
+                <a href="../../../13-warm-ups/array-practice-1.html">
+            
+                    
+                    Array Practice 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" data-path="../../../13-warm-ups/array-practice-2.html">
+            
+                <a href="../../../13-warm-ups/array-practice-2.html">
+            
+                    
+                    Array Practice 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.13" data-path="../../../13-warm-ups/random-quote-generator.html">
+            
+                <a href="../../../13-warm-ups/random-quote-generator.html">
+            
+                    
+                    Random Quote Generator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.14" data-path="../../../13-warm-ups/kitchen-sink.html">
+            
+                <a href="../../../13-warm-ups/kitchen-sink.html">
+            
+                    
+                    Kitchen Sink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.15" data-path="../../../13-warm-ups/custom-iterators.html">
+            
+                <a href="../../../13-warm-ups/custom-iterators.html">
+            
+                    
+                    Custom Iterators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../../09-post-wdi/readme.html">
+            
+                <a href="../../../09-post-wdi/readme.html">
+            
+                    
+                    Post WDI \/ Resources
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../../../09-post-wdi/resources.html">
+            
+                <a href="../../../09-post-wdi/resources.html">
+            
+                    
+                    Keep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../../../09-post-wdi/job-tips.html">
+            
+                <a href="../../../09-post-wdi/job-tips.html">
+            
+                    
+                    Job tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../../../12-resources/external-resources.html">
+            
+                <a href="../../../12-resources/external-resources.html">
+            
+                    
+                    More Coding Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../../../12-resources/apis.html">
+            
+                <a href="../../../12-resources/apis.html">
+            
+                    
+                    APIs and Data Sources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../../../12-resources/visualdesign.html">
+            
+                <a href="../../../12-resources/visualdesign.html">
+            
+                    
+                    Visual Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../../../12-resources/techsites.html">
+            
+                <a href="../../../12-resources/techsites.html">
+            
+                    
+                    Tech Websites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Intro to ActiveRecord</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="active-record">Active Record</h1>
+<h2 id="screen-casts-for-code">Screen Casts for code</h2>
+<ul>
+<li><a href="https://youtu.be/wbAPxnuIXck" target="_blank">Part 1</a></li>
+<li><a href="https://youtu.be/J9w1CDXrOXc" target="_blank">Part 2</a></li>
+<li><a href="https://youtu.be/NQNBnmpG5tE" target="_blank">Part 3</a></li>
+<li><a href="https://youtu.be/EkD5LEyALvM" target="_blank">Part 4</a></li>
+<li><a href="https://youtu.be/VOH26fAzc4o" target="_blank">Part 5</a></li>
+</ul>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Define the term &quot;ORM&quot; and why we use it over a database language</li>
+<li>Explain what Active Record is and what problems it solves</li>
+<li>Explain &quot;convention over configuration&quot; and how it relates to Active Record</li>
+<li>Define a class that inherits from Active Record</li>
+<li>Utilize Active Record to perform CRUD actions on a database</li>
+<li>Differentiate between class and instance methods in Active Record classes/objects</li>
+<li>Utilize <code>has_many</code> and <code>belongs_to</code> to establish associations/relationships with Active Record</li>
+<li>Seed a database using Active Record</li>
+</ul>
+<h2 id="framing-5-min--005">Framing (5 min / 0:05)</h2>
+<p>So far, we&apos;ve learned principles of object-oriented programming and how to get data to persist in a database using SQL. However, we now need some way to connect the two. We need to be able to retrieve data from a SQL database and store it in Ruby objects that we can use in our application. While we could use the <code>pg</code> gem to write and execute SQL commands in our Ruby code, this process is onerous and can result in a lot of repetitive code. We would have to write very long SQL statements to do even simple CRUD actions.</p>
+<p>It&apos;d be <strong>really</strong> nice if a bunch of genius programmers had already worked out some kind of way to interface between the database and our servers/applications in order to streamline the process of reading and writing data to and from a database. Enter <strong>ORMs</strong> and <a href="https://en.wikipedia.org/wiki/Active_record_pattern" target="_blank">The Active Record pattern</a>.</p>
+<h2 id="orms--active-record-10-min--020">ORM&apos;s &amp; Active Record (10 min / 0:20)</h2>
+<ul>
+<li>Object Relational Mapping: A programming technique for converting data between incompatible type systems in object-oriented programming languages - from <a href="https://en.wikipedia.org/wiki/Object-relational_mapping" target="_blank">Wikipedia</a></li>
+</ul>
+<p>We need a way to encapsulate the data from our databases into objects so that we can use them in our server applications. ORM&apos;s serve that purpose. Remember those tables we created in SQL? Well, now those rows of data are objects (instances of classes) on our server now. That&apos;s what ORM&apos;s do.</p>
+<figure id="fig1.9.1.1"><img src="orm.jpg?raw=true" alt="ORM-ActiveRecord" title="ORM"><figcaption>Figure: ORM</figcaption></figure>
+<p>More concretely ORM&apos;s:</p>
+<ul>
+<li><em>&apos;Map&apos;</em> (translate) objects to rows in our DB (and vice versa)</li>
+<li><strong>Conventions</strong>:<ul>
+<li>1 table per Model/Class/Entity</li>
+<li>Model names are singular and capitalized, table names are lowercase and plural</li>
+<li>each column represents an attribute for that model</li>
+</ul>
+</li>
+<li>Table associations are handled using foreign keys</li>
+</ul>
+<p>It just so happens you will be learning one of the best ORM&apos;s on the market. It has some of the best documentation and best syntax (because Ruby is awesome). This ORM is Active Record.</p>
+<blockquote>
+<p>Active Record is the M in MVC - the model - which is the layer of the system responsible for representing business data and logic. Active Record facilitates the creation and use of business objects whose data requires persistent storage to a database. It is an implementation of the Active Record pattern which itself is a description of an Object Relational Mapping system. (from AR docs)</p>
+</blockquote>
+<h2 id="active-record">Active Record</h2>
+<p>Active Record is an ORM (packaged in a Ruby gem) that allows us to translate database records into objects that we can use in our Ruby applications.</p>
+<p>In order to use Active Record in our Ruby code to manipulate data in a database, we need to be able to talk about the <strong>models</strong> of our data.</p>
+<p>But before we even do that, we have to decide on what our data is! How much of the real world are we going to attempt to represent in our programs? What data do our programs need to fulfill their purpose? To be able to think about how to model our data, we need a process where we can precisely identify what we need represented in our programs as data.</p>
+<p>Programmers are constantly modeling domains, real world, fictional, abstract, mathematical or otherwise.</p>
+<p><br></p>
+<details>
+
+<summary>What is Domain modeling and why do we do it?</summary>
+
+&gt; Domain modeling is the act of describing entities and their relationships in an application&apos;s data. This method is useful for deciding data what needs to be persisted and how it should be organized.
+
+</details>
+<br>
+
+When we model data, we tend to be talking about the **Nouns** in our application. These are the names of the *tables* in our database and the names of our Ruby *classes*.
+
+Likewise when we write queries, we use **Verbs** to describe the specific data we want.
+
+Essentially, in order to store and retrieve information, a lot of what we do today in Ruby will look like some form of the equation:
+
+
+&gt; **Noun** + **Verb** = **Data**
+&gt;
+&gt; Class.method # Class (Noun) method (Verb)
+&gt;
+&gt; Taco.all # returned all Taco data!
+&gt;
+&gt; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E; &#x1F32E;
+
+
+With the help of Active Record, we can begin to write programs that follow this simple pattern to manipulate data.
+
+
+### Convention Over Configuration (10 min / 0:30)
+
+Before we get started with code, let&apos;s highlight a reoccurring theme with Active Record, Rails, and frameworks in general. You&apos;ll often hear us say, &quot;Convention Over Configuration.&quot; Before we discuss the concept as a class, take 30 seconds to think about what that phrase means--why *might* we prefer convention over configuration?
+
+<details>
+<summary><strong>Question:</strong>  Without getting into the specifics of AR, what do you think we mean by convention over configuration?</summary>
+<br>
+
+&gt; Active Record, Rails, and other frameworks have a whole bunch of conventions that they follow so that you do not have to mess with different configuration details later. These conventions exist because developers arrive at a consensus on best practices. These road-tested conventions allow us to spend less time trying to configure when there already is an accepted way to do things. Thanks to the programmers who have come before us, we inherit a well-designed, default configuration that spares us from many headaches that we&apos;d encounter if we were building things from scratch (yikes!).
+&gt;
+&gt; Some of the common ones we will encounter are naming conventions such as: plural vs single, Capitalized/ALL_CAPS_SNAKE_CASE/lowercase, camelCase/kabob-case/snake_case. Obeying the naming conventions in Active Record, particularly regarding what is singular vs. what is plural, saves you a good deal of headaches.
+
+</details>
+
+<h4 id="if-you-dont-follow-the-conventions-youre-going-to-have-a-bad-time">If you don&apos;t follow the conventions, you&apos;re going to have a bad time.</h4>
+<p>Obeying the naming conventions in Active Record saves you a good deal of headaches.</p>
+<h4 id="alright-lets-get-started-with-some-code">Alright! Let&apos;s get started with some code!</h4>
+<h3 id="gemfiles">Gemfiles</h3>
+<p>To install ruby library packages, we use <code>gem</code>. The <code>gem</code> command is equivalent to <code>npm install</code> or <code>yarn add</code> in node.</p>
+<p>Gemfiles are equivalent to <code>package.json</code>. You&apos;ll notice that we will also have a Gemfile.lock just like we had a <code>yarn.lock</code> file.</p>
+<p>Your gemfile is simply named <code>Gemfile</code>. Uppercase, no file extension.</p>
+<p>It should contain:</p>
+<pre><code class="lang-ruby">source <span class="hljs-string">&quot;https://rubygems.org&quot;</span>
+
+gem <span class="hljs-string">&quot;pg&quot;</span>  <span class="hljs-comment"># this gem allows ruby to talk to postgres</span>
+gem <span class="hljs-string">&quot;activerecord&quot;</span>  <span class="hljs-comment"># this gem provides a connection between your ruby classes to relational database tables</span>
+gem <span class="hljs-string">&quot;byebug&quot;</span>  <span class="hljs-comment"># this gem allows access to REPL</span>
+</code></pre>
+<p>Install all the gems specified in the gem file with the command:</p>
+<pre><code>bundle install
+</code></pre><h3 id="apprb">app.rb</h3>
+<p>Let&apos;s setup the main file.</p>
+<p>We need to use require a bunch of times to gather together all the libs.</p>
+<pre><code>require &quot;bundler/setup&quot; # require all the gems we&apos;ll be using for this app from the Gemfile. Obviates the need for `bundle exec`
+require &quot;pg&quot; # postgres db library
+require &quot;active_record&quot; # the ORM
+require &quot;byebug&quot; # for debugging
+
+
+# initialize a connection to the database
+ActiveRecord::Base.establish_connection(
+  :adapter =&gt; &quot;postgresql&quot;,
+  :database =&gt; &quot;tunr_db&quot;
+)
+
+require_relative &quot;artist&quot; # require the Artist class definition that we defined in the artist.rb file
+
+
+# This will put us into a state of the byebug REPL, in which we&apos;ve established a connection
+# with the tunr_db database and have defined the Artist Class as an
+# ActiveRecord::Base class.
+byebug
+
+puts &quot;end of application&quot;
+</code></pre><details>
+<summary>Did you get an error from <code>bundle install</code>?</summary>
+If you get an error message like this one:
+
+```
+An error occurred while installing json (1.8.3), and Bundler cannot continue.
+Make sure that `gem install json -v &apos;1.8.3&apos;` succeeds before bundling.
+```
+
+Then run this command: `$ bundle update`
+</details>
+
+<h4 id="defining-our-models">Defining our Models</h4>
+<p>In the <code>artist.rb</code> file, we define our <code>artist</code> model:</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Artist</span> &lt; ActiveRecord::Base</span>
+  <span class="hljs-comment"># AR classes are singular and capitalized by convention</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<blockquote>
+<p>In this Ruby file, we create a class of Artist that inherits from <code>ActiveRecord::Base</code>. Essentially, when we inherit from <code>ActiveRecord::Base</code>, it gives this class a whole bunch of functionality that maps the Ruby <code>Artist</code> class to the <code>artists</code> table in Postgres.</p>
+</blockquote>
+<h2 id="inheritance">Inheritance</h2>
+<p>We are using this stntax for ruby inheritance:</p>
+<pre><code>class Artist &lt; ActiveRecord::Base
+</code></pre><p>This means we can use Artist class in much the same way we would use an ActiveRecord class. Except that we can add in all our Artist class stuff. The code looks clean and isn&apos;t cluttered by active record code, and we don&apos;t care how the active record methods we get for free <em>actually</em> work.</p>
+<p>If you want a bit more detail on inheritance in ruby check the <a href="../../ruby-inheritance/readme.html">gitbook.</a></p>
+<h3 id="setting-up-the-db">Setting up the db</h3>
+<h3 id="schemasql">schema.sql</h3>
+<p>In rails <code>tables.sql</code> is called <code>schema.sql</code></p>
+<p>(We will see tomorrow that there is more to the rails system of db manegement)
+This is what&apos;s inside the file:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> songs;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> artists;
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> artists(
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  <span class="hljs-keyword">name</span> <span class="hljs-built_in">TEXT</span>,
+  photo_url <span class="hljs-built_in">TEXT</span>,
+  nationality <span class="hljs-built_in">TEXT</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> songs(
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  title <span class="hljs-built_in">TEXT</span>,
+  album <span class="hljs-built_in">TEXT</span>,
+  preview_url <span class="hljs-built_in">TEXT</span>,
+  artist_id <span class="hljs-built_in">INT</span>
+);
+</code></pre>
+<h3 id="seedssql">seeds.sql</h3>
+<p>Is the same as it was before. It contains sql for each row.
+(we will be getting rid of this format for seed soon)</p>
+<h3 id="running-the-db-configs">running the db configs:</h3>
+<p>Continue with the following <code>bash</code> commands:</p>
+<pre><code class="lang-bash">createdb tunr_db
+psql <span class="hljs-_">-d</span> tunr_db &lt; schema.sql
+psql <span class="hljs-_">-d</span> tunr_db &lt; seeds.sql
+</code></pre>
+<p>Check you did everything correctly.</p>
+<h2 id="using-active-record">Using Active Record</h2>
+<ul>
+<li>Run your program(<code>$ ruby app.rb</code>)</li>
+<li>When you see the <code>byebug</code> REPL, run this ruby code: <code>Artist.first</code></li>
+</ul>
+<p>Your output should be something like this (it won&apos;t be the same letters and numbers next to <code>#&lt;Artist:</code>)</p>
+<pre><code class="lang-bash">pry(main)&gt; pry(main)&gt; Artist.first
+=&gt; <span class="hljs-comment">#&lt;Artist:0x007ff851821bc0</span>
+ id: 1,
+ name: <span class="hljs-string">&quot;Weird Al Yankovich&quot;</span>,
+ photo_url: <span class="hljs-string">&quot;http://i.huffpost.com/gen/1952378/images/o-WEIRD-AL-facebook.jpg&quot;</span>,
+ nationality: <span class="hljs-string">&quot;American&quot;</span>&gt;
+</code></pre>
+<p>Great! We&apos;ve got everything done that we need to get setup with single model CRUD in our application. Let&apos;s run it in the terminal:</p>
+<pre><code class="lang-bash">$ ruby app.rb
+</code></pre>
+<p>When we run this app, we can see that it drops us into byebug. Let&apos;s write some code in byebug to update our database... <strong>IN REALTIME!!!</strong></p>
+<p>We&apos;ll create an instance of the <code>Artist</code> object on the Ruby side:</p>
+<blockquote>
+<p><strong>Note</strong> the syntax for creating a new instance.</p>
+</blockquote>
+<pre><code class="lang-ruby">kanye = Artist.new(<span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;Kanye West&quot;</span>, <span class="hljs-symbol">nationality:</span> <span class="hljs-string">&quot;American&quot;</span>)
+</code></pre>
+<p>To save our instance to the database we use <code>.save</code>:</p>
+<pre><code class="lang-ruby">kanye.save
+</code></pre>
+<p>If we want to initialize an instance of an object AND save it to the database we use <code>.create</code>:</p>
+<pre><code class="lang-ruby">elvis = Artist.create(<span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;Elvis Presley&quot;</span>, <span class="hljs-symbol">nationality:</span> <span class="hljs-string">&quot;American&quot;</span>)
+</code></pre>
+<!-- SQL for create  -->
+<details>
+<summary>This would roughly translate to `SQL` code</summary>
+
+<code>
+INSERT INTO artists (name, nationality) VALUES (&apos;Elvis Presley&apos;, &apos;American&apos;);
+</code>
+
+</details>
+
+<p><br></p>
+<p><strong>Question:</strong> Why is there a distinction between when it&apos;s saved in one command versus two?</p>
+<p>One really handy feature we get from an Active Record inherited class is that all of the attribute columns of our model have <code>attr_accessor</code>&apos;s as well. So we can do things like:</p>
+<pre><code class="lang-ruby">kanye.name
+<span class="hljs-comment"># gets the name of kanye</span>
+kanye.name = <span class="hljs-string">&quot;Yeezus&quot;</span>
+<span class="hljs-comment"># sets name to &quot;Yeezus&quot;</span>
+kanye.save
+<span class="hljs-comment"># saves the model to the database</span>
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Should be noted that when we set the attribute using a setter, it doesn&apos;t automatically save to the database, it&apos;s not until we call <code>.save</code> on the object that it saves to the database</p>
+</blockquote>
+<p>To get all of the artists we use <code>.all</code>:</p>
+<pre><code class="lang-ruby">Artist.all
+</code></pre>
+<p>We can also find an artist by its ID using <code>.find</code>:</p>
+<pre><code class="lang-ruby">Artist.find(<span class="hljs-number">1</span>)
+</code></pre>
+<!-- SQL for find  -->
+<details>
+<summary>This would roughly translate to `SQL` code</summary>
+<code>
+SELECT * FROM artists WHERE id = 1 LIMIT 1;
+</code>
+</details>
+
+<p><br>
+Additionally we can also find an artist by an attribute using <code>.find_by</code>:</p>
+<pre><code class="lang-ruby">Artist.find_by(<span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;Elvis Presley&quot;</span>)
+</code></pre>
+<blockquote>
+<p>Note that find_by only returns the first object that meets the requirements of the arguments</p>
+</blockquote>
+<p>If you want all artists that meet a certain query then we use <code>.where</code>:</p>
+<pre><code class="lang-ruby">Artist.where(<span class="hljs-symbol">nationality:</span> <span class="hljs-string">&quot;American&quot;</span>)
+</code></pre>
+<p>We can also update attributes and save at the same time using the <code>.update</code> method:</p>
+<pre><code class="lang-ruby">elvis = Artist.find_by(<span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;Elvis Presley&quot;</span>)
+elvis.update(<span class="hljs-symbol">nationality:</span> <span class="hljs-string">&quot;Canadian&quot;</span>)
+</code></pre>
+<blockquote>
+<p>If we want to update the attribute and not save we would have to use something from this <a href="http://www.davidverhasselt.com/set-attributes-in-activerecord/" target="_blank">post</a></p>
+</blockquote>
+<p>Finally we can also just destroy/delete rows in our database with the <code>.destroy</code> method:</p>
+<pre><code class="lang-ruby">kanye = Artist.find_by(<span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;Yeezus&quot;</span>)
+kanye.destroy
+<span class="hljs-comment"># goodbye kanye you&apos;re gone forever</span>
+</code></pre>
+<blockquote>
+<p>This is exciting stuff by the way, imagine, while we do these things, that our artists model is instead a post on Facebook, or a comment on Facebook. So the next time you comment on someone&apos;s Facebook page you have an idea now of whats happening on the database layer. Maybe not the whole picture, but you have an idea. We&apos;re going to build on that idea in the coming week and half, and thats really exciting.</p>
+</blockquote>
+<h3 id="you-do-methods---tunr-15-min--130">You Do: Methods - Tunr (15 min / 1:30)</h3>
+<p>We will use <code>byebug</code> in your ruby app to test out ActiveRecord class and instance methods.</p>
+<blockquote>
+<p>Don&apos;t forget to require &apos;byebug&apos; when you want to use <code>byebug</code> in your program.</p>
+</blockquote>
+<p><a href="https://github.com/wdi-sg/activerecord-intro-exercise#part-11---use-your-artist-model" target="_blank">Part 1.1 - Use Your Artist Model</a></p>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="http://guides.rubyonrails.org/active_record_basics.html" target="_blank">Active Record Basics</a></li>
+<li><a href="http://guides.rubyonrails.org/active_record_querying.html" target="_blank">Active Record Query Interface</a></li>
+<li><a href="https://github.com/ga-wdi-exercises/tunr-active-record/archive/v1.2.zip" target="_blank">Tunr - Solution Code (zip)</a></li>
+</ul>
+<h3 id="appendix">Appendix</h3>
+<h4 id="instance-vs-class-methods">Instance vs Class Methods</h4>
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th style="text-align:center">instance</th>
+<th style="text-align:center">class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.new</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>.save</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>.create</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>attribute accessors</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>.all</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>.find</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>.find_by</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>.where</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+<tr>
+<td>.update</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>.destroy</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>.destroy_all</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">x</td>
+</tr>
+</tbody>
+</table>
+<h4 id="conventions-in-ar">Conventions in AR</h4>
+<table>
+<thead>
+<tr>
+<th>description</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>table names</td>
+<td>snake case and plural</td>
+</tr>
+<tr>
+<td>model file names</td>
+<td>snake case and singular</td>
+</tr>
+<tr>
+<td>model definition</td>
+<td>Camel case and singular</td>
+</tr>
+<tr>
+<td>argument for has_many</td>
+<td>snake case and plural</td>
+</tr>
+<tr>
+<td>argument for belongs_to</td>
+<td>snake case and singular</td>
+</tr>
+<tr>
+<td>more to follow....</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../rails.html" class="navigation navigation-prev " aria-label="Previous page: Ruby on Rails">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="activerecord-assoc.html" class="navigation navigation-next " aria-label="Next page: ActiveRecord Associations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Intro to ActiveRecord","level":"1.9.1","depth":2,"next":{"title":"ActiveRecord Associations","level":"1.9.2","depth":2,"path":"06-ruby-rails/rails-intro/active_record/activerecord-assoc.md","ref":"06-ruby-rails/rails-intro/active_record/activerecord-assoc.md","articles":[]},"previous":{"title":"Ruby on Rails","level":"1.9","depth":1,"path":"06-ruby-rails/rails.md","ref":"06-ruby-rails/rails.md","articles":[{"title":"Intro to ActiveRecord","level":"1.9.1","depth":2,"path":"06-ruby-rails/rails-intro/active_record/readme.md","ref":"06-ruby-rails/rails-intro/active_record/readme.md","articles":[]},{"title":"ActiveRecord Associations","level":"1.9.2","depth":2,"path":"06-ruby-rails/rails-intro/active_record/activerecord-assoc.md","ref":"06-ruby-rails/rails-intro/active_record/activerecord-assoc.md","articles":[]},{"title":"Intro to Rails","level":"1.9.3","depth":2,"path":"06-ruby-rails/rails-intro/readme.md","ref":"06-ruby-rails/rails-intro/readme.md","articles":[]},{"title":"Views, Layouts & Partials","level":"1.9.4","depth":2,"path":"06-ruby-rails/rails-intro/views.md","ref":"06-ruby-rails/rails-intro/views.md","articles":[]},{"title":"Asset Pipeline","level":"1.9.5","depth":2,"path":"06-ruby-rails/rails-assets-frontend/readme.md","ref":"06-ruby-rails/rails-assets-frontend/readme.md","articles":[]},{"title":"Rails Auth and 1-M","level":"1.9.6","depth":2,"path":"06-ruby-rails/rails-auth-1-M/readme.md","ref":"06-ruby-rails/rails-auth-1-M/readme.md","articles":[]},{"title":"Rails M:M","level":"1.9.7","depth":2,"path":"06-ruby-rails/rails-M-M/readme.md","ref":"06-ruby-rails/rails-M-M/readme.md","articles":[]},{"title":"Additional Topics","level":"1.9.8","depth":2,"path":"06-ruby-rails/additional-topics/readme.md","ref":"06-ruby-rails/additional-topics/readme.md","articles":[{"title":"oAuth","level":"1.9.8.1","depth":3,"path":"06-ruby-rails/additional-topics/rails-oauth/readme.md","ref":"06-ruby-rails/additional-topics/rails-oauth/readme.md","articles":[]},{"title":"SASS","level":"1.9.8.2","depth":3,"path":"06-ruby-rails/additional-topics/sass/readme.md","ref":"06-ruby-rails/additional-topics/sass/readme.md","articles":[]},{"title":"Rails Mailers","level":"1.9.8.3","depth":3,"path":"06-ruby-rails/additional-topics/rails-mailers/readme.md","ref":"06-ruby-rails/additional-topics/rails-mailers/readme.md","articles":[]},{"title":"Cloudinary","level":"1.9.8.4","depth":3,"path":"06-ruby-rails/additional-topics/rails-cloudinary/readme.md","ref":"06-ruby-rails/additional-topics/rails-cloudinary/readme.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: placeholder","alt":"placeholder","nro":1,"url":"http://assets.amuniversal.com/22a5ace06d6501301d80001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"placeholder","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"01-workflow/index.html#fig1.2.1","level":"1.2","list_caption":"Figure: programming language geneology","alt":"programming language geneology","nro":2,"url":"/docs/_assets/ge.png","index":1,"caption_template":"Figure: _CAPTION_","label":"programming language geneology","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"01-workflow/command-line/02intro-terminal.html#fig1.2.2.1.1","level":"1.2.2.1","list_caption":"Figure: Terminal Window","alt":"Terminal Window","nro":3,"url":"http://i.stack.imgur.com/DjFOZ.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Terminal Window","attributes":{},"skip":false,"key":"1.2.2.1.1"},{"backlink":"01-workflow/command-line/03navigating.html#fig1.2.2.2.1","level":"1.2.2.2","list_caption":"Figure: Filesystem image","alt":"Filesystem image","nro":4,"url":"http://www.qnx.com/developers/docs/qnx_4.25_docs/qnx4/user_guide/images/files.gif","index":1,"caption_template":"Figure: _CAPTION_","label":"Filesystem image","attributes":{},"skip":false,"key":"1.2.2.2.1"},{"backlink":"01-workflow/intro-git/02vcs.html#fig1.2.6.1.1","level":"1.2.6.1","list_caption":"Figure: DVCS diagram","alt":"DVCS diagram","nro":5,"url":"http://git-scm.com/figures/18333fig0103-tn.png","index":1,"caption_template":"Figure: _CAPTION_","label":"DVCS diagram","attributes":{},"skip":false,"key":"1.2.6.1.1"},{"backlink":"01-workflow/group-collab/02gitworkflows.html#fig1.2.7.1.1","level":"1.2.7.1","list_caption":"Figure: XKCD Git","alt":"XKCD Git","nro":6,"url":"http://imgs.xkcd.com/comics/git.png","index":1,"caption_template":"Figure: _CAPTION_","label":"XKCD Git","attributes":{},"skip":false,"key":"1.2.7.1.1"},{"backlink":"01-workflow/group-collab/04gitforkedflow.html#fig1.2.7.1.1.1","level":"1.2.7.1.1","list_caption":"Figure: Forking","alt":"Forking","nro":7,"url":"http://i.stack.imgur.com/iYdhN.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Forking","attributes":{},"skip":false,"key":"1.2.7.1.1.1"},{"backlink":"01-workflow/group-collab/03rolestools.html#fig1.2.7.2.1","level":"1.2.7.2","list_caption":"Figure: Kanban","alt":"Kanban","nro":8,"url":"https://olemortenamundsen.files.wordpress.com/2010/03/kanban_illustration.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Kanban","attributes":{},"skip":false,"key":"1.2.7.2.1"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.1","level":"1.2.8","list_caption":"Figure: https://i.imgur.com/NUNBEwW.png","alt":"https://i.imgur.com/NUNBEwW.png","nro":9,"url":"https://i.imgur.com/NUNBEwW.png","index":1,"caption_template":"Figure: _CAPTION_","label":"https://i.imgur.com/NUNBEwW.png","attributes":{},"skip":false,"key":"1.2.8.1"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.2","level":"1.2.8","list_caption":"Figure: Waterfall model","alt":"Waterfall model","nro":10,"url":"https://i.imgur.com/yJMVO91.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Waterfall model","attributes":{},"skip":false,"key":"1.2.8.2"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.3","level":"1.2.8","list_caption":"Figure: Youtube Balsamiq","alt":"Youtube Balsamiq","nro":11,"url":"http://3.bp.blogspot.com/-8e_J8hkX_kM/TbSz0jywljI/AAAAAAAAAY4/Nei-hnfPGaI/s1600/Balsamiq+myTube+example.jpg","index":3,"caption_template":"Figure: _CAPTION_","label":"Youtube Balsamiq","attributes":{},"skip":false,"key":"1.2.8.3"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.4","level":"1.2.8","list_caption":"Figure: Youtube actual","alt":"Youtube actual","nro":12,"url":"https://make.wordpress.org/support/wp-content/blogs.dir/21/files/2012/10/embed-youtube-page.jpg","index":4,"caption_template":"Figure: _CAPTION_","label":"Youtube actual","attributes":{},"skip":false,"key":"1.2.8.4"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.5","level":"1.2.8","list_caption":"Figure: https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","alt":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","nro":13,"url":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","index":5,"caption_template":"Figure: _CAPTION_","label":"https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1f0a8dc5-e08f-4e3f-8eac-b9712085dc30/design-principles-large-opt.jpg","attributes":{},"skip":false,"key":"1.2.8.5"},{"backlink":"01-workflow/user-stories-wireframing/index.html#fig1.2.8.6","level":"1.2.8","list_caption":"Figure: https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","alt":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","nro":14,"url":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","index":6,"caption_template":"Figure: _CAPTION_","label":"https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/60840162882221.5a9ed0ddae45f.png","attributes":{},"skip":false,"key":"1.2.8.6"},{"backlink":"01-workflow/user-stories-wireframing/game-exercise.html#fig1.2.8.2.1","level":"1.2.8.2","list_caption":"Figure: https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","alt":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","nro":15,"url":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","index":1,"caption_template":"Figure: _CAPTION_","label":"https://3.bp.blogspot.com/-NNmtXgzh7mc/VwPpBV_dCfI/AAAAAAAADTU/UwJsiZPwcFIx_UOPrWOJ4wvj1yU-52Ptw/s1600/overview.png","attributes":{},"skip":false,"key":"1.2.8.2.1"},{"backlink":"01-workflow/user-stories-wireframing/game-exercise.html#fig1.2.8.2.2","level":"1.2.8.2","list_caption":"Figure: https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","alt":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","nro":16,"url":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","index":2,"caption_template":"Figure: _CAPTION_","label":"https://4.bp.blogspot.com/-WihSYL5mk60/VwPZ_dvIdeI/AAAAAAAADSs/5WbmnbOSBAQkLNG3iZy0jvTJbh_I5AtRQ/s400/narrative%2Bbar.png","attributes":{},"skip":false,"key":"1.2.8.2.2"},{"backlink":"01-workflow/chrome-dev-tools/index.html#fig1.2.9.1","level":"1.2.9","list_caption":"Figure: screenshot","alt":"screenshot","nro":17,"url":"https://i.imgur.com/5ruzGhc.png","index":1,"caption_template":"Figure: _CAPTION_","label":"screenshot","attributes":{},"skip":false,"key":"1.2.9.1"},{"backlink":"01-workflow/review.html#fig1.2.11.1","level":"1.2.11","list_caption":"Figure: https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","alt":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","nro":18,"url":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"https://d.justpo.st/media/images/2013/03/463e4e4f4acb9afc185a067b7f360321.jpg","attributes":{},"skip":false,"key":"1.2.11.1"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: calculationbase","alt":"calculationbase","nro":19,"url":"https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png","index":1,"caption_template":"Figure: _CAPTION_","label":"calculationbase","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.2","level":"1.3.2","list_caption":"Figure: calc 1","alt":"calc 1","nro":20,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-1.png","index":2,"caption_template":"Figure: _CAPTION_","label":"calc 1","attributes":{},"skip":false,"key":"1.3.2.2"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.3","level":"1.3.2","list_caption":"Figure: calc 2","alt":"calc 2","nro":21,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-2.png","index":3,"caption_template":"Figure: _CAPTION_","label":"calc 2","attributes":{},"skip":false,"key":"1.3.2.3"},{"backlink":"03-html-css/css-selectors/index.html#fig1.3.2.4","level":"1.3.2","list_caption":"Figure: calc 4]","alt":"calc 4]","nro":22,"url":"https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-4.png","index":4,"caption_template":"Figure: _CAPTION_","label":"calc 4]","attributes":{},"skip":false,"key":"1.3.2.4"},{"backlink":"03-html-css/css-box-model/02box-model.html#fig1.3.3.1.1","level":"1.3.3.1","list_caption":"Figure: box-model","alt":"box-model","nro":23,"url":"http://s6.postimg.org/gi8r6c341/css_box_model.png","index":1,"caption_template":"Figure: _CAPTION_","label":"box-model","attributes":{},"skip":false,"key":"1.3.3.1.1"},{"backlink":"03-html-css/css-box-model/03display-positioning.html#fig1.3.3.2.1","level":"1.3.3.2","list_caption":"Figure: display","alt":"display","nro":24,"url":"https://i.imgur.com/zeD1f2m.png","index":1,"caption_template":"Figure: _CAPTION_","label":"display","attributes":{},"skip":false,"key":"1.3.3.2.1"},{"backlink":"03-html-css/css-box-model/03display-positioning.html#fig1.3.3.2.2","level":"1.3.3.2","list_caption":"Figure: css position relative","alt":"css position relative","nro":25,"url":"https://i.imgur.com/LRd7lBy.png","index":2,"caption_template":"Figure: _CAPTION_","label":"css position relative","attributes":{},"skip":false,"key":"1.3.3.2.2"},{"backlink":"03-html-css/css-responsive-design/02responsivedesign.html#fig1.3.4.1.1","level":"1.3.4.1","list_caption":"Figure: No Viewport Meta Tag","alt":"No Viewport Meta Tag","nro":26,"url":"http://developers.google.com/speed/docs/insights/images/viewport/iphone_no_viewport.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"No Viewport Meta Tag","attributes":{},"skip":false,"key":"1.3.4.1.1"},{"backlink":"03-html-css/css-responsive-design/02responsivedesign.html#fig1.3.4.1.2","level":"1.3.4.1","list_caption":"Figure: Viewport Meta Tag","alt":"Viewport Meta Tag","nro":27,"url":"https://developers.google.com/speed/docs/insights/images/viewport/iphone_viewport.jpg","index":2,"caption_template":"Figure: _CAPTION_","label":"Viewport Meta Tag","attributes":{},"skip":false,"key":"1.3.4.1.2"},{"backlink":"02-js/js-intro/index.html#fig1.4.1.1","level":"1.4.1","list_caption":"Figure: Chrome Console image","alt":"Chrome Console image","nro":28,"url":"images/chrome-console.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Chrome Console image","attributes":{},"skip":false,"key":"1.4.1.1"},{"backlink":"02-js/js-prototypes/class.html#fig1.4.6.1.1","level":"1.4.6.1","list_caption":"Figure: Cookie Cutter Javascript","alt":"Cookie Cutter Javascript","nro":29,"url":"http://sausagelife.com/wp-content/uploads/2016/12/2-1.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Cookie Cutter Javascript","attributes":{},"skip":false,"key":"1.4.6.1.1"},{"backlink":"02-js/js-inheritance/02prototypalinheritance.html#fig1.4.9.1.1","level":"1.4.9.1","list_caption":"Figure: Prototype Chain","alt":"Prototype Chain","nro":30,"url":"images/prototype-chain.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Prototype Chain","attributes":{},"skip":false,"key":"1.4.9.1.1"},{"backlink":"02-js/js-next/01index.html#fig1.4.10.1","level":"1.4.10","list_caption":"Figure: Dilbert Comment","alt":"Dilbert Comment","nro":31,"url":"http://assets.amuniversal.com/e9a8f5506cc101301d46001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"Dilbert Comment","attributes":{},"skip":false,"key":"1.4.10.1"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.1","level":"1.5.1","list_caption":"Figure: https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","alt":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","nro":32,"url":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"https://www.webopedia.com/imagesvr_ce/8023/7-layers-of-osi-icon.jpg","attributes":{},"skip":false,"key":"1.5.1.1"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.2","level":"1.5.1","list_caption":"Figure: http://www.escotal.com/Images/Network%20parts/osi.gif","alt":"http://www.escotal.com/Images/Network%20parts/osi.gif","nro":33,"url":"http://www.escotal.com/Images/Network%20parts/osi.gif","index":2,"caption_template":"Figure: _CAPTION_","label":"http://www.escotal.com/Images/Network%20parts/osi.gif","attributes":{},"skip":false,"key":"1.5.1.2"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.3","level":"1.5.1","list_caption":"Figure: http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","alt":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","nro":34,"url":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","index":3,"caption_template":"Figure: _CAPTION_","label":"http://1.bp.blogspot.com/-VU8FEIDWXlc/Tk-hPTxzDdI/AAAAAAAAAHw/UGDZ2hFx4PQ/s1600/memes-the-internet-is.jpg","attributes":{},"skip":false,"key":"1.5.1.3"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.4","level":"1.5.1","list_caption":"Figure: http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","alt":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","nro":35,"url":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","index":4,"caption_template":"Figure: _CAPTION_","label":"http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png","attributes":{},"skip":false,"key":"1.5.1.4"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.5","level":"1.5.1","list_caption":"Figure: http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","alt":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","nro":36,"url":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","index":5,"caption_template":"Figure: _CAPTION_","label":"http://www.aiatopten.org/sites/default/files/styles/popup/public/RCA%20Awards%20Drawings12.jpg","attributes":{},"skip":false,"key":"1.5.1.5"},{"backlink":"04-server/how-the-internet-works.html#fig1.5.1.6","level":"1.5.1","list_caption":"Figure: http://en.dnstools.ch/visual-traceroute.html","alt":"http://en.dnstools.ch/visual-traceroute.html","nro":37,"url":"http://en.dnstools.ch/visual-traceroute.html","index":6,"caption_template":"Figure: _CAPTION_","label":"http://en.dnstools.ch/visual-traceroute.html","attributes":{},"skip":false,"key":"1.5.1.6"},{"backlink":"04-server/01npm.html#fig1.5.5.1","level":"1.5.5","list_caption":"Figure: yarn search","alt":"yarn search","nro":38,"url":"../../_assets/yarn-install.png","index":1,"caption_template":"Figure: _CAPTION_","label":"yarn search","attributes":{},"skip":false,"key":"1.5.5.1"},{"backlink":"04-server/01npm.html#fig1.5.5.2","level":"1.5.5","list_caption":"Figure: google yarn","alt":"google yarn","nro":39,"url":"../../_assets/yarn-search.png","index":2,"caption_template":"Figure: _CAPTION_","label":"google yarn","attributes":{},"skip":false,"key":"1.5.5.2"},{"backlink":"05-express/index.html#fig1.6.1","level":"1.6","list_caption":"Figure: 3-Tier Express Application","alt":"3-Tier Express Application","nro":40,"url":"images/3-tier-application.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"3-Tier Express Application","attributes":{},"skip":false,"key":"1.6.1"},{"backlink":"05-express/express-auth/cookies.html#fig1.6.3.1.1","level":"1.6.3.1","list_caption":"Figure: https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif","alt":"https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif","nro":41,"url":"https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif","index":1,"caption_template":"Figure: _CAPTION_","label":"https://media.giphy.com/media/EKUvB9uFnm2Xe/giphy.gif","attributes":{},"skip":false,"key":"1.6.3.1.1"},{"backlink":"05-express/express-auth/password.html#fig1.6.3.2.1","level":"1.6.3.2","list_caption":"Figure: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png","alt":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png","nro":42,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png","index":1,"caption_template":"Figure: _CAPTION_","label":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cryptographic_Hash_Function.svg/750px-Cryptographic_Hash_Function.svg.png","attributes":{},"skip":false,"key":"1.6.3.2.1"},{"backlink":"05-express/express-jwt/index.html#fig1.6.5.1","level":"1.6.5","list_caption":"Figure: JWTs","alt":"JWTs","nro":43,"url":"https://cloud.githubusercontent.com/assets/25366/9151601/2e3baf1a-3dbc-11e5-90f6-b22cda07a077.png","index":1,"caption_template":"Figure: _CAPTION_","label":"JWTs","attributes":{},"skip":false,"key":"1.6.5.1"},{"backlink":"05-express/additional-topics/express-oauth/index.html#fig1.6.6.2.1","level":"1.6.6.2","list_caption":"Figure: facebook-login","alt":"facebook-login","nro":44,"url":"https://cloud.githubusercontent.com/assets/40461/9360397/e49b15be-468d-11e5-8b88-3757ca6cbcac.png","index":1,"caption_template":"Figure: _CAPTION_","label":"facebook-login","attributes":{},"skip":false,"key":"1.6.6.2.1"},{"backlink":"05-express/express-socket-io/index.html#fig1.6.6.5.1","level":"1.6.6.5","list_caption":"Figure: Websockets","alt":"Websockets","nro":45,"url":"./sockets.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Websockets","attributes":{},"skip":false,"key":"1.6.6.5.1"},{"backlink":"04-databases/index.html#fig1.7.1","level":"1.7","list_caption":"Figure: https://image.slidesharecdn.com/GettoknowPostgreSQL-123559698726-phpapp02/95/get-to-know-postgresql-55-728.jpg?cb=1235575493","alt":"https://image.slidesharecdn.com/GettoknowPostgreSQL-123559698726-phpapp02/95/get-to-know-postgresql-55-728.jpg?cb=1235575493","nro":46,"url":"https://image.slidesharecdn.com/GettoknowPostgreSQL-123559698726-phpapp02/95/get-to-know-postgresql-55-728.jpg?cb=1235575493","index":1,"caption_template":"Figure: _CAPTION_","label":"https://image.slidesharecdn.com/GettoknowPostgreSQL-123559698726-phpapp02/95/get-to-know-postgresql-55-728.jpg?cb=1235575493","attributes":{},"skip":false,"key":"1.7.1"},{"backlink":"04-databases/mongo-intro/intro-nosql.html#fig1.7.1.1","level":"1.7.1","list_caption":"Figure: MongoDB vs Relational Databases","alt":"MongoDB vs Relational Databases","nro":47,"url":"http://4.bp.blogspot.com/-edz2_QrFvCE/UnzBhKZE3FI/AAAAAAAAAEs/bTEsqnZFTXw/s1600/SQL-MongoDB+Correspondence.PNG","index":1,"caption_template":"Figure: _CAPTION_","label":"MongoDB vs Relational Databases","attributes":{},"skip":false,"key":"1.7.1.1"},{"backlink":"04-databases/sql-intro/index.html#fig1.7.2.1","level":"1.7.2","list_caption":"Figure: image","alt":"image","nro":48,"url":"Postgres.png","index":1,"caption_template":"Figure: _CAPTION_","label":"image","attributes":{},"skip":false,"key":"1.7.2.1"},{"backlink":"04-databases/sql-advanced/index.html#fig1.7.2.3.1","level":"1.7.2.3","list_caption":"Figure: SQL Joins","alt":"SQL Joins","nro":49,"url":"http://www.dofactory.com/Images/sql-joins.png","index":1,"caption_template":"Figure: _CAPTION_","label":"SQL Joins","attributes":{},"skip":false,"key":"1.7.2.3.1"},{"backlink":"04-databases/sqlcheatsheet.html#fig1.7.2.5.1","level":"1.7.2.5","list_caption":"Figure: SQL Joins","alt":"SQL Joins","nro":50,"url":"http://www.dofactory.com/Images/sql-joins.png","index":1,"caption_template":"Figure: _CAPTION_","label":"SQL Joins","attributes":{},"skip":false,"key":"1.7.2.5.1"},{"backlink":"06-ruby-rails/ruby-intro/index.html#fig1.8.1.1","level":"1.8.1","list_caption":"Figure: Yukihiro Matsumoto","alt":"Matz-san","nro":51,"url":"http://image.gihyo.co.jp/assets/images/dev/serial/01/software_designers/0034/0034-01.JPG","index":1,"caption_template":"Figure: _CAPTION_","label":"Yukihiro Matsumoto","attributes":{},"title":"Yukihiro Matsumoto","skip":false,"key":"1.8.1.1"},{"backlink":"06-ruby-rails/rails-intro/active_record/index.html#fig1.9.1.1","level":"1.9.1","list_caption":"Figure: ORM","alt":"ORM-ActiveRecord","nro":52,"url":"./orm.jpg?raw=true","index":1,"caption_template":"Figure: _CAPTION_","label":"ORM","attributes":{},"title":"ORM","skip":false,"key":"1.9.1.1"},{"backlink":"06-ruby-rails/rails-intro/index.html#fig1.9.3.1","level":"1.9.3","list_caption":"Figure: MVC Diagram","alt":"MVC Diagram","nro":53,"url":"http://elibildner.files.wordpress.com/2012/06/screen-shot-2012-06-05-at-2-12-18-am.png","index":1,"caption_template":"Figure: _CAPTION_","label":"MVC Diagram","attributes":{},"skip":false,"key":"1.9.3.1"},{"backlink":"06-ruby-rails/rails-intro/index.html#fig1.9.3.2","level":"1.9.3","list_caption":"Figure: Rails File Structure","alt":"Rails File Structure","nro":54,"url":"http://i.imgur.com/whOL4DQ.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Rails File Structure","attributes":{},"skip":false,"key":"1.9.3.2"},{"backlink":"06-ruby-rails/rails-M-M/index.html#fig1.9.7.1","level":"1.9.7","list_caption":"Figure: Database relationships","alt":"Database relationships","nro":55,"url":"http://fms-itskills.ncl.ac.uk/db/ER.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Database relationships","attributes":{},"skip":false,"key":"1.9.7.1"},{"backlink":"06-ruby-rails/additional-topics/rails-oauth/index.html#fig1.9.8.1.1","level":"1.9.8.1","list_caption":"Figure: OAuth from Oracle","alt":"OAuth from Oracle","nro":56,"url":"https://docs.oracle.com/cd/E50612_01/doc.11122/oauth_guide/content/images/oauth/oauth_overview.png","index":1,"caption_template":"Figure: _CAPTION_","label":"OAuth from Oracle","attributes":{},"skip":false,"key":"1.9.8.1.1"},{"backlink":"07-frontend-frameworks/index.html#fig1.10.1","level":"1.10","list_caption":"Figure: spa_architecture","alt":"spa_architecture","nro":57,"url":"https://cloud.githubusercontent.com/assets/25366/8970635/896c4cce-35ff-11e5-96b2-ef7e62784764.png","index":1,"caption_template":"Figure: _CAPTION_","label":"spa_architecture","attributes":{},"skip":false,"key":"1.10.1"},{"backlink":"10-react/index.html#fig1.10.2.1","level":"1.10.2","list_caption":"Figure: ReactJS","alt":"ReactJS","nro":58,"url":"https://facebook.github.io/react/img/logo_og.png","index":1,"caption_template":"Figure: _CAPTION_","label":"ReactJS","attributes":{},"skip":false,"key":"1.10.2.1"},{"backlink":"10-react/react-intro/index.html#fig1.10.2.1.1","level":"1.10.2.1","list_caption":"Figure: React components","alt":"React components","nro":59,"url":"http://maketea.co.uk/images/2014-03-05-robust-web-apps-with-react-part-1/wireframe_deconstructed.png","index":1,"caption_template":"Figure: _CAPTION_","label":"React components","attributes":{},"skip":false,"key":"1.10.2.1.1"},{"backlink":"10-react/react-intro/additional-topics.html#fig1.10.2.1.2.1","level":"1.10.2.1.2","list_caption":"Figure: Flux Architecture","alt":"Flux Architecture","nro":60,"url":"https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Flux Architecture","attributes":{},"skip":false,"key":"1.10.2.1.2.1"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.1","level":"1.11.5","list_caption":"Figure: S3 Buckets","alt":"S3 Buckets","nro":61,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/AWS_Simple_Icons_Storage_Amazon_S3_Bucket_with_Objects.svg/1024px-AWS_Simple_Icons_Storage_Amazon_S3_Bucket_with_Objects.svg.png","index":1,"caption_template":"Figure: _CAPTION_","label":"S3 Buckets","attributes":{},"skip":false,"key":"1.11.5.1"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.2","level":"1.11.5","list_caption":"Figure: S3 Static Website","alt":"S3 Static Website","nro":62,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_Architecture_4b.png","index":2,"caption_template":"Figure: _CAPTION_","label":"S3 Static Website","attributes":{},"skip":false,"key":"1.11.5.2"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.3","level":"1.11.5","list_caption":"Figure: Static Site Buckets","alt":"Static Site Buckets","nro":63,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_Architecture_1.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Static Site Buckets","attributes":{},"skip":false,"key":"1.11.5.3"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.4","level":"1.11.5","list_caption":"Figure: Bucket Properties","alt":"Bucket Properties","nro":64,"url":"https://dl.dropboxusercontent.com/u/111919248/Screenshots/Screen%20Shot%202016-03-07%20at%206.52.59%20AM.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Bucket Properties","attributes":{},"skip":false,"key":"1.11.5.4"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.5","level":"1.11.5","list_caption":"Figure: Bucket Policy","alt":"Bucket Policy","nro":65,"url":"https://dl.dropboxusercontent.com/u/111919248/Screenshots/Screen%20Shot%202016-03-07%20at%206.57.34%20AM.png","index":5,"caption_template":"Figure: _CAPTION_","label":"Bucket Policy","attributes":{},"skip":false,"key":"1.11.5.5"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.6","level":"1.11.5","list_caption":"Figure: Logging","alt":"Logging","nro":66,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_ConfigureLogging.png","index":6,"caption_template":"Figure: _CAPTION_","label":"Logging","attributes":{},"skip":false,"key":"1.11.5.6"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.7","level":"1.11.5","list_caption":"Figure: Uploading files","alt":"Uploading files","nro":67,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_HostingStaticWebsite_1.png","index":7,"caption_template":"Figure: _CAPTION_","label":"Uploading files","attributes":{},"skip":false,"key":"1.11.5.7"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.8","level":"1.11.5","list_caption":"Figure: Upload complete","alt":"Upload complete","nro":68,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_HostingStaticWebsite_2.png","index":8,"caption_template":"Figure: _CAPTION_","label":"Upload complete","attributes":{},"skip":false,"key":"1.11.5.8"},{"backlink":"00-config-deployment/aws-s3-static-site/index.html#fig1.11.5.9","level":"1.11.5","list_caption":"Figure: Static site settings","alt":"Static site settings","nro":69,"url":"http://docs.aws.amazon.com/gettingstarted/latest/swh/images/AWS_StaticWebsiteHosting_ConfigureAmazonS3Website_1.png","index":9,"caption_template":"Figure: _CAPTION_","label":"Static site settings","attributes":{},"skip":false,"key":"1.11.5.9"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.1","level":"1.12.1","list_caption":"Figure: Memory","alt":"Memory","nro":70,"url":"http://www.bernstein-plus-sons.com/.dowling/Prog_Lang_Module/images/lots.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Memory","attributes":{},"skip":false,"key":"1.12.1.1"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.2","level":"1.12.1","list_caption":"Figure: Stack","alt":"Stack","nro":71,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/2000px-Data_stack.svg.png","index":2,"caption_template":"Figure: _CAPTION_","label":"Stack","attributes":{},"skip":false,"key":"1.12.1.2"},{"backlink":"08-cs/cs-stacks-queues/index.html#fig1.12.1.3","level":"1.12.1","list_caption":"Figure: Queue","alt":"Queue","nro":72,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png","index":3,"caption_template":"Figure: _CAPTION_","label":"Queue","attributes":{},"skip":false,"key":"1.12.1.3"},{"backlink":"08-cs/cs-ruby-linked-list/index.html#fig1.12.2.1","level":"1.12.2","list_caption":"Figure: http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","alt":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","nro":73,"url":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","index":1,"caption_template":"Figure: _CAPTION_","label":"http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif","attributes":{},"skip":false,"key":"1.12.2.1"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.1","level":"1.12.3","list_caption":"Figure: A tree","alt":"A tree","nro":74,"url":"http://poj.org/images/1330_1.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"A tree","attributes":{},"skip":false,"key":"1.12.3.1"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.2","level":"1.12.3","list_caption":"Figure: BST","alt":"BST","nro":75,"url":"http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png","index":2,"caption_template":"Figure: _CAPTION_","label":"BST","attributes":{},"skip":false,"key":"1.12.3.2"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.3","level":"1.12.3","list_caption":"Figure: BST worst case","alt":"BST worst case","nro":76,"url":"http://interactivepython.org/runestone/static/pythonds/_images/skewedTree.png","index":3,"caption_template":"Figure: _CAPTION_","label":"BST worst case","attributes":{},"skip":false,"key":"1.12.3.3"},{"backlink":"08-cs/cs-trees-data-structures/index.html#fig1.12.3.4","level":"1.12.3","list_caption":"Figure: Trie","alt":"Trie","nro":77,"url":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/400px-Trie_example.svg.png","index":4,"caption_template":"Figure: _CAPTION_","label":"Trie","attributes":{},"skip":false,"key":"1.12.3.4"},{"backlink":"08-cs/cs-algorithm-complexity/index.html#fig1.12.6.1","level":"1.12.6","list_caption":"Figure: Complexity Curves","alt":"Complexity Curves","nro":78,"url":"big-o-complexity-curves.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Complexity Curves","attributes":{},"skip":false,"key":"1.12.6.1"},{"backlink":"08-cs/cs-ruby-mergesort/index.html#fig1.12.9.1","level":"1.12.9","list_caption":"Figure: Merge Sort Diagram","alt":"Merge Sort Diagram","nro":79,"url":"http://shawnjanas.com/wp-content/uploads/2011/06/mergesort.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Merge Sort Diagram","attributes":{},"skip":false,"key":"1.12.9.1"},{"backlink":"08-cs/additional/memory.html#fig1.12.12.1","level":"1.12.12","list_caption":"Figure: Memory","alt":"Memory","nro":80,"url":"http://www.cs.cornell.edu/courses/cs312/2004fa/lectures/memory%20layout.jpg","index":1,"caption_template":"Figure: _CAPTION_","label":"Memory","attributes":{},"skip":false,"key":"1.12.12.1"},{"backlink":"08-cs/additional/memory.html#fig1.12.12.2","level":"1.12.12","list_caption":"Figure: Memory Hierarchy","alt":"Memory Hierarchy","nro":81,"url":"http://tjliu.myweb.hinet.net/COA_CH_6.files/image007.jpg","index":2,"caption_template":"Figure: _CAPTION_","label":"Memory Hierarchy","attributes":{},"skip":false,"key":"1.12.12.2"},{"backlink":"11-projects/project-3/post-mortem.html#fig1.13.3.1.1","level":"1.13.3.1","list_caption":"Figure: DilbertComic","alt":"DilbertComic","nro":82,"url":"http://assets.amuniversal.com/da319cc06d5001301d7a001dd8b71c47","index":1,"caption_template":"Figure: _CAPTION_","label":"DilbertComic","attributes":{},"skip":false,"key":"1.13.3.1.1"},{"backlink":"13-warm-ups/teaser-binary-search.html#fig1.14.4.1","level":"1.14.4","list_caption":"Figure: Binary Search","alt":"Binary Search","nro":83,"url":"./binary-search.png","index":1,"caption_template":"Figure: _CAPTION_","label":"Binary Search","attributes":{},"skip":false,"key":"1.14.4.1"}]},"plugins":["toggle-chapters","codeblock-disable-glossary","youtube","image-captions"],"pluginsConfig":{"youtube":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"image-captions":{"variable_name":"_pictures"}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06-ruby-rails/rails-intro/active_record/readme.md","mtime":"2018-04-11T12:41:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-12T01:26:43.743Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
