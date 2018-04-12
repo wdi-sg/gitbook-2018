@@ -8,14 +8,7 @@ cd blog
 ## Start the Rails Server
 ```
 createdb blog_development
-bin/rails server
 bin/rails generate controller Welcome index
-```
-
-## Say Hello
-#### Open the `app/views/welcome/index.html.erb` file in your text editor. Delete all of the existing code in the file, and replace it with the following single line of code:
-```html
-<h1>Hello, Rails!</h1>
 ```
 
 ## Routes
@@ -23,30 +16,34 @@ bin/rails generate controller Welcome index
 
 ```ruby
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   resources :articles
 
   root 'welcome#index'
 end
 ```
 
-## Test the Routes
-```
-bin/rails routes
-```
-
-
-#### Create an empty controller
-```
-bin/rails generate controller Articles
-```
-
-
-#### Open it and add the first method
+Create a controller `app/controllers/articles_controller.rb` Add a method for each RESTful action.
 ```
 class ArticlesController < ApplicationController
+  def index
+  end
+
+  def show
+  end
+
   def new
+  end
+
+  def edit
+  end
+
+  def create
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end
 ```
@@ -58,70 +55,57 @@ end
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
- 
+
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
- 
+
   <p>
     <%= form.submit %>
   </p>
 <% end %>
 ```
 
-
-#### Add the create method in app/controllers/articles_controller.rb
-```
-class ArticlesController < ApplicationController
-  def new
-  end
-
-  def create
-  end
-end
-```
-
-#### Try it out
-
-#### Change it again:
+#### Change the create method to output the params being sent to it:
 ```
 def create
   render plain: params[:article].inspect
 end
 ```
 
+#### Try it out
+
 #### Create the model
 ```
 bin/rails generate model Article title:string text:text
 ```
-
-#### Look in the migration file
 
 #### Run the migration
 ```
 bin/rails db:migrate
 ```
 
-#### Change the controller:
+#### Start saving things in the controller:
 ```
 def create
-  @article = Article.new(article_params)
+  @article = Article.new(params)
 
   @article.save
   redirect_to @article
 end
-
-private
-  def article_params
-    params.require(:article).permit(:title, :text)
-  end
 ```
 
-#### Add show to the controller
+#### Add to the show controller
 ```
 def show
   @article = Article.find(params[:id])
+end
+```
+#### Add the index controller
+```
+def index
+  @articles = Article.all
 end
 ```
 
@@ -137,17 +121,6 @@ end
   <%= @article.text %>
 </p>
 ```
-
-## List all Articles
-
-
-#### Add the index controller
-```
-def index
-  @articles = Article.all
-end
-```
-
 
 #### Add the view for this action, located at app/views/articles/index.html.erb
 ```
@@ -172,7 +145,6 @@ end
 
 #### Open app/views/welcome/index.html.erb and modify it as follows:
 ```
-<h1>Hello, Rails!</h1>
 <%= link_to 'My Blog', controller: 'articles' %>
 ```
 
@@ -205,53 +177,6 @@ end
 <%= link_to 'Back', articles_path %>
 ```
 
-### Add validation
-```
-class Article < ApplicationRecord
-  validates :title, presence: true,
-                    length: { minimum: 5 }
-end
-```
-
-
-##### If @article.save fails in this situation, we need to show the form back to the user. To do this, change the new and create actions inside app/controllers/articles_controller.rb to these:
-```
-def new
-  @article = Article.new
-end
-
-def create
-  @article = Article.new(article_params)
-
-  if @article.save
-    redirect_to @article
-  else
-    render 'new'
-  end
-end
-```
-
-#### Modify app/views/articles/new.html.erb to check for error messages:
-```
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-```
-
-
-
 ### Editing
 
 #### Add an edit action to the ArticlesController
@@ -261,26 +186,11 @@ def edit
 end
 ```
 
-
 #### Create a file called app/views/articles/edit.html.erb
 ```
 <h1>Edit article</h1>
 
 <%= form_with(model: @article, local: true) do |form| %>
-
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <p>
     <%= form.label :title %><br>
@@ -306,11 +216,8 @@ end
 def update
   @article = Article.find(params[:id])
 
-  if @article.update(article_params)
-    redirect_to @article
-  else
-    render 'edit'
-  end
+  @article.update(article_params)
+  redirect_to @article
 end
 ```
 
