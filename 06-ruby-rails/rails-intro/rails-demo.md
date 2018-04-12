@@ -7,6 +7,7 @@ cd blog
 
 ## Start the Rails Server
 ```
+createdb blog_development
 bin/rails server
 bin/rails generate controller Welcome index
 ```
@@ -50,7 +51,7 @@ class ArticlesController < ApplicationController
 end
 ```
 
-#### Add this code into app/views/articles/new.html.erb:
+#### Add this code into app/views/articles/new.html.erb
 ```
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
   <p>
@@ -148,7 +149,7 @@ end
 ```
 
 
-#### Add the view for this action, located at app/views/articles/index.html.erb:
+#### Add the view for this action, located at app/views/articles/index.html.erb
 ```
 <h1>Listing articles</h1>
  
@@ -175,12 +176,12 @@ end
 <%= link_to 'My Blog', controller: 'articles' %>
 ```
 
-#### Add this "New Article" link to app/views/articles/index.html.erb, placing it above the <table> tag:
+#### Add this "New Article" link to app/views/articles/index.html.erb placing it above the <table> tag:
 ```
 <%= link_to 'New article', new_article_path %>
 ```
 
-#### Add another link in app/views/articles/new.html.erb, underneath the form, to go back to the index action:
+#### Add another link in app/views/articles/new.html.erb underneath the form, to go back to the index action:
 ```
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
   ...
@@ -300,7 +301,7 @@ end
 <%= link_to 'Back', articles_path %>
 ```
 
-#### Create the update action in app/controllers/articles_controller.rb.
+#### Create the update action in app/controllers/articles_controller.rb
 ```
 def update
   @article = Article.find(params[:id])
