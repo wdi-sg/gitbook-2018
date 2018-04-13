@@ -21,6 +21,14 @@ Rails.application.routes.draw do
 end
 ```
 
+Create a controller `app/controllers/welcome_controller.rb`. Add the index method
+```
+class WelcomeController < ApplicationController
+  def index
+  end
+end
+```
+
 Create a controller `app/controllers/articles_controller.rb` Add a method for each RESTful action.
 ```
 class ArticlesController < ApplicationController
@@ -97,7 +105,9 @@ def create
   @article.save
   redirect_to @article
 end
-
+```
+At the bottom of the file put the private article_params security method:
+```
 private
   def article_params
     params.require(:article).permit(:title, :text)
@@ -159,7 +169,7 @@ end
 </table>
 ```
 
-#### Open app/views/welcome/index.html.erb and modify it as follows:
+#### create the app/views/welcome/index.html.erb and add a link:
 ```
 <%= link_to 'My Blog', controller: 'articles' %>
 ```
