@@ -24,21 +24,29 @@ hw: ruby commandline game w/ objects / active record
 
 day 4
 
+morning ex: https://github.com/wdi-sg/dna_analyzer
+
+rails demo
 rails intro
-rails active record
+
+hw: pokedex rails
 
 week 2:
 
 day 1
-devise
+many-to-many
+validations / security
+auth
 
 
 day 2
 asset pipeline / sass
+ajax / json api
 
 
 day 3
-scaffolding
+scaffolding??
+cloudinary??
 
 
 
@@ -58,7 +66,7 @@ https://inside.trinity.edu/sites/inside.trinity.edu/files/file_attachments/6126/
 3. ruby on rails
   ruby language
   active record / orms
-  rails
+  rails mvc app
 
 4. react js
   ajax
