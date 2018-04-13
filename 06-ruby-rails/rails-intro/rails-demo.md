@@ -8,7 +8,6 @@ cd blog
 ## Start the Rails Server
 ```
 createdb blog_development
-bin/rails generate controller Welcome index
 ```
 
 ## Routes
@@ -46,6 +45,10 @@ class ArticlesController < ApplicationController
   def destroy
   end
 end
+```
+
+```
+mkdir app/views/articles
 ```
 
 #### Add this code into app/views/articles/new.html.erb
@@ -89,23 +92,22 @@ bin/rails db:migrate
 #### Start saving things in the controller:
 ```
 def create
-  @article = Article.new(params)
+  @article = Article.new(article_params)
 
   @article.save
   redirect_to @article
 end
+
+private
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 ```
 
 #### Add to the show controller
 ```
 def show
   @article = Article.find(params[:id])
-end
-```
-#### Add the index controller
-```
-def index
-  @articles = Article.all
 end
 ```
 
@@ -121,6 +123,20 @@ end
   <%= @article.text %>
 </p>
 ```
+
+#### Also add a link to go back to the index action as well, so that people who are viewing a single article can go back and view the whole list:
+```
+<%= link_to 'Back', articles_path %>
+```
+
+
+#### Add to the index controller
+```
+def index
+  @articles = Article.all
+end
+```
+
 
 #### Add the view for this action, located at app/views/articles/index.html.erb
 ```
@@ -158,21 +174,6 @@ end
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
   ...
 <% end %>
-
-<%= link_to 'Back', articles_path %>
-```
-
-#### Add a link to the app/views/articles/show.html.erb template to go back to the index action as well, so that people who are viewing a single article can go back and view the whole list again:
-```
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
 
 <%= link_to 'Back', articles_path %>
 ```
@@ -229,7 +230,7 @@ end
 
 #### Also add one to the app/views/articles/show.html.erb template as well
 ```
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Edit', edit_article_path(@article) %>
 ```
 
 
