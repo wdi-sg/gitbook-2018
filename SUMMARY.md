@@ -133,6 +133,7 @@
   * [Intro to ActiveRecord](06-ruby-rails/rails-intro/active_record/readme.md)
   * [ActiveRecord Associations](06-ruby-rails/rails-intro/active_record/activerecord-assoc.md)
   * [Intro to Rails](06-ruby-rails/rails-intro/readme.md)
+  * [Rails Demo](06-ruby-rails/rails-intro/rails-demo.md)
   * [Views, Layouts & Partials](06-ruby-rails/rails-intro/views.md)
   * [Asset Pipeline](06-ruby-rails/rails-assets-frontend/readme.md)
   * [Rails Auth and 1-M](06-ruby-rails/rails-auth-1-M/readme.md)
