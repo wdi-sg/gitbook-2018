@@ -1,18 +1,18 @@
-#Many to Many Associations
+# Many to Many Associations
 
-##Objectives
+## Objectives
 
 * Implement many to many relationships through models in Rails
 * Understand the model ordering opinion used by Rails
 * Use the `collection_check_boxes` form helper to display a collection of associated items
 
-Today we'll add rangers to the national park app using a many to many relationship.
 
-## Review: Relationships
+## Create the app:
+```
+rails new parks -d postgresql
+```
 
-![Database relationships](http://fms-itskills.ncl.ac.uk/db/ER.png)
-
-##What we need
+## What we need
 
 * Models
   * Park
@@ -23,17 +23,33 @@ Today we'll add rangers to the national park app using a many to many relationsh
   * Park `has_and_belongs_to_many` Rangers
   * Ranger `has_and_belongs_to_many` Parks
 * Views
-  * parks#edit - add/remove rangers checkboxes
-  * parks#new - add/remove rangers checkboxes
+  * parks#new - add/remove rangers checkbox
+  * parks#show
+    * list all rangers with a specific park
+
+  * rangers#new - add/remove rangers checkbox
   * rangers#show
     * list all parks with a specific ranger
 
-##Generating models
+* Controllers
+  * parks#new - get a list of all rangers here
+  * parks#show
+    * list all rangers with a specific park
+
+  * rangers#new - get a list of all parks here
+  * rangers#show
+    * list all parks with a specific ranger
+
+* Routes
+  * We can nest the routes of one resource within the other one.
+
+
+## Generating models
 
 Review of **Parks**
 
 ```
-rails g model park name description:text picture:text
+rails g model park name description:text
 ```
 
 **Rangers**
@@ -69,10 +85,10 @@ has_and_belongs_to_many :rangers
 has_and_belongs_to_many :parks
 ```
 
-#ALSO IMPORTANT
+# ALSO IMPORTANT
 When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method. In ParksRangers, the associations will be singular and generated for you.
 
-##Adding rangers
+## Adding rangers on the command line:
 
 ```ruby
 # assume the following:
@@ -83,7 +99,7 @@ some_ranger = Ranger.first
 some_park.rangers << some_ranger
 ```
 
-##Removing rangers
+## Removing rangers on the command line:
 
 ```ruby
 # assume the following:
@@ -100,8 +116,7 @@ some_park.rangers.delete(some_ranger)
 some_park.rangers.first.destroy
 ```
 
-
-##Referencing and listing
+## Referencing and listing on the command line
 
 Because Park and Ranger reference each other with `has_and_belongs_to_many` they can reference each other.
 
@@ -124,30 +139,55 @@ Park.first.rangers
 Ranger.first.parks
 ```
 
-**Advanced Examples / chaining**
+## Set up our requests:
+### Nested routes
+```
+resources :parks do
+  resources :rangers
+end
 
-```ruby
-#All parks of the first ranger of the first park
-Park.first.rangers.first.parks
+resources :rangers do
+  resources :parks
+end
 ```
 
-## parks#new and parks#edit
+## view helpers:
 
-* Add checkboxes to the form
+* Prepare in the controller: make an instance variable with `@rangers`
+```ruby
+@rangers = Ranger.all
+```
+* Add checkbox to the form:
 ```erb
 <%= f.collection_check_boxes :ranger_ids, @rangers, :id, :name %>
 ```
+
+And to the new park form as well:
+```ruby
+@parks = Park.all
+```
+```erb
+<%= f.collection_check_boxes :park_ids, @parks, :id, :name %>
+```
+
 
 1. `:ranger_ids` refers to the model's rangers
 2. `@rangers` refers to all the rangers available (pass from the controller `Ranger.all`)
 3. `:id` refers to the value of the checkbox
 4. `:name` refers to the label of the checkbox
 
-That's it! As far as assigning the rangers in the controller, we can modify the `Park` controller to accept the `ranger_ids` array like so:
+## parks and rangers controllers:
+
+Modify the `Park` controller to accept the `ranger_ids` and `parks_ids` array like so:
 
 ```ruby
 def park_params
   params.require(:park).permit(:name, :description, :ranger_ids => [])
+end
+```
+```ruby
+def ranger_params
+  params.require(:ranger).permit(:name, :park_ids => [])
 end
 ```
 
