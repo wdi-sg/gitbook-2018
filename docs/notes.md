@@ -34,19 +34,39 @@ hw: pokedex rails
 week 2:
 
 day 1
-many-to-many
-validations / security
-auth
+morning ex: https://github.com/wdi-sg/word_ladder
 
+one-to-many helpers
+many-to-many
 
 day 2
-asset pipeline / sass
-ajax / json api
+validations / security
+auth / devise
+
+ruby exceptions
+
+render options
 
 
 day 3
+asset pipeline / sass
+ajax / json api
+ujs features: https://github.com/rails/jquery-ujs
+rails render format
+
+day 4
+git branching
+
+
+day 4
+job scheduling??
+mailers??
 scaffolding??
 cloudinary??
+
+day 5
+
+
 
 
 
@@ -73,3 +93,4 @@ https://inside.trinity.edu/sites/inside.trinity.edu/files/file_attachments/6126/
   react
 
 
+https://www.youtube.com/playlist?list=PLdnONIhPScSQkcJsH6jWcgvI2Mai1AZO4&disable_polymer=true
