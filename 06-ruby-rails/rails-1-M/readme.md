@@ -134,14 +134,59 @@ end
 resources :rangers
 ```
 
-## parks#new view helpers:
+## views
+The app/views/parks/new.hmtl.erb file looks the same
+```
+<%= form_with scope: :park, url: parks_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :picture %><br>
+    <%= form.text_area :picture %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+```
+
+## rangers#new view helpers:
 
 * Prepare in the controller: make an instance variable with `@parks`
 ```ruby
 @parks = Park.all
 ```
+Create a pre-populated select tag:
 ```erb
 <%= f.collection_select :park_id, @parks, :id, :name %>
+```
+
+All together it should look like this:
+```
+<%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
+
+  <%= form.collection_select :park_id, @parks, :id, :name %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 ```
 
 [https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select](https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)

@@ -137,6 +137,7 @@
   * [Views, Layouts & Partials](06-ruby-rails/rails-intro/views.md)
   * [Asset Pipeline](06-ruby-rails/rails-assets-frontend/readme.md)
   * [Rails Auth and 1-M](06-ruby-rails/rails-auth-1-M/readme.md)
+  * [Rails 1-M](06-ruby-rails/rails-1-M/readme.md)
   * [Rails M:M](06-ruby-rails/rails-M-M/readme.md)
   * [Additional Topics](06-ruby-rails/additional-topics/readme.md)
     * [oAuth](06-ruby-rails/additional-topics/rails-oauth/readme.md)
