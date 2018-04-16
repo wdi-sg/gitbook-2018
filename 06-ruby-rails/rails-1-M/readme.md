@@ -66,7 +66,10 @@ rails console
 ```
 ```ruby
 yellowstone = Park.new(name: "yellowstone", description: "pretty cool")
+yellowstone.save
+
 ranger = Ranger.new(name: "roger", park: yellowstone)
+ranger.save
 ```
 Now we have a set of related records.
 This active record query should work:
