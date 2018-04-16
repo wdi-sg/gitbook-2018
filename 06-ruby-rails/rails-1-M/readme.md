@@ -134,11 +134,11 @@ class RangersController < ApplicationController
   def show
     # deal with the case that we are trying to get a ranger for a park that doesn't exist
 
+    @ranger = Ranger.find(params[:id])
+
     if params[:park_id].to_i != @ranger.park.id
       # do something
     end
-
-    @ranger = Ranger.find(params[:id])
   end
 
 private
@@ -191,7 +191,7 @@ Create a pre-populated select tag:
 <%= f.collection_select :park_id, @parks, :id, :name %>
 ```
 
-All together it should look like this:
+All together it should look like this app/views/rangers/new.hmtl.erb
 ```erb
 <%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
 
