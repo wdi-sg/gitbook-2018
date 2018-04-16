@@ -8,7 +8,7 @@
 
 
 ## Create the app:
-```
+```bash
 rails new parks -d postgresql
 ```
 
@@ -48,19 +48,19 @@ rails new parks -d postgresql
 
 Review of **Parks**
 
-```
+```bash
 rails g model park name description:text
 ```
 
 **Rangers**
 
-```
+```bash
 rails g model ranger name
 ```
 
 **ParksRangers**
 
-```
+```bash
 rails g model parks_rangers park:references ranger:references --force-plural
 ```
 
@@ -141,7 +141,7 @@ Ranger.first.parks
 
 ## Set up our requests:
 ### Nested routes
-```
+```ruby
 resources :parks do
   resources :rangers
 end

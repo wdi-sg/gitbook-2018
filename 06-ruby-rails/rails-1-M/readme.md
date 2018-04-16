@@ -7,7 +7,7 @@
 * Use the `collection_select` form helper to display a collection of associated items
 
 ## Create the app:
-```
+```bash
 rails new parks -d postgresql
 ```
 
@@ -42,28 +42,28 @@ rails new parks -d postgresql
 
 Review of **Parks**
 
-```
+```bash
 rails g model park name description:text
 ```
 
-```
+```bash
 rails g model ranger name park:references
 ```
 
 ## Check your work on the command line
-```
+```ruby
 yellowstone = Park.new(name: "yellowstone", description: "pretty cool")
 ranger = Ranger.new(name: "roger", park: yellowstone)
 ```
 Now we have a set of related records.
 This active record query should work:
-```
+```ruby
 Ranger.first.park.name
 ```
 
 ## Make the controllers:
 app/controllers/parks_controller.rb
-```
+```ruby
 class ParksController < ApplicationController
 
   def new
@@ -126,7 +126,7 @@ end
 
 ## Set up our requests:
 ### Nested route
-```
+```ruby
 resources :parks do
   resources :rangers
 end
@@ -136,7 +136,7 @@ resources :rangers
 
 ## views
 The app/views/parks/new.hmtl.erb file looks the same
-```
+```erb
 <%= form_with scope: :park, url: parks_path, local: true do |form| %>
 
   <p>
@@ -148,12 +148,6 @@ The app/views/parks/new.hmtl.erb file looks the same
     <%= form.label :description %><br>
     <%= form.text_area :description %>
   </p>
-
-  <p>
-    <%= form.label :picture %><br>
-    <%= form.text_area :picture %>
-  </p>
-
 
   <p>
     <%= form.submit %>
@@ -173,7 +167,7 @@ Create a pre-populated select tag:
 ```
 
 All together it should look like this:
-```
+```erb
 <%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
 
   <%= form.collection_select :park_id, @parks, :id, :name %>
@@ -189,18 +183,4 @@ All together it should look like this:
 <% end %>
 ```
 
-[https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select](https://apidock.com/rails/ActionView/Helpers/FormOptionsHelper/collection_select)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select](http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select)
