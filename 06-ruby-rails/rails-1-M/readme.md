@@ -3,7 +3,6 @@
 ## Objectives
 
 * Implement one to many relationships through models in Rails
-* Understand the model ordering opinion used by Rails
 * Use the `collection_select` form helper to display a collection of associated items
 
 ## Create the app:
@@ -20,11 +19,11 @@ rails new parks -d postgresql
   * Park `has_many` Rangers
   * Ranger `belongs_to` a Park
 * Views
-  * parks#new - add/remove rangers checkbox
+  * parks#new - add/remove rangers select
   * parks#show
     * list all rangers with a specific park
 
-  * rangers#new - add/remove rangers checkbox
+  * rangers#new - add/remove rangers select
   * rangers#show
 
 * Controllers
@@ -50,7 +49,21 @@ rails g model park name description:text
 rails g model ranger name park:references
 ```
 
+Run the db scripts
+```bash
+rails db:create
+rails db:migrate
+```
+
+Change the model file to associate Park with Ranger: app/models/park.rb
+```ruby
+has_many :ranger
+```
+
 ## Check your work on the command line
+```bash
+rails console
+```
 ```ruby
 yellowstone = Park.new(name: "yellowstone", description: "pretty cool")
 ranger = Ranger.new(name: "roger", park: yellowstone)
@@ -59,6 +72,15 @@ Now we have a set of related records.
 This active record query should work:
 ```ruby
 Ranger.first.park.name
+```
+
+## Check your work in `psql`
+```bash
+rails dbconsole
+```
+
+```sql
+SELECT * FROM rangers;
 ```
 
 ## Make the controllers:
@@ -92,7 +114,7 @@ end
 
 
 app/controllers/rangers_controller.rb
-```
+```ruby
 class RangersController < ApplicationController
 
   def new
@@ -184,3 +206,15 @@ All together it should look like this:
 ```
 
 [http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select](http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select)
+
+## Exercise:
+Repeat the steps above.
+
+#### Further:
+Implement the display logic for the nested new route: `/parks/:id/rangers/new` and the nested show route `/parks/:id/rangers/:id`
+
+#### Further:
+Implement the display logic for the nested index route: /parks/:id/rangers
+
+#### Further:
+Implement edit for the nested route
