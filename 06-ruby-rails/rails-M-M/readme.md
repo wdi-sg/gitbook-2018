@@ -167,13 +167,13 @@ And to the new park form as well:
 @parks = Park.all
 ```
 ```erb
-<%= f.collection_check_boxes :park_ids, @parks, :id, :name %>
+<%= f.collection_check_boxes :ranger_ids, @rangers, :id, :name %>
 ```
 
 
-1. `:ranger_ids` refers to the model's rangers
+1. `:ranger_ids` refers to the name of the input and the key it will be in the request params
 2. `@rangers` refers to all the rangers available (pass from the controller `Ranger.all`)
-3. `:id` refers to the value of the checkbox
+3. `:id` refers to the value of the checkbox when submitted in the request
 4. `:name` refers to the label of the checkbox
 
 ## parks and rangers controllers:

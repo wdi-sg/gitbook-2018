@@ -4,21 +4,9 @@
 
 On your projects at GA, you will all be Full-Stack developers and forced to work on both front-end and back-end code. In the outside world this may still be the case or you might be end up specializing on what particular side.
 
-####Project Manager (PM)
-
-The project manager, or PM, is responsible for planning and seeing a project from its initiation to its completion. A PM generally has to have strong leadership and communication skills, as well as the ability to keep others motivated and on track. Some other roles may include overseeing the scope of the project, planning out resources, time management, and monitoring progress throughout the project.
-
 ####Git Master (Maintainer)
 
 Commonly known as the repository maintainer, but known in WDI as the "git master", the git master's job is to handle incoming pull requests and merge them appropriately. Their job is to handle the **state of the repo** and make sure that everything goes smoothly. Be prepared for merge conflicts if necessary.
-
-####Database Administrator (DBA)
-
-* Useful if you are working with a complex data schema, with fixtures/seeders to load data
-
-####Other Specialist
-
-* This role will likely be used if you are working with foreign technologies or complex topics, such as D3, front end plugins, machine learning, etc.
 
 ##Kanban Boards
 

@@ -31,15 +31,9 @@ For example, if we had a file called `importantScript.js` in our `javascripts` d
 ```
 
 #### Blame Turbolinks
-Rails includes a package called Turbolinks, which provides some optimization for our sites by minimising the amount of the page that is redrawn between requests. It's clever but can cause issues if we are expecting js/jquery page ready events to fire. One solution is to [remove Turbolinks](http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4), the other is use the `ready page:load` event in-place of the standard jQuery ready event.
+Rails includes a package called Turbolinks, which provides some optimization for our sites by minimising the amount of the page that is redrawn between requests. It's clever but can cause issues if we are expecting js/jquery page ready events to fire.
 
-```js
-$(document).on('ready page:load', function() {
-  $.get('/names').done(function(data) {
-    console.log(data);
-  });
-});
-```
+Let's [remove Turbolinks](http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4)
 
 ##Stylesheets
 

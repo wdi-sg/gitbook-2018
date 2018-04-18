@@ -200,33 +200,26 @@ h1 {
 Mixins are an extremely powerful feature of SASS. Basically they allow us to define a function and pass parameters to that function in order to output a result. Typically this can be used to make a shortcut for extraneous CSS rules.
 
 ```sass
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+@mixin left-thumb($width, height) {
+    width:$width;
+    height:$height;
+    display:block;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
 }
 
-.box {
-  @include border-radius(10px);
+.left-thumb-box {
+  @include left-thumb(10px);
 }
+
+
 ```
 
-And the CSS that comes from that:
-
-```css
-.box {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-}
-```
 ---
 ## Bootstrap
 You know what is written in SASS? Bootstrap! That means that install the original source files for bootstrap we can easily override the default styles options by changing the values of the SASS variables used.
 
-In Rails this is even easier because we can install it using the [Bootstrap-SASS Gem](https://github.com/twbs/bootstrap-sass#a-ruby-on-rails)
+In Rails this is even easier because we can install it using the [Bootstrap-SASS Gem](https://github.com/twbs/bootstrap-rubygem)
 
 Once installed you can simply change values like so
 ```sass
@@ -236,3 +229,65 @@ $navbar-default-color: $light-orange;
 
 @import "bootstrap";
 ```
+
+
+New gems
+
+gem 'bootstrap', '~> 4.1.0'
+gem 'gon'
+
+Install bootstrap according to the instructions
+https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails
+
+Add gon to the head
+<%= include_gon %>
+
+Add gon to the controller
+gon.songs = @songs
+
+Add jquery
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+Add our markup
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">created</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.id %></td>
+      <td class="song-title"><%= song.title %></td>
+      <td><%= song.created_at.strftime('%d.%m.%Y') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+Add our sorting script
+
+var desc = function(a,b){
+  return $(b).children('.song-title').text() < $(a).children('.song-title').text();
+};
+
+var asc = function(a,b){
+  return $(b).children('.song-title').text() > $(a).children('.song-title').text();
+};
+
+var sortedRows = $('tbody tr').sort(desc);
+
+$('tbody').empty()
+$('tbody').append(sortedRows)
