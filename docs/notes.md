@@ -47,12 +47,21 @@ ruby exceptions
 
 render options
 
+https://github.com/wdi-sg/rail_fence_cipher
+
 
 day 3
+
+morning ex: https://github.com/wdi-sg/cell_phone_html_css
+
+https://github.com/wdi-sg/user-songs/blob/asset-pipeline/frontend.md
+
 asset pipeline / sass
 ajax / json api
 ujs features: https://github.com/rails/jquery-ujs
 rails render format
+
+
 
 day 4
 git branching
@@ -63,10 +72,6 @@ job scheduling??
 mailers??
 scaffolding??
 cloudinary??
-
-day 5
-
-
 
 
 
@@ -91,6 +96,9 @@ https://inside.trinity.edu/sites/inside.trinity.edu/files/file_attachments/6126/
 4. react js
   ajax
   react
+  webpack / babel
 
 
 https://www.youtube.com/playlist?list=PLdnONIhPScSQkcJsH6jWcgvI2Mai1AZO4&disable_polymer=true
+
+
