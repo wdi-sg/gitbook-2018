@@ -65,6 +65,9 @@ rails render format
 
 day 4
 git branching
+morning: https://github.com/wdi-sg/poker_refactor
+
+https://github.com/raywtham/emergency_compliment
 
 
 day 4
