@@ -3,11 +3,12 @@
 gem install rails
 rails new blog -d postgresql
 cd blog
+rails db:create
 ```
 
 ## Start the Rails Server
 ```
-createdb blog_development
+rails server
 ```
 
 ## Routes
@@ -17,19 +18,20 @@ createdb blog_development
 Rails.application.routes.draw do
   resources :articles
 
-  root 'welcome#index'
+  root 'articles#index'
 end
 ```
 
-Create a controller `app/controllers/welcome_controller.rb`. Add the index method
+To see your work:
 ```
-class WelcomeController < ApplicationController
-  def index
-  end
-end
+rake routes
 ```
 
-Create a controller `app/controllers/articles_controller.rb` Add a method for each RESTful action.
+Create a controller:
+```
+touch app/controllers/articles_controller.rb
+```
+Add a method for each RESTful action.
 ```
 class ArticlesController < ApplicationController
   def index
@@ -57,6 +59,13 @@ end
 
 ```
 mkdir app/views/articles
+touch app/views/articles/index.html.erb
+touch app/views/articles/new.html.erb
+```
+
+#### Add this code into app/views/articles/index.html.erb
+```
+<h1>hello world</h1>
 ```
 
 #### Add this code into app/views/articles/new.html.erb
@@ -85,16 +94,17 @@ def create
 end
 ```
 
-#### Try it out
+#### Try it out in the browser:
+[http://localhost:3000/articles/new](http://localhost:3000/articles/new)
 
 #### Create the model
 ```
-bin/rails generate model Article title:string text:text
+rails generate model Article title:string text:text
 ```
 
 #### Run the migration
 ```
-bin/rails db:migrate
+rails db:migrate
 ```
 
 #### Start saving things in the controller:
@@ -106,6 +116,7 @@ def create
   redirect_to @article
 end
 ```
+
 At the bottom of the file put the private article_params security method:
 ```
 private
