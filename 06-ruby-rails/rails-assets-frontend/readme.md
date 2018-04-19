@@ -65,7 +65,7 @@ We also have access to a `image_url` helper method in `scss` files. It will be u
 
 ```css
 .some-class {
-  background-image: image_url('pic.jpg');
+  background-image: asset-url('pic.jpg');
 }
 ```
 
@@ -144,6 +144,9 @@ if (typeof gon !== 'undefined') {
   console.log('there is no gon (or taco)');
 }
 ```
+
+### Exercise:
+[asset pipeline exercise](https://github.com/wdi-sg/user-songs/tree/asset-pipeline)
 
 ##Additional Reading
 

@@ -138,6 +138,7 @@
   * [Rails 1-M](06-ruby-rails/rails-1-M/readme.md)
   * [Rails M:M](06-ruby-rails/rails-M-M/readme.md)
   * [Rails Security](06-ruby-rails/rails-security/readme.md)
+  * [Rails Auth with Devise](06-ruby-rails/rails-security/devise.md)
   * [Rails Validations](06-ruby-rails/rails-validation/readme.md)
   * [Additional Topics](06-ruby-rails/additional-topics/readme.md)
     * [oAuth](06-ruby-rails/additional-topics/rails-oauth/readme.md)

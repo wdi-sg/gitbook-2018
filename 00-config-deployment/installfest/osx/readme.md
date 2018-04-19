@@ -63,9 +63,16 @@ For SSH Keys you can cache them too if needed:
 https://help.github.com/articles/generating-ssh-keys/
 
 ### Setting up the bash shell
+> do you have any other shell configuration files in your home directory?
+> `ls -la ~`
+> If you have something named `.zshrc`, `.bashrc`, `.bash_profile`
+> Take the contents out of this file and put it in the new one we are creating. Then delete the old file.
+
+Create a new shell config file.
 ```
 touch ~/.profile
 ```
+
 
 ## Node
 
