@@ -1,34 +1,170 @@
-#Introduction to ReactJS
+# Intro to React
 
-##Objectives
+## Framing
+In unit 1 we build relatively complex apps in javascript.
 
-* Understand the concepts of React components, props, and state
-* Understand the concepts of the virtual DOM and JSX
-* Compare and contrast ReactJS to AngularJS
-* Create your own React components
+Now we are going to see how javascript apps get built in the real world.
 
-##How will you React?
+Just like in express and Rails, we are going to enforce some structure in the way that our javascript renders things in the DOM and also structure for the login of our javascript as well.
 
-React is a front end JavaScript framework used for creating user interfaces. It was originally engineered by Facebook, and it is now used by Facebook, Instagram, Airbnb, and many other companies.
+We will be seeing some professional-level tools for running and storing our JS code.
 
-###But what is it really?
+React.js is a javascript library that basically tightly controls the rendering of HTML within the DOM.
 
-React deals **specifically** with rendering data as HTML, so it involves a different mode of thinking when compared to Angular. In React, data flows in one direction (no two-way data binding), and data is modularized using **components.**
+Further, it is a javascript ecosystem for creating single page apps in javascript.
 
-![React components](http://maketea.co.uk/images/2014-03-05-robust-web-apps-with-react-part-1/wireframe_deconstructed.png)
+It's back-end equivalent would be more expresss than rails.
 
-Here's an example of how React components would be created and rendered on a page. You'll see that there's a hierarchy where each components can contain additional components. The data is stored by each component, and a `render` function takes the data and renders it as HTML on the page.
+We will see that the professional react "stack" is quite complicated and includes some new tools and ways of working.
 
-###Terminology We'll Need
 
-####One-Way Data Flow
+## What is reactjs
+The react library itself is just a rendering layer to easily render elements onto an HTML page in the browser.
 
-Data is not bound in both directions in React. Meaning, if we want an input field to update the actual data in a component, we'll need to call a function to modify the value. Compare this to Angular, where we can change the value of an input field bound to `ng-model` and it'll automatically update the value in the controller.
+The wider react ecosystem allows you to build complex js single page applications.
 
-####Virtual DOM
+## Hello World Example
+Given we've included the right libraries:
+```
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+```
 
-React uses what's called a **virtual DOM.** When React renders data to the page, the differences are computed by comparing the page to the virtual DOM. When a component needs to be re-rendered, only the component and its subcomponents are actually rendered. This ideally results in a more efficient rendering process.
+We have this main section:
+```
+<div id="root"></div>
+<script type="text/babel">
+ReactDOM.render(
+  <p>hello world!</p>,
+  document.getElementById('root')
+);
+</script>
+```
 
-####JSX
+## How does this work?
 
-We keep mentioning data, and how each component is actually just storing data. But how is that data rendered? We'll be using a syntax called **JSX** to render our components. More to come!
+### 1. Babel
+Babel is a *javascript transpiler*. It takes code and spits out new code. In fact, when we write react we are going to be working with an extension of the javascript language called JSX.
+
+Babel is the tool we will use to *transpile* JSX to javascript.
+
+#### 1.1 How Babel works
+```
+<script src="babel.js"></script>
+<script>
+  /*
+   ReactDOM.render(
+      <p>hello world!</p>,
+      document.getElementById('root')
+   );
+  */
+
+  var reactJsx = "ReactDOM.render(<p>hello world!</p>,document.getElementById('root'));";
+
+  var result = babel.transform( reactJsx );
+
+  console.log( result.code );
+</script>
+```
+
+Inside of `result.code` is:
+```
+'use strict';
+
+ReactDOM.render(React.createElement(
+    'p',
+    null,
+    'hello world!'
+), document.getElementById('root'));
+```
+
+Specifically Babel is looking for `<p>` and transforming it into `React.createElement`.
+
+*But* the general purpose of babel is to take one set of javascript and transform (transpile) it into another version:
+- JSX to ES5
+- ES6 to ES5
+- typescript to ES5
+
+#### 1.2 Javascript `eval`
+Javascript has the ability to execute code that is a string. (this is one of the features that makes it relatively insecure compared to languages that lack this feature)
+
+```
+var foo = "alert('hello world')";
+eval(foo);
+```
+
+Babel takes the entire transpiled string and executes it for us.
+
+### 2. ReactDOM
+Now that we understand the magic behind this new `JSX` syntax, let's at the example again.
+
+Specifically:
+```
+ReactDOM.render
+```
+
+Using babel we created code that passed an element into ReactDOM.render.
+
+When you take apart the above code it looks like this:
+```
+let element = React.createElement(
+    'p',
+    null,
+    'hello world!'
+);
+
+ReactDOM.render(element, document.getElementById('root'));
+```
+
+Let's take out babel and the old code and paste that in.
+
+## Rendering with Javascript
+
+React and JSX are first of all just a HTML rendering layer for javascript.
+```
+const items = ["yay", "banana", "yellow"];
+
+const list = items.map(item => {
+  return <li>{item}</li>
+});
+
+let stuff = <ul>{list}</ul>
+
+ReactDOM.render(
+  stuff,
+  document.getElementById('root')
+);
+```
+
+Does this syntax look familiar? It works just like every rendering layer we've seen so far, in express and rails.
+
+You can do anything you did in express and rails templates in JSX.
+
+Conditional rendering:
+```
+let stuff = null;
+
+if( user_logged_in ){
+  stuff = <a>logout</a>;
+}else{
+  stuff = <a>login</a>;
+}
+
+ReactDOM.render(
+  stuff,
+  document.getElementById('root')
+);
+```
+
+
+
+
+
+
+
+
+
+
+
+
