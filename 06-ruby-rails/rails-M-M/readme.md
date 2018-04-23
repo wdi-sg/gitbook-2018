@@ -88,6 +88,14 @@ has_and_belongs_to_many :parks
 # ALSO IMPORTANT
 When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method. In ParksRangers, the associations will be singular and generated for you.
 
+Check to see that the associations are set correctly in the new model:
+**models/parks_ranger.rb**
+
+```ruby
+belongs_to :park
+belongs_to :ranger
+```
+
 ## Adding rangers on the command line:
 
 ```ruby

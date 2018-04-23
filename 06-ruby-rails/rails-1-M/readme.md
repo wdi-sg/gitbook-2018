@@ -55,9 +55,14 @@ rails db:create
 rails db:migrate
 ```
 
-Change the model file to associate Park with Ranger: app/models/park.rb
+Change the model file to associate Park with Ranger:
+#### app/models/park.rb
 ```ruby
 has_many :ranger
+```
+#### app/models/ranger.rb
+```ruby
+has_one :park
 ```
 
 ## Check your work on the command line
