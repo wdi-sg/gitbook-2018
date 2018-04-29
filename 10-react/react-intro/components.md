@@ -28,6 +28,21 @@ These are the sepearate logical pieces of any page.
 - S small
 - T testable
 
+### Babel standalone
+Before we move to writing code, let's talk about the default tool we'll use until we learn the React build tools.
+
+```
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+ ReactDOM.render(
+    <p>hello world!</p>,
+    document.getElementById('root')
+ );
+</script>
+```
+
+`babel-standalone` relies on a script tag type text/babel. It ingests everything inside that script tag, transpiles it and evals it.
+
 
 ## Writing a component
 ```
@@ -111,7 +126,7 @@ class ListItem extends React.Component {
 class List extends React.Component {
 
     render() {
-        let itemsElements = this.props.items.map(item => {
+        let itemsElements = this.props.items.map( (item, index) => {
                               return <ListItem item={item}></ListItem>;
                             });
         return (
@@ -133,3 +148,9 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+
+### Exercise
+Create a component that gets rendered multiple times by passing in props.
+
+#### Further
+Have the list item class render 2 components: `ItemId` which will use the map `index` as the id, and Item which will render the text of the item. Pass data into these two components as props.

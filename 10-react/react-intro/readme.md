@@ -5,7 +5,7 @@ In unit 1 we build relatively complex apps in javascript.
 
 Now we are going to see how javascript apps get built in the real world.
 
-Just like in express and Rails, we are going to enforce some structure in the way that our javascript renders things in the DOM and also structure for the login of our javascript as well.
+Just like in express and Rails, we are going to enforce some structure in the way that our javascript renders things in the DOM and also structure for the logic of our javascript as well.
 
 We will be seeing some professional-level tools for running and storing our JS code.
 
@@ -51,7 +51,7 @@ Babel is the tool we will use to *transpile* JSX to javascript.
 
 #### 1.1 How Babel works
 ```
-<script src="babel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
 <script>
   /*
    ReactDOM.render(
@@ -157,14 +157,60 @@ ReactDOM.render(
 );
 ```
 
+### Exercise: Render JSX with react and babel
+
+1. Create a boilerplate HTML page.
+```
+touch index.html
+```
+
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 
+1. Include the libraries from the CDN:
+```
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+```
 
+1. Add the `root` DOM element
+```
+<div id="root"></div>
+```
 
+1. Create some jsx and have Babel transpile it.
+```
+var reactJsx = "ReactDOM.render(<p>hello world!</p>,document.getElementById('root'));";
 
+var result = babel.transform( reactJsx );
 
+console.log( result.code );
+```
 
+1. Try JS eval on some random code
+```
+eval("alert('hello')");
+```
 
+1. Eval the generated code
+```
+eval(result.code);
+```
 
-
-
+##### Further
+- What other attributes does `result` hold?
+- Try building more complicated JSX and evaling it:
+- Try the conditional and looping render.
+- Change the DOM attachment point to something else. (Write other elements in the HTML)
