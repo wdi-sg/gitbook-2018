@@ -9,17 +9,19 @@ We want to have this page's HTML be different for each request. How do we do thi
 
 ---
 
-### Templating with Handlebar
+### Templating with React
 <span class="non-slide"></span><span class="non-slide"></span>
 <span class="non-slide"></span><span class="non-slide"></span>
 
-If we want to customize what's on the page? We're going to set up a template engine called **[Handlebar](http://handlebarsjs.com/)** and use that instead.
+If we want to customize what's on the page? We're going to set up a template engine with **[React](http://reactjs.org)** and use that instead.
+
+React is used on the front end of lots of sites, but it's __JSX__ component can also be used to simply create HTML.
 
 We need to do a couple steps to get the template engine working.
 
 ---
 
-First, install [`express-handlebars`](https://github.com/ericf/express-handlebars) by running `yarn add express-handlebars` in the command line.
+First, install [`express-react-views`](https://github.com/reactjs/express-react-views) by running `yarn add express-react-views react react-dom` in the command line.
 
 Then, prepare this directory structure on your `node` project.
 
@@ -27,27 +29,29 @@ Then, prepare this directory structure on your `node` project.
 .
 ├── app.js
 └── views
-    ├── home.handlebars
+    ├── home.jsx
 
 1 directories, 2 files
 ```
 
 ---
 
-Once structure is setup, you can setup the `express` view engine to `handlebar` in this manner.
+Once structure is setup, you can setup the `express` view engine to `jsx` in this manner.
 
 ```javascript
 const express = require('express')
-const handlebars  = require('express-handlebars')
-
 const app = express();
 
 
 // this line below, sets a layout look to your express project
-app.engine('handlebars', handlebars.create().engine);
+const reactEngine = require('express-react-views').createEngine();
+app.engine('jsx', reactEngine);
+
+// this tells express where to look for the view files
+app.set('views', __dirname + '/views');
 
 // this line sets handlebars to be the default view engine
-app.set('view engine', 'handlebars');
+app.set('view engine', 'jsx');
 
 app.get('/', (req, res) => {
   // running this will let express to run home.handlebars file in your views folder
@@ -55,33 +59,55 @@ app.get('/', (req, res) => {
 })
 ```
 
-
-Notice that all `.html` file is now a `.handlebars` file.
-
 ---
+### JSX
 
-### Expression
+JSX is javascript and HTML. It looke like this:
+```
+var React = require('react');
 
-Templating with variables means we can pass in an object to the `.render` function and access those variables inside the `handlebars` template. These variables are also called `context`
+class Home extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello</h1>
+      </div>
+    );
+  }
+}
+
+module.exports = Home;
+```
+
+At first it just seems like a javascript syntax error, but what we are doing is running this file through a parser that will create HTML for us.
+
+Everything between the `return` parentheses is going to be rendered into HTML.
+
+.... more syntax details ....
+
+### Templating
+
+Templating with variables means we can pass in an object to the `.render` function and access those variables inside the `jsx` template. These variables are also called `context`
 
 **index.js**
 
 ```js
-const express = require('express');
-const handlebars  = require('express-handlebars')
-
+const express = require('express')
 const app = express();
 
-app.engine('handlebars', handlebars.create().engine);
+
+// this line below, sets a layout look to your express project
+const reactEngine = require('express-react-views').createEngine();
+app.engine('jsx', reactEngine);
+
+// this tells express where to look for the view files
+app.set('views', __dirname + '/views');
 
 // this line sets handlebars to be the default view engine
-app.set('view engine', 'handlebars');
+app.set('view engine', 'jsx');
 
 app.get('/', (req, res) => {
- , 'handlebars')
-
-app.get('/', (req, res) => {
-  // giving home.handlebars file an object/context with `name` as a property
+  // giving home.jsx file an object/context with `name` as a property
   res.render('home', {name: "Sterling Archer"});
 });
 
@@ -90,74 +116,66 @@ app.listen(3000);
 
 ---
 
-then we need to update our `home.handlebars` to use a templating variable.
+then we need to update our `home.jsx` to use a templating variable.
 
-**views/home.handlebars**
+**views/home.jsx**
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing a View</title>
-  </head>
-  <body>
-    <h1>Hello, {{ name }}!</h1>
-  </body>
-</html>
-```
+var React = require('react');
 
-
-The JavaScript being embedded is enclosed by the `{{ }}` tags, this in `handlebars` is also called as an `expression`. 
-
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-
-#### HTML Escaping
-By default, `handlebars` will automatically escape the given `context`. We can also use `{{{ }}}` to tell `handlebars` to **NOT** escape the context given:
-
-```js
-// context given are these 
-var context = {
-  name: "<p>Sterling Archer</p>",
-  body: "<p>This is a post about &lt;p&gt; tags</p>"
+class Home extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, { name }!</h1>
+      </div>
+    );
+  }
 }
 
-app.get('/', (req, res) => {
-  res.render('home', context);
-});
-
-
-// in home.handlebars
-<body>
-  <h1>{{name}}</h1>
-  {{{body}}}
-</body>
+module.exports = Home;
 ```
 
-Results in:
 
-```html
-<body>
-  <h1>&lt;p&gt; Sterling Archer &lt;p&gt;</h1>
-  <p>This is a post about &lt;p&gt; tags</p>
-</body>
-```
+The JavaScript being embedded is enclosed by the `{ }` tags.
 
-so:
-
-* `double curly braces` will escape the `expression` (e.g. convert `<>` to `&lt;&gt;`
-* `triple curly braces` will **NOT** escape the `expression`
-
+<span class="non-slide"></span><span class="non-slide"></span>
+<span class="non-slide"></span><span class="non-slide"></span>
 
 ---
 
-#### Block Expressions
+#### Conditional Rendering
+Sometimes we want to decide to render something based on a variable.
 
-Block expressions allow you to define helpers that will invoke a section of your template with a different context than the current. These block helpers are identified by a `#` preceeding the helper name (e.g. `{{#each}}` or `{{#if}}`) and require a matching pair with a `/` sign (e.g. `{{/each}}` or `{{/if}}`.
+We can put this code directly above the return statement, or we could also write it in another function.
+```
+var React = require('react');
 
----
+class Home extends React.Component {
+  let message = "welcome!";
 
-##### #each 
-Say we have the following `context` given to our `handlebars` template.
+  if( name.length > 5 ){
+    messgae = "welcome! What a long name you have!";
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, { this.props.name }!</h1>
+        <h1>{ message }</h1>
+      </div>
+    );
+  }
+}
+
+module.exports = Home;
+```
+
+#### Map
+The ES6 array method `map` allows us to return an array.
+
+We can use `map` to create HTML in a loop.
+
+Say we have the following `context` given to our `jsx` template.
 ```js
 var context = {
   people: [
@@ -168,25 +186,28 @@ var context = {
 }
 ```
 
----
-you can iterate through each of the people's name with the `#each` helper:
-
-```handlebars
-<ul class="people_list">
-  {{#each people}}
-    <li>{{this}}</li>
-  {{/each}}
-</ul>
 ```
-will result in:
-```js
-<ul class="people_list">
-  <li>Yehuda Katz</li>
-  <li>Alan Johnson</li>
-  <li>Charles Jolley</li>
-</ul>
-```
+var React = require('react');
 
+class Home extends React.Component {
+
+  const people = this.props.people.map( person => {
+    return <li>{person}</li>
+  });
+
+  render() {
+    return (
+      <div>
+        <ul>
+        {people}
+        </ul>
+      </div>
+    );
+  }
+}
+
+module.exports = Home;
+```
 ---
 
 ### Pairing Exercise:
