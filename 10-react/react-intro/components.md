@@ -1,4 +1,7 @@
 # React Components
+<span class="non-slide"></span><span class="non-slide"></span>
+<span class="non-slide"></span><span class="non-slide"></span>
+<span class="non-slide"></span><span class="non-slide"></span>
 
 We saw a bit of how react works, and how babel works with react.
 
@@ -9,14 +12,19 @@ In the last example we saw that we can use react to render things just like we d
 React does this at the base level, but we can also sub-divide each part of a page into `Component`s.
 
 These are the sepearate logical pieces of any page.
+---
 
 ![https://github.com/wdi-sg/react-intro/raw/master/images/templates-page.png](https://github.com/wdi-sg/react-intro/raw/master/images/templates-page.png)
+---
 
 ![https://github.com/wdi-sg/react-intro/blob/master/images/components-page.png](https://github.com/wdi-sg/react-intro/blob/master/images/components-page.png)
+---
 
 ![https://github.com/wdi-sg/react-intro/blob/master/images/wireframe.png](https://github.com/wdi-sg/react-intro/blob/master/images/wireframe.png)
+---
 
 ![https://github.com/wdi-sg/react-intro/blob/master/images/wireframe_deconstructed.png](https://github.com/wdi-sg/react-intro/blob/master/images/wireframe_deconstructed.png)
+---
 
 
 ### Properties of Components
@@ -27,6 +35,8 @@ These are the sepearate logical pieces of any page.
 - R resuable
 - S small
 - T testable
+
+---
 
 ### Babel standalone
 Before we move to writing code, let's talk about the default tool we'll use until we learn the React build tools.
@@ -42,6 +52,8 @@ Before we move to writing code, let's talk about the default tool we'll use unti
 ```
 
 `babel-standalone` relies on a script tag type text/babel. It ingests everything inside that script tag, transpiles it and evals it.
+
+---
 
 
 ## Writing a component
@@ -65,12 +77,16 @@ ReactDOM.render(
 - `List` is a js "class" that inherits from React
 - a component has certain methods like `render` that allow you to control it
 
+---
+
 ### Component Properties
 In react, a component takes data in and renders itself based on that data.
 
 The data is passed from above in the parent component.
 
 Let's start rendering a real list from data coming from outside the list itself.
+
+---
 
 ```
 class List extends React.Component {
@@ -99,6 +115,8 @@ ReactDOM.render(
 );
 ```
 
+---
+
 #### Props
 Props are the react way of passing data into your component.
 
@@ -108,6 +126,8 @@ When you specify your component you specify it's `props` just like an HTML attri
 ```
 
 You can then access them from within the component using `this.props`
+
+---
 
 ### Nesting Components
 We mentioned that it's the nested structure of components using components that really makes react special.
@@ -148,6 +168,8 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+
+---
 
 ### Exercise
 Create a component that gets rendered multiple times by passing in props.

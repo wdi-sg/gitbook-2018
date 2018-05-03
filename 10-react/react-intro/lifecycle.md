@@ -68,27 +68,26 @@ constructor(){
 
 componentDidMount() {
   console.log( "component did mount");
-
 }
 
-static getDerivedStateFromProps(){
+static getDerivedStateFromProps( nextProps, prevState ){
 
   console.log( "get derived state from props");
   return null;
 }
 
-shouldComponentUpdate() {
+shouldComponentUpdate( nextProps, nextState ) {
   console.log( "component should update");
   return true;
 
 }
 
-getSnapshotBeforeUpdate(){
+getSnapshotBeforeUpdate( prevProps, prevState ){
   console.log("get snapshot before update");
   return null;
 }
 
-componentDidUpdate() {
+componentDidUpdate( prevProps, prevState, snapshot ) {
   console.log( "component did update");
 }
 
