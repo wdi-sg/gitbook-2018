@@ -148,6 +148,7 @@
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
 * [ReactJS](10-react/readme.md)
   * [Intro to React](10-react/react-intro/readme.md)
+  * [React Components](10-react/react-intro/components.md)
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
