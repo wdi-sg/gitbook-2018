@@ -1,80 +1,21 @@
-day 1
-ruby
+1. basics
+   components
+hw: https://github.com/wdi-sg/tweet-react
 
-15 minute rails demo
+2. bind / state / forms
+lab: https://github.com/wdi-sg/todo-react
+hw: https://github.com/wdi-sg/todo-react 
+  
 
-hw: google shopping loops / functions in ruby
+   (weekend project tictactoe)
 
-day 2
-morning exercise: https://github.com/wdi-sg/piglatin
-ruby oop
-ruby classes
-ruby inheritance
-erd in ruby classes
+3. webpack / express
 
+4. rails / webpacker
 
-hw: ruby commandline game w/ objects
+5. redux? router??
 
-day 3
-morning exercise: https://github.com/wdi-sg/atbash_cipher
-
-active record cli: https://git.generalassemb.ly/ga-wdi-lessons/activerecord-intro
-
-hw: ruby commandline game w/ objects / active record
-
-day 4
-
-morning ex: https://github.com/wdi-sg/dna_analyzer
-
-rails demo
-rails intro
-
-hw: pokedex rails
-
-week 2:
-
-day 1
-morning ex: https://github.com/wdi-sg/word_ladder
-
-one-to-many helpers
-many-to-many
-
-day 2
-validations / security
-auth / devise
-
-ruby exceptions
-
-render options
-
-https://github.com/wdi-sg/rail_fence_cipher
-
-
-day 3
-
-morning ex: https://github.com/wdi-sg/cell_phone_html_css
-
-https://github.com/wdi-sg/user-songs/blob/asset-pipeline/frontend.md
-
-asset pipeline / sass
-ajax / json api
-ujs features: https://github.com/rails/jquery-ujs
-rails render format
-
-
-
-day 4
-git branching
-morning: https://github.com/wdi-sg/poker_refactor
-
-https://github.com/raywtham/emergency_compliment
-
-
-day 4
-job scheduling??
-mailers??
-scaffolding??
-cloudinary??
+6. ????
 
 
 
