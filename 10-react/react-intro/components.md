@@ -172,7 +172,37 @@ ReactDOM.render(
 ---
 
 ### Exercise
-Create a component that gets rendered multiple times by passing in props.
+Run the above code: create a component that gets rendered multiple times by passing in props.
 
 #### Further
 Have the list item class render 2 components: `ItemId` which will use the map `index` as the id, and Item which will render the text of the item. Pass data into these two components as props.
+
+#### Further
+```
+var fruits = [
+  {
+    name:"apple",
+    weight:23,
+    colors : [
+      "red","green","yellow"
+    ]
+  },
+  {
+    name:"mango",
+    weight:13,
+    colors : [
+      "green","yellow"
+    ]
+  },
+  {
+    name:"avocado",
+    weight:3,
+    colors : [
+      "green","brown"
+    ]
+  }
+];
+```
+Create react code that renders this array of objects.
+
+Use at least 2 separate components.
