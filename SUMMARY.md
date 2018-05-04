@@ -192,6 +192,8 @@
   * [Random Quote Generator](13-warm-ups/random-quote-generator.md)
   * [Kitchen Sink](13-warm-ups/kitchen-sink.md)
   * [Custom Iterators](13-warm-ups/custom-iterators.md)
+  * [Fibonacci Numbers](13-warm-ups/fibonacci-numbers.md)
+  * [Builtin Methods](13-warm-ups/builtin-methods.md)
 * [Post WDI \/ Resources](09-post-wdi/readme.md)
   * [Keep Learning](09-post-wdi/resources.md)
   * [Job tips](09-post-wdi/job-tips.md)
