@@ -145,3 +145,62 @@ Does this work instead? Why?
 ```js
 document.querySelector('#submit').addEventListener('click',saySomething.speak.bind(saySomething));
 ```
+
+#### Bind in react:
+Run this code:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bind</title>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <div id="root"></div>
+  <script type="text/babel">
+
+    class List extends React.Component {
+
+        constructor(){
+          this.yay = "banana"
+        }
+
+        // our click method
+        handleClick(){
+          console.log( "yay" );
+          console.log( this.yay );
+        }
+
+        render() {
+            return (
+              <div>
+                <button onClick={this.handleClick}>click me!</button>
+                <ul>
+                  <li>Hello world</li>
+                </ul>
+              </div>
+            );
+        }
+    }
+
+    ReactDOM.render(
+        <List />,
+        document.getElementById('root')
+    );
+
+  </script>
+
+</body>
+</html>
+```
+Add bind in the consturctor to make it work:
+```
+this.handleClick = this.handleClick.bind(this);
+```
