@@ -169,7 +169,8 @@ Run this code:
     class List extends React.Component {
 
         constructor(){
-          this.yay = "banana"
+          super();
+          this.yay = "banana";
         }
 
         // our click method
