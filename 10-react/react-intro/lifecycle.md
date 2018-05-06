@@ -124,11 +124,8 @@ This is being considered as "extra" -> most functionality that you see can be mo
 
 `componentWillUpdate` ==> `getSnapshotBeforeUpdate`
 
-### Create a form using the component lifecycle
+### Fetch
 
-The standard React way of dealing with forms is to set the value of the form using that component's state.
+### Infinite Scroll
 
-```
-<input type="text" value={this.state.value} onChange={this.handleChange} />
-```
-
+### ComponentDidCatch
