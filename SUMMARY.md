@@ -152,6 +152,7 @@
   * [Click Events / Bind](10-react/react-intro/bind.md)
   * [State](10-react/react-intro/state.md)
   * [Forms](10-react/react-intro/forms.md)
+  * [webpack](10-react/react-webpack/readme.md)
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
