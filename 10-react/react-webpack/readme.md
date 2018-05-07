@@ -85,6 +85,41 @@ Not only does the library know about any changes, but it will update your code o
 ### webpack-dev-server express
 nodemon is enabled for the server. webpack-dev-server will stop working, though, and you will have to reload the page.
 
+## sass in react
+We can use sass in react, with some added features that aren't in rails.
+
+We can isolate the css for each component so that we don't have to worry about over-writing styles for the `button` class.
+
+Also, it allows us to write CSS any apply it using `react-hot-loader`, without refreshing the browser, or losing application state. -This is especially helpful for error states.
+
+The sass / react CSS compiler will automatically prefix the styles for us.
+> See the settings for that [here.](https://github.com/wdi-sg/react-express-webpack/blob/master/config/webpack.config.common.js#L37)
+
+This means we need to change 3 things about the way we write CSS.
+
+1. styles for any component go in the directory for that component.
+1. we have to import and then use styles as a js object.
+1. naming anything has to change from hyphens to camel case, so that we can access it as js keys:
+```
+import styles from './style.scss';
+```
+```
+return <p className={styles.titleName}>cheese and rice</p>;
+```
+
+## react dev tools chrome extension
+Find it [here.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+
+## building for production
+Create all the static files in `build`:
+```
+npm run build
+```
+Start the express server
+```
+npm run start
+```
+
 ## linting with airbnb presets
 Webpack allows us to setup a default environment that will also tell us if our code conforms to a styleguide.
 
@@ -196,41 +231,6 @@ const App = () => (
 export default App;
 ```
 This is more efficient because it prevents react from having to check this component for changes to render.
-
-## sass in react
-We can use sass in react, with some added features that aren't in rails.
-
-We can isolate the css for each component so that we don't have to worry about over-writing styles for the `button` class.
-
-Also, it allows us to write CSS any apply it using `react-hot-loader`, without refreshing the browser, or losing application state. -This is especially helpful for error states.
-
-The sass / react CSS compiler will automatically prefix the styles for us.
-> See the settings for that [here.](https://github.com/wdi-sg/react-express-webpack/blob/master/config/webpack.config.common.js#L37)
-
-This means we need to change 3 things about the way we write CSS.
-
-1. styles for any component go in the directory for that component.
-1. we have to import and then use styles as a js object.
-1. naming anything has to change from hyphens to camel case, so that we can access it as js keys:
-```
-import styles from './style.scss';
-```
-```
-return <p className={styles.titleName}>cheese and rice</p>;
-```
-
-## react dev tools chrome extension
-Find it [here.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-
-## building for production
-Create all the static files in `build`:
-```
-npm run build
-```
-Start the express server
-```
-npm run start
-```
 
 ### More Resources:
 Do you want asset pipeline-like controls over asset urls? Check out the webpack [`file-loader`](https://github.com/webpack-contrib/file-loader)
