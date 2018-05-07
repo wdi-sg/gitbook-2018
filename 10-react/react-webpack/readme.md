@@ -219,6 +219,9 @@ import styles from './style.scss';
 return <p className={styles.titleName}>cheese and rice</p>;
 ```
 
+## react dev tools chrome extension
+Find it [here.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+
 ## building for production
 Create all the static files in `build`:
 ```
