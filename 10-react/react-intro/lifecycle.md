@@ -124,6 +124,9 @@ This is being considered as "extra" -> most functionality that you see can be mo
 
 `componentWillUpdate` ==> `getSnapshotBeforeUpdate`
 
+### Exercise:
+Run the above code.
+
 ## What situations would you use lifecycle methods?
 Lifecycle methods are there for you to do things outside the normal react props/state rendering flow.
 
