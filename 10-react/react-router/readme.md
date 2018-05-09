@@ -94,6 +94,8 @@ render() {
 
 > So long as we use an ES6 arrow function, this callback will preserve context (i.e. the value of `this`), allowing us to pass down data and functions into `Search` from `App`. You can use an ES5 anonymous function, but you will then need to use `.bind()` to preserve context.
 
+See more about the route component [here.](https://reacttraining.com/react-router/web/example/url-params)
+
 ## I Do: Redirecting (15 min / 1:10)
 Sometimes you want to change the path of the app in response to the actions that happen within the app.
 
@@ -144,7 +146,8 @@ You can get access to the history object's properties and the closest <Route>'s 
 ```
 
 ## See Also:
-[React Router Docs](https://reacttraining.com/react-router/web/guides/philosophy)
+[React Router Website Docs](https://reacttraining.com/react-router/web/guides/philosophy)
+[React Router Repo Docs](https://github.com/ReactTraining/react-router/tree/master/packages/react-router/docs)
 
 ## Exercise
 Run some code with react router:
