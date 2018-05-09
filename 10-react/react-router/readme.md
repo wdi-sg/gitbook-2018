@@ -1,7 +1,5 @@
 # React Router
 
-![React Router Logo](./react-router-logo.png)
-
 ## Learning Objectives
 
 * Review importing and using third-party node modules into React using npm
@@ -15,9 +13,9 @@ Up to this point, our React applications have been limited in size, allowing us 
 
 React Router, while not the only, is the most commonly-used routing library for React. It is relatively straightforward to configure and integrates with the component architecture nicely (itself being nothing but a collection of components). Once configured, it essentially serves as the root component in a React application and renders other application components within itself depending on the path in the url.
 
-## We Do: [React Webpack Boilerplate](https://github.com/wdi-sg/react-express-webpack) Setup (5 min / 0:10)
+## [React Webpack Boilerplate](https://github.com/wdi-sg/react-express-webpack) Setup (5 min / 0:10)
 
-## I Do: React Router Setup (10 min / 0:40)
+## React Router Setup (10 min / 0:40)
 
 ### Importing Dependencies
 
@@ -96,7 +94,7 @@ render() {
 
 See more about the route component [here.](https://reacttraining.com/react-router/web/example/url-params)
 
-## I Do: Redirecting (15 min / 1:10)
+## Redirecting (15 min / 1:10)
 Sometimes you want to change the path of the app in response to the actions that happen within the app.
 
 If you want to change the path after getting and displaying some info (as opposed to rendering a component from a top level router/link) you can do that by manually __pushing__ into the browser history.
