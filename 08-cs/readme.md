@@ -111,7 +111,7 @@ var random_value = Math.ceil( Math.random() * size );
   - ( if n is 10, 10^2- n squared- is 100, 2^10th is 1024 ) 
   - "operations" (runtime) as we've defined them basically amount to loops, number of loops your program needs to run
 
-![big o graph](bigograph.jpg)
+![Complexity Curves](cs-algorithm-complexity/big-o-complexity-curves.jpg)
 
 ### Isn't it all the same anyways? (15 mins) [1 hr in]
 - lets look at the most efficeint way possible to fins this same value:
