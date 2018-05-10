@@ -1,12 +1,12 @@
-### Computer Science Intro
+# Computer Science Intro
 
-#### Objectives:
+## Objectives:
 **After this students will be able to:**
 - find a value in an array in a slow and fast way
 - understand the graph of the time complexity of a function
 - use the concept of algorithmic complexity to differentiate a fast algorithm from a slow one
 
-#### Introduction 5 mins
+## Introduction 5 mins
 - what is computer science?
   - study of how to do "computation"
   - computing things in a theoretical, hardware independent, mathematically way
@@ -20,22 +20,18 @@
   - tells you how to do things at "internet scale", i.e. very large systems ( things you do more than 10 times )
   - shows understanding during job interviews
 
-- what will we be covering this week
-  - one or two very specific areas
-  - deep implementation dive where we can talk about some theoretical stuff in more concrete terms
-  - we will look at two types of algorithms that operate on two types of data structures
-  - sorting / arrays
-  - traversal / graphs
-
-#### What are algorithms? 5 mins [10mins in]
+## What are algorithms? 5 mins [10mins in]
 - you've already been writing algorithms
 - making a PB&J sandwich is an algorithm
 - studying algorithms means studying how a given algorithm behaves as the inputs grow
 
-##### Isn't one way to do things the same as all the others? ( how many ways can there be to make a pb&j sandwich )
+## Data Structures
+Are the containers we put data into, and run the algorithms on.
+
+#### Isn't one way to do things the same as all the others? ( how many ways can there be to make a pb&j sandwich )
 - lets consider a simple alogrithm that finds a value in an array:
 
-#### Linear Search (pairing exercise) 5mins [15 mins in]
+## Linear Search (pairing exercise) 5mins [15 mins in]
 - split the students into pairs
 - for a sorted array we will find some arbitrary value inside this array
 - given this code:
@@ -59,7 +55,7 @@ for( var i=0; i<stuff.length; i++ ){
 }
 ```
 
-#### Linear Search: Discussion 10 mins [25 mins in]
+## Linear Search: Discussion 10 mins [25 mins in]
 - pseudo code:
 ```
  For each item in the list:
@@ -74,11 +70,12 @@ for( var i=0; i<stuff.length; i++ ){
   - how do we describe this in a way that only applies to the algorithm itself and not to the computer it runs on or the language you're using or whether or not someone trips over the power cord as you are running this program?
   - we can speak in terms of *instructions to the computer*, each thing we ask the computer to do can be counted as taking a bit longer
   - we asked the computer to do `stuff.length` things, plus run an alert
-  - in math terms we asked the computer to do a maximum of 14 things, or *n*+1 things
+  - in math terms we asked the computer to do a maximum of 14 things, or *n* things
   - this is the "complexity" or "runtime" of one piece of code, independent of it's hardware implementation
 
-#### Changing inputs: graphs and how to define efficiency [10 mins] [35 mins in]
+### Changing inputs: graphs and how to define efficiency [10 mins] [35 mins in]
 - consider if we made these changes in the way that stuff is created:
+
 ```
 var stuff = [];
 
@@ -93,11 +90,12 @@ for( var j=0; j<size; j++ ){
 
 var random_value = Math.ceil( Math.random() * size );
 ```
+
 - *have a student explain to the class what this code does*
 - If we use the same for loop (search algorithm) to find `random_value` how can we describe how long it will take?
 - It will take between 1 and (size of array) times to find, between 1 and *n* times to find.
 
-#### Big-O: How we describe algorithm efficiency [10 mins] [45 mins in]]
+## Big-O: How we describe algorithm efficiency [10 mins] [45 mins in]]
 - In CS we generally describe the efficiency of something as it's longest possible run time
 - equivalent to `max_size` in the example above
 - We want to understand how this algorithm behaves as we increase or decrease `max_size`
@@ -115,7 +113,7 @@ var random_value = Math.ceil( Math.random() * size );
 
 ![big o graph](bigograph.jpg)
 
-##### Isn't it all the same anyways? (15 mins) [1 hr in]
+### Isn't it all the same anyways? (15 mins) [1 hr in]
 - lets look at the most efficeint way possible to fins this same value:
 - [binary search](22.1.html)
 - we started with a for loop: (linear search)
@@ -132,7 +130,7 @@ for( var i=0; i<stuff.length; i++ ){
 - *teacher explains each step of the algorithm:* 
   - *use the provided binarySearch.html file*
   - divide array in half
-  - is that the number? 
+  - is that the number?
   - if not, is the number more or less than current
   - repeat with new subdivided thing
   - like a number guessing game: 
@@ -167,7 +165,7 @@ int binary_search(int A[], int key, int imin, int imax)
 }
 ```
 
-##### It's not all the same (5 mins) Teacher Talks [1 hr 5 mins in]
+### It's not all the same (5 mins) Teacher Talks [1 hr 5 mins in]
 - talk about what kinds of differences algorithm choice can make
 - how and why this algo is more efficient
   - runs in O(logn)
@@ -177,20 +175,41 @@ int binary_search(int A[], int key, int imin, int imax)
   - what if the array is only ever 2 elements? is it still more efficient?
 - "operations" (runtime) as we've defined them basically amount to loops, number of loops your program needs to run
 
-##### Actually how much longer? Students Do (5 mins) [1 hr 10 mins in] 
+### Actually how much longer? Students Do (5 mins) [1 hr 10 mins in] 
 - what if `max_size` is 1 million, linear vs binary search?
 - *ask students to figure out how much longer it will take*
 - what is the worst case for each search algorithm
 
-##### How fast is your code?
-Find an algorithm in your code and figure out what the big-O of it is.
+### How fast is your code? (pairing exercise) 20 minutes
+One person in your pair will find an algorithm their your code. Figure out what the big-O of it is.
 
-#### Space complexity Teacher Talks (5 mins) [1hr 15 mins in]
+### Space complexity Teacher Talks (5 mins) [1hr 15 mins in]
 - we won't talk about space complexity in detail
 - how much memory something takes up- how many "storage / comparison" variables do we use when we run an algorithm
 - we can denote this with the same Bio-O notation
 
-#### Conclusion
+### How to Choose an algorithm for a given situation.
+- what are the starting conditions for the algorithm to run?
+  - does the data need to be sorted? (i.e. binary search)
+  - do I need to know the key I am looking for? (i.e. hash table)
+
+- do you know ahead of time the size of the inputs?
+  - will it always be very large or very small?
+  - will each element of the inpout be very large? (i.e. 4k video frames vs. 480p video frames)
+
+- is the actual speed of the alogrithm a concern?
+  - is it a cost issue? (total cost to process something)
+  - is it a user experience issue? (UI freezes while processing)
+
+- meta conditions
+  - do you even need to solve this problem
+  - what are some workarounds
+  - cost / benefit
+    - is the final computation / dollar / development cost worth it
+    - code compliexity vs. maintainability / development time
+
+
+## Conclusion
 - what is the implementation of search algorithms good for?
 - not much
 - you will probably never implement a search algorithm

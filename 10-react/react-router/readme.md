@@ -38,7 +38,7 @@ ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById("app")
 );
 ```
 
@@ -73,6 +73,7 @@ render() {
           render={() => (
             <Bananas/>
           )}
+        />
         <Route
           path='/oranges'
           render={() => (
