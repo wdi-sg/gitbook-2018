@@ -199,7 +199,7 @@ Despite being more flexible, the former declaration that assigns the function to
 
 ###Exercises
 
-1. What is the return value of this function when called?
+- What is the return value of this function when called?
 
 ```js
 var lightsabers = function(num) {
@@ -209,7 +209,7 @@ var lightsabers = function(num) {
 lightsabers(2);
 ```
 
-2. How would the function above be modified if the user wanted to pass in an object of lightsabers, like this one?
+- How would the function above be modified if the user wanted to pass in an object of lightsabers, like this one?
 
 ```js
 var myLightsaberCollection = {
@@ -228,7 +228,8 @@ lightsabers(myLightsaberCollection);
 // I have 3 green lightsabers
 ```
 
-3. paste this code into your script.js file
+- paste this code into your script.js file
+
 ```
 var doMaths = function(a,b){
   var result = 0
@@ -242,5 +243,6 @@ for( var i=0; i<5; i++ ){
   doMaths(i, 2);
 }
 ```
+
 Question:
 Using the chrome debugger, what is the value of the result inside the function when `i` is equal to 3?

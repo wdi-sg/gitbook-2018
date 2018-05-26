@@ -10,6 +10,12 @@ For the first portion of the class, we'll be working exclusively inside of the b
 * Ruby
 * Rails
 
+## Hidden Files
+Set your finder to display hidden unix files by default:
+```
+cmd + shift + .
+```
+
 ## Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
@@ -149,6 +155,26 @@ function profilerefresh() {
   echo "Refreshing your configuration."
   source ~/.profile
 }
+```
+
+### Install the sublime `packagecontrol` library
+Package Control allows you to add new functionality to sublime.
+
+[https://packagecontrol.io/installation](https://packagecontrol.io/installation)
+
+#### Using Package Control
+[https://packagecontrol.io/docs/usage](https://packagecontrol.io/docs/usage)
+
+> Package Control is driven by the Command Palette. To open the palette, press `ctrl+shift+p` (Win, Linux) or `cmd+shift+p` (OS X). All Package Control commands begin with Package Control:, so start by typing Package.
+
+### Set Sublime to use `editorconfig` files
+- `cmd+shift+p` type in `Package Control: Install Package` (auto-complete will help you) and press return
+- type in `editorconfig` to install the package
+
+### Get the `.editorconfig` file
+You can find this file in your class repo. Copy it into your home directory.
+```
+cp /path/to/file ~/.
 ```
 
 ## [Postgres](#postgres)
