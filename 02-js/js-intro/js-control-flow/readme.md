@@ -20,7 +20,7 @@ A program can be read from top to bottom, but eventually we'll need ways to **sk
 
 But before that, let's create the expressions needed for these statements.
 
-### Notes: We'll be intruducing the debugging properties of the [chrome console today:]()
+### Notes: We'll be introducing the debugging properties of the [chrome console today:]()
 
 ---
 

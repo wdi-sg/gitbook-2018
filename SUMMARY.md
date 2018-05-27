@@ -13,6 +13,7 @@
     * [File Manipulation](01-workflow/command-line/04file-manipulation.md)
     * [Command Line Lab](01-workflow/command-line/command-line-lab.md)
   * [Pairing](01-workflow/pairing.md)
+  * [Standup](01-workflow/standup.md)
   * [High Level Pseudocode](01-workflow/pseudocode-highlevel.md)
   * [Low Level Pseudocode](01-workflow/pseudocode-lowlevel.md)
   * [Intro to Git](01-workflow/intro-git/readme.md)
