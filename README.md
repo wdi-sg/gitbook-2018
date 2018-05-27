@@ -65,14 +65,6 @@ Projects: Everyone should complete the minimum requirements for each project in 
 
 ---
 
-#### Course Schedule
-
-Feb 26 - May 18
-
-Holidays:
-- Friday March 30 - Good Friday
-- Tuesday May 1 - Labor Day
-
 ---
 
 #### Course Weekly Schedule
@@ -95,8 +87,8 @@ Holidays:
 
 | Time          | Activity
 | ---           | ---
-| 09:00 - 9:20  | Scrum
-| 09:30 - 10:30 | Warmup
+| 09:00 - 9:15  | Scrum
+| 09:25 - 10:30 | Warmup
 | 10:30 - lunch | Main Topic
 | Lunch         |
 | Lunch - 02:30 | Lab / Other Topic
@@ -114,9 +106,9 @@ Holidays:
 
 ---
 
-### Ask Questions
-####**there are no such things as stupid questions**
-####It is VERY IMPORTANT to say "I don't know" & "I don't understand"
+## Ask Questions
+###**there are no such things as stupid questions**
+###It is VERY IMPORTANT to say "I don't know" & "I don't understand"
 **ASK: ** (in this order)
 - yourself
 - each other
@@ -125,14 +117,18 @@ Holidays:
 
 ---
 
+## You Are Responsible For Your Own Experience
 
-### Make Mistakes
+---
+
+
+## Make Mistakes
 ![](http://www.motivationblog.org/wp-content/uploads/2013/08/Without-mistakes-how-would-you-lern.jpg)
 
 
 ---
 
-### Be Kind To Yourself
+## Be Kind To Yourself
 - mentally
 - physically
 ![](http://78.media.tumblr.com/c92d34b42ee77f67bfbf588ab485016b/tumblr_omvr6rXPcZ1qc4uvwo1_500.png)
@@ -141,13 +137,13 @@ Holidays:
 ---
 
 
-#### Growth Mindset
+## Growth Mindset
 ![](https://i2.wp.com/trainugly.com/wp-content/uploads/2015/11/Growth-Mindset-Characteristics-Table.png?w=1920)
 
 
 ---
 
-#### Everyone is on their own journey
+## Everyone is on their own journey
 
 
 ---
@@ -203,7 +199,9 @@ Sometimes pointing out that someone broke a social rule can be challenging or fe
 
 ### Scrum / Standup
 
-Every morning at exactly 9.00 \(**so be here before then**\), we'll cluster together into small groups of four or five - _scrums work best with small numbers of people_. Each person in a group will use a marker to put on the wall:
+Every morning at exactly 9.00 \(**so be here before then**\), we'll cluster together into small groups of four or five - _scrums work best with small numbers of people_.
+
+Each person in a group will use a marker to put on the wall:
 0. what they achieved yesterday after class
 0. anything they found particularly challenging
 0. (optional) anything useful they discovered which might help others

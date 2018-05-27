@@ -192,8 +192,6 @@ You can also pass in a string as an argument to have the pop up box contain that
 
 ```js
 var age = prompt("How old are you?")
-// ES6 String Interpolation
-alert(`You are ${age} years old.`)
 // ES5 Version
 alert("You are " + age + " years old.")
 ```
