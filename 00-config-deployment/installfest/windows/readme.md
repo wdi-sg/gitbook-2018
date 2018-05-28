@@ -4,6 +4,19 @@ Some of the programmes that work for Macs may not work for Windows. Here are a l
 
 Disclaimer: This page is still in the beta phase. The list of known issues is non-exhaustive and if you discover a fix for a problem that you've faced on Windows which is not covered here, please feel free to let us know.
 
+## Windows 10 Linux Subsystem
+[https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+Open PowerShell as Administrator and run:
+
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+Restart your computer when prompted.
+
+Open the Microsoft Store and choose Ubuntu.
+
+
 ## ~~Mac Terminal~~ Bash
 Download and install Git Bash. Follow instructions here: https://git-for-windows.github.io/
 
