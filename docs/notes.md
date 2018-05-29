@@ -43,3 +43,4 @@ Scott / Chee Kean
 - compile the github repos for the students
 - completely clean out the class repo lesson link stuff
 - when do we do class naming???
+- clean out the pull requests from each HW repo

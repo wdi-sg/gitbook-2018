@@ -3,6 +3,7 @@
         "readme": "readme.md"
     },
     "plugins": [
+      "advanced-emoji",
       "toggle-chapters",
       "codeblock-disable-glossary",
       "youtube",
