@@ -21,6 +21,7 @@
     * [Local Git](01-workflow/intro-git/03localgit.md)
     * [Remote Git](01-workflow/intro-git/04remotegit.md)
     * [Git Recipes](01-workflow/git-recipes/readme.md)
+    * [Github Forking](01-workflow/intro-git/06remotefork.md)
   * [Group Collaboration](01-workflow/group-collab/01readme.md)
     * [Project Roles and Tools](01-workflow/group-collab/03rolestools.md)
   * [User Stories and Wireframing](01-workflow/user-stories-wireframing/readme.md)
