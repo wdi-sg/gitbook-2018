@@ -143,6 +143,11 @@ What does it do?
 
 ---
 
+### Javascript Style
+[Style Guide](../01-workflow/js-styleguide.md)
+
+---
+
 ## Exercises
 
 The rest of the lesson consists of guided exercises. The goal behind these is to increase your familiarity with Javascript by analyzing the output of different Javascript expressions.
@@ -192,7 +197,6 @@ You can also pass in a string as an argument to have the pop up box contain that
 
 ```js
 var age = prompt("How old are you?")
-// ES5 Version
 alert("You are " + age + " years old.")
 ```
 
@@ -204,7 +208,7 @@ Let's say, we were deciding whether or not to let someone inside of a club.
 
 ```js
 var age = prompt("How old are you?")
-alert(`You are ${age} years old.`)
+alert("You are " + age + " years old.")
 
 if (age >= 21) {
   alert("Welcome to the club")
@@ -216,10 +220,6 @@ if (age >= 21) {
 ```
 
 ### Practice [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
-
-### Additional Practice
-
-* [Choose Your Own Adventure](https://github.com/ga-wdi-exercises/choose_your_own_adventure_js)
 
 -------
 

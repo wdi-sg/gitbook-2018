@@ -48,7 +48,7 @@ Throughout WDI, each developer will be pulling down from a server, and that serv
 
 A word about folder management.
 
-Create "code" folder in your home directory. This is the place for all source code that you create at GA (projects, labs, assignments). Let's talk about folder structure.
+Create "wdi" folder in your home directory. This is the place for all source code that you create at GA (projects, labs, assignments). Let's talk about folder structure.
 
 Options:
 

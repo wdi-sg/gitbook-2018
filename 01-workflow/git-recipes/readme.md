@@ -23,15 +23,6 @@ git init
 rm -rf .git
 ```
 
-## Stage all changed file for commit
-
-This stages the commit at that point in time. If you add more to the file after using this command, it
-won't be part of the commit unless you use git add again.
-
-```
-git add . --all
-```
-
 ## Unstage files
 
 ```

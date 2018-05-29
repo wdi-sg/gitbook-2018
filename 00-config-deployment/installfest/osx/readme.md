@@ -60,7 +60,7 @@ git config --global credential.helper osxkeychain
 ```
 
 You should probably install the command line prompt and autocompletition plugins:
-https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Bash
+[https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash](https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash)
 
 #### Caching Github Login
 We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
@@ -110,26 +110,9 @@ Download and install the latest version [https://www.sublimetext.com/](https://w
 
 #### Run sublime from your command line
 
-Check your own $PATH by running:
+Create a bash alias and put it in your profile config file:
 ```
-echo $PATH
-```
-
-This is what your should see:
-```
-/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-```
-
-**Installation**
-Make sure you installed sublime into the right place.
-
-When you do this `ls` it should tell you that the `subl` file does exist. Check in finder if you are unsure.
-```
-ls -la /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
-```
-Then run the command to link:
-```
-ln -s "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+echo 'alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"' >> ~/.profile
 ```
 
 **Testing**
@@ -138,8 +121,9 @@ Open a Terminal window and run:
 sublime ~/Documents
 ```
 **to open the entire current directory**
+```
 sublime .
-
+```
 
 #### set sublime as your command line default editor
 **this also allows you to refresh changes to your shell config**
@@ -175,6 +159,11 @@ Package Control allows you to add new functionality to sublime.
 You can find this file in your class repo. Copy it into your home directory.
 ```
 cp /path/to/file ~/.
+```
+
+### Set Sublime to run as your git commit message editor
+```
+git config --global core.editor "sublime -w"
 ```
 
 ## [Postgres](#postgres)

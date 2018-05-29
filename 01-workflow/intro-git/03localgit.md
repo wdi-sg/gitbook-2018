@@ -64,6 +64,7 @@ Now, the changes are permanently saved. The file now has a unique version in git
 
 ## Process for making changes
 
+![](https://git-scm.com/figures/18333fig0201-tn.png)
 ---
 
 #### File status
@@ -141,3 +142,21 @@ git commit -m 'deleted file'
 This is the most simple workflow, things get a bit more complex when you start sharing code and manage larger code bases. But this is a good start.
 
 **IMPORTANT NOTE: Avoid creating git repositories inside other git repositories.**
+
+## Git Best Practices
+
+- NEVER use `git add .`
+- ALWAYS add files explicitly. If you have multiple files, use full paths to
+    refer to each. Example: `git add foo/bar.md baz/qux.js`
+- NEVER use `git commit -m "an example commit message"`
+- ALWAYS use `git status` before any other command
+- NO commit is too small
+- NO commit message is too long
+- NEVER nest repositories
+
+## Additional Resources
+
+- [Git Commands Cheatsheet](command-reference.md)
+- [Learn Version Control with Git](http://www.git-tower.com/learn/git/ebook)
+- [Visualizing Git Commands](https://onlywei.github.io/explain-git-with-d3/)
+- [Github Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)

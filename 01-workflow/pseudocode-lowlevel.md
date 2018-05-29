@@ -15,17 +15,24 @@ Low-level pseudocode will help us map out what each logical step will require.
 ---
 
 #### Approaching a Coding Problem (15 minutes / 0:35)
-
-Computers are not smart. We need to give them step by step instructions to account for conditions. They can not adapt to make changes without being explicitly told. Programing is a series of tasks, which can be completed only if a certain number of conditions are met.
-
-Computers can not adapt, but we can.  Your first pass at pseudocode will probably not cover everything.  Once you know more, you may come back to update and refactor your pseudocode.
-
 Pseudocode isn't just about writing down the steps that you already know. It's a tool to help you work through the problem. Before we can write pseudocode to solve the problem, we need to know the problem.
 
+The process of writing a program is first understanding the problem well, then expressing it in our code in an explicit and elegant way.
+
+We write programs using these cognitive tools: decomposition, abstraction, encapsulation and modeling. Pseudocode helps us work with these techniques.
+
+Decomposition: In what ways can we break the problem down into it's constituent parts?
+  - Which parts of the sandwich making process are distinct and discreet?
+Modeling: How do we represent our data?
+  - do we use an array or an object? A string or a number?
+Encapsulation: How do we package the concepts of the problem together in a way that makes sense?
+  - Does the peanut butter belong with the jelly? Or does it belong with bread slice 1?
+Abstraction: What do we use to generalize parts of our problem? How general do we make our program?
+  - Can we generalize our system for all kinds of jelly? What about jam, or even mustard?
 
 ---
 
-#### Review: Steps to get to low level pseudocode:
+#### Review: Steps to get to low level pseudocode: or, how to program.
 1.Identify the Problem
 
 - What exactly are we trying to solve?

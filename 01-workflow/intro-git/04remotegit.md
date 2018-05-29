@@ -14,6 +14,8 @@ In the previous section, we worked with a local git repo. Now, let's try working
 
 We previously mentioned that git is a **distributed version control system**. Meaning, we can make changes locally, and push them up to a server. We can also pull down changes from a server. Throughout WDI, we'll be working with remote repositories mainly through Github in order to submit deliverables. So let's go through an example.
 
+![https://qph.fs.quoracdn.net/main-qimg-d151c0543baa145e6252c1ec95199963](https://qph.fs.quoracdn.net/main-qimg-d151c0543baa145e6252c1ec95199963)
+
 ---
 
 ## `git clone` - clone a repository
