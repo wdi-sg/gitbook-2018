@@ -49,6 +49,7 @@
   * [Page Template](03-html-css/html-page-template/readme.md)
 * [JavaScript](02-js/javascript.md)
   * [Primitives](02-js/js-intro/readme.md)
+  * [Data Types](02-js/js-intro/data-type-and-collections.md)
   * [Conditionals and Loops](02-js/js-intro/js-control-flow/readme.md)
     * [Boolean Expressions](02-js/js-intro/js-control-flow/03booleans-and-conditionals.md)
     * [Loops](02-js/js-intro/js-control-flow/04loops.md)
