@@ -1,13 +1,4 @@
-<hr>
-Title: Conditionals and Loops<br>
-Type: Lesson<br>
-Duration: 1.5 hrs<br>
-Creator: GA Instruction Team <br>
-Updated by: Alex White <br>
-Topics: Intro to Conditionals & Loops <br>
-<hr>
-
-# Intro to Conditionals & Loops
+# Intro to Conditionals
 
 ![](https://assets.hongkiat.com/uploads/programming-jokes/joke-programmers-butters.jpg)
 
