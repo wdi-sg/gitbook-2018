@@ -10,7 +10,7 @@
 
 ---
 
-##Defining a function
+## Context
 
 A function is a module that can store and invoke code. When writing repetitive
 code, we can isolate code into **functions** in order to reduce repetition. For
@@ -18,6 +18,16 @@ example, if we needed to say "Hello World" to the screen multiple times, we can
 create a function like so.
 
 Function is synomymous with method.
+
+This is also our first opportunity to create an *interface* for to a specific set of code.
+
+Functions are not just about avoiding repetition, but also about creating a series of black boxes that we can hide functionality in.
+
+We know that if a process is complex, breaking it down and also hiding or not worrying about certain actions or processes is prefered.
+
+When we create our PB&J sandwiches, we don't worry about how the bread is baked, because we know it's taken care of and is a discreet and contained part of the process of creating the sandwich.
+
+## Define a Function
 
 We've been using functions already without knowing it:
 ```
@@ -51,7 +61,7 @@ function FUNCTIONNAME() {
 
 We can also create functions that accept **parameters**, and use those parameters as variables in the function.
 
-##Defining a function with a parameter
+## Defining a function with a parameter
 ```js
 function greeting(taco) {
 	// anything inside of here will execute when called
@@ -66,7 +76,7 @@ greeting(name2);
 
 ---
 
-##Defining a function with two parameters
+## Defining a function with two parameters
 
 Functions can have multiple parameters, separated by commas.
 
@@ -86,7 +96,7 @@ greeting(thing, name); // "Good morning Spoon Josh"
 
 ---
 
-##Return Values
+## Return Values
 
 Note that functions can have **input** via parameters. They can also have **output** as return values. Returning values from a function is denoted by the keyword `return`. **Something** is always returned by the function. If you don't specify anything, it returns `undefined`.
 
@@ -158,9 +168,36 @@ var taco = multiply(firstNum,secNum);
 console.log(firstNum + " multiplied by " + secNum + " is " + taco );
 ```
 
+## Functional Patterns
+Generally we will prefer that our functions operate as discreet parts.
+
+If we want to add two numbers we can write:
+```
+var result = 0;
+
+var add = function(num1, num2){
+  result = num1 + num2;
+};
+```
+
+This function acts on some value defined outside of itself.
+
+In javascript it allows you to do this and might seem tempting, but for a variety of reasons it is much better to explicitly define the inputs and outputs of a set of code. (this applies to things beyond functions as well)
+
+The prefered way would be:
+```
+var add = function(num1, num2){
+  return num1 + num2;
+};
+
+var result = add(1,2);
+```
+
+This is only possible with the return keyword.
+
 ---
 
-##Declaring functions
+## Declaring functions
 
 There are two different ways to declare a function
 ```js
@@ -196,8 +233,29 @@ Despite being more flexible, the former declaration that assigns the function to
 
 ---
 
+## Functions as values
+Since we can assign a function to a variable, we can also assign a function anywhere else any other value would go.
+```
+var multiply = function(a, b) {
+    return a * b;
+};
+```
+Then:
+```
+var banana = [1,multiply,3,4,5,6];
+banana[1](2,3);
+```
+Or:
+```
+var monkey = {
+  bar : "hello",
+  doMultiply : multiply
+};
 
-###Exercises
+monkey["doMultiply"](4,5);
+```
+
+### Exercises
 
 - What is the return value of this function when called?
 

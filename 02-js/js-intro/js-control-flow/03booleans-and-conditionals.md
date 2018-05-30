@@ -123,47 +123,9 @@ You can reassign values with a variable's own value (a little bit of a brain ben
 
 <hr>
 
-## Truthiness
-
-**All** values in JavaScript have an implicit 'truthiness'. They can be evaluated as either true or false. In effect, every value in Javascript is converted into a Boolean when it is checked as an expression of truth.
-
-##### All of the following become false when converted to a Boolean
-
-- `false`
-- `0`
-- `""` (empty string)
-- `NaN`
-- `null`
-- `undefined`
-
-<br>
-
-### Let's Practice :computer:
-
-JavaScript has a built-way to convert things to Booleans: `Boolean()`. Put the following inside the parenthesis of `console.log()` to see the result.
-
-```
-Boolean("");
-Boolean(null);
-Boolean(0);
-```
-<br>
-
-
-##### All other values are implicitly true
-
-### Let's Practice :computer:
-
-```
-Boolean("hi");
-Boolean(1);
-Boolean(true);
-```
-
-<br>
-<hr>
-
 ## Equality operators
+Equality operators are a boolean expression that determines if one thing is equal to another *or not*.
+Like all boolean expressions it evaluates to either true or false.
 
 `==`, `!=`, `===`, `!==`
 
@@ -241,6 +203,48 @@ And with strings:
 4) Is 9 strictly unequal to false?
 
 <hr>
+
+## Truthiness
+
+**All** values in JavaScript have an implicit 'truthiness'. They can be evaluated as either true or false. In effect, every value in Javascript is converted into a Boolean when it is checked as an expression of truth.
+
+##### All of the following become false when converted to a Boolean
+
+- `false`
+- `0`
+- `""` (empty string)
+- `NaN`
+- `null`
+- `undefined`
+
+<br>
+
+### Let's Practice :computer:
+
+JavaScript has a built-way to convert things to Booleans: `Boolean()`. Put the following inside the parenthesis of `console.log()` to see the result.
+
+```
+Boolean("");
+Boolean(null);
+Boolean(0);
+```
+<br>
+
+
+##### All other values are implicitly true
+
+### Let's Practice :computer:
+
+```
+Boolean("hi");
+Boolean(1);
+Boolean(true);
+```
+
+<br>
+<hr>
+
+
 
 
 ## Comparison Operators
