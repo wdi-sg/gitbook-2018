@@ -7,6 +7,9 @@
 
 ## Framing
 - after conditionals loops are the other piece of control flow in any basic program. Every language you will write in the future will have some kind of loop in it.
+- many times in our programs we need to specify a task to happen more than once. Loops help us do that.
+
+![control flow wd40](https://i.imgur.com/v4W1xwD.png)
 
 
 ---
@@ -19,7 +22,7 @@ A **while loop** repeatedly executes a code block as long as a specified conditi
 var i = 0;
 while (i < 5) {
   console.log("i is " + i);
-   i++;
+  i++;
 }
 
 // Will print out:
@@ -132,78 +135,33 @@ for (var thing in car) {
 
 ---
 
-### Pseudocode FizzBuzz( Instructor Does )
+## Backwards For Loops
 
----
+It's totally possible to run a for loop backwards. We need to do three things:
 
-### Run some loops in your browser (10 mins)
+1. Instead of starting i at zero
+simply start it at `var i = a.length - 1`. We have to subtract one from the length
+of the array to access the index of the last element to account for zero-based
+indexing.
+2. Change the test condition to run the for loop while `i >= 0`
+3. Change the step instruction to `i--`
+
+```js
+for (var i = a.length - 1; i >= 0; i--) {
+  console.log(a[i]);
+}
+```
+
+### Exercise: Run some loops (10 mins)
 
 - Setup Your Files (html / script)
 - Copy the above code examples
 - Change the value of i to something bigger
-
----
-
-### Chrome Dev Tools
-
----
-
-###Exercises
-
-1. Implement a for loop that counts down instead of up. Use `i=10` `i>0` and `i--`
-
-1. Loop over this array and `console.log` each element
-```
-var fruits = [
-  'banana',
-  'apple',
-  'strawberry',
-  'mango',
-  'papaya',
-  'coconut',
-  'orange'
-];
-```
-
-1. Loop over the same array, but if the string `mango` is found for that iteration of the array, console log `HOORAY` instead of the fruit.
-
-1. Use a `for...in` loop to examine the `phoneBook` Object below and print
-   out the names of all the people who share the phone number "333-333-3333".
-
-```js
-var phoneBook = {
-  "Abe": "111-111-1111",
-  "Bob": "222-222-2222",
-  "Cam": "333-333-3333",
-  "Dan": "444-444-4444",
-  "Ern": "555-555-5555",
-  "Fry": "111-111-1111",
-  "Gil": "222-222-2222",
-  "Hal": "333-333-3333",
-  "Ike": "444-444-4444",
-  "Jim": "555-555-5555",
-  "Kip": "111-111-1111",
-  "Liv": "222-222-2222",
-  "Mia": "333-333-3333",
-  "Nik": "444-444-4444",
-  "Oli": "555-555-5555",
-  "Pam": "111-111-1111",
-  "Qiq": "222-222-2222",
-  "Rob": "333-333-3333",
-  "Stu": "444-444-4444",
-  "Tad": "555-555-5555",
-  "Uwe": "111-111-1111",
-  "Val": "222-222-2222",
-  "Wil": "333-333-3333",
-  "Xiu": "444-444-4444",
-  "Yam": "555-555-5555",
-  "Zed": "111-111-1111"
-};
-```
-
-1. Implement [Fizz Buzz](http://en.wikipedia.org/wiki/Fizz_buzz). Loop
-   from 1 to 100.  If the number is divible by both 3 and 5, print
-   "fizzbuzz". Otherwise, if the number if divisible by 3, print
-   "fizz", or, if the number is divisible by 5, print "buzz". If none
-   of the above are true, print the number. This is a very common
-   interview question!
+- Change the condition from *less than* to *less than or equal to* - what happens?
+- Change the starting value of i to something else. What happens?
+- Make a while loop that runs 1000 times and console.logs out `i`.
+- Make a while loop that runs 1000 times and console.logs out `hello`
+- Make a backwards for loop
+- Make a loop that increments more than one (counting forwards and backwards) `for(var i=0; i<6; i=i+2)`
+- Make a loop that runs a random amount of times (up to a reasonable number) - just google how to create a random integer in javascript if you don't know how.
+- Crash your chrome browser tab by running a while loop that console.logs something and goes on forever.

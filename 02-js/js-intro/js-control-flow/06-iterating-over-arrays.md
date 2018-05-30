@@ -41,23 +41,6 @@ for (var i = 0; i < a.length; i++) {
 }
 ```
 
-## Backwards For Loops
-
-It's totally possible to run a for loop backwards. We need to do three things:
-
-1. Instead of starting i at zero
-simply start it at `var i = a.length - 1`. We have to subtract one from the length
-of the array to access the index of the last element to account for zero-based
-indexing.
-2. Change the test condition to run the for loop while `i >= 0`
-3. Change the step instruction to `i--`
-
-```js
-for (var i = a.length - 1; i >= 0; i--) {
-  console.log(a[i]);
-}
-```
-
 ## Fencepost Problems
 
 Sometimes we need to do special things at the beginning or end of when we're
@@ -292,25 +275,9 @@ isUnique([1,2,3,3,4]) // returns false
 isUnique([1,2,3,4])   // returns true
 isUnique([])          // returns true
 ```
-
-## Mousetrap
-A mousetrap (these are made up names) is something that snaps closed once
-an never opens again. 
-
-```js
-function isUnique(a)  {
-  boolean isUnique = true;
-
-  for (var i = 0; i < a.length; i++) {
-    for (var j = 0; j < a.length; j++) {
-      if (j !== i) {
-        if (a[i] === a[j]) {
-          isUnique = false;
-        }
-      }
-    }
-  }
-
-  return isUnique;
-}
-```
+### Exercise:
+Create an `index.html` file and `script.js` file.
+Run each example one at a time.
+Create a `console.log` for each interation of the array.
+Make sure to format the output well so it is clear what is happening.
+e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.

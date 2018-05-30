@@ -163,7 +163,7 @@ cp /path/to/file ~/.
 
 ### Set Sublime to run as your git commit message editor
 ```
-git config --global core.editor "sublime -w"
+git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w"
 ```
 
 ## [Postgres](#postgres)
