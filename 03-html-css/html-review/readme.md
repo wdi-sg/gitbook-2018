@@ -1,9 +1,10 @@
-#HTML
+# HTML
 
 ---
 
 ### Objectives
 
+- Discuss the purpose of HTML
 - Construct a HTML page with common elements and attributes
 
 ---
@@ -12,8 +13,21 @@
 
 HTML stands for **H**yper**T**ext **M**arkup **L**anguage
 
-We're going to step through a HTML document, disect the parts, and view some examples. But first, let's explore the syntax of HTML elements.
+HTML describes the semantic formatting of a document.
 
+When we give an HTML file to the browser, the browser interprets it and displays the document.
+
+*A website is an HTML document, but an HTML document is not always a website*
+
+### Where does this all happen?
+
+![](https://images-na.ssl-images-amazon.com/images/I/91JegIxgwML._UY606_.jpg)
+
+When we write our document we can refer to other resources within the same filesystem.
+
+```
+<a href="/foo.html">google</a>
+```
 
 ---
 
@@ -98,21 +112,20 @@ The `<body></body>` tags denote the content of the document. This content is ren
 
 ---
 
-### Divs + Spans
+## HTML document tags:
+Some elements are default formatted by the browser, like as in a document.
 
-HTML provides for us two 'empty' containers to store whatever content we want. One is a div (block element) and the other is a span (inline element)
-
-<p data-height="388" data-theme-id="0" data-slug-hash="qbJREg" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/qbJREg/'>Divs vs Spans</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+Even without CSS, the browser still knows that these tags can be formatted in a ceratin way.
 
 ---
 
-### Text Tags
-
-<p data-height="514" data-theme-id="0" data-slug-hash="NxOddg" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/NxOddg/'>Text Tags</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
+### Anchor
+```
+<a href="http://www.google.com">google</a>
+<a href="/foo.html">google</a>
+```
 ---
+
 
 ### Lists
 
@@ -143,13 +156,37 @@ Before CSS became mainstream, websites were designed using tables. Although they
 <p data-height="268" data-theme-id="0" data-slug-hash="NxOdgv" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/NxOdgv/'>Images and Links</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
+
+### Other document tags:
+```
+<p></p>
+<h1></h1>
+```
+
 ---
 
-### Forms, Labels, Input Types
+## HTML document structure tags:
 
 ---
 
-####Forms
+### Divs + Spans
+
+HTML provides for us two 'empty' containers to store whatever content we want. One is a div (block element) and the other is a span (inline element)
+
+When we see layout in CSS we will be using these containers to define the different parts of our document.
+
+<p data-height="388" data-theme-id="0" data-slug-hash="qbJREg" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/qbJREg/'>Divs vs Spans</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+---
+
+## Forms
+Forms provide the ability for the user to make inputs. Right now they have no where to go.
+
+Later on we will see how to use them in a client side app.
+
+In unit 2 we will see the way they were meant to be used.
+
 
 One of the most common ways to send data to a server is by using a form. A form has two essential attributes, action and method.
 

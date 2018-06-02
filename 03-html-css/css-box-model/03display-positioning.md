@@ -1,69 +1,123 @@
-# Taking Up Space using Display
+# Display
 
-Cool, right? Each HTML element gets its own box to live in.
+Display has to do with the flow of a document and what elements take up what space.
 
-As you saw, the outermost box of each element went all the way across the page. This is why, until now, your HTML elements have been sitting on top of one another: by default, they take up the full width of the page.
+Elements are processed like in a text document, they flow from the top left to the right and then towards the bottom line by line.
 
-We can change all this with the first positioning property we'll learn, the `display` property and the four values we can use: inline, block, inline-block, and none.
+Different elements have different kinds of properties for mhow much space they will take up and how.
 
----
+## Taking Up Space using Display
 
-* An **inline** element has no line break before or after it. This makes the element sit on the same line as another element, but without formatting it like a block. It only takes up as much width as it needs (not the whole line). Inline places all your elements on a single line. The bad news is that it doesn't maintain their "box"ness. So much for that padding...
+From here: [https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block](https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block)
 
----
+### Inline elements:
 
-* A **block** element has some whitespace above and below it and does not tolerate any HTML elements next to it. This makes the element a block box. It won't let anything sit next to it on the page and takes up the full width.
+  - respect left & right margins and padding, but not top & bottom
+  - cannot have a width and height set
+  - allow other elements to sit to their left and right.
 
----
-
-* An **inline-block** element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element. This makes the element a block box but will allow other elements to sit next to it on the same line.
-
----
-
-* If you assign **none** as the value of the display, this will make the element and its content disappear from the page entirely!
-
----
-
-Here are a few examples in CSS, written as classes:
-
+  Example: text styling
 ```css
-.inline {
-  display: inline;
-}
-
-.block {
-  display: block;
-}
-
-.inline-block {
-  display: inline-block;
+.highlight{
+  background-color:yellow;
+  padding:3px;
 }
 ```
 
-We would end up with something like this:
+```html
+<p>
+  To operate your life vest <span class="highlight">pull on the red strap</span>. If it does not inflate, blow on the attached tube.
+</p>
+```
 
-![display](https://i.imgur.com/zeD1f2m.png)
+### Block elements:
 
----
+    - respect left & right margins and padding & top & bottom
+    - force a line break after the block element
+    - acquires full-width if width not defined
+
+Example: Layout rows:
+```css
+.row1{
+  background-color:yellow;
+}
+.row2{
+  background-color:blue;
+}
+.row3{
+  background-color:red;
+}
+```
+
+```html
+<div class="row1">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus a nulla in efficitur.
+</div>
+<div class="row2">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus a nulla in efficitur.
+</div>
+<div class="row3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus a nulla in efficitur.
+</div>
+```
+
+### Inline-block elements:
+
+    - allow other elements to sit to their left and right
+    - respect top & bottom margins and padding
+    - respect height and width
+    - can create a line break if element is longer than width (doesn't break in the middle of the element- like a block)
+
+
+Example: Nav Bar Layout:
+```css
+.nav-button{
+  display:inline-block;
+  margin:0;
+  padding:5px;
+  width: 200px;
+}
+.nav1{
+  background-color:yellow;
+}
+.nav2{
+  background-color:blue;
+}
+.nav3{
+  background-color:red;
+}
+```
+
+```html
+<div class="nav-button nav1">
+  About
+</div>
+<div class="nav-button nav2">
+  Sign Up
+</div>
+<div class="nav-button nav3">
+  Login
+</div>
+```
+
 
 
 ## Positioning
 
 Another CSS property, "position", can take `relative` or `absolute` values, among others.
 
-A page element with "relative positioning" gives you the control to "absolutely position" children elements inside of it. This might not be obvious to everyone - that's probably because this isn't intuitive, at all. Let's look at an example.
+Position is another dimension of how an element gets displayed- generally you use it to override some kind of display type property- or, how an element is fitted into the series of boxes in the document flow.
 
-![css position relative](https://i.imgur.com/LRd7lBy.png)
+More specifically you use it when you want to do something very specific with the position of an element.
 
----
+### How to Position
+Setting a position other than `static` on an element means that you get to use more specific position attributes: `top`, `right`, `bottom` and `left` (it's always in that order)
 
-The relative positioning on the parent is what matters here. This what would happen if we forgot that:
-
-![](https://i.imgur.com/0vGcPFL.png)
-
-In this small example, it doesn't seem to matter much, but it really is a significant change.
-
-⇒ The "absolutely positioned" elements are positioning themselves in relation to the body element, instead of their direct parent. So if the browser window grows, that element in the bottom left is going to stick with the browser window, not hang back inside, like it was the case in the previous example.
+You can set these with:
+- px
+- em
+- rem
+- percent
 
 ---
 
@@ -71,12 +125,103 @@ In this small example, it doesn't seem to matter much, but it really is a signif
 
 Declaring `position:relative` allows you to position the element top, bottom, left, or right relative to where it would normally occur.
 
+This is mostly only used in combination with absolutely positioned elements.
+---
+
+
+#### Absolute Positioning
+
+Specifying `position: absolute` _removes the element from the document flow_ and places it exactly where you tell it to be.
+
+Example: Modal:
 ```css
-.relative-item {
-  position: relative;
-  top: 0;
-  left: 40px;
+.modal{
+  position:absolute;
+  background-color:black;
+  color:white;
+  top:30px;
 }
+```
+
+```html
+<div class="modal">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus a nulla in efficitur. Fusce venenatis velit id leo sollicitudin pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas aliquet, velit ac tempor bibendum, mi arcu euismod diam, ut vestibulum leo augue vitae metus. Proin finibus dui sed aliquam varius. Integer quis massa urna. Fusce vitae lacus sed nunc tincidunt sagittis. Sed id ligula id lacus sodales vehicula in eget erat. Pellentesque condimentum massa nulla, sit amet ultrices mauris ornare a. Donec dolor elit, pretium sed nulla ac, sollicitudin fringilla nunc. Nunc tincidunt mollis purus sit amet sagittis.
+</div>
+```
+
+---
+
+#### Using Absolute + Relative Together
+
+When you put an absolutely positioned element inside a relatively positioned one, the absolutely positioned element's position is absolute to the parent element.
+
+This is usually used for two things:
+
+1. In layout when you have fixed width cards, but you want your design to be mobile and desktop responsive, you change the number of cards within the row.
+
+*But* the position of all elements within the card stays the same.
+
+```css
+.card{
+  width:300px;
+  height:350px;
+  display:inline-block;
+  position:relative;
+}
+.card-img{
+  height: 200px;
+  width: 200px;
+  margin:0 auto;
+}
+.card-like{
+  font-size:9px;
+  position:absolute;
+  color:white;
+  font-weight:800;
+  right:0;
+  top:0;
+}
+```
+
+```html
+<div class="card">
+  <img class="card-img" src="https://i.imgur.com/6yHmlwT.jpg"/>
+  <p class="card-like">
+    like
+  </p>
+</div>
+```
+
+1. When you have a shopping cart icon and want to dynamically indicate how many items are inside, absolutely position the number above and over the icon. Or, when you have a like button icon that always sits in the upper right hand corner of the card image.
+
+![Imgur](https://i.imgur.com/I22mFsc.png)
+
+---
+
+#### Fixed Positioning
+
+An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled, so a fixed positioned element will stay right where it is.
+
+Example: Nav Bar Layout:
+```css
+.nav{
+  z-index:1;
+  position:fixed;
+}
+```
+
+```html
+<div class="nav">
+  <div class="nav-button nav1">
+    About
+  </div>
+  <div class="nav-button nav2">
+    Sign Up
+  </div>
+  <div class="nav-button nav3">
+    Login
+  </div>
+</div>
 ```
 
 ---
@@ -93,41 +238,4 @@ Again, the default positioning for all elements is static. This means that no po
 }
 ```
 
-You rarely explicitly declare `position:static` like this because it is the default.
-
----
-
-#### Fixed Positioning
-
-An element with fixed position is positioned relative to the browser window.  It will not move even if the window is scrolled, so a fixed positioned element will stay right where it is.
-
-```css
-.fixed-item {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-```
-
----
-
-#### Absolute Positioning
-
-Specifying `position: absolute` _removes the element from the document flow_ and places it exactly where you tell it to be.
-
-```css
-.absolute-item {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-```
-
----
-
-#### Using Absolute + Relative Together
-
-There are many cases where you'll want to use `absolute`, but position an element _exactly relative to another element_. In that case, you can use `absolute` inside a `relative` element. See this Codepen for an example.
-
-<p data-height="665" data-theme-id="0" data-slug-hash="WwVKMq" data-default-tab="css,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/WwVKMq/">Relative + Absolute</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+You almost never explicitly declare `position:static` like this because it is the default.

@@ -195,6 +195,27 @@ var result = add(1,2);
 
 This is only possible with the return keyword.
 
+### Functions as sub-routines
+Given this code that adds 2 numbers then multiplies it, then adds a string to it:
+```
+// inputs
+var num1 = 2;
+var num2 = 4;
+
+var result = num1 + num2;
+
+var multiplied = num1 * num2;
+
+var resultString = "The Result is: "+multiplied;
+
+// output
+console.log(resultString);
+```
+
+We can define each of the steps as subroutines of the main code.
+
+Functional patterns allow us to extract that code into functions, where we define the inputs and return a value. The point of the function becomes a thing that transforms values from one state into another.
+
 ---
 
 ## Declaring functions
