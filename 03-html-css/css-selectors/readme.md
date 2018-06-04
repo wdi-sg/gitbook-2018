@@ -353,67 +353,12 @@ You can also chain classes together, applying several classes to one element:
 Let's add:
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Intro to CSS</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <p>This is a paragraph element</p>
-
-    <div>This is a DIV</div>
-    <div>This is another DIV</div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <section id="dolphin">
-      I am a dolphin
-    </section>
-
-    <p class="first second">Multiple classes</p>
-
-	</body>
-</html>
+<p class="first second">Multiple classes</p>
 ```
 
 Then, create two classes:
 
 ```css
-body {
-  background: red;
-}
-
-p {
-  color: orange;
-}
-
-div {
-  border: 1px solid black;
-}
-
-.comments {
-  font-weight: bold;
-  color: #64FE2E; /* green */
-}
-
-#dolphin {
-  font-style: italic;
-  color: #0040FF; /*blue*/
-}
-
 .first {
   font-size: 40px;
 }
@@ -428,79 +373,15 @@ As we can imagine, the possibilities are endless. There are many properties and 
 We can even use classes/IDs with elements to select and style HTML. Lets add a short unordered list:
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Intro to CSS</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <p>This is a paragraph element</p>
-
-    <div>This is a DIV</div>
-    <div>This is another DIV</div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <div class="comments">
-      Hello
-    </div>
-
-    <section id="dolphin">
-      I am a dolphin
-    </section>
-
-    <p class="first second">Multiple classes</p>
-
-    <ul>
-      <li class="why">Why a dolphin?</li>
-      <li class="why" id="not">Why not?</li>
-    </ul>
-  </body>
-</html>
+<ul>
+  <li class="why">Why a dolphin?</li>
+  <li class="why" id="not">Why not?</li>
+</ul>
 ```
 
 Imagine, we wanted to particular style to apply to all of the elements from the list but wanted other particular styles to apply to each item, individually. Definitely doable. Take a look at our CSS:
 
 ```css
-body {
-  background: red;
-}
-
-p {
-  color: orange;
-}
-
-div {
-  border: 1px solid black;
-}
-
-.comments {
-  font-weight: bold;
-  color: #64FE2E; /* green */
-}
-
-#dolphin {
-  font-style: italic;
-  color: #0040FF; /*blue*/
-}
-
-.first {
-  font-size: 40px;
-}
-
-.second {
-  color: red;
-}
-
 li {
   text-align: center;
 }
@@ -516,6 +397,9 @@ li#not {
 
 Now, all our list items are centered but the top item has a different font than the bottom.
 
+### Other Selectors
+[https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
+
 
 ## Specificity in CSS
 
@@ -528,21 +412,6 @@ Every selector has its place in the specificity hierarchy, and if two selectors 
 ![calculationbase](https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png)
 
 ###Calculating specificity
-
-![calc 1](https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-1.png)
-
-*This is calculated as 113*
-
-![calc 2](https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-2.png)
-
-
-*This is calculated as 23*
-
-![calc 4]](https://css-tricks.com/wp-content/csstricks-uploads/cssspecificity-calc-4.png)
-
-*This is calculated as 1000*
-
-A couple of rules to think about:
 
 * If two selectors apply to the same element, the one with higher specificity wins
 * When selectors have an equal specificity value, the latest rule is the one that counts
