@@ -1,20 +1,23 @@
-Mention:
-
-.editorconfig
-
-FIXED:
-git config --global core.editor "sublime -w"
-
-Day 3:
-Chrome Dev Console 2 (debugger)
-JS - loops
-JS - loops over arrays
-
-HW: google shopping conditionals
-
-Day 4:
-JS - functions
+week 2:
+day 1:
 HTML / CSS
+callbacks
+
+day 2:
+DOM manipulation
+
+day 3:
+DOM events
+
+day 4:
+pseudo classes
+responsive design
+
+day 5:
+bootstrap
+js scope
+browser apps: display vs. logic
+
 
 https://www.youtube.com/playlist?list=PLdnONIhPScSQkcJsH6jWcgvI2Mai1AZO4&disable_polymer=true
 
