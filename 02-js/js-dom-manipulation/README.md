@@ -167,6 +167,7 @@ Compare and contrast the following selectors. Why can't we use querySelector/que
 - Use `setTimeout` to apply those styles 4 seconds later. (add the class to the element)
 
 ---
+## DOM - Creation and Deletion
 
 So far we've only seen examples of how to change properties of the DOM
 and do things like:
