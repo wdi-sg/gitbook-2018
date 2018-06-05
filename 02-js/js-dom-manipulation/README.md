@@ -1,4 +1,176 @@
+#Intro to DOM and Events
+
 # DOM Manipulation
+
+---
+
+## Objectives
+* Select elements from the DOM using selectors
+
+---
+
+##DOM Manipulation with JavaScript
+
+**Review:** What is the DOM?
+
+Open up the [MDN Website](https://developer.mozilla.org/en-US/)
+
+Go to Developer Console. Look at DOM in *Elements*, then look at the DOM in *Console*. The object 'document' represents the DOM in JavaScript. We can change the DOM, i.e. the page, by changing the **document object**.
+
+Review [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+---
+
+Now, inspect a few properties, for example:
+
+```js
+document.URL
+document.head
+document.links (what does it return?)
+```
+
+---
+
+How to change the DOM? Select elements and manipulate them.
+
+**Select by tag id:**
+
+```js
+var searchForm = document.getElementById("home-search-form");
+
+```
+
+What's inside?
+
+```js
+searchForm.innerHTML;
+```
+
+Also, try `textContent` too! (you may also see this as `innerText`, but this is not supported by all browsers)
+
+---
+
+Change styling:
+
+```js
+searchForm.style.backgroundColor = "yellow";
+searchForm.style.color = "red";
+searchForm.style.height = "100px";
+```
+
+---
+
+Properties can be a getter and setter. What does this mean?
+
+**Select by class**
+
+```js
+var content_div = document.getElementsByClassName("center");
+```
+
+**Select by tag name**
+```js
+var allListElements = document.getElementsByTagName("li")
+```
+
+---
+
+**Preferred: select using CSS selectors**
+
+Get elements by tag name or class is very unspecific. You can go after specific CSS selectors, just like you would in stylesheets:
+
+```js
+document.querySelectorAll("li");
+document.querySelectorAll("li.nav-main-item");
+document.querySelectorAll(".center > h1");
+```
+
+---
+
+**Accessing and changing element attributes**
+
+There are 2 ways to get and set attributes of a DOM element. You can access the properties directly or use use get/setAttribute methods. It's important that you know both exist, but generally accessing the properties directly is more consistent across browsers.
+
+```js
+//set using property
+document.querySelector("a").href = ' http://www.google.com';
+
+//get using property
+var href = document.querySelector("a").href;
+
+//get using getAttribute method
+var href = document.querySelector("a").getAttribute("href");
+
+//set using setAttribute method
+document.querySelector("a").setAttribute("href","http://www.google.com")
+```
+---
+
+##CSS Classes
+
+Acessing, getting, setting CSS classes is slightly different than other properties.
+
+---
+
+##className
+
+First you can directly access the class attribute by using the `className` property of a DOM element. This works fine, but since elements can have multiple classes (separated by spaces) this often leads to needing to do some string parsing.
+
+---
+
+##classList
+
+To solve the problem of not wanting to do string parsing of the `className` property browsers support the `classList` attribute which gives us an array of classes.
+
+Additionally, the classList attribute has some special methods attached to it.
+
+* add - add a class
+* remove - removes a class
+* contains - checks if an item has a class
+
+---
+
+**Usage**
+
+```js
+//list classes
+item.classList
+
+//add a class
+item.classList.add('my-new-class');
+
+//remove a class
+item.classList.remove('my-new-class');
+
+//check if an item has a class (returns true or false)
+item.classList.contains('my-new-class');
+```
+---
+
+## Compare and Contrast
+
+Compare and contrast the following selectors. Why can't we use querySelector/querySelectorAll for everything?
+
+* getElementById
+* getElementsByClassName
+* getElementsByTagName
+* querySelector
+* querySelectorAll
+
+---
+
+### Pairing Exercise (15 minutes)
+
+* Open up your browser and go to the MDN Website.
+* Repeat all of the exercies up to this point in the console.
+
+---
+
+
+
+
+
+
 So far we've only seen examples of how to change properties of the DOM
 and do things like:
 
