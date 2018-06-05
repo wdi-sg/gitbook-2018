@@ -163,6 +163,8 @@ Compare and contrast the following selectors. Why can't we use querySelector/que
 
 * Open up your browser and go to the MDN Website.
 * Repeat all of the exercies up to this point in the console.
+- Create a set of styles for a header tag: `<h1>` that you create with javascript. (example: font-size, color, background color)
+- Use `setTimeout` to apply those styles 4 seconds later. (add the class to the element)
 
 ---
 
