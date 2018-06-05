@@ -1,6 +1,6 @@
-#Intro to DOM and Events
+# Intro to DOM
 
-# DOM Manipulation
+## DOM Manipulation
 
 ---
 
@@ -9,7 +9,7 @@
 
 ---
 
-##DOM Manipulation with JavaScript
+## DOM Manipulation with JavaScript
 
 **Review:** What is the DOM?
 
@@ -106,19 +106,19 @@ document.querySelector("a").setAttribute("href","http://www.google.com")
 ```
 ---
 
-##CSS Classes
+## CSS Classes
 
 Acessing, getting, setting CSS classes is slightly different than other properties.
 
 ---
 
-##className
+## className
 
 First you can directly access the class attribute by using the `className` property of a DOM element. This works fine, but since elements can have multiple classes (separated by spaces) this often leads to needing to do some string parsing.
 
 ---
 
-##classList
+## classList
 
 To solve the problem of not wanting to do string parsing of the `className` property browsers support the `classList` attribute which gives us an array of classes.
 
@@ -165,11 +165,6 @@ Compare and contrast the following selectors. Why can't we use querySelector/que
 * Repeat all of the exercies up to this point in the console.
 
 ---
-
-
-
-
-
 
 So far we've only seen examples of how to change properties of the DOM
 and do things like:
@@ -448,3 +443,5 @@ window.onload = function(){
 ## Pairing Exercise:
 - Begin with an HTML file with an empty `body` tag. Create and include a `script.js` file.
 - Repeat all of the DOM manipulation examples shown.
+- Create a set of styles for a header tag: `<h1>` that you create with javascript. (example: font-size, color, background color)
+- Use `setTimeout` to apply those styles 4 seconds later. (add the class to the element)
