@@ -60,7 +60,6 @@
     * [DOM and Events](02-js/js-dom-events/readme.md)
     * [DOM Manipulation](02-js/js-dom-manipulation/README.md)
     * [Fixing Scope Errors](02-js/js-dom-events/scope.md)
-    * [tictactoe](02-js/js-dom-manipulation/tictactoe.md)
     * [AJAX](02-js/js-ajax/readme.md)
   * [Callbacks and Iterators](02-js/js-callbacks-iterators/readme.md)
   * [Intro to TDD](02-js/js-tdd-intro/readme.md)

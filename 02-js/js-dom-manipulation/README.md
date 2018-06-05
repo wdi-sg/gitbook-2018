@@ -446,5 +446,3 @@ window.onload = function(){
 ## Pairing Exercise:
 - Begin with an HTML file with an empty `body` tag. Create and include a `script.js` file.
 - Repeat all of the DOM manipulation examples shown.
-- Create a set of styles for a header tag: `<h1>` that you create with javascript. (example: font-size, color, background color)
-- Use `setTimeout` to apply those styles 4 seconds later. (add the class to the element)
