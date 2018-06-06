@@ -193,3 +193,58 @@ Bootstrap is also very helpful when you need to style your forms. All textual `<
 ### JavaScript + Bootstrap
 
 Bootstrap can also do some nifty things for you with it's JavaScript plugins. This includes carousels, modals, popovers, dropdowns and other nice pieces of functionality that will really spruce up your app. Always make sure you understand what the code is doing before copying and pasting it. Fortunately, this is not too challenging and Bootstrap has excellent documentation. As always, if you're confused or things are breaking - google around. Bootstrap is pretty much ubiquitous and it is likely that the problems you have, other people have had (and hopefully solved) as well.
+
+### Pairing Exercise:
+Using this HTML:
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style>
+        .left-col{
+            background-color:red;
+        }
+        .center-col{
+            background-color:yellow;
+        }
+        .right-col{
+            background-color:green;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="left-col">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet at est nec maximus. Etiam scelerisque ante et neque commodo blandit. Integer ut rutrum sapien. Mauris lacus tortor, mattis aliquam velit ac, varius commodo nisi. Cras sit amet est eget nulla sollicitudin convallis. Fusce non nulla ultricies, tincidunt ligula nec, interdum sem. Suspendisse ultricies nec libero ac sodales. Suspendisse lorem purus, bibendum ac tristique nec, congue in metus. Morbi et lobortis massa, vitae fermentum velit. Cras egestas quis lectus ac rutrum. Quisque cursus nibh sed dolor bibendum finibus. Sed aliquet, tellus sit amet sollicitudin laoreet, eros massa condimentum diam, a imperdiet lectus lectus fringilla eros. Fusce lacinia eget metus et condimentum. Aenean diam libero, cursus eu purus id, tincidunt posuere orci. Cras et lobortis purus.
+
+        Maecenas dictum neque at magna bibendum, nec pharetra tortor cursus. Donec in orci augue. In faucibus magna faucibus lobortis lobortis. Donec ornare aliquet dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ultricies velit sit amet purus fringilla, quis interdum tortor tincidunt. Mauris consequat ut erat sit amet tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin et pretium orci. Praesent vel volutpat dui.
+    </div>
+    <div class="center-col">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet at est nec maximus. Etiam scelerisque ante et neque commodo blandit. Integer ut rutrum sapien. Mauris lacus tortor, mattis aliquam velit ac, varius commodo nisi. Cras sit amet est eget nulla sollicitudin convallis. Fusce non nulla ultricies, tincidunt ligula nec, interdum sem. Suspendisse ultricies nec libero ac sodales. Suspendisse lorem purus, bibendum ac tristique nec, congue in metus. Morbi et lobortis massa, vitae fermentum velit. Cras egestas quis lectus ac rutrum. Quisque cursus nibh sed dolor bibendum finibus. Sed aliquet, tellus sit amet sollicitudin laoreet, eros massa condimentum diam, a imperdiet lectus lectus fringilla eros. Fusce lacinia eget metus et condimentum. Aenean diam libero, cursus eu purus id, tincidunt posuere orci. Cras et lobortis purus.
+
+        Maecenas dictum neque at magna bibendum, nec pharetra tortor cursus. Donec in orci augue. In faucibus magna faucibus lobortis lobortis. Donec ornare aliquet dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ultricies velit sit amet purus fringilla, quis interdum tortor tincidunt. Mauris consequat ut erat sit amet tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin et pretium orci. Praesent vel volutpat dui.
+
+
+    </div>
+    <div class="right-col">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet at est nec maximus. Etiam scelerisque ante et neque commodo blandit. Integer ut rutrum sapien. Mauris lacus tortor, mattis aliquam velit ac, varius commodo nisi. Cras sit amet est eget nulla sollicitudin convallis. Fusce non nulla ultricies, tincidunt ligula nec, interdum sem. Suspendisse ultricies nec libero ac sodales. Suspendisse lorem purus, bibendum ac tristique nec, congue in metus. Morbi et lobortis massa, vitae fermentum velit. Cras egestas quis lectus ac rutrum. Quisque cursus nibh sed dolor bibendum finibus. Sed aliquet, tellus sit amet sollicitudin laoreet, eros massa condimentum diam, a imperdiet lectus lectus fringilla eros. Fusce lacinia eget metus et condimentum. Aenean diam libero, cursus eu purus id, tincidunt posuere orci. Cras et lobortis purus.
+
+        Maecenas dictum neque at magna bibendum, nec pharetra tortor cursus. Donec in orci augue. In faucibus magna faucibus lobortis lobortis. Donec ornare aliquet dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ultricies velit sit amet purus fringilla, quis interdum tortor tincidunt. Mauris consequat ut erat sit amet tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin et pretium orci. Praesent vel volutpat dui.
+
+
+    </div>
+  </body>
+</html>
+```
+
+Create a 3 column layout that uses the bootstrap CSS grid.
+
+Add HTML elements and CSS classes as you see fit.
+
+[Imgur](https://i.imgur.com/6IcKOjZ.png)
+
+Your final page should naturally collapse down when the browser size gets narrow enough.
+
+[Imgur](https://i.imgur.com/cnaI0rc.png)
+
+If you get done with that, try adding more columns and rows, and then change the responsive breakpoint. (sm, md, lg, etc.)
