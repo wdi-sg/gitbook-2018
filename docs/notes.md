@@ -9,6 +9,13 @@ DOM manipulation
 day 3:
 DOM events
 
+feedback - asking for help
+attitude - asking q's
+hw completion
+sprint vs marathon
+
+
+
 day 4:
 pseudo classes
 responsive design
