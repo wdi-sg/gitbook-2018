@@ -123,7 +123,7 @@ And this HTML:
 ```
 
 * make sure to use `DOMContentLoaded` or `window.onload`
-* set the click event to the main h1 text `.hightlight-span`
+* set the click event to the h1
 * set mouseover to that element
 * set keyup or keydown to the input
 * try setting some different kinds of events from MDN on these elements.
