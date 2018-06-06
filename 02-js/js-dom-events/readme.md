@@ -7,16 +7,6 @@
 
 ---
 
-## DOM Manipulation with JavaScript
-
-**Review:** What is the DOM?
-
-Open up the [MDN Website](https://developer.mozilla.org/en-US/)
-
-Go to Developer Console. Look at DOM in *Elements*, then look at the DOM in *Console*. The object 'document' represents the DOM in JavaScript. We can change the DOM, i.e. the page, by changing the **document object**.
-
-Review [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-
 ## Events
 
 * Events are a fundamentally different way to think about the design of our programs.
@@ -47,7 +37,7 @@ Now that we know how to select DOM elements, we can **attach** events to them:
 
 ---
 
-#####addEventListener
+##### addEventListener
 
 We have different **events**, but now we need a way to attach these events to elements. The solution? Use the `addEventListener` function. This function is called on DOM elements and takes two parameters: an **event type** and a **function**. The event type refers to a "click", "mouseover", or other type of event. The function contains the code that runs when the event occurs.
 
@@ -114,41 +104,35 @@ document.getElementById("myDiv")
 ```
 ---
 
-### DOMContentLoaded
-
-All of the selectors we've been using rely on the use of DOM elements. However,
-if the JavaScript loads before all the DOM elements load, the selectors won't
-recognize that some of them exist! To avoid this problem, there's an event
-called `DOMContentLoaded` that we can encapsulate our code inside. Then, we
-can guarantee that the DOM elements exist before manipulating them.
-
-```js
-document.addEventListener('DOMContentLoaded', function() {
-  //code and events go here
-});
-```
-
----
-
 ### Pairing Exercise: (15 minutes)
-Paste this function into your console:
+Create a new html and javascript file.
+
+For these events, you can look up the details on MDN, but it's not neccesary.
+
+Using this function:
 ```
 var saySomething = function(){
   alert("YES!");
 };
 ```
 
-Set this function as a callback to some events.
+And this HTML:
+```
+<h1>Hello</h1>
+<input id="search" />
+```
 
+* make sure to use `DOMContentLoaded` or `window.onload`
 * set the click event to the main h1 text `.hightlight-span`
 * set mouseover to that element
-* set keyup or keydown to the search box
+* set keyup or keydown to the input
+* try setting some different kinds of events from MDN on these elements.
+* try writing some other elements in the HTML file and setting events on them.
 
 ---
 
 # Connecting events to the DOM
 ## How do we refer to an element that was clicked on?
-#### What program flow would we use to recreate the tictactoe game?
 
 ---
 With the tools we have now we can do this:
