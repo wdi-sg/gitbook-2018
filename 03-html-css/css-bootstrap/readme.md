@@ -241,10 +241,10 @@ Create a 3 column layout that uses the bootstrap CSS grid.
 
 Add HTML elements and CSS classes as you see fit.
 
-[Imgur](https://i.imgur.com/6IcKOjZ.png)
+![Imgur](https://i.imgur.com/6IcKOjZ.png)
 
 Your final page should naturally collapse down when the browser size gets narrow enough.
 
-[Imgur](https://i.imgur.com/cnaI0rc.png)
+![Imgur](https://i.imgur.com/cnaI0rc.png)
 
 If you get done with that, try adding more columns and rows, and then change the responsive breakpoint. (sm, md, lg, etc.)
