@@ -166,8 +166,12 @@ Most of the time, `min-width` and `max-width` will be your bread and butter. You
 
 ### Exercise
 Redo the instagram exercise from earlier.
+
+If you want you can use this finished version as starter code: [https://github.com/wdi-sg/css-positioning/tree/brian-finished/src](https://github.com/wdi-sg/css-positioning/tree/brian-finished/src)
+
 Make it more friendly to see on a phone.
+
 1. Don't display the phone when the screen is narrow
 1. Center the main div or make it 100% of the width if the screen is narrow.
-1. stack some of the footer links on a narrower screen
+1. stack the footer links on a narrower screen
 1. Move the instagram logo above the login button, and center the login button
