@@ -32,12 +32,12 @@ cd jsonfile
 
 Make a node project
 ```
-yarn init
+npm init
 ```
 
 Add the library
 ```
-yarn add jsonfile
+npm install jsonfile
 ```
 
 Add your js file
