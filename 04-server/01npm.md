@@ -286,7 +286,7 @@ Node will install many large files to the `node_modules` folder. We don't want n
 
 We can make use of a hidden file called .gitignore - inside which we specify what files and folders we would like Git to not track and hence, not push to GitHub.
 
-Here is a [link](https://github.com/wdi-sg/wdi-better-underdog/blob/master/.gitignore) to our official class `.gitignore` file. Just copy it and put it in each of your repos with a node_modules file.
+Here is a [link](https://github.com/wdi-sg/gitbook-2018/blob/master/.gitignore) to our official class `.gitignore` file. Just copy it and put it in each of your repos with a node_modules file.
 <span class="non-slide"></span>
 <span class="non-slide"></span>
 <span class="non-slide"></span>

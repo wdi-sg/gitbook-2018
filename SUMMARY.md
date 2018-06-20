@@ -75,7 +75,7 @@
   * [Internet Lab](04-server/internet-lab.md)
   * [New ES6 Syntax](04-server/00es6.md)
   * [Intro to Node](04-server/00node.md)
-  * [Package Management with YARN](04-server/01npm.md)
+  * [Package Management with npm](04-server/01npm.md)
   * [Disk Storage](04-server/02flatfile.md)
 * [Node & Express](05-express/readme.md)
   * [Intro to Express](05-express/express-intro/01express.md)
