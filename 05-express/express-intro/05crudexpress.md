@@ -96,7 +96,7 @@ To receive this data we need to create a `POST` route in express and the `body-p
 Parsing parameters from a form needs an external module called `body-parser`.
 
 ```bash
-yarn add body-parser
+npm install body-parser
 ```
 
 ---
@@ -127,7 +127,7 @@ HTML `<form>`s do no yet support PUT and DELETE requests, so we need a way to ci
 
 The `method-override` npm library is designed to get over this limitation.
 
-You will need to install the method-override package using `yarn add method-override` and make sure Express uses it.
+You will need to install the method-override package using `npm install method-override` and make sure Express uses it.
 
 **index.js**
 
@@ -136,9 +136,9 @@ You will need to install the method-override package using `yarn add method-over
 app.use(methodOverride('_method'));
 ```
 
-Then, in your handlebars HTML page, you will have to specify `_method=<VERB>`, where VERB can be either PUT or DELETE. Here is an example of PUT.
+Then, in your react HTML page, you will have to specify `_method=<VERB>`, where VERB can be either PUT or DELETE. Here is an example of PUT.
 
-**edit.handlebars**
+**edit**
 
 ```html
 <form method="POST" action="/{{pokemon.id}}?_method=PUT">
@@ -173,17 +173,17 @@ cd into it
 ```
 cd post-exercise
 ```
-init yarn
+init npm
 ```
-yarn init
+npm init
 ```
 add express
 ```
-yarn add express
+npm install express
 ```
 add jsonfile
 ```
-yarn add jsonfile
+npm install jsonfile
 ```
 create an empty data.json file
 ```
@@ -224,7 +224,7 @@ app.post('/animals', function(request, response) {
 });
 
 app.get('/', (request, response) => {
-  // render a handlebars template form here
+  // render a template form here
   response.send("hello world");
 });
 
@@ -236,11 +236,11 @@ use a CURL command to make a POST request to your server
 curl -d "monkey=banana&koala=eucalyptus" -X POST http://localhost:3000/animals
 ```
 
-#### write the html form in a handlebars template to make the post request
+#### write the html form in a template to make the post request
 
-add handlebars to your app
+add react templating to your app
 ```
-yarn add handelbars-express
+npm install express-react-views react react-dom
 ```
 
 add a views directory
@@ -248,12 +248,16 @@ add a views directory
 mkdir views
 ```
 
-add the handlebars config into your express app
+add the config into your express app
 ```
-app.engine('handlebars', handlebars.create().engine);
-app.set('view engine', 'handlebars');
+const reactEngine = require('express-react-views').createEngine();
+app.engine('jsx', reactEngine);
+
+app.set('views', __dirname + '/views');
+
+app.set('view engine', 'jsx');
 ```
-- create your form in a handlebars file in the views directory
+- create your form in the views directory
 - set the action of the form to the path of the POST route
 
 - create a GET route request handler in your express app

@@ -57,7 +57,7 @@ const file = 'data.json'
 
 jsonfile.readFile(file, (err, obj) => {
 
-  console.dir(obj)
+  console.log(obj)
 })
 ```
 
@@ -113,7 +113,7 @@ const obj = {
 };
 
 jsonfile.writeFile(file, obj, (err) => {
-  console.error(err)
+  console.log(err)
 });
 ```
 ---
@@ -127,11 +127,11 @@ const file = 'data.json'
 
 jsonfile.readFile(file, (err, obj) => {
 
-  console.dir(obj);
+  console.log(obj);
   obj["helloworld"] = "monkey";
 
   jsonfile.writeFile(file, obj, (err) => {
-    console.error(err)
+    console.log(err)
   });
 });
 ```

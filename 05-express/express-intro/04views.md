@@ -21,7 +21,7 @@ We need to do a couple steps to get the template engine working.
 
 ---
 
-First, install [`express-react-views`](https://github.com/reactjs/express-react-views) by running `yarn add express-react-views react react-dom` in the command line.
+First, install [`express-react-views`](https://github.com/reactjs/express-react-views) by running `npm install express-react-views react react-dom` in the command line.
 
 Then, prepare this directory structure on your `node` project.
 

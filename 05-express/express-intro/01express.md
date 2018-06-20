@@ -7,7 +7,7 @@ To create a web application using Node, we're going to import a web app server f
 ## Setting up a project
 Create a new folder for use with the project using `mkdir node_calculator`, and cd into `cd node_calculator`
 
-First we want to start a new project by going `yarn init`. Follow the instructions, clicking `enter` through the statements. you many want to specify a version number, but most default options should be fine. It will also specify an initial file to use. The default is `index.js`, and this acts as the "entry point" into our app.
+First we want to start a new project by going `npm init`. Follow the instructions, clicking `enter` through the statements. you many want to specify a version number, but most default options should be fine. It will also specify an initial file to use. The default is `index.js`, and this acts as the "entry point" into our app.
 
 ---
 
@@ -16,13 +16,13 @@ First we want to start a new project by going `yarn init`. Follow the instructio
 Before we do anything else, let's set up a basic Express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
 
 ```bash
-yarn add express
+npm install express
 touch index.js
 ```
 
 **Note:** 
 
-We've been running `yarn global add <package name>`to install the package globally. You'll want to reserve `global add` for packages that will be run in the command line.
+We've been running `npm install -g <package name>`to install the package globally. You'll want to reserve `-g` for packages that will be run in the command line.
 
 ---
 
@@ -47,7 +47,7 @@ app.listen(3000)
 
 ### Installing nodemon
 ```bash
-yarn global add nodemon
+npm install -g nodemon
 ```
 
 If we just ran `node nameOfFile.js`, node will not update if we make changes to the file. Nodemon solves this problem by updating the file once changes have been made. Install nodemon (only have to do this once), we will run our apps using the syntax

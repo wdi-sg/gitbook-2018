@@ -81,7 +81,7 @@ Use visual traceroute to see on a map where your packets are going.
 
 ```
 # the traceroute command will show which servers routed the traffic
-traceroute washington.edu
+traceroute stanford.edu
 ```
 
 #####Sample Output
