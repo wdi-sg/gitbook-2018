@@ -310,3 +310,34 @@ Test your understanding of the lesson:
 - Explain the term "breaking changes" and its cause.
 - What is npm and its purpose?
 - What is the purpose of the package.json file?
+
+### pairing exercise
+
+Include an npm package:
+
+Make a new directory and initialize npm
+```
+mkdir node-npm
+cd node-npm
+npm init
+touch index.js
+```
+
+Install a new library: https://github.com/melaniecebula/cat-ascii-faces
+```
+npm install cat-ascii-faces
+```
+
+Follow the instructions on the repo:
+```
+var cats = require('cat-ascii-faces')
+console.log(cats())
+```
+
+Create your own file and require it:
+
+```
+touch my-require.js
+```
+
+Run the code from above.
