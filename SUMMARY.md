@@ -73,6 +73,7 @@
 * [Server](04-server/readme.md)
   * [Internet Fundamentals](04-server/how-the-internet-works.md)
   * [Internet Lab](04-server/internet-lab.md)
+  * [Internet Lab 2](04-server/internet-lab-2.md)
   * [New ES6 Syntax](04-server/00es6.md)
   * [Intro to Node](04-server/00node.md)
   * [Package Management with npm](04-server/01npm.md)
