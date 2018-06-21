@@ -41,6 +41,13 @@ Follow the instructions here: [https://ngrok.com/download](https://ngrok.com/dow
 
 Start `ngrok` from your terminal (what directory you are in doesn't matter)
 
+When you've donwloaded the file and unzipped it, run it from that directory.
+
+```
+cd my-download-directory
+./ngrok http 8080
+```
+
 ### Step 3.5: Start your server for a file
 
 Find or download an image file or gif that you like and want to share.

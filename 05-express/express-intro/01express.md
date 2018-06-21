@@ -93,7 +93,7 @@ request.path
 
 Respond based on what path is requested.
 ```
-if( request.path == 'foo' ){
+if( request.path == '/foo' ){
   response.send('yay');
 }else{
   response.send('boo');

@@ -3,7 +3,7 @@
 
 ### Views
 
-We cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client.
+We cannot keep using `response.send` to send a response. Ultimately, we'll want to send HTML files back to the client.
 
 We want to have this page's HTML be different for each request. How do we do this??
 
@@ -21,7 +21,11 @@ We need to do a couple steps to get the template engine working.
 
 ---
 
-First, install [`express-react-views`](https://github.com/reactjs/express-react-views) by running `npm install express-react-views react react-dom` in the command line.
+First, install [`express-react-views`](https://github.com/reactjs/express-react-views)
+
+````
+npm install express-react-views react react-dom
+```
 
 Then, prepare this directory structure on your `node` project.
 
@@ -50,7 +54,7 @@ app.engine('jsx', reactEngine);
 // this tells express where to look for the view files
 app.set('views', __dirname + '/views');
 
-// this line sets handlebars to be the default view engine
+// this line sets react to be the default view engine
 app.set('view engine', 'jsx');
 
 app.get('/', (req, res) => {
@@ -126,7 +130,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello, { name }!</h1>
+        <h1>Hello, { this.props.name }!</h1>
       </div>
     );
   }
@@ -151,13 +155,14 @@ We can put this code directly above the return statement, or we could also write
 var React = require('react');
 
 class Home extends React.Component {
-  let message = "welcome!";
-
-  if( name.length > 5 ){
-    messgae = "welcome! What a long name you have!";
-  }
-
   render() {
+
+    let message = "welcome!";
+
+    if( name.length > 5 ){
+      messgae = "welcome! What a long name you have!";
+    }
+
     return (
       <div>
         <h1>Hello, { this.props.name }!</h1>
@@ -191,11 +196,12 @@ var React = require('react');
 
 class Home extends React.Component {
 
-  const people = this.props.people.map( person => {
-    return <li>{person}</li>
-  });
-
   render() {
+
+    const people = this.props.people.map( person => {
+      return <li>{person}</li>
+    });
+
     return (
       <div>
         <ul>
