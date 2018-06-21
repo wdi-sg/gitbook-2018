@@ -60,9 +60,9 @@ Note that you will have seen HTTPS used on websites, this is the secure version 
 <span class="non-slide"></span><span class="non-slide"></span>
 
 
-Once this request reaches the server, then this server will return a response to the request emitter.
+Once this request reaches the server, then this server will return a response to the requester.
 
-HTTP responses are similar to HTTP requests in the way that they are text based and contain HTTP headers and status. Look on the first line above, again - the HTTP response returns the HTTP status code. This code is very useful for developers working with request/response cycles.  
+HTTP responses are similar to HTTP requests in the way that they are text based and contain HTTP headers and status. Look on the first line above, again - the HTTP response returns the HTTP status code. This code is very useful for developers working with request/response cycles.
 
 ---
 
@@ -94,7 +94,7 @@ Real-life recreation with paper. (One person pretends to be the backend)
 
 ---
 
-## The Web Is a Big Collection of HTML Pages on the Internet
+## The Web Is a Big Collection of HTML Pages / resources on the Internet
 
 <span class="non-slide"></span><span class="non-slide"></span>
 <span class="non-slide"></span><span class="non-slide"></span>
@@ -106,101 +106,3 @@ The World Wide Web, or "Web" for short, is a massive collection of digital pages
 Born in 1989, the Web is based on hypertext transfer protocol, the language which allows you and me to "jump" (hyperlink) to any other public web page. There are over 65 billion public web pages on the Web today."
 
 - Taken from [About Tech](http://netforbeginners.about.com/od/i/f/What-Is-The-Internet.htm)
-
----
-
-#### Simple File Server
-The simplest thing we can use is a thing that simply spits files out after we request them using http
-
-We can write a 9 line file that spits those files out:
-
-```
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
-
-http.createServer(function (request, response) {
-
-    console.log("handling request");
-
-    var filePath = '.' + request.url;
-
-    fs.readFile(filePath, function(error, content) {
-        response.end(content, 'utf-8');
-    });
-
-}).listen(8125);
-console.log('Server running at http://127.0.0.1:8125/');
-```
-Full exmaple here: [https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework)
-
----
-#### Let's create and run a server:
-
-Make a new dir:
-```
-mkdir simple-http
-```
-```
-cd simple-http
-```
-```
-touch index.js
-```
-Copy and paste the code. Save it.
-Make a text file.
-```
-echo "Make Up Your Own Text Here" >> simple.txt
-```
-Start our server.
-```
-node index.js
-```
-Try it on your own browser:
-```
-http://127.0.0.1:8125/simple.txt
-```
-
----
-
-### Fully Featured npm Server:
-Implements HTTP error codes:
-
-`npm install -g serve`
-
-`serve`
-
-What happens when we try to get a file that doesn't exist?
-
----
-
-### ngrok
-Circumvent the LAN network
-
-![http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png](http://www.conceptdraw.com/How-To-Guide/picture/Computer-and-networks-Local-area-network-diagram.png)
-
----
-
-ngrok is a tool that gives your computer one of the valuable internet IP addresses.
-
-Download it here: [https://ngrok.com/download](https://ngrok.com/download)
-
-`./ngrok http 8125`
-
-When you go to the URL they give, it's your computer!
-
----
-
-#### Pairing Exercises:
-- repeat the above steps on your computer
-- install and start ngrok
-- slack someone else in the class a link to a file that you created
-- text message one of your friends the link and have them open it
-- find an html file that you have, copy it into your server directory, and try that in your browser
-
-- try to install `serve` package and run it
-- if you get done with that, try to implement features of the full server as specified in the MDN link above:
-
-- Detect and write a nice 404 message to the user who tries to get something that doesn't exist.
-
-- Enable your server to send image files.

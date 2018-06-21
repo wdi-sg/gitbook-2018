@@ -33,14 +33,14 @@ The following example shows how to get routes working in Node. A **route** is a 
 Each route is called on our Express app, and takes a URL pattern and a callback function. The callback function gives us back the request (`req`) and response to send back to the client (`res`). Calling the `.send` function on the response sends a string back to the client.
 
 ```js
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send('hello brian')
+app.get('*', (request, response) => {
+  response.send('hello brian');
 });
 
-app.listen(3000)
+app.listen(3000);
 ```
 
 ---
@@ -55,3 +55,12 @@ If we just ran `node nameOfFile.js`, node will not update if we make changes to 
 ```bash
 nodemon nameOfFile.js
 ```
+
+### Pairing Exercise:
+Create an express server and put it on the internet using `ngrok`.
+
+See what else is in the request parameter by `console.log`ing it.
+
+See what else is in the response parameter by `console.log`ing it.
+
+Put an HTML page in `response.send`. What happens?

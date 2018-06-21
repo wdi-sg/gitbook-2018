@@ -2,7 +2,7 @@
 
 Putting things on the internet.
 
-### Step 1: Checkout and the local network.
+### Step 1: Checkout the local network.
 
 When you connect to the wifi you are connected to the local network.
 
@@ -62,6 +62,16 @@ The URL would look like this: http://127.0.0.1:8080/bird.jpeg
 You can now replace `127.0.0.1` with the URL given to you by ngrok.
 
 Example: `http://0362a557.ngrok.io/bird.jpeg`
+
+### Step 3.6: Create text files to serve
+Create a `.txt` file in that directory using sublime.
+
+Serve the file. (test it at `http://127.0.0.1:8080/file.txt`)
+
+### Step 3.7: Create HTML files to serve
+Create an HTML file in that directory. (It could be your unit 1 project !?)
+
+Serve the file.
 
 ### Step 4: Test it out!
 1. Send the URL in slack to others in class.
