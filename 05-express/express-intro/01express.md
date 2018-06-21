@@ -64,3 +64,45 @@ See what else is in the request parameter by `console.log`ing it.
 See what else is in the response parameter by `console.log`ing it.
 
 Put an HTML page in `response.send`. What happens?
+
+#### Ports
+Create another directory and express server.
+
+Listen on a different port.
+
+Request from both servers.
+
+Try to listen on the same port.
+
+### Serving things based on request in express
+```
+const express = require('express');
+const app = express();
+
+app.get('*', (request, response) => {
+  response.send('hello brian');
+});
+
+app.listen(3000);
+```
+
+Get user input from the request path:
+```
+request.path
+```
+
+Respond based on what path is requested.
+```
+if( request.path == 'foo' ){
+  response.send('yay');
+}else{
+  response.send('boo');
+}
+```
+
+### Pairing exercise
+Create an express server.
+
+If the user requests bananas in the path, send back bananas.
+
+If the user requests apples in the path, return strawberries.
