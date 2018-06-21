@@ -30,7 +30,7 @@ We've been running `npm install -g <package name>`to install the package globall
 
 The following example shows how to get routes working in Node. A **route** is a combination of a URL pattern + HTTP Verb (get, post, put, delete). These verbs represent a method for the request.
 
-Each route is called on our Express app, and takes a URL pattern and a callback function. The callback function gives us back the request (`req`) and response to send back to the client (`res`). Calling the `.send` function on the response sends a string back to the client.
+Each route is called on our Express app, and takes a URL pattern and a callback function. The callback function gives us back the request (`request`) and response to send back to the client (`response`). Calling the `.send` function on the response sends a string back to the client.
 
 ```js
 const express = require('express');
