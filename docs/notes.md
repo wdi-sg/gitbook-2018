@@ -1,12 +1,14 @@
 day 2
-how internet works
-lab demo 1
-internet lab 1
 lab demo 2
 internet lab 2
 express http
 express
 express urls
+
+day 3
+http methods
+http urls
+express views
 
 
 
