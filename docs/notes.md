@@ -1,29 +1,15 @@
-week 2:
-day 1:
-HTML / CSS
-callbacks
-
-day 2:
-DOM manipulation
-
-day 3:
-DOM events
-
-feedback - asking for help
-attitude - asking q's
-hw completion
-sprint vs marathon
+day 2
+how internet works
+lab demo 1
+internet lab 1
+lab demo 2
+internet lab 2
+express http
+express
+express urls
 
 
 
-day 4:
-pseudo classes
-responsive design
-
-day 5:
-bootstrap
-js scope
-browser apps: display vs. logic
 
 
 https://www.youtube.com/playlist?list=PLdnONIhPScSQkcJsH6jWcgvI2Mai1AZO4&disable_polymer=true
