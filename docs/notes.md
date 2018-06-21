@@ -1,14 +1,7 @@
-day 2
-lab demo 2
-internet lab 2
-express http
-express
-express urls
-
 day 3
-http methods
+http methods / http request headers
 http urls
-express views
+express views / react
 
 
 
