@@ -7,20 +7,25 @@ By putting a colon before a string in our route, we can create routes with diffe
 const express = require('express')
 const app = express()
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.send('hello brian')
 });
 
-app.get("/greet/:name/:lastname", function(req, res) {
+app.get("/greet/:name/:lastname", (req, res) => {
   res.send("Hello " + req.params.name + " " + req.params.lastname)
 });
 
-app.get("/multiply/:x/:y", function(req, res) {
+app.get("/multiply/:x/:y", (req, res) => {
   res.send("The answer is: " + (req.params.x * req.params.y))
 });
 
-app.get("/add/:x/:y", function(req, res) {
+app.get("/add/:x/:y", (req, res) => {
   res.send("The answer is: " + (parseInt(req.params.x) + parseInt(req.params.y)))
+});
+
+// make a search using: localhost:3000?q=pokemon
+app.get("/search", (request, response) => {
+  res.send("You are searching for: " + request.query.q);
 });
 ```
 
