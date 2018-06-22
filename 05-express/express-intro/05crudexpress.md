@@ -86,36 +86,31 @@ We don't need to rename the route animals, because express will separate things 
 
 ## CRUD in action
 
-To receive this data we need to create a `POST` route in express and the `body-parser` npm module.
+To receive this data we need to create a `POST` route in express.
 
 ---
 
 
-### BodyParser
+### Parsing Form Data
 
-Parsing parameters from a form needs an external module called `body-parser`.
-
-```bash
-npm install body-parser
-```
+Parsing parameters from a form needs a built-in express middleware function.
 
 ---
 
 **index.js**
 ```js
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 
 // tell your app to use the module
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+app.use(express.json());
+app.use(express.urlencoded({
   extended: true
 }));
 ```
 ---
 
-Note that we set an attribute `extended` to `true` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
+Note that we set an attribute `extended` to `true` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](https://expressjs.com/en/api.html#express.urlencoded).
 
 Now, if we try to add this backend route, calling `req.body` should contain the form input.
 
@@ -168,12 +163,11 @@ use this express starter code in index.js:
 ```js
 const jsonfile = require('jsonfile');
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 
 // tell your app to use the module
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+app.use(express.json());
+app.use(express.urlencoded({
   extended: true
 }));
 
