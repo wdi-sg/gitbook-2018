@@ -1,7 +1,7 @@
 day 3
-http methods / http request headers
 http urls
-express views / react
+http methods / http request headers
+browser forms
 
 
 
