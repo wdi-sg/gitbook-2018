@@ -136,16 +136,16 @@ You will need to install the method-override package using `npm install method-o
 app.use(methodOverride('_method'));
 ```
 
-Then, in your react HTML page, you will have to specify `_method=<VERB>`, where VERB can be either PUT or DELETE. Here is an example of PUT.
+Then, in your HTML page, you will have to specify `_method=<VERB>`, where VERB can be either PUT or DELETE. Here is an example of PUT.
 
 **edit**
 
 ```html
-<form method="POST" action="/{{pokemon.id}}?_method=PUT">
-  <div class="pokemon-attribute">
-    id: <input name="id" type="text" value="{{pokemon.id}}"/>
-  </div>
-</form>
+'<form method="POST" action="/'+pokemon.id+'?_method=PUT">'+
+  '<div class="pokemon-attribute">'+
+    'id: <input name="id" type="text" value="'+pokemon.id+'"/>'+
+  '</div>'+
+'</form>';
 ```
 
 For more examples and details, as usual, read the [method-override documentation](https://www.npmjs.com/package/method-override).
@@ -194,7 +194,7 @@ start your app
 nodemon index.js
 ```
 
-use this express starter code:
+use this express starter code in index.js:
 
 ```js
 const jsonfile = require('jsonfile');
@@ -238,26 +238,7 @@ curl -d "monkey=banana&koala=eucalyptus" -X POST http://localhost:3000/animals
 
 #### write the html form in a template to make the post request
 
-add react templating to your app
-```
-npm install express-react-views react react-dom
-```
-
-add a views directory
-```
-mkdir views
-```
-
-add the config into your express app
-```
-const reactEngine = require('express-react-views').createEngine();
-app.engine('jsx', reactEngine);
-
-app.set('views', __dirname + '/views');
-
-app.set('view engine', 'jsx');
-```
-- create your form in the views directory
+- create your form and put it in the public directory
 - set the action of the form to the path of the POST route
 
 - create a GET route request handler in your express app
