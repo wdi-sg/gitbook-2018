@@ -56,6 +56,7 @@ You will need to install the method-override package using `npm install method-o
 
 ```js
 // Set up method-override for PUT and DELETE forms
+const methodOverride = require('method-override')
 app.use(methodOverride('_method'));
 ```
 

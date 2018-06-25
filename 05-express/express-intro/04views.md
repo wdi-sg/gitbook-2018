@@ -10,8 +10,6 @@ We want to have this page's HTML be different for each request. How do we do thi
 ---
 
 ### Templating with React
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 If we want to customize what's on the page? We're going to set up a template engine with **[React](http://reactjs.org)** and use that instead.
 
@@ -66,7 +64,7 @@ app.get('/', (req, res) => {
 ---
 ### JSX
 
-JSX is javascript and HTML. It looke like this:
+JSX is javascript and HTML. It looks like this:
 ```
 var React = require('react');
 
@@ -86,8 +84,6 @@ module.exports = Home;
 At first it just seems like a javascript syntax error, but what we are doing is running this file through a parser that will create HTML for us.
 
 Everything between the `return` parentheses is going to be rendered into HTML.
-
-.... more syntax details ....
 
 ### Templating
 
@@ -142,8 +138,6 @@ module.exports = Home;
 
 The JavaScript being embedded is enclosed by the `{ }` tags.
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 ---
 
@@ -217,4 +211,35 @@ module.exports = Home;
 ---
 
 ### Pairing Exercise:
-Implement one template on your express app
+
+Start from scratch.
+
+Create an express app.
+
+```
+mkdir react-v
+cd react-v
+npm init
+npm install express
+npm install express-react-views react react-dom
+touch index.js
+```
+
+Go to this URL: [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
+
+Assign that JSON array to a variable `const users = ...`
+
+Implement an express route `/firstuser` - it creates an HTML page with the first user in the array `users[0]`.
+
+This template should display at least 2 data fields for this user.
+
+##### further
+
+Implement an express route `/users` - it creates an HTML page with all of the users in the `const users` variable.
+
+This template should display at least 2 data fields for each user.
+
+##### further
+Display the nested pieces of data in the user objects.
+
+You can also put those nested pieces of data in their own components / files.
