@@ -210,6 +210,31 @@ module.exports = Home;
 ```
 ---
 
+### HTML Attributes
+
+HTML attributes in react are written without the quotes by default:
+
+```
+<img src={pokemon.img} />
+```
+
+If you need to do string interpolation, create another variable:
+```
+let formAction = '/pokemon/' + pokemon.id;
+```
+
+```
+<form action={formAction}>
+```
+
+CSS class names are set with `className` instead of `class`
+```
+<p className="banana">yes</p>
+```
+
+
+---
+
 ### Pairing Exercise:
 
 Start from scratch.
