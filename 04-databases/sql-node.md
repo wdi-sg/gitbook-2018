@@ -195,12 +195,40 @@ client.query(insertText, [now, now, now], (err, res) => {
 ---
 
 ### Pairing Exercise:
-Create a command line app that runs the previous exercise, but inside of node.js. After each sql satement, output the result in a console.log, with a string that identifies that output.
+Create a command line app that runs the previous exercise, but inside of node.js. After each sql statement, output the result in a console.log, with a string that identifies that output.
 
+```
+mkdir nodepg
+cd nodepg
+init npm
+npm install pg
+touch index.js
+touch tables.sql
+touch seed.sql
+createdb your-test-db -U USERNAME
+```
 Use tables.sql to record the tables you need.
+
+Example:
+```
+CREATE TABLE IF NOT EXISTS students (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    phone VARCHAR(15),
+    email TEXT
+);
+```
 
 Use seed.sql to put some starting dummy data in the DB.
 
-Run your `index.js` script that runs all your sql commands.
+Example:
+```
+INSERT INTO students (name, phone, email) VALUES ('hello', 'bye', 'monkey');
+```
+
+Using the syntax above, run your `index.js` script that runs all your sql commands.
+```
+node index.js
+```
 
 Use DROP to wipe it away and start again.
