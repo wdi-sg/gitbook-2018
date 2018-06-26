@@ -123,33 +123,75 @@ It works the same way as `tables.sql` above, but it's only for data.
 ---
 
 ### Clear away your changes:
-In development it can be very useful to clear away the data you are writing into your db easily, without having to run the command in psql.
+In development it can be very useful to clear away the data you are writing into your db easily- just run this sql, then run your tables.sql above.
 
-Save this snippet in a cleardb.sql file. **Warning: BE VERY CAREFUL ABOUT RUNNING IT**
-The schemaname is usually the same name as your dbname.
-
----
-
-#### drop.sql
-From: [https://stackoverflow.com/a/36023359/271932](https://stackoverflow.com/a/36023359/271932)
 ```
-DO $$ DECLARE
-    r RECORD;
-BEGIN
-    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
-        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
-    END LOOP;
-END $$;
+DROP DATABASE dbname;
 ```
 
 ---
 
-#### Return the thing you created `RETURNING`
+#### Return the thing you created: `RETURNING`
+
+```
+client.query(insertQuery, (err, result) => {
+  // inside of result is the newly inserted thing
+```
+
+Return the id of the result of the insert.
+```
+INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9) RETURNING id;
+```
+
+Return the result of the insert.
+```
+INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9) RETURNING *;
+```
 
 ---
 
-#### Date Type with `pg` npm package / created_at
+#### Date Data Type
 
+When you set data type date in postgres, you get out a javascript Date object.
+
+```
+var d = new Date(); // this is a javascript date object.
+```
+
+Use `DEFAULT now()` to automatically have a `created_at` column in your database.
+
+```
+const createTableText = `
+CREATE TEMP TABLE dates(
+  date_col DATE DEFAULT now(),
+  timestamp_col TIMESTAMP DEFAULT now(),
+  timestamptz_col TIMESTAMPTZ DEFAULT now(),
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+`
+// create our temp table
+client.query(createTableText, (err, result) => {
+      // read the row back out
+    client.query('SELECT * FROM dates', (err, res) => {
+      console.log(result.rows)
+      // {
+      // date_col: 2017-05-29T05:00:00.000Z,
+      // timestamp_col: 2017-05-29T23:18:13.263Z,
+      // timestamptz_col: 2017-05-29T23:18:13.263Z
+      // }
+    })
+});
+```
+
+You can also use the plain js date data type to insert rows.
+```
+// insert the current time into it
+const now = new Date()
+const insertText = 'INSERT INTO dates(date_col, timestamp_col, timestamtz_col'
+client.query(insertText, [now, now, now], (err, res) => {
+  console.log( res.rows );
+});
+```
 ---
 
 ### Pairing Exercise:
@@ -161,4 +203,4 @@ Use seed.sql to put some starting dummy data in the DB.
 
 Run your `index.js` script that runs all your sql commands.
 
-Use drop.sql to wipe it away and start again.
+Use DROP to wipe it away and start again.
