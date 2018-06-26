@@ -1,4 +1,4 @@
-#PostgreSQL
+# PostgreSQL
 Postgres is the DB system we will be working with.
 
 If you installed Postgres.app you have access to psql from the elephant icon at the top of the screen:
@@ -203,7 +203,7 @@ UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 
 ---
 
-##DELETE-ing Data
+## DELETE-ing Data
 
 ```sql
 DELETE from students WHERE name = 'Mary';
@@ -355,7 +355,7 @@ The statement below deletes the Dude Wheres My Car row from the database:
 DELETE FROM movies WHERE title='Dude Wheres My Car';
 ```
 
-We could also use compond statements here:
+We could also use compound statements here:
 
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
