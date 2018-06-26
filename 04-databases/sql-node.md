@@ -71,9 +71,62 @@ client.connect((err) => {
 });
 ```
 
+### Node.js SELECT
+```
+let queryText = 'SELECT * FROM students';
+
+client.query(queryText, (err, res) => {
+    if (err) {
+      console.log("query error", err.message);
+    } else {
+      // iterate through all of your results:
+      for( let i=0; i<res.rows.length; i++ ){
+        console.log("result: ", res.rows[i]);
+      }
+    }
+});
+```
+### Node.js INSERT
+
+Most basic insert statement
+
+```
+let queryText = "INSERT INTO students (name, phone, email) VALUES ('scott', '(415) 111-6666', 'scott@email.com')";
+
+client.query(queryText, (err, res) => {
+    if (err) {
+      console.log("query error", err.message);
+    } else {
+      console.log("done!");
+    }
+});
+```
+
+**insert with parameters** and **RETURNING**
+
+Normally you will use the 2nd parameter of `client.query`- it allows you to pass in an array of values.
+
+RETURNING allows you to get back the `id` of the thing you inserted.
+
+```
+let queryText = 'INSERT INTO students (name, phone, email) VALUES ($1, $2, $3) RETURNING id';
+
+client.query(queryText, (err, res) => {
+    if (err) {
+      console.log("query error", err.message);
+    } else {
+      console.log("id of the thing you just created:", res.rows[0].id);
+    }
+});
+```
+
 ---
 
 ## Development workflow with postgres: tables.sql, seed.sql & drop.sql
+
+When working with your app it is helpful to be able to deal with all of your data easily.
+
+We'll create a workflow to easily wipe away your development data and start fresh.
 
 ---
 
@@ -107,18 +160,31 @@ CREATE TABLE IF NOT EXISTS students (
 
 So you can simply run the file each time you add a table, and only the uncreated tables will get created.
 
+To run the file on the command line:
 ```
 psql -d DATABASE_NAME -U USERNAME -f tables.sql
 ```
 
 ---
 
-### Start the db with some dummy data
+### Start the db with some dummy data - seed.sql
 Write some lines of SQL that will populate the db with some small data.
 
 This is normally things such as a first default user and other things you need to get up and running with your app.
 
 It works the same way as `tables.sql` above, but it's only for data.
+
+Inside of `seed.sql`:
+```
+INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9);
+```
+
+That way we always have some dummy data to start out our app with.
+
+Run the file:
+```
+psql -d DATABASE_NAME -U USERNAME -f tables.sql
+```
 
 ---
 
