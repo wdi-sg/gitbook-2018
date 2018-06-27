@@ -65,6 +65,19 @@ There are four kinds of joins, but for join tables we will only be using inner j
 ![https://www.w3schools.com/sql/img_rightjoin.gif](https://www.w3schools.com/sql/img_rightjoin.gif)
 ![https://www.w3schools.com/sql/img_fulljoin.gif](https://www.w3schools.com/sql/img_fulljoin.gif)
 
+
+```
+SELECT table1.column1,table1.column2,table2.column1,....
+FROM table1
+INNER JOIN table2
+ON table1.matching_column = table2.matching_column;
+
+
+table1: First table.
+table2: Second table
+matching_column: Column common to both the tables.
+```
+
 ---
 
 ### Many-to-many: Shops and Products
@@ -110,7 +123,6 @@ INSERT INTO products (name) VALUES ('Oversize Novelty Toothbrush');
 Fill join table
 ```
 INSERT INTO shop_products (product_id, shop_id) VALUES (1,2);
-INSERT INTO shop_products (product_id, shop_id) VALUES (1,2);
 INSERT INTO shop_products (product_id, shop_id) VALUES (1,3);
 INSERT INTO shop_products (product_id, shop_id) VALUES (2,3);
 INSERT INTO shop_products (product_id, shop_id) VALUES (2,1);
@@ -120,6 +132,32 @@ INSERT INTO shop_products (product_id, shop_id) VALUES (4,2);
 INSERT INTO shop_products (product_id, shop_id) VALUES (4,1);
 ```
 ---
+
+| id  | name            |
+| --- | ---             |
+| 1   | Alex's Boutique |
+| 2   | Nick's Bargains |
+| 3   | Worst Buy       |
+
+| id  | name                        |
+| --- | ---                         |
+| 1   | Baby Powder                 |
+| 2   | Boxing Gloves               |
+| 3   | Hulk iPhone Case            |
+| 4   | Oversize Novelty Toothbrush |
+
+| product                         | shop                 |
+| ---                             | ---                  |
+| Baby Powder (1)                 | Nick's Bargains (2)  |
+| Baby Powder (1)                 | Worst Buy (3)        |
+| Boxing Gloves (2)               | Worst Buy  (3)       |
+| Boxing Gloves (2)               | Alex's Boutique (1)  |
+| Hulk iPhone Case (3)            | Worst Buy (3)        |
+| Oversize Novelty Toothbrush (4) | Alex's Boutique (1)  |
+| Oversize Novelty Toothbrush (4) | Nick's Bargains (2)  |
+| Oversize Novelty Toothbrush (4) | Worst Buy (3)        |
+
+#### Queries:
 
 Get every product in Nick's Bargains (id = 2)
 ```
