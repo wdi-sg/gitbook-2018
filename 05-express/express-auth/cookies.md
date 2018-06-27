@@ -45,7 +45,7 @@ Look at your network tab. What cookies are in the response header, that the site
 
 Install and include the cookie parser library.
 ```
-yarn add cookie-parser
+npm install cookie-parser
 ```
 ```
 const cookieParser = require('cookie-parser')
@@ -88,3 +88,17 @@ response.cookie('visits', visits);
 ```
 
 ---
+
+### Pairing Exercise
+Follow the instructions above to test cookies in your browser.
+
+Implement cookies in an express app.
+
+Create a new express app, or you can use one you already have.
+
+Add express cookie parser library to the express app.
+```
+npm install cookie-parser
+```
+
+Follow the instructions above to implement cookies.
