@@ -6,11 +6,16 @@ We can create a number/string that represents the contents of something, without
 
 ---
 
-#### Encoding a cipher example:
+#### Cyphers:
+Transform one text into something else:
+
+**Encoding a cipher example:**
 a-z == 1-26 ==> aaa == 111
 one letter forwards ==> "hello" == "ifmmp"
 
-Hashing is just a mathematically irreversable cipher. We can't get the actual contents of the hash back out. Because prime numbers.
+Hashing is just a mathematically irreversable cipher. We can't get the actual contents of the hash back out.
+
+This is hard because of one of the properties prime numbers.
 
 ---
 
@@ -37,20 +42,28 @@ Hashing turns out to be the best way to store a string that you need to know is 
 
 Passwords work by storing a hash of the password, then throwing the actual password away.
 
+#### Uses of hashes:
+
+- git
+- bitcoin
+- file integrity
+- ssh / https / encryption
+- TOR / darkweb
+
 ---
 
 ##Password Hashing
 
-For password protection we'll use bcrypt. Bcrypt creates highly secure salted passswords. Learn more about bcrypt: [bcrypt wiki](http://en.wikipedia.org/wiki/Bcrypt). Note that bcrypt hashes passwords in an extremely secure way. It differs from other hashing methods like MD5 by putting a roadblock in the way between the hash and a hacker (specifically, time). Let's see how this works.
+For password protection we'll use sha256. sha256 creates highly secure salted passswords. Learn more about sha256: [SHA-2](https://en.wikipedia.org/wiki/SHA-2). Note that sha256 hashes passwords in an extremely secure way. It differs from other hashing methods like MD5 by putting a roadblock in the way between the hash and a hacker (specifically, time). Let's see how this works.
 
 ---
 
-To use bcrypt in node we need to install / use the bcrypt npm module.
+To use sha256 in node we need to install / use the sha256 npm module.
 
-**Install bcrypt**
+**Install sha256**
 
 ```
-yarn add bcrypt
+npm install js-sha256
 ```
 
 
@@ -58,25 +71,11 @@ yarn add bcrypt
 
 ```js
 // require it
-const bcrypt = require('bcrypt');
+var sha256 = require('js-sha256');
 
 //example
-bcrypt.hash('myPassword', 1, (err, hash) => {
-  //hash = hashed password (using salt)
-});
+sha256('The quick brown fox jumps over the lazy dog'); // d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592
 ```
-
----
-
-**bcrypt.hash() takes 3 parameters**
-
-* Password to hash -- self explanitory
-* Rounds -- Number of rounds of processing when generating the salt. The higher the number, the longer it takes to generate the hash, and the more secure the hash.
-* Callback function (called when the hashing completes)
-
-**Note about rounds:** The higher the number, the longer it will take for a potential hacker to crack the password via brute-force. HOWEVER, it also takes longer to create the password. The default value of 10 takes less than a second. A value of 13 will take about a second. 25 will take about an hour and 30 will take DAYS to complete. The default value of 10 is perfectly fine for now.
-
-[More info about bcrypt module](https://www.npmjs.com/package/bcrypt)
 
 ---
 
@@ -96,26 +95,26 @@ In order to store the password hash, we will need to introduce the idea of havin
 ### Process:
 
 1. create user:
-  1. user makes get request to server for the register form
-  1. user fills out form and submits
-  1. server recieves post request
+  1. user makes GET request to server for the register form
+  1. user fills out form and submits a POST request
+  1. server recieves POST request
     1. hashes password
     1. creates user record
   1. server sets a cookie in the header of the response.
   1. all subsequent requests to the server will have the `logged_in` cookie
 
 1. login ( user is not currently logged in )
-  1. user makes get request to server for the login form
+  1. user makes GET request to server for the login form
   1. user fills out form and submits
-  1. server recieves post request
+  1. server recieves POST request
     1. gets user record
     1. hashes password
     1. compares hash to what is in the record
     1. if record and hash match, set a cookie in the response header
 
 1. logout ( user is logged in )
-  1. user makes post request for logout
-  1. server recieves post request
+  1. user makes POST request for logout
+  1. server recieves POST request
     1. server sends clear cookie in response header
 
 ### Pairing exercise:
@@ -123,54 +122,42 @@ Create a command line app that hashes the argument:
 
 Create a new dir
 ```
-mkdir bcrypt
+mkdir sha256
 ```
 
 cd into it
 ```
-cd bcrypt
+cd sha256
 ```
 init a new package json
 ```
-yarn init
+npm init
 ```
-add bcrypt
+add sha256
 ```
-yarn add bcrypt
+npm install js-sha256
 ```
 require it at the top of the file
 ```
-const bcrypt = require('bcrypt');
+const sha256 = require('js-sha256');
 ```
 
 take an argument and hash it
 ```
 let input = process.argv[2];
-
-bcrypt.hash(input, 1, (err, hash) => {
-  console.log( hash );
-});
+let hash = sha256(input);
 ```
 
 copy/paste that output somewehere, and then write code that compares two hashes:
 
 ```
-bcrypt.compare(input, oldInput, function(err, res) {
-  if( res === true ){
+let otherInput = process.argv[2];
 
-    console.log("same");
-  }else{
+if( hash === sha256(otherInput) ){
 
-    console.log("not same");
-  }
-});
-```
+  console.log("same");
+}else{
 
-change the number of rounds:
-```
-let input = process.argv[2];
-
-bcrypt.hash(input, 100, (err, hash) => {
-  console.log( hash );
-});
+  console.log("not same");
+}
 ```
