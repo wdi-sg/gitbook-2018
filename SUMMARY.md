@@ -90,6 +90,7 @@
   * [Express Authentication](05-express/express-auth/readme.md)
     * [Cookies](05-express/express-auth/cookies.md)
     * [Auth / Password](05-express/express-auth/password.md)
+    * [Session](05-express/express-auth/session.md)
     * [passport.js](05-express/express-auth/passport.md)
   * [Additional Topics](05-express/additional-topics/readme.md)
     * [APIs with Express](05-express/express-apis/03apis.md)
