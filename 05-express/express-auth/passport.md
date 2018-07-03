@@ -208,9 +208,11 @@ console.log("request user", request.user );
 ```
 
 We can add 2 new keys into the template:
-1. the boolean for if the current requester is logged in / authenticated
-1. the entire user in the request / session
-```
+
+  1. the boolean for if the current requester is logged in / authenticated
+  1. the entire user in the request / session
+
+```js
 let context = {
   isAuthenticated: request.isAuthenticated(),
   user:request.user,
