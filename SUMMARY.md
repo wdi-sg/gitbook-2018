@@ -92,6 +92,8 @@
     * [Auth / Password](05-express/express-auth/password.md)
     * [Session](05-express/express-auth/session.md)
     * [passport.js](05-express/express-auth/passport.md)
+  * [MVC](05-express/additional-topics/mvc.md)
+  * [AJAX](05-express/additional-topics/ajax.md)
   * [Additional Topics](05-express/additional-topics/readme.md)
     * [APIs with Express](05-express/express-apis/03apis.md)
     * [Geocoding and Google Maps](05-express/additional-topics/express-geocode/readme.md)
