@@ -112,6 +112,7 @@
   * [Database Administration](04-databases/dbadmin.md)
 * [Ruby](06-ruby-rails/ruby.md)
   * [Intro to Ruby](06-ruby-rails/ruby-intro/readme.md)
+  * [Ruby v. JS](06-ruby-rails/ruby-intro/ruby-js.md)
   * [Object Oriented Ruby](06-ruby-rails/ruby-classes/oop.md)
   * [Ruby Classes](06-ruby-rails/ruby-classes/readme.md)
   * [Ruby Inheritance](06-ruby-rails/ruby-inheritance/readme.md)
