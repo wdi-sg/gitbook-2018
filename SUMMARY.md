@@ -116,6 +116,7 @@
   * [Object Oriented Ruby](06-ruby-rails/ruby-classes/oop.md)
   * [Ruby Classes](06-ruby-rails/ruby-classes/readme.md)
   * [Ruby Inheritance](06-ruby-rails/ruby-inheritance/readme.md)
+  * [Ruby Exceptions](06-ruby-rails/ruby-intro/exceptions.md)
   * [Ruby TDD](06-ruby-rails/ruby-tdd/readme.md)
 * [Ruby on Rails](06-ruby-rails/rails.md)
   * [Intro to ActiveRecord](06-ruby-rails/rails-intro/active_record/readme.md)
