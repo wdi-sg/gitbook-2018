@@ -180,7 +180,7 @@ end
 </table>
 ```
 
-#### create the app/views/welcome/index.html.erb and add a link:
+#### create the app/views/articles/index.html.erb and add a link:
 ```
 <%= link_to 'My Blog', controller: 'articles' %>
 ```
@@ -245,7 +245,7 @@ end
 
 #### Add the edit link to app/views/articles/index.html.erb to make it appear next to the "Show" link:
 ```
-<td><%= link_to 'Edit', edit_article_path(article) %></td>
+<td><%= link_to 'Edit', edit_article_path(@article) %></td>
 ```
 
 
