@@ -5,6 +5,11 @@
 * Implement one to many relationships through models in Rails
 * Use the `collection_select` form helper to display a collection of associated items
 
+Let's create a minimal rails app so that we can demonstrate the use of associations inside the rails app.
+
+Rails gives us a few tools to make associations easy inside the controllers and views (in addition to active record)
+
+
 ## Create the app:
 ```bash
 rails new parks -d postgresql
@@ -19,7 +24,7 @@ rails new parks -d postgresql
   * Park `has_many` Rangers
   * Ranger `belongs_to` a Park
 * Views
-  * parks#new - add/remove rangers select
+  * parks#new
   * parks#show
     * list all rangers with a specific park
 
@@ -27,7 +32,7 @@ rails new parks -d postgresql
   * rangers#show
 
 * Controllers
-  * parks#new - get a list of all rangers here
+  * parks#new
   * parks#show
     * list all rangers with a specific park
 
@@ -37,7 +42,7 @@ rails new parks -d postgresql
 * Routes
   * We can nest the routes of one resource within the other one.
 
-## Generating models
+## Generating models / databse migrations
 
 Review of **Parks**
 
@@ -55,14 +60,16 @@ rails db:create
 rails db:migrate
 ```
 
+Rails should have generated this association in the model file:
+#### app/models/ranger.rb
+```ruby
+belongs_to :park
+```
+
 Change the model file to associate Park with Ranger:
 #### app/models/park.rb
 ```ruby
 has_many :ranger
-```
-#### app/models/ranger.rb
-```ruby
-has_one :park
 ```
 
 ## Check your work on the command line
@@ -91,13 +98,25 @@ rails dbconsole
 SELECT * FROM rangers;
 ```
 
+## Set up our requests:
+### Nested route
+```ruby
+resources :parks do
+  resources :rangers
+end
+
+resources :rangers
+```
+
+Test the routes they produce: `rake routes`
+
 ## Make the controllers:
-app/controllers/parks_controller.rb
+
+*app/controllers/parks_controller.rb*
 ```ruby
 class ParksController < ApplicationController
 
   def new
-    @rangers = Ranger.all
   end
 
   def create
@@ -121,7 +140,7 @@ end
 ```
 
 
-app/controllers/rangers_controller.rb
+*app/controllers/rangers_controller.rb*
 ```ruby
 class RangersController < ApplicationController
 
@@ -154,18 +173,10 @@ private
 end
 ```
 
-## Set up our requests:
-### Nested route
-```ruby
-resources :parks do
-  resources :rangers
-end
-
-resources :rangers
-```
-
 ## views
-The app/views/parks/new.hmtl.erb file looks the same
+The app/views/parks/new.html.erb file looks the same:
+
+*app/views/parks/new.html.erb*
 ```erb
 <%= form_with scope: :park, url: parks_path, local: true do |form| %>
 
@@ -185,9 +196,11 @@ The app/views/parks/new.hmtl.erb file looks the same
 <% end %>
 ```
 
-## rangers#new view helpers:
+## rangers#new
 
-* Prepare in the controller: make an instance variable with `@parks`
+#### creating the ranger -> park association:
+
+* Prepare in the `ranger#new`controller: make an instance variable with `@parks`
 ```ruby
 @parks = Park.all
 ```
@@ -196,7 +209,9 @@ Create a pre-populated select tag:
 <%= f.collection_select :park_id, @parks, :id, :name %>
 ```
 
-All together it should look like this app/views/rangers/new.hmtl.erb
+All together it should look like this app/views/rangers/new.html.erb
+
+*app/views/rangers/new.html.erb*
 ```erb
 <%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
 
@@ -212,8 +227,39 @@ All together it should look like this app/views/rangers/new.hmtl.erb
   </p>
 <% end %>
 ```
-
 [http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select](http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select)
+
+## logic for parks/:id/rangers
+
+When you configure your routes like above:
+```
+resources :parks do
+  resources :rangers
+end
+```
+
+It creates routes that look like: (excerpt from `rake routes`)
+```
+      Prefix Verb   URI Pattern                         Controller#Action
+park_rangers GET    /parks/:park_id/rangers(.:format)   rangers#index
+     rangers GET    /rangers(.:format)                  rangers#index
+```
+
+Because both routes point to a single controller we need to write some logic to get this to work- rails doesn't do that for us.
+
+```ruby
+def index
+  # test to see if we are at /parks/:id/rangers or /rangers
+  if params.has_key?(:park_id)
+    # get all the rangers for a specific park
+    @rangers = Ranger.where(park_id: params[:park_id] )
+  else
+    # get all rangers
+    @rangers = Ranger.all
+  end
+end
+```
+
 
 ## Exercise:
 Repeat the steps above.
