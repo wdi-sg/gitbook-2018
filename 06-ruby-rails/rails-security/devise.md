@@ -14,7 +14,7 @@ THe base app is a one model rails app. You can insert and see each record. It ha
 [https://github.com/wdi-sg/user-songs](https://github.com/wdi-sg/user-songs)
 
 ```
-git clone git@github.com:wdi-sg/user-songs.git
+git clone https://github.com/wdi-sg/user-songs.git
 cd user-songs
 ```
 Install the app and run it to see that it works.
