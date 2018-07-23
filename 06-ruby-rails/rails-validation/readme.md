@@ -45,12 +45,56 @@ validates :name, :login, :email, presence: true
 validates :email, uniqueness: true
 ```
 
+Validate a foreign key relationship:
+```
+validates :user, presence: true
+```
+
+Validates a many to many relationship:
+```
+class Course < ActiveRecord::Base
+
+  has_and_belongs_to_many :teachers
+
+  validate :has_one_teacher_at_least
+
+  def has_one_teacher_at_least
+    if teachers.empty?
+      errors.add(:teachers, "need one teacher at least")
+    end
+  end
+end
+```
+(see custom validations below)
+
+#### Custom validations
+```
+class Invoice < ApplicationRecord
+  validate :active_customer, on: :create
+
+  def active_customer
+    errors.add(:customer_id, "is not active") unless customer.active?
+  end
+end
+```
+From [here](http://guides.rubyonrails.org/active_record_validations.html#custom-methods)
+
+#### Controllers for implementing validations errors:
+```
+if @ranger.save
+  redirect '/'
+else
+  @parks = Park.all
+  render 'new'
+end
+```
+
 #### Output Model Validation Errors
 
 Make a helper method in app/helpers/application_helper.rb
 ```
 def show_errors(object, field_name)
-  if object.errors.any?
+  if object && object.errors.any?
     if !object.errors.messages[field_name].blank?
       object.errors.messages[field_name].join(", ")
     end
@@ -58,9 +102,11 @@ def show_errors(object, field_name)
 end
 ```
 
-Use the helper method for each form input
+Use the helper method for *each* form input
 ```
 <p class="error">
   <%= show_errors(@user, :name) %>
 </p>
 ```
+
+Create custom error messages: [https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails](https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails)

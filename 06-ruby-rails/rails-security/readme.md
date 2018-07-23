@@ -14,7 +14,9 @@ Someone enters this into an unprotected webform for a blog comment:
 window.location = "https://myunsecuresite.com";
 </script>
 ```
+
 Whoever loads this page's blog will also load this person's comment.
+
 Their window location will be changed.
 ---
 
@@ -51,6 +53,9 @@ query = "SELECT * FROM Users WHERE name = '" + name + "'";
 
 //name ==> ' OR 1=1 --'
 ```
+
+https://github.com/wdi-sg/express-reference/blob/security/index.js#L124
+
 ---
 
 #### Batched SQL Queries

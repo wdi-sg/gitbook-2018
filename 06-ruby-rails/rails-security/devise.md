@@ -9,7 +9,7 @@ We will follow instuctions from the devise website:
 
 
 ### Clone the base app
-THe base app is a one model rails app. You can insert and see each record. It has an index page.
+The base app is a one model rails app. You can insert and see each record. It has an index page.
 
 [https://github.com/wdi-sg/user-songs](https://github.com/wdi-sg/user-songs)
 
@@ -35,10 +35,6 @@ gem 'devise'
 Install it
 ```
 bundle install
-```
-
-```
-rails db:create
 ```
 
 Run the gem's script files so it can generate the default files in the rails app
@@ -137,4 +133,9 @@ end
 ### Logout Link
 ```
 <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+```
+
+### Login Link
+```
+<%= link_to 'log in', new_user_session_url %>
 ```
