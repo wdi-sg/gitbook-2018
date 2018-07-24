@@ -26,6 +26,11 @@ A 64-bit version of Windows 10 is absolutely needed here as we will be using the
 
 - Create an alias for your text editor in WSL so that you can launch it from the WSL's CLI. For Sublime Text, if you had installed it at the default location, run `echo 'alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"' >> ~/.profile` at your WSL's CLI. Then, close and re-open WSL, or run `source ~/.bashrc` to reload the configuration, and test it out by typeing `subl` and pressing enter in WSL.
 
+## (Optional) Speeding up WSL's I/O Performance
+
+WSL's disk I/O speeds are quite abysmal out-of-the-box as of this writing due to W10's real-time antivirus protection. However, this protection is fairly useless for Linux, so we can gain quite a bit of speed from disabling it for (only) WSL. Follow the instructions over at https://medium.com/@leandrw/speeding-up-wsl-i-o-up-than-5x-fast-saving-a-lot-of-battery-life-cpu-usage-c3537dd03c74 to do so. The performance improvement is most noticeable when developing with Rails.
+
+
 ## Node
 
 We will install the Linux version of NodeJS into WSL without any version manager. The commands here will install Node v10.x. For other versions, change the number after `setup_` in the 2nd command accordingly. If you wish to run multiple versions of NodeJS on your machine, which may be necessary for legacy development work, look at the section on using nvm instead. __Warning: Do NOT run through both sets of instructions (here, and the one for `nvm`) or you will encounter version/library conflicts.__
