@@ -196,7 +196,7 @@ touch index.html
 ```
 
 
-1. Include the libraries from the CDN:
+2. Include the libraries from the CDN:
 
 ```
 <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -204,29 +204,32 @@ touch index.html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
 ```
 
-1. Add the `root` DOM element
+3. Add the `root` DOM element
 
 ```
 <div id="root"></div>
 ```
 
-2. Create some jsx and have Babel transpile it.
+4. In the javascript console:
+
+Create some jsx and have Babel transpile it.
 
 ```
-var reactJsx = "ReactDOM.render(<p>hello world!</p>,document.getElementById('root'));";
+// The actual JSX code is: <p>hello world!!</p>
+var reactJsxString = "ReactDOM.render(<p>hello world!</p>,document.getElementById('root'));";
 
-var result = babel.transform( reactJsx );
+var result = babel.transform( reactJsxString );
 
 console.log( result.code );
 ```
 
-3. Try JS eval on some random code
+5. Try JS eval on some random code
 
 ```
 eval("alert('hello')");
 ```
 
-4. Eval the generated code
+6. Eval the generated code
 
 ```
 eval(result.code);
@@ -237,3 +240,4 @@ eval(result.code);
 - Try building more complicated JSX and evaling it:
 - Try the conditional and looping render.
 - Change the DOM attachment point to something else. (Write other elements in the HTML)
+- Put the jsx portion into a variable.

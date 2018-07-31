@@ -5,7 +5,6 @@
 * Review importing and using third-party node modules into React using npm
 * Use React Router's `BrowserRouter`, `Link`, `Route`, `Redirect`, and `Switch` components to add navigation to a React application
 * Review the React component lifecycle and use component methods to time API calls
-* Use `axios` to query APIs for data
 
 ## Framing (5 min / 0:05)
 
