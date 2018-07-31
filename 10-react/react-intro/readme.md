@@ -1,7 +1,4 @@
 # Intro to React
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 
 ## Framing
@@ -61,8 +58,6 @@ Babel is the tool we will use to *transpile* JSX to javascript.
 ---
 
 #### 1.1 How Babel works
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
 <script>
@@ -115,7 +110,7 @@ Babel takes the entire transpiled string and executes it for us.
 ---
 
 ### 2. ReactDOM
-Now that we understand the magic behind this new `JSX` syntax, let's at the example again.
+Now that we understand the magic behind this new `JSX` syntax, let's look at the example again.
 
 Specifically:
 ```
@@ -157,8 +152,6 @@ ReactDOM.render(
 );
 ```
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 Does this syntax look familiar? It works just like every rendering layer we've seen so far, in express and rails.
 
@@ -182,7 +175,7 @@ ReactDOM.render(
 ```
 ---
 
-### Exercise: Render JSX with react and babel
+### Pairing Exercise: Render JSX with react and babel
 
 1. Create a boilerplate HTML page.
 ```
@@ -204,19 +197,21 @@ touch index.html
 
 
 1. Include the libraries from the CDN:
+
 ```
 <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
-
 ```
 
 1. Add the `root` DOM element
+
 ```
 <div id="root"></div>
 ```
 
-1. Create some jsx and have Babel transpile it.
+2. Create some jsx and have Babel transpile it.
+
 ```
 var reactJsx = "ReactDOM.render(<p>hello world!</p>,document.getElementById('root'));";
 
@@ -225,12 +220,14 @@ var result = babel.transform( reactJsx );
 console.log( result.code );
 ```
 
-1. Try JS eval on some random code
+3. Try JS eval on some random code
+
 ```
 eval("alert('hello')");
 ```
 
-1. Eval the generated code
+4. Eval the generated code
+
 ```
 eval(result.code);
 ```
