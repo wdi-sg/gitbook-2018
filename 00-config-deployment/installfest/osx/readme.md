@@ -223,8 +223,8 @@ brew update
 
 brew install ruby-build
 
-rbenv install 2.3.5
-rbenv global 2.3.5
+rbenv install 2.5.1
+rbenv global 2.5.1
 ```
 
 ### Install Rails
