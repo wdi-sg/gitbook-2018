@@ -1,7 +1,4 @@
 # React Components
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 We saw a bit of how react works, and how babel works with react.
 
@@ -175,7 +172,7 @@ ReactDOM.render(
 Run the above code: create a component that gets rendered multiple times by passing in props.
 
 #### Further
-Have the list item class render 2 components: `ItemId` which will use the map `index` as the id, and Item which will render the text of the item. Pass data into these two components as props.
+Have the list item class render 2 components: `ItemId` which will use the map `index` (from the above example) as the id, and `Item` which will render the text of the item. Pass data into these two components as props.
 
 #### Further
 ```
