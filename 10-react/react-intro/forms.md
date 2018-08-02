@@ -10,7 +10,7 @@ constructor(){
   this.changeHandler = this.changeHandler.bind( this );
 }
 
-this.state = {
+state = {
   word : ""
 }
 
