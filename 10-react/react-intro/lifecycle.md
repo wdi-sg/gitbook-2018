@@ -1,5 +1,7 @@
 # React Component Lifecycle
 
+![https://github.com/wdi-sg/gitbook-2018/blob/8001ca2ffc95d1bc20152ca197f3fd808f06491f/react-lifecycle.jpeg?raw=true](https://github.com/wdi-sg/gitbook-2018/blob/8001ca2ffc95d1bc20152ca197f3fd808f06491f/react-lifecycle.jpeg?raw=true)
+
 What is actually happening when we update the counter?
 
 ```
