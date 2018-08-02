@@ -138,6 +138,13 @@ Build the above counter increment.
 
 Watch the console to see when clicking and rendering happen.
 
+Don't forget to include the 3 libraries you need:
+```
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
+
 #### Further
 Build the counter display into it's own component.
 

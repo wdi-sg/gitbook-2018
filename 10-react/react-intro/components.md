@@ -60,7 +60,7 @@ class List extends React.Component {
         return (
           <ul>
             <li>Hello world</li>
-          </ul>;
+          </ul>
         );
     }
 }
@@ -170,6 +170,23 @@ ReactDOM.render(
 
 ### Exercise
 Run the above code: create a component that gets rendered multiple times by passing in props.
+
+Don't forget to include the 3 libraries you need:
+```
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
+
+Create a separate jsx file to put your code in and create a script tag to go with it.
+```
+<script src="script.jsx" type="text/babel"></script>
+```
+
+
+
+
+Chrome will require that you get your file from the network (localhost) - so you will have to run `http-server` in your current directory in order to get the file to be loaded and executed from the script tag.
 
 #### Further
 Have the list item class render 2 components: `ItemId` which will use the map `index` (from the above example) as the id, and `Item` which will render the text of the item. Pass data into these two components as props.
