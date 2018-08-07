@@ -7,6 +7,7 @@ We need another system to run webpack on top of rails that could integrate with 
 From the official webpacker documentation: [https://github.com/rails/webpacker](https://github.com/rails/webpacker)
 
 ```
+gem install webpacker
 rails new blog --webpack=react -d postgresql
 cd blog
 rails generate scaffold Post name:string title:string content:text
@@ -41,6 +42,30 @@ If you are using react styles you can do this:
 ```
 <%= stylesheet_pack_tag 'hello_react' %>
 ```
+
+### Start your complete react app:
+```
+mkdir components
+touch app.jsx
+```
+
+app.jsx
+```
+import React from 'react'
+
+export default class App extends React.Component{
+
+  render(){
+    return(<div>
+            <h1>APPPPPPP!</h1>
+          </div>);
+  }
+}
+```
+
+`app.jsx` is the place where you start writing your actual react app.
+
+All other parts of your react app will go in the `components` directory. `packs` is just for the very top level files.
 
 ### Other assets in the rails asset pipeline:
 Refer to this page of the webpacker docs: [https://github.com/rails/webpacker/blob/master/docs/assets.md](https://github.com/rails/webpacker/blob/master/docs/assets.md)
