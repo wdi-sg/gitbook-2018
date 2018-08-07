@@ -42,6 +42,9 @@ If you are using react styles you can do this:
 <%= stylesheet_pack_tag 'hello_react' %>
 ```
 
+### Other assets in the rails asset pipeline:
+Refer to this page of the webpacker docs: [https://github.com/rails/webpacker/blob/master/docs/assets.md](https://github.com/rails/webpacker/blob/master/docs/assets.md)
+
 ### Development
 
 Open up *two* terminals:

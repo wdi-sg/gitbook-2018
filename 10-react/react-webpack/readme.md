@@ -237,6 +237,10 @@ Do you want asset pipeline-like controls over asset urls? Check out the webpack 
 
 Webpack sass: [https://github.com/webpack-contrib/sass-loader](https://github.com/webpack-contrib/sass-loader)
 
+### Simplified starting app template:
+A less opinionated express / webpack / react starting app:
+[https://github.com/wdi-sg/react-express](https://github.com/wdi-sg/react-express)
+
 ### Exercise: ES6 destructuring
 Run these code snippets:
 
