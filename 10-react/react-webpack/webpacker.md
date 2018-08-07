@@ -7,6 +7,7 @@ We need another system to run webpack on top of rails that could integrate with 
 From the official webpacker documentation: [https://github.com/rails/webpacker](https://github.com/rails/webpacker)
 
 ```
+brew install yarn
 gem install webpacker
 rails new blog --webpack=react -d postgresql
 cd blog
