@@ -57,3 +57,6 @@ Type `which psql` at which point should display
 ```
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
+
+## Install some other sublime packages:
+  * Babel (syntax definition, we'll use this when working with React)
