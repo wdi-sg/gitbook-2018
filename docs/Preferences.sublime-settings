@@ -1,0 +1,98 @@
+{
+  "always_show_minimap_viewport": true,
+  
+// Using ⌘-P, these files will never be shown in results
+  "binary_file_patterns":
+  [
+    "*.ai",
+    "*.dds",
+    "*.eot",
+    "*.gif",
+    "*.ico",
+    "*.jar",
+    "*.jpg",
+    "*.jpeg",
+    "*.map",
+    "*.min.js",
+    "*.otf",
+    "*.pdf",
+    "*.png",
+    "*.psd",
+    "*.swf",
+    "*.tga",
+    "*.ttf",
+    "*.zip",
+    "_tmp/",
+    "*.DS_Store",
+    ".sass-cache/",
+    "node_modules/",
+    "tmp/"
+  ],
+  "bold_folder_labels": true,
+
+  // This makes the caret bigger, obvious and blinking!
+  "caret_extra_bottom": 2,
+  "caret_extra_top": 2,
+  "caret_extra_width": 3,
+  "caret_style": "phase",
+
+  "draw_minimap_border": true,
+  
+  // line 372 in Default, this simplifies what files and folders don't show up in the side bar, add more at your own peril
+  "file_exclude_patterns":
+  [
+    "*.ai",
+    "*.db",
+    "*.pdf",
+    "*.psd",
+    "*.sassc",
+    "*.scssc",    
+    "*.sublime-project",
+    "*.sublime-workspace",
+    "*.zip",
+    "*.DS_Store",
+    "config.codekit"
+  ],
+  "folder_exclude_patterns":
+  [
+    ".bin",
+    ".git",
+    ".hg",
+    ".sass-cache",
+    ".svn",
+    "bin",
+    "CVS",
+    "tmp",
+    "wp-admin",
+    "wp-includes"
+  ],
+  "font_size": 21,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+
+  // Adding draw_active will change the color of the inner most guide
+  "indent_guide_options":
+  [
+    "draw_active",
+    "draw_normal"
+  ],
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "match_brackets_angle": true,
+
+  // ANNOYING OSX-only bug that prevents files opening in their own window
+  "open_files_in_new_window": false,
+
+  // Why? Because I use a large 27" monitor on top of my laptop screen    
+  "scroll_past_end": true,    
+  
+  // Why not turn this on by default? Spell check all the things!
+  "spell_check": true,
+  "theme": "Material-Theme-Darker.sublime-theme",
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": true,
+  "draw_white_space": "all",
+  "translate_tabs_to_spaces": true,
+  "detect_indentation": false,
+  "tab_size": 4
+}
