@@ -1,17 +1,15 @@
 # WDI Singapore Install Fest
 
-For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
+For the first portion of the class, we'll be working exclusively inside of the browser. We'll be installing the following tools.
 
 * Slack
 * Homebrew
 * Git
-* Node
-* Postgres.app
-* Ruby
-* Rails
+
+If you already have some tools and software installed that are similar to below, it will be more conveient for you to switch over than it will be for you to try to go ahead with your current versions.
 
 ## Hidden Files
-Set your finder to display hidden unix files by default:
+With a finder window open, set your finder to display hidden unix files by default:
 ```
 cmd + shift + .
 ```
@@ -65,9 +63,6 @@ You should probably install the command line prompt and autocompletition plugins
 #### Caching Github Login
 We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
 
-For SSH Keys you can cache them too if needed:
-https://help.github.com/articles/generating-ssh-keys/
-
 ### Setting up the bash shell
 > do you have any other shell configuration files in your home directory?
 > `ls -la ~`
@@ -77,29 +72,6 @@ https://help.github.com/articles/generating-ssh-keys/
 Create a new shell config file.
 ```
 touch ~/.profile
-```
-
-
-## Node
-
-To install Node
-```
-brew install node
-```
-
-Verify the installation afterwards by running
-
-```
-node -v
-npm -v
-```
-
-The above should display without any errors.
-
-To finish up your installation, run this command to allow for global installations of npm tools.
-
-```
-sudo chown -R $USER /usr/local/lib
 ```
 
 
@@ -125,7 +97,12 @@ sublime ~/Documents
 sublime .
 ```
 
-#### set sublime as your command line default editor
+#### set sublime as your command line default editor:
+
+Open your ~/.profile file using sublime.
+
+Add the code below:
+
 **this also allows you to refresh changes to your shell config**
 ```
 export VISUAL=sublime
@@ -146,6 +123,12 @@ Package Control allows you to add new functionality to sublime.
 
 [https://packagecontrol.io/installation](https://packagecontrol.io/installation)
 
+
+### Get the `Preferences.sublime-settings` file:
+[https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings#)
+
+Create a file named `Preferences.sublime-settings` exactly, and save it in your home directory.
+
 #### Using Package Control
 [https://packagecontrol.io/docs/usage](https://packagecontrol.io/docs/usage)
 
@@ -155,102 +138,20 @@ Package Control allows you to add new functionality to sublime.
 - `cmd+shift+p` type in `Package Control: Install Package` (auto-complete will help you) and press return
 - type in `editorconfig` to install the package
 
-### Get the `.editorconfig` file
-You can find this file in your class repo. Copy it into your home directory.
-```
-cp /path/to/file ~/.
-```
+### Get the `.editorconfig` file:
+[https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.editorconfig](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.editorconfig)
+
+Create a file named `.editorconfig` exactly, and save it in your home directory.
+
+### Get the `.gitignore file`
+[https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.gitignore](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.gitignore)
+
+Create a file named `.gitignore` exactly, and save it in your home directory.
+
 
 ### Set Sublime to run as your git commit message editor
+
+#### BEFORE YOU RUN THIS, MAKE SURE THE PATH / LOCATION OF YOUR SUBLIME APP IS CORRECT
 ```
 git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w"
-```
-
-## [Postgres](#postgres)
-
-### Postgres.app
-We will be using a relational database called Postgres for Node and Rails portion our class.
-
-Download and install from [http://postgresapp.com/](http://postgresapp.com/)
-
-Get the version of Postgres being installed on your system:
-```
-ls -la /Applications/Postgres.app/Contents/Versions
-```
-
-There should be only one version in this directory, or take the highest version.
-
-Create the export path command with that version number/directory name
-```
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
-```
-
-If you have successfully configured bash and sublime, the following command should work.
-
-```
-sublime ~/.profile
-```
-
-Your sublime editor will popup with configuration settings, at the bottom of the file append the same line:
-```
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
-```
-
-Type `which psql` at which point should display
-
-```
-/Applications/Postgres.app/Contents/Versions/9.5/bin/psql
-```
-
-## Installing Ruby on Rails
-
-### Install rbenv
-rbenv lets us change ruby verions on the fly, useful for working with diffrent versions.
-
-```
-brew update
-brew install rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.profile
-echo 'eval "$(rbenv init -)"' >> ~/.profile
-source ~/.profile
-
-sudo chown -R $USER ~/.rbenv
-```
-
-### Configuring rbenv
-```
-brew update
-
-brew install ruby-build
-
-rbenv install 2.5.1
-rbenv global 2.5.1
-```
-
-### Install Rails
-
-```
-sudo gem update
-sudo gem install rails
-```
-You may need to press "yes" for various entries
-
-### Verify your installation
-
-Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
-
-```
-rails -v
-ruby -v
-
-which ruby
-which rails
-which bundle
-which gem
-
-node -v
-npm -v
-
-git --version
-psql --version
 ```
