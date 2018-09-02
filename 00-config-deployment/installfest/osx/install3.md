@@ -52,3 +52,6 @@ npm -v
 git --version
 psql --version
 ```
+
+## Install some other sublime packages:
+  * Sass (syntax definition, we'll use this when working with Rails)

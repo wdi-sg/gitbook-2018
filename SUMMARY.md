@@ -6,7 +6,6 @@
     * [Mac OSX](00-config-deployment/installfest/osx/readme.md)
     * [Windows](00-config-deployment/installfest/windows/readme.md)
     * [Linux](00-config-deployment/installfest/linux/readme.md)
-    * [Code Editor Packages](01-workflow/text-editor-packages/readme.md)
   * [Command Line](01-workflow/command-line/01readme.md)
     * [The Terminal](01-workflow/command-line/02intro-terminal.md)
     * [Filesystem Navigation](01-workflow/command-line/03navigating.md)

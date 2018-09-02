@@ -5,23 +5,6 @@ Text editor packages help make our lives as developers easier by providing funct
 
 ## Sublime
 
-  #### Setting up User Settings
-
-  * Open Sublime Text
-  * Go to `Sublime Text -> Preferences -> Settings - User`
-  * Replace the file with the settings object below:
-
-  ```
-  {
-    "rulers":
-    [
-      80
-    ],
-    "translate_tabs_to_spaces": true,
-    "scroll_past_end": true
-  }
-  ```
-
   #### Setting up Package Control in Sublime Text
 
   * Open Sublime Text
@@ -41,12 +24,9 @@ Text editor packages help make our lives as developers easier by providing funct
 
   #### Useful Packages that you should install
 
-  * EditorConfig (reads configuration files for your editor)
   * ColorPicker (pick colors by typing `COMMAND + SHIFT + c`, handy for CSS)
   * Color Highlighter (visually displays colors for hex/rgb values)
   * GitGutter (shows git additions/deletions)
-  * Terminal (launch a terminal window from a folder on the sidebar)
   * BracketHighlighter (highlight brackets and tabs)
   * Sass (syntax definition, we'll use this when working with Rails)
   * Babel (syntax definition, we'll use this when working with React)
-  * JSX (syntax definition, we'll use this when working with React)

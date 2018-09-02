@@ -155,3 +155,9 @@ Create a file named `.gitignore` exactly, and save it in your home directory.
 ```
 git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w"
 ```
+
+## Install some other sublime packages:
+  * ColorPicker (pick colors by typing `COMMAND + SHIFT + c`, handy for CSS)
+  * Color Highlighter (visually displays colors for hex/rgb values)
+  * GitGutter (shows git additions/deletions)
+  * BracketHighlighter (highlight brackets and tabs)
