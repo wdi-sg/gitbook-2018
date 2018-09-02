@@ -1,26 +1,23 @@
-#Ubuntu install instructions
+# Ubuntu install instructions
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
 * Slack
-* Homebrew
 * Git
 * Node
-* Oh my ZSH
-* iTerm
-* Postgres.app
+* Postgres
 * Ruby
 * Rails
 
 **TIP:** Use `CTRL+SHIFT+V` to paste into terminal
 
-##Slack
+## Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
 
-##GIT
+## GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
 To install GIT
@@ -28,7 +25,7 @@ To install GIT
 sudo apt-get install git-all
 ```
 
-####Configuring GIT
+#### Configuring GIT
 
 Using your email credentials for GIT, run these commands with your user and email configured.
 
@@ -39,12 +36,72 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-####Setting up SSH Key
-You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
+### Setting up the bash shell
+> do you have any other shell configuration files in your home directory?
+> `ls -la ~`
+> If you have something named `.zshrc`, `.bashrc`, `.bash_profile`
+> Take the contents out of this file and put it in the new one we are creating. Then delete the old file.
 
-* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
+Create a new shell config file.
+```
+touch ~/.profile
+```
 
-##Node
+## Sublime
+We'll be running **Sublime**, (not Sublime 2) as our text editor of choice.
+
+Install via the package manager
+
+```
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+```
+
+If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
+
+#### set sublime as your command line default editor
+**this also allows you to refresh changes to your shell config**
+```
+export VISUAL=sublime
+export EDITOR="$VISUAL"
+
+function subledit() {
+  sublime ~/.profile
+}
+
+function profilerefresh() {
+  echo "Refreshing your configuration."
+  source ~/.profile
+}
+```
+
+### Install the sublime `packagecontrol` library
+Package Control allows you to add new functionality to sublime.
+
+[https://packagecontrol.io/installation](https://packagecontrol.io/installation)
+
+#### Using Package Control
+[https://packagecontrol.io/docs/usage](https://packagecontrol.io/docs/usage)
+
+> Package Control is driven by the Command Palette. To open the palette, press `ctrl+shift+p` (Win, Linux) or `cmd+shift+p` (OS X). All Package Control commands begin with Package Control:, so start by typing Package.
+
+### Set Sublime to use `editorconfig` files
+- `cmd+shift+p` type in `Package Control: Install Package` (auto-complete will help you) and press return
+- type in `editorconfig` to install the package
+
+### Get the `.editorconfig` file
+You can find this file in your class repo. Copy it into your home directory.
+```
+cp /path/to/file ~/.
+```
+
+### Set Sublime to run as your git commit message editor
+```
+git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w"
+```
+
+## Node
 
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -67,36 +124,7 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-##Sublime 3
-We'll be running **Sublime 3**, not Sublime 2 as our text editor of choice.
 
-Install via the package manager
-
-```
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-get update
-sudo apt-get install sublime-text-installer
-```
-
-If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
-
-##Install Oh My ZSH
-
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
-
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-To install, we will run
-
-```
-sudo apt-get update
-sudo apt-get install git-core zsh
-chsh -s /bin/zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-sudo shutdown -r 0
-```
-
-(the last command will restart your computer)
 
 ## Postgres
 
@@ -108,7 +136,7 @@ We will be using a relational database called Postgres for Node and Rails portio
 sudo apt-get install postgresql-client postgresql postgresql-contrib
 ```
 
-###Configure Postgres User
+### Configure Postgres User
 
 You'll also need to configure a user for your Postgres database.
 
@@ -122,7 +150,7 @@ sudo -u postgres psql postgres
 Choose an easy to remember password then type `\quit` to exit psql. MAKE SURE YOU REMEMBER THIS PASSWORD YOU WILL NEED IT LATER.
 
 
-###Create a Postgres Alias
+### Create a Postgres Alias
 
 To make it easier to start postgres we're going to create a couple aliases. Edit your zshrc file by typing `subl ~/.zshrc` add these lines to the bottom of the file:
 
@@ -153,7 +181,7 @@ function zrefresh() {
 
 Save the file, close Sublime, and restart your terminal.
 
-###Install Postgres GUI
+### Install Postgres GUI
 
 ```
 sudo apt-get install pgadmin3
@@ -192,7 +220,7 @@ https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/#install-mongod
 ###Testing the MongoDB server
 
 ```
-#Start the MongoDB server
+# Start the MongoDB server
 mongod
 ```
 
@@ -278,7 +306,7 @@ subl -v
 
 ```
 
-##Setting up a server
+## Setting up a server
 
 Occasionally you'll encounter permission errors when running websites using the file protocol, for example accessing loading local JSON files to our page. To solve this you'll need to run a HTTP server. If you're using BrowserSync, you won't need to worry about this, alternatively you could build a quick Node static server. An easier option however, is to use the local python server.
 
@@ -292,7 +320,7 @@ atom ~/.zshrc
 
 2.) Insert this code near the bottom of the file:
 
-###Linux
+### Linux
 
 ```
 alias srv="_srv(){xdg-open \"http://localhost:\${1-8000}\" && python -m SimpleHTTPServer \$1}; _srv"

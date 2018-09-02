@@ -10,7 +10,7 @@ Click on the fork button on the github.com repo page. (Ex: https://github.com/wd
 - `git status`
 - `git diff`
 - `git add`
-- `git commit -m 'something'`
+- `git commit`
 
 ### 3.`PUSH` your changes to your newly cloned repo
 

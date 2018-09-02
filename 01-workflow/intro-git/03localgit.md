@@ -55,8 +55,10 @@ The second command will add everything in the current working directory. But try
 Let's say you're happy with your work and want to save a version. This is called **committing**:
 
 ```
-git commit -m 'my first commit'
+git commit
 ```
+
+This should open your editor. Save the screen you see and it should put you back into the terminal.
 
 Now, the changes are permanently saved. The file now has a unique version in git and can be recovered if lost. Make sure everything is *clean* by running `git status` again.
 
@@ -93,7 +95,7 @@ When we're ready to save those changes
 
 ```
 git add readme.md
-git commit -m 'added title'
+git commit
 ```
 
 ---
@@ -125,7 +127,7 @@ If a file has been added to git and it needs to be deleted, we can run `git rm` 
 ```
 git rm <file>
 git add -u
-git commit -m 'deleted file'
+git commit
 ```
 
 ---

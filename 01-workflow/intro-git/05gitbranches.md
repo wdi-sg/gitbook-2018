@@ -42,7 +42,7 @@ New commits would then be placed onto the `structure` branch:
 
 ```bash
 git add .
-git commit -m 'Adds a folder for holding images
+git commit
 (using a .gitkeep as a placeholder until I put files there).'
 ```
 
