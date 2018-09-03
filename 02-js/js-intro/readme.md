@@ -19,15 +19,12 @@
 
 ## Javascript: The Client-Side Programming Language of the Web (5 Minutes / 0:20)
 
-<details>
-<summary><strong>What's a programming language? What can it do that a markup language like HTML can't?</strong></summary>
+<strong>What's a programming language? What can it do that a markup language like HTML can't?</strong></summary>
 
   > It lets us do things! It lets us act on information, manipulate it, display it, pretty much whatever we want.
   >
   > Javascript enables us to do all that in a browser (i.e., client-side) using the tools you learned in the pre-work like data types, loops and functions.
 
-</details>
-<br>
 
 Brief history: Javascript was created in 10 days by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich) of Netscape/Mozilla.
 * The programming language is not related to Java in any way but its name. "Java" is to "Javascript" as "ham" is to "hamster."
@@ -111,10 +108,6 @@ console.log("hello world")
 
 Open the javascript console with Command + Option + J (`⌘ + ⌥ + J`)
 
-You should see something like this, but without the example of a javascript expression that declares a variable.
-
-![Chrome Console image](images/chrome-console.png)
-
 ---
 
 ### The Console as a REPL
@@ -133,18 +126,6 @@ What does it do?
 
 ------
 
-### Data Types
-[data types](./data-types-and-collections.md)
-
----
-
-### Conditionals and Booleans ( Control Flow )
-[booleans](./booleans-and-conditionals.md)
-
----
-
-### Javascript Style
-[Style Guide](../01-workflow/js-styleguide.md)
 
 ---
 
@@ -165,14 +146,10 @@ Complete the **Data Types** and **Data Structures** exercises in [`exercise.md`]
 
 > You can use the [Data Types And Collections](./data-types-and-collections.md) readme as reference and review.
 
+[Pseudocode](../../01-workflow/pseudocode-lowlevel.md)
+[Conditionals](js-control-flow/03booleans-and-conditionals.md)
+
 ---
-
-### Review (10 minutes / 1:00)
-
-
-### Review (10 minutes / 1:45)
-
----------
 
 > If time remains in the lesson...
 
@@ -219,7 +196,9 @@ if (age >= 21) {
 }
 ```
 
-### Practice [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
+### Lab:
+
+[Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
 
 -------
 

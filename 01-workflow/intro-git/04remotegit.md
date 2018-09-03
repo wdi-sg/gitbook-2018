@@ -73,3 +73,25 @@ When we work on deliverables in WDI and in the software industry, we'll usually 
 The solution is to create a **fork** of a repo. It's kinda like a clone, but it's all done on Github and gives you ownership of the copy. You'll then make changes in this fork.
 
 Once you want to officially submit your changes, you'll perform what's called a **pull request**, which we'll demo before your first deliverable.
+
+
+## Exercise
+Put your previously created local repo on github:
+
+- create the repo on github
+- set the `remote` - github is always `origin`
+- `git remote add origin <URL OF YOUR GITHUB REPO>`
+- push your changes up to github: `git push origin master`
+- refresh your github repo page to see your code up on github.com
+
+### Further
+Make new changes and put them up on github.
+
+- change the h2 to an h3
+- make the h3 a link that goes to the general assembly website.
+- change mango to durian.
+
+Commit as above.
+
+Look at the visual record of your changes on github.com: <YOUR REPO URL>/commits
+Click on the commit id to see line-by-line changes.

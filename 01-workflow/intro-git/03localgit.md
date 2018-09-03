@@ -162,3 +162,86 @@ This is the most simple workflow, things get a bit more complex when you start s
 - [Learn Version Control with Git](http://www.git-tower.com/learn/git/ebook)
 - [Visualizing Git Commands](https://onlywei.github.io/explain-git-with-d3/)
 - [Github Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+
+
+## Exercise
+
+Create a new repo:
+
+```
+cd ~/code
+mkdir get-intro
+cd git-intro
+git init
+```
+Check the status of the repo you just created:
+```
+git status
+```
+
+Now start creating your file:
+```
+sublime index.html
+```
+
+When sublime opens, paste this text in:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+  <h1>banana</h1>
+</body>
+</html>
+```
+
+Add this new file: `git add index.html`
+
+Check the current status of your repo:
+```
+git status
+```
+
+Commit it: `git commit`
+
+See the log of the file so far: `git log`
+
+Add a second line:
+```
+<h2>kumquat</h2>
+```
+
+See what changes you made:
+```
+git diff
+```
+
+See the file status:
+```
+git status
+```
+
+Commit your changes:
+```
+git commit
+```
+
+Let's make some new changes:
+Take out the h1.
+Change kumquat to mango.
+
+Commit as above.
+
+Do `git log` to see a record of your changes.
+
+### Further
+Add another HTML file to the repo. Make more changes to index.html as you like. Use `diff` `status` and `add` with specific file paths. e.g.: `git diff index.html`
+
+### Further
+How do you unstage a file after you add it, but before you commit it? Google for the solution.
+
+### Further
+How do you get back an earlier version of your code? Google for the solution.

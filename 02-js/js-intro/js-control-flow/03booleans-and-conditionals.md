@@ -469,7 +469,30 @@ if (5 % 2 ==0) {
 }
 ```
 
+#### Further Exercises:
+
+Create a variable `speed`. write the contitional for a traffic stop. If speed is less than 10 `console.log` "I pulled you over because you were going too slow". If speed is more than 50 `console.log` "I pulled you over for going to fast".
+
+Create a variable `tirePressure`. If tire pressure is less than 10 PSI `console.log` "I pulled you over because you are driving with a flat tire".
+
+Create a variable `driverVision`. Assign an array value: `[6,6]`. If `driverVision` is less than 6/12, `console.log` "Sorry you can't drive".
+
+Now, write some more complicated conditional logic:
+
+If driverVision is over 6/6 set the speed variable to 60.
+
+If speed is over 50 and tirePressure is under 10 or over 100 `console.log` "car crash".
+
+If speed was under 10 and tirePressure was over 100 `console.log` "rolling to a stop".
+
+If driverVision is over 6/12 and speed is over 50 `console.log` "car crash".
+
+If the car will crash, don't output the traffic stop text.
+
 # Intro to code quality
+
+### Javascript Style
+[Style Guide](../01-workflow/js-styleguide.md)
 
 aside: Check out the official class javascript styleguide (from AirBnb): This covers all of the javascript syntax- even things we won't be covering in class. [https://wdi-sg.github.io/gitbook-2018/01-workflow/js-styleguide.html](https://wdi-sg.github.io/gitbook-2018/01-workflow/js-styleguide.html)
 Or: Here's a list of optional reading materials for [JavaScript](http://javascript.crockford.com/code.html) from Douglas Crockford, an OG Yahoo programmer.
