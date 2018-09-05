@@ -48,4 +48,4 @@ for (var i = 0; i < 5; i++) {
 1.What is the value of `num` when `i` is 4, and before num is divided by 2?
 
 #### Further:
-Run the debugger to investigate the value of all the variables at each iteration of the loop for the examples in the loop page: [06-iterating-over-array.md](06-iterating-over-array.md)
+Run the debugger to investigate the value of all the variables at each iteration of the loop for the examples in the loop page: [06-iterating-over-arrays.md](06-iterating-over-arrays.md)
