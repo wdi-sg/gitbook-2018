@@ -170,7 +170,7 @@ Create a new repo:
 
 ```
 cd ~/code
-mkdir get-intro
+mkdir git-intro
 cd git-intro
 git init
 ```
