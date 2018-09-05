@@ -183,10 +183,9 @@ When we see layout in CSS we will be using these containers to define the differ
 ## Forms
 Forms provide the ability for the user to make inputs. Right now they have no where to go.
 
-Later on we will see how to use them in a client side app.
+We don't use forms in unit 1, but we will use form *elements* - inputs. Later on we will see how to use them in a client side app.
 
 In unit 2 we will see the way they were meant to be used.
-
 
 One of the most common ways to send data to a server is by using a form. A form has two essential attributes, action and method.
 
@@ -210,14 +209,6 @@ By default, input elements will allow users to type in text. There's also a plet
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 Documentation on input types: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
-
----
-
-### User Input Practice
-
-Clone the following repo and open instructions.html in your browser. Your goal is to work to turn the basic skeleton.html page into a webpage meeting the requirements described in the instructions that looks like the picture shown in solution.png. Good luck!
-
-https://github.com/wdi-sg/html_user_inputs
 
 ---
 

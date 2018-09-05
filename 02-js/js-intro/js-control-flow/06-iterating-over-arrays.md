@@ -2,10 +2,6 @@
 
 *After this lesson, you will be able to:*
 - Iterate over an array
-- find minimum, maximum values in an array
-- handle fencepost problems
-- tally the most frequently occuring item in an array
-- prevent errors from accessing non-existent indexes
 
 ## What is iterating over an array?
 
@@ -36,12 +32,80 @@ of the array.
 Notice that this for loop correctly won't print anything out for an empty array.
 
 ```js
+var a = [1,4,2,3,6];
+
 for (var i = 0; i < a.length; i++) {
   console.log((a[i]);
 }
 ```
 
-## Fencepost Problems
+### Exercise:
+Create an `index.html` file and `script.js` file.
+Run each example one at a time, .
+Create a `console.log` for each interation of the array.
+
+Make sure to format the output well so it is clear what is happening.
+
+e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.
+
+### Further:
+Investigate different ways go get values out of an array:
+- what if you start `i` at different values?
+- what if you change the condition to `<=`?
+- what if you change the iteration?
+- what if you run the loop backwards?
+
+
+### Further:
+Use nested for loops to iterate over this array:
+```
+var grid = [
+  [4,5,6],
+  [4,1,3],
+  [7,8,2],
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+Write code that sums all the *even* numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+### Further:
+Use nested for loops to iterate over this array:
+
+```
+var grid = [
+  [
+    [4,4,6],
+    [4,1,3],
+    [2,8,2]
+  ],
+  [
+    [2,3,6],
+    [1,1,3],
+    [1,5,2]
+  ],
+  [
+    [4,7,7],
+    [1,1,3],
+    [1,1,2]
+  ]
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+### Further
+Investigate the other iteration patterns below. Run them to see how they work.
+
+
+## Other Array Iteration Patterns:
+
+### Fencepost Problems
 
 Sometimes we need to do special things at the beginning or end of when we're
 iterating over an array.
@@ -95,16 +159,16 @@ between each post, like this: `|=|=|=|=|`.
 
 ### A Classic Fence Post Problem
 
-Write a function called `printArray` that accepts an array of integers and prints
-out each of the integers with a comma between each item. If the array is empty,
-the function should print nothing. If there is only one item
-in the array the function should just print the one item without any commas, like
+The following code prints out each of the integers with a comma between each item. If the array is empty,
+it should print nothing. If there is only one item in the array the function should just print the one item without any commas, like
 this `42`. An array with more items should be printed like this: `42,12,97,8'.
 
 Try to code this on your own before looking at the solution.
 
 ```js
-function printArray(a) {
+
+  var a = [3,4,5,6,1,2];
+
   // Deal with the fence post by printing the first item in the array
   // without a comma and only when we're it is a non-empty array!
   if (a.length > 0) {
@@ -118,17 +182,18 @@ function printArray(a) {
     console.log("," + a[i]);
   }
 
-  // Include an empty println statement at the end to make the output
-  // produce a newline character at the end.
-  console.log();
-}
+  // Include an empty statement at the end to make the output
+  // produce a newline.
+  console.log("-");
 ```
 
 You may find it more natural to deal with the fence post after the for loop.
 You can do this too.
 
 ```js
-function printArray(a) {
+
+  var a = [3,4,5,6,1,2];
+
   // Don't print anything when the array is empty. Simply return to exit
   // the function.
   if (a.length === 0) {
@@ -144,12 +209,11 @@ function printArray(a) {
 
   // Print the final element at the end of the list without a comma.
   console.log(a[a.length - 1]);
-}
 ```
 
-## One-Way Gates
+### One-Way Gates
 
-Write a function called `max` that accepts an array of integers and returns the
+Write code that uses an array of integers and outputs the
 largest value in the array.
 
 This problem requires us to create varaibles to store extra information outside
@@ -157,7 +221,7 @@ the for loop. We'll use if statements inside the for loop to update these variab
 when certain conditions are met.
 
 ```js
-function max(a) {
+  var a = [3,4,5,6,1,2];
   var largest = 0;
 
   for (var i = 0; i < a.length; i++) {
@@ -166,28 +230,16 @@ function max(a) {
     }
   }
 
-  return largest;
-}
+  console.log( largest );
 ```
 
-Notice that we initialize `largest` outside of the for loop and return it at the
-end of the function. We compare each value in the array to the value and rewrite
+Notice that we initialize `largest` outside of the for loop and output it at the
+end. We compare each value in the array to the value and rewrite
 the value of `largest` if we ever see something in the array larger than it.
 
 There's a problem with initlializing `largest` to zero. Imagine passing an array
 of negative numbers to this function. If the largest number in the collection
 were `-12` this function would incorrectly return zero!
-
-```js
-// make sure the array isn't empty
-if (a.length > 0) {
-  // set the 
-  var largest = a[0];
-}
-```
-
-
-Think of this as a one-way valve that only ever goes up.
 
 ## String Builders
 
@@ -197,45 +249,36 @@ a string backwards to produce a reversed string.
 Set up a variable outside the for loop to keep track of the final result.
 
 ```js
-function reverseString(s) {
   var result = "";
 
   for (var i = s.length(); i >= 0; i--) {
     result += s.charAt(i);
   }
 
-  return result;
-}
-
-reverseString("burrito"); // returns "otirrub"
+  console.log( result );
 ```
 
-## Reversing an Array
+### Reversing an Array
 The same idea can be applied to reverse an array. Create a new empty array
 and push elements into it.
 
 ```
-function reverseArray(a) {
   var result = [];
 
   for (var i = a.length - 1; i >= 0; i--) {
     result.push(a[i]);
   }
-  
-  return result;
-}
 
-reverseArray([1,2,3,4,5]); // returns [5, 4, 3, 2, 1]
+  console.log( result );
 ```
 
-## Counting One Item in an Array
+### Counting One Item in an Array
 
 Write a function called `inventory` that accepts an array of strings representing
 a store inventory and accepts a string representing a product. Return the total
 number of times the product occurs in the array.
 
 ```js
-function inventory(inventory, product) {
   var tally = 0;
 
   for (var i = 0; i < inventory.length; i++) {
@@ -244,11 +287,10 @@ function inventory(inventory, product) {
     }
   }
 
-  return tally;
-}
+  console.log( tally );
 ```
 
-## Double For Loops / Nested For Loops
+### Double For Loops / steed For Loops
 
 Sometimes it's useful to nest a for loop inside a for loop. This code tests to
 see if an array contains unique elements by comparing each item in the array
@@ -258,74 +300,21 @@ Use another variable name other than `i` for the second for loop. `i, j, k, n`
 are common for loop variable names.
 
 ```js
-function isUnique(a) {
+
+  // look in every index
   for (var i = 0; i < a.length; i++) {
+
+    // compare this index against every other index
     for (var j = 0; j < a.length; j++) {
+
+      // do the comparison
       if (j !== i) {
+
         if (a[i] === a[j]) {
-          return false;
+          console.log("double!: "+a[i]);
         }
       }
     }
   }
-  return true;
-}
-
-isUnique([1,2,3,3,4]) // returns false
-isUnique([1,2,3,4])   // returns true
-isUnique([])          // returns true
 ```
-
-### Exercise:
-Create an `index.html` file and `script.js` file.
-Run each example one at a time.
-Create a `console.log` for each interation of the array.
-Make sure to format the output well so it is clear what is happening.
-e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.
-
-### Further:
-Use nested for loops to iterate over this array:
-```
-var grid = [
-  [4,5,6],
-  [4,1,3],
-  [7,8,2],
-];
-```
-
-Write code that sums all the numbers and `console.log`s them.
-
-Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-Write code that sums all the *even* numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-### Further:
-Use nested for loops to iterate over this array:
-
-```
-var grid = [
-  [
-    [4,4,6],
-    [4,1,3],
-    [2,8,2]
-  ],
-  [
-    [2,3,6],
-    [1,1,3],
-    [1,5,2]
-  ],
-  [
-    [4,7,7],
-    [1,1,3],
-    [1,1,2]
-  ]
-];
-```
-
-Write code that sums all the numbers and `console.log`s them.
-
-Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-
-
 
