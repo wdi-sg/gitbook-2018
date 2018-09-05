@@ -22,7 +22,15 @@ debugger;
 ```
 
 ### Exercises
+One of the most valuable tools you can use to figure out an error in a loop is to manually inspect values while the loop is running.
+
+This can also simply help you learn what the mechanics of a loop are.
+
+Run the debugger to see the values of each variable at each *iteration* of the loop.
+
 Paste this code into your `script.js`
+
+Answer the questions below.
 ```
 var num = 0;
 for (var i = 0; i < 5; i++) {
@@ -36,6 +44,8 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-####Questions:
 1.What is the value of `num` when `i` is 3?
 1.What is the value of `num` when `i` is 4, and before num is divided by 2?
+
+#### Further:
+Run the debugger to investigate the value of all the variables at each iteration of the loop for the examples in the loop page: [06-iterating-over-array.md](06-iterating-over-array.md)

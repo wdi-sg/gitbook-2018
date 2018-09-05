@@ -252,7 +252,7 @@ function inventory(inventory, product) {
 
 Sometimes it's useful to nest a for loop inside a for loop. This code tests to
 see if an array contains unique elements by comparing each item in the array
-to every other item. 
+to every other item.
 
 Use another variable name other than `i` for the second for loop. `i, j, k, n`
 are common for loop variable names.
@@ -275,9 +275,57 @@ isUnique([1,2,3,3,4]) // returns false
 isUnique([1,2,3,4])   // returns true
 isUnique([])          // returns true
 ```
+
 ### Exercise:
 Create an `index.html` file and `script.js` file.
 Run each example one at a time.
 Create a `console.log` for each interation of the array.
 Make sure to format the output well so it is clear what is happening.
 e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.
+
+### Further:
+Use nested for loops to iterate over this array:
+```
+var grid = [
+  [4,5,6],
+  [4,1,3],
+  [7,8,2],
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+Write code that sums all the *even* numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+### Further:
+Use nested for loops to iterate over this array:
+
+```
+var grid = [
+  [
+    [4,4,6],
+    [4,1,3],
+    [2,8,2]
+  ],
+  [
+    [2,3,6],
+    [1,1,3],
+    [1,5,2]
+  ],
+  [
+    [4,7,7],
+    [1,1,3],
+    [1,1,2]
+  ]
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+
+
+
