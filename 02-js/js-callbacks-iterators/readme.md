@@ -36,55 +36,15 @@ var bag = function() {
 console.log(bag);
 ```
 
-We can take advantage of this behavior by defining **callback functions**. Callback functions are passed via variable name (reference), and are *called* at a specific time.
+Inside the bucket of the variable is a function, waiting to be run.
 
----
+We can take advantage of this behavior by defining **callback functions**. Callback functions are passed via variable name (reference), and are *called* at a specific time.
 
 ## Do something later: Callbacks
 
 ---
 
-We can write a function that does something we can specify outside the function.
-
-```
-var add = function(a,b){
-  return a + b;
-};
-
-var listOfNumbers = [91,52,53,54,5,6,7,8];
-var listOfNumbers = [1,1,1,1];
-
-var repeatOperation = function(numbers, callback){
-
-  var currentResult = 0;
-
-  for( var i=0; i<numbers.length; i++){
-    console.log(currentResult);
-    currentResult = callback(currentResult, numbers[i]);
-  }
-
-  return currentResult;
-};
-
-var total = repeatOperation(listOfNumbers, add);
-```
-
----
-
-This makes the function we wrote flexible, because it can accomplish more than one kind of task
-
-```
-var subtract = function(a,b){
-  return a - b;
-};
-
-var listOfNumbers = [100,10,10,10];
-
-var total = repeatOperation(listOfNumbers, add);
-
-```
-
----
+### setTimeout
 
 The `setTimeout()` function takes a function and a delay in
 milliseconds, and executes the function as soon as possible after that
@@ -138,25 +98,73 @@ clearInterval(threeSecondInterval);
 clearInterval(fiveSecondInterval);
 ```
 
+
+## Write your own callback
+
 ---
 
-### Pairing Exercises
-1. Write code that uses setTimeout
+We can write a function that does something we can specify outside the function.
 
-2. Write code that uses setInterval
+```
+var alertFiveTimes = function(stringCallback){
+  for( var i=0; i<5; i++){
+    alert( stringCallback() );
+  }
+};
 
-1. Write a function that uses a loop and this function:
+var encouraging = function(){
+  return "awesome!!";
+};
+
+var jerk = function(){
+  return "ewww, gross";
+};
+
+alertFiveTimes( encouraging );
+alertFiveTimes( jerk );
+```
+
+A more complete example is one that can do a generic operation - in this case on a set of 2 numbers - and then return the result.
+
+The individual operation we can define somewhere else.
 
 ```
 var add = function(a,b){
   return a + b;
 };
+
+var listOfNumbers = [91,52,53,54,5,6,7,8];
+var listOfNumbers = [1,1,1,1];
+
+var repeatOperation = function(numbers, callback){
+
+  var currentResult = 0;
+
+  for( var i=0; i<numbers.length; i++){
+    console.log(currentResult);
+    currentResult = callback(currentResult, numbers[i]);
+  }
+
+  return currentResult;
+};
+
+var total = repeatOperation(listOfNumbers, add);
 ```
-to do multiplication.
 
-1. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+---
 
-1. write code that clears the interval after 20 seconds
+This makes the function we wrote flexible, because it can accomplish more than one kind of task
+
+```
+var subtract = function(a,b){
+  return a - b;
+};
+
+var listOfNumbers = [100,10,10,10];
+
+var total = repeatOperation(listOfNumbers, add);
+
+```
 
 ---
 
@@ -374,3 +382,41 @@ Here are some good blog posts that break down `map`, `filter`, and `reduce`.
 * [Transforming Arrays with Array#map](http://adripofjavascript.com/blog/drips/transforming-arrays-with-array-map.html)
 * [Transforming Arrays with Array#filter](http://adripofjavascript.com/blog/drips/filtering-arrays-with-array-filter.html)
 * [Transforming Arrays with Array#reduce](http://adripofjavascript.com/blog/drips/boiling-down-arrays-with-array-reduce.html)
+
+
+### Pairing Exercises
+
+1. Write code that uses setTimeout
+
+1. Write code that uses setInterval
+
+1. write a set timeout that sets another timeout inside the callback.
+
+1. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+
+1. write code that clears the interval after 20 seconds
+
+1. copy paste and run the write your own callback code
+
+1. Write a function that uses a loop and does multiplication on two numbers.
+
+Given:
+```
+var add = function(a,b){
+  return a + b;
+};
+```
+
+Calling the function will look like this:
+
+```
+multiply( add, 2 , 3  );
+```
+
+The result should be 6.
+
+1. write a console stopwatch function. When is starts, console log the current stopwatch time in seconds in this format: `hours:minutes:seconds`
+
+1. write code that will set a countdown timer. Prompt the user for how many seconds they want the timer to last, and when you get their answer, start the timer.
+
+1. write your own foreach function that takes a callback parameter that will run for each iteration.
