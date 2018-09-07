@@ -388,17 +388,17 @@ Here are some good blog posts that break down `map`, `filter`, and `reduce`.
 
 1. Write code that uses setTimeout
 
-1. Write code that uses setInterval
+2. Write code that uses setInterval
 
-1. write a set timeout that sets another timeout inside the callback.
+3. write a set timeout that sets another timeout inside the callback.
 
-1. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+4. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
 
-1. write code that clears the interval after 20 seconds
+5. write code that clears the interval after 20 seconds
 
-1. copy paste and run the write your own callback code
+6. copy paste and run the write your own callback code
 
-1. Write a function that uses a loop and does multiplication on two numbers.
+7. Write a function that uses a loop and does multiplication on two numbers.
 
 Given:
 ```
@@ -415,8 +415,8 @@ multiply( add, 2 , 3  );
 
 The result should be 6.
 
-1. write a console stopwatch function. When is starts, console log the current stopwatch time in seconds in this format: `hours:minutes:seconds`
+8. write a console stopwatch function. When is starts, console log the current stopwatch time in seconds in this format: `hours:minutes:seconds`
 
-1. write code that will set a countdown timer. Prompt the user for how many seconds they want the timer to last, and when you get their answer, start the timer.
+9. write code that will set a countdown timer. Prompt the user for how many seconds they want the timer to last, and when you get their answer, start the timer.
 
-1. write your own foreach function that takes a callback parameter that will run for each iteration.
+10. write your own foreach function that takes a callback parameter that will run for each iteration.
