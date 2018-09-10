@@ -36,8 +36,7 @@ How to change the DOM? Select elements and manipulate them.
 **Select by tag id:**
 
 ```js
-var searchForm = document.getElementById("home-search-form");
-
+var searchForm = document.getElementById("home-q");
 ```
 
 What's inside?
@@ -261,6 +260,30 @@ list.appendChild(newMovie);
 ---
 
 #### .insertBefore()
+
+```
+ ____________
+|            |
+|  [=====]   |
+|  [=====]   |
+|  [=====]   |
+|          <=|==== append
+ ------------
+
+```
+
+```
+parent node
+ ____________
+|            |
+|  [=====]   |
+|          <=|==== insertBefore
+|  [=====] <=|==== reference node
+|  [=====]   |
+|  [=====]   |
+|            |
+ ------------
+```
 
 It's easy to add things to the end of the body, at the bottom of a div, or at the
 end of a list. We have to do slightly more work if we want to add a new element

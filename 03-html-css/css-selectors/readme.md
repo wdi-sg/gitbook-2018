@@ -398,6 +398,16 @@ li#not {
 Now, all our list items are centered but the top item has a different font than the bottom.
 
 ### Other Selectors
+
+There are many ways to select a given element. Here are a few more:
+```
+| selector | example | desc |
+| ---          | ---     | --- |
+| element,element | div, p | Selects all <div> elements and all <p> elements
+| element element | div p | Selects all <p> elements inside <div> elements
+| element>element | div > p | Selects all <p> elements where the parent is a <div> element
+```
+
 [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
 
 
@@ -409,9 +419,7 @@ One of the most important concepts with CSS is specificity. Imagine you select a
 
 Every selector has its place in the specificity hierarchy, and if two selectors apply to the same element, the one with higher specificity wins.  Overall, there are four distinct factors that define the specificity level of a given selector: inline styles, IDs, classes+attributes and elements.  You can calculate CSS specificity with CSS Specificity Calculator:
 
-![calculationbase](https://css-tricks.com/wp-content/csstricks-uploads/specificity-calculationbase.png)
-
-###Calculating specificity
+### Calculating specificity
 
 * If two selectors apply to the same element, the one with higher specificity wins
 * When selectors have an equal specificity value, the latest rule is the one that counts
