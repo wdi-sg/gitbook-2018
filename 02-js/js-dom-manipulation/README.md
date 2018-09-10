@@ -377,6 +377,8 @@ info.appendChild(img);
 info.appendChild(user);
 info.appendChild(time);
 
+chat.classList.add("chat-message");
+
 // add the info container and the message to the total chat container
 chat.appendChild(info);
 chat.appendChild(msg);
