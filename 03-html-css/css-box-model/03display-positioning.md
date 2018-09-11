@@ -4,7 +4,20 @@ Display has to do with the flow of a document and what elements take up what spa
 
 Elements are processed like in a text document, they flow from the top left to the right and then towards the bottom line by line.
 
-Different elements have different kinds of properties for mhow much space they will take up and how.
+Different elements have different kinds of properties for how much space they will take up and how.
+
+Certain elements always have certain default display properties:
+
+
+| element | display |
+|--- | --- |
+| p | block |
+| div | block |
+| h tag (h1) | block |
+| input | inline |
+| img | inline |
+| a | inline |
+| span | inline |
 
 ## Taking Up Space using Display
 
@@ -17,6 +30,7 @@ From here: [https://stackoverflow.com/questions/9189810/css-display-inline-vs-in
   - respect left & right margins and padding, but not top & bottom
   - cannot have a width and height set
   - allow other elements to sit to their left and right.
+  - you don't usually style these elements heavily with box model styles
 
   Example: text styling
 ```css
@@ -241,3 +255,83 @@ Again, the default positioning for all elements is static. This means that no po
 ```
 
 You almost never explicitly declare `position:static` like this because it is the default.
+
+### Pairing Exercises
+
+Create an empty html file and css file.
+
+You will be creating a bunch of divs:
+
+```
+<div class="box-demo">box demo</div>
+```
+
+Set a background-color and border on each div so you can see it's behavior.
+```
+.box-demo{
+  background-color:yellow;
+  border:1px solid black;
+}
+```
+
+##### Display Inline
+
+Create a series of divs as above and add the class `inline-demo`. In your CSS file set these divs to display inline.
+
+Open the chrome console and see these elements behave weird if you put too much padding and margin on them (specifically top and bottom margin /padding)
+
+Resize the width of the screen and see how the boxes flow around the screen and wrap.
+
+How do these divs wrap when you have a long string inside with no spaces? i.e.: `983749012739407129034719023740912837017230971209347129038740192837490128739047182390871290387401923874091287340981723498`
+
+##### Display Inline Block
+
+Create a series of divs as above and add the class `inline-block-demo`. In your CSS file set these divs to display inline-block.
+
+Resize the width of the screen and see how the boxes flow around the screen.
+
+What happens when you put these elements around other inline elements?
+
+```
+====== inline element ======
+====== inline element ======
+====== inline element ======
+=== inline-block element ===
+=== inline-block element ===
+====== inline element ======
+=== inline-block element ===
+```
+
+##### Display Block
+Create a series of divs as above and add the class `block-demo`. In your CSS file set these divs to display block.
+
+Resize the width of the screen and see how the boxes flow around the screen.
+
+In the chrome console, explicitly set the width of the block elements to less than 100%. See what happens when you make them narrower and narrower.
+
+What happens when you put these narrow elements around other kinds of display elements?
+
+```
+====== inline element ======
+====== inline element ======
+====== block  element ======
+====== block  element ======
+====== block  element ======
+====== inline element ======
+=== inline-block element ===
+=== inline-block element ===
+====== inline element ======
+=== inline-block element ===
+```
+
+##### Position Relative
+Use the chrome console to position an element relative. Set the top, bottom, left or right properties. Set them with pixels or also percentage.
+
+##### Position Relative w/ Absolute
+Run the above code for position relative / absolute.
+
+##### Position Fixed
+Using the chrome console, apply position fixed to an element.
+
+##### Further
+Recreate the examples shown on the CSS layout page.
