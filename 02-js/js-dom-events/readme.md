@@ -54,7 +54,7 @@ document.getElementById("myDiv").addEventListener("click", function() {
 Events can only be attached to specific elements. Therefore, when you return a collection such as the result of `document.querySelectorAll` you **CANNOT** simply do this:
 
 ```js
-document.querySelectorAll(".li").addEventListener("click", function() {
+document.querySelectorAll("li").addEventListener("click", function() {
 	console.log("Click worked");
 }
 ```
@@ -64,7 +64,7 @@ document.querySelectorAll(".li").addEventListener("click", function() {
 Instead you must loop through all of the elements and attach an event to each item individually.
 
 ```js
-var listItems = document.querySelectorAll(".li")
+var listItems = document.querySelectorAll("li")
 for(var i = 0; i < listItems.length; i++){
     listItems[i].addEventListener("click", function() {
     	console.log("Click worked");
@@ -213,7 +213,7 @@ var dealWithProduce = function(){
 
 ```js
 // select a set of elements
-var listItems = document.querySelectorAll(".li");
+var listItems = document.querySelectorAll("li");
 
 // set an event listener on each element
 for(var i = 0; i < listItems.length; i++){

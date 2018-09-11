@@ -8,6 +8,8 @@ Different elements have different kinds of properties for mhow much space they w
 
 ## Taking Up Space using Display
 
+![https://media.giphy.com/media/13yeYZJuM4LpjW/giphy.gif](https://media.giphy.com/media/13yeYZJuM4LpjW/giphy.gif)
+
 From here: [https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block](https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block)
 
 ### Inline elements:
