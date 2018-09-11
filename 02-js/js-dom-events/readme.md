@@ -170,7 +170,7 @@ If you have this HTML:
 
 You can write this in your javascript:
 ```
-document.getElementById("user-input");
+document.getElementById("user-input")
         .addEventListener('change',function(event){
 
           // event is the DOM context for the event
