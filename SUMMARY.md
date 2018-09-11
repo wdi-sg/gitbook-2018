@@ -37,6 +37,7 @@
     * [Box Model](03-html-css/css-box-model/02box-model.md)
     * [Display and Positioning](03-html-css/css-box-model/03display-positioning.md)
     * [Floats and Clears](03-html-css/css-box-model/04floats-clears.md)
+    * [Layout](03-html-css/css-box-model/07layout.md)
     * [Additional Topics](03-html-css/css-box-model/05additional.md)
   * [Advanced CSS](03-html-css/css-responsive-design/readme.md)
     * [Responsive Design](03-html-css/css-responsive-design/02responsivedesign.md)
