@@ -138,7 +138,7 @@ And this HTML:
 With the tools we have now we can do this:
 
 ```
-document.getElementById("user-input");
+document.getElementById("user-input")
         .addEventListener('change',function(){
           // we have a click event
 
