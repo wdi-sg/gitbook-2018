@@ -210,5 +210,5 @@ document.querySelector('#submit').addEventListener('click', doSubmit);
 - input a few more urls and send a request. See the response in the console.
 
 #### Further 2:
-- put in a url string that doesn't make any sense.
+- put in a url string that doesn't make any sense, a completely invalid url, i.e. "83du4j4u".
 - use an `error` event handler callback to alert the user when an error occurs.
