@@ -36,10 +36,22 @@ To make sure that all your bootstrap styles behave properly, it's always best to
 
 The bootstrap grid is based on 12 columns that can are accessible using by placing the columns in `<div class = "row">` (you must place your columns in a row) and then you use the following classes for these screen sizes.
 
-* col-xs = <768px
-* col-sm = <992px
-* col-md <1200px
-* col-lg >1200px
+```
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+```
 
 ---
 
