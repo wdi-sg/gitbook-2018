@@ -44,6 +44,7 @@
     * [Flexbox](03-html-css/css-box-model/06flexbox.md)
     * [Pseudo-Classes\/Elements](03-html-css/css-responsive-design/03pseudo.md)
     * [Vendor Prefixes](03-html-css/css-responsive-design/04vendorprefixes.md)
+    * [Animation](03-html-css/css-animation/readme.md)
     * [Additional Topics](03-html-css/css-responsive-design/05additional.md)
   * [Bootstrap](03-html-css/css-bootstrap/readme.md)
   * [Page Template](03-html-css/html-page-template/readme.md)

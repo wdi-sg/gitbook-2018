@@ -19,7 +19,7 @@ Element in it's new state
 }
 ```
 
-Add a CSS transition in order to say how the element should transition out of it's current state into another.
+Add a CSS transition in order to say how the element should transition out of it's *CURRENT* state into another.
 ```
 .box{
   background-color:red;
