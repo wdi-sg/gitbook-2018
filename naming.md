@@ -31,5 +31,3 @@ normal
 ```
 
 - write out a bracket for the noun
-- randomize for the adjective [https://www.random.org/lists/](https://www.random.org/lists/)
-- (or reverse??)
