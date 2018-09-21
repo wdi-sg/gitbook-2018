@@ -120,6 +120,10 @@ jsonfile.writeFile(file, obj, (err) => {
 
 ### Reading *and* Writing to the file:
 
+So far we can read all the contents of a file, and then write all the contents of a file.
+
+In order to *add* something to the file, we need to *read* the content, then when we have all the data in the file assigned to a variable (`obj` in the example below), we can alter it, then write it back out.
+
 ```
 const jsonfile = require('jsonfile');
 
@@ -138,4 +142,26 @@ jsonfile.readFile(file, (err, obj) => {
 ---
 
 ### Pairing Exercise:
-Run the above code
+
+- Follow the setup instructions above.
+
+- Create the JSON file in sublime.
+
+- Read the JSON file.
+
+- Check it against the JSON text in the sublime file.
+
+- Write to the json file.
+
+- Check it against the JSON text in the sublime file.
+
+- Write something new to the json file.
+
+- Check it against the JSON text in the sublime file.
+
+- Read and then write back out to the JSON file.
+
+- Check it against the JSON text in the sublime file.
+
+##### Further
+Take 2 command line arguments and write them as key and value into the JSON.
