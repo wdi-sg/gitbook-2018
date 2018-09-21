@@ -162,6 +162,8 @@ if(process.env.NODE_ENV === 'development') {
 
 ### Pairing Exercises:
 
+##### Setup:
+
 1. Use the `node` command to open the REPL and do some basic math.
 
 1. Write a basic node program that console.logs something
@@ -177,26 +179,34 @@ Run it:
 node index.js
 ```
 
+##### Exercise 1:
+
 1. `console.log` the value of `process.argv` in your program
+
+##### Exercise 2:
 
 1. Write a basic node program that takes user input and `console.log`s it back out to the user:
 
 So writing this on the command line:
+
 ```
 node index.js yourArgumentHere
 ```
 
 Should result in:
+
 ```
 yourArgumentHere
 ```
 
 In your `index.js` file, in order to get your first argument, you will need:
+
 ```
 process.argv[2]
 ```
 
-Extra Question:
+##### Further:
+
 What is the value of `process.argv[0]` and `process.argv[1]`?
 
 1. Add the ability to put a second argument for your command line program. `console.log` that as well.
