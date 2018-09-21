@@ -17,28 +17,30 @@ We can use outside libraries just like we can in our webpages, but we no longer 
 
 ## Node Modules
 
-How do we include external libraries into our node.js programs? We are used to `script` and `link`:
+How do we include external libraries into our node.js programs? We are used to `script` and `link`.
 
-JQuery script include:
+If we wanted to have a second or third javascript file accessible to our original file, or CSS that adds or modifies our current CSS, we could just add it:
+
+
 ```
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="script2.js"></script>
 ```
-Bootstrtap CSS include:
+
 ```
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style2.css">
 ```
----
+
 **But** our javascript in no longer being executed in the context of a web page.
+
 
 Luckily node provides a way to use external libraries.
 
 ```
 // the jquery library is actually all contained in the variable $
-const $ = require('jquery');
+const myOtherCode = require('script2.js');
 ```
-Note: jquery doesn't come with node- if we wanted to use it, we will see how to get it over the internet when we talk about NPM
 
----
+Let's see how this works:
 
 ### Make your own modules
 
@@ -90,14 +92,23 @@ node main.js
 
 ## Packages on the Internet
 
+
+### Requiring outside code in the browser:
+
+JQuery script include:
+```
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+```
+Bootstrtap CSS include:
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+```
+---
+
+
 ### The Problem At Hand
 Dealing with dependencies and versions.
 ![https://cdn-images-1.medium.com/max/2000/1*xVArhwHrhwXoBPWlJTGM4g.png](https://cdn-images-1.medium.com/max/2000/1*xVArhwHrhwXoBPWlJTGM4g.png)
-
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-<span class="non-slide"></span>
 
 As we develop our own node apps we will find ourselves implementing third-party modules to help us with a wide range of tasks. These modules, which are commonly referred to as node packages or dependencies, are maintained by various developers and can be viewed as living and breathing mini-applications.
 
@@ -112,13 +123,6 @@ What if the code in the new version is incompatible with how we are currently us
 ### NPM
 
 We will be managing our packages through npm.
-
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-
-
 
 ## NPM Intro - (5 mins)
 
@@ -147,6 +151,10 @@ Let's cover the first point. `npm` can be thought of as a GitHub, of sort, as in
 However, if you're not sure of the module name your application needs help from, the best way to find what you're looking for is with a simple Google search with the keywords `npm `followed by a short query describing what you're trying to do.
 
 More often than not, the package you need will pop up in the first page of results, if not the very first result.
+
+
+#### Example packages:
+[https://github.com/sindresorhus/awesome-nodejs#weird](https://github.com/sindresorhus/awesome-nodejs#weird)
 
 
 ## Package Installation
@@ -185,8 +193,6 @@ Here's an example of a `package.json`:
 }
 ```
 
-<span class="non-slide"></span>
-<span class="non-slide"></span>
 
 Note all the metadata attributes of the file (these are just *some* attributes):
 
@@ -244,10 +250,6 @@ But how do we know what version of a package we are using? We do want to avoid t
   }
 ...
 ```
-
-<span class="non-slide"></span>
-<span class="non-slide"></span>
-<span class="non-slide"></span>
 
 Each listed dependency has a specified version associated with it, so that we may know what exactly we're working with. There are various ways a dependency version can be declared, and these version values often come with some interesting characters (`~`, `^`, etc.). Here's a chart to help break things down:
 
@@ -324,6 +326,8 @@ touch index.js
 ```
 
 Install a new library: https://github.com/melaniecebula/cat-ascii-faces
+Or one of the libraries from here: [https://github.com/sindresorhus/awesome-nodejs#weird](https://github.com/sindresorhus/awesome-nodejs#weird)
+
 ```
 npm install cat-ascii-faces
 ```
