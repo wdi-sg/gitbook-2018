@@ -43,5 +43,17 @@ app.get("/add/*", function(req, response) {
 
 This will give you a URL like `http://localhost:3000/add/5/3/3/2/3` and give you an answer.
 
+### Query Parameters
+Query parameters are used to tell the server that you have a query for the resource you are trying to access. Google search bar URLs are formatted this way: `google.com/search?q=bananas`
+
+*Access Query Parameters:*
+
+`http://localhost:3000?hello=bye` query parameter can be accessed with `request.query.hello`.
+
+Notice that these are keys and values. `hello` becomes a key in the `query` object.
+
 ### Pairing Exercise:
 - Add each of the routes above into your app. Copy each one separately!
+- `console.log` the value of request
+- Try changing the `:name` of the url parameter to see the key change
+- Try putting in a query string in addition to the URL parameters
