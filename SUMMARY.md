@@ -86,6 +86,7 @@
     * [Express URLs](05-express/express-intro/03expressurls.md)
     * [Views](05-express/express-intro/04views.md)
     * [Advanced Views](05-express/express-intro/06views-advanced.md)
+    * [React Components](05-express/express-intro/components.md)
   * [Full RESTful Routing][CRUD in Express](05-express/express-intro/05crudexpress.md)
   * [CRUD - UD][Update and Delete](05-express/express-intro/08update-delete.md)
   * [Express Authentication](05-express/express-auth/readme.md)
