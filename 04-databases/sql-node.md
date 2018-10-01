@@ -111,7 +111,9 @@ RETURNING allows you to get back the `id` of the thing you inserted.
 ```
 let queryText = 'INSERT INTO students (name, phone, email) VALUES ($1, $2, $3) RETURNING id';
 
-client.query(queryText, (err, res) => {
+const values = ["chee kean", "63723625", "ck@ga.co"];
+
+client.query(queryText, values, (err, res) => {
     if (err) {
       console.log("query error", err.message);
     } else {
@@ -266,7 +268,7 @@ Create a command line app that runs the previous exercise, but inside of node.js
 ```
 mkdir nodepg
 cd nodepg
-init npm
+npm init
 npm install pg
 touch index.js
 touch tables.sql
