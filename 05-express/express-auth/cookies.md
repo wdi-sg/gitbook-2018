@@ -30,17 +30,6 @@ Real-life recreation with paper. (One person pretends to be the backend)
 - browser looks at the cookies set headers and stores those cookies as keys and values
 - every subsequent request to the domain, browser includes those cookies
 
----
-
-#### You Try It:
-Pick a site and go to it in your browser.
-Look at some cookies for a site.
-Erase some cookies in your browser.
-Make a new request to that page.
-Look at your network tab. What cookies are in the response header, that the site is telling your browser to store.
-
----
-
 ## express cookie implemenation
 
 Install and include the cookie parser library.
@@ -90,15 +79,44 @@ response.cookie('visits', visits);
 ---
 
 ### Pairing Exercise
-Follow the instructions above to test cookies in your browser.
 
-Implement cookies in an express app.
+##### part 1
 
-Create a new express app, or you can use one you already have.
+Pick a site and go to it in your browser.
+Look at some cookies for a site.
+Erase some cookies in your browser.
+Make a new request to that page.
+Look at your network tab. What cookies are in the response header, that the site is telling your browser to store.
 
-Add express cookie parser library to the express app.
+---
+
+##### part 2
+
+Create a new express app. Add express cookie parser library to the express app.
+
 ```
-npm install cookie-parser
+mkdir cookies
+cd cookies
+touch index.js
+```
+
+index.js
+```
+const express = require('express');
+const app = express();
+
+app.get('/', (request, response) => {
+  // send response with some data (a string)
+  response.send(request.path);
+});
+
+app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
+```
+
+Add the libraries
+```
+npm init
+npm install express cookie-parser
 ```
 
 Follow the instructions above to implement cookies.
