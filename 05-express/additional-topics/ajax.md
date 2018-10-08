@@ -66,3 +66,9 @@ Create another route that will respond to the ajax calls made by your browser js
 Your browser js should request for a list (array) of data. This can be users, pokemon, songs or any other set of data within your app.
 
 When you recieve the response in the browser, render it to the DOM.
+
+#### further
+Implement a form input that the user can type the id of an item to get back the record they were looking for.
+
+#### further
+Implement a POST request that creates one of the records
