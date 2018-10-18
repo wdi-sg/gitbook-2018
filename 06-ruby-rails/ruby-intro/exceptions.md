@@ -1,6 +1,6 @@
 # Exceptions
 
-Execptions are a way to end the current execution of your program.
+Execptions are a way to end the current execution of your program. They are basically a different kind of control flow.
 
 More specifically you can use them to "skip up" several layers of your application and handle errors in a centralized place.
 

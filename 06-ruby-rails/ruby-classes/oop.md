@@ -195,9 +195,11 @@ It's not the only solution or always fit to the problem, but for CRUD type web s
 
 ### How to specify / model data
 
-How do you know what objects you need? In fact we have already done a data modeling exercise- creating ERDs. When you are creating an object model for an app or business, an ERD is what you would make.
+How do you know what objects you need? In fact we have already done a data modeling exercise- creating ERDs. When you are creating an object/class/data model for an app or business, an ERD is what you would make.
 
 In the real world an ERD sits somewhere between a table-level database specfication, and a class implementation specification. (It depends on the job.)
+
+Note: *This ERD has nothing to do with DB tables. You are specifying a set of classes, and the data and methods in each class.*
 
 ---
 
@@ -211,6 +213,10 @@ We want to record patients in the hospital.
 - If we want to automatically track their age we can add a birthdate.
 
 - We can have doctors. Paitents can be assigned doctors.
+
+- Doctors can prescribe medications. Medications need to be taken every x days or hours.
+
+- Doctors have schedules. Their number of working hours can't exceed x hours.
 
 - We can add appointments.
 
