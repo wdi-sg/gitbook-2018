@@ -242,7 +242,7 @@ end
 ```
 <h1>Edit article</h1>
 
-<%= form_with scope: :article, url: articles_edit_path, local: true do |form| %>
+<%= form_with scope: :article, model: @article, local: true do |form| %>
 
   <p>
     <%= form.label :title %><br>
