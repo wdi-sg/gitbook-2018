@@ -27,7 +27,7 @@ To see your work:
 rake routes
 ```
 
-Create a controller:
+Create a controller: (controller names are plural)
 ```
 touch app/controllers/articles_controller.rb
 ```
@@ -57,6 +57,7 @@ class ArticlesController < ApplicationController
 end
 ```
 
+(view directory names are plural, file names are normally singular)
 ```
 mkdir app/views/articles
 touch app/views/articles/index.html.erb
@@ -97,16 +98,45 @@ end
 #### Try it out in the browser:
 [http://localhost:3000/articles/new](http://localhost:3000/articles/new)
 
-#### Create the model
+
+#### Create the table:
+
 ```
-rails generate model Article title:string text:text
+rails generate migration articles
+```
+
+Look inside the generated file:
+```
+class Articles < ActiveRecord::Migration
+  def change
+  end
+end
+```
+
+Inside the `change` method add your table creation code:
+
+```
+create_table :articles do |t|
+  t.string :title
+  t.text :text
+  t.timestamps
+end
 ```
 
 #### Run the migration
+
 ```
 rails db:migrate
 ```
 
+#### Create the model
+
+touch app/models/Article.rb (model filenames are singular)
+```
+class Article < ActiveRecord::Base
+  # AR classes are singular and capitalized by convention
+end
+```
 #### Start saving things in the controller:
 ```
 def create
@@ -212,7 +242,7 @@ end
 ```
 <h1>Edit article</h1>
 
-<%= form_with(model: @article, local: true) do |form| %>
+<%= form_with scope: :article, url: articles_edit_path, local: true do |form| %>
 
   <p>
     <%= form.label :title %><br>

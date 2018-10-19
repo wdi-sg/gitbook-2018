@@ -78,3 +78,26 @@ end
 ```
 
 [But DON'T DO IT.](https://robots.thoughtbot.com/rescue-standarderror-not-exception)
+
+### Pairing Exercise
+Create a class for transiactions.
+
+This class will have a method that does addition.
+
+```
+class Transaction
+  def add( a,b )
+    a + b
+  end
+end
+```
+
+In the add function, create the logic that if a string is passed in as an argument, throw an error.
+
+Write a function that creates a new transaction and adds 2 numbers together.
+
+Call the function and pass in numbers, and then call it on another line with a string and see what happens.
+
+Write the `begin` / `rescue` code that rescues the exception.
+
+When you get an exception do `puts` that the number couldn't be added.
