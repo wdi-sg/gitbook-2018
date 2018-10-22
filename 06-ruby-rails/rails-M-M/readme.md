@@ -44,28 +44,58 @@ rails new parks -d postgresql
   * We can nest the routes of one resource within the other one.
 
 
-## Generating models
+## Generating models / databse migrations
 
 Review of **Parks**
 
 ```bash
-rails g model park name description:text
+rails generate migration parks
 ```
+
+```
+create_table :parks do |t|
+  t.text :description
+  t.timestamps
+end
+```
+
+touch app/models/park.rb (model filenames are singular)
+```
+class Park < ActiveRecord::Base
+end
+```
+
 
 **Rangers**
 
 ```bash
-rails g model ranger name
+rails generate migration rangers
 ```
+
+```
+create_table :rangers do |t|
+  t.string :name
+  t.timestamps
+end
+```
+
 
 **ParksRangers**
 
 ```bash
-rails g model parks_rangers park:references ranger:references --force-plural
+rails generate migration parks_rangers
+```
+
+```
+create_table :parks_rangers do |t|
+  t.references :park
+  t.references :ranger
+  t.timestamps
+end
 ```
 
 # IMPORTANT
-The join table with the two models **must** be plural and in alphabetical order if you want to follow the Rails convention. Also, `--force-plural` is needed so that the table will never be pluralized.
+The join table with the two models **must** be plural and in alphabetical order if you want to follow the Rails convention. 
 
 Note that if you want to name your join table something different, you can specify your own join model with `through:`
 
@@ -202,3 +232,26 @@ end
 ## rangers#show
 
 When showing a specific ranger, display the ranger name and the list of parks associated with it.
+
+
+### Has Many Through
+```
+class Following < ActiveRecord::Base
+
+  belongs_to :user
+  belongs_to :followed, :class_name => 'User'
+
+end
+```
+
+```
+class User < ActiveRecord::Base
+
+  has_many :followings
+  has_many :friends, :through => :followings, :source => 'followed'
+
+  has_many :followeds, :class_name => 'Following', :foreign_key => 'followed_id'
+  has_many :followers, :through => :followeds, :source => :user
+
+end
+```
