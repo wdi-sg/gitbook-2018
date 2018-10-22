@@ -12,7 +12,7 @@ Rails gives us a few tools to make associations easy inside the controllers and 
 
 ## Create the app:
 ```bash
-rails new parks -d postgresql
+rails new parklist -d postgresql
 ```
 
 ## What we need
