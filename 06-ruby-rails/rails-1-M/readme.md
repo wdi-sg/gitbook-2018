@@ -52,7 +52,7 @@ rails generate migration parks
 
 ```
 create_table :parks do |t|
-  t.description :text
+  t.text :description
   t.timestamps
 end
 ```
@@ -69,7 +69,7 @@ rails generate migration rangers
 
 ```
 create_table :rangers do |t|
-  t.name :string
+  t.string :name
   t.references :park
   t.timestamps
 end
