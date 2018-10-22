@@ -131,7 +131,7 @@ rails db:migrate
 
 #### Create the model
 
-touch app/models/Article.rb (model filenames are singular)
+touch app/models/article.rb (model filenames are singular)
 ```
 class Article < ActiveRecord::Base
   # AR classes are singular and capitalized by convention
@@ -275,7 +275,7 @@ end
 
 #### Add the edit link to app/views/articles/index.html.erb to make it appear next to the "Show" link:
 ```
-<td><%= link_to 'Edit', edit_article_path(@article) %></td>
+<td><%= link_to 'Edit', edit_article_path(article) %></td>
 ```
 
 

@@ -47,11 +47,33 @@ rails new parks -d postgresql
 Review of **Parks**
 
 ```bash
-rails g model park name description:text
+rails generate migration parks
+```
+
+```
+create_table :parks do |t|
+  t.description :text
+  t.timestamps
+end
+```
+
+touch app/models/park.rb (model filenames are singular)
+```
+class Park < ActiveRecord::Base
+end
 ```
 
 ```bash
-rails g model ranger name park:references
+rails generate migration rangers
+```
+
+```
+create_table :rangers do |t|
+  t.name :string
+  t.references :park
+  t.timestamps
+end
+
 ```
 
 Run the db scripts
@@ -60,10 +82,13 @@ rails db:create
 rails db:migrate
 ```
 
-Rails should have generated this association in the model file:
 #### app/models/ranger.rb
-```ruby
-belongs_to :park
+
+touch app/models/ranger.rb (model filenames are singular)
+```
+class Ranger < ActiveRecord::Base
+  belongs_to :park
+end
 ```
 
 Change the model file to associate Park with Ranger:
