@@ -17,7 +17,6 @@ rails new parklist -d postgresql
 * Models
   * Park
   * Ranger
-  * ParksRangers (join table)
 * Association
   * Park <-> ParksRangers <-> Ranger
   * Park `has_and_belongs_to_many` Rangers
@@ -116,25 +115,34 @@ has_and_belongs_to_many :parks
 ```
 
 # ALSO IMPORTANT
-When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method. In ParksRangers, the associations will be singular and generated for you.
-
-Check to see that the associations are set correctly in the new model:
-**models/parks_ranger.rb**
-
-```ruby
-belongs_to :park
-belongs_to :ranger
-```
+When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method.
 
 ## Adding rangers on the command line:
 
+Given:
 ```ruby
-# assume the following:
+yellowstone = Park.new(name: "yellowstone", description: "pretty cool")
+yellowstone.save
+
+ranger = Ranger.new(name: "roger", park: yellowstone)
+ranger.save
+```
+
+
+Add some stuff to the park:
+
+```ruby
 some_park = Park.first
 some_ranger = Ranger.first
 
 # adding a ranger
 some_park.rangers << some_ranger
+```
+
+When creating a new park:
+```ruby
+
+yosemite = Park.new(name: "yosemite", description: "very noice", ranger_ids: [1,2])
 ```
 
 ## Removing rangers on the command line:
