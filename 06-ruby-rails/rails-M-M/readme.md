@@ -9,7 +9,7 @@
 
 ## Create the app:
 ```bash
-rails new parks -d postgresql
+rails new parklist -d postgresql
 ```
 
 ## What we need
@@ -233,25 +233,3 @@ end
 
 When showing a specific ranger, display the ranger name and the list of parks associated with it.
 
-
-### Has Many Through
-```
-class Following < ActiveRecord::Base
-
-  belongs_to :user
-  belongs_to :followed, :class_name => 'User'
-
-end
-```
-
-```
-class User < ActiveRecord::Base
-
-  has_many :followings
-  has_many :friends, :through => :followings, :source => 'followed'
-
-  has_many :followeds, :class_name => 'Following', :foreign_key => 'followed_id'
-  has_many :followers, :through => :followeds, :source => :user
-
-end
-```
