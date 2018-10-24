@@ -53,6 +53,7 @@ rails generate migration parks
 
 ```
 create_table :parks do |t|
+  t.string :name
   t.text :description
   t.timestamps
 end
@@ -114,9 +115,6 @@ has_and_belongs_to_many :rangers
 has_and_belongs_to_many :parks
 ```
 
-# ALSO IMPORTANT
-When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method.
-
 ## Adding rangers on the command line:
 
 Given:
@@ -124,7 +122,7 @@ Given:
 yellowstone = Park.new(name: "yellowstone", description: "pretty cool")
 yellowstone.save
 
-ranger = Ranger.new(name: "roger", park: yellowstone)
+ranger = Ranger.new(name: "roger")
 ranger.save
 ```
 
@@ -141,8 +139,12 @@ some_park.rangers << some_ranger
 
 When creating a new park:
 ```ruby
-
 yosemite = Park.new(name: "yosemite", description: "very noice", ranger_ids: [1,2])
+```
+
+Or assuming you already have 2 ranger instances:
+```ruby
+ecp = Park.new(name: "ecp", description: "so good", rangers: [roger, sam])
 ```
 
 ## Removing rangers on the command line:

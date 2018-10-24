@@ -51,6 +51,8 @@ Link User to a new foreign key column in songs:
 ```
 rails g migration AddUserToSongs user:references
 ```
+( if you give a migration name of the form AddXXXToYYY it will create the `change` line in the migration file automatically for you )
+
 
 ```
 rails db:migrate
@@ -93,7 +95,7 @@ user_session
 Set something in the user session
 
 ```
-user_session[:song_cart] = "Single Ladies"
+user_session["song_cart"] = "Single Ladies"
 ```
 
 Use `c` to continue out of the breakpoint.
