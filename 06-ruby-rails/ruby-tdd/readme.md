@@ -36,7 +36,7 @@ Gemfile
 ```ruby
 source "https://rubygems.org"
 
-gem 'rspec', '~> 3.0'
+gem 'rspec'
 ```
 
 Install it
@@ -90,14 +90,14 @@ calc.add(2,2)
 expect(calc.sum).to eq(4)
 ```
 
-- you don't need to cover *evey single possible thing*, only some representative cases and most logical cases - e.g., what if the numbers are negative, what if it's zero, what if it's very large
+- you don't need to cover *evey single possible case*, only some representative cases and most logical cases - e.g., what if the numbers are negative, what if it's zero, what if it's very large
 - test that errors are well handled - does your entire program crash when given a certain input?
 - what are the main funcionalities of your class? How do you run them and what is the output? It could help someone to understand your code to look at what tests you write.
 
 ### TDD Process
 We have been talking about tests that simply verify the behavior of your code. TDD is the process for writing code that begins with a test, reversing the process we have been talking about.
 
-TDD is closely liked with agile in the sense that it is a well defined process that has distinct stages of progression for your code.
+TDD is closely linked with agile in the sense that it is a well defined process that has distinct stages of progression for your code.
 
 The base unit of TDD is a feature- this means one complete unit of functionality (not neccessarily a feature that the user uses). This could be given to you by the scrum master / product manager or come out of a user story, but generally comes out of some user requirement. This means that *you know what the behavior of the feature is* before you begin work on the code.
 

@@ -139,6 +139,7 @@
     * [SASS](06-ruby-rails/additional-topics/sass/readme.md)
     * [Rails Mailers](06-ruby-rails/additional-topics/rails-mailers/readme.md)
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
+    * [TDD](06-ruby-rails/ruby-tdd/readme.md)
 * [ReactJS](10-react/readme.md)
   * [Intro to React](10-react/react-intro/readme.md)
   * [React Components](10-react/react-intro/components.md)
