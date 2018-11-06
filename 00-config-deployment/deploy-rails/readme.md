@@ -11,25 +11,7 @@ Heroku uses Postgres, so you should too. Or if you don't you should set it to be
 
 **Anywhere in Gemfile**
 
-```rb
-gem 'pg', group: :production
-```
-
-```rb
-bundle install --without production
-```
-
 ##Prepare for deployment
-
-If you are using Rails 4 then you have to add the `12factor` gem to your Gemfile in the production group.
-
-**Anywhere in Gemfile**
-
-```rb
-gem 'rails_12factor', group: :production
-```
-
-This gem takes care of producing descriptive logs and serving your assets. Based on the recommended read: [The Twelve-Factor App](http://12factor.net/). Note that this class has covered many of these principles.
 
 ####Bundle
 
