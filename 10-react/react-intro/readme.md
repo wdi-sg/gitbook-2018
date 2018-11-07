@@ -25,6 +25,14 @@ The react library itself is just a rendering layer to easily render elements ont
 The wider react ecosystem allows you to build complex js single page applications.
 ---
 
+### Top 3 React Whys:
+
+1. Efficent and clean DOM rendering
+2. Explicit data flow. No more global variables. Logic reacts as data flows.
+3. Component library ecosystem.
+
+---
+
 
 ## Hello World Example
 Given we've included the right libraries:
