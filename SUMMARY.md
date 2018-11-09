@@ -150,6 +150,7 @@
   * [rails-webpack](10-react/react-webpack/webpacker.md)
   * [Lifecycle](10-react/react-intro/lifecycle.md)
   * [Router](10-react/react-router/readme.md)
+  * [Lifting Functions](10-react/react-router/lifting.md)
 * [Deployment](00-config-deployment/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node](00-config-deployment/deploy-node/readme.md)
