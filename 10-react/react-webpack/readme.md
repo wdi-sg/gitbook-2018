@@ -6,9 +6,6 @@ We are going to be seeing a default configuration that includes an express app. 
 
 We'll walk through all of the features provided to you by this setup.
 
-### npm vs. yarn
-This original repo is using npm.
-
 ## config files
 This environment is being controlled at several different levels, from several different libraries.
 

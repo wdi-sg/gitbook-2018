@@ -6,7 +6,7 @@ Because data can cause elements to re-render we should keep data as low down in 
 
 There will be many cases in which the data that you use in one component in the tree is needed in a *sibling* component.
 
-![https://github.com/wdi-sg/react-intro/blob/master/images/components-page.png](https://github.com/wdi-sg/react-intro/blob/master/images/components-page.png?raw=true)
+![https://github.com/wdi-sg/react-intro/blob/master/images/wireframe_deconstructed.png?raw=true](https://github.com/wdi-sg/react-intro/blob/master/images/wireframe_deconstructed.png?raw=true)
 
 For this example let's take the `Line` component.
 
