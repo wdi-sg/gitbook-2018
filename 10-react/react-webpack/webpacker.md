@@ -113,9 +113,11 @@ In your react code, add a button or a `componentDidMount` method that makes an a
 
 ```
 componentDidMount() {
-  var reactState = this;
-  var responseHandler = function() {
-      reactState.setState({stuff: this.responseText});
+
+  var reactThis = this;
+
+  var responseHandler = () => {
+      reactThis.setState({stuff: this.responseText});
   };
 
   var request = new XMLHttpRequest();
