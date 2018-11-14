@@ -6,35 +6,58 @@ We need another system to run webpack on top of rails that could integrate with 
 
 From the official webpacker documentation: [https://github.com/rails/webpacker](https://github.com/rails/webpacker)
 
+
+#### Generate a normal rails app, but with the required webpacker files:
+
+Install the libraries you need:
 ```
 brew install yarn
 gem install webpacker
+```
+
+Create and initialize the app: (this one includes all the models and views)
+```
 rails new blog --webpack=react -d postgresql
 cd blog
 rails generate scaffold Post name:string title:string content:text
-rails g controller onepage index
 rails db:create
 rails db:migrate
 ```
 
+Check out your app:
+```
+rails s
+```
+
+You should have a working rails CRUD app à la unit 3.
+
+#### Setting up the react app:
+
+Now check out the app directory structure:
+
 You should have a set of files in `app/javascript`
 ```yml
 app/javascript:
-  ├── packs:
-  │   # only webpack entry files here
-  │   └── application.js
-  └── src:
-  │   └── application.css
-  └── images:
-      └── logo.svg
+  └── packs:
+      # only webpack entry files here
+      └── application.js
+      └── hello_react.jsx
 ```
 
-Create the root view in `config/routes.rb`:
+Create the root controller and view:
+```
+rails g controller onepage index
+```
+
+Set the root route in `config/routes.rb` to be the controller you just created:
 ```
 root 'onepage#index'
 ```
 
 Create the script tag for them in your view file `app/views/onepage/index.html.erb`:
+
+The argument to javascript_pack_tag corresponds to the file in the packs folder.
+
 ```
 <%= javascript_pack_tag 'hello_react' %>
 ```
@@ -44,8 +67,48 @@ If you are using react styles you can do this:
 <%= stylesheet_pack_tag 'hello_react' %>
 ```
 
-### Start your complete react app:
+Your basic react setup is done.
+
+Run the app to see it work:
+
+Open up *two* terminals:
+
+1.
 ```
+./bin/webpack-dev-server
+```
+
+2.
+```
+rails server
+```
+
+
+### Start a complete react app:
+
+In order to mimic what we had in the react setup we can have one file for `ReactDOM.render` and another containing our root component `App`.
+
+Change `hello_react.jsx` to import the an `App` component.
+
+hello_react.jsx
+```
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+import App from './components/app'
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <App/>,
+    document.body.appendChild(document.createElement('div')),
+  )
+})
+
+```
+
+Make a directory that will contain the rest of your react app.
+```
+cd app/javascripts
 mkdir components
 touch app.jsx
 ```
@@ -68,24 +131,12 @@ export default class App extends React.Component{
 
 All other parts of your react app will go in the `components` directory. `packs` is just for the very top level files.
 
-### Other assets in the rails asset pipeline:
+### Other Notes
+
+#### Other assets in the rails asset pipeline:
 Refer to this page of the webpacker docs: [https://github.com/rails/webpacker/blob/master/docs/assets.md](https://github.com/rails/webpacker/blob/master/docs/assets.md)
 
-### Development
-
-Open up *two* terminals:
-
-1.
-```
-./bin/webpack-dev-server
-```
-
-2.
-```
-rails server
-```
-
-### Production
+#### Production Build
 ```
 ./bin/webpack
 ```
