@@ -117,7 +117,8 @@ componentDidMount() {
   var reactThis = this;
 
   var responseHandler = () => {
-      reactThis.setState({stuff: this.responseText});
+      var response = JSON.parse( this.responseText );
+      reactThis.setState({stuff: response});
   };
 
   var request = new XMLHttpRequest();
@@ -129,3 +130,6 @@ componentDidMount() {
   request.send();
 }
 ```
+
+#### further
+Create a series of inputs and a button in your react app to make an AJAX call that will *create* a new post.
