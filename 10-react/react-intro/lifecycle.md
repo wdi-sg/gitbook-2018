@@ -151,7 +151,7 @@ Example:
 ```
 componentDidMount() {
   var responseHandler = function() {
-      this.setState({stuff: this.responseText});
+      reactThis.setState({stuff: this.responseText});
   };
 
   var request = new XMLHttpRequest();

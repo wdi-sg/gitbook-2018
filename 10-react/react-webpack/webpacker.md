@@ -94,3 +94,36 @@ See where these files are being built to:
 ```
 ls -la public/packs
 ```
+
+### Pairing Exercise
+Create and run a react app inside a rails app, as above.
+
+#### further
+*Use ajax with rails:*
+
+Create a post using the rails form.
+
+You can get rails to send back json instead of rendering the view by doing `.json` at the end of the url.
+
+```
+http://localhost:3000/posts/1.json
+```
+
+In your react code, add a button or a `componentDidMount` method that makes an ajax request to that route. When the response comes back, render it.
+
+```
+componentDidMount() {
+  var reactState = this;
+  var responseHandler = function() {
+      reactState.setState({stuff: this.responseText});
+  };
+
+  var request = new XMLHttpRequest();
+
+  request.addEventListener("load", responseHandler);
+
+  request.open("GET", "http://localhost:3000/posts/1.json");
+
+  request.send();
+}
+```
