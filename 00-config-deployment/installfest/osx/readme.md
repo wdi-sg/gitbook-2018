@@ -74,6 +74,12 @@ Create a new shell config file.
 touch ~/.profile
 ```
 
+Put this code inside:
+```
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+```
 
 ## Sublime
 We'll be running **Sublime**, as our text editor of choice.
@@ -124,10 +130,12 @@ Package Control allows you to add new functionality to sublime.
 [https://packagecontrol.io/installation](https://packagecontrol.io/installation)
 
 
-### Get the `Preferences.sublime-settings` file:
+### Use the class `Preferences.sublime-settings` file:
 [https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings#)
 
-Create a file named `Preferences.sublime-settings` exactly, and save it in your home directory.
+Open sublime and use the menu bar to go to: Sublime Text -> Preferences -> Settings
+
+On the right window (Preferences.sublime-settings), earse the current contents of the file and paste in the entire contents of the file from the link above.
 
 #### Using Package Control
 [https://packagecontrol.io/docs/usage](https://packagecontrol.io/docs/usage)
@@ -141,17 +149,37 @@ Create a file named `Preferences.sublime-settings` exactly, and save it in your 
 ### Get the `.editorconfig` file:
 [https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.editorconfig](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.editorconfig)
 
-Create a file named `.editorconfig` exactly, and save it in your home directory.
+Create a file named `.editorconfig` exactly, and save it in your home directory:
+
+```
+cd ~
+touch .editorconfig
+sublime .editorconfig
+```
+Paste the contents from the above link into the file.
 
 ### Get the `.gitignore file`
 [https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.gitignore](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/.gitignore)
 
 Create a file named `.gitignore` exactly, and save it in your home directory.
+```
+cd ~
+touch .gitignore
+sublime .gitignore
+```
+Paste the contents from the above link into the file.
 
 
 ### Set Sublime to run as your git commit message editor
 
 #### BEFORE YOU RUN THIS, MAKE SURE THE PATH / LOCATION OF YOUR SUBLIME APP IS CORRECT
+```
+which sublime
+```
+
+Should say: `/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl`
+
+Then:
 ```
 git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w"
 ```

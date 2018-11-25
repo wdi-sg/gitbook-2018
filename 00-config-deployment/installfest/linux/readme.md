@@ -67,7 +67,7 @@ export VISUAL=sublime
 export EDITOR="$VISUAL"
 
 function subledit() {
-  sublime ~/.profile
+  subl ~/.profile
 }
 
 function profilerefresh() {
@@ -211,27 +211,6 @@ Should enter psql terminal and have no error.
 \q
 ```
 
-## Installing MongoDB
-
-Follow the official installation instructions on MongoDB.com:
-
-https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/#install-mongodb
-
-###Testing the MongoDB server
-
-```
-# Start the MongoDB server
-mongod
-```
-
-Press `control-c` to stop the server.
-
-###Install MongoDB GUI
-
-We'll be using **RoboMongo**. Install here:
-
-https://robomongo.org/
-
 ##Installing Ruby on Rails
 
 ####Install dependencies
@@ -312,21 +291,19 @@ Occasionally you'll encounter permission errors when running websites using the 
 
 We'll be setting up a command line alias to start a Python server.
 
-1.) edit your `zshrc` or .bash_profile depending on your shell.
+1.) edit your `.profile`
 
 ```
-atom ~/.zshrc
+subl ~/.profile
 ```
 
 2.) Insert this code near the bottom of the file:
-
-### Linux
 
 ```
 alias srv="_srv(){xdg-open \"http://localhost:\${1-8000}\" && python -m SimpleHTTPServer \$1}; _srv"
 ```
 
-3.) Close and restart your terminal, or run `atom ~/.zshrc` to reload the file.
+3.) Close and restart your terminal.
 
 Now you should be able to navigate to the folder of your project (the folder containing index.html), type `srv`, and hit enter. This will start a HTTP server and open your browser to that URL.
 

@@ -22,7 +22,10 @@ Package Control allows you to add new functionality to sublime.
 ### Get the `Preferences.sublime-settings` file:
 [https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings](https://raw.githubusercontent.com/wdi-sg/gitbook-2018/master/Preferences.sublime-settings#)
 
-Create a file named `Preferences.sublime-settings` exactly, and save it in your home directory.
+Open sublime and use the menu bar to go to: Sublime Text -> Preferences -> Settings
+
+On the right window (Preferences.sublime-settings), earse the current contents of the file and paste in the entire contents of the file from the link above.
+
 
 #### Using Package Control
 [https://packagecontrol.io/docs/usage](https://packagecontrol.io/docs/usage)
