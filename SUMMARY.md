@@ -7,7 +7,7 @@
     * [Mac OSX - 2](00-config-deployment/installfest/osx/install2.md)
     * [Mac OSX - 3](00-config-deployment/installfest/osx/install3.md)
     * [Windows](00-config-deployment/installfest/windows/readme.md)
-    * [Windows - 2](00-config-deployment/installfest/windows/install-2.md)
+    * [Windows - 2](00-config-deployment/installfest/windows/install2.md)
     * [Linux](00-config-deployment/installfest/linux/readme.md)
   * [Command Line](01-workflow/command-line/01readme.md)
     * [The Terminal](01-workflow/command-line/02intro-terminal.md)

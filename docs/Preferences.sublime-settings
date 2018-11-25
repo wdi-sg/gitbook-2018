@@ -88,7 +88,6 @@
   
   // Why not turn this on by default? Spell check all the things!
   "spell_check": true,
-  "theme": "Material-Theme-Darker.sublime-theme",
   "trim_trailing_white_space_on_save": true,
   "word_wrap": true,
   "draw_white_space": "all",
