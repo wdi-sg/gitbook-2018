@@ -57,12 +57,6 @@ git config --global push.default simple
 git config --global credential.helper osxkeychain
 ```
 
-You should probably install the command line prompt and autocompletition plugins:
-[https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash](https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash)
-
-#### Caching Github Login
-We'll mainly be using HTTPS, so use a credential helper to cache our keys. You should already be setup if you used homebrew to install git, else follow these steps: https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac
-
 ### Setting up the bash shell
 > do you have any other shell configuration files in your home directory?
 > `ls -la ~`
