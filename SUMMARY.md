@@ -74,6 +74,8 @@
       * [Reddit Practice](02-js/js-jquery/04reddit.md)
       * [Styling](02-js/js-jquery/05styling.md)
       * [Events](02-js/js-jquery/06events.md)
+
+  * [Code Quality](02-js/js-intro/code-quality.md)
 * [Server](04-server/readme.md)
   * [Internet Fundamentals](04-server/how-the-internet-works.md)
   * [Internet Lab](04-server/internet-lab.md)

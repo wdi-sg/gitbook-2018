@@ -1,7 +1,6 @@
 # Intro to Pure Javascript
 ![](from here: https://git.generalassemb.ly/ga-wdi-lessons/js-intro/blob/master/readme.md)
 
----
 
 ## Learning Objectives
 
@@ -15,7 +14,6 @@
 ![](http://jce-il.github.io/ASOSMA/firefox-ios/general.jpg)
 ![](https://i.imgur.com/Qgz5eFD.png)
 
----
 
 ## Javascript: The Client-Side Programming Language of the Web (5 Minutes / 0:20)
 
@@ -30,12 +28,9 @@ Brief history: Javascript was created in 10 days by [Brendan Eich](https://en.wi
 * The programming language is not related to Java in any way but its name. "Java" is to "Javascript" as "ham" is to "hamster."
 * Javascript has since gone through multiple iterations, the latest being ECMA Script 6 (ES6/2015)
 
----
 
 ### Why is it the dominant programming language of the web?
 
-
----
 
 Barriers to entry for learning Javascript are very low. No additional software required to run it. Just a text editor and a browser.
 - You can even run it directly in the browser via its Javascript console
@@ -123,104 +118,3 @@ What does it do?
   4. Then it (**L**)oops back to the beginning, ready to (**R**)ead the next line of code we feed it. It 'listens' for new code.
 
 > In Chrome, `⌘ + ⌥ + i` opens the chrome dev tools. Here you can do a bunch of stuff like inspect elements and see HTML, CSS and scripts the page has loaded. It allows you to access the console which interacts with the JS that the page has loaded. In our case we'll see that interaction with the code below
-
-------
-
-
----
-
-## Exercises
-
-The rest of the lesson consists of guided exercises. The goal behind these is to increase your familiarity with Javascript by analyzing the output of different Javascript expressions.
-
-For each exercise you will be working in pairs.
-
-### Setup
-
-1. Clone down the [data types repo here](https://github.com/wdi-sg/js-data-types)
-2. In Sublime, open [exercise.md](https://github.com/wdi-sg/js-data-types/blob/master/exercise.md). You will use this as the worksheet for the next three exercises.
-
-## You Do: Data Types & Data Structures (25 minutes / 0:50)
-
-Complete the **Data Types** and **Data Structures** exercises in [`exercise.md`](https://github.com/wdi-sg/js-data-types/blob/master/exercise.md)
-
-> You can use the [Data Types And Collections](./data-types-and-collections.md) readme as reference and review.
-
-[Pseudocode](../../01-workflow/pseudocode-lowlevel.md)
-[Conditionals](js-control-flow/03booleans-and-conditionals.md)
-
----
-
-> If time remains in the lesson...
-
-## Getting User Input & Conditionals
-
-**You will need to read the following sections to complete this lesson's homework assignment.**
-
-### `.prompt()`
-
-We've learned about basic data types, but it'd be nice if we had a way of getting user input into our browser. We'll learn some ways to use forms and such later in the course, but for now, we'll be getting user input using the `prompt()` function.
-
-At any point in our JS code, if we write `prompt()`, a pop up box will open in our browser for a user to enter in text.
-
-```js
-// prompts user and stores value in the variable
-var valueOfPrompt = prompt()
-// logs value stored
-console.log(valueOfPrompt)
-```
-
-You can also pass in a string as an argument to have the pop up box contain that string as a ... prompt.
-
-```js
-var age = prompt("How old are you?")
-alert("You are " + age + " years old.")
-```
-
-Whatever we type into the textbox in the window that `prompt()` brings up, is **returned** by prompt to the variable `age`.
-
-### Adding Conditionals
-
-Let's say, we were deciding whether or not to let someone inside of a club.
-
-```js
-var age = prompt("How old are you?")
-alert("You are " + age + " years old.")
-
-if (age >= 21) {
-  alert("Welcome to the club")
-} else if (age < 21 && age > 0) {
-  alert( "You are too young :(" )
-} else {
-  alert("Your age is not a number (NaN) or is negative. Invalid input.")
-}
-```
-
-### Lab:
-
-[Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
-
--------
-
-# Additional Notes
-
-## Syntax
-
-### Semicolons
-- End every line with a semi-colon. JS allows code without any semi-colons, but it is bad practice.
-
-### Comments
-
-Comments are an extremely important part of writing code. They help us make sense of our code, especially for other people reading our code, or when we have walked away from some code and have completely forgotten what certain sections of it do. This happens much more quickly than you may imagine.
-
-If you are working on a team, your documentation and commenting practices often translate to how easy you are to work with!
-
-```js
-// Single line comment
-
-/*
-  Multiple
-  line
-  comments
-*/
-```

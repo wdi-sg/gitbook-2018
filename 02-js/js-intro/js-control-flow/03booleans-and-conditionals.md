@@ -14,6 +14,7 @@ _After this lesson, students will be able to:_
 
 &#x1F535; **Setup**
 You will be using the file called `conditional_practice.js` in your `wdi` folder to test your code.
+
 # Control Flow
 
 Control Flow is the order in which individual statements or instructions are executed.
@@ -469,9 +470,29 @@ if (5 % 2 ==0) {
 }
 ```
 
+### Pairing Exercise:
+
+#### Part 1: Operators
+
+Paste the above examples into the chrome dev console. See what the output values are. Change the operators for each example or change the values to see what happens.
+
+#### Part 2: Conditional `if` `else` `if else` Statements
+
+Create a new html file: `touch conditionals.html`
+
+Create a new js file: `touch conditionals.js`
+
+Link them together in your HTML file: `<script src="conditionals.js"></script>`
+
+Paste the above conditional statement examples into your js file one at a time.
+
+Use `console.log` to see what values you are getting.
+
+Also try playing with the examples in the chrome console.
+
 #### Further Exercises:
 
-Create a variable `speed`. write the contitional for a traffic stop. If speed is less than 10 `console.log` "I pulled you over because you were going too slow". If speed is more than 50 `console.log` "I pulled you over for going to fast".
+Starting at the bottom of your js file, create a variable `speed`. write the contitional for a traffic stop. If speed is less than 10 `console.log` "I pulled you over because you were going too slow". If speed is more than 50 `console.log` "I pulled you over for going to fast".
 
 Create a variable `tirePressure`. If tire pressure is less than 10 PSI `console.log` "I pulled you over because you are driving with a flat tire".
 
@@ -488,62 +509,3 @@ If speed was under 10 and tirePressure was over 100 `console.log` "rolling to a 
 If driverVision is over 6/12 and speed is over 50 `console.log` "car crash".
 
 If the car will crash, don't output the traffic stop text.
-
-# Intro to code quality
-
-### Javascript Style
-[Style Guide](../01-workflow/js-styleguide.md)
-
-aside: Check out the official class javascript styleguide (from AirBnb): This covers all of the javascript syntax- even things we won't be covering in class. [https://wdi-sg.github.io/gitbook-2018/01-workflow/js-styleguide.html](https://wdi-sg.github.io/gitbook-2018/01-workflow/js-styleguide.html)
-Or: Here's a list of optional reading materials for [JavaScript](http://javascript.crockford.com/code.html) from Douglas Crockford, an OG Yahoo programmer.
-
-
-We want to make sure that your code not only works, but is understandable to other people (think about it: you won't be the only person reading this AND it might be weeks or months between you looking at your code - make it understandable).
-
-### Indentation
-
-Indentation denotes hierarchy in your code. When writing code in JavaScript, you should indent code that is being run inside other code. Here's an example:
-
-**Correct:**
-```
-if (5 % 2 ==0) {
-    console.log('Number is even');
-} else {
-    console.log('Number is odd');
-}
-```
-Note that the console.log that will be run inside the *if* portion is tabbed over once to denote that it should be run if this portion of the code is executed.
-
-**Incorrect:**
-```
-if (5 % 2 ==0) {
-console.log('Number is even');
-} else {
-console.log('Number is odd');
-}
-```
-
-Note that this code will still run, but it is hard to read! This will make your coworkers (and instructors) a little sad :confused: because it will cause more brain work for us. You want to make it as easy as possible for others to know what you are doing, so please show the relationships with indentation!
-
-### Semantic naming
-when naming your variable, be explicit! Skip naming your variables `x` or `y` when you can name them `timeTracker` or `uncleRoysChickenCount`
-
-:elephant: Remember, JavaScript naming convention is *camel case*. This means, the first word in the name is lowercase and any additional words in the name are connected (no spaces between words) and the first letter is capitalized `camelCase` or `thisIsCamelCase`.
-
-### Case Sensitivity
-Be aware that names are case sensitive. That means: `var redcow` is **not** the same as `var redCow`.
-
-### Comments
-Comments are notes to others and your future self. The more difficult a section of code is for you to write, the more important it is that you write a comment for that line, explaining what it does.
-
-```js
-// if there is no remainder of the number, it's even.
-if (number % 2 ==0) {
-console.log('Number is even');
-} else {
-console.log('Number is odd');
-}
-```
-
-### refactoring
-If your comment is very long, or it takes a while for you to explain what a piece of code does, consider that it might be good to refactor the code in some way- but only after you have it working and committed into git.

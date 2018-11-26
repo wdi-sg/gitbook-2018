@@ -256,6 +256,37 @@ Again, the default positioning for all elements is static. This means that no po
 
 You almost never explicitly declare `position:static` like this because it is the default.
 
+#### z-index
+
+Explicitly sets an element to overlap on top of another, regardless of what order in the file that element was written.
+
+A higher z-index means that element will appear on top on another element.
+
+```
+.gold-box {
+  position: absolute;
+  z-index: 3; /* put .gold-box above .green-box and .dashed-box */
+  background: gold;
+  width: 100%;
+
+}
+.green-box {
+  position: absolute;
+  z-index: 2; /* put .green-box above .dashed-box */
+  background: lightgreen;
+  left: 65%;
+  top: -25px;
+  height: 7em;
+}
+```
+
+```
+<span class="gold-box">Gold box</span>
+<span class="green-box">Green box</span>
+```
+
+From: [https://developer.mozilla.org/en-US/docs/Web/CSS/z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+
 ### Pairing Exercises
 
 Create an empty html file and css file.

@@ -21,19 +21,28 @@ When we give an HTML file to the browser, the browser interprets it and displays
 
 ### Where does this all happen?
 
-![](https://images-na.ssl-images-amazon.com/images/I/91JegIxgwML._UY606_.jpg)
-
 When we write our document we can refer to other resources within the same filesystem.
 
-```
-<a href="/foo.html">google</a>
-```
+### What happens when I load a webpage?
+In the 1st unit of WDI we won't be too concerned with the ways an HTML file can get *to* the browser.
 
----
+When we use the *open in browser* menu option, it runs the file in your default browser directly from within your computer.
 
-![](https://i.imgur.com/Qgz5eFD.png)
+Your file is stored on the hard disk memory of your computer, and is put into the RAM memory of your computer to be run. The browser turns this code into a page that you see inside it's window.
 
----
+Within this process of displaying the page many more smaller things are happening.
+
+Some questions to ask about this process might be:
+
+- what does it mean that the browser is reading my code?
+- how do the images I specify appear on the page?
+- how does my HTML know about my CSS?
+- what happens when I click on a link?
+- where are the images I see on the page stored?
+
+
+## Going through a HTML document
+
 
 ### HTML elements
 
@@ -75,7 +84,6 @@ Some of the more important attributes are `class` and `id`, which we will see la
 
 ---
 
-## Going through a HTML document
 
 ### What is `<!DOCTYPE html>`?
 
@@ -110,21 +118,17 @@ Some common meta tags you will see are charset, content, author, and description
 
 The `<body></body>` tags denote the content of the document. This content is rendered and displayed in the browser.
 
----
 
 ## HTML document tags:
+
 Some elements are default formatted by the browser, like as in a document.
 
 Even without CSS, the browser still knows that these tags can be formatted in a ceratin way.
 
----
+### Images and Links
 
-### Anchor
-```
-<a href="http://www.google.com">google</a>
-<a href="/foo.html">google</a>
-```
----
+<p data-height="268" data-theme-id="0" data-slug-hash="NxOdgv" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/NxOdgv/'>Images and Links</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
 ### Lists
@@ -132,7 +136,6 @@ Even without CSS, the browser still knows that these tags can be formatted in a 
 <p data-height="349" data-theme-id="0" data-slug-hash="XXxpMx" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/XXxpMx/'>Lists</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
----
 
 ### Tables
 
@@ -149,13 +152,6 @@ Before CSS became mainstream, websites were designed using tables. Although they
 * `<thead></thead>` - create the head of the table (newer tag). No matter where this is located, whatever is in it will be the first row
 * `<tfoot></tfoot>` - create the foot of the table (newer tag). No matter where this is located, whatever is in it will be the last row
 
----
-
-### Images and Links
-
-<p data-height="268" data-theme-id="0" data-slug-hash="NxOdgv" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/NxOdgv/'>Images and Links</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
 
 ### Other document tags:
 ```
@@ -163,11 +159,8 @@ Before CSS became mainstream, websites were designed using tables. Although they
 <h1></h1>
 ```
 
----
 
 ## HTML document structure tags:
-
----
 
 ### Divs + Spans
 
@@ -193,13 +186,11 @@ One of the most common ways to send data to a server is by using a form. A form 
 
 * **Method** - The HTTP Verb that this form will be using (HTML only knows GET and POST, but there are ways to override this default which we will see when we use Node and Rails. The default method is GET so if you are making a GET request you can leave this empty.
 
----
 
 ####Labels
 
 Labels are text you place before/after inputs to tell the user what the input is for. The for attribute is for screen readers and if the ID of the input matches the ID of the for attribute then you can click on the label and have it automatically focus/check the input.
 
----
 
 ####Input Types
 
@@ -210,7 +201,7 @@ By default, input elements will allow users to type in text. There's also a plet
 
 Documentation on input types: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 
----
+
 
 #### DOM (Document Object Model)
 One last point we shall mention briefly is the DOM or Document Object Model. The DOM is technically an API for representing and interacting with elements in HTML. The easiest way to think about this is that HTML is the language we used to describe what we want, the DOM is the object created to then represents that in memory, in a tree like structure. Later we'll talk about manipulating the DOM and what we mean is changing the structure of the pages we defined in out HTML.

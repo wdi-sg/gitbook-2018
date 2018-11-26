@@ -369,3 +369,16 @@ Navigating documentation is a great skill to have. Some sets of documentation ar
 > [MDN Array Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 > [https://github.com/wdi-sg/js-primitives](https://github.com/wdi-sg/js-primitives)
+
+
+
+## Exercises
+
+### Setup
+
+1. Clone down the [data types repo here](https://github.com/wdi-sg/js-data-types)
+2. In Sublime, open [exercise.md](https://github.com/wdi-sg/js-data-types/blob/master/exercise.md). You will use this as the worksheet for the next three exercises.
+
+## You Do: Data Types & Data Structures (25 minutes / 0:50)
+
+Complete the **Data Types** and **Data Structures** exercises in [`exercise.md`](https://github.com/wdi-sg/js-data-types/blob/master/exercise.md)
