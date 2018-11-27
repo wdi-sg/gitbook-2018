@@ -23,10 +23,13 @@ We write programs using these cognitive tools: decomposition, abstraction, encap
 
 Decomposition: In what ways can we break the problem down into it's constituent parts?
   - Which parts of the sandwich making process are distinct and discreet?
+
 Modeling: How do we represent our data?
   - do we use an array or an object? A string or a number?
+
 Encapsulation: How do we package the concepts of the problem together in a way that makes sense?
   - Does the peanut butter belong with the jelly? Or does it belong with bread slice 1?
+
 Abstraction: What do we use to generalize parts of our problem? How general do we make our program?
   - Can we generalize our system for all kinds of jelly? What about jam, or even mustard?
 
