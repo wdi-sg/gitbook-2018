@@ -352,7 +352,7 @@ var x = false
 var y = false
 
 x || y
-=> true
+=> false
 ```
 
 

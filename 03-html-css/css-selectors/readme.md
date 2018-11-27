@@ -21,8 +21,6 @@ CSS stands for:
 
 It provides the browser with precise instructions on how to style each element we want displayed on the page and can affect the text format - like font, size, color - the size and position of various objects on the page, colors, spacial layouts, etc. There are literally hundreds of different properties we can use to style HTML elements on a webpage.
 
-## Let's write some CSS - Codealong
-
 Create a new folder with a HTML page:
 
 ```bash
@@ -400,13 +398,12 @@ Now, all our list items are centered but the top item has a different font than 
 ### Other Selectors
 
 There are many ways to select a given element. Here are a few more:
-```
+
 | selector | example | desc |
 | ---          | ---     | --- |
 | element,element | div, p | Selects all <div> elements and all <p> elements
 | element element | div p | Selects all <p> elements inside <div> elements
 | element>element | div > p | Selects all <p> elements where the parent is a <div> element
-```
 
 [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
 

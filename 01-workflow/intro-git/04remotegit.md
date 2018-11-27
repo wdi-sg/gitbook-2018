@@ -6,7 +6,7 @@ In the previous section, we worked with a local git repo. Now, let's try working
 
 ## Setup for this section
 
-* Create a new repo on Github (we'll use `tacos` for ours)
+* Create a new repo on Github
 
 ---
 
