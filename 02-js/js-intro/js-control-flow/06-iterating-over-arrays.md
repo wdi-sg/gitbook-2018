@@ -120,8 +120,8 @@ Consider this psuedo code that tries to place four pieces of fence:
 
 ```js
 for (var i = 0; i < 4; i++) {
-  placeFence();
-  placePost();
+  console.log("=");
+  console.log("|");
 }
 ```
 
@@ -133,8 +133,8 @@ we end up missing a fence post at the end of the fence.
 
 ```js
 for (var i = 0; i < 4; i++) {
-  placePost();
-  placeFence();
+  console.log("|");
+  console.log("=");
 }
 ```
 
@@ -146,69 +146,18 @@ or after the for loop.
 
 
 ```js
-placePost();
+console.log("|");
+console.log("=");
 for (var i = 0; i < 4; i++) {
-  placeFence();
-  placePost();
+
+  console.log("=");
+  console.log("|");
 }
 ```
 
 This code properly produces a fence with posts on each end, and fence pieces
 between each post, like this: `|=|=|=|=|`.
 
-### A Classic Fence Post Problem
-
-The following code prints out each of the integers with a comma between each item. If the array is empty,
-it should print nothing. If there is only one item in the array the function should just print the one item without any commas, like
-this `42`. An array with more items should be printed like this: `42,12,97,8'.
-
-Try to code this on your own before looking at the solution.
-
-```js
-
-  var a = [3,4,5,6,1,2];
-
-  // Deal with the fence post by printing the first item in the array
-  // without a comma and only when we're it is a non-empty array!
-  if (a.length > 0) {
-    console.log(a[0]);
-  }
-
-  // Deal with each piece of the fence by printing a comma, then the
-  // value of the array at each index. Start the for loop at `i = 1`
-  // to account for the fact that the first item was already printed.
-  for (var i = 1; i < a.length; i++) {
-    console.log("," + a[i]);
-  }
-
-  // Include an empty statement at the end to make the output
-  // produce a newline.
-  console.log("-");
-```
-
-You may find it more natural to deal with the fence post after the for loop.
-You can do this too.
-
-```js
-
-  var a = [3,4,5,6,1,2];
-
-  // Don't print anything when the array is empty. Simply return to exit
-  // the function.
-  if (a.length === 0) {
-    return;
-  }
-
-  // Start i at zero and print each element in the array followed by a comma.
-  // Set the for loop to end before `a.length - 1` to leave one element left
-  // for the fence post at the end after the for loop.
-  for (var i = 0; i < a.length - 1; i++) {
-    console.log(a[i] + ",");
-  }
-
-  // Print the final element at the end of the list without a comma.
-  console.log(a[a.length - 1]);
-```
 
 ### One-Way Gates
 
@@ -248,6 +197,8 @@ a string backwards to produce a reversed string.
 Set up a variable outside the for loop to keep track of the final result.
 
 ```js
+  var s = "hello";
+
   var result = "";
 
   for (var i = s.length(); i >= 0; i--) {
@@ -262,6 +213,8 @@ The same idea can be applied to reverse an array. Create a new empty array
 and push elements into it.
 
 ```
+  var a = [7,8,9,10,11];
+
   var result = [];
 
   for (var i = a.length - 1; i >= 0; i--) {
