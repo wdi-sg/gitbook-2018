@@ -39,69 +39,6 @@ for (var i = 0; i < a.length; i++) {
 }
 ```
 
-### Exercise:
-Create an `index.html` file and `script.js` file.
-Run each example one at a time, .
-Create a `console.log` for each interation of the array.
-
-Make sure to format the output well so it is clear what is happening.
-
-e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.
-
-### Further:
-Investigate different ways go get values out of an array:
-- what if you start `i` at different values?
-- what if you change the condition to `<=`?
-- what if you change the iteration?
-- what if you run the loop backwards?
-
-
-### Further:
-Use nested for loops to iterate over this array:
-```
-var grid = [
-  [4,5,6],
-  [4,1,3],
-  [7,8,2],
-];
-```
-
-Write code that sums all the numbers and `console.log`s them.
-
-Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-Write code that sums all the *even* numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-### Further:
-Use nested for loops to iterate over this array:
-
-```
-var grid = [
-  [
-    [4,4,6],
-    [4,1,3],
-    [2,8,2]
-  ],
-  [
-    [2,3,6],
-    [1,1,3],
-    [1,5,2]
-  ],
-  [
-    [4,7,7],
-    [1,1,3],
-    [1,1,2]
-  ]
-];
-```
-
-Write code that sums all the numbers and `console.log`s them.
-
-Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
-
-### Further
-Investigate the other iteration patterns below. Run them to see how they work.
-
 
 ## Other Array Iteration Patterns:
 
@@ -318,3 +255,73 @@ are common for loop variable names.
   }
 ```
 
+### Exercise 1:
+Create an `index.html` file and `script.js` file.
+Run each example one at a time, .
+Create a `console.log` for each interation of the array.
+
+Make sure to format the output well so it is clear what is happening.
+
+e.g. `console.log('iteration: '+i)` instead of `console.log(i)`.
+
+### Further:
+Investigate different ways go get values out of an array:
+- what if you start `i` at different values?
+- what if you change the condition to `<=`?
+- what if you change the iteration?
+- what if you run the loop backwards?
+
+
+### Further:
+Use nested for loops to iterate over this array:
+```
+var grid = [
+  [4,5,6],
+  [4,1,3],
+  [7,8,2],
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+Write code that sums all the *even* numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+### Further:
+Use nested for loops to iterate over this array:
+
+```
+var grid = [
+  [
+    [4,4,6],
+    [4,1,3],
+    [2,8,2]
+  ],
+  [
+    [2,3,6],
+    [1,1,3],
+    [1,5,2]
+  ],
+  [
+    [4,7,7],
+    [1,1,3],
+    [1,1,2]
+  ]
+];
+```
+
+Write code that sums all the numbers and `console.log`s them.
+
+Write code that sums all the numbers in one of the arrays and `console.log`s them. (i.e. `grid[0]`)
+
+### Further
+Investigate the other iteration patterns below. Run them to see how they work.
+
+
+### Exercise 2: Run some more loops (10 mins)
+
+- Copy the above code examples for other iteration patterns
+- Change the values of i
+- Change the conditions from *less than* to *less than or equal to* - what happens?
+- Change the starting value of i to something else. What happens?
