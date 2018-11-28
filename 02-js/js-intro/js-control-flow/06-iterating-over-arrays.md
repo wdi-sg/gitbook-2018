@@ -42,6 +42,68 @@ for (var i = 0; i < a.length; i++) {
 
 ## Other Array Iteration Patterns:
 
+
+### Counting One Item in an Array
+
+Write a function called `inventory` that accepts an array of strings representing
+a store inventory and accepts a string representing a product. Return the total
+number of times the product occurs in the array.
+
+```js
+  var inventory = ["toothbrush","cap","shampoo","mars bar","banana"];
+
+  var product = "toothbrush";
+
+  var tally = 0;
+
+  for (var i = 0; i < inventory.length; i++) {
+    if (inventory[i] === product) {
+      tally++;
+    }
+  }
+
+  console.log( tally );
+```
+
+### Array of Objects
+
+Accessing each nested value whether it's an array or an object works similarly.
+
+```js
+
+var cats = [
+  {
+    name: 'fluffy',
+    weight: 12,
+    allergies : ['feathers', 'chocolate']
+  },
+  {
+    name: 'susan chan',
+    weight: 13,
+    allergies : ['tea', 'dust']
+  },
+  {
+    name: 'chee kean',
+    weight: 8,
+    allergies : ['dairy']
+  }
+];
+
+for( var i=0; i<cats.length; i++){
+  var saying = cats[i].name + ' is ' + cats[i].weight + ' kilos.'
+  console.log( saying );
+
+  // use a nested for loop to print out the allergies
+
+  var allergies = cats[i].allergies;
+
+  for( var j=0; j<allergies.length; j++ ){
+    console.log( cats[i].name + ' has an allergy to: ' + allergies[j] );
+  }
+
+}
+```
+
 ### Fencepost Problems
 
 Sometimes we need to do special things at the beginning or end of when we're
@@ -207,24 +269,6 @@ and push elements into it.
   }
 
   console.log( result );
-```
-
-### Counting One Item in an Array
-
-Write a function called `inventory` that accepts an array of strings representing
-a store inventory and accepts a string representing a product. Return the total
-number of times the product occurs in the array.
-
-```js
-  var tally = 0;
-
-  for (var i = 0; i < inventory.length; i++) {
-    if (inventory[i] === product) {
-      tally++;
-    }
-  }
-
-  console.log( tally );
 ```
 
 ### Double For Loops / Nested For Loops
