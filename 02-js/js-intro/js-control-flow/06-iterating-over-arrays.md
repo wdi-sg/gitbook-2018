@@ -290,7 +290,7 @@ number of times the product occurs in the array.
   console.log( tally );
 ```
 
-### Double For Loops / steed For Loops
+### Double For Loops / Nested For Loops
 
 Sometimes it's useful to nest a for loop inside a for loop. This code tests to
 see if an array contains unique elements by comparing each item in the array
