@@ -278,7 +278,32 @@ monkey["doMultiply"](4,5);
 
 ### Exercises
 
-- What is the return value of this function when called?
+Try these examples. Paste them into your code one at a time.
+
+Do these two examples do different things?
+
+```js
+var add = function(a,b){
+  console.log( a + b );
+};
+
+var sum = add(2,2);
+
+console.log("here is the answer: "+sum);
+```
+
+```js
+var add2 = function(a,b){
+  return a + b;
+};
+
+var sum2 = add(2,2);
+
+console.log("Answer: "+sum2);
+```
+
+
+- Change this function to add the `return` keyword.
 
 ```js
 var lightsabers = function(num) {
@@ -288,7 +313,7 @@ var lightsabers = function(num) {
 lightsabers(2);
 ```
 
-- How would the function above be modified if the user wanted to pass in an object of lightsabers, like this one?
+- Modify the above to pass in an object of lightsabers, and return a different value.
 
 ```js
 var myLightsaberCollection = {
@@ -303,13 +328,12 @@ var lightsabers = function(lightsaberCollection) {
 lightsabers(myLightsaberCollection);
 
 // Output
-// I have 1 blue lightsaber
-// I have 3 green lightsabers
+// I have 1 blue lightsaber and I have 3 green lightsabers
 ```
 
-- paste this code into your script.js file
+- execute this function
 
-```
+```js
 var doMaths = function(a,b){
   var result = 0
 
@@ -318,8 +342,15 @@ var doMaths = function(a,b){
 
 }
 
+var total = doMaths( 2, 3 );
+console.log( total );
+```
+
+- now run it inside a loop
+- add a console.log to see the output
+```js
 for( var i=0; i<5; i++ ){
-  doMaths(i, 2);
+  var result = doMaths(i, 2);
 }
 ```
 
@@ -330,16 +361,6 @@ Using the chrome debugger, what is the value of the result inside the function w
 #### Further Exercises
   - create a function named hello that prints out 'Hello World'
   - call that function
-  
-Example:
-```
-function example() {
-  \\ your code goes here
-};
-
-example();
-```
-or:
 
 ```
 var example = function() {
