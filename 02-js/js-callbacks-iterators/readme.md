@@ -102,8 +102,18 @@ clearInterval(fiveSecondInterval);
 
 2. Write code that uses setInterval
 
-3. write a set timeout that sets another timeout inside the callback.
+3. Write 3 set timeouts that console.log something in this order in your code: 1. setTimeout for 4 seconds 2. setTimeout for 2 seconds 3. setTimeout for 2 seconds. What happens?
 
-4. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+4. write a set timeout that sets another timeout inside the callback.
 
-5. write code that clears the interval after 20 seconds
+5. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
+
+6. write code that clears the interval after 20 seconds
+
+7. write code that console.logs something once a second 10 times.
+
+8. prompt the user to enter a number. console.log something every second the number of times the user entered
+
+9. if the user enters a number that's larger than 10, reduce the amount of time between console.logs
+
+10. nest the set interval inside a set timeout- if the user doesn't enter anything after 10 seconds, don't run the set interval.

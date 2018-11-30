@@ -33,6 +33,7 @@
   * [Practice Work How To](01-workflow/how-to-practice.md)
   * [Code Practices Review](01-workflow/review.md)
   * [Javascript Style Guide](01-workflow/js-styleguide.md)
+  * [Code Reading](01-workflow/code-review.md)
 * [HTML & CSS](03-html-css/readme.md)
   * [HTML](03-html-css/html-review/readme.md)
   * [CSS Selectors](03-html-css/css-selectors/readme.md)
