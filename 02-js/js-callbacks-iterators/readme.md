@@ -63,7 +63,7 @@ Under the hood the function is being executed just like the one we wrote.
 This can be done via **anonymous functions** as well. Anonymous functions are functions that are not stored to a variable. They are great for functions you only need to define once. Here's an example.
 
 ```js
-var fiveSecondTimeout = setTimeout(function() {
+var fiveSecondTimeoutReference = setTimeout(function() {
   console.log('Ding!');
 }, 5000);
 ```
@@ -79,7 +79,7 @@ var annoy = function(){
   console.log('Are we there yet?');
 };
 
-var oneSecondInterval = setInterval(annoy, 1000);
+var oneSecondIntervalReference = setInterval(annoy, 1000);
 ```
 
 ---
@@ -89,12 +89,44 @@ Things to be careful of: you need to know what the function expects as parameter
 Oh, and if you want to disable the timers before they fire, you can use the `clearTimeout(timeoutHandle)` or `clearInterval(intervalHandle)` functions:
 
 ```js
-var fourSecondTimeout = setTimeout(announce, 4000);
-clearTimeout(fourSecondTimeout);
+var fourSecondTimeoutReference = setTimeout(announce, 4000);
+clearTimeout(fourSecondTimeoutReference);
 
-clearInterval(threeSecondInterval);
-clearInterval(fiveSecondInterval);
+var threeSecondIntervalReference = setInterval(annoy, 1000);
+clearInterval(threeSecondIntervalReference);
 ```
+
+### Timeout and Interval Patterns
+
+Count the number of seconds.
+
+```js
+var counter = 0;
+
+var count = function(){
+  counter++;
+  console.log(counter + ' times.');
+};
+
+var oneSecondIntervalReference = setInterval(count, 1000);
+```
+
+Do one thing and then another.
+
+```
+var secondThing = function(){
+  console.log('second!');
+};
+
+var firstThing = function() {
+  console.log('first!');
+  console.log('let's do something soon (second thing)');
+  setTimeout(secondThing, 2000);
+};
+
+setTimeout(firstThing, 2000);
+```
+
 
 ### Pairing Exercises
 
@@ -102,9 +134,9 @@ clearInterval(fiveSecondInterval);
 
 2. Write code that uses setInterval
 
-3. Write 3 set timeouts that console.log something in this order in your code: 1. setTimeout for 4 seconds 2. setTimeout for 2 seconds 3. setTimeout for 2 seconds. What happens?
+3. Run the above examples.
 
-4. write a set timeout that sets another timeout inside the callback.
+4. Write 3 set timeouts that console.log something in this order in your code: 1. setTimeout for 4 seconds 2. setTimeout for 2 seconds 3. setTimeout for 2 seconds. What happens?
 
 5. write code that uses setInterval and a separate counter variable to console.log something every 3 seconds.
 

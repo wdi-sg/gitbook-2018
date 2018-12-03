@@ -296,9 +296,10 @@ Here are some good blog posts that break down `map`, `filter`, and `reduce`.
 
 ### Pairing Exercises
 
-1. copy paste and run the write your own callback code
+- copy paste and run the write your own callback code
+  - add your own string-returning function and use the alertFiveTimes function to call it.
 
-2. Write a function that uses a loop and does multiplication on two numbers.
+- Write a function that uses a loop and does multiplication on two numbers-
 
 Given:
 ```
@@ -315,8 +316,8 @@ multiply( add, 2 , 3  );
 
 The result should be 6.
 
-3. write a console stopwatch function. When is starts, console log the current stopwatch time in seconds in this format: `hours:minutes:seconds`
+- write a console stopwatch function. When is starts, console log the current stopwatch time in seconds in this format: `hours:minutes:seconds`
 
-4. write code that will set a countdown timer. Prompt the user for how many seconds they want the timer to last, and when you get their answer, start the timer.
+- write code that will set a countdown timer. Prompt the user for how many seconds they want the timer to last, and when you get their answer, start the timer.
 
-5. write your own foreach function that takes a callback parameter that will run for each iteration.
+- write your own foreach function that takes a callback parameter that will run for each iteration.

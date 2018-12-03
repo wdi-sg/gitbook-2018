@@ -5,6 +5,12 @@
 
 Run the code. See the output and what the code does and how it runs.
 
+- go to the pull requests page for this assignment
+- find your partner's pull request
+- click into their profile to find their repo
+- click on the repo address so that you can clone it `git clone {copied address}`
+- make sure that you run the command *outside* of where you have your own forked repo
+
 ## Read
 
 Read the code. Take time to see how the code makes the output you are seeing.
@@ -44,3 +50,6 @@ Once you have an idea of how the code works, is there anything you would do to r
 Work on one of the furthers for this exercise in order to add new code.
 
 Add code from today's lesson into this code.
+
+### Comment
+- go to your partner's pull request. Make at least one comment on one of their commits.
