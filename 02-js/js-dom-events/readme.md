@@ -107,7 +107,6 @@ document.getElementById("myDiv")
 ### Pairing Exercise: (15 minutes)
 Create a new html and javascript file.
 
-For these events, you can look up the details on MDN, but it's not neccesary.
 
 Using this function:
 ```
@@ -128,6 +127,8 @@ And this HTML:
 * set keyup or keydown to the input
 * try setting some different kinds of events from MDN on these elements.
 * try writing some other elements in the HTML file and setting events on them.
+
+[List of Event Types](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ---
 
