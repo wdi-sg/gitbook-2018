@@ -71,7 +71,7 @@ links.forEach(function(link, i){
 
   link.addEventListener('click', function () {
     alert(i);
-  };
+  });
 
   document.body.appendChild(link);
 });

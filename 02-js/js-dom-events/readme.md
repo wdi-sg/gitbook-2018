@@ -46,7 +46,7 @@ Also this is the style you should use often.
 ```js
 document.getElementById("myDiv").addEventListener("click", function() {
 	//Your code here
-}
+})
 ```
 
 ---
@@ -56,7 +56,7 @@ Events can only be attached to specific elements. Therefore, when you return a c
 ```js
 document.querySelectorAll("li").addEventListener("click", function() {
 	console.log("Click worked");
-}
+})
 ```
 
 ---
@@ -68,7 +68,7 @@ var listItems = document.querySelectorAll("li")
 for(var i = 0; i < listItems.length; i++){
     listItems[i].addEventListener("click", function() {
     	console.log("Click worked");
-    }
+    });
 }
 ```
 
@@ -220,7 +220,7 @@ var listItems = document.querySelectorAll("li");
 for(var i = 0; i < listItems.length; i++){
     listItems[i].addEventListener("click", function() {
       console.log("hello!");
-    }
+    });
 }
 ```
 
