@@ -165,13 +165,12 @@ Most of the time, `min-width` and `max-width` will be your bread and butter. You
 
 
 ### Exercise
-Redo the instagram exercise from earlier.
+Redo the layout pairing exercise.
 
-If you want you can use this finished version as starter code: [https://github.com/wdi-sg/css-positioning/tree/brian-finished/src](https://github.com/wdi-sg/css-positioning/tree/brian-finished/src)
+Add the media queries so that when the screen width is below 720px, the columns collapse into a single column.
 
-Make it more friendly to see on a phone.
+#### further
+Add a third column to your desktop width layout. When the browser is over 1080px it should be 3 columns. When it is 720px to 481px, it should be two columns, with the third column moving below. When it is 480px or below it should be one column.
 
-1. Don't display the phone when the screen is narrow
-1. Center the main div or make it 100% of the width if the screen is narrow.
-1. stack the footer links on a narrower screen
-1. Move the instagram logo above the login button, and center the login button
+#### further
+Add CSS to adjust the font size and other styles.
