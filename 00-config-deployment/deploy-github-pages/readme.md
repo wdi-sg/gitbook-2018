@@ -24,11 +24,11 @@ We'll start by creating a site at `username.github.io`. This repo contains HTML,
 
 Follow instructions on [Github Pages](https://pages.github.com/) to initialize GitHub Pages in your GitHub account.
 
-1. [Create a new repository](https://github.com/new) named `username.github.io` where `username` is your GitHub username.
-2. Clone the new repo to your computer `git clone https://github.com/username/username.github.io`
-3. Change your directory to the repo `cd username.github.io`
-4. Create a simple Hello World homepage: `echo "Hello World" > index.html`
-5. Add new files, commit the change, and push the repo.
+- [Create a new repository](https://github.com/new) named `username.github.io` where `username` is your GitHub username.
+- Clone the new repo to your computer `git clone https://github.com/username/username.github.io`
+- Change your directory to the repo `cd username.github.io`
+- Create a simple Hello World homepage: `echo "Hello World" > index.html`
+- Add new files, commit the change, and push the repo.
 
 ```
 git add -A
@@ -36,13 +36,11 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 
-6. View the now-hosted page! http://username.github.io.
+- View the now-hosted page! http://username.github.io.
 
-Any changes made to your homepage can be done directly in the `master` branch.
+#### Using other repos with GitHub Pages
 
-### Using other repos with GitHub Pages
-
-Github Pages works by serving HTML/CSS/JavaScript files that live in a separate branch.
+Github Pages works by serving HTML/CSS/JavaScript files that live in a separate git branch.
 
 Think of a branch as a separate "timeline" for your code. It can represent a set of different commits. We've been dealing with the **master** branch so far, but now we'll introduce a new branch for deployment called **gh-pages**. This branch is necessary to deploy to Github Pages, with the exception of your homepage.
 
