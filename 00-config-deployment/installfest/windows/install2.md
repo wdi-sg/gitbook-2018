@@ -15,13 +15,6 @@ We will install the Linux version of NodeJS into WSL without any version manager
 	- `node -v` (Checks the installed version of NodeJS)
 	- `npm -v` (Checks the installed version of npm)
 
-## Installing NodeJS using the Node Version Manager (nvm)
-This method allows you to use different versions of NodeJS if required, but incurs a WSL performance penalty as the NVM takes some time to start up each time you open a WSL window.
-- Run the following commands in order at the WSL terminal.
-	- `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
-	- `nvm install node` (may take very long if your computer has to compile node)
-
-
 ## Installing PostgreSQL
 - Any database system contains at least 2 parts: the database server itself, and the database client. As WSL does not officially support GUI tools, for our convenience, we will install database servers on Windows, and use command line clients in WSL. This allows us to optionally install GUI clients in Windows for more convenient data visualization.
 
@@ -44,28 +37,14 @@ This method allows you to use different versions of NodeJS if required, but incu
 - __HeidiSQL__
   - Go to the Microsoft Store, search for and install `HeidiSQL`. This is a much more user friendly graphical SQL client. Originally meant for MySQL installations (another type of SQL server), it now works for PostgreSQL as well.
 
-## Installing Ruby
-- Run the following commands in order in the WSL terminal.
-	- `sudo apt-get uninstall ruby` This ensures that you will not be using any default version of Ruby that might have already been pre-installed and is likely old.
-	- `sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libpq-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev`
-	- `git clone https://github.com/rbenv/rbenv.git ~/.rbenv`
-	- `echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc`
-	- `echo 'eval "$(rbenv init -)"' >> ~/.bashrc`
-	- `exec $SHELL`
-	- `git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build`
-	- `echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc`
-	- `exec $SHELL`
-	- `rbenv install 2.5.1` (this can take a long time, ~10-30 minutes)
-	- `rbenv global 2.5.1`
-	- `ruby -v`
 
-## Installing Rails
-- Install Ruby first as above, then run the following commands.
-	- `gem install rails` (this can take a long time, ~10 minutes)
-	- `rbenv rehash`
-	- `rails -v`
+#### Addendum: Installing NodeJS using the Node Version Manager (nvm)
+This method allows you to use different versions of NodeJS if required, but incurs a WSL performance penalty as the NVM takes some time to start up each time you open a WSL window.
+- Run the following commands in order at the WSL terminal.
+	- `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+	- `nvm install node` (may take very long if your computer has to compile node)
 
-## Installing MongoDB
+#### Addendum: Installing MongoDB
 - Get and install MongoDB Community Edition from (https://www.mongodb.com/download-center#community). Optionally, grab the MongoDB Compass, a GUI frontend for MongoDB, from (https://www.mongodb.com/download-center#compass) and install it __after__ all the steps here are done.
 - We need to create the directories for MongoDB to store data and logs in.
 	- Press the Windows key and type `cmd.exe` and press `Ctrl-Shift-Enter` to run it as an administrator. Run the following commands.
@@ -87,3 +66,4 @@ This method allows you to use different versions of NodeJS if required, but incu
 	- If you want MongoDB to start automatically on boot, i.e. you won't have to type `net start MongoDB` each time you want to start on your dev session, do the following.
 		- Press the Win key and type `services`. Press enter.
 		- Look for the MongoDB service, right-click on it, and ensure that the `Startup type:` is set to `Automatic`.
+

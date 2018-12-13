@@ -12,4 +12,5 @@ Once you are finished, also make sure to install further Sublime package control
 [OSX 2](osx/install2.md)
 [OSX 3](osx/install3.md)
 
-[WINDOWS 2 & 3](windows/install2.md)
+[WINDOWS 2](windows/install2.md)
+[WINDOWS 3](windows/install3.md)
