@@ -82,6 +82,7 @@
 * [Server](04-server/readme.md)
   * [Intro to Node](04-server/00node.md)
   * [New ES6 Syntax](04-server/00es6.md)
+  * [Node Modules](04-server/01modules.md)
   * [Package Management with npm](04-server/01npm.md)
   * [Disk Storage](04-server/02flatfile.md)
   * [Internet Fundamentals](04-server/how-the-internet-works.md)
