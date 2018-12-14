@@ -26,8 +26,8 @@ We will be using the `jsonfile` node package to write plain JSON text to our dis
 Begin in a new directory
 
 ```
-mkdir jsonfile
-cd jsonfile
+mkdir jsondisk
+cd jsondisk
 ```
 
 Make a node project
@@ -88,7 +88,7 @@ Put something in the json file.
 ```
 {
   "bannana":"monkey",
-  "coconut":"sloth
+  "coconut":"sloth"
 }
 ```
 Note you don't need to assign it to a variable.

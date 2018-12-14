@@ -159,38 +159,9 @@ Some well known ports:
 ---
 
 ## Demo: How to send things over the internet: ports with http version
-Real-life recreation with paper. (One person pretends to be the backend)
-- Prepare a request in the browser. Determine which HTTP method / verbs we are using
-- Send the request to a server on port 80
-- server recieves the response on port 80
-- reads the headers
-- looks at the contents of the request
-- constructs a response
-- sends the response on port 80
-- browser is waiting for the response
-- Response has status and status code on the envelope.
-- Deal with the server response
-- If it's good, display the output to the user
-- If it's bad, do nothing, or display an error to the user
-
----
-
-## Demo: How to send things over the internet: ports with https version
-Real-life recreation with paper. (One person pretends to be the backend)
-- you have decided to run your https / SSL server on a separate thread / process - you are reaching the same machine, but a different room in the building.
-- Prepare a request in the browser. Determine which HTTP method / verbs we are using
-- Send the request to a server on port 443
-- server recieves the response on port 443, is decrypted
-- reads the headers
-- looks at the contents of the request
-- constructs a response
-- encrypts and sends the response on port 443
-- browser is waiting for the response
-- Response has status and status code on the envelope.
-- Deal with the server response, etc.
+Real-life recreation with paper. (One desk is a computer. One person at the desk person pretends to be the backend)
 
 
----
 #### Use Traceroute To Track Internet Routing
 
 ![http://en.dnstools.ch/visual-traceroute.html](http://en.dnstools.ch/visual-traceroute.html)
@@ -202,18 +173,3 @@ Real-life recreation with paper. (One person pretends to be the backend)
 
 ## TCP Demo: How to send things over the internet:
 Real-life recreation with paper. (One person pretends to be the backend)
-- Prepare a request in the browser. Determine which HTTP method / verbs we are using
-- Our operating system-level network functionality divides our message into packets
-- Send the request packets through the network
-- server recieves the response
-- reads the headers
-- looks at the contents of the request
-- constructs a response
-- the operating system network functionality divides the response into packets
-- sends the response packets
-- packets arrive at the client and are reconstructed
-- browser is waiting for the response
-- Response has status and status code on the envelope.
-- Deal with the server response
-- If it's good, display the output to the user
-- If it's bad, do nothing, or display an error to the user
