@@ -63,28 +63,7 @@ the client can pass parameters to the server through the querystring (in a GET r
 #### hash/fragment
 the URI fragment is generally used by the client to identify some portion of the content in the response; interestingly, a broken hash will not break the whole link - it isn't the case for the previous elements
 
----
 
 <br>
 _The Schema above is from [Tuts +](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)_
 
-
-
----
-
-
-## Demo: How to send things over the internet: HTTP
-Real-life recreation with paper. (One person pretends to be the backend)
-- Prepare a request in the browser. Determine which HTTP method / verbs we are using
-- Send the request to a server
-- server recieves the response
-- reads the headers
-- looks at the contents of the request
-- based on what was requested / what they want to get back, constructs a response
-- Ex: `www.google.com/cities-finder/?search=bar&format=json&page=3`
-- sends the response
-- browser is waiting for the response
-- Response has status and status code on the envelope.
-- Deal with the server response
-- If it's good, display the output to the user
-- If it's bad, do nothing, or display an error to the user
