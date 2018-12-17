@@ -88,7 +88,7 @@
   * [Internet Fundamentals](04-server/how-the-internet-works.md)
   * [Internet Lab](04-server/internet-lab.md)
   * [Internet Lab 2](04-server/internet-lab-2.md)
-* [Node & xpress](05-express/readme.md)
+* [Node & Express](05-express/readme.md)
   * [Intro to Express](05-express/express-intro/01express.md)
     * [Express Internet 1](05-express/express-intro/00express-http-server.md)
     * [Express Internet 2](05-express/express-intro/02internet.md)

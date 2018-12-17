@@ -164,7 +164,7 @@ Real-life recreation with paper. (One desk is a computer. One person at the desk
 
 #### Use Traceroute To Track Internet Routing
 
-![http://en.dnstools.ch/visual-traceroute.html](http://en.dnstools.ch/visual-traceroute.html)
+[http://en.dnstools.ch/visual-traceroute.html](http://en.dnstools.ch/visual-traceroute.html)
 
 - at the network level each request and response is broken up into packets. Those packets are routed across the network in order to eventually arrive at their destination. (The IP address we got from the DNS server)
 
