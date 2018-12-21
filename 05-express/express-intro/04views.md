@@ -239,7 +239,7 @@ CSS class names are set with `className` instead of `class`
 
 Start from scratch.
 
-Create an express app.
+#### Create your app
 
 ```
 mkdir react-v
@@ -250,21 +250,52 @@ npm install express-react-views react react-dom
 touch index.js
 ```
 
+#### Create a dummy data file:
+
 Go to this URL: [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
 
-Assign that JSON array to a variable `const users = ...`
+Since this is just for rendering, let's just put all of this data into a file, and use `require` to get it.
+
+users.js:
+
+```
+module.exports = // paste the contents of the file here
+```
+
+Require the file into your app:
+
+index.js:
+
+```
+const users = require('./users.js')
+```
+
+#### Render a single user object in react
 
 Implement an express route `/firstuser` - it creates an HTML page with the first user in the array `users[0]`.
 
 This template should display at least 2 data fields for this user.
 
 ##### further
+Implement a route with params:  `/users/:id`
 
-Implement an express route `/users` - it creates an HTML page with all of the users in the `const users` variable.
+Use `:id` to get the user according to it's index in the array
+
+##### further
+Fix the above to search through the array and get the user according to their *actual* id
+
+##### further
+
+Implement an express route `/users` - it creates an HTML page with all of the users.
+
+This will be a `<ul>` with an `<li>` for each user.
+
+Use the `map` syntax above to render the list.
 
 This template should display at least 2 data fields for each user.
 
 ##### further
 Display the nested pieces of data in the user objects.
 
-You can also put those nested pieces of data in their own components / files.
+*note*: don't use `for in` to display the nexted data, or any data in the user object.
+
