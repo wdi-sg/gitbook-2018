@@ -21,7 +21,19 @@ A little while back, a couple wonderful folks at Twitter created a front end fra
 
 You can include Bootstrap multiple ways, the easiest to start is a CDN. As we get to use Rails and more robust tooling, we can also use package managers. Our current setup won't support this, but we'll use it in time!
 
-1. CDN (content delivery network - someone else hosts the library/framework and you access it via a URL) https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+1. CDN (content delivery network - someone else hosts the library/framework and you access it via a URL) 
+```
+Stylesheet
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+Scripts for Bootstrap animations
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+```
 2. Include the actual CSS and JS files - great for offline development
 
 ---
