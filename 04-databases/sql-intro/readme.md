@@ -246,7 +246,15 @@ DESC (descending)
 
 ### Pairing Exercise
 
-Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the CREATE TABLE command and execute it in psql. Use \dt to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use \dt again to make sure that the table has been dropped.
+Design a table for a movie database.
+
+It will have a `title`, `description` and `rating`. `title` and `description` will be text, and rating will be an integer.
+
+Make the CREATE TABLE command and execute it in psql.
+
+Use \dt to verify that the table was created.
+
+Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use \dt again to make sure that the table has been dropped.
 
 ## Selecting
 
