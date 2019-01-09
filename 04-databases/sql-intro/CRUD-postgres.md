@@ -172,18 +172,27 @@ app.get('/', (req, res) => {
   // query database for all pokemon
 
   // respond with text that lists the names of all the pokemons
-  response.render('home');
+  res.send('hello');
 });
 
-app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
+// boilerplate for listening and ending the program
 
-app.on('close', () => {
-  console.log('Closed express server');
+const server = app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
 
-  pool.end(() => {
-    console.log('Shut down db connection pool');
-  });
-});
+let onClose = function(){
+
+  console.log("closing");
+
+  server.close(() => {
+
+    console.log('Process terminated');
+
+    pool.end( () => console.log('Shut down db connection pool'));
+  })
+};
+
+process.on('SIGTERM', onClose);
+process.on('SIGINT', onClose);
 ```
 
 #### Further
