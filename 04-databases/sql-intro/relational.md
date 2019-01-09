@@ -55,3 +55,29 @@ Insert user records, then insert dogs that belong to the users.
 
 ##### Further
 Create a database that records students and teachers.
+
+##### Further
+Create a node command line program that takes the name of the owner and prints out the dogs that belong to that owner.
+
+(Note that this should require 2 different SQL queries)
+
+Seed your DB:
+```
+INSERT INTO owners (name, phone, email) VALUES ('Chee Kean','34562876','ck@ga.co');
+INSERT INTO owners (name, phone, email) VALUES ('Scott','37562876','scott@ga.co');
+
+INSERT INTO dogs (name, owner_id) VALUES ('Fido', 1);
+INSERT INTO dogs (name, owner_id) VALUES ('Susan Chan', 1);
+INSERT INTO dogs (name, owner_id) VALUES ('Alice', 2);
+INSERT INTO dogs (name, owner_id) VALUES ('Mr. Winkle Pants', 2);
+```
+
+When you run:
+```
+node index.js "Chee Kean"
+```
+
+Your program should return:
+```
+Fido, Susan Chan
+```

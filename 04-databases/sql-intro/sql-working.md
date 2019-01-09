@@ -146,7 +146,7 @@ npm install pg
 touch index.js
 touch tables.sql
 touch seed.sql
-createdb your-test-db -U USERNAME
+createdb testdb -U USERNAME
 ```
 
 Use tables.sql to record the tables you need.
