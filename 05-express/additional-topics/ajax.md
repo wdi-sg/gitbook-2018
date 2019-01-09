@@ -67,6 +67,12 @@ Your browser js should request for a list (array) of data. This can be users, po
 
 When you recieve the response in the browser, render it to the DOM.
 
+Remember that you'll need this snippet in the express index.js in order to server static files:
+
+```
+app.use(express.static('public'))
+```
+
 #### further
 Implement a form input that the user can type the id of an item to get back the record they were looking for.
 
