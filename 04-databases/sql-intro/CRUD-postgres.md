@@ -177,10 +177,10 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
 
-server.on('close', () => {
+app.on('close', () => {
   console.log('Closed express server');
 
-  db.pool.end(() => {
+  pool.end(() => {
     console.log('Shut down db connection pool');
   });
 });
