@@ -114,6 +114,7 @@
   * [SQL](04-databases/sql-intro/readme.md)
     * [SQL and Node](04-databases/sql-node.md)
     * [Working With Postgres](04-databases/sql-intro/sql-working.md)
+    * [Express & Postgres](04-databases/sql-intro/CRUD-postgres.md)
     * [Relational SQL Tables - 1 - to - many](04-databases/sql-intro/relational.md)
     * [Relational SQL Tables - mnay - to - many](04-databases/sql-intro/many-many.md)
     * [Advanced SQL](04-databases/sql-advanced/readme.md)
