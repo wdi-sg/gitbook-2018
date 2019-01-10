@@ -231,11 +231,6 @@ Tweets has one video
   
   Hint: If you're not sure how to make a given table or store a piece of data, write in, with dummy data, all the columns of a single record / row.
 
-### Deliverables
-
-
-### In Pairs:
-
 #### 1
 An ERD diagram, using crow's foot notation, of whatever app you choose.  For example:
 
