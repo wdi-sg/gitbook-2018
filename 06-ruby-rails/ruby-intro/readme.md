@@ -361,7 +361,9 @@ Typecasting is the act of altering an object's datatype
 ```
 
 ## Code blocks
-Use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
+You can use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
+
+We will almost exclusively be using `do ... end`.
 
 ```ruby
 # count to 10

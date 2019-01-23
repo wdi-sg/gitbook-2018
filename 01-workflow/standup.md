@@ -1,6 +1,6 @@
 # Standup
 
-Every morning at exactly 10.00 \(**so be here before then**\), we'll cluster together into small groups of four or five - _scrums work best with small numbers of people_.
+Every morning we'll cluster together into small groups of four or five - _scrums work best with small numbers of people_.
 
 Each person in a group will use a marker to put on the wall:
 

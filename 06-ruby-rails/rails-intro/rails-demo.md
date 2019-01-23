@@ -16,8 +16,6 @@ rails server
 
 ```ruby
 Rails.application.routes.draw do
-  resources :articles
-
   root 'articles#index'
 end
 ```
@@ -69,6 +67,8 @@ touch app/views/articles/new.html.erb
 <h1>hello world</h1>
 ```
 
+#### Try it out
+
 #### Add this code into app/views/articles/new.html.erb
 ```
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
@@ -88,11 +88,21 @@ touch app/views/articles/new.html.erb
 <% end %>
 ```
 
+#### Add the route to config/routes.rb
+```
+  get '/articles/new' => 'articles#new'
+```
+
 #### Change the create method to output the params being sent to it:
 ```
 def create
   render plain: params[:article].inspect
 end
+```
+
+#### Add the route to config/routes.rb
+```
+  post '/articles' => 'articles#create'
 ```
 
 #### Try it out in the browser:
@@ -180,6 +190,11 @@ end
 <%= link_to 'Back', articles_path %>
 ```
 
+#### Add the route to the config/routes.rb file
+```
+  get '/articles/:id' => 'articles#show'
+```
+
 
 #### Add to the index controller
 ```
@@ -229,6 +244,7 @@ end
 <%= link_to 'Back', articles_path %>
 ```
 
+
 ### Editing
 
 #### Add an edit action to the ArticlesController
@@ -263,6 +279,11 @@ end
 <%= link_to 'Back', articles_path %>
 ```
 
+#### Add the route to the config/routes.rb file
+```
+put '/articles/:id' => 'articles#update'
+```
+
 #### Create the update action in app/controllers/articles_controller.rb
 ```
 def update
@@ -286,6 +307,12 @@ end
 
 
 ## Deleting
+#### Add the route to the config/routes.rb file
+```
+delete '/articles/:id' => 'articles#destroy'
+```
+
+
 
 #### Add the delete controller to app/controllers/articles_controller.rb
 ```
@@ -303,3 +330,6 @@ Add a 'Destroy' link to your index action template (app/views/articles/index.htm
         method: :delete,
         data: { confirm: 'Are you sure?' } %></td>
 ```
+
+### Pairing Exercise
+Run the above code.

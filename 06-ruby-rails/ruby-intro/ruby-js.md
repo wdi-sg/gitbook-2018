@@ -1,6 +1,5 @@
 ## Ruby vs. Javascript
 
-
 ### No Falsy / Truthy
 Ruby won't compare two things that are different types. You can cast them if you want to compare.
 
@@ -51,7 +50,7 @@ end
 ``
 
 ### Enumerables and Collections
-Enumberables are a kind of module that you use to manipluate **collactions**
+Enumberables are a kind of module that you use to manipluate **collections**
 
 `.each` is a module method implemented for every kind of collection (array and hash)
 
@@ -66,6 +65,8 @@ end
 These keywords denote the beggining and end of a block. `do end` is specifically used to specify the block for an enumberable
 
 `def end` are used to specify a function
+
+These are a kind of replacement for curly braces.
 
 javascript:
 ```js
@@ -121,7 +122,9 @@ puts "monkey: #{monkey}"
 
 #### Keyword Arguments
 
-You can specify default values for function arguments
+You can specify default values for function arguments.
+
+Works best when you have multiple arguments for your functions- argument order doesnt matter!
 ```
 def say_hello(friend: 'Tim')
   puts "Hello, #{friend}!"

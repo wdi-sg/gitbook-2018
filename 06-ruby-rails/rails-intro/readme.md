@@ -1,7 +1,5 @@
 # Intro to Rails
 
----
-
 ## Objectives
 
 - principles of rails
@@ -14,7 +12,6 @@
 - rails routes
 - views / erb
 - view helpers
----
 
 
 ## Principles of Rails
@@ -22,11 +19,9 @@
 1. **DRY** - keep your code DRY and use concise, consistent code.
 2. **Convention over configuration** - Rails is built using sensible defaults, which speeds development and means that there is less code to maintain.
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 Rails uses (and for the most part, forces you to adhere to) an **MVC** architecture. We used MVC when creating Express applications.
----
+
 
 **Model** - Active Record Class Objects that we use to interact with Postgresql
 
@@ -34,19 +29,12 @@ Rails uses (and for the most part, forces you to adhere to) an **MVC** architect
 
 **Controller** - The controller will make decisions based on the request and then control what happens in response. It controls the interaction with our models and with our views.
 
----
-
 Many Rails users say that most of your business logic should go in the Model, not in the controller.
-
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-
 
 ![MVC Diagram](http://elibildner.files.wordpress.com/2012/06/screen-shot-2012-06-05-at-2-12-18-am.png)
 
 
 More info about Rails: [http://rubyonrails.org/](http://rubyonrails.org/)
----
 
 ## Create a Rails App
 
@@ -62,9 +50,6 @@ If we want to use a different database (such as PostgreSQL) we need to specify t
 rails new name_of_the_app -d postgresql
 ```
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-
 ***SPECIAL NOTE FOR UBUNTU/DEBIAN USERS***
 
 You might need to install libpq-dev and build-essential:
@@ -73,9 +58,8 @@ You might need to install libpq-dev and build-essential:
 sudo apt-get install libpq-dev build-essential
 ```
 
----
 
-##Rails File Structure
+## Rails File Structure
 
 The main directory that we'll be working in is the `app` directory which contains our `models`, `views`, and `controllers`.
 
@@ -83,15 +67,9 @@ The main directory that we'll be working in is the `app` directory which contain
 
 More info: [rails guides - getting started](http://guides.rubyonrails.org/getting_started.html#creating-the-blog-application)
 
----
-
-
 ## Database config
 
 The configuration for the database can be found in `(Your project name)/config/database.yml` This is where you can find the name of your database, and change database options.
-
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 ***NOTE FOR UBUNTU/DEBIAN USERS***
 
@@ -103,13 +81,11 @@ user: YOUR USERNAME HERE
 password: YOUR DATABASE PASSWORD HERE
 ```
 
----
 To create your database.
 
 ```bash
 rails db:create
 ```
----
 
 ## Start a server
 
@@ -120,29 +96,6 @@ rails server
 ```
 
 This will start a server on port 3000.
-
----
-
-## Generators
-
-Rails includes a few generators which are command line tools used to create files for us. This automates the repetitive task of creating some of the more common files we'll need to make when building a rails app. To run a generator we type `rails generate` or...
-
-```bash
-rails g
-```
-
-...for short
-
-The two that we will be using regularly are:
-
-* `rails g migration`
-* `rails g model`
-
-We will touch on actual usage of both of these.
-
-More info: [Rails guides - command-line tools](http://guides.rubyonrails.org/command_line.html#rails-generate)
-
----
 
 ## Models / ORM / Active Record
 
@@ -166,9 +119,8 @@ This will create a migration file in the `db/migrations` directory and a model i
 
 more info: [Rails Guide - Active Record](http://guides.rubyonrails.org/active_record_basics.html)
 
----
 
-##Migrations
+## Migrations
 
 Migrations are used to create the schema of our database. When we generate a model it creates a migration file that will automatically create the correct database table.
 
@@ -176,11 +128,8 @@ To run all pending migrations just type `rails db:migrate` and the new table wil
 
 Migrations can also be used to make other database modifications. (eg adding, removing, renaming columns)
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 More info: [Rails guides - migrations](http://guides.rubyonrails.org/active_record_migrations.html)
----
 
 `rails db:create` automatically creates your databases.
 Here are some other `rake` commands you'll want to know about for database management.
@@ -193,10 +142,7 @@ rails db:rollback STEP=n # rollback 'n' migrations
 ```
 
 
----
-
-
-##Create a controller
+## Create a controller
 
 `controllers` and the `actions` contained within are the starting point for the back-end code that will be executed when a user visits a particular page/URL.
 
@@ -214,9 +160,8 @@ class MainController < ApplicationController
 end
 ```
 
----
 
-##Routing
+## Routing
 
 Routing is used to route URLs to specific controllers/actions. So when a user types in `/about` we want it to go to the about action of the main controller. To specify this we use the `#` symbol so for our about action it'd be `main#about`.
 
@@ -224,19 +169,16 @@ Routes consist of an HTTP verb and a path. `GET /about` is not the same as `POST
 
 Routes are contained in the `config/routes.rb` file.
 
----
 The syntax of a routes.rb file is a ruby DSL (domain specific language)
 
 The "magic" features of the ruby language allow us to write subsets of functionality that make it look like we have language-level features For example `=` at the end of a method name is assignment.
 
----
 
 To list all routes you can run the following command:
 
 ```bash
 rake routes
 ```
----
 
 Inside of config/routes.rb:
 ```ruby
@@ -247,7 +189,6 @@ Inside of config/routes.rb:
 * **root** - A special route known as the "root route". Every app only has one root route which is used for the home page of the site, AKA what will display when we go to: `http://localhost:3000`
 * **get** - get defines a new `GET` route. Any time you go to a url by typing it into the URL bar it is accessing a `GET` route. Defining routes is simply the url they will type followed by a hash-rocket (`=>`) that points at the controller#action you want it to execute (`main#about`).
 
----
 
 ###More Routing Examples
 
@@ -300,23 +241,14 @@ class MainController < ApplicationController
 
 end
 ```
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
-
 For rendering text, JSON, other templates, etc., you can take a look at the [Rails Documentation on creating responses](http://guides.rubyonrails.org/layouts_and_rendering.html#creating-responses). Trust us, it's good.
 
----
 
-##ERb
-
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
+## ERb
 
 Rails uses a templating engine called ERb (Embedded Ruby). It allows us to mix HTML and ruby code to create dynamic templates. It supports the majority of the major components of the ruby language.
 
 To designate ruby code we use "magic tags" `<% #ruby code goes here %>`. Any code between those tags will be executed on the server before the HTML content is served to the user. If you want the result of the code to output you add a `=` inside the tag like this: `<%= 5+5 %>` would insert the number "10" into the HTML.
-
----
 
 **Example**
 
@@ -345,8 +277,6 @@ This could would output the following HTML:
 
 This HTML is then sent to the user's web browser to be rendered.
 
----
-
 ##Passing data from controllers to views
 
 **Inside a controller action**
@@ -369,16 +299,12 @@ end
 <% end %>
 ```
 
----
 #### ruby variables vs. instance variables
 
 Note that we can pass data from a controller action to a view by defining the variables as instance variables. This is required because instance variables only exist in the action. By declaring them as instance variables, the variables are passed to the view.
 
 More info here: [rails guides layouts and rendering](http://guides.rubyonrails.org/layouts_and_rendering.html)
 
-
-
----
 
 ###Handy Methods for Views
 
@@ -414,8 +340,6 @@ edit_tweet_path(tweet)
 <% end %>
 ```
 
-<span class="non-slide"></span><span class="non-slide"></span>
-<span class="non-slide"></span><span class="non-slide"></span>
 
 * [Rails Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
 * [Rails Form Methods](http://guides.rubyonrails.org/form_helpers.html#how-do-forms-with-patch-put-or-delete-methods-work-questionmark)
@@ -425,7 +349,6 @@ edit_tweet_path(tweet)
 Note that if we create a form helper on an edit page, the helper automatically makes assumptions about the form. One of these assumptions is to provide a hidden `_method` field that describes the method that should be used on submission. This is the Rails workaround to sending `PUT` and `DELETE` requests!
 
 
----
 Note that we can add a `method` attribute to links as well, using a URL helper. Here's an example.
 
 ```erb
@@ -433,6 +356,29 @@ Note that we can add a `method` attribute to links as well, using a URL helper. 
 ```
 
 Note that this is made possible by a piece of JavaScript called `rails.js` running on the page.
+
+#### Further Topics:
+
+##### Generators
+
+Generators are move auto-magic rails functionality that helps spin up an app as quickly as possible. It looks flashy but can be confusing.
+
+Rails includes a few generators which are command line tools used to create files for us. This automates the repetitive task of creating some of the more common files we'll need to make when building a rails app. To run a generator we type `rails generate` or...
+
+```bash
+rails g
+```
+
+...for short
+
+The two that we will be using regularly are:
+
+* `rails g migration`
+* `rails g model`
+
+We will touch on actual usage of both of these.
+
+More info: [Rails guides - command-line tools](http://guides.rubyonrails.org/command_line.html#rails-generate)
 
 ---
 
