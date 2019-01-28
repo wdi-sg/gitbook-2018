@@ -108,28 +108,46 @@ To create a Tweet model with the following attributes:
 * username - string (varchar)
 * content - text
 
-We simply run:
+```
+touch app/models/tweet.rb
+```
+Contents of the file:
+```
+class Tweet < ActiveRecord::Base
+  # AR classes are singular and capitalized by convention
+end
+```
+
+#### Create the table:
 
 ```
-rails g model tweet username:string content:text
+rails generate migration 
 ```
 
-This will create a migration file in the `db/migrations` directory and a model in the `app/models` directory.
+Look at the file that got generated:
+```
+ls -la db/migrate
+```
 
+Look inside the generated file:
+```
+class Articles < ActiveRecord::Migration
+  def change
+  end
+end
+```
+
+Inside the `change` method add your table creation code:
+
+```
+create_table :articles do |t|
+  t.string :title
+  t.text :text
+  t.timestamps
+end
+```
 
 more info: [Rails Guide - Active Record](http://guides.rubyonrails.org/active_record_basics.html)
-
-
-## Migrations
-
-Migrations are used to create the schema of our database. When we generate a model it creates a migration file that will automatically create the correct database table.
-
-To run all pending migrations just type `rails db:migrate` and the new table will be created.
-
-Migrations can also be used to make other database modifications. (eg adding, removing, renaming columns)
-
-
-More info: [Rails guides - migrations](http://guides.rubyonrails.org/active_record_migrations.html)
 
 `rails db:create` automatically creates your databases.
 Here are some other `rake` commands you'll want to know about for database management.

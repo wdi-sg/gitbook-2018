@@ -80,7 +80,7 @@ end
 [But DON'T DO IT.](https://robots.thoughtbot.com/rescue-standarderror-not-exception)
 
 ### Pairing Exercise
-Create a class for transiactions.
+Create a class for transactions.
 
 This class will have a method that does addition.
 

@@ -90,7 +90,7 @@ touch app/views/articles/new.html.erb
 
 #### Add the route to config/routes.rb
 ```
-  get '/articles/new' => 'articles#new'
+  get '/articles/new' => 'articles#new', as: 'new_article'
 ```
 
 #### Change the create method to output the params being sent to it:
@@ -187,12 +187,12 @@ end
 
 #### Also add a link to go back to the index action as well, so that people who are viewing a single article can go back and view the whole list:
 ```
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', root_path %>
 ```
 
 #### Add the route to the config/routes.rb file
 ```
-  get '/articles/:id' => 'articles#show'
+  get '/articles/:id' => 'articles#show' , as: 'article'
 ```
 
 
@@ -225,11 +225,6 @@ end
 </table>
 ```
 
-#### create the app/views/articles/index.html.erb and add a link:
-```
-<%= link_to 'My Blog', controller: 'articles' %>
-```
-
 #### Add this "New Article" link to app/views/articles/index.html.erb placing it above the <table> tag:
 ```
 <%= link_to 'New article', new_article_path %>
@@ -241,7 +236,7 @@ end
   ...
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', root_path %>
 ```
 
 
@@ -252,6 +247,11 @@ end
 def edit
   @article = Article.find(params[:id])
 end
+```
+
+#### create the route
+```
+get '/articles/:id/edit' => 'articles#edit', as: 'edit_article'
 ```
 
 #### Create a file called app/views/articles/edit.html.erb
@@ -276,12 +276,12 @@ end
 
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', root_path %>
 ```
 
 #### Add the route to the config/routes.rb file
 ```
-put '/articles/:id' => 'articles#update'
+patch '/articles/:id' => 'articles#update'
 ```
 
 #### Create the update action in app/controllers/articles_controller.rb
@@ -320,11 +320,11 @@ def destroy
   @article = Article.find(params[:id])
   @article.destroy
 
-  redirect_to articles_path
+  redirect_to root_path
 end
 ```
 
-Add a 'Destroy' link to your index action template (app/views/articles/index.html.erb)
+Add a 'Destroy' link to your index action template, inside the loop (app/views/articles/index.html.erb)
 ```
 <td><%= link_to 'Destroy', article_path(article),
         method: :delete,

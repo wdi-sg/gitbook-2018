@@ -294,7 +294,7 @@ Integer === 'hello'
 /air/ === 'Bald'
 # => false
 
-###Symbols
+### Symbols
 An immutable sequence of characters that represents data stored in a specific memory location. Symbols optimize memory and can help programs run faster when performing comparisons or lookups.
 
 ```ruby

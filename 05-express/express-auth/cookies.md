@@ -119,4 +119,20 @@ npm init
 npm install express cookie-parser
 ```
 
-Follow the instructions above to implement cookies.
+Configure the library in express
+```
+const cookieParser = require('cookie-parser')
+```
+
+Set the configuration to tell express to use the cookie parser.
+```
+app.use(cookieParser());
+```
+
+Follow the other code examples above.
+
+`console.log` the values of `request.cookies`
+
+Look at the cookie values in the network tab.
+
+Look at the cookie values in the `application` tab.

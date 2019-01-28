@@ -17,6 +17,8 @@
 
 ## Installing Rails
 - Install Ruby first as above, then run the following commands.
+	- `gem update`
+	- `gem update --system`
 	- `gem install rails` (this can take a long time, ~10 minutes)
 	- `rbenv rehash`
 	- `rails -v`

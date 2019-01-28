@@ -1,12 +1,9 @@
 # OOP in Ruby
 
----
-
 
 ## What is a class?
 Data and actions on that data.
 
----
 
 ## Why use classes?
 
@@ -22,11 +19,9 @@ Data and actions on that data.
 
 - in rails we will organize our models and controllers around classes
 
----
 
 ## How to create classes
 
----
 
 ## Class Definition of a person
 
@@ -42,7 +37,6 @@ end
 
 This defines a **class** definition of a `Person`. The *class* keyword denotes the *begining* of a class definition.
 
----
 
 ### An object is an **instance** of a person
 
@@ -52,14 +46,9 @@ To create a new *instance* of our *class* we write the following:
 Person.new
 ```
 
----
-
 A class is an imprint of a thing we want to create.
 ![](https://media.giphy.com/media/6djJPJeaWwTrW/giphy.gif)
 
-
-
----
 
 ## Storing data in a class instance
 
@@ -76,12 +65,7 @@ These are specified in the class as **instance variables**
 
 Values that are contained within each **instance** of a class.
 
----
-
-
 ## Class methods
-
----
 
 We can set methods within the class that can be called to do something with the data it contains.
 

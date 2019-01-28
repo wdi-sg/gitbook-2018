@@ -39,12 +39,12 @@ git config --global credential.helper cache
 ### Setting up the bash shell
 > do you have any other shell configuration files in your home directory?
 > `ls -la ~`
-> If you have something named `.zshrc`, `.bashrc`, `.bash_profile`
+> If you have something named `.bashrc`, `.bashrc`, `.bash_profile`
 > Take the contents out of this file and put it in the new one we are creating. Then delete the old file.
 
 Create a new shell config file.
 ```
-touch ~/.profile
+touch ~/.bashrc
 ```
 
 ## Sublime
@@ -67,12 +67,12 @@ export VISUAL=sublime
 export EDITOR="$VISUAL"
 
 function subledit() {
-  subl ~/.profile
+  subl ~/.bashrc
 }
 
 function profilerefresh() {
   echo "Refreshing your configuration."
-  source ~/.profile
+  source ~/.bashrc
 }
 ```
 
@@ -152,7 +152,7 @@ Choose an easy to remember password then type `\quit` to exit psql. MAKE SURE YO
 
 ### Create a Postgres Alias
 
-To make it easier to start postgres we're going to create a couple aliases. Edit your zshrc file by typing `subl ~/.zshrc` add these lines to the bottom of the file:
+To make it easier to start postgres we're going to create a couple aliases. Edit your bashrc file by typing `subl ~/.bashrc` add these lines to the bottom of the file:
 
 ```
 alias psql="sudo -u postgres psql"
@@ -170,12 +170,12 @@ export VISUAL=subl
 export EDITOR="$VISUAL"
 
 function zedit() {
-  subl ~/.zshrc
+  subl ~/.bashrc
 }
 
 function zrefresh() {
   echo "Refreshing your ZSH configuration."
-  source ~/.zshrc
+  source ~/.bashrc
 }
 ```
 
@@ -227,17 +227,17 @@ rbenv lets us change ruby verions on the fly, useful for working with diffrent r
 ```
 cd ~
 git clone git://github.com/sstephenson/rbenv.git .rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 exec $SHELL
 
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 exec $SHELL
 
 sudo chown -R $USER ~/.rbenv
 
-rbenv install 2.2.2
+rbenv install 2.5.1
 ```
 
 (last step above will take a LONG time)
@@ -245,7 +245,7 @@ rbenv install 2.2.2
 **Set ruby version and check that it worked**
 
 ```
-rbenv global 2.2.2
+rbenv global 2.5.1
 ruby -v
 ```
 
@@ -254,7 +254,7 @@ ruby -v
 Before moving on close and reopen terminal.
 
 ```
-gem update
+gem update --system
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler
 gem install rails
@@ -291,10 +291,10 @@ Occasionally you'll encounter permission errors when running websites using the 
 
 We'll be setting up a command line alias to start a Python server.
 
-1.) edit your `.profile`
+1.) edit your `.bashrc`
 
 ```
-subl ~/.profile
+subl ~/.bashrc
 ```
 
 2.) Insert this code near the bottom of the file:

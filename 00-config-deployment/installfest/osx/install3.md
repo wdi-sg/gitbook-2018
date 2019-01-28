@@ -28,8 +28,9 @@ rbenv global 2.5.1
 ### Install Rails
 
 ```
-sudo gem update
-sudo gem install rails
+gem update
+gem update --system
+gem install rails
 ```
 You may need to press "yes" for various entries
 

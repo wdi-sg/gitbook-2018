@@ -126,11 +126,29 @@ SELECT * FROM rangers;
 ## Set up our requests:
 ### Nested route
 ```ruby
-resources :parks do
-  resources :rangers
-end
 
-resources :rangers
+  root 'parks#index'
+  get '/parks' => 'parks#index', as: 'parks'
+  get '/parks/new' => 'parks#new', as: 'new_park'
+  post '/parks' => 'parks#create'
+  get '/parks/:id' => 'parks#show' , as: 'park'
+  get '/parks/:id/edit' => 'parks#edit', as: 'edit_park'
+  patch '/parks/:id' => 'parks#update'
+  delete '/parks/:id' => 'parks#destroy'
+
+
+  get '/rangers' => 'rangers#index', as: 'rangers'
+  get '/rangers/new' => 'rangers#new', as: 'new_ranger'
+  post '/rangers' => 'rangers#create'
+  get '/rangers/:id' => 'rangers#show' , as: 'ranger'
+  get '/rangers/:id/edit' => 'rangers#edit', as: 'edit_ranger'
+  patch '/rangers/:id' => 'rangers#update'
+  delete '/rangers/:id' => 'rangers#destroy'
+
+
+  get '/parks/:park_id/rangers' => 'rangers#index', as: 'park_rangers'
+  get '/parks/:park_id/rangers/new' => 'rangers#create', as: 'new_park_ranger'
+  post '/parks/:park_id/rangers' => 'rangers#create'
 ```
 
 Test the routes they produce: `rake routes`
@@ -255,20 +273,6 @@ All together it should look like this app/views/rangers/new.html.erb
 [http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select](http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-select)
 
 ## logic for parks/:id/rangers
-
-When you configure your routes like above:
-```
-resources :parks do
-  resources :rangers
-end
-```
-
-It creates routes that look like: (excerpt from `rake routes`)
-```
-      Prefix Verb   URI Pattern                         Controller#Action
-park_rangers GET    /parks/:park_id/rangers(.:format)   rangers#index
-     rangers GET    /rangers(.:format)                  rangers#index
-```
 
 Because both routes point to a single controller we need to write some logic to get this to work- rails doesn't do that for us.
 
