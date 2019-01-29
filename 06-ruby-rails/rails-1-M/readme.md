@@ -40,7 +40,6 @@ rails new parklist -d postgresql
   * rangers#show
 
 * Routes
-  * We can nest the routes of one resource within the other one.
 
 ## Generating models / databse migrations
 
@@ -52,6 +51,7 @@ rails generate migration parks
 
 ```
 create_table :parks do |t|
+  t.string :name
   t.text :description
   t.timestamps
 end
@@ -124,6 +124,7 @@ SELECT * FROM rangers;
 ```
 
 ## Set up our requests:
+
 ### Nested route
 ```ruby
 
