@@ -9,7 +9,7 @@
 
 ## Create the app:
 ```bash
-rails new parklist -d postgresql
+rails new parkng -d postgresql
 ```
 
 ## What we need
