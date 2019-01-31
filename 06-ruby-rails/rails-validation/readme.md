@@ -110,3 +110,13 @@ Use the helper method for *each* form input
 ```
 
 Create custom error messages: [https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails](https://stackoverflow.com/questions/808547/fully-custom-validation-error-message-with-rails)
+
+
+### pairing exercise
+Select one of your rails app.
+
+Apply one random validation from above to one of your models.
+
+Check to see if the validation works.
+
+Implement the error message output.
