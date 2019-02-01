@@ -120,3 +120,12 @@ Apply one random validation from above to one of your models.
 Check to see if the validation works.
 
 Implement the error message output.
+
+#### further
+Try out the other kinds of validations.
+
+Complete the error output for each input in your form.
+
+#### further
+Implement a custom validation.
+

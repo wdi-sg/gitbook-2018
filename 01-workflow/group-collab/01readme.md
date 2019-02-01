@@ -214,9 +214,9 @@ It's good practice to even make a pull request for branches in your own reposito
 
 ## Make a PR from a Branch (15 min, 1:30)
 
-Building off the previous `sample_portfolio` exercise, work through the following:
+Building off the previous exercise, work through the following:
 
-1. Create a remote repository on GitHub for your `sample_portfolio` project (can be under GitHub or GitHub Enterprise - up to you). Be sure to checkout the `master` branch when doing your first push!
+1. Create a remote repository on GitHub for your project. Be sure to checkout the `master` branch when doing your first push!
 2. From the `master` branch, create a `contact_page` branch
 3. Create a `contact.html` page with the HTML5 boilerplate for a html document and an `<a>` tag with your email address in it
 4. Push the `contact_page` branch to your new remote on GitHub
@@ -258,10 +258,10 @@ This is the modified text
 
 #### Make Changes to the Home Page
 
-1. Checkout the `home_page` branch from the previous exercise
-2. Modify the `index.html` file by changing the `<h1>` element and adding a `<p>` element below it.
-3. Stage and commit your changes to the `home_page` branch
-4. Push your changes to the remote repository (`origin home_page`)
+1. Checkout the `new-story` branch from the previous exercise
+2. Modify the file by changing text in the first line.
+3. Stage and commit your changes to the `new-story` branch
+4. Push your changes to the remote repository (`origin new-story`)
 
 
 
@@ -274,7 +274,6 @@ This is the modified text
 
 2. Stage and Commit your changes on the `master` branch
 3. Push your changes to the remote repository (`origin master`)
-
 
 
 From GitHub try to make a pull request and merge your changes!
