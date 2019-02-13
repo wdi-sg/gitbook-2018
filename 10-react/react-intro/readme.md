@@ -12,26 +12,22 @@ We will be seeing some professional-level tools for running and storing our JS c
 
 React.js is a javascript library that basically tightly controls the rendering of HTML within the DOM.
 
-Further, it is a javascript ecosystem for creating single page apps in javascript.
+Further, it is an ecosystem for creating single page apps in javascript.
 
 It's back-end equivalent would be more expresss than rails.
 
 We will see that the professional react "stack" is quite complicated and includes some new tools and ways of working.
 
----
 ## What is reactjs
 The react library itself is just a rendering layer to easily render elements onto an HTML page in the browser.
 
 The wider react ecosystem allows you to build complex js single page applications.
----
 
 ### Top 3 React Whys:
 
 1. Efficent and clean DOM rendering
 2. Explicit data flow. No more global variables. Logic reacts as data flows.
 3. Component library ecosystem.
-
----
 
 
 ## Hello World Example
@@ -41,8 +37,6 @@ Given we've included the right libraries:
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 ```
-
----
 
 We have this main section:
 ```
@@ -54,16 +48,13 @@ ReactDOM.render(
 );
 </script>
 ```
----
 
 ## How does this work?
----
 
 ### 1. Babel
 Babel is a *javascript transpiler*. It takes code and spits out new code. In fact, when we write react we are going to be working with an extension of the javascript language called JSX.
 
 Babel is the tool we will use to *transpile* JSX to javascript.
----
 
 #### 1.1 How Babel works
 ```
@@ -140,49 +131,6 @@ ReactDOM.render(element, document.getElementById('root'));
 
 Let's take out babel and the old code and paste that in.
 
----
-
-## Rendering with Javascript
-
-React and JSX are first of all just a HTML rendering layer for javascript.
-```
-const items = ["yay", "banana", "yellow"];
-
-const list = items.map(item => {
-  return <li>{item}</li>
-});
-
-let stuff = <ul>{list}</ul>
-
-ReactDOM.render(
-  stuff,
-  document.getElementById('root')
-);
-```
-
-
-Does this syntax look familiar? It works just like every rendering layer we've seen so far, in express and rails.
-
-You can do anything you did in express and rails templates in JSX.
----
-
-Conditional rendering:
-```
-let stuff = null;
-
-if( user_logged_in ){
-  stuff = <a>logout</a>;
-}else{
-  stuff = <a>login</a>;
-}
-
-ReactDOM.render(
-  stuff,
-  document.getElementById('root')
-);
-```
----
-
 ### Pairing Exercise: Render JSX with react and babel
 
 1. Create a boilerplate HTML page.
@@ -244,8 +192,9 @@ eval(result.code);
 ```
 
 ##### Further
+- Why is `reactJsxString` a string?
 - What other attributes does `result` hold?
-- Try building more complicated JSX and evaling it:
-- Try the conditional and looping render.
+- Try building more complicated JSX in a string and evaling it.
 - Change the DOM attachment point to something else. (Write other elements in the HTML)
 - Put the jsx portion into a variable.
+- Where does this happen in an express app? When?
