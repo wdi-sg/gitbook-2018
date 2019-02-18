@@ -24,7 +24,6 @@ Is separated into common, production and development environments.
 
 - `babel-core`: Transforms your ES6 code into ES5
 - `babel-loader`: Webpack helper to transform your JavaScript dependencies (for example, when you import your components into other components) with Babel
-- `babel-preset-airbnb`: Determines which transformations/plugins to use and polyfills (provide modern functionality on older browsers that do not natively support it) based on the browser matrix you want to support
 - `babel-preset-react`: Babel preset for all React plugins, for example turning JSX into functions
 
 ```
@@ -45,24 +44,6 @@ This rule is telling webpack to run babel.
 
 ### .babelrc
 Create a file that tells babel how to transpile the code it is given.
-
-`airbnb` refers to `babel-preset-airbnb`, which handles all of the ES6 syntax. (See details [here](
-https://www.npmjs.com/package/babel-preset-airbnb)).
-
-```js
-{
-  "presets": [
-    [
-      "airbnb",
-      {
-        "modules": false
-      }
-    ],
-    "react"
-    .
-    .
-    .
-```
 
 ## html-webpack-plugin
 this plugin creates an index.html file that has all the correct script and link tags for us, and puts it in the static directory of the express app.
@@ -117,37 +98,10 @@ Start the express server
 npm run start
 ```
 
-## linting with airbnb presets
+## linting
 Webpack allows us to setup a default environment that will also tell us if our code conforms to a styleguide.
 
-See the guide here: [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
-
-This requires us not to support some ES2017 functionality, like generators.
-
-It also lints with [`prettier`](https://prettier.io/)
-
-Airbnb ES level no longer allows us to use class properties. This is not allowed:
-```
-constructor(){
-}
-
-state = {
-.
-.
-.
-...
-Instead, put your initializations inside the consturctor.
-...
-constructor(){
-  this.state = {
-  .
-  .
-  .
-```
-
 ## propTypes
-Airbnb js style requires us to specify the prop data types.
-
 This is another safeguard to make sure that we don't put in any unexpected data types into our components. It's another workaround to the javascript falsy/truthy feature (`==` vs. `===`)
 
 Note that `propTypes` is *NOT* form validation. This is more about surfacing subtle `==` vs. `===` errors to you, the programmer, than it is about user messaging, i.e., your password length is too short.
@@ -170,7 +124,7 @@ export default Monkey;
 See a more complete list of types here: [https://www.fullstackreact.com/p/appendix-a-proptypes/](https://www.fullstackreact.com/p/appendix-a-proptypes/)
 
 ## destructuring
-Airbnb also enforces the ES6 syntax for adding things into a state array or object.
+You should use this syntax for adding things into a state array or object.
 
 ### destructuring arrays:
 

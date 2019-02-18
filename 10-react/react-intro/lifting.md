@@ -126,9 +126,30 @@ Don't forget to include the required libraries:
 Implement components for other currencies. (US Dollars, Ringet, Thai Baht, etc.)
 
 ##### further
-Refactor the form so that you can select the currency in the form. Then the user enters the number of that currency in the form.
+Refactor the form so that you can select any currency in the form, instead of only SGD. Then the user enters the number of that currency in the form.
 
 Change each currency component to take 2 properties instead:
 ```
 <Yen currency={this.state.currency} amount={this.state.amount} />
+```
+
+##### further
+So far you have a component for every single currency.
+
+Change your app to have only one abstracted component for every currency.
+
+Create a component for each currency based on a data object.
+```
+const rates = {
+  "yen" : {
+    "sgd" : 2.3,
+    "usd" : 1.2
+  },
+  "gbp" : {
+    "yen" : 4.2
+  },
+
+  ...
+
+};
 ```

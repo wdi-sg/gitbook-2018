@@ -49,12 +49,26 @@ We can also use it to validate an input.
 ```
 // this form input will set state on anything except 'a'
 changeHandler(event){
-  if( event.target.value != 'a' ){
+  if( event.target.value !== 'a' ){
     this.setState({word:event.target.value});
   }
   console.log("change", event.target.value);
 }
 ```
+
+
+
+```
+// this form input will set state on anything except 'a'
+changeHandler(event){
+  if( event.target.value.indexOf('a') === -1 ){
+    this.setState({word:event.target.value});
+  }
+  console.log("change", event.target.value);
+}
+```
+
+
 
 ### Exercise
 Implement the above form in react.
