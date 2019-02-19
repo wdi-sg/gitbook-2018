@@ -21,8 +21,11 @@ const Notification = (props) => {
 ```
 
 ## Hooks
-Hooks are a new way of doing state in react. They also enable some types functionality that before you would do with lifecycle methods.
+Hooks are a new way of doing state in react. They also enable some types functionality that before would require lifecycle methods.
 
+As of 16/1/2019, in version 16.8.0 this feature became available.
+
+Classic Component Syntax:
 ```
 class Example extends React.Component {
   constructor(){
@@ -49,12 +52,15 @@ class Example extends React.Component {
 }
 ```
 
+
+New Hook Syntax:
 ```
 import React, { useState } from 'react';
 
 function Example() {
 
   // Declare a new state variable, which we'll call "count"
+  // Declare a function that sets this variable "count" called, setCount
   const [count, setCount] = useState(0);
 
   console.log( "rendering");
@@ -70,3 +76,4 @@ function Example() {
 }
 ```
 
+See more here: (https://reactjs.org/docs/hooks-intro.html)[https://reactjs.org/docs/hooks-intro.html]
