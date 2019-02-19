@@ -17,7 +17,7 @@ gem install webpacker
 
 Create and initialize the app: (this one includes all the models and views)
 ```
-rails new blog --webpack=react -d postgresql
+rails new blogn --webpack=react -d postgresql --skip-turbolinks --skip--coffee
 cd blog
 rails generate scaffold Post name:string title:string content:text
 rails db:create
@@ -152,7 +152,7 @@ Create and run a react app inside a rails app, as above.
 #### further
 *Use ajax with rails:*
 
-Create a post using the rails form.
+Create a post using the rails form, so that you have some data to work with.
 
 You can get rails to send back json instead of rendering the view by doing `.json` at the end of the url.
 
@@ -160,10 +160,10 @@ You can get rails to send back json instead of rendering the view by doing `.jso
 http://localhost:3000/posts/1.json
 ```
 
-In your react code, add a button or a `componentDidMount` method that makes an ajax request to that route. When the response comes back, render it.
+In your react code, add a button that makes an ajax request to that route. When the response comes back, render it.
 
 ```
-componentDidMount() {
+handleClick(){
 
   var reactThis = this;
 
