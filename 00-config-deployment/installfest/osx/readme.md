@@ -36,7 +36,9 @@ After the installation process, run the command `brew doctor`. If any warnings o
 
 ## Xcode
 
-Speaking of Xcode, install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+Install the xcode systerm tools: `xcode-select --install`
+
+You may need to install Xcode through the App Store- [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 ## GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
